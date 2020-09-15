@@ -1,12 +1,12 @@
 <template>
     <v-app class="body">
         <v-card class="menu d-flex align-center" elevation="20">
-            <div class="container d-flex justify-end">
+
                 <Menu></Menu>
-            </div>
+
         </v-card>
         <div class="content container">
-            <v-fade-transition>
+            <v-fade-transition mode="out-in">
                 <router-view></router-view>
             </v-fade-transition>
         </div>
