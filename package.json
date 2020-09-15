@@ -1,0 +1,49 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "watch": "npm run development -- --watch",
+        "watch-poll": "npm run watch -- --watch-poll",
+        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --disable-host-check --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "prod": "npm run production",
+        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    },
+    "devDependencies": {
+        "@babel/plugin-transform-typescript": "^7.11.0",
+        "@babel/plugin-proposal-decorators": "^7.4.4",
+        "@babel/preset-typescript": "^7.10.4",
+        "auto-loader": "^0.2.0",
+        "autoprefixer": "^9.4.1",
+        "axios": "^0.19",
+        "bootstrap": "^4.0.0",
+        "cross-env": "^7.0",
+        "css-loader": "^1.0.1",
+        "jquery": "^3.2",
+        "laravel-mix": "^5.0.1",
+        "lodash": "^4.17.19",
+        "mini-css-extract-plugin": "^0.4.5",
+        "node-sass": "^4.10.0",
+        "optimize-css-assets-webpack-plugin": "^5.0.1",
+        "popper.js": "^1.12",
+        "postcss-loader": "^3.0.0",
+        "resolve-url-loader": "^2.3.1",
+        "sass": "^1.20.1",
+        "sass-loader": "^8.0.0",
+        "ts-loader": "^5.4.5",
+        "typescript": "^3.9.7",
+        "uglifyjs-webpack-plugin": "^2.0.1",
+        "vue": "^2.5.17",
+        "vue-class-component": "^6.3.2",
+        "vue-loader": "^15.4.2",
+        "vue-property-decorator": "^7.2.0",
+        "vue-template-compiler": "^2.6.10",
+        "webpack": "^4.26.1",
+        "webpack-cli": "^3.1.2"
+    },
+    "dependencies": {
+        "vue-router": "^3.4.3",
+        "vuetify": "^2.3.10",
+        "vuex": "^3.5.1"
+    }
+}
