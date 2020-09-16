@@ -2,7 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use app\Http\Controllers\UserController;
+use App\Http\Controllers\TreeController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,3 +18,16 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::group(['middleware' => 'api','prefix' => 'auth'], function ($router) {
+    Route::post('/register','UserController@register');
+    Route::post('login', 'AuthController@login');
+    Route::post('logout', 'AuthController@logout');
+    Route::post('refresh', 'AuthController@refresh');
+    Route::post('me', 'AuthController@me');
+});
+
+Route::post('tree','TreeController@store');
+Route::get('tree','TreeController@index');
+Route::get('trees','TreeController@indexWithKids');
+

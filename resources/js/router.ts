@@ -22,17 +22,22 @@ const routes=[
         name:'Login',
         path: '/login',
         component:Login,
-
+        meta:{
+            requireAuth:false,
+        },
     },
     {
         name:'Register',
         path: '/register',
         component:Register,
+        meta:{
+            requireAuth:false,
+        },
     },
     {
         path: '*',
         name:'404',
-        component: Error404
+        component: Error404,
     }
 ]
 

@@ -1,13 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="c858d20f-ede2-4813-8b2f-837786bf5834" name="Default Changelist" comment="" />
+    <list default="true" id="c858d20f-ede2-4813-8b2f-837786bf5834" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/js/components/components/List.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/components/ListItem.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/components/NewNode.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/drzewo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/drzewo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_15_075746_create_trees_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_15_075746_create_trees_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Main.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Main.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/components/Menu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/components/Menu.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/views/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/views/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/views/Register.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/router.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -20,6 +60,9 @@
         <option value="Vue Single File Component" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -131,6 +174,11 @@
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/namshi/jose" />
+      <path value="$PROJECT_DIR$/vendor/tymon/jwt-auth" />
+      <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php56" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-util" />
     </include_path>
   </component>
   <component name="ProjectId" id="1hY4VrexpJFj8j77m85cJ8XchXQ" />
@@ -141,19 +189,21 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/components/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/components/components" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2020.2.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
+    <property name="ts.external.directory.path" value="C:\Users\wronek\Desktop\projekty\drzewo\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\wronek\Desktop\projekty\drzewo\resources\js\components\views" />
-      <recent name="C:\Users\wronek\Desktop\projekty\drzewo\database\migrations" />
-      <recent name="C:\Users\wronek\Desktop\projekty\drzewo" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\wronek\Desktop\projekty\drzewo\resources\js" />
+      <recent name="C:\Users\wronek\Desktop\projekty\drzewo" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\wronek\Desktop\projekty\drzewo\resources\js\components\components" />
+      <recent name="C:\Users\wronek\Desktop\projekty\drzewo\resources\js\components\views" />
+      <recent name="C:\Users\wronek\Desktop\projekty\drzewo\database\migrations" />
       <recent name="C:\Users\wronek\Desktop\projekty\drzewo" />
     </key>
   </component>
@@ -172,13 +222,29 @@
       <option name="presentableId" value="Default" />
       <updated>1600174719119</updated>
       <workItem from="1600174720206" duration="10429000" />
+      <workItem from="1600241142524" duration="23710000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
+    <state x="765" y="202" key="#com.intellij.ide.util.MemberChooser" timestamp="1600248146842">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600248146842" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1600176717503">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -195,5 +261,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600176717503" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1600253742085">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600253742085" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/routes/web.php</url>
+          <line>18</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/resources/js/components/views/Home.vue</url>
+          <line>13</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

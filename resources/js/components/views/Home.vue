@@ -1,17 +1,28 @@
 <template>
-    <v-card class="d-flex justify-center">
-        zalogowany
-        {{name}}
-    </v-card>
+    <div>
+        <NewNode></NewNode>
+
+        <v-card class="mt-7 pa-5" elevation="10">
+            <List>
+
+            </List>
+        </v-card>
+    </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import Component from "vue-class-component";
+import NewNode from '../components/NewNode.vue';
+import List from '../components/List.vue';
 
-@Component
-export default class Home extends Vue{
-    name= "Home"
+@Component({
+    components: {
+        NewNode, List
+    }
+})
+export default class Home extends Vue {
+    name = '';
 }
 </script>
 
