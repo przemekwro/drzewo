@@ -20,18 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c858d20f-ede2-4813-8b2f-837786bf5834" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/js/components/components/ListElement.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Main.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Main.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/components/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/components/List.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/components/ListItem.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/components/NewNode.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/components/NewNode.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/vuetify.ts" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/vuetify.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/components/ListElement.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/components/ListElement.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,7 +208,7 @@
       <updated>1600174719119</updated>
       <workItem from="1600174720206" duration="10429000" />
       <workItem from="1600241142524" duration="26049000" />
-      <workItem from="1600325225093" duration="27203000" />
+      <workItem from="1600325225093" duration="29469000" />
     </task>
     <servers />
   </component>
@@ -258,10 +252,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600176717503" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1600253742085">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1600357228527">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600253742085" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600357228527" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

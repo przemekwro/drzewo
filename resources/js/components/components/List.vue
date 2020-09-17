@@ -18,12 +18,13 @@
         </div>
         <div>
             <draggable v-bind="options"
-                        :list="sortedTree" class="dragArea" :group="{ name: 'g1' }">
+                        :list="sortedTree" class="dragArea" @start="asd=true" @add="asda" @end="asd=false">
                 <div v-for="el in sortedTree" :key="el.id">
                     <ListElement :el="el"/>
                 </div>
             </draggable>
         </div>
+        {{asd}}
     </div>
 </template>
 
@@ -44,14 +45,31 @@ export default class List extends Vue {
 
     sortedTree:any=null
 
+    asd=false;
+    asda(){
+        console.log('aaaaa')
+    }
+
     get options(){
         return{
-            onEnd:function(evt:any){
-                console.log('asd')
+            group:{
+                name:'asd',
+                pull:function(){
+                    //console.log('pull')
+                },
+                put:function(){
+                    //console.log('put')
+                    return true
+                },
+                onEnd:function(){
+                    console.log('add')
+                },
+
             },
-            onAdd: function (/**Event*/ evt) {
-                console.log('asdasdadsasd')
+            onAdd(){
+                console.log('change')
             }
+
         }
     }
 

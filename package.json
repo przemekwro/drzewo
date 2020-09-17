@@ -43,6 +43,7 @@
         "webpack-cli": "^3.1.2"
     },
     "dependencies": {
+        "sortablejs": "^1.11.2-alpha.3",
         "vue-router": "^3.4.3",
         "vuedraggable": "^2.24.1",
         "vuetify": "^2.3.10",

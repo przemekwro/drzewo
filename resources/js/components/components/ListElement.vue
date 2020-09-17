@@ -10,7 +10,7 @@
 
         <v-expand-transition>
             <div v-show="show">
-                <draggable v-bind="options" :list="el.all_children" class="dragArea" tag="ul" :group="{ name: 'g1' }">
+                <draggable :id="el.id" :list="el.all_children" @add="add" class="dragArea" tag="div" :group="{ name: 'g1' }">
                     <div v-for="e in el.all_children">
                         <ListElement :el="e"></ListElement>
                     </div>
@@ -34,30 +34,17 @@ import state from '../../store'
 })
 export default class ListElement extends Vue {
 
-    get options(){
-        return{
-            put:function(evt:any){
-                console.log('asd')
-                return true
-            },
-            add:function(){
-                console.log('penis')
-            }
-        }
-    }
+
     @Prop()
     el: any
     message = '';
     private show: boolean = false;
 
-    onAdd(/**Event*/ evt:Event) {
-        console.log('asd')
-        // same properties as onEnd
+    add(evt:any){
+        console.log(evt.to)
+        console.log(evt.from)
     }
 
-    asd(){
-        console.log('dropped')
-    }
 
     @Watch('expand')
     onExpandChanged(val: boolean, oldVal: boolean) {
