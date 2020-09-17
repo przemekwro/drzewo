@@ -10,9 +10,10 @@
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "devDependencies": {
-        "@babel/plugin-transform-typescript": "^7.11.0",
         "@babel/plugin-proposal-decorators": "^7.4.4",
+        "@babel/plugin-transform-typescript": "^7.11.0",
         "@babel/preset-typescript": "^7.10.4",
+        "@mdi/font": "^5.6.55",
         "auto-loader": "^0.2.0",
         "autoprefixer": "^9.4.1",
         "axios": "^0.19",
@@ -43,6 +44,7 @@
     },
     "dependencies": {
         "vue-router": "^3.4.3",
+        "vuedraggable": "^2.24.1",
         "vuetify": "^2.3.10",
         "vuex": "^3.5.1"
     }

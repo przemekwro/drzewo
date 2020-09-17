@@ -1,9 +1,9 @@
 <template>
-    <v-app class="body">
+    <v-app class="">
         <v-card class="menu d-flex align-center" elevation="10">
                 <Menu></Menu>
         </v-card>
-        <div class="content container">
+        <div class="content container body pa-10">
             <v-fade-transition mode="out-in">
                 <router-view></router-view>
             </v-fade-transition>
@@ -33,7 +33,6 @@ export default class MainApp extends Vue {
 
 }
 .content{
-    height: 90vh;
     max-width: 1100px;
 }
 .menu {

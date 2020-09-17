@@ -86,6 +86,8543 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/@mdi/font/css/materialdesignicons.css":
+/*!************************************************************!*\
+  !*** ./node_modules/@mdi/font/css/materialdesignicons.css ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../css-loader??ref--7-1!../../../postcss-loader/src??ref--7-2!./materialdesignicons.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/@mdi/font/css/materialdesignicons.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/@mdi/font/fonts/materialdesignicons-webfont.eot":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@mdi/font/fonts/materialdesignicons-webfont.eot ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/fonts/vendor/@mdi/materialdesignicons-webfont.eot?5d6f62d26868981998c04102e29046cb";
+
+/***/ }),
+
+/***/ "./node_modules/@mdi/font/fonts/materialdesignicons-webfont.eot?v=5.6.55":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/@mdi/font/fonts/materialdesignicons-webfont.eot?v=5.6.55 ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/fonts/vendor/@mdi/materialdesignicons-webfont.eot?5d6f62d26868981998c04102e29046cb";
+
+/***/ }),
+
+/***/ "./node_modules/@mdi/font/fonts/materialdesignicons-webfont.ttf?v=5.6.55":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/@mdi/font/fonts/materialdesignicons-webfont.ttf?v=5.6.55 ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/fonts/vendor/@mdi/materialdesignicons-webfont.ttf?51c686b86bc12382579d8283b7e76b6b";
+
+/***/ }),
+
+/***/ "./node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff2?v=5.6.55":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff2?v=5.6.55 ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/fonts/vendor/@mdi/materialdesignicons-webfont.woff2?412de0a2eeaa5521c0bb19d13bc23a8b";
+
+/***/ }),
+
+/***/ "./node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff?v=5.6.55":
+/*!********************************************************************************!*\
+  !*** ./node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff?v=5.6.55 ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/fonts/vendor/@mdi/materialdesignicons-webfont.woff?1e9e35036ef9c06cdd99d580171d7f2a";
+
+/***/ }),
+
+/***/ "./node_modules/Vue/dist/vue.runtime.esm.js":
+/*!**************************************************!*\
+  !*** ./node_modules/Vue/dist/vue.runtime.esm.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(global, setImmediate) {/*!
+ * Vue.js v2.6.12
+ * (c) 2014-2020 Evan You
+ * Released under the MIT License.
+ */
+/*  */
+
+var emptyObject = Object.freeze({});
+
+// These helpers produce better VM code in JS engines due to their
+// explicitness and function inlining.
+function isUndef (v) {
+  return v === undefined || v === null
+}
+
+function isDef (v) {
+  return v !== undefined && v !== null
+}
+
+function isTrue (v) {
+  return v === true
+}
+
+function isFalse (v) {
+  return v === false
+}
+
+/**
+ * Check if value is primitive.
+ */
+function isPrimitive (value) {
+  return (
+    typeof value === 'string' ||
+    typeof value === 'number' ||
+    // $flow-disable-line
+    typeof value === 'symbol' ||
+    typeof value === 'boolean'
+  )
+}
+
+/**
+ * Quick object check - this is primarily used to tell
+ * Objects from primitive values when we know the value
+ * is a JSON-compliant type.
+ */
+function isObject (obj) {
+  return obj !== null && typeof obj === 'object'
+}
+
+/**
+ * Get the raw type string of a value, e.g., [object Object].
+ */
+var _toString = Object.prototype.toString;
+
+function toRawType (value) {
+  return _toString.call(value).slice(8, -1)
+}
+
+/**
+ * Strict object type check. Only returns true
+ * for plain JavaScript objects.
+ */
+function isPlainObject (obj) {
+  return _toString.call(obj) === '[object Object]'
+}
+
+function isRegExp (v) {
+  return _toString.call(v) === '[object RegExp]'
+}
+
+/**
+ * Check if val is a valid array index.
+ */
+function isValidArrayIndex (val) {
+  var n = parseFloat(String(val));
+  return n >= 0 && Math.floor(n) === n && isFinite(val)
+}
+
+function isPromise (val) {
+  return (
+    isDef(val) &&
+    typeof val.then === 'function' &&
+    typeof val.catch === 'function'
+  )
+}
+
+/**
+ * Convert a value to a string that is actually rendered.
+ */
+function toString (val) {
+  return val == null
+    ? ''
+    : Array.isArray(val) || (isPlainObject(val) && val.toString === _toString)
+      ? JSON.stringify(val, null, 2)
+      : String(val)
+}
+
+/**
+ * Convert an input value to a number for persistence.
+ * If the conversion fails, return original string.
+ */
+function toNumber (val) {
+  var n = parseFloat(val);
+  return isNaN(n) ? val : n
+}
+
+/**
+ * Make a map and return a function for checking if a key
+ * is in that map.
+ */
+function makeMap (
+  str,
+  expectsLowerCase
+) {
+  var map = Object.create(null);
+  var list = str.split(',');
+  for (var i = 0; i < list.length; i++) {
+    map[list[i]] = true;
+  }
+  return expectsLowerCase
+    ? function (val) { return map[val.toLowerCase()]; }
+    : function (val) { return map[val]; }
+}
+
+/**
+ * Check if a tag is a built-in tag.
+ */
+var isBuiltInTag = makeMap('slot,component', true);
+
+/**
+ * Check if an attribute is a reserved attribute.
+ */
+var isReservedAttribute = makeMap('key,ref,slot,slot-scope,is');
+
+/**
+ * Remove an item from an array.
+ */
+function remove (arr, item) {
+  if (arr.length) {
+    var index = arr.indexOf(item);
+    if (index > -1) {
+      return arr.splice(index, 1)
+    }
+  }
+}
+
+/**
+ * Check whether an object has the property.
+ */
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+function hasOwn (obj, key) {
+  return hasOwnProperty.call(obj, key)
+}
+
+/**
+ * Create a cached version of a pure function.
+ */
+function cached (fn) {
+  var cache = Object.create(null);
+  return (function cachedFn (str) {
+    var hit = cache[str];
+    return hit || (cache[str] = fn(str))
+  })
+}
+
+/**
+ * Camelize a hyphen-delimited string.
+ */
+var camelizeRE = /-(\w)/g;
+var camelize = cached(function (str) {
+  return str.replace(camelizeRE, function (_, c) { return c ? c.toUpperCase() : ''; })
+});
+
+/**
+ * Capitalize a string.
+ */
+var capitalize = cached(function (str) {
+  return str.charAt(0).toUpperCase() + str.slice(1)
+});
+
+/**
+ * Hyphenate a camelCase string.
+ */
+var hyphenateRE = /\B([A-Z])/g;
+var hyphenate = cached(function (str) {
+  return str.replace(hyphenateRE, '-$1').toLowerCase()
+});
+
+/**
+ * Simple bind polyfill for environments that do not support it,
+ * e.g., PhantomJS 1.x. Technically, we don't need this anymore
+ * since native bind is now performant enough in most browsers.
+ * But removing it would mean breaking code that was able to run in
+ * PhantomJS 1.x, so this must be kept for backward compatibility.
+ */
+
+/* istanbul ignore next */
+function polyfillBind (fn, ctx) {
+  function boundFn (a) {
+    var l = arguments.length;
+    return l
+      ? l > 1
+        ? fn.apply(ctx, arguments)
+        : fn.call(ctx, a)
+      : fn.call(ctx)
+  }
+
+  boundFn._length = fn.length;
+  return boundFn
+}
+
+function nativeBind (fn, ctx) {
+  return fn.bind(ctx)
+}
+
+var bind = Function.prototype.bind
+  ? nativeBind
+  : polyfillBind;
+
+/**
+ * Convert an Array-like object to a real Array.
+ */
+function toArray (list, start) {
+  start = start || 0;
+  var i = list.length - start;
+  var ret = new Array(i);
+  while (i--) {
+    ret[i] = list[i + start];
+  }
+  return ret
+}
+
+/**
+ * Mix properties into target object.
+ */
+function extend (to, _from) {
+  for (var key in _from) {
+    to[key] = _from[key];
+  }
+  return to
+}
+
+/**
+ * Merge an Array of Objects into a single Object.
+ */
+function toObject (arr) {
+  var res = {};
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i]) {
+      extend(res, arr[i]);
+    }
+  }
+  return res
+}
+
+/* eslint-disable no-unused-vars */
+
+/**
+ * Perform no operation.
+ * Stubbing args to make Flow happy without leaving useless transpiled code
+ * with ...rest (https://flow.org/blog/2017/05/07/Strict-Function-Call-Arity/).
+ */
+function noop (a, b, c) {}
+
+/**
+ * Always return false.
+ */
+var no = function (a, b, c) { return false; };
+
+/* eslint-enable no-unused-vars */
+
+/**
+ * Return the same value.
+ */
+var identity = function (_) { return _; };
+
+/**
+ * Check if two values are loosely equal - that is,
+ * if they are plain objects, do they have the same shape?
+ */
+function looseEqual (a, b) {
+  if (a === b) { return true }
+  var isObjectA = isObject(a);
+  var isObjectB = isObject(b);
+  if (isObjectA && isObjectB) {
+    try {
+      var isArrayA = Array.isArray(a);
+      var isArrayB = Array.isArray(b);
+      if (isArrayA && isArrayB) {
+        return a.length === b.length && a.every(function (e, i) {
+          return looseEqual(e, b[i])
+        })
+      } else if (a instanceof Date && b instanceof Date) {
+        return a.getTime() === b.getTime()
+      } else if (!isArrayA && !isArrayB) {
+        var keysA = Object.keys(a);
+        var keysB = Object.keys(b);
+        return keysA.length === keysB.length && keysA.every(function (key) {
+          return looseEqual(a[key], b[key])
+        })
+      } else {
+        /* istanbul ignore next */
+        return false
+      }
+    } catch (e) {
+      /* istanbul ignore next */
+      return false
+    }
+  } else if (!isObjectA && !isObjectB) {
+    return String(a) === String(b)
+  } else {
+    return false
+  }
+}
+
+/**
+ * Return the first index at which a loosely equal value can be
+ * found in the array (if value is a plain object, the array must
+ * contain an object of the same shape), or -1 if it is not present.
+ */
+function looseIndexOf (arr, val) {
+  for (var i = 0; i < arr.length; i++) {
+    if (looseEqual(arr[i], val)) { return i }
+  }
+  return -1
+}
+
+/**
+ * Ensure a function is called only once.
+ */
+function once (fn) {
+  var called = false;
+  return function () {
+    if (!called) {
+      called = true;
+      fn.apply(this, arguments);
+    }
+  }
+}
+
+var SSR_ATTR = 'data-server-rendered';
+
+var ASSET_TYPES = [
+  'component',
+  'directive',
+  'filter'
+];
+
+var LIFECYCLE_HOOKS = [
+  'beforeCreate',
+  'created',
+  'beforeMount',
+  'mounted',
+  'beforeUpdate',
+  'updated',
+  'beforeDestroy',
+  'destroyed',
+  'activated',
+  'deactivated',
+  'errorCaptured',
+  'serverPrefetch'
+];
+
+/*  */
+
+
+
+var config = ({
+  /**
+   * Option merge strategies (used in core/util/options)
+   */
+  // $flow-disable-line
+  optionMergeStrategies: Object.create(null),
+
+  /**
+   * Whether to suppress warnings.
+   */
+  silent: false,
+
+  /**
+   * Show production mode tip message on boot?
+   */
+  productionTip: "development" !== 'production',
+
+  /**
+   * Whether to enable devtools
+   */
+  devtools: "development" !== 'production',
+
+  /**
+   * Whether to record perf
+   */
+  performance: false,
+
+  /**
+   * Error handler for watcher errors
+   */
+  errorHandler: null,
+
+  /**
+   * Warn handler for watcher warns
+   */
+  warnHandler: null,
+
+  /**
+   * Ignore certain custom elements
+   */
+  ignoredElements: [],
+
+  /**
+   * Custom user key aliases for v-on
+   */
+  // $flow-disable-line
+  keyCodes: Object.create(null),
+
+  /**
+   * Check if a tag is reserved so that it cannot be registered as a
+   * component. This is platform-dependent and may be overwritten.
+   */
+  isReservedTag: no,
+
+  /**
+   * Check if an attribute is reserved so that it cannot be used as a component
+   * prop. This is platform-dependent and may be overwritten.
+   */
+  isReservedAttr: no,
+
+  /**
+   * Check if a tag is an unknown element.
+   * Platform-dependent.
+   */
+  isUnknownElement: no,
+
+  /**
+   * Get the namespace of an element
+   */
+  getTagNamespace: noop,
+
+  /**
+   * Parse the real tag name for the specific platform.
+   */
+  parsePlatformTagName: identity,
+
+  /**
+   * Check if an attribute must be bound using property, e.g. value
+   * Platform-dependent.
+   */
+  mustUseProp: no,
+
+  /**
+   * Perform updates asynchronously. Intended to be used by Vue Test Utils
+   * This will significantly reduce performance if set to false.
+   */
+  async: true,
+
+  /**
+   * Exposed for legacy reasons
+   */
+  _lifecycleHooks: LIFECYCLE_HOOKS
+});
+
+/*  */
+
+/**
+ * unicode letters used for parsing html tags, component names and property paths.
+ * using https://www.w3.org/TR/html53/semantics-scripting.html#potentialcustomelementname
+ * skipping \u10000-\uEFFFF due to it freezing up PhantomJS
+ */
+var unicodeRegExp = /a-zA-Z\u00B7\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u037D\u037F-\u1FFF\u200C-\u200D\u203F-\u2040\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD/;
+
+/**
+ * Check if a string starts with $ or _
+ */
+function isReserved (str) {
+  var c = (str + '').charCodeAt(0);
+  return c === 0x24 || c === 0x5F
+}
+
+/**
+ * Define a property.
+ */
+function def (obj, key, val, enumerable) {
+  Object.defineProperty(obj, key, {
+    value: val,
+    enumerable: !!enumerable,
+    writable: true,
+    configurable: true
+  });
+}
+
+/**
+ * Parse simple path.
+ */
+var bailRE = new RegExp(("[^" + (unicodeRegExp.source) + ".$_\\d]"));
+function parsePath (path) {
+  if (bailRE.test(path)) {
+    return
+  }
+  var segments = path.split('.');
+  return function (obj) {
+    for (var i = 0; i < segments.length; i++) {
+      if (!obj) { return }
+      obj = obj[segments[i]];
+    }
+    return obj
+  }
+}
+
+/*  */
+
+// can we use __proto__?
+var hasProto = '__proto__' in {};
+
+// Browser environment sniffing
+var inBrowser = typeof window !== 'undefined';
+var inWeex = typeof WXEnvironment !== 'undefined' && !!WXEnvironment.platform;
+var weexPlatform = inWeex && WXEnvironment.platform.toLowerCase();
+var UA = inBrowser && window.navigator.userAgent.toLowerCase();
+var isIE = UA && /msie|trident/.test(UA);
+var isIE9 = UA && UA.indexOf('msie 9.0') > 0;
+var isEdge = UA && UA.indexOf('edge/') > 0;
+var isAndroid = (UA && UA.indexOf('android') > 0) || (weexPlatform === 'android');
+var isIOS = (UA && /iphone|ipad|ipod|ios/.test(UA)) || (weexPlatform === 'ios');
+var isChrome = UA && /chrome\/\d+/.test(UA) && !isEdge;
+var isPhantomJS = UA && /phantomjs/.test(UA);
+var isFF = UA && UA.match(/firefox\/(\d+)/);
+
+// Firefox has a "watch" function on Object.prototype...
+var nativeWatch = ({}).watch;
+
+var supportsPassive = false;
+if (inBrowser) {
+  try {
+    var opts = {};
+    Object.defineProperty(opts, 'passive', ({
+      get: function get () {
+        /* istanbul ignore next */
+        supportsPassive = true;
+      }
+    })); // https://github.com/facebook/flow/issues/285
+    window.addEventListener('test-passive', null, opts);
+  } catch (e) {}
+}
+
+// this needs to be lazy-evaled because vue may be required before
+// vue-server-renderer can set VUE_ENV
+var _isServer;
+var isServerRendering = function () {
+  if (_isServer === undefined) {
+    /* istanbul ignore if */
+    if (!inBrowser && !inWeex && typeof global !== 'undefined') {
+      // detect presence of vue-server-renderer and avoid
+      // Webpack shimming the process
+      _isServer = global['process'] && global['process'].env.VUE_ENV === 'server';
+    } else {
+      _isServer = false;
+    }
+  }
+  return _isServer
+};
+
+// detect devtools
+var devtools = inBrowser && window.__VUE_DEVTOOLS_GLOBAL_HOOK__;
+
+/* istanbul ignore next */
+function isNative (Ctor) {
+  return typeof Ctor === 'function' && /native code/.test(Ctor.toString())
+}
+
+var hasSymbol =
+  typeof Symbol !== 'undefined' && isNative(Symbol) &&
+  typeof Reflect !== 'undefined' && isNative(Reflect.ownKeys);
+
+var _Set;
+/* istanbul ignore if */ // $flow-disable-line
+if (typeof Set !== 'undefined' && isNative(Set)) {
+  // use native Set when available.
+  _Set = Set;
+} else {
+  // a non-standard Set polyfill that only works with primitive keys.
+  _Set = /*@__PURE__*/(function () {
+    function Set () {
+      this.set = Object.create(null);
+    }
+    Set.prototype.has = function has (key) {
+      return this.set[key] === true
+    };
+    Set.prototype.add = function add (key) {
+      this.set[key] = true;
+    };
+    Set.prototype.clear = function clear () {
+      this.set = Object.create(null);
+    };
+
+    return Set;
+  }());
+}
+
+/*  */
+
+var warn = noop;
+var tip = noop;
+var generateComponentTrace = (noop); // work around flow check
+var formatComponentName = (noop);
+
+if (true) {
+  var hasConsole = typeof console !== 'undefined';
+  var classifyRE = /(?:^|[-_])(\w)/g;
+  var classify = function (str) { return str
+    .replace(classifyRE, function (c) { return c.toUpperCase(); })
+    .replace(/[-_]/g, ''); };
+
+  warn = function (msg, vm) {
+    var trace = vm ? generateComponentTrace(vm) : '';
+
+    if (config.warnHandler) {
+      config.warnHandler.call(null, msg, vm, trace);
+    } else if (hasConsole && (!config.silent)) {
+      console.error(("[Vue warn]: " + msg + trace));
+    }
+  };
+
+  tip = function (msg, vm) {
+    if (hasConsole && (!config.silent)) {
+      console.warn("[Vue tip]: " + msg + (
+        vm ? generateComponentTrace(vm) : ''
+      ));
+    }
+  };
+
+  formatComponentName = function (vm, includeFile) {
+    if (vm.$root === vm) {
+      return '<Root>'
+    }
+    var options = typeof vm === 'function' && vm.cid != null
+      ? vm.options
+      : vm._isVue
+        ? vm.$options || vm.constructor.options
+        : vm;
+    var name = options.name || options._componentTag;
+    var file = options.__file;
+    if (!name && file) {
+      var match = file.match(/([^/\\]+)\.vue$/);
+      name = match && match[1];
+    }
+
+    return (
+      (name ? ("<" + (classify(name)) + ">") : "<Anonymous>") +
+      (file && includeFile !== false ? (" at " + file) : '')
+    )
+  };
+
+  var repeat = function (str, n) {
+    var res = '';
+    while (n) {
+      if (n % 2 === 1) { res += str; }
+      if (n > 1) { str += str; }
+      n >>= 1;
+    }
+    return res
+  };
+
+  generateComponentTrace = function (vm) {
+    if (vm._isVue && vm.$parent) {
+      var tree = [];
+      var currentRecursiveSequence = 0;
+      while (vm) {
+        if (tree.length > 0) {
+          var last = tree[tree.length - 1];
+          if (last.constructor === vm.constructor) {
+            currentRecursiveSequence++;
+            vm = vm.$parent;
+            continue
+          } else if (currentRecursiveSequence > 0) {
+            tree[tree.length - 1] = [last, currentRecursiveSequence];
+            currentRecursiveSequence = 0;
+          }
+        }
+        tree.push(vm);
+        vm = vm.$parent;
+      }
+      return '\n\nfound in\n\n' + tree
+        .map(function (vm, i) { return ("" + (i === 0 ? '---> ' : repeat(' ', 5 + i * 2)) + (Array.isArray(vm)
+            ? ((formatComponentName(vm[0])) + "... (" + (vm[1]) + " recursive calls)")
+            : formatComponentName(vm))); })
+        .join('\n')
+    } else {
+      return ("\n\n(found in " + (formatComponentName(vm)) + ")")
+    }
+  };
+}
+
+/*  */
+
+var uid = 0;
+
+/**
+ * A dep is an observable that can have multiple
+ * directives subscribing to it.
+ */
+var Dep = function Dep () {
+  this.id = uid++;
+  this.subs = [];
+};
+
+Dep.prototype.addSub = function addSub (sub) {
+  this.subs.push(sub);
+};
+
+Dep.prototype.removeSub = function removeSub (sub) {
+  remove(this.subs, sub);
+};
+
+Dep.prototype.depend = function depend () {
+  if (Dep.target) {
+    Dep.target.addDep(this);
+  }
+};
+
+Dep.prototype.notify = function notify () {
+  // stabilize the subscriber list first
+  var subs = this.subs.slice();
+  if ( true && !config.async) {
+    // subs aren't sorted in scheduler if not running async
+    // we need to sort them now to make sure they fire in correct
+    // order
+    subs.sort(function (a, b) { return a.id - b.id; });
+  }
+  for (var i = 0, l = subs.length; i < l; i++) {
+    subs[i].update();
+  }
+};
+
+// The current target watcher being evaluated.
+// This is globally unique because only one watcher
+// can be evaluated at a time.
+Dep.target = null;
+var targetStack = [];
+
+function pushTarget (target) {
+  targetStack.push(target);
+  Dep.target = target;
+}
+
+function popTarget () {
+  targetStack.pop();
+  Dep.target = targetStack[targetStack.length - 1];
+}
+
+/*  */
+
+var VNode = function VNode (
+  tag,
+  data,
+  children,
+  text,
+  elm,
+  context,
+  componentOptions,
+  asyncFactory
+) {
+  this.tag = tag;
+  this.data = data;
+  this.children = children;
+  this.text = text;
+  this.elm = elm;
+  this.ns = undefined;
+  this.context = context;
+  this.fnContext = undefined;
+  this.fnOptions = undefined;
+  this.fnScopeId = undefined;
+  this.key = data && data.key;
+  this.componentOptions = componentOptions;
+  this.componentInstance = undefined;
+  this.parent = undefined;
+  this.raw = false;
+  this.isStatic = false;
+  this.isRootInsert = true;
+  this.isComment = false;
+  this.isCloned = false;
+  this.isOnce = false;
+  this.asyncFactory = asyncFactory;
+  this.asyncMeta = undefined;
+  this.isAsyncPlaceholder = false;
+};
+
+var prototypeAccessors = { child: { configurable: true } };
+
+// DEPRECATED: alias for componentInstance for backwards compat.
+/* istanbul ignore next */
+prototypeAccessors.child.get = function () {
+  return this.componentInstance
+};
+
+Object.defineProperties( VNode.prototype, prototypeAccessors );
+
+var createEmptyVNode = function (text) {
+  if ( text === void 0 ) text = '';
+
+  var node = new VNode();
+  node.text = text;
+  node.isComment = true;
+  return node
+};
+
+function createTextVNode (val) {
+  return new VNode(undefined, undefined, undefined, String(val))
+}
+
+// optimized shallow clone
+// used for static nodes and slot nodes because they may be reused across
+// multiple renders, cloning them avoids errors when DOM manipulations rely
+// on their elm reference.
+function cloneVNode (vnode) {
+  var cloned = new VNode(
+    vnode.tag,
+    vnode.data,
+    // #7975
+    // clone children array to avoid mutating original in case of cloning
+    // a child.
+    vnode.children && vnode.children.slice(),
+    vnode.text,
+    vnode.elm,
+    vnode.context,
+    vnode.componentOptions,
+    vnode.asyncFactory
+  );
+  cloned.ns = vnode.ns;
+  cloned.isStatic = vnode.isStatic;
+  cloned.key = vnode.key;
+  cloned.isComment = vnode.isComment;
+  cloned.fnContext = vnode.fnContext;
+  cloned.fnOptions = vnode.fnOptions;
+  cloned.fnScopeId = vnode.fnScopeId;
+  cloned.asyncMeta = vnode.asyncMeta;
+  cloned.isCloned = true;
+  return cloned
+}
+
+/*
+ * not type checking this file because flow doesn't play well with
+ * dynamically accessing methods on Array prototype
+ */
+
+var arrayProto = Array.prototype;
+var arrayMethods = Object.create(arrayProto);
+
+var methodsToPatch = [
+  'push',
+  'pop',
+  'shift',
+  'unshift',
+  'splice',
+  'sort',
+  'reverse'
+];
+
+/**
+ * Intercept mutating methods and emit events
+ */
+methodsToPatch.forEach(function (method) {
+  // cache original method
+  var original = arrayProto[method];
+  def(arrayMethods, method, function mutator () {
+    var args = [], len = arguments.length;
+    while ( len-- ) args[ len ] = arguments[ len ];
+
+    var result = original.apply(this, args);
+    var ob = this.__ob__;
+    var inserted;
+    switch (method) {
+      case 'push':
+      case 'unshift':
+        inserted = args;
+        break
+      case 'splice':
+        inserted = args.slice(2);
+        break
+    }
+    if (inserted) { ob.observeArray(inserted); }
+    // notify change
+    ob.dep.notify();
+    return result
+  });
+});
+
+/*  */
+
+var arrayKeys = Object.getOwnPropertyNames(arrayMethods);
+
+/**
+ * In some cases we may want to disable observation inside a component's
+ * update computation.
+ */
+var shouldObserve = true;
+
+function toggleObserving (value) {
+  shouldObserve = value;
+}
+
+/**
+ * Observer class that is attached to each observed
+ * object. Once attached, the observer converts the target
+ * object's property keys into getter/setters that
+ * collect dependencies and dispatch updates.
+ */
+var Observer = function Observer (value) {
+  this.value = value;
+  this.dep = new Dep();
+  this.vmCount = 0;
+  def(value, '__ob__', this);
+  if (Array.isArray(value)) {
+    if (hasProto) {
+      protoAugment(value, arrayMethods);
+    } else {
+      copyAugment(value, arrayMethods, arrayKeys);
+    }
+    this.observeArray(value);
+  } else {
+    this.walk(value);
+  }
+};
+
+/**
+ * Walk through all properties and convert them into
+ * getter/setters. This method should only be called when
+ * value type is Object.
+ */
+Observer.prototype.walk = function walk (obj) {
+  var keys = Object.keys(obj);
+  for (var i = 0; i < keys.length; i++) {
+    defineReactive$$1(obj, keys[i]);
+  }
+};
+
+/**
+ * Observe a list of Array items.
+ */
+Observer.prototype.observeArray = function observeArray (items) {
+  for (var i = 0, l = items.length; i < l; i++) {
+    observe(items[i]);
+  }
+};
+
+// helpers
+
+/**
+ * Augment a target Object or Array by intercepting
+ * the prototype chain using __proto__
+ */
+function protoAugment (target, src) {
+  /* eslint-disable no-proto */
+  target.__proto__ = src;
+  /* eslint-enable no-proto */
+}
+
+/**
+ * Augment a target Object or Array by defining
+ * hidden properties.
+ */
+/* istanbul ignore next */
+function copyAugment (target, src, keys) {
+  for (var i = 0, l = keys.length; i < l; i++) {
+    var key = keys[i];
+    def(target, key, src[key]);
+  }
+}
+
+/**
+ * Attempt to create an observer instance for a value,
+ * returns the new observer if successfully observed,
+ * or the existing observer if the value already has one.
+ */
+function observe (value, asRootData) {
+  if (!isObject(value) || value instanceof VNode) {
+    return
+  }
+  var ob;
+  if (hasOwn(value, '__ob__') && value.__ob__ instanceof Observer) {
+    ob = value.__ob__;
+  } else if (
+    shouldObserve &&
+    !isServerRendering() &&
+    (Array.isArray(value) || isPlainObject(value)) &&
+    Object.isExtensible(value) &&
+    !value._isVue
+  ) {
+    ob = new Observer(value);
+  }
+  if (asRootData && ob) {
+    ob.vmCount++;
+  }
+  return ob
+}
+
+/**
+ * Define a reactive property on an Object.
+ */
+function defineReactive$$1 (
+  obj,
+  key,
+  val,
+  customSetter,
+  shallow
+) {
+  var dep = new Dep();
+
+  var property = Object.getOwnPropertyDescriptor(obj, key);
+  if (property && property.configurable === false) {
+    return
+  }
+
+  // cater for pre-defined getter/setters
+  var getter = property && property.get;
+  var setter = property && property.set;
+  if ((!getter || setter) && arguments.length === 2) {
+    val = obj[key];
+  }
+
+  var childOb = !shallow && observe(val);
+  Object.defineProperty(obj, key, {
+    enumerable: true,
+    configurable: true,
+    get: function reactiveGetter () {
+      var value = getter ? getter.call(obj) : val;
+      if (Dep.target) {
+        dep.depend();
+        if (childOb) {
+          childOb.dep.depend();
+          if (Array.isArray(value)) {
+            dependArray(value);
+          }
+        }
+      }
+      return value
+    },
+    set: function reactiveSetter (newVal) {
+      var value = getter ? getter.call(obj) : val;
+      /* eslint-disable no-self-compare */
+      if (newVal === value || (newVal !== newVal && value !== value)) {
+        return
+      }
+      /* eslint-enable no-self-compare */
+      if ( true && customSetter) {
+        customSetter();
+      }
+      // #7981: for accessor properties without setter
+      if (getter && !setter) { return }
+      if (setter) {
+        setter.call(obj, newVal);
+      } else {
+        val = newVal;
+      }
+      childOb = !shallow && observe(newVal);
+      dep.notify();
+    }
+  });
+}
+
+/**
+ * Set a property on an object. Adds the new property and
+ * triggers change notification if the property doesn't
+ * already exist.
+ */
+function set (target, key, val) {
+  if ( true &&
+    (isUndef(target) || isPrimitive(target))
+  ) {
+    warn(("Cannot set reactive property on undefined, null, or primitive value: " + ((target))));
+  }
+  if (Array.isArray(target) && isValidArrayIndex(key)) {
+    target.length = Math.max(target.length, key);
+    target.splice(key, 1, val);
+    return val
+  }
+  if (key in target && !(key in Object.prototype)) {
+    target[key] = val;
+    return val
+  }
+  var ob = (target).__ob__;
+  if (target._isVue || (ob && ob.vmCount)) {
+     true && warn(
+      'Avoid adding reactive properties to a Vue instance or its root $data ' +
+      'at runtime - declare it upfront in the data option.'
+    );
+    return val
+  }
+  if (!ob) {
+    target[key] = val;
+    return val
+  }
+  defineReactive$$1(ob.value, key, val);
+  ob.dep.notify();
+  return val
+}
+
+/**
+ * Delete a property and trigger change if necessary.
+ */
+function del (target, key) {
+  if ( true &&
+    (isUndef(target) || isPrimitive(target))
+  ) {
+    warn(("Cannot delete reactive property on undefined, null, or primitive value: " + ((target))));
+  }
+  if (Array.isArray(target) && isValidArrayIndex(key)) {
+    target.splice(key, 1);
+    return
+  }
+  var ob = (target).__ob__;
+  if (target._isVue || (ob && ob.vmCount)) {
+     true && warn(
+      'Avoid deleting properties on a Vue instance or its root $data ' +
+      '- just set it to null.'
+    );
+    return
+  }
+  if (!hasOwn(target, key)) {
+    return
+  }
+  delete target[key];
+  if (!ob) {
+    return
+  }
+  ob.dep.notify();
+}
+
+/**
+ * Collect dependencies on array elements when the array is touched, since
+ * we cannot intercept array element access like property getters.
+ */
+function dependArray (value) {
+  for (var e = (void 0), i = 0, l = value.length; i < l; i++) {
+    e = value[i];
+    e && e.__ob__ && e.__ob__.dep.depend();
+    if (Array.isArray(e)) {
+      dependArray(e);
+    }
+  }
+}
+
+/*  */
+
+/**
+ * Option overwriting strategies are functions that handle
+ * how to merge a parent option value and a child option
+ * value into the final value.
+ */
+var strats = config.optionMergeStrategies;
+
+/**
+ * Options with restrictions
+ */
+if (true) {
+  strats.el = strats.propsData = function (parent, child, vm, key) {
+    if (!vm) {
+      warn(
+        "option \"" + key + "\" can only be used during instance " +
+        'creation with the `new` keyword.'
+      );
+    }
+    return defaultStrat(parent, child)
+  };
+}
+
+/**
+ * Helper that recursively merges two data objects together.
+ */
+function mergeData (to, from) {
+  if (!from) { return to }
+  var key, toVal, fromVal;
+
+  var keys = hasSymbol
+    ? Reflect.ownKeys(from)
+    : Object.keys(from);
+
+  for (var i = 0; i < keys.length; i++) {
+    key = keys[i];
+    // in case the object is already observed...
+    if (key === '__ob__') { continue }
+    toVal = to[key];
+    fromVal = from[key];
+    if (!hasOwn(to, key)) {
+      set(to, key, fromVal);
+    } else if (
+      toVal !== fromVal &&
+      isPlainObject(toVal) &&
+      isPlainObject(fromVal)
+    ) {
+      mergeData(toVal, fromVal);
+    }
+  }
+  return to
+}
+
+/**
+ * Data
+ */
+function mergeDataOrFn (
+  parentVal,
+  childVal,
+  vm
+) {
+  if (!vm) {
+    // in a Vue.extend merge, both should be functions
+    if (!childVal) {
+      return parentVal
+    }
+    if (!parentVal) {
+      return childVal
+    }
+    // when parentVal & childVal are both present,
+    // we need to return a function that returns the
+    // merged result of both functions... no need to
+    // check if parentVal is a function here because
+    // it has to be a function to pass previous merges.
+    return function mergedDataFn () {
+      return mergeData(
+        typeof childVal === 'function' ? childVal.call(this, this) : childVal,
+        typeof parentVal === 'function' ? parentVal.call(this, this) : parentVal
+      )
+    }
+  } else {
+    return function mergedInstanceDataFn () {
+      // instance merge
+      var instanceData = typeof childVal === 'function'
+        ? childVal.call(vm, vm)
+        : childVal;
+      var defaultData = typeof parentVal === 'function'
+        ? parentVal.call(vm, vm)
+        : parentVal;
+      if (instanceData) {
+        return mergeData(instanceData, defaultData)
+      } else {
+        return defaultData
+      }
+    }
+  }
+}
+
+strats.data = function (
+  parentVal,
+  childVal,
+  vm
+) {
+  if (!vm) {
+    if (childVal && typeof childVal !== 'function') {
+       true && warn(
+        'The "data" option should be a function ' +
+        'that returns a per-instance value in component ' +
+        'definitions.',
+        vm
+      );
+
+      return parentVal
+    }
+    return mergeDataOrFn(parentVal, childVal)
+  }
+
+  return mergeDataOrFn(parentVal, childVal, vm)
+};
+
+/**
+ * Hooks and props are merged as arrays.
+ */
+function mergeHook (
+  parentVal,
+  childVal
+) {
+  var res = childVal
+    ? parentVal
+      ? parentVal.concat(childVal)
+      : Array.isArray(childVal)
+        ? childVal
+        : [childVal]
+    : parentVal;
+  return res
+    ? dedupeHooks(res)
+    : res
+}
+
+function dedupeHooks (hooks) {
+  var res = [];
+  for (var i = 0; i < hooks.length; i++) {
+    if (res.indexOf(hooks[i]) === -1) {
+      res.push(hooks[i]);
+    }
+  }
+  return res
+}
+
+LIFECYCLE_HOOKS.forEach(function (hook) {
+  strats[hook] = mergeHook;
+});
+
+/**
+ * Assets
+ *
+ * When a vm is present (instance creation), we need to do
+ * a three-way merge between constructor options, instance
+ * options and parent options.
+ */
+function mergeAssets (
+  parentVal,
+  childVal,
+  vm,
+  key
+) {
+  var res = Object.create(parentVal || null);
+  if (childVal) {
+     true && assertObjectType(key, childVal, vm);
+    return extend(res, childVal)
+  } else {
+    return res
+  }
+}
+
+ASSET_TYPES.forEach(function (type) {
+  strats[type + 's'] = mergeAssets;
+});
+
+/**
+ * Watchers.
+ *
+ * Watchers hashes should not overwrite one
+ * another, so we merge them as arrays.
+ */
+strats.watch = function (
+  parentVal,
+  childVal,
+  vm,
+  key
+) {
+  // work around Firefox's Object.prototype.watch...
+  if (parentVal === nativeWatch) { parentVal = undefined; }
+  if (childVal === nativeWatch) { childVal = undefined; }
+  /* istanbul ignore if */
+  if (!childVal) { return Object.create(parentVal || null) }
+  if (true) {
+    assertObjectType(key, childVal, vm);
+  }
+  if (!parentVal) { return childVal }
+  var ret = {};
+  extend(ret, parentVal);
+  for (var key$1 in childVal) {
+    var parent = ret[key$1];
+    var child = childVal[key$1];
+    if (parent && !Array.isArray(parent)) {
+      parent = [parent];
+    }
+    ret[key$1] = parent
+      ? parent.concat(child)
+      : Array.isArray(child) ? child : [child];
+  }
+  return ret
+};
+
+/**
+ * Other object hashes.
+ */
+strats.props =
+strats.methods =
+strats.inject =
+strats.computed = function (
+  parentVal,
+  childVal,
+  vm,
+  key
+) {
+  if (childVal && "development" !== 'production') {
+    assertObjectType(key, childVal, vm);
+  }
+  if (!parentVal) { return childVal }
+  var ret = Object.create(null);
+  extend(ret, parentVal);
+  if (childVal) { extend(ret, childVal); }
+  return ret
+};
+strats.provide = mergeDataOrFn;
+
+/**
+ * Default strategy.
+ */
+var defaultStrat = function (parentVal, childVal) {
+  return childVal === undefined
+    ? parentVal
+    : childVal
+};
+
+/**
+ * Validate component names
+ */
+function checkComponents (options) {
+  for (var key in options.components) {
+    validateComponentName(key);
+  }
+}
+
+function validateComponentName (name) {
+  if (!new RegExp(("^[a-zA-Z][\\-\\.0-9_" + (unicodeRegExp.source) + "]*$")).test(name)) {
+    warn(
+      'Invalid component name: "' + name + '". Component names ' +
+      'should conform to valid custom element name in html5 specification.'
+    );
+  }
+  if (isBuiltInTag(name) || config.isReservedTag(name)) {
+    warn(
+      'Do not use built-in or reserved HTML elements as component ' +
+      'id: ' + name
+    );
+  }
+}
+
+/**
+ * Ensure all props option syntax are normalized into the
+ * Object-based format.
+ */
+function normalizeProps (options, vm) {
+  var props = options.props;
+  if (!props) { return }
+  var res = {};
+  var i, val, name;
+  if (Array.isArray(props)) {
+    i = props.length;
+    while (i--) {
+      val = props[i];
+      if (typeof val === 'string') {
+        name = camelize(val);
+        res[name] = { type: null };
+      } else if (true) {
+        warn('props must be strings when using array syntax.');
+      }
+    }
+  } else if (isPlainObject(props)) {
+    for (var key in props) {
+      val = props[key];
+      name = camelize(key);
+      res[name] = isPlainObject(val)
+        ? val
+        : { type: val };
+    }
+  } else if (true) {
+    warn(
+      "Invalid value for option \"props\": expected an Array or an Object, " +
+      "but got " + (toRawType(props)) + ".",
+      vm
+    );
+  }
+  options.props = res;
+}
+
+/**
+ * Normalize all injections into Object-based format
+ */
+function normalizeInject (options, vm) {
+  var inject = options.inject;
+  if (!inject) { return }
+  var normalized = options.inject = {};
+  if (Array.isArray(inject)) {
+    for (var i = 0; i < inject.length; i++) {
+      normalized[inject[i]] = { from: inject[i] };
+    }
+  } else if (isPlainObject(inject)) {
+    for (var key in inject) {
+      var val = inject[key];
+      normalized[key] = isPlainObject(val)
+        ? extend({ from: key }, val)
+        : { from: val };
+    }
+  } else if (true) {
+    warn(
+      "Invalid value for option \"inject\": expected an Array or an Object, " +
+      "but got " + (toRawType(inject)) + ".",
+      vm
+    );
+  }
+}
+
+/**
+ * Normalize raw function directives into object format.
+ */
+function normalizeDirectives (options) {
+  var dirs = options.directives;
+  if (dirs) {
+    for (var key in dirs) {
+      var def$$1 = dirs[key];
+      if (typeof def$$1 === 'function') {
+        dirs[key] = { bind: def$$1, update: def$$1 };
+      }
+    }
+  }
+}
+
+function assertObjectType (name, value, vm) {
+  if (!isPlainObject(value)) {
+    warn(
+      "Invalid value for option \"" + name + "\": expected an Object, " +
+      "but got " + (toRawType(value)) + ".",
+      vm
+    );
+  }
+}
+
+/**
+ * Merge two option objects into a new one.
+ * Core utility used in both instantiation and inheritance.
+ */
+function mergeOptions (
+  parent,
+  child,
+  vm
+) {
+  if (true) {
+    checkComponents(child);
+  }
+
+  if (typeof child === 'function') {
+    child = child.options;
+  }
+
+  normalizeProps(child, vm);
+  normalizeInject(child, vm);
+  normalizeDirectives(child);
+
+  // Apply extends and mixins on the child options,
+  // but only if it is a raw options object that isn't
+  // the result of another mergeOptions call.
+  // Only merged options has the _base property.
+  if (!child._base) {
+    if (child.extends) {
+      parent = mergeOptions(parent, child.extends, vm);
+    }
+    if (child.mixins) {
+      for (var i = 0, l = child.mixins.length; i < l; i++) {
+        parent = mergeOptions(parent, child.mixins[i], vm);
+      }
+    }
+  }
+
+  var options = {};
+  var key;
+  for (key in parent) {
+    mergeField(key);
+  }
+  for (key in child) {
+    if (!hasOwn(parent, key)) {
+      mergeField(key);
+    }
+  }
+  function mergeField (key) {
+    var strat = strats[key] || defaultStrat;
+    options[key] = strat(parent[key], child[key], vm, key);
+  }
+  return options
+}
+
+/**
+ * Resolve an asset.
+ * This function is used because child instances need access
+ * to assets defined in its ancestor chain.
+ */
+function resolveAsset (
+  options,
+  type,
+  id,
+  warnMissing
+) {
+  /* istanbul ignore if */
+  if (typeof id !== 'string') {
+    return
+  }
+  var assets = options[type];
+  // check local registration variations first
+  if (hasOwn(assets, id)) { return assets[id] }
+  var camelizedId = camelize(id);
+  if (hasOwn(assets, camelizedId)) { return assets[camelizedId] }
+  var PascalCaseId = capitalize(camelizedId);
+  if (hasOwn(assets, PascalCaseId)) { return assets[PascalCaseId] }
+  // fallback to prototype chain
+  var res = assets[id] || assets[camelizedId] || assets[PascalCaseId];
+  if ( true && warnMissing && !res) {
+    warn(
+      'Failed to resolve ' + type.slice(0, -1) + ': ' + id,
+      options
+    );
+  }
+  return res
+}
+
+/*  */
+
+
+
+function validateProp (
+  key,
+  propOptions,
+  propsData,
+  vm
+) {
+  var prop = propOptions[key];
+  var absent = !hasOwn(propsData, key);
+  var value = propsData[key];
+  // boolean casting
+  var booleanIndex = getTypeIndex(Boolean, prop.type);
+  if (booleanIndex > -1) {
+    if (absent && !hasOwn(prop, 'default')) {
+      value = false;
+    } else if (value === '' || value === hyphenate(key)) {
+      // only cast empty string / same name to boolean if
+      // boolean has higher priority
+      var stringIndex = getTypeIndex(String, prop.type);
+      if (stringIndex < 0 || booleanIndex < stringIndex) {
+        value = true;
+      }
+    }
+  }
+  // check default value
+  if (value === undefined) {
+    value = getPropDefaultValue(vm, prop, key);
+    // since the default value is a fresh copy,
+    // make sure to observe it.
+    var prevShouldObserve = shouldObserve;
+    toggleObserving(true);
+    observe(value);
+    toggleObserving(prevShouldObserve);
+  }
+  if (
+    true
+  ) {
+    assertProp(prop, key, value, vm, absent);
+  }
+  return value
+}
+
+/**
+ * Get the default value of a prop.
+ */
+function getPropDefaultValue (vm, prop, key) {
+  // no default, return undefined
+  if (!hasOwn(prop, 'default')) {
+    return undefined
+  }
+  var def = prop.default;
+  // warn against non-factory defaults for Object & Array
+  if ( true && isObject(def)) {
+    warn(
+      'Invalid default value for prop "' + key + '": ' +
+      'Props with type Object/Array must use a factory function ' +
+      'to return the default value.',
+      vm
+    );
+  }
+  // the raw prop value was also undefined from previous render,
+  // return previous default value to avoid unnecessary watcher trigger
+  if (vm && vm.$options.propsData &&
+    vm.$options.propsData[key] === undefined &&
+    vm._props[key] !== undefined
+  ) {
+    return vm._props[key]
+  }
+  // call factory function for non-Function types
+  // a value is Function if its prototype is function even across different execution context
+  return typeof def === 'function' && getType(prop.type) !== 'Function'
+    ? def.call(vm)
+    : def
+}
+
+/**
+ * Assert whether a prop is valid.
+ */
+function assertProp (
+  prop,
+  name,
+  value,
+  vm,
+  absent
+) {
+  if (prop.required && absent) {
+    warn(
+      'Missing required prop: "' + name + '"',
+      vm
+    );
+    return
+  }
+  if (value == null && !prop.required) {
+    return
+  }
+  var type = prop.type;
+  var valid = !type || type === true;
+  var expectedTypes = [];
+  if (type) {
+    if (!Array.isArray(type)) {
+      type = [type];
+    }
+    for (var i = 0; i < type.length && !valid; i++) {
+      var assertedType = assertType(value, type[i]);
+      expectedTypes.push(assertedType.expectedType || '');
+      valid = assertedType.valid;
+    }
+  }
+
+  if (!valid) {
+    warn(
+      getInvalidTypeMessage(name, value, expectedTypes),
+      vm
+    );
+    return
+  }
+  var validator = prop.validator;
+  if (validator) {
+    if (!validator(value)) {
+      warn(
+        'Invalid prop: custom validator check failed for prop "' + name + '".',
+        vm
+      );
+    }
+  }
+}
+
+var simpleCheckRE = /^(String|Number|Boolean|Function|Symbol)$/;
+
+function assertType (value, type) {
+  var valid;
+  var expectedType = getType(type);
+  if (simpleCheckRE.test(expectedType)) {
+    var t = typeof value;
+    valid = t === expectedType.toLowerCase();
+    // for primitive wrapper objects
+    if (!valid && t === 'object') {
+      valid = value instanceof type;
+    }
+  } else if (expectedType === 'Object') {
+    valid = isPlainObject(value);
+  } else if (expectedType === 'Array') {
+    valid = Array.isArray(value);
+  } else {
+    valid = value instanceof type;
+  }
+  return {
+    valid: valid,
+    expectedType: expectedType
+  }
+}
+
+/**
+ * Use function string name to check built-in types,
+ * because a simple equality check will fail when running
+ * across different vms / iframes.
+ */
+function getType (fn) {
+  var match = fn && fn.toString().match(/^\s*function (\w+)/);
+  return match ? match[1] : ''
+}
+
+function isSameType (a, b) {
+  return getType(a) === getType(b)
+}
+
+function getTypeIndex (type, expectedTypes) {
+  if (!Array.isArray(expectedTypes)) {
+    return isSameType(expectedTypes, type) ? 0 : -1
+  }
+  for (var i = 0, len = expectedTypes.length; i < len; i++) {
+    if (isSameType(expectedTypes[i], type)) {
+      return i
+    }
+  }
+  return -1
+}
+
+function getInvalidTypeMessage (name, value, expectedTypes) {
+  var message = "Invalid prop: type check failed for prop \"" + name + "\"." +
+    " Expected " + (expectedTypes.map(capitalize).join(', '));
+  var expectedType = expectedTypes[0];
+  var receivedType = toRawType(value);
+  var expectedValue = styleValue(value, expectedType);
+  var receivedValue = styleValue(value, receivedType);
+  // check if we need to specify expected value
+  if (expectedTypes.length === 1 &&
+      isExplicable(expectedType) &&
+      !isBoolean(expectedType, receivedType)) {
+    message += " with value " + expectedValue;
+  }
+  message += ", got " + receivedType + " ";
+  // check if we need to specify received value
+  if (isExplicable(receivedType)) {
+    message += "with value " + receivedValue + ".";
+  }
+  return message
+}
+
+function styleValue (value, type) {
+  if (type === 'String') {
+    return ("\"" + value + "\"")
+  } else if (type === 'Number') {
+    return ("" + (Number(value)))
+  } else {
+    return ("" + value)
+  }
+}
+
+function isExplicable (value) {
+  var explicitTypes = ['string', 'number', 'boolean'];
+  return explicitTypes.some(function (elem) { return value.toLowerCase() === elem; })
+}
+
+function isBoolean () {
+  var args = [], len = arguments.length;
+  while ( len-- ) args[ len ] = arguments[ len ];
+
+  return args.some(function (elem) { return elem.toLowerCase() === 'boolean'; })
+}
+
+/*  */
+
+function handleError (err, vm, info) {
+  // Deactivate deps tracking while processing error handler to avoid possible infinite rendering.
+  // See: https://github.com/vuejs/vuex/issues/1505
+  pushTarget();
+  try {
+    if (vm) {
+      var cur = vm;
+      while ((cur = cur.$parent)) {
+        var hooks = cur.$options.errorCaptured;
+        if (hooks) {
+          for (var i = 0; i < hooks.length; i++) {
+            try {
+              var capture = hooks[i].call(cur, err, vm, info) === false;
+              if (capture) { return }
+            } catch (e) {
+              globalHandleError(e, cur, 'errorCaptured hook');
+            }
+          }
+        }
+      }
+    }
+    globalHandleError(err, vm, info);
+  } finally {
+    popTarget();
+  }
+}
+
+function invokeWithErrorHandling (
+  handler,
+  context,
+  args,
+  vm,
+  info
+) {
+  var res;
+  try {
+    res = args ? handler.apply(context, args) : handler.call(context);
+    if (res && !res._isVue && isPromise(res) && !res._handled) {
+      res.catch(function (e) { return handleError(e, vm, info + " (Promise/async)"); });
+      // issue #9511
+      // avoid catch triggering multiple times when nested calls
+      res._handled = true;
+    }
+  } catch (e) {
+    handleError(e, vm, info);
+  }
+  return res
+}
+
+function globalHandleError (err, vm, info) {
+  if (config.errorHandler) {
+    try {
+      return config.errorHandler.call(null, err, vm, info)
+    } catch (e) {
+      // if the user intentionally throws the original error in the handler,
+      // do not log it twice
+      if (e !== err) {
+        logError(e, null, 'config.errorHandler');
+      }
+    }
+  }
+  logError(err, vm, info);
+}
+
+function logError (err, vm, info) {
+  if (true) {
+    warn(("Error in " + info + ": \"" + (err.toString()) + "\""), vm);
+  }
+  /* istanbul ignore else */
+  if ((inBrowser || inWeex) && typeof console !== 'undefined') {
+    console.error(err);
+  } else {
+    throw err
+  }
+}
+
+/*  */
+
+var isUsingMicroTask = false;
+
+var callbacks = [];
+var pending = false;
+
+function flushCallbacks () {
+  pending = false;
+  var copies = callbacks.slice(0);
+  callbacks.length = 0;
+  for (var i = 0; i < copies.length; i++) {
+    copies[i]();
+  }
+}
+
+// Here we have async deferring wrappers using microtasks.
+// In 2.5 we used (macro) tasks (in combination with microtasks).
+// However, it has subtle problems when state is changed right before repaint
+// (e.g. #6813, out-in transitions).
+// Also, using (macro) tasks in event handler would cause some weird behaviors
+// that cannot be circumvented (e.g. #7109, #7153, #7546, #7834, #8109).
+// So we now use microtasks everywhere, again.
+// A major drawback of this tradeoff is that there are some scenarios
+// where microtasks have too high a priority and fire in between supposedly
+// sequential events (e.g. #4521, #6690, which have workarounds)
+// or even between bubbling of the same event (#6566).
+var timerFunc;
+
+// The nextTick behavior leverages the microtask queue, which can be accessed
+// via either native Promise.then or MutationObserver.
+// MutationObserver has wider support, however it is seriously bugged in
+// UIWebView in iOS >= 9.3.3 when triggered in touch event handlers. It
+// completely stops working after triggering a few times... so, if native
+// Promise is available, we will use it:
+/* istanbul ignore next, $flow-disable-line */
+if (typeof Promise !== 'undefined' && isNative(Promise)) {
+  var p = Promise.resolve();
+  timerFunc = function () {
+    p.then(flushCallbacks);
+    // In problematic UIWebViews, Promise.then doesn't completely break, but
+    // it can get stuck in a weird state where callbacks are pushed into the
+    // microtask queue but the queue isn't being flushed, until the browser
+    // needs to do some other work, e.g. handle a timer. Therefore we can
+    // "force" the microtask queue to be flushed by adding an empty timer.
+    if (isIOS) { setTimeout(noop); }
+  };
+  isUsingMicroTask = true;
+} else if (!isIE && typeof MutationObserver !== 'undefined' && (
+  isNative(MutationObserver) ||
+  // PhantomJS and iOS 7.x
+  MutationObserver.toString() === '[object MutationObserverConstructor]'
+)) {
+  // Use MutationObserver where native Promise is not available,
+  // e.g. PhantomJS, iOS7, Android 4.4
+  // (#6466 MutationObserver is unreliable in IE11)
+  var counter = 1;
+  var observer = new MutationObserver(flushCallbacks);
+  var textNode = document.createTextNode(String(counter));
+  observer.observe(textNode, {
+    characterData: true
+  });
+  timerFunc = function () {
+    counter = (counter + 1) % 2;
+    textNode.data = String(counter);
+  };
+  isUsingMicroTask = true;
+} else if (typeof setImmediate !== 'undefined' && isNative(setImmediate)) {
+  // Fallback to setImmediate.
+  // Technically it leverages the (macro) task queue,
+  // but it is still a better choice than setTimeout.
+  timerFunc = function () {
+    setImmediate(flushCallbacks);
+  };
+} else {
+  // Fallback to setTimeout.
+  timerFunc = function () {
+    setTimeout(flushCallbacks, 0);
+  };
+}
+
+function nextTick (cb, ctx) {
+  var _resolve;
+  callbacks.push(function () {
+    if (cb) {
+      try {
+        cb.call(ctx);
+      } catch (e) {
+        handleError(e, ctx, 'nextTick');
+      }
+    } else if (_resolve) {
+      _resolve(ctx);
+    }
+  });
+  if (!pending) {
+    pending = true;
+    timerFunc();
+  }
+  // $flow-disable-line
+  if (!cb && typeof Promise !== 'undefined') {
+    return new Promise(function (resolve) {
+      _resolve = resolve;
+    })
+  }
+}
+
+/*  */
+
+/* not type checking this file because flow doesn't play well with Proxy */
+
+var initProxy;
+
+if (true) {
+  var allowedGlobals = makeMap(
+    'Infinity,undefined,NaN,isFinite,isNaN,' +
+    'parseFloat,parseInt,decodeURI,decodeURIComponent,encodeURI,encodeURIComponent,' +
+    'Math,Number,Date,Array,Object,Boolean,String,RegExp,Map,Set,JSON,Intl,' +
+    'require' // for Webpack/Browserify
+  );
+
+  var warnNonPresent = function (target, key) {
+    warn(
+      "Property or method \"" + key + "\" is not defined on the instance but " +
+      'referenced during render. Make sure that this property is reactive, ' +
+      'either in the data option, or for class-based components, by ' +
+      'initializing the property. ' +
+      'See: https://vuejs.org/v2/guide/reactivity.html#Declaring-Reactive-Properties.',
+      target
+    );
+  };
+
+  var warnReservedPrefix = function (target, key) {
+    warn(
+      "Property \"" + key + "\" must be accessed with \"$data." + key + "\" because " +
+      'properties starting with "$" or "_" are not proxied in the Vue instance to ' +
+      'prevent conflicts with Vue internals. ' +
+      'See: https://vuejs.org/v2/api/#data',
+      target
+    );
+  };
+
+  var hasProxy =
+    typeof Proxy !== 'undefined' && isNative(Proxy);
+
+  if (hasProxy) {
+    var isBuiltInModifier = makeMap('stop,prevent,self,ctrl,shift,alt,meta,exact');
+    config.keyCodes = new Proxy(config.keyCodes, {
+      set: function set (target, key, value) {
+        if (isBuiltInModifier(key)) {
+          warn(("Avoid overwriting built-in modifier in config.keyCodes: ." + key));
+          return false
+        } else {
+          target[key] = value;
+          return true
+        }
+      }
+    });
+  }
+
+  var hasHandler = {
+    has: function has (target, key) {
+      var has = key in target;
+      var isAllowed = allowedGlobals(key) ||
+        (typeof key === 'string' && key.charAt(0) === '_' && !(key in target.$data));
+      if (!has && !isAllowed) {
+        if (key in target.$data) { warnReservedPrefix(target, key); }
+        else { warnNonPresent(target, key); }
+      }
+      return has || !isAllowed
+    }
+  };
+
+  var getHandler = {
+    get: function get (target, key) {
+      if (typeof key === 'string' && !(key in target)) {
+        if (key in target.$data) { warnReservedPrefix(target, key); }
+        else { warnNonPresent(target, key); }
+      }
+      return target[key]
+    }
+  };
+
+  initProxy = function initProxy (vm) {
+    if (hasProxy) {
+      // determine which proxy handler to use
+      var options = vm.$options;
+      var handlers = options.render && options.render._withStripped
+        ? getHandler
+        : hasHandler;
+      vm._renderProxy = new Proxy(vm, handlers);
+    } else {
+      vm._renderProxy = vm;
+    }
+  };
+}
+
+/*  */
+
+var seenObjects = new _Set();
+
+/**
+ * Recursively traverse an object to evoke all converted
+ * getters, so that every nested property inside the object
+ * is collected as a "deep" dependency.
+ */
+function traverse (val) {
+  _traverse(val, seenObjects);
+  seenObjects.clear();
+}
+
+function _traverse (val, seen) {
+  var i, keys;
+  var isA = Array.isArray(val);
+  if ((!isA && !isObject(val)) || Object.isFrozen(val) || val instanceof VNode) {
+    return
+  }
+  if (val.__ob__) {
+    var depId = val.__ob__.dep.id;
+    if (seen.has(depId)) {
+      return
+    }
+    seen.add(depId);
+  }
+  if (isA) {
+    i = val.length;
+    while (i--) { _traverse(val[i], seen); }
+  } else {
+    keys = Object.keys(val);
+    i = keys.length;
+    while (i--) { _traverse(val[keys[i]], seen); }
+  }
+}
+
+var mark;
+var measure;
+
+if (true) {
+  var perf = inBrowser && window.performance;
+  /* istanbul ignore if */
+  if (
+    perf &&
+    perf.mark &&
+    perf.measure &&
+    perf.clearMarks &&
+    perf.clearMeasures
+  ) {
+    mark = function (tag) { return perf.mark(tag); };
+    measure = function (name, startTag, endTag) {
+      perf.measure(name, startTag, endTag);
+      perf.clearMarks(startTag);
+      perf.clearMarks(endTag);
+      // perf.clearMeasures(name)
+    };
+  }
+}
+
+/*  */
+
+var normalizeEvent = cached(function (name) {
+  var passive = name.charAt(0) === '&';
+  name = passive ? name.slice(1) : name;
+  var once$$1 = name.charAt(0) === '~'; // Prefixed last, checked first
+  name = once$$1 ? name.slice(1) : name;
+  var capture = name.charAt(0) === '!';
+  name = capture ? name.slice(1) : name;
+  return {
+    name: name,
+    once: once$$1,
+    capture: capture,
+    passive: passive
+  }
+});
+
+function createFnInvoker (fns, vm) {
+  function invoker () {
+    var arguments$1 = arguments;
+
+    var fns = invoker.fns;
+    if (Array.isArray(fns)) {
+      var cloned = fns.slice();
+      for (var i = 0; i < cloned.length; i++) {
+        invokeWithErrorHandling(cloned[i], null, arguments$1, vm, "v-on handler");
+      }
+    } else {
+      // return handler return value for single handlers
+      return invokeWithErrorHandling(fns, null, arguments, vm, "v-on handler")
+    }
+  }
+  invoker.fns = fns;
+  return invoker
+}
+
+function updateListeners (
+  on,
+  oldOn,
+  add,
+  remove$$1,
+  createOnceHandler,
+  vm
+) {
+  var name, def$$1, cur, old, event;
+  for (name in on) {
+    def$$1 = cur = on[name];
+    old = oldOn[name];
+    event = normalizeEvent(name);
+    if (isUndef(cur)) {
+       true && warn(
+        "Invalid handler for event \"" + (event.name) + "\": got " + String(cur),
+        vm
+      );
+    } else if (isUndef(old)) {
+      if (isUndef(cur.fns)) {
+        cur = on[name] = createFnInvoker(cur, vm);
+      }
+      if (isTrue(event.once)) {
+        cur = on[name] = createOnceHandler(event.name, cur, event.capture);
+      }
+      add(event.name, cur, event.capture, event.passive, event.params);
+    } else if (cur !== old) {
+      old.fns = cur;
+      on[name] = old;
+    }
+  }
+  for (name in oldOn) {
+    if (isUndef(on[name])) {
+      event = normalizeEvent(name);
+      remove$$1(event.name, oldOn[name], event.capture);
+    }
+  }
+}
+
+/*  */
+
+function mergeVNodeHook (def, hookKey, hook) {
+  if (def instanceof VNode) {
+    def = def.data.hook || (def.data.hook = {});
+  }
+  var invoker;
+  var oldHook = def[hookKey];
+
+  function wrappedHook () {
+    hook.apply(this, arguments);
+    // important: remove merged hook to ensure it's called only once
+    // and prevent memory leak
+    remove(invoker.fns, wrappedHook);
+  }
+
+  if (isUndef(oldHook)) {
+    // no existing hook
+    invoker = createFnInvoker([wrappedHook]);
+  } else {
+    /* istanbul ignore if */
+    if (isDef(oldHook.fns) && isTrue(oldHook.merged)) {
+      // already a merged invoker
+      invoker = oldHook;
+      invoker.fns.push(wrappedHook);
+    } else {
+      // existing plain hook
+      invoker = createFnInvoker([oldHook, wrappedHook]);
+    }
+  }
+
+  invoker.merged = true;
+  def[hookKey] = invoker;
+}
+
+/*  */
+
+function extractPropsFromVNodeData (
+  data,
+  Ctor,
+  tag
+) {
+  // we are only extracting raw values here.
+  // validation and default values are handled in the child
+  // component itself.
+  var propOptions = Ctor.options.props;
+  if (isUndef(propOptions)) {
+    return
+  }
+  var res = {};
+  var attrs = data.attrs;
+  var props = data.props;
+  if (isDef(attrs) || isDef(props)) {
+    for (var key in propOptions) {
+      var altKey = hyphenate(key);
+      if (true) {
+        var keyInLowerCase = key.toLowerCase();
+        if (
+          key !== keyInLowerCase &&
+          attrs && hasOwn(attrs, keyInLowerCase)
+        ) {
+          tip(
+            "Prop \"" + keyInLowerCase + "\" is passed to component " +
+            (formatComponentName(tag || Ctor)) + ", but the declared prop name is" +
+            " \"" + key + "\". " +
+            "Note that HTML attributes are case-insensitive and camelCased " +
+            "props need to use their kebab-case equivalents when using in-DOM " +
+            "templates. You should probably use \"" + altKey + "\" instead of \"" + key + "\"."
+          );
+        }
+      }
+      checkProp(res, props, key, altKey, true) ||
+      checkProp(res, attrs, key, altKey, false);
+    }
+  }
+  return res
+}
+
+function checkProp (
+  res,
+  hash,
+  key,
+  altKey,
+  preserve
+) {
+  if (isDef(hash)) {
+    if (hasOwn(hash, key)) {
+      res[key] = hash[key];
+      if (!preserve) {
+        delete hash[key];
+      }
+      return true
+    } else if (hasOwn(hash, altKey)) {
+      res[key] = hash[altKey];
+      if (!preserve) {
+        delete hash[altKey];
+      }
+      return true
+    }
+  }
+  return false
+}
+
+/*  */
+
+// The template compiler attempts to minimize the need for normalization by
+// statically analyzing the template at compile time.
+//
+// For plain HTML markup, normalization can be completely skipped because the
+// generated render function is guaranteed to return Array<VNode>. There are
+// two cases where extra normalization is needed:
+
+// 1. When the children contains components - because a functional component
+// may return an Array instead of a single root. In this case, just a simple
+// normalization is needed - if any child is an Array, we flatten the whole
+// thing with Array.prototype.concat. It is guaranteed to be only 1-level deep
+// because functional components already normalize their own children.
+function simpleNormalizeChildren (children) {
+  for (var i = 0; i < children.length; i++) {
+    if (Array.isArray(children[i])) {
+      return Array.prototype.concat.apply([], children)
+    }
+  }
+  return children
+}
+
+// 2. When the children contains constructs that always generated nested Arrays,
+// e.g. <template>, <slot>, v-for, or when the children is provided by user
+// with hand-written render functions / JSX. In such cases a full normalization
+// is needed to cater to all possible types of children values.
+function normalizeChildren (children) {
+  return isPrimitive(children)
+    ? [createTextVNode(children)]
+    : Array.isArray(children)
+      ? normalizeArrayChildren(children)
+      : undefined
+}
+
+function isTextNode (node) {
+  return isDef(node) && isDef(node.text) && isFalse(node.isComment)
+}
+
+function normalizeArrayChildren (children, nestedIndex) {
+  var res = [];
+  var i, c, lastIndex, last;
+  for (i = 0; i < children.length; i++) {
+    c = children[i];
+    if (isUndef(c) || typeof c === 'boolean') { continue }
+    lastIndex = res.length - 1;
+    last = res[lastIndex];
+    //  nested
+    if (Array.isArray(c)) {
+      if (c.length > 0) {
+        c = normalizeArrayChildren(c, ((nestedIndex || '') + "_" + i));
+        // merge adjacent text nodes
+        if (isTextNode(c[0]) && isTextNode(last)) {
+          res[lastIndex] = createTextVNode(last.text + (c[0]).text);
+          c.shift();
+        }
+        res.push.apply(res, c);
+      }
+    } else if (isPrimitive(c)) {
+      if (isTextNode(last)) {
+        // merge adjacent text nodes
+        // this is necessary for SSR hydration because text nodes are
+        // essentially merged when rendered to HTML strings
+        res[lastIndex] = createTextVNode(last.text + c);
+      } else if (c !== '') {
+        // convert primitive to vnode
+        res.push(createTextVNode(c));
+      }
+    } else {
+      if (isTextNode(c) && isTextNode(last)) {
+        // merge adjacent text nodes
+        res[lastIndex] = createTextVNode(last.text + c.text);
+      } else {
+        // default key for nested array children (likely generated by v-for)
+        if (isTrue(children._isVList) &&
+          isDef(c.tag) &&
+          isUndef(c.key) &&
+          isDef(nestedIndex)) {
+          c.key = "__vlist" + nestedIndex + "_" + i + "__";
+        }
+        res.push(c);
+      }
+    }
+  }
+  return res
+}
+
+/*  */
+
+function initProvide (vm) {
+  var provide = vm.$options.provide;
+  if (provide) {
+    vm._provided = typeof provide === 'function'
+      ? provide.call(vm)
+      : provide;
+  }
+}
+
+function initInjections (vm) {
+  var result = resolveInject(vm.$options.inject, vm);
+  if (result) {
+    toggleObserving(false);
+    Object.keys(result).forEach(function (key) {
+      /* istanbul ignore else */
+      if (true) {
+        defineReactive$$1(vm, key, result[key], function () {
+          warn(
+            "Avoid mutating an injected value directly since the changes will be " +
+            "overwritten whenever the provided component re-renders. " +
+            "injection being mutated: \"" + key + "\"",
+            vm
+          );
+        });
+      } else {}
+    });
+    toggleObserving(true);
+  }
+}
+
+function resolveInject (inject, vm) {
+  if (inject) {
+    // inject is :any because flow is not smart enough to figure out cached
+    var result = Object.create(null);
+    var keys = hasSymbol
+      ? Reflect.ownKeys(inject)
+      : Object.keys(inject);
+
+    for (var i = 0; i < keys.length; i++) {
+      var key = keys[i];
+      // #6574 in case the inject object is observed...
+      if (key === '__ob__') { continue }
+      var provideKey = inject[key].from;
+      var source = vm;
+      while (source) {
+        if (source._provided && hasOwn(source._provided, provideKey)) {
+          result[key] = source._provided[provideKey];
+          break
+        }
+        source = source.$parent;
+      }
+      if (!source) {
+        if ('default' in inject[key]) {
+          var provideDefault = inject[key].default;
+          result[key] = typeof provideDefault === 'function'
+            ? provideDefault.call(vm)
+            : provideDefault;
+        } else if (true) {
+          warn(("Injection \"" + key + "\" not found"), vm);
+        }
+      }
+    }
+    return result
+  }
+}
+
+/*  */
+
+
+
+/**
+ * Runtime helper for resolving raw children VNodes into a slot object.
+ */
+function resolveSlots (
+  children,
+  context
+) {
+  if (!children || !children.length) {
+    return {}
+  }
+  var slots = {};
+  for (var i = 0, l = children.length; i < l; i++) {
+    var child = children[i];
+    var data = child.data;
+    // remove slot attribute if the node is resolved as a Vue slot node
+    if (data && data.attrs && data.attrs.slot) {
+      delete data.attrs.slot;
+    }
+    // named slots should only be respected if the vnode was rendered in the
+    // same context.
+    if ((child.context === context || child.fnContext === context) &&
+      data && data.slot != null
+    ) {
+      var name = data.slot;
+      var slot = (slots[name] || (slots[name] = []));
+      if (child.tag === 'template') {
+        slot.push.apply(slot, child.children || []);
+      } else {
+        slot.push(child);
+      }
+    } else {
+      (slots.default || (slots.default = [])).push(child);
+    }
+  }
+  // ignore slots that contains only whitespace
+  for (var name$1 in slots) {
+    if (slots[name$1].every(isWhitespace)) {
+      delete slots[name$1];
+    }
+  }
+  return slots
+}
+
+function isWhitespace (node) {
+  return (node.isComment && !node.asyncFactory) || node.text === ' '
+}
+
+/*  */
+
+function normalizeScopedSlots (
+  slots,
+  normalSlots,
+  prevSlots
+) {
+  var res;
+  var hasNormalSlots = Object.keys(normalSlots).length > 0;
+  var isStable = slots ? !!slots.$stable : !hasNormalSlots;
+  var key = slots && slots.$key;
+  if (!slots) {
+    res = {};
+  } else if (slots._normalized) {
+    // fast path 1: child component re-render only, parent did not change
+    return slots._normalized
+  } else if (
+    isStable &&
+    prevSlots &&
+    prevSlots !== emptyObject &&
+    key === prevSlots.$key &&
+    !hasNormalSlots &&
+    !prevSlots.$hasNormal
+  ) {
+    // fast path 2: stable scoped slots w/ no normal slots to proxy,
+    // only need to normalize once
+    return prevSlots
+  } else {
+    res = {};
+    for (var key$1 in slots) {
+      if (slots[key$1] && key$1[0] !== '$') {
+        res[key$1] = normalizeScopedSlot(normalSlots, key$1, slots[key$1]);
+      }
+    }
+  }
+  // expose normal slots on scopedSlots
+  for (var key$2 in normalSlots) {
+    if (!(key$2 in res)) {
+      res[key$2] = proxyNormalSlot(normalSlots, key$2);
+    }
+  }
+  // avoriaz seems to mock a non-extensible $scopedSlots object
+  // and when that is passed down this would cause an error
+  if (slots && Object.isExtensible(slots)) {
+    (slots)._normalized = res;
+  }
+  def(res, '$stable', isStable);
+  def(res, '$key', key);
+  def(res, '$hasNormal', hasNormalSlots);
+  return res
+}
+
+function normalizeScopedSlot(normalSlots, key, fn) {
+  var normalized = function () {
+    var res = arguments.length ? fn.apply(null, arguments) : fn({});
+    res = res && typeof res === 'object' && !Array.isArray(res)
+      ? [res] // single vnode
+      : normalizeChildren(res);
+    return res && (
+      res.length === 0 ||
+      (res.length === 1 && res[0].isComment) // #9658
+    ) ? undefined
+      : res
+  };
+  // this is a slot using the new v-slot syntax without scope. although it is
+  // compiled as a scoped slot, render fn users would expect it to be present
+  // on this.$slots because the usage is semantically a normal slot.
+  if (fn.proxy) {
+    Object.defineProperty(normalSlots, key, {
+      get: normalized,
+      enumerable: true,
+      configurable: true
+    });
+  }
+  return normalized
+}
+
+function proxyNormalSlot(slots, key) {
+  return function () { return slots[key]; }
+}
+
+/*  */
+
+/**
+ * Runtime helper for rendering v-for lists.
+ */
+function renderList (
+  val,
+  render
+) {
+  var ret, i, l, keys, key;
+  if (Array.isArray(val) || typeof val === 'string') {
+    ret = new Array(val.length);
+    for (i = 0, l = val.length; i < l; i++) {
+      ret[i] = render(val[i], i);
+    }
+  } else if (typeof val === 'number') {
+    ret = new Array(val);
+    for (i = 0; i < val; i++) {
+      ret[i] = render(i + 1, i);
+    }
+  } else if (isObject(val)) {
+    if (hasSymbol && val[Symbol.iterator]) {
+      ret = [];
+      var iterator = val[Symbol.iterator]();
+      var result = iterator.next();
+      while (!result.done) {
+        ret.push(render(result.value, ret.length));
+        result = iterator.next();
+      }
+    } else {
+      keys = Object.keys(val);
+      ret = new Array(keys.length);
+      for (i = 0, l = keys.length; i < l; i++) {
+        key = keys[i];
+        ret[i] = render(val[key], key, i);
+      }
+    }
+  }
+  if (!isDef(ret)) {
+    ret = [];
+  }
+  (ret)._isVList = true;
+  return ret
+}
+
+/*  */
+
+/**
+ * Runtime helper for rendering <slot>
+ */
+function renderSlot (
+  name,
+  fallback,
+  props,
+  bindObject
+) {
+  var scopedSlotFn = this.$scopedSlots[name];
+  var nodes;
+  if (scopedSlotFn) { // scoped slot
+    props = props || {};
+    if (bindObject) {
+      if ( true && !isObject(bindObject)) {
+        warn(
+          'slot v-bind without argument expects an Object',
+          this
+        );
+      }
+      props = extend(extend({}, bindObject), props);
+    }
+    nodes = scopedSlotFn(props) || fallback;
+  } else {
+    nodes = this.$slots[name] || fallback;
+  }
+
+  var target = props && props.slot;
+  if (target) {
+    return this.$createElement('template', { slot: target }, nodes)
+  } else {
+    return nodes
+  }
+}
+
+/*  */
+
+/**
+ * Runtime helper for resolving filters
+ */
+function resolveFilter (id) {
+  return resolveAsset(this.$options, 'filters', id, true) || identity
+}
+
+/*  */
+
+function isKeyNotMatch (expect, actual) {
+  if (Array.isArray(expect)) {
+    return expect.indexOf(actual) === -1
+  } else {
+    return expect !== actual
+  }
+}
+
+/**
+ * Runtime helper for checking keyCodes from config.
+ * exposed as Vue.prototype._k
+ * passing in eventKeyName as last argument separately for backwards compat
+ */
+function checkKeyCodes (
+  eventKeyCode,
+  key,
+  builtInKeyCode,
+  eventKeyName,
+  builtInKeyName
+) {
+  var mappedKeyCode = config.keyCodes[key] || builtInKeyCode;
+  if (builtInKeyName && eventKeyName && !config.keyCodes[key]) {
+    return isKeyNotMatch(builtInKeyName, eventKeyName)
+  } else if (mappedKeyCode) {
+    return isKeyNotMatch(mappedKeyCode, eventKeyCode)
+  } else if (eventKeyName) {
+    return hyphenate(eventKeyName) !== key
+  }
+}
+
+/*  */
+
+/**
+ * Runtime helper for merging v-bind="object" into a VNode's data.
+ */
+function bindObjectProps (
+  data,
+  tag,
+  value,
+  asProp,
+  isSync
+) {
+  if (value) {
+    if (!isObject(value)) {
+       true && warn(
+        'v-bind without argument expects an Object or Array value',
+        this
+      );
+    } else {
+      if (Array.isArray(value)) {
+        value = toObject(value);
+      }
+      var hash;
+      var loop = function ( key ) {
+        if (
+          key === 'class' ||
+          key === 'style' ||
+          isReservedAttribute(key)
+        ) {
+          hash = data;
+        } else {
+          var type = data.attrs && data.attrs.type;
+          hash = asProp || config.mustUseProp(tag, type, key)
+            ? data.domProps || (data.domProps = {})
+            : data.attrs || (data.attrs = {});
+        }
+        var camelizedKey = camelize(key);
+        var hyphenatedKey = hyphenate(key);
+        if (!(camelizedKey in hash) && !(hyphenatedKey in hash)) {
+          hash[key] = value[key];
+
+          if (isSync) {
+            var on = data.on || (data.on = {});
+            on[("update:" + key)] = function ($event) {
+              value[key] = $event;
+            };
+          }
+        }
+      };
+
+      for (var key in value) loop( key );
+    }
+  }
+  return data
+}
+
+/*  */
+
+/**
+ * Runtime helper for rendering static trees.
+ */
+function renderStatic (
+  index,
+  isInFor
+) {
+  var cached = this._staticTrees || (this._staticTrees = []);
+  var tree = cached[index];
+  // if has already-rendered static tree and not inside v-for,
+  // we can reuse the same tree.
+  if (tree && !isInFor) {
+    return tree
+  }
+  // otherwise, render a fresh tree.
+  tree = cached[index] = this.$options.staticRenderFns[index].call(
+    this._renderProxy,
+    null,
+    this // for render fns generated for functional component templates
+  );
+  markStatic(tree, ("__static__" + index), false);
+  return tree
+}
+
+/**
+ * Runtime helper for v-once.
+ * Effectively it means marking the node as static with a unique key.
+ */
+function markOnce (
+  tree,
+  index,
+  key
+) {
+  markStatic(tree, ("__once__" + index + (key ? ("_" + key) : "")), true);
+  return tree
+}
+
+function markStatic (
+  tree,
+  key,
+  isOnce
+) {
+  if (Array.isArray(tree)) {
+    for (var i = 0; i < tree.length; i++) {
+      if (tree[i] && typeof tree[i] !== 'string') {
+        markStaticNode(tree[i], (key + "_" + i), isOnce);
+      }
+    }
+  } else {
+    markStaticNode(tree, key, isOnce);
+  }
+}
+
+function markStaticNode (node, key, isOnce) {
+  node.isStatic = true;
+  node.key = key;
+  node.isOnce = isOnce;
+}
+
+/*  */
+
+function bindObjectListeners (data, value) {
+  if (value) {
+    if (!isPlainObject(value)) {
+       true && warn(
+        'v-on without argument expects an Object value',
+        this
+      );
+    } else {
+      var on = data.on = data.on ? extend({}, data.on) : {};
+      for (var key in value) {
+        var existing = on[key];
+        var ours = value[key];
+        on[key] = existing ? [].concat(existing, ours) : ours;
+      }
+    }
+  }
+  return data
+}
+
+/*  */
+
+function resolveScopedSlots (
+  fns, // see flow/vnode
+  res,
+  // the following are added in 2.6
+  hasDynamicKeys,
+  contentHashKey
+) {
+  res = res || { $stable: !hasDynamicKeys };
+  for (var i = 0; i < fns.length; i++) {
+    var slot = fns[i];
+    if (Array.isArray(slot)) {
+      resolveScopedSlots(slot, res, hasDynamicKeys);
+    } else if (slot) {
+      // marker for reverse proxying v-slot without scope on this.$slots
+      if (slot.proxy) {
+        slot.fn.proxy = true;
+      }
+      res[slot.key] = slot.fn;
+    }
+  }
+  if (contentHashKey) {
+    (res).$key = contentHashKey;
+  }
+  return res
+}
+
+/*  */
+
+function bindDynamicKeys (baseObj, values) {
+  for (var i = 0; i < values.length; i += 2) {
+    var key = values[i];
+    if (typeof key === 'string' && key) {
+      baseObj[values[i]] = values[i + 1];
+    } else if ( true && key !== '' && key !== null) {
+      // null is a special value for explicitly removing a binding
+      warn(
+        ("Invalid value for dynamic directive argument (expected string or null): " + key),
+        this
+      );
+    }
+  }
+  return baseObj
+}
+
+// helper to dynamically append modifier runtime markers to event names.
+// ensure only append when value is already string, otherwise it will be cast
+// to string and cause the type check to miss.
+function prependModifier (value, symbol) {
+  return typeof value === 'string' ? symbol + value : value
+}
+
+/*  */
+
+function installRenderHelpers (target) {
+  target._o = markOnce;
+  target._n = toNumber;
+  target._s = toString;
+  target._l = renderList;
+  target._t = renderSlot;
+  target._q = looseEqual;
+  target._i = looseIndexOf;
+  target._m = renderStatic;
+  target._f = resolveFilter;
+  target._k = checkKeyCodes;
+  target._b = bindObjectProps;
+  target._v = createTextVNode;
+  target._e = createEmptyVNode;
+  target._u = resolveScopedSlots;
+  target._g = bindObjectListeners;
+  target._d = bindDynamicKeys;
+  target._p = prependModifier;
+}
+
+/*  */
+
+function FunctionalRenderContext (
+  data,
+  props,
+  children,
+  parent,
+  Ctor
+) {
+  var this$1 = this;
+
+  var options = Ctor.options;
+  // ensure the createElement function in functional components
+  // gets a unique context - this is necessary for correct named slot check
+  var contextVm;
+  if (hasOwn(parent, '_uid')) {
+    contextVm = Object.create(parent);
+    // $flow-disable-line
+    contextVm._original = parent;
+  } else {
+    // the context vm passed in is a functional context as well.
+    // in this case we want to make sure we are able to get a hold to the
+    // real context instance.
+    contextVm = parent;
+    // $flow-disable-line
+    parent = parent._original;
+  }
+  var isCompiled = isTrue(options._compiled);
+  var needNormalization = !isCompiled;
+
+  this.data = data;
+  this.props = props;
+  this.children = children;
+  this.parent = parent;
+  this.listeners = data.on || emptyObject;
+  this.injections = resolveInject(options.inject, parent);
+  this.slots = function () {
+    if (!this$1.$slots) {
+      normalizeScopedSlots(
+        data.scopedSlots,
+        this$1.$slots = resolveSlots(children, parent)
+      );
+    }
+    return this$1.$slots
+  };
+
+  Object.defineProperty(this, 'scopedSlots', ({
+    enumerable: true,
+    get: function get () {
+      return normalizeScopedSlots(data.scopedSlots, this.slots())
+    }
+  }));
+
+  // support for compiled functional template
+  if (isCompiled) {
+    // exposing $options for renderStatic()
+    this.$options = options;
+    // pre-resolve slots for renderSlot()
+    this.$slots = this.slots();
+    this.$scopedSlots = normalizeScopedSlots(data.scopedSlots, this.$slots);
+  }
+
+  if (options._scopeId) {
+    this._c = function (a, b, c, d) {
+      var vnode = createElement(contextVm, a, b, c, d, needNormalization);
+      if (vnode && !Array.isArray(vnode)) {
+        vnode.fnScopeId = options._scopeId;
+        vnode.fnContext = parent;
+      }
+      return vnode
+    };
+  } else {
+    this._c = function (a, b, c, d) { return createElement(contextVm, a, b, c, d, needNormalization); };
+  }
+}
+
+installRenderHelpers(FunctionalRenderContext.prototype);
+
+function createFunctionalComponent (
+  Ctor,
+  propsData,
+  data,
+  contextVm,
+  children
+) {
+  var options = Ctor.options;
+  var props = {};
+  var propOptions = options.props;
+  if (isDef(propOptions)) {
+    for (var key in propOptions) {
+      props[key] = validateProp(key, propOptions, propsData || emptyObject);
+    }
+  } else {
+    if (isDef(data.attrs)) { mergeProps(props, data.attrs); }
+    if (isDef(data.props)) { mergeProps(props, data.props); }
+  }
+
+  var renderContext = new FunctionalRenderContext(
+    data,
+    props,
+    children,
+    contextVm,
+    Ctor
+  );
+
+  var vnode = options.render.call(null, renderContext._c, renderContext);
+
+  if (vnode instanceof VNode) {
+    return cloneAndMarkFunctionalResult(vnode, data, renderContext.parent, options, renderContext)
+  } else if (Array.isArray(vnode)) {
+    var vnodes = normalizeChildren(vnode) || [];
+    var res = new Array(vnodes.length);
+    for (var i = 0; i < vnodes.length; i++) {
+      res[i] = cloneAndMarkFunctionalResult(vnodes[i], data, renderContext.parent, options, renderContext);
+    }
+    return res
+  }
+}
+
+function cloneAndMarkFunctionalResult (vnode, data, contextVm, options, renderContext) {
+  // #7817 clone node before setting fnContext, otherwise if the node is reused
+  // (e.g. it was from a cached normal slot) the fnContext causes named slots
+  // that should not be matched to match.
+  var clone = cloneVNode(vnode);
+  clone.fnContext = contextVm;
+  clone.fnOptions = options;
+  if (true) {
+    (clone.devtoolsMeta = clone.devtoolsMeta || {}).renderContext = renderContext;
+  }
+  if (data.slot) {
+    (clone.data || (clone.data = {})).slot = data.slot;
+  }
+  return clone
+}
+
+function mergeProps (to, from) {
+  for (var key in from) {
+    to[camelize(key)] = from[key];
+  }
+}
+
+/*  */
+
+/*  */
+
+/*  */
+
+/*  */
+
+// inline hooks to be invoked on component VNodes during patch
+var componentVNodeHooks = {
+  init: function init (vnode, hydrating) {
+    if (
+      vnode.componentInstance &&
+      !vnode.componentInstance._isDestroyed &&
+      vnode.data.keepAlive
+    ) {
+      // kept-alive components, treat as a patch
+      var mountedNode = vnode; // work around flow
+      componentVNodeHooks.prepatch(mountedNode, mountedNode);
+    } else {
+      var child = vnode.componentInstance = createComponentInstanceForVnode(
+        vnode,
+        activeInstance
+      );
+      child.$mount(hydrating ? vnode.elm : undefined, hydrating);
+    }
+  },
+
+  prepatch: function prepatch (oldVnode, vnode) {
+    var options = vnode.componentOptions;
+    var child = vnode.componentInstance = oldVnode.componentInstance;
+    updateChildComponent(
+      child,
+      options.propsData, // updated props
+      options.listeners, // updated listeners
+      vnode, // new parent vnode
+      options.children // new children
+    );
+  },
+
+  insert: function insert (vnode) {
+    var context = vnode.context;
+    var componentInstance = vnode.componentInstance;
+    if (!componentInstance._isMounted) {
+      componentInstance._isMounted = true;
+      callHook(componentInstance, 'mounted');
+    }
+    if (vnode.data.keepAlive) {
+      if (context._isMounted) {
+        // vue-router#1212
+        // During updates, a kept-alive component's child components may
+        // change, so directly walking the tree here may call activated hooks
+        // on incorrect children. Instead we push them into a queue which will
+        // be processed after the whole patch process ended.
+        queueActivatedComponent(componentInstance);
+      } else {
+        activateChildComponent(componentInstance, true /* direct */);
+      }
+    }
+  },
+
+  destroy: function destroy (vnode) {
+    var componentInstance = vnode.componentInstance;
+    if (!componentInstance._isDestroyed) {
+      if (!vnode.data.keepAlive) {
+        componentInstance.$destroy();
+      } else {
+        deactivateChildComponent(componentInstance, true /* direct */);
+      }
+    }
+  }
+};
+
+var hooksToMerge = Object.keys(componentVNodeHooks);
+
+function createComponent (
+  Ctor,
+  data,
+  context,
+  children,
+  tag
+) {
+  if (isUndef(Ctor)) {
+    return
+  }
+
+  var baseCtor = context.$options._base;
+
+  // plain options object: turn it into a constructor
+  if (isObject(Ctor)) {
+    Ctor = baseCtor.extend(Ctor);
+  }
+
+  // if at this stage it's not a constructor or an async component factory,
+  // reject.
+  if (typeof Ctor !== 'function') {
+    if (true) {
+      warn(("Invalid Component definition: " + (String(Ctor))), context);
+    }
+    return
+  }
+
+  // async component
+  var asyncFactory;
+  if (isUndef(Ctor.cid)) {
+    asyncFactory = Ctor;
+    Ctor = resolveAsyncComponent(asyncFactory, baseCtor);
+    if (Ctor === undefined) {
+      // return a placeholder node for async component, which is rendered
+      // as a comment node but preserves all the raw information for the node.
+      // the information will be used for async server-rendering and hydration.
+      return createAsyncPlaceholder(
+        asyncFactory,
+        data,
+        context,
+        children,
+        tag
+      )
+    }
+  }
+
+  data = data || {};
+
+  // resolve constructor options in case global mixins are applied after
+  // component constructor creation
+  resolveConstructorOptions(Ctor);
+
+  // transform component v-model data into props & events
+  if (isDef(data.model)) {
+    transformModel(Ctor.options, data);
+  }
+
+  // extract props
+  var propsData = extractPropsFromVNodeData(data, Ctor, tag);
+
+  // functional component
+  if (isTrue(Ctor.options.functional)) {
+    return createFunctionalComponent(Ctor, propsData, data, context, children)
+  }
+
+  // extract listeners, since these needs to be treated as
+  // child component listeners instead of DOM listeners
+  var listeners = data.on;
+  // replace with listeners with .native modifier
+  // so it gets processed during parent component patch.
+  data.on = data.nativeOn;
+
+  if (isTrue(Ctor.options.abstract)) {
+    // abstract components do not keep anything
+    // other than props & listeners & slot
+
+    // work around flow
+    var slot = data.slot;
+    data = {};
+    if (slot) {
+      data.slot = slot;
+    }
+  }
+
+  // install component management hooks onto the placeholder node
+  installComponentHooks(data);
+
+  // return a placeholder vnode
+  var name = Ctor.options.name || tag;
+  var vnode = new VNode(
+    ("vue-component-" + (Ctor.cid) + (name ? ("-" + name) : '')),
+    data, undefined, undefined, undefined, context,
+    { Ctor: Ctor, propsData: propsData, listeners: listeners, tag: tag, children: children },
+    asyncFactory
+  );
+
+  return vnode
+}
+
+function createComponentInstanceForVnode (
+  vnode, // we know it's MountedComponentVNode but flow doesn't
+  parent // activeInstance in lifecycle state
+) {
+  var options = {
+    _isComponent: true,
+    _parentVnode: vnode,
+    parent: parent
+  };
+  // check inline-template render functions
+  var inlineTemplate = vnode.data.inlineTemplate;
+  if (isDef(inlineTemplate)) {
+    options.render = inlineTemplate.render;
+    options.staticRenderFns = inlineTemplate.staticRenderFns;
+  }
+  return new vnode.componentOptions.Ctor(options)
+}
+
+function installComponentHooks (data) {
+  var hooks = data.hook || (data.hook = {});
+  for (var i = 0; i < hooksToMerge.length; i++) {
+    var key = hooksToMerge[i];
+    var existing = hooks[key];
+    var toMerge = componentVNodeHooks[key];
+    if (existing !== toMerge && !(existing && existing._merged)) {
+      hooks[key] = existing ? mergeHook$1(toMerge, existing) : toMerge;
+    }
+  }
+}
+
+function mergeHook$1 (f1, f2) {
+  var merged = function (a, b) {
+    // flow complains about extra args which is why we use any
+    f1(a, b);
+    f2(a, b);
+  };
+  merged._merged = true;
+  return merged
+}
+
+// transform component v-model info (value and callback) into
+// prop and event handler respectively.
+function transformModel (options, data) {
+  var prop = (options.model && options.model.prop) || 'value';
+  var event = (options.model && options.model.event) || 'input'
+  ;(data.attrs || (data.attrs = {}))[prop] = data.model.value;
+  var on = data.on || (data.on = {});
+  var existing = on[event];
+  var callback = data.model.callback;
+  if (isDef(existing)) {
+    if (
+      Array.isArray(existing)
+        ? existing.indexOf(callback) === -1
+        : existing !== callback
+    ) {
+      on[event] = [callback].concat(existing);
+    }
+  } else {
+    on[event] = callback;
+  }
+}
+
+/*  */
+
+var SIMPLE_NORMALIZE = 1;
+var ALWAYS_NORMALIZE = 2;
+
+// wrapper function for providing a more flexible interface
+// without getting yelled at by flow
+function createElement (
+  context,
+  tag,
+  data,
+  children,
+  normalizationType,
+  alwaysNormalize
+) {
+  if (Array.isArray(data) || isPrimitive(data)) {
+    normalizationType = children;
+    children = data;
+    data = undefined;
+  }
+  if (isTrue(alwaysNormalize)) {
+    normalizationType = ALWAYS_NORMALIZE;
+  }
+  return _createElement(context, tag, data, children, normalizationType)
+}
+
+function _createElement (
+  context,
+  tag,
+  data,
+  children,
+  normalizationType
+) {
+  if (isDef(data) && isDef((data).__ob__)) {
+     true && warn(
+      "Avoid using observed data object as vnode data: " + (JSON.stringify(data)) + "\n" +
+      'Always create fresh vnode data objects in each render!',
+      context
+    );
+    return createEmptyVNode()
+  }
+  // object syntax in v-bind
+  if (isDef(data) && isDef(data.is)) {
+    tag = data.is;
+  }
+  if (!tag) {
+    // in case of component :is set to falsy value
+    return createEmptyVNode()
+  }
+  // warn against non-primitive key
+  if ( true &&
+    isDef(data) && isDef(data.key) && !isPrimitive(data.key)
+  ) {
+    {
+      warn(
+        'Avoid using non-primitive value as key, ' +
+        'use string/number value instead.',
+        context
+      );
+    }
+  }
+  // support single function children as default scoped slot
+  if (Array.isArray(children) &&
+    typeof children[0] === 'function'
+  ) {
+    data = data || {};
+    data.scopedSlots = { default: children[0] };
+    children.length = 0;
+  }
+  if (normalizationType === ALWAYS_NORMALIZE) {
+    children = normalizeChildren(children);
+  } else if (normalizationType === SIMPLE_NORMALIZE) {
+    children = simpleNormalizeChildren(children);
+  }
+  var vnode, ns;
+  if (typeof tag === 'string') {
+    var Ctor;
+    ns = (context.$vnode && context.$vnode.ns) || config.getTagNamespace(tag);
+    if (config.isReservedTag(tag)) {
+      // platform built-in elements
+      if ( true && isDef(data) && isDef(data.nativeOn)) {
+        warn(
+          ("The .native modifier for v-on is only valid on components but it was used on <" + tag + ">."),
+          context
+        );
+      }
+      vnode = new VNode(
+        config.parsePlatformTagName(tag), data, children,
+        undefined, undefined, context
+      );
+    } else if ((!data || !data.pre) && isDef(Ctor = resolveAsset(context.$options, 'components', tag))) {
+      // component
+      vnode = createComponent(Ctor, data, context, children, tag);
+    } else {
+      // unknown or unlisted namespaced elements
+      // check at runtime because it may get assigned a namespace when its
+      // parent normalizes children
+      vnode = new VNode(
+        tag, data, children,
+        undefined, undefined, context
+      );
+    }
+  } else {
+    // direct component options / constructor
+    vnode = createComponent(tag, data, context, children);
+  }
+  if (Array.isArray(vnode)) {
+    return vnode
+  } else if (isDef(vnode)) {
+    if (isDef(ns)) { applyNS(vnode, ns); }
+    if (isDef(data)) { registerDeepBindings(data); }
+    return vnode
+  } else {
+    return createEmptyVNode()
+  }
+}
+
+function applyNS (vnode, ns, force) {
+  vnode.ns = ns;
+  if (vnode.tag === 'foreignObject') {
+    // use default namespace inside foreignObject
+    ns = undefined;
+    force = true;
+  }
+  if (isDef(vnode.children)) {
+    for (var i = 0, l = vnode.children.length; i < l; i++) {
+      var child = vnode.children[i];
+      if (isDef(child.tag) && (
+        isUndef(child.ns) || (isTrue(force) && child.tag !== 'svg'))) {
+        applyNS(child, ns, force);
+      }
+    }
+  }
+}
+
+// ref #5318
+// necessary to ensure parent re-render when deep bindings like :style and
+// :class are used on slot nodes
+function registerDeepBindings (data) {
+  if (isObject(data.style)) {
+    traverse(data.style);
+  }
+  if (isObject(data.class)) {
+    traverse(data.class);
+  }
+}
+
+/*  */
+
+function initRender (vm) {
+  vm._vnode = null; // the root of the child tree
+  vm._staticTrees = null; // v-once cached trees
+  var options = vm.$options;
+  var parentVnode = vm.$vnode = options._parentVnode; // the placeholder node in parent tree
+  var renderContext = parentVnode && parentVnode.context;
+  vm.$slots = resolveSlots(options._renderChildren, renderContext);
+  vm.$scopedSlots = emptyObject;
+  // bind the createElement fn to this instance
+  // so that we get proper render context inside it.
+  // args order: tag, data, children, normalizationType, alwaysNormalize
+  // internal version is used by render functions compiled from templates
+  vm._c = function (a, b, c, d) { return createElement(vm, a, b, c, d, false); };
+  // normalization is always applied for the public version, used in
+  // user-written render functions.
+  vm.$createElement = function (a, b, c, d) { return createElement(vm, a, b, c, d, true); };
+
+  // $attrs & $listeners are exposed for easier HOC creation.
+  // they need to be reactive so that HOCs using them are always updated
+  var parentData = parentVnode && parentVnode.data;
+
+  /* istanbul ignore else */
+  if (true) {
+    defineReactive$$1(vm, '$attrs', parentData && parentData.attrs || emptyObject, function () {
+      !isUpdatingChildComponent && warn("$attrs is readonly.", vm);
+    }, true);
+    defineReactive$$1(vm, '$listeners', options._parentListeners || emptyObject, function () {
+      !isUpdatingChildComponent && warn("$listeners is readonly.", vm);
+    }, true);
+  } else {}
+}
+
+var currentRenderingInstance = null;
+
+function renderMixin (Vue) {
+  // install runtime convenience helpers
+  installRenderHelpers(Vue.prototype);
+
+  Vue.prototype.$nextTick = function (fn) {
+    return nextTick(fn, this)
+  };
+
+  Vue.prototype._render = function () {
+    var vm = this;
+    var ref = vm.$options;
+    var render = ref.render;
+    var _parentVnode = ref._parentVnode;
+
+    if (_parentVnode) {
+      vm.$scopedSlots = normalizeScopedSlots(
+        _parentVnode.data.scopedSlots,
+        vm.$slots,
+        vm.$scopedSlots
+      );
+    }
+
+    // set parent vnode. this allows render functions to have access
+    // to the data on the placeholder node.
+    vm.$vnode = _parentVnode;
+    // render self
+    var vnode;
+    try {
+      // There's no need to maintain a stack because all render fns are called
+      // separately from one another. Nested component's render fns are called
+      // when parent component is patched.
+      currentRenderingInstance = vm;
+      vnode = render.call(vm._renderProxy, vm.$createElement);
+    } catch (e) {
+      handleError(e, vm, "render");
+      // return error render result,
+      // or previous vnode to prevent render error causing blank component
+      /* istanbul ignore else */
+      if ( true && vm.$options.renderError) {
+        try {
+          vnode = vm.$options.renderError.call(vm._renderProxy, vm.$createElement, e);
+        } catch (e) {
+          handleError(e, vm, "renderError");
+          vnode = vm._vnode;
+        }
+      } else {
+        vnode = vm._vnode;
+      }
+    } finally {
+      currentRenderingInstance = null;
+    }
+    // if the returned array contains only a single node, allow it
+    if (Array.isArray(vnode) && vnode.length === 1) {
+      vnode = vnode[0];
+    }
+    // return empty vnode in case the render function errored out
+    if (!(vnode instanceof VNode)) {
+      if ( true && Array.isArray(vnode)) {
+        warn(
+          'Multiple root nodes returned from render function. Render function ' +
+          'should return a single root node.',
+          vm
+        );
+      }
+      vnode = createEmptyVNode();
+    }
+    // set parent
+    vnode.parent = _parentVnode;
+    return vnode
+  };
+}
+
+/*  */
+
+function ensureCtor (comp, base) {
+  if (
+    comp.__esModule ||
+    (hasSymbol && comp[Symbol.toStringTag] === 'Module')
+  ) {
+    comp = comp.default;
+  }
+  return isObject(comp)
+    ? base.extend(comp)
+    : comp
+}
+
+function createAsyncPlaceholder (
+  factory,
+  data,
+  context,
+  children,
+  tag
+) {
+  var node = createEmptyVNode();
+  node.asyncFactory = factory;
+  node.asyncMeta = { data: data, context: context, children: children, tag: tag };
+  return node
+}
+
+function resolveAsyncComponent (
+  factory,
+  baseCtor
+) {
+  if (isTrue(factory.error) && isDef(factory.errorComp)) {
+    return factory.errorComp
+  }
+
+  if (isDef(factory.resolved)) {
+    return factory.resolved
+  }
+
+  var owner = currentRenderingInstance;
+  if (owner && isDef(factory.owners) && factory.owners.indexOf(owner) === -1) {
+    // already pending
+    factory.owners.push(owner);
+  }
+
+  if (isTrue(factory.loading) && isDef(factory.loadingComp)) {
+    return factory.loadingComp
+  }
+
+  if (owner && !isDef(factory.owners)) {
+    var owners = factory.owners = [owner];
+    var sync = true;
+    var timerLoading = null;
+    var timerTimeout = null
+
+    ;(owner).$on('hook:destroyed', function () { return remove(owners, owner); });
+
+    var forceRender = function (renderCompleted) {
+      for (var i = 0, l = owners.length; i < l; i++) {
+        (owners[i]).$forceUpdate();
+      }
+
+      if (renderCompleted) {
+        owners.length = 0;
+        if (timerLoading !== null) {
+          clearTimeout(timerLoading);
+          timerLoading = null;
+        }
+        if (timerTimeout !== null) {
+          clearTimeout(timerTimeout);
+          timerTimeout = null;
+        }
+      }
+    };
+
+    var resolve = once(function (res) {
+      // cache resolved
+      factory.resolved = ensureCtor(res, baseCtor);
+      // invoke callbacks only if this is not a synchronous resolve
+      // (async resolves are shimmed as synchronous during SSR)
+      if (!sync) {
+        forceRender(true);
+      } else {
+        owners.length = 0;
+      }
+    });
+
+    var reject = once(function (reason) {
+       true && warn(
+        "Failed to resolve async component: " + (String(factory)) +
+        (reason ? ("\nReason: " + reason) : '')
+      );
+      if (isDef(factory.errorComp)) {
+        factory.error = true;
+        forceRender(true);
+      }
+    });
+
+    var res = factory(resolve, reject);
+
+    if (isObject(res)) {
+      if (isPromise(res)) {
+        // () => Promise
+        if (isUndef(factory.resolved)) {
+          res.then(resolve, reject);
+        }
+      } else if (isPromise(res.component)) {
+        res.component.then(resolve, reject);
+
+        if (isDef(res.error)) {
+          factory.errorComp = ensureCtor(res.error, baseCtor);
+        }
+
+        if (isDef(res.loading)) {
+          factory.loadingComp = ensureCtor(res.loading, baseCtor);
+          if (res.delay === 0) {
+            factory.loading = true;
+          } else {
+            timerLoading = setTimeout(function () {
+              timerLoading = null;
+              if (isUndef(factory.resolved) && isUndef(factory.error)) {
+                factory.loading = true;
+                forceRender(false);
+              }
+            }, res.delay || 200);
+          }
+        }
+
+        if (isDef(res.timeout)) {
+          timerTimeout = setTimeout(function () {
+            timerTimeout = null;
+            if (isUndef(factory.resolved)) {
+              reject(
+                 true
+                  ? ("timeout (" + (res.timeout) + "ms)")
+                  : undefined
+              );
+            }
+          }, res.timeout);
+        }
+      }
+    }
+
+    sync = false;
+    // return in case resolved synchronously
+    return factory.loading
+      ? factory.loadingComp
+      : factory.resolved
+  }
+}
+
+/*  */
+
+function isAsyncPlaceholder (node) {
+  return node.isComment && node.asyncFactory
+}
+
+/*  */
+
+function getFirstComponentChild (children) {
+  if (Array.isArray(children)) {
+    for (var i = 0; i < children.length; i++) {
+      var c = children[i];
+      if (isDef(c) && (isDef(c.componentOptions) || isAsyncPlaceholder(c))) {
+        return c
+      }
+    }
+  }
+}
+
+/*  */
+
+/*  */
+
+function initEvents (vm) {
+  vm._events = Object.create(null);
+  vm._hasHookEvent = false;
+  // init parent attached events
+  var listeners = vm.$options._parentListeners;
+  if (listeners) {
+    updateComponentListeners(vm, listeners);
+  }
+}
+
+var target;
+
+function add (event, fn) {
+  target.$on(event, fn);
+}
+
+function remove$1 (event, fn) {
+  target.$off(event, fn);
+}
+
+function createOnceHandler (event, fn) {
+  var _target = target;
+  return function onceHandler () {
+    var res = fn.apply(null, arguments);
+    if (res !== null) {
+      _target.$off(event, onceHandler);
+    }
+  }
+}
+
+function updateComponentListeners (
+  vm,
+  listeners,
+  oldListeners
+) {
+  target = vm;
+  updateListeners(listeners, oldListeners || {}, add, remove$1, createOnceHandler, vm);
+  target = undefined;
+}
+
+function eventsMixin (Vue) {
+  var hookRE = /^hook:/;
+  Vue.prototype.$on = function (event, fn) {
+    var vm = this;
+    if (Array.isArray(event)) {
+      for (var i = 0, l = event.length; i < l; i++) {
+        vm.$on(event[i], fn);
+      }
+    } else {
+      (vm._events[event] || (vm._events[event] = [])).push(fn);
+      // optimize hook:event cost by using a boolean flag marked at registration
+      // instead of a hash lookup
+      if (hookRE.test(event)) {
+        vm._hasHookEvent = true;
+      }
+    }
+    return vm
+  };
+
+  Vue.prototype.$once = function (event, fn) {
+    var vm = this;
+    function on () {
+      vm.$off(event, on);
+      fn.apply(vm, arguments);
+    }
+    on.fn = fn;
+    vm.$on(event, on);
+    return vm
+  };
+
+  Vue.prototype.$off = function (event, fn) {
+    var vm = this;
+    // all
+    if (!arguments.length) {
+      vm._events = Object.create(null);
+      return vm
+    }
+    // array of events
+    if (Array.isArray(event)) {
+      for (var i$1 = 0, l = event.length; i$1 < l; i$1++) {
+        vm.$off(event[i$1], fn);
+      }
+      return vm
+    }
+    // specific event
+    var cbs = vm._events[event];
+    if (!cbs) {
+      return vm
+    }
+    if (!fn) {
+      vm._events[event] = null;
+      return vm
+    }
+    // specific handler
+    var cb;
+    var i = cbs.length;
+    while (i--) {
+      cb = cbs[i];
+      if (cb === fn || cb.fn === fn) {
+        cbs.splice(i, 1);
+        break
+      }
+    }
+    return vm
+  };
+
+  Vue.prototype.$emit = function (event) {
+    var vm = this;
+    if (true) {
+      var lowerCaseEvent = event.toLowerCase();
+      if (lowerCaseEvent !== event && vm._events[lowerCaseEvent]) {
+        tip(
+          "Event \"" + lowerCaseEvent + "\" is emitted in component " +
+          (formatComponentName(vm)) + " but the handler is registered for \"" + event + "\". " +
+          "Note that HTML attributes are case-insensitive and you cannot use " +
+          "v-on to listen to camelCase events when using in-DOM templates. " +
+          "You should probably use \"" + (hyphenate(event)) + "\" instead of \"" + event + "\"."
+        );
+      }
+    }
+    var cbs = vm._events[event];
+    if (cbs) {
+      cbs = cbs.length > 1 ? toArray(cbs) : cbs;
+      var args = toArray(arguments, 1);
+      var info = "event handler for \"" + event + "\"";
+      for (var i = 0, l = cbs.length; i < l; i++) {
+        invokeWithErrorHandling(cbs[i], vm, args, vm, info);
+      }
+    }
+    return vm
+  };
+}
+
+/*  */
+
+var activeInstance = null;
+var isUpdatingChildComponent = false;
+
+function setActiveInstance(vm) {
+  var prevActiveInstance = activeInstance;
+  activeInstance = vm;
+  return function () {
+    activeInstance = prevActiveInstance;
+  }
+}
+
+function initLifecycle (vm) {
+  var options = vm.$options;
+
+  // locate first non-abstract parent
+  var parent = options.parent;
+  if (parent && !options.abstract) {
+    while (parent.$options.abstract && parent.$parent) {
+      parent = parent.$parent;
+    }
+    parent.$children.push(vm);
+  }
+
+  vm.$parent = parent;
+  vm.$root = parent ? parent.$root : vm;
+
+  vm.$children = [];
+  vm.$refs = {};
+
+  vm._watcher = null;
+  vm._inactive = null;
+  vm._directInactive = false;
+  vm._isMounted = false;
+  vm._isDestroyed = false;
+  vm._isBeingDestroyed = false;
+}
+
+function lifecycleMixin (Vue) {
+  Vue.prototype._update = function (vnode, hydrating) {
+    var vm = this;
+    var prevEl = vm.$el;
+    var prevVnode = vm._vnode;
+    var restoreActiveInstance = setActiveInstance(vm);
+    vm._vnode = vnode;
+    // Vue.prototype.__patch__ is injected in entry points
+    // based on the rendering backend used.
+    if (!prevVnode) {
+      // initial render
+      vm.$el = vm.__patch__(vm.$el, vnode, hydrating, false /* removeOnly */);
+    } else {
+      // updates
+      vm.$el = vm.__patch__(prevVnode, vnode);
+    }
+    restoreActiveInstance();
+    // update __vue__ reference
+    if (prevEl) {
+      prevEl.__vue__ = null;
+    }
+    if (vm.$el) {
+      vm.$el.__vue__ = vm;
+    }
+    // if parent is an HOC, update its $el as well
+    if (vm.$vnode && vm.$parent && vm.$vnode === vm.$parent._vnode) {
+      vm.$parent.$el = vm.$el;
+    }
+    // updated hook is called by the scheduler to ensure that children are
+    // updated in a parent's updated hook.
+  };
+
+  Vue.prototype.$forceUpdate = function () {
+    var vm = this;
+    if (vm._watcher) {
+      vm._watcher.update();
+    }
+  };
+
+  Vue.prototype.$destroy = function () {
+    var vm = this;
+    if (vm._isBeingDestroyed) {
+      return
+    }
+    callHook(vm, 'beforeDestroy');
+    vm._isBeingDestroyed = true;
+    // remove self from parent
+    var parent = vm.$parent;
+    if (parent && !parent._isBeingDestroyed && !vm.$options.abstract) {
+      remove(parent.$children, vm);
+    }
+    // teardown watchers
+    if (vm._watcher) {
+      vm._watcher.teardown();
+    }
+    var i = vm._watchers.length;
+    while (i--) {
+      vm._watchers[i].teardown();
+    }
+    // remove reference from data ob
+    // frozen object may not have observer.
+    if (vm._data.__ob__) {
+      vm._data.__ob__.vmCount--;
+    }
+    // call the last hook...
+    vm._isDestroyed = true;
+    // invoke destroy hooks on current rendered tree
+    vm.__patch__(vm._vnode, null);
+    // fire destroyed hook
+    callHook(vm, 'destroyed');
+    // turn off all instance listeners.
+    vm.$off();
+    // remove __vue__ reference
+    if (vm.$el) {
+      vm.$el.__vue__ = null;
+    }
+    // release circular reference (#6759)
+    if (vm.$vnode) {
+      vm.$vnode.parent = null;
+    }
+  };
+}
+
+function mountComponent (
+  vm,
+  el,
+  hydrating
+) {
+  vm.$el = el;
+  if (!vm.$options.render) {
+    vm.$options.render = createEmptyVNode;
+    if (true) {
+      /* istanbul ignore if */
+      if ((vm.$options.template && vm.$options.template.charAt(0) !== '#') ||
+        vm.$options.el || el) {
+        warn(
+          'You are using the runtime-only build of Vue where the template ' +
+          'compiler is not available. Either pre-compile the templates into ' +
+          'render functions, or use the compiler-included build.',
+          vm
+        );
+      } else {
+        warn(
+          'Failed to mount component: template or render function not defined.',
+          vm
+        );
+      }
+    }
+  }
+  callHook(vm, 'beforeMount');
+
+  var updateComponent;
+  /* istanbul ignore if */
+  if ( true && config.performance && mark) {
+    updateComponent = function () {
+      var name = vm._name;
+      var id = vm._uid;
+      var startTag = "vue-perf-start:" + id;
+      var endTag = "vue-perf-end:" + id;
+
+      mark(startTag);
+      var vnode = vm._render();
+      mark(endTag);
+      measure(("vue " + name + " render"), startTag, endTag);
+
+      mark(startTag);
+      vm._update(vnode, hydrating);
+      mark(endTag);
+      measure(("vue " + name + " patch"), startTag, endTag);
+    };
+  } else {
+    updateComponent = function () {
+      vm._update(vm._render(), hydrating);
+    };
+  }
+
+  // we set this to vm._watcher inside the watcher's constructor
+  // since the watcher's initial patch may call $forceUpdate (e.g. inside child
+  // component's mounted hook), which relies on vm._watcher being already defined
+  new Watcher(vm, updateComponent, noop, {
+    before: function before () {
+      if (vm._isMounted && !vm._isDestroyed) {
+        callHook(vm, 'beforeUpdate');
+      }
+    }
+  }, true /* isRenderWatcher */);
+  hydrating = false;
+
+  // manually mounted instance, call mounted on self
+  // mounted is called for render-created child components in its inserted hook
+  if (vm.$vnode == null) {
+    vm._isMounted = true;
+    callHook(vm, 'mounted');
+  }
+  return vm
+}
+
+function updateChildComponent (
+  vm,
+  propsData,
+  listeners,
+  parentVnode,
+  renderChildren
+) {
+  if (true) {
+    isUpdatingChildComponent = true;
+  }
+
+  // determine whether component has slot children
+  // we need to do this before overwriting $options._renderChildren.
+
+  // check if there are dynamic scopedSlots (hand-written or compiled but with
+  // dynamic slot names). Static scoped slots compiled from template has the
+  // "$stable" marker.
+  var newScopedSlots = parentVnode.data.scopedSlots;
+  var oldScopedSlots = vm.$scopedSlots;
+  var hasDynamicScopedSlot = !!(
+    (newScopedSlots && !newScopedSlots.$stable) ||
+    (oldScopedSlots !== emptyObject && !oldScopedSlots.$stable) ||
+    (newScopedSlots && vm.$scopedSlots.$key !== newScopedSlots.$key)
+  );
+
+  // Any static slot children from the parent may have changed during parent's
+  // update. Dynamic scoped slots may also have changed. In such cases, a forced
+  // update is necessary to ensure correctness.
+  var needsForceUpdate = !!(
+    renderChildren ||               // has new static slots
+    vm.$options._renderChildren ||  // has old static slots
+    hasDynamicScopedSlot
+  );
+
+  vm.$options._parentVnode = parentVnode;
+  vm.$vnode = parentVnode; // update vm's placeholder node without re-render
+
+  if (vm._vnode) { // update child tree's parent
+    vm._vnode.parent = parentVnode;
+  }
+  vm.$options._renderChildren = renderChildren;
+
+  // update $attrs and $listeners hash
+  // these are also reactive so they may trigger child update if the child
+  // used them during render
+  vm.$attrs = parentVnode.data.attrs || emptyObject;
+  vm.$listeners = listeners || emptyObject;
+
+  // update props
+  if (propsData && vm.$options.props) {
+    toggleObserving(false);
+    var props = vm._props;
+    var propKeys = vm.$options._propKeys || [];
+    for (var i = 0; i < propKeys.length; i++) {
+      var key = propKeys[i];
+      var propOptions = vm.$options.props; // wtf flow?
+      props[key] = validateProp(key, propOptions, propsData, vm);
+    }
+    toggleObserving(true);
+    // keep a copy of raw propsData
+    vm.$options.propsData = propsData;
+  }
+
+  // update listeners
+  listeners = listeners || emptyObject;
+  var oldListeners = vm.$options._parentListeners;
+  vm.$options._parentListeners = listeners;
+  updateComponentListeners(vm, listeners, oldListeners);
+
+  // resolve slots + force update if has children
+  if (needsForceUpdate) {
+    vm.$slots = resolveSlots(renderChildren, parentVnode.context);
+    vm.$forceUpdate();
+  }
+
+  if (true) {
+    isUpdatingChildComponent = false;
+  }
+}
+
+function isInInactiveTree (vm) {
+  while (vm && (vm = vm.$parent)) {
+    if (vm._inactive) { return true }
+  }
+  return false
+}
+
+function activateChildComponent (vm, direct) {
+  if (direct) {
+    vm._directInactive = false;
+    if (isInInactiveTree(vm)) {
+      return
+    }
+  } else if (vm._directInactive) {
+    return
+  }
+  if (vm._inactive || vm._inactive === null) {
+    vm._inactive = false;
+    for (var i = 0; i < vm.$children.length; i++) {
+      activateChildComponent(vm.$children[i]);
+    }
+    callHook(vm, 'activated');
+  }
+}
+
+function deactivateChildComponent (vm, direct) {
+  if (direct) {
+    vm._directInactive = true;
+    if (isInInactiveTree(vm)) {
+      return
+    }
+  }
+  if (!vm._inactive) {
+    vm._inactive = true;
+    for (var i = 0; i < vm.$children.length; i++) {
+      deactivateChildComponent(vm.$children[i]);
+    }
+    callHook(vm, 'deactivated');
+  }
+}
+
+function callHook (vm, hook) {
+  // #7573 disable dep collection when invoking lifecycle hooks
+  pushTarget();
+  var handlers = vm.$options[hook];
+  var info = hook + " hook";
+  if (handlers) {
+    for (var i = 0, j = handlers.length; i < j; i++) {
+      invokeWithErrorHandling(handlers[i], vm, null, vm, info);
+    }
+  }
+  if (vm._hasHookEvent) {
+    vm.$emit('hook:' + hook);
+  }
+  popTarget();
+}
+
+/*  */
+
+var MAX_UPDATE_COUNT = 100;
+
+var queue = [];
+var activatedChildren = [];
+var has = {};
+var circular = {};
+var waiting = false;
+var flushing = false;
+var index = 0;
+
+/**
+ * Reset the scheduler's state.
+ */
+function resetSchedulerState () {
+  index = queue.length = activatedChildren.length = 0;
+  has = {};
+  if (true) {
+    circular = {};
+  }
+  waiting = flushing = false;
+}
+
+// Async edge case #6566 requires saving the timestamp when event listeners are
+// attached. However, calling performance.now() has a perf overhead especially
+// if the page has thousands of event listeners. Instead, we take a timestamp
+// every time the scheduler flushes and use that for all event listeners
+// attached during that flush.
+var currentFlushTimestamp = 0;
+
+// Async edge case fix requires storing an event listener's attach timestamp.
+var getNow = Date.now;
+
+// Determine what event timestamp the browser is using. Annoyingly, the
+// timestamp can either be hi-res (relative to page load) or low-res
+// (relative to UNIX epoch), so in order to compare time we have to use the
+// same timestamp type when saving the flush timestamp.
+// All IE versions use low-res event timestamps, and have problematic clock
+// implementations (#9632)
+if (inBrowser && !isIE) {
+  var performance = window.performance;
+  if (
+    performance &&
+    typeof performance.now === 'function' &&
+    getNow() > document.createEvent('Event').timeStamp
+  ) {
+    // if the event timestamp, although evaluated AFTER the Date.now(), is
+    // smaller than it, it means the event is using a hi-res timestamp,
+    // and we need to use the hi-res version for event listener timestamps as
+    // well.
+    getNow = function () { return performance.now(); };
+  }
+}
+
+/**
+ * Flush both queues and run the watchers.
+ */
+function flushSchedulerQueue () {
+  currentFlushTimestamp = getNow();
+  flushing = true;
+  var watcher, id;
+
+  // Sort queue before flush.
+  // This ensures that:
+  // 1. Components are updated from parent to child. (because parent is always
+  //    created before the child)
+  // 2. A component's user watchers are run before its render watcher (because
+  //    user watchers are created before the render watcher)
+  // 3. If a component is destroyed during a parent component's watcher run,
+  //    its watchers can be skipped.
+  queue.sort(function (a, b) { return a.id - b.id; });
+
+  // do not cache length because more watchers might be pushed
+  // as we run existing watchers
+  for (index = 0; index < queue.length; index++) {
+    watcher = queue[index];
+    if (watcher.before) {
+      watcher.before();
+    }
+    id = watcher.id;
+    has[id] = null;
+    watcher.run();
+    // in dev build, check and stop circular updates.
+    if ( true && has[id] != null) {
+      circular[id] = (circular[id] || 0) + 1;
+      if (circular[id] > MAX_UPDATE_COUNT) {
+        warn(
+          'You may have an infinite update loop ' + (
+            watcher.user
+              ? ("in watcher with expression \"" + (watcher.expression) + "\"")
+              : "in a component render function."
+          ),
+          watcher.vm
+        );
+        break
+      }
+    }
+  }
+
+  // keep copies of post queues before resetting state
+  var activatedQueue = activatedChildren.slice();
+  var updatedQueue = queue.slice();
+
+  resetSchedulerState();
+
+  // call component updated and activated hooks
+  callActivatedHooks(activatedQueue);
+  callUpdatedHooks(updatedQueue);
+
+  // devtool hook
+  /* istanbul ignore if */
+  if (devtools && config.devtools) {
+    devtools.emit('flush');
+  }
+}
+
+function callUpdatedHooks (queue) {
+  var i = queue.length;
+  while (i--) {
+    var watcher = queue[i];
+    var vm = watcher.vm;
+    if (vm._watcher === watcher && vm._isMounted && !vm._isDestroyed) {
+      callHook(vm, 'updated');
+    }
+  }
+}
+
+/**
+ * Queue a kept-alive component that was activated during patch.
+ * The queue will be processed after the entire tree has been patched.
+ */
+function queueActivatedComponent (vm) {
+  // setting _inactive to false here so that a render function can
+  // rely on checking whether it's in an inactive tree (e.g. router-view)
+  vm._inactive = false;
+  activatedChildren.push(vm);
+}
+
+function callActivatedHooks (queue) {
+  for (var i = 0; i < queue.length; i++) {
+    queue[i]._inactive = true;
+    activateChildComponent(queue[i], true /* true */);
+  }
+}
+
+/**
+ * Push a watcher into the watcher queue.
+ * Jobs with duplicate IDs will be skipped unless it's
+ * pushed when the queue is being flushed.
+ */
+function queueWatcher (watcher) {
+  var id = watcher.id;
+  if (has[id] == null) {
+    has[id] = true;
+    if (!flushing) {
+      queue.push(watcher);
+    } else {
+      // if already flushing, splice the watcher based on its id
+      // if already past its id, it will be run next immediately.
+      var i = queue.length - 1;
+      while (i > index && queue[i].id > watcher.id) {
+        i--;
+      }
+      queue.splice(i + 1, 0, watcher);
+    }
+    // queue the flush
+    if (!waiting) {
+      waiting = true;
+
+      if ( true && !config.async) {
+        flushSchedulerQueue();
+        return
+      }
+      nextTick(flushSchedulerQueue);
+    }
+  }
+}
+
+/*  */
+
+
+
+var uid$2 = 0;
+
+/**
+ * A watcher parses an expression, collects dependencies,
+ * and fires callback when the expression value changes.
+ * This is used for both the $watch() api and directives.
+ */
+var Watcher = function Watcher (
+  vm,
+  expOrFn,
+  cb,
+  options,
+  isRenderWatcher
+) {
+  this.vm = vm;
+  if (isRenderWatcher) {
+    vm._watcher = this;
+  }
+  vm._watchers.push(this);
+  // options
+  if (options) {
+    this.deep = !!options.deep;
+    this.user = !!options.user;
+    this.lazy = !!options.lazy;
+    this.sync = !!options.sync;
+    this.before = options.before;
+  } else {
+    this.deep = this.user = this.lazy = this.sync = false;
+  }
+  this.cb = cb;
+  this.id = ++uid$2; // uid for batching
+  this.active = true;
+  this.dirty = this.lazy; // for lazy watchers
+  this.deps = [];
+  this.newDeps = [];
+  this.depIds = new _Set();
+  this.newDepIds = new _Set();
+  this.expression =  true
+    ? expOrFn.toString()
+    : undefined;
+  // parse expression for getter
+  if (typeof expOrFn === 'function') {
+    this.getter = expOrFn;
+  } else {
+    this.getter = parsePath(expOrFn);
+    if (!this.getter) {
+      this.getter = noop;
+       true && warn(
+        "Failed watching path: \"" + expOrFn + "\" " +
+        'Watcher only accepts simple dot-delimited paths. ' +
+        'For full control, use a function instead.',
+        vm
+      );
+    }
+  }
+  this.value = this.lazy
+    ? undefined
+    : this.get();
+};
+
+/**
+ * Evaluate the getter, and re-collect dependencies.
+ */
+Watcher.prototype.get = function get () {
+  pushTarget(this);
+  var value;
+  var vm = this.vm;
+  try {
+    value = this.getter.call(vm, vm);
+  } catch (e) {
+    if (this.user) {
+      handleError(e, vm, ("getter for watcher \"" + (this.expression) + "\""));
+    } else {
+      throw e
+    }
+  } finally {
+    // "touch" every property so they are all tracked as
+    // dependencies for deep watching
+    if (this.deep) {
+      traverse(value);
+    }
+    popTarget();
+    this.cleanupDeps();
+  }
+  return value
+};
+
+/**
+ * Add a dependency to this directive.
+ */
+Watcher.prototype.addDep = function addDep (dep) {
+  var id = dep.id;
+  if (!this.newDepIds.has(id)) {
+    this.newDepIds.add(id);
+    this.newDeps.push(dep);
+    if (!this.depIds.has(id)) {
+      dep.addSub(this);
+    }
+  }
+};
+
+/**
+ * Clean up for dependency collection.
+ */
+Watcher.prototype.cleanupDeps = function cleanupDeps () {
+  var i = this.deps.length;
+  while (i--) {
+    var dep = this.deps[i];
+    if (!this.newDepIds.has(dep.id)) {
+      dep.removeSub(this);
+    }
+  }
+  var tmp = this.depIds;
+  this.depIds = this.newDepIds;
+  this.newDepIds = tmp;
+  this.newDepIds.clear();
+  tmp = this.deps;
+  this.deps = this.newDeps;
+  this.newDeps = tmp;
+  this.newDeps.length = 0;
+};
+
+/**
+ * Subscriber interface.
+ * Will be called when a dependency changes.
+ */
+Watcher.prototype.update = function update () {
+  /* istanbul ignore else */
+  if (this.lazy) {
+    this.dirty = true;
+  } else if (this.sync) {
+    this.run();
+  } else {
+    queueWatcher(this);
+  }
+};
+
+/**
+ * Scheduler job interface.
+ * Will be called by the scheduler.
+ */
+Watcher.prototype.run = function run () {
+  if (this.active) {
+    var value = this.get();
+    if (
+      value !== this.value ||
+      // Deep watchers and watchers on Object/Arrays should fire even
+      // when the value is the same, because the value may
+      // have mutated.
+      isObject(value) ||
+      this.deep
+    ) {
+      // set new value
+      var oldValue = this.value;
+      this.value = value;
+      if (this.user) {
+        try {
+          this.cb.call(this.vm, value, oldValue);
+        } catch (e) {
+          handleError(e, this.vm, ("callback for watcher \"" + (this.expression) + "\""));
+        }
+      } else {
+        this.cb.call(this.vm, value, oldValue);
+      }
+    }
+  }
+};
+
+/**
+ * Evaluate the value of the watcher.
+ * This only gets called for lazy watchers.
+ */
+Watcher.prototype.evaluate = function evaluate () {
+  this.value = this.get();
+  this.dirty = false;
+};
+
+/**
+ * Depend on all deps collected by this watcher.
+ */
+Watcher.prototype.depend = function depend () {
+  var i = this.deps.length;
+  while (i--) {
+    this.deps[i].depend();
+  }
+};
+
+/**
+ * Remove self from all dependencies' subscriber list.
+ */
+Watcher.prototype.teardown = function teardown () {
+  if (this.active) {
+    // remove self from vm's watcher list
+    // this is a somewhat expensive operation so we skip it
+    // if the vm is being destroyed.
+    if (!this.vm._isBeingDestroyed) {
+      remove(this.vm._watchers, this);
+    }
+    var i = this.deps.length;
+    while (i--) {
+      this.deps[i].removeSub(this);
+    }
+    this.active = false;
+  }
+};
+
+/*  */
+
+var sharedPropertyDefinition = {
+  enumerable: true,
+  configurable: true,
+  get: noop,
+  set: noop
+};
+
+function proxy (target, sourceKey, key) {
+  sharedPropertyDefinition.get = function proxyGetter () {
+    return this[sourceKey][key]
+  };
+  sharedPropertyDefinition.set = function proxySetter (val) {
+    this[sourceKey][key] = val;
+  };
+  Object.defineProperty(target, key, sharedPropertyDefinition);
+}
+
+function initState (vm) {
+  vm._watchers = [];
+  var opts = vm.$options;
+  if (opts.props) { initProps(vm, opts.props); }
+  if (opts.methods) { initMethods(vm, opts.methods); }
+  if (opts.data) {
+    initData(vm);
+  } else {
+    observe(vm._data = {}, true /* asRootData */);
+  }
+  if (opts.computed) { initComputed(vm, opts.computed); }
+  if (opts.watch && opts.watch !== nativeWatch) {
+    initWatch(vm, opts.watch);
+  }
+}
+
+function initProps (vm, propsOptions) {
+  var propsData = vm.$options.propsData || {};
+  var props = vm._props = {};
+  // cache prop keys so that future props updates can iterate using Array
+  // instead of dynamic object key enumeration.
+  var keys = vm.$options._propKeys = [];
+  var isRoot = !vm.$parent;
+  // root instance props should be converted
+  if (!isRoot) {
+    toggleObserving(false);
+  }
+  var loop = function ( key ) {
+    keys.push(key);
+    var value = validateProp(key, propsOptions, propsData, vm);
+    /* istanbul ignore else */
+    if (true) {
+      var hyphenatedKey = hyphenate(key);
+      if (isReservedAttribute(hyphenatedKey) ||
+          config.isReservedAttr(hyphenatedKey)) {
+        warn(
+          ("\"" + hyphenatedKey + "\" is a reserved attribute and cannot be used as component prop."),
+          vm
+        );
+      }
+      defineReactive$$1(props, key, value, function () {
+        if (!isRoot && !isUpdatingChildComponent) {
+          warn(
+            "Avoid mutating a prop directly since the value will be " +
+            "overwritten whenever the parent component re-renders. " +
+            "Instead, use a data or computed property based on the prop's " +
+            "value. Prop being mutated: \"" + key + "\"",
+            vm
+          );
+        }
+      });
+    } else {}
+    // static props are already proxied on the component's prototype
+    // during Vue.extend(). We only need to proxy props defined at
+    // instantiation here.
+    if (!(key in vm)) {
+      proxy(vm, "_props", key);
+    }
+  };
+
+  for (var key in propsOptions) loop( key );
+  toggleObserving(true);
+}
+
+function initData (vm) {
+  var data = vm.$options.data;
+  data = vm._data = typeof data === 'function'
+    ? getData(data, vm)
+    : data || {};
+  if (!isPlainObject(data)) {
+    data = {};
+     true && warn(
+      'data functions should return an object:\n' +
+      'https://vuejs.org/v2/guide/components.html#data-Must-Be-a-Function',
+      vm
+    );
+  }
+  // proxy data on instance
+  var keys = Object.keys(data);
+  var props = vm.$options.props;
+  var methods = vm.$options.methods;
+  var i = keys.length;
+  while (i--) {
+    var key = keys[i];
+    if (true) {
+      if (methods && hasOwn(methods, key)) {
+        warn(
+          ("Method \"" + key + "\" has already been defined as a data property."),
+          vm
+        );
+      }
+    }
+    if (props && hasOwn(props, key)) {
+       true && warn(
+        "The data property \"" + key + "\" is already declared as a prop. " +
+        "Use prop default value instead.",
+        vm
+      );
+    } else if (!isReserved(key)) {
+      proxy(vm, "_data", key);
+    }
+  }
+  // observe data
+  observe(data, true /* asRootData */);
+}
+
+function getData (data, vm) {
+  // #7573 disable dep collection when invoking data getters
+  pushTarget();
+  try {
+    return data.call(vm, vm)
+  } catch (e) {
+    handleError(e, vm, "data()");
+    return {}
+  } finally {
+    popTarget();
+  }
+}
+
+var computedWatcherOptions = { lazy: true };
+
+function initComputed (vm, computed) {
+  // $flow-disable-line
+  var watchers = vm._computedWatchers = Object.create(null);
+  // computed properties are just getters during SSR
+  var isSSR = isServerRendering();
+
+  for (var key in computed) {
+    var userDef = computed[key];
+    var getter = typeof userDef === 'function' ? userDef : userDef.get;
+    if ( true && getter == null) {
+      warn(
+        ("Getter is missing for computed property \"" + key + "\"."),
+        vm
+      );
+    }
+
+    if (!isSSR) {
+      // create internal watcher for the computed property.
+      watchers[key] = new Watcher(
+        vm,
+        getter || noop,
+        noop,
+        computedWatcherOptions
+      );
+    }
+
+    // component-defined computed properties are already defined on the
+    // component prototype. We only need to define computed properties defined
+    // at instantiation here.
+    if (!(key in vm)) {
+      defineComputed(vm, key, userDef);
+    } else if (true) {
+      if (key in vm.$data) {
+        warn(("The computed property \"" + key + "\" is already defined in data."), vm);
+      } else if (vm.$options.props && key in vm.$options.props) {
+        warn(("The computed property \"" + key + "\" is already defined as a prop."), vm);
+      }
+    }
+  }
+}
+
+function defineComputed (
+  target,
+  key,
+  userDef
+) {
+  var shouldCache = !isServerRendering();
+  if (typeof userDef === 'function') {
+    sharedPropertyDefinition.get = shouldCache
+      ? createComputedGetter(key)
+      : createGetterInvoker(userDef);
+    sharedPropertyDefinition.set = noop;
+  } else {
+    sharedPropertyDefinition.get = userDef.get
+      ? shouldCache && userDef.cache !== false
+        ? createComputedGetter(key)
+        : createGetterInvoker(userDef.get)
+      : noop;
+    sharedPropertyDefinition.set = userDef.set || noop;
+  }
+  if ( true &&
+      sharedPropertyDefinition.set === noop) {
+    sharedPropertyDefinition.set = function () {
+      warn(
+        ("Computed property \"" + key + "\" was assigned to but it has no setter."),
+        this
+      );
+    };
+  }
+  Object.defineProperty(target, key, sharedPropertyDefinition);
+}
+
+function createComputedGetter (key) {
+  return function computedGetter () {
+    var watcher = this._computedWatchers && this._computedWatchers[key];
+    if (watcher) {
+      if (watcher.dirty) {
+        watcher.evaluate();
+      }
+      if (Dep.target) {
+        watcher.depend();
+      }
+      return watcher.value
+    }
+  }
+}
+
+function createGetterInvoker(fn) {
+  return function computedGetter () {
+    return fn.call(this, this)
+  }
+}
+
+function initMethods (vm, methods) {
+  var props = vm.$options.props;
+  for (var key in methods) {
+    if (true) {
+      if (typeof methods[key] !== 'function') {
+        warn(
+          "Method \"" + key + "\" has type \"" + (typeof methods[key]) + "\" in the component definition. " +
+          "Did you reference the function correctly?",
+          vm
+        );
+      }
+      if (props && hasOwn(props, key)) {
+        warn(
+          ("Method \"" + key + "\" has already been defined as a prop."),
+          vm
+        );
+      }
+      if ((key in vm) && isReserved(key)) {
+        warn(
+          "Method \"" + key + "\" conflicts with an existing Vue instance method. " +
+          "Avoid defining component methods that start with _ or $."
+        );
+      }
+    }
+    vm[key] = typeof methods[key] !== 'function' ? noop : bind(methods[key], vm);
+  }
+}
+
+function initWatch (vm, watch) {
+  for (var key in watch) {
+    var handler = watch[key];
+    if (Array.isArray(handler)) {
+      for (var i = 0; i < handler.length; i++) {
+        createWatcher(vm, key, handler[i]);
+      }
+    } else {
+      createWatcher(vm, key, handler);
+    }
+  }
+}
+
+function createWatcher (
+  vm,
+  expOrFn,
+  handler,
+  options
+) {
+  if (isPlainObject(handler)) {
+    options = handler;
+    handler = handler.handler;
+  }
+  if (typeof handler === 'string') {
+    handler = vm[handler];
+  }
+  return vm.$watch(expOrFn, handler, options)
+}
+
+function stateMixin (Vue) {
+  // flow somehow has problems with directly declared definition object
+  // when using Object.defineProperty, so we have to procedurally build up
+  // the object here.
+  var dataDef = {};
+  dataDef.get = function () { return this._data };
+  var propsDef = {};
+  propsDef.get = function () { return this._props };
+  if (true) {
+    dataDef.set = function () {
+      warn(
+        'Avoid replacing instance root $data. ' +
+        'Use nested data properties instead.',
+        this
+      );
+    };
+    propsDef.set = function () {
+      warn("$props is readonly.", this);
+    };
+  }
+  Object.defineProperty(Vue.prototype, '$data', dataDef);
+  Object.defineProperty(Vue.prototype, '$props', propsDef);
+
+  Vue.prototype.$set = set;
+  Vue.prototype.$delete = del;
+
+  Vue.prototype.$watch = function (
+    expOrFn,
+    cb,
+    options
+  ) {
+    var vm = this;
+    if (isPlainObject(cb)) {
+      return createWatcher(vm, expOrFn, cb, options)
+    }
+    options = options || {};
+    options.user = true;
+    var watcher = new Watcher(vm, expOrFn, cb, options);
+    if (options.immediate) {
+      try {
+        cb.call(vm, watcher.value);
+      } catch (error) {
+        handleError(error, vm, ("callback for immediate watcher \"" + (watcher.expression) + "\""));
+      }
+    }
+    return function unwatchFn () {
+      watcher.teardown();
+    }
+  };
+}
+
+/*  */
+
+var uid$3 = 0;
+
+function initMixin (Vue) {
+  Vue.prototype._init = function (options) {
+    var vm = this;
+    // a uid
+    vm._uid = uid$3++;
+
+    var startTag, endTag;
+    /* istanbul ignore if */
+    if ( true && config.performance && mark) {
+      startTag = "vue-perf-start:" + (vm._uid);
+      endTag = "vue-perf-end:" + (vm._uid);
+      mark(startTag);
+    }
+
+    // a flag to avoid this being observed
+    vm._isVue = true;
+    // merge options
+    if (options && options._isComponent) {
+      // optimize internal component instantiation
+      // since dynamic options merging is pretty slow, and none of the
+      // internal component options needs special treatment.
+      initInternalComponent(vm, options);
+    } else {
+      vm.$options = mergeOptions(
+        resolveConstructorOptions(vm.constructor),
+        options || {},
+        vm
+      );
+    }
+    /* istanbul ignore else */
+    if (true) {
+      initProxy(vm);
+    } else {}
+    // expose real self
+    vm._self = vm;
+    initLifecycle(vm);
+    initEvents(vm);
+    initRender(vm);
+    callHook(vm, 'beforeCreate');
+    initInjections(vm); // resolve injections before data/props
+    initState(vm);
+    initProvide(vm); // resolve provide after data/props
+    callHook(vm, 'created');
+
+    /* istanbul ignore if */
+    if ( true && config.performance && mark) {
+      vm._name = formatComponentName(vm, false);
+      mark(endTag);
+      measure(("vue " + (vm._name) + " init"), startTag, endTag);
+    }
+
+    if (vm.$options.el) {
+      vm.$mount(vm.$options.el);
+    }
+  };
+}
+
+function initInternalComponent (vm, options) {
+  var opts = vm.$options = Object.create(vm.constructor.options);
+  // doing this because it's faster than dynamic enumeration.
+  var parentVnode = options._parentVnode;
+  opts.parent = options.parent;
+  opts._parentVnode = parentVnode;
+
+  var vnodeComponentOptions = parentVnode.componentOptions;
+  opts.propsData = vnodeComponentOptions.propsData;
+  opts._parentListeners = vnodeComponentOptions.listeners;
+  opts._renderChildren = vnodeComponentOptions.children;
+  opts._componentTag = vnodeComponentOptions.tag;
+
+  if (options.render) {
+    opts.render = options.render;
+    opts.staticRenderFns = options.staticRenderFns;
+  }
+}
+
+function resolveConstructorOptions (Ctor) {
+  var options = Ctor.options;
+  if (Ctor.super) {
+    var superOptions = resolveConstructorOptions(Ctor.super);
+    var cachedSuperOptions = Ctor.superOptions;
+    if (superOptions !== cachedSuperOptions) {
+      // super option changed,
+      // need to resolve new options.
+      Ctor.superOptions = superOptions;
+      // check if there are any late-modified/attached options (#4976)
+      var modifiedOptions = resolveModifiedOptions(Ctor);
+      // update base extend options
+      if (modifiedOptions) {
+        extend(Ctor.extendOptions, modifiedOptions);
+      }
+      options = Ctor.options = mergeOptions(superOptions, Ctor.extendOptions);
+      if (options.name) {
+        options.components[options.name] = Ctor;
+      }
+    }
+  }
+  return options
+}
+
+function resolveModifiedOptions (Ctor) {
+  var modified;
+  var latest = Ctor.options;
+  var sealed = Ctor.sealedOptions;
+  for (var key in latest) {
+    if (latest[key] !== sealed[key]) {
+      if (!modified) { modified = {}; }
+      modified[key] = latest[key];
+    }
+  }
+  return modified
+}
+
+function Vue (options) {
+  if ( true &&
+    !(this instanceof Vue)
+  ) {
+    warn('Vue is a constructor and should be called with the `new` keyword');
+  }
+  this._init(options);
+}
+
+initMixin(Vue);
+stateMixin(Vue);
+eventsMixin(Vue);
+lifecycleMixin(Vue);
+renderMixin(Vue);
+
+/*  */
+
+function initUse (Vue) {
+  Vue.use = function (plugin) {
+    var installedPlugins = (this._installedPlugins || (this._installedPlugins = []));
+    if (installedPlugins.indexOf(plugin) > -1) {
+      return this
+    }
+
+    // additional parameters
+    var args = toArray(arguments, 1);
+    args.unshift(this);
+    if (typeof plugin.install === 'function') {
+      plugin.install.apply(plugin, args);
+    } else if (typeof plugin === 'function') {
+      plugin.apply(null, args);
+    }
+    installedPlugins.push(plugin);
+    return this
+  };
+}
+
+/*  */
+
+function initMixin$1 (Vue) {
+  Vue.mixin = function (mixin) {
+    this.options = mergeOptions(this.options, mixin);
+    return this
+  };
+}
+
+/*  */
+
+function initExtend (Vue) {
+  /**
+   * Each instance constructor, including Vue, has a unique
+   * cid. This enables us to create wrapped "child
+   * constructors" for prototypal inheritance and cache them.
+   */
+  Vue.cid = 0;
+  var cid = 1;
+
+  /**
+   * Class inheritance
+   */
+  Vue.extend = function (extendOptions) {
+    extendOptions = extendOptions || {};
+    var Super = this;
+    var SuperId = Super.cid;
+    var cachedCtors = extendOptions._Ctor || (extendOptions._Ctor = {});
+    if (cachedCtors[SuperId]) {
+      return cachedCtors[SuperId]
+    }
+
+    var name = extendOptions.name || Super.options.name;
+    if ( true && name) {
+      validateComponentName(name);
+    }
+
+    var Sub = function VueComponent (options) {
+      this._init(options);
+    };
+    Sub.prototype = Object.create(Super.prototype);
+    Sub.prototype.constructor = Sub;
+    Sub.cid = cid++;
+    Sub.options = mergeOptions(
+      Super.options,
+      extendOptions
+    );
+    Sub['super'] = Super;
+
+    // For props and computed properties, we define the proxy getters on
+    // the Vue instances at extension time, on the extended prototype. This
+    // avoids Object.defineProperty calls for each instance created.
+    if (Sub.options.props) {
+      initProps$1(Sub);
+    }
+    if (Sub.options.computed) {
+      initComputed$1(Sub);
+    }
+
+    // allow further extension/mixin/plugin usage
+    Sub.extend = Super.extend;
+    Sub.mixin = Super.mixin;
+    Sub.use = Super.use;
+
+    // create asset registers, so extended classes
+    // can have their private assets too.
+    ASSET_TYPES.forEach(function (type) {
+      Sub[type] = Super[type];
+    });
+    // enable recursive self-lookup
+    if (name) {
+      Sub.options.components[name] = Sub;
+    }
+
+    // keep a reference to the super options at extension time.
+    // later at instantiation we can check if Super's options have
+    // been updated.
+    Sub.superOptions = Super.options;
+    Sub.extendOptions = extendOptions;
+    Sub.sealedOptions = extend({}, Sub.options);
+
+    // cache constructor
+    cachedCtors[SuperId] = Sub;
+    return Sub
+  };
+}
+
+function initProps$1 (Comp) {
+  var props = Comp.options.props;
+  for (var key in props) {
+    proxy(Comp.prototype, "_props", key);
+  }
+}
+
+function initComputed$1 (Comp) {
+  var computed = Comp.options.computed;
+  for (var key in computed) {
+    defineComputed(Comp.prototype, key, computed[key]);
+  }
+}
+
+/*  */
+
+function initAssetRegisters (Vue) {
+  /**
+   * Create asset registration methods.
+   */
+  ASSET_TYPES.forEach(function (type) {
+    Vue[type] = function (
+      id,
+      definition
+    ) {
+      if (!definition) {
+        return this.options[type + 's'][id]
+      } else {
+        /* istanbul ignore if */
+        if ( true && type === 'component') {
+          validateComponentName(id);
+        }
+        if (type === 'component' && isPlainObject(definition)) {
+          definition.name = definition.name || id;
+          definition = this.options._base.extend(definition);
+        }
+        if (type === 'directive' && typeof definition === 'function') {
+          definition = { bind: definition, update: definition };
+        }
+        this.options[type + 's'][id] = definition;
+        return definition
+      }
+    };
+  });
+}
+
+/*  */
+
+
+
+function getComponentName (opts) {
+  return opts && (opts.Ctor.options.name || opts.tag)
+}
+
+function matches (pattern, name) {
+  if (Array.isArray(pattern)) {
+    return pattern.indexOf(name) > -1
+  } else if (typeof pattern === 'string') {
+    return pattern.split(',').indexOf(name) > -1
+  } else if (isRegExp(pattern)) {
+    return pattern.test(name)
+  }
+  /* istanbul ignore next */
+  return false
+}
+
+function pruneCache (keepAliveInstance, filter) {
+  var cache = keepAliveInstance.cache;
+  var keys = keepAliveInstance.keys;
+  var _vnode = keepAliveInstance._vnode;
+  for (var key in cache) {
+    var cachedNode = cache[key];
+    if (cachedNode) {
+      var name = getComponentName(cachedNode.componentOptions);
+      if (name && !filter(name)) {
+        pruneCacheEntry(cache, key, keys, _vnode);
+      }
+    }
+  }
+}
+
+function pruneCacheEntry (
+  cache,
+  key,
+  keys,
+  current
+) {
+  var cached$$1 = cache[key];
+  if (cached$$1 && (!current || cached$$1.tag !== current.tag)) {
+    cached$$1.componentInstance.$destroy();
+  }
+  cache[key] = null;
+  remove(keys, key);
+}
+
+var patternTypes = [String, RegExp, Array];
+
+var KeepAlive = {
+  name: 'keep-alive',
+  abstract: true,
+
+  props: {
+    include: patternTypes,
+    exclude: patternTypes,
+    max: [String, Number]
+  },
+
+  created: function created () {
+    this.cache = Object.create(null);
+    this.keys = [];
+  },
+
+  destroyed: function destroyed () {
+    for (var key in this.cache) {
+      pruneCacheEntry(this.cache, key, this.keys);
+    }
+  },
+
+  mounted: function mounted () {
+    var this$1 = this;
+
+    this.$watch('include', function (val) {
+      pruneCache(this$1, function (name) { return matches(val, name); });
+    });
+    this.$watch('exclude', function (val) {
+      pruneCache(this$1, function (name) { return !matches(val, name); });
+    });
+  },
+
+  render: function render () {
+    var slot = this.$slots.default;
+    var vnode = getFirstComponentChild(slot);
+    var componentOptions = vnode && vnode.componentOptions;
+    if (componentOptions) {
+      // check pattern
+      var name = getComponentName(componentOptions);
+      var ref = this;
+      var include = ref.include;
+      var exclude = ref.exclude;
+      if (
+        // not included
+        (include && (!name || !matches(include, name))) ||
+        // excluded
+        (exclude && name && matches(exclude, name))
+      ) {
+        return vnode
+      }
+
+      var ref$1 = this;
+      var cache = ref$1.cache;
+      var keys = ref$1.keys;
+      var key = vnode.key == null
+        // same constructor may get registered as different local components
+        // so cid alone is not enough (#3269)
+        ? componentOptions.Ctor.cid + (componentOptions.tag ? ("::" + (componentOptions.tag)) : '')
+        : vnode.key;
+      if (cache[key]) {
+        vnode.componentInstance = cache[key].componentInstance;
+        // make current key freshest
+        remove(keys, key);
+        keys.push(key);
+      } else {
+        cache[key] = vnode;
+        keys.push(key);
+        // prune oldest entry
+        if (this.max && keys.length > parseInt(this.max)) {
+          pruneCacheEntry(cache, keys[0], keys, this._vnode);
+        }
+      }
+
+      vnode.data.keepAlive = true;
+    }
+    return vnode || (slot && slot[0])
+  }
+};
+
+var builtInComponents = {
+  KeepAlive: KeepAlive
+};
+
+/*  */
+
+function initGlobalAPI (Vue) {
+  // config
+  var configDef = {};
+  configDef.get = function () { return config; };
+  if (true) {
+    configDef.set = function () {
+      warn(
+        'Do not replace the Vue.config object, set individual fields instead.'
+      );
+    };
+  }
+  Object.defineProperty(Vue, 'config', configDef);
+
+  // exposed util methods.
+  // NOTE: these are not considered part of the public API - avoid relying on
+  // them unless you are aware of the risk.
+  Vue.util = {
+    warn: warn,
+    extend: extend,
+    mergeOptions: mergeOptions,
+    defineReactive: defineReactive$$1
+  };
+
+  Vue.set = set;
+  Vue.delete = del;
+  Vue.nextTick = nextTick;
+
+  // 2.6 explicit observable API
+  Vue.observable = function (obj) {
+    observe(obj);
+    return obj
+  };
+
+  Vue.options = Object.create(null);
+  ASSET_TYPES.forEach(function (type) {
+    Vue.options[type + 's'] = Object.create(null);
+  });
+
+  // this is used to identify the "base" constructor to extend all plain-object
+  // components with in Weex's multi-instance scenarios.
+  Vue.options._base = Vue;
+
+  extend(Vue.options.components, builtInComponents);
+
+  initUse(Vue);
+  initMixin$1(Vue);
+  initExtend(Vue);
+  initAssetRegisters(Vue);
+}
+
+initGlobalAPI(Vue);
+
+Object.defineProperty(Vue.prototype, '$isServer', {
+  get: isServerRendering
+});
+
+Object.defineProperty(Vue.prototype, '$ssrContext', {
+  get: function get () {
+    /* istanbul ignore next */
+    return this.$vnode && this.$vnode.ssrContext
+  }
+});
+
+// expose FunctionalRenderContext for ssr runtime helper installation
+Object.defineProperty(Vue, 'FunctionalRenderContext', {
+  value: FunctionalRenderContext
+});
+
+Vue.version = '2.6.12';
+
+/*  */
+
+// these are reserved for web because they are directly compiled away
+// during template compilation
+var isReservedAttr = makeMap('style,class');
+
+// attributes that should be using props for binding
+var acceptValue = makeMap('input,textarea,option,select,progress');
+var mustUseProp = function (tag, type, attr) {
+  return (
+    (attr === 'value' && acceptValue(tag)) && type !== 'button' ||
+    (attr === 'selected' && tag === 'option') ||
+    (attr === 'checked' && tag === 'input') ||
+    (attr === 'muted' && tag === 'video')
+  )
+};
+
+var isEnumeratedAttr = makeMap('contenteditable,draggable,spellcheck');
+
+var isValidContentEditableValue = makeMap('events,caret,typing,plaintext-only');
+
+var convertEnumeratedValue = function (key, value) {
+  return isFalsyAttrValue(value) || value === 'false'
+    ? 'false'
+    // allow arbitrary string value for contenteditable
+    : key === 'contenteditable' && isValidContentEditableValue(value)
+      ? value
+      : 'true'
+};
+
+var isBooleanAttr = makeMap(
+  'allowfullscreen,async,autofocus,autoplay,checked,compact,controls,declare,' +
+  'default,defaultchecked,defaultmuted,defaultselected,defer,disabled,' +
+  'enabled,formnovalidate,hidden,indeterminate,inert,ismap,itemscope,loop,multiple,' +
+  'muted,nohref,noresize,noshade,novalidate,nowrap,open,pauseonexit,readonly,' +
+  'required,reversed,scoped,seamless,selected,sortable,translate,' +
+  'truespeed,typemustmatch,visible'
+);
+
+var xlinkNS = 'http://www.w3.org/1999/xlink';
+
+var isXlink = function (name) {
+  return name.charAt(5) === ':' && name.slice(0, 5) === 'xlink'
+};
+
+var getXlinkProp = function (name) {
+  return isXlink(name) ? name.slice(6, name.length) : ''
+};
+
+var isFalsyAttrValue = function (val) {
+  return val == null || val === false
+};
+
+/*  */
+
+function genClassForVnode (vnode) {
+  var data = vnode.data;
+  var parentNode = vnode;
+  var childNode = vnode;
+  while (isDef(childNode.componentInstance)) {
+    childNode = childNode.componentInstance._vnode;
+    if (childNode && childNode.data) {
+      data = mergeClassData(childNode.data, data);
+    }
+  }
+  while (isDef(parentNode = parentNode.parent)) {
+    if (parentNode && parentNode.data) {
+      data = mergeClassData(data, parentNode.data);
+    }
+  }
+  return renderClass(data.staticClass, data.class)
+}
+
+function mergeClassData (child, parent) {
+  return {
+    staticClass: concat(child.staticClass, parent.staticClass),
+    class: isDef(child.class)
+      ? [child.class, parent.class]
+      : parent.class
+  }
+}
+
+function renderClass (
+  staticClass,
+  dynamicClass
+) {
+  if (isDef(staticClass) || isDef(dynamicClass)) {
+    return concat(staticClass, stringifyClass(dynamicClass))
+  }
+  /* istanbul ignore next */
+  return ''
+}
+
+function concat (a, b) {
+  return a ? b ? (a + ' ' + b) : a : (b || '')
+}
+
+function stringifyClass (value) {
+  if (Array.isArray(value)) {
+    return stringifyArray(value)
+  }
+  if (isObject(value)) {
+    return stringifyObject(value)
+  }
+  if (typeof value === 'string') {
+    return value
+  }
+  /* istanbul ignore next */
+  return ''
+}
+
+function stringifyArray (value) {
+  var res = '';
+  var stringified;
+  for (var i = 0, l = value.length; i < l; i++) {
+    if (isDef(stringified = stringifyClass(value[i])) && stringified !== '') {
+      if (res) { res += ' '; }
+      res += stringified;
+    }
+  }
+  return res
+}
+
+function stringifyObject (value) {
+  var res = '';
+  for (var key in value) {
+    if (value[key]) {
+      if (res) { res += ' '; }
+      res += key;
+    }
+  }
+  return res
+}
+
+/*  */
+
+var namespaceMap = {
+  svg: 'http://www.w3.org/2000/svg',
+  math: 'http://www.w3.org/1998/Math/MathML'
+};
+
+var isHTMLTag = makeMap(
+  'html,body,base,head,link,meta,style,title,' +
+  'address,article,aside,footer,header,h1,h2,h3,h4,h5,h6,hgroup,nav,section,' +
+  'div,dd,dl,dt,figcaption,figure,picture,hr,img,li,main,ol,p,pre,ul,' +
+  'a,b,abbr,bdi,bdo,br,cite,code,data,dfn,em,i,kbd,mark,q,rp,rt,rtc,ruby,' +
+  's,samp,small,span,strong,sub,sup,time,u,var,wbr,area,audio,map,track,video,' +
+  'embed,object,param,source,canvas,script,noscript,del,ins,' +
+  'caption,col,colgroup,table,thead,tbody,td,th,tr,' +
+  'button,datalist,fieldset,form,input,label,legend,meter,optgroup,option,' +
+  'output,progress,select,textarea,' +
+  'details,dialog,menu,menuitem,summary,' +
+  'content,element,shadow,template,blockquote,iframe,tfoot'
+);
+
+// this map is intentionally selective, only covering SVG elements that may
+// contain child elements.
+var isSVG = makeMap(
+  'svg,animate,circle,clippath,cursor,defs,desc,ellipse,filter,font-face,' +
+  'foreignObject,g,glyph,image,line,marker,mask,missing-glyph,path,pattern,' +
+  'polygon,polyline,rect,switch,symbol,text,textpath,tspan,use,view',
+  true
+);
+
+var isReservedTag = function (tag) {
+  return isHTMLTag(tag) || isSVG(tag)
+};
+
+function getTagNamespace (tag) {
+  if (isSVG(tag)) {
+    return 'svg'
+  }
+  // basic support for MathML
+  // note it doesn't support other MathML elements being component roots
+  if (tag === 'math') {
+    return 'math'
+  }
+}
+
+var unknownElementCache = Object.create(null);
+function isUnknownElement (tag) {
+  /* istanbul ignore if */
+  if (!inBrowser) {
+    return true
+  }
+  if (isReservedTag(tag)) {
+    return false
+  }
+  tag = tag.toLowerCase();
+  /* istanbul ignore if */
+  if (unknownElementCache[tag] != null) {
+    return unknownElementCache[tag]
+  }
+  var el = document.createElement(tag);
+  if (tag.indexOf('-') > -1) {
+    // http://stackoverflow.com/a/28210364/1070244
+    return (unknownElementCache[tag] = (
+      el.constructor === window.HTMLUnknownElement ||
+      el.constructor === window.HTMLElement
+    ))
+  } else {
+    return (unknownElementCache[tag] = /HTMLUnknownElement/.test(el.toString()))
+  }
+}
+
+var isTextInputType = makeMap('text,number,password,search,email,tel,url');
+
+/*  */
+
+/**
+ * Query an element selector if it's not an element already.
+ */
+function query (el) {
+  if (typeof el === 'string') {
+    var selected = document.querySelector(el);
+    if (!selected) {
+       true && warn(
+        'Cannot find element: ' + el
+      );
+      return document.createElement('div')
+    }
+    return selected
+  } else {
+    return el
+  }
+}
+
+/*  */
+
+function createElement$1 (tagName, vnode) {
+  var elm = document.createElement(tagName);
+  if (tagName !== 'select') {
+    return elm
+  }
+  // false or null will remove the attribute but undefined will not
+  if (vnode.data && vnode.data.attrs && vnode.data.attrs.multiple !== undefined) {
+    elm.setAttribute('multiple', 'multiple');
+  }
+  return elm
+}
+
+function createElementNS (namespace, tagName) {
+  return document.createElementNS(namespaceMap[namespace], tagName)
+}
+
+function createTextNode (text) {
+  return document.createTextNode(text)
+}
+
+function createComment (text) {
+  return document.createComment(text)
+}
+
+function insertBefore (parentNode, newNode, referenceNode) {
+  parentNode.insertBefore(newNode, referenceNode);
+}
+
+function removeChild (node, child) {
+  node.removeChild(child);
+}
+
+function appendChild (node, child) {
+  node.appendChild(child);
+}
+
+function parentNode (node) {
+  return node.parentNode
+}
+
+function nextSibling (node) {
+  return node.nextSibling
+}
+
+function tagName (node) {
+  return node.tagName
+}
+
+function setTextContent (node, text) {
+  node.textContent = text;
+}
+
+function setStyleScope (node, scopeId) {
+  node.setAttribute(scopeId, '');
+}
+
+var nodeOps = /*#__PURE__*/Object.freeze({
+  createElement: createElement$1,
+  createElementNS: createElementNS,
+  createTextNode: createTextNode,
+  createComment: createComment,
+  insertBefore: insertBefore,
+  removeChild: removeChild,
+  appendChild: appendChild,
+  parentNode: parentNode,
+  nextSibling: nextSibling,
+  tagName: tagName,
+  setTextContent: setTextContent,
+  setStyleScope: setStyleScope
+});
+
+/*  */
+
+var ref = {
+  create: function create (_, vnode) {
+    registerRef(vnode);
+  },
+  update: function update (oldVnode, vnode) {
+    if (oldVnode.data.ref !== vnode.data.ref) {
+      registerRef(oldVnode, true);
+      registerRef(vnode);
+    }
+  },
+  destroy: function destroy (vnode) {
+    registerRef(vnode, true);
+  }
+};
+
+function registerRef (vnode, isRemoval) {
+  var key = vnode.data.ref;
+  if (!isDef(key)) { return }
+
+  var vm = vnode.context;
+  var ref = vnode.componentInstance || vnode.elm;
+  var refs = vm.$refs;
+  if (isRemoval) {
+    if (Array.isArray(refs[key])) {
+      remove(refs[key], ref);
+    } else if (refs[key] === ref) {
+      refs[key] = undefined;
+    }
+  } else {
+    if (vnode.data.refInFor) {
+      if (!Array.isArray(refs[key])) {
+        refs[key] = [ref];
+      } else if (refs[key].indexOf(ref) < 0) {
+        // $flow-disable-line
+        refs[key].push(ref);
+      }
+    } else {
+      refs[key] = ref;
+    }
+  }
+}
+
+/**
+ * Virtual DOM patching algorithm based on Snabbdom by
+ * Simon Friis Vindum (@paldepind)
+ * Licensed under the MIT License
+ * https://github.com/paldepind/snabbdom/blob/master/LICENSE
+ *
+ * modified by Evan You (@yyx990803)
+ *
+ * Not type-checking this because this file is perf-critical and the cost
+ * of making flow understand it is not worth it.
+ */
+
+var emptyNode = new VNode('', {}, []);
+
+var hooks = ['create', 'activate', 'update', 'remove', 'destroy'];
+
+function sameVnode (a, b) {
+  return (
+    a.key === b.key && (
+      (
+        a.tag === b.tag &&
+        a.isComment === b.isComment &&
+        isDef(a.data) === isDef(b.data) &&
+        sameInputType(a, b)
+      ) || (
+        isTrue(a.isAsyncPlaceholder) &&
+        a.asyncFactory === b.asyncFactory &&
+        isUndef(b.asyncFactory.error)
+      )
+    )
+  )
+}
+
+function sameInputType (a, b) {
+  if (a.tag !== 'input') { return true }
+  var i;
+  var typeA = isDef(i = a.data) && isDef(i = i.attrs) && i.type;
+  var typeB = isDef(i = b.data) && isDef(i = i.attrs) && i.type;
+  return typeA === typeB || isTextInputType(typeA) && isTextInputType(typeB)
+}
+
+function createKeyToOldIdx (children, beginIdx, endIdx) {
+  var i, key;
+  var map = {};
+  for (i = beginIdx; i <= endIdx; ++i) {
+    key = children[i].key;
+    if (isDef(key)) { map[key] = i; }
+  }
+  return map
+}
+
+function createPatchFunction (backend) {
+  var i, j;
+  var cbs = {};
+
+  var modules = backend.modules;
+  var nodeOps = backend.nodeOps;
+
+  for (i = 0; i < hooks.length; ++i) {
+    cbs[hooks[i]] = [];
+    for (j = 0; j < modules.length; ++j) {
+      if (isDef(modules[j][hooks[i]])) {
+        cbs[hooks[i]].push(modules[j][hooks[i]]);
+      }
+    }
+  }
+
+  function emptyNodeAt (elm) {
+    return new VNode(nodeOps.tagName(elm).toLowerCase(), {}, [], undefined, elm)
+  }
+
+  function createRmCb (childElm, listeners) {
+    function remove$$1 () {
+      if (--remove$$1.listeners === 0) {
+        removeNode(childElm);
+      }
+    }
+    remove$$1.listeners = listeners;
+    return remove$$1
+  }
+
+  function removeNode (el) {
+    var parent = nodeOps.parentNode(el);
+    // element may have already been removed due to v-html / v-text
+    if (isDef(parent)) {
+      nodeOps.removeChild(parent, el);
+    }
+  }
+
+  function isUnknownElement$$1 (vnode, inVPre) {
+    return (
+      !inVPre &&
+      !vnode.ns &&
+      !(
+        config.ignoredElements.length &&
+        config.ignoredElements.some(function (ignore) {
+          return isRegExp(ignore)
+            ? ignore.test(vnode.tag)
+            : ignore === vnode.tag
+        })
+      ) &&
+      config.isUnknownElement(vnode.tag)
+    )
+  }
+
+  var creatingElmInVPre = 0;
+
+  function createElm (
+    vnode,
+    insertedVnodeQueue,
+    parentElm,
+    refElm,
+    nested,
+    ownerArray,
+    index
+  ) {
+    if (isDef(vnode.elm) && isDef(ownerArray)) {
+      // This vnode was used in a previous render!
+      // now it's used as a new node, overwriting its elm would cause
+      // potential patch errors down the road when it's used as an insertion
+      // reference node. Instead, we clone the node on-demand before creating
+      // associated DOM element for it.
+      vnode = ownerArray[index] = cloneVNode(vnode);
+    }
+
+    vnode.isRootInsert = !nested; // for transition enter check
+    if (createComponent(vnode, insertedVnodeQueue, parentElm, refElm)) {
+      return
+    }
+
+    var data = vnode.data;
+    var children = vnode.children;
+    var tag = vnode.tag;
+    if (isDef(tag)) {
+      if (true) {
+        if (data && data.pre) {
+          creatingElmInVPre++;
+        }
+        if (isUnknownElement$$1(vnode, creatingElmInVPre)) {
+          warn(
+            'Unknown custom element: <' + tag + '> - did you ' +
+            'register the component correctly? For recursive components, ' +
+            'make sure to provide the "name" option.',
+            vnode.context
+          );
+        }
+      }
+
+      vnode.elm = vnode.ns
+        ? nodeOps.createElementNS(vnode.ns, tag)
+        : nodeOps.createElement(tag, vnode);
+      setScope(vnode);
+
+      /* istanbul ignore if */
+      {
+        createChildren(vnode, children, insertedVnodeQueue);
+        if (isDef(data)) {
+          invokeCreateHooks(vnode, insertedVnodeQueue);
+        }
+        insert(parentElm, vnode.elm, refElm);
+      }
+
+      if ( true && data && data.pre) {
+        creatingElmInVPre--;
+      }
+    } else if (isTrue(vnode.isComment)) {
+      vnode.elm = nodeOps.createComment(vnode.text);
+      insert(parentElm, vnode.elm, refElm);
+    } else {
+      vnode.elm = nodeOps.createTextNode(vnode.text);
+      insert(parentElm, vnode.elm, refElm);
+    }
+  }
+
+  function createComponent (vnode, insertedVnodeQueue, parentElm, refElm) {
+    var i = vnode.data;
+    if (isDef(i)) {
+      var isReactivated = isDef(vnode.componentInstance) && i.keepAlive;
+      if (isDef(i = i.hook) && isDef(i = i.init)) {
+        i(vnode, false /* hydrating */);
+      }
+      // after calling the init hook, if the vnode is a child component
+      // it should've created a child instance and mounted it. the child
+      // component also has set the placeholder vnode's elm.
+      // in that case we can just return the element and be done.
+      if (isDef(vnode.componentInstance)) {
+        initComponent(vnode, insertedVnodeQueue);
+        insert(parentElm, vnode.elm, refElm);
+        if (isTrue(isReactivated)) {
+          reactivateComponent(vnode, insertedVnodeQueue, parentElm, refElm);
+        }
+        return true
+      }
+    }
+  }
+
+  function initComponent (vnode, insertedVnodeQueue) {
+    if (isDef(vnode.data.pendingInsert)) {
+      insertedVnodeQueue.push.apply(insertedVnodeQueue, vnode.data.pendingInsert);
+      vnode.data.pendingInsert = null;
+    }
+    vnode.elm = vnode.componentInstance.$el;
+    if (isPatchable(vnode)) {
+      invokeCreateHooks(vnode, insertedVnodeQueue);
+      setScope(vnode);
+    } else {
+      // empty component root.
+      // skip all element-related modules except for ref (#3455)
+      registerRef(vnode);
+      // make sure to invoke the insert hook
+      insertedVnodeQueue.push(vnode);
+    }
+  }
+
+  function reactivateComponent (vnode, insertedVnodeQueue, parentElm, refElm) {
+    var i;
+    // hack for #4339: a reactivated component with inner transition
+    // does not trigger because the inner node's created hooks are not called
+    // again. It's not ideal to involve module-specific logic in here but
+    // there doesn't seem to be a better way to do it.
+    var innerNode = vnode;
+    while (innerNode.componentInstance) {
+      innerNode = innerNode.componentInstance._vnode;
+      if (isDef(i = innerNode.data) && isDef(i = i.transition)) {
+        for (i = 0; i < cbs.activate.length; ++i) {
+          cbs.activate[i](emptyNode, innerNode);
+        }
+        insertedVnodeQueue.push(innerNode);
+        break
+      }
+    }
+    // unlike a newly created component,
+    // a reactivated keep-alive component doesn't insert itself
+    insert(parentElm, vnode.elm, refElm);
+  }
+
+  function insert (parent, elm, ref$$1) {
+    if (isDef(parent)) {
+      if (isDef(ref$$1)) {
+        if (nodeOps.parentNode(ref$$1) === parent) {
+          nodeOps.insertBefore(parent, elm, ref$$1);
+        }
+      } else {
+        nodeOps.appendChild(parent, elm);
+      }
+    }
+  }
+
+  function createChildren (vnode, children, insertedVnodeQueue) {
+    if (Array.isArray(children)) {
+      if (true) {
+        checkDuplicateKeys(children);
+      }
+      for (var i = 0; i < children.length; ++i) {
+        createElm(children[i], insertedVnodeQueue, vnode.elm, null, true, children, i);
+      }
+    } else if (isPrimitive(vnode.text)) {
+      nodeOps.appendChild(vnode.elm, nodeOps.createTextNode(String(vnode.text)));
+    }
+  }
+
+  function isPatchable (vnode) {
+    while (vnode.componentInstance) {
+      vnode = vnode.componentInstance._vnode;
+    }
+    return isDef(vnode.tag)
+  }
+
+  function invokeCreateHooks (vnode, insertedVnodeQueue) {
+    for (var i$1 = 0; i$1 < cbs.create.length; ++i$1) {
+      cbs.create[i$1](emptyNode, vnode);
+    }
+    i = vnode.data.hook; // Reuse variable
+    if (isDef(i)) {
+      if (isDef(i.create)) { i.create(emptyNode, vnode); }
+      if (isDef(i.insert)) { insertedVnodeQueue.push(vnode); }
+    }
+  }
+
+  // set scope id attribute for scoped CSS.
+  // this is implemented as a special case to avoid the overhead
+  // of going through the normal attribute patching process.
+  function setScope (vnode) {
+    var i;
+    if (isDef(i = vnode.fnScopeId)) {
+      nodeOps.setStyleScope(vnode.elm, i);
+    } else {
+      var ancestor = vnode;
+      while (ancestor) {
+        if (isDef(i = ancestor.context) && isDef(i = i.$options._scopeId)) {
+          nodeOps.setStyleScope(vnode.elm, i);
+        }
+        ancestor = ancestor.parent;
+      }
+    }
+    // for slot content they should also get the scopeId from the host instance.
+    if (isDef(i = activeInstance) &&
+      i !== vnode.context &&
+      i !== vnode.fnContext &&
+      isDef(i = i.$options._scopeId)
+    ) {
+      nodeOps.setStyleScope(vnode.elm, i);
+    }
+  }
+
+  function addVnodes (parentElm, refElm, vnodes, startIdx, endIdx, insertedVnodeQueue) {
+    for (; startIdx <= endIdx; ++startIdx) {
+      createElm(vnodes[startIdx], insertedVnodeQueue, parentElm, refElm, false, vnodes, startIdx);
+    }
+  }
+
+  function invokeDestroyHook (vnode) {
+    var i, j;
+    var data = vnode.data;
+    if (isDef(data)) {
+      if (isDef(i = data.hook) && isDef(i = i.destroy)) { i(vnode); }
+      for (i = 0; i < cbs.destroy.length; ++i) { cbs.destroy[i](vnode); }
+    }
+    if (isDef(i = vnode.children)) {
+      for (j = 0; j < vnode.children.length; ++j) {
+        invokeDestroyHook(vnode.children[j]);
+      }
+    }
+  }
+
+  function removeVnodes (vnodes, startIdx, endIdx) {
+    for (; startIdx <= endIdx; ++startIdx) {
+      var ch = vnodes[startIdx];
+      if (isDef(ch)) {
+        if (isDef(ch.tag)) {
+          removeAndInvokeRemoveHook(ch);
+          invokeDestroyHook(ch);
+        } else { // Text node
+          removeNode(ch.elm);
+        }
+      }
+    }
+  }
+
+  function removeAndInvokeRemoveHook (vnode, rm) {
+    if (isDef(rm) || isDef(vnode.data)) {
+      var i;
+      var listeners = cbs.remove.length + 1;
+      if (isDef(rm)) {
+        // we have a recursively passed down rm callback
+        // increase the listeners count
+        rm.listeners += listeners;
+      } else {
+        // directly removing
+        rm = createRmCb(vnode.elm, listeners);
+      }
+      // recursively invoke hooks on child component root node
+      if (isDef(i = vnode.componentInstance) && isDef(i = i._vnode) && isDef(i.data)) {
+        removeAndInvokeRemoveHook(i, rm);
+      }
+      for (i = 0; i < cbs.remove.length; ++i) {
+        cbs.remove[i](vnode, rm);
+      }
+      if (isDef(i = vnode.data.hook) && isDef(i = i.remove)) {
+        i(vnode, rm);
+      } else {
+        rm();
+      }
+    } else {
+      removeNode(vnode.elm);
+    }
+  }
+
+  function updateChildren (parentElm, oldCh, newCh, insertedVnodeQueue, removeOnly) {
+    var oldStartIdx = 0;
+    var newStartIdx = 0;
+    var oldEndIdx = oldCh.length - 1;
+    var oldStartVnode = oldCh[0];
+    var oldEndVnode = oldCh[oldEndIdx];
+    var newEndIdx = newCh.length - 1;
+    var newStartVnode = newCh[0];
+    var newEndVnode = newCh[newEndIdx];
+    var oldKeyToIdx, idxInOld, vnodeToMove, refElm;
+
+    // removeOnly is a special flag used only by <transition-group>
+    // to ensure removed elements stay in correct relative positions
+    // during leaving transitions
+    var canMove = !removeOnly;
+
+    if (true) {
+      checkDuplicateKeys(newCh);
+    }
+
+    while (oldStartIdx <= oldEndIdx && newStartIdx <= newEndIdx) {
+      if (isUndef(oldStartVnode)) {
+        oldStartVnode = oldCh[++oldStartIdx]; // Vnode has been moved left
+      } else if (isUndef(oldEndVnode)) {
+        oldEndVnode = oldCh[--oldEndIdx];
+      } else if (sameVnode(oldStartVnode, newStartVnode)) {
+        patchVnode(oldStartVnode, newStartVnode, insertedVnodeQueue, newCh, newStartIdx);
+        oldStartVnode = oldCh[++oldStartIdx];
+        newStartVnode = newCh[++newStartIdx];
+      } else if (sameVnode(oldEndVnode, newEndVnode)) {
+        patchVnode(oldEndVnode, newEndVnode, insertedVnodeQueue, newCh, newEndIdx);
+        oldEndVnode = oldCh[--oldEndIdx];
+        newEndVnode = newCh[--newEndIdx];
+      } else if (sameVnode(oldStartVnode, newEndVnode)) { // Vnode moved right
+        patchVnode(oldStartVnode, newEndVnode, insertedVnodeQueue, newCh, newEndIdx);
+        canMove && nodeOps.insertBefore(parentElm, oldStartVnode.elm, nodeOps.nextSibling(oldEndVnode.elm));
+        oldStartVnode = oldCh[++oldStartIdx];
+        newEndVnode = newCh[--newEndIdx];
+      } else if (sameVnode(oldEndVnode, newStartVnode)) { // Vnode moved left
+        patchVnode(oldEndVnode, newStartVnode, insertedVnodeQueue, newCh, newStartIdx);
+        canMove && nodeOps.insertBefore(parentElm, oldEndVnode.elm, oldStartVnode.elm);
+        oldEndVnode = oldCh[--oldEndIdx];
+        newStartVnode = newCh[++newStartIdx];
+      } else {
+        if (isUndef(oldKeyToIdx)) { oldKeyToIdx = createKeyToOldIdx(oldCh, oldStartIdx, oldEndIdx); }
+        idxInOld = isDef(newStartVnode.key)
+          ? oldKeyToIdx[newStartVnode.key]
+          : findIdxInOld(newStartVnode, oldCh, oldStartIdx, oldEndIdx);
+        if (isUndef(idxInOld)) { // New element
+          createElm(newStartVnode, insertedVnodeQueue, parentElm, oldStartVnode.elm, false, newCh, newStartIdx);
+        } else {
+          vnodeToMove = oldCh[idxInOld];
+          if (sameVnode(vnodeToMove, newStartVnode)) {
+            patchVnode(vnodeToMove, newStartVnode, insertedVnodeQueue, newCh, newStartIdx);
+            oldCh[idxInOld] = undefined;
+            canMove && nodeOps.insertBefore(parentElm, vnodeToMove.elm, oldStartVnode.elm);
+          } else {
+            // same key but different element. treat as new element
+            createElm(newStartVnode, insertedVnodeQueue, parentElm, oldStartVnode.elm, false, newCh, newStartIdx);
+          }
+        }
+        newStartVnode = newCh[++newStartIdx];
+      }
+    }
+    if (oldStartIdx > oldEndIdx) {
+      refElm = isUndef(newCh[newEndIdx + 1]) ? null : newCh[newEndIdx + 1].elm;
+      addVnodes(parentElm, refElm, newCh, newStartIdx, newEndIdx, insertedVnodeQueue);
+    } else if (newStartIdx > newEndIdx) {
+      removeVnodes(oldCh, oldStartIdx, oldEndIdx);
+    }
+  }
+
+  function checkDuplicateKeys (children) {
+    var seenKeys = {};
+    for (var i = 0; i < children.length; i++) {
+      var vnode = children[i];
+      var key = vnode.key;
+      if (isDef(key)) {
+        if (seenKeys[key]) {
+          warn(
+            ("Duplicate keys detected: '" + key + "'. This may cause an update error."),
+            vnode.context
+          );
+        } else {
+          seenKeys[key] = true;
+        }
+      }
+    }
+  }
+
+  function findIdxInOld (node, oldCh, start, end) {
+    for (var i = start; i < end; i++) {
+      var c = oldCh[i];
+      if (isDef(c) && sameVnode(node, c)) { return i }
+    }
+  }
+
+  function patchVnode (
+    oldVnode,
+    vnode,
+    insertedVnodeQueue,
+    ownerArray,
+    index,
+    removeOnly
+  ) {
+    if (oldVnode === vnode) {
+      return
+    }
+
+    if (isDef(vnode.elm) && isDef(ownerArray)) {
+      // clone reused vnode
+      vnode = ownerArray[index] = cloneVNode(vnode);
+    }
+
+    var elm = vnode.elm = oldVnode.elm;
+
+    if (isTrue(oldVnode.isAsyncPlaceholder)) {
+      if (isDef(vnode.asyncFactory.resolved)) {
+        hydrate(oldVnode.elm, vnode, insertedVnodeQueue);
+      } else {
+        vnode.isAsyncPlaceholder = true;
+      }
+      return
+    }
+
+    // reuse element for static trees.
+    // note we only do this if the vnode is cloned -
+    // if the new node is not cloned it means the render functions have been
+    // reset by the hot-reload-api and we need to do a proper re-render.
+    if (isTrue(vnode.isStatic) &&
+      isTrue(oldVnode.isStatic) &&
+      vnode.key === oldVnode.key &&
+      (isTrue(vnode.isCloned) || isTrue(vnode.isOnce))
+    ) {
+      vnode.componentInstance = oldVnode.componentInstance;
+      return
+    }
+
+    var i;
+    var data = vnode.data;
+    if (isDef(data) && isDef(i = data.hook) && isDef(i = i.prepatch)) {
+      i(oldVnode, vnode);
+    }
+
+    var oldCh = oldVnode.children;
+    var ch = vnode.children;
+    if (isDef(data) && isPatchable(vnode)) {
+      for (i = 0; i < cbs.update.length; ++i) { cbs.update[i](oldVnode, vnode); }
+      if (isDef(i = data.hook) && isDef(i = i.update)) { i(oldVnode, vnode); }
+    }
+    if (isUndef(vnode.text)) {
+      if (isDef(oldCh) && isDef(ch)) {
+        if (oldCh !== ch) { updateChildren(elm, oldCh, ch, insertedVnodeQueue, removeOnly); }
+      } else if (isDef(ch)) {
+        if (true) {
+          checkDuplicateKeys(ch);
+        }
+        if (isDef(oldVnode.text)) { nodeOps.setTextContent(elm, ''); }
+        addVnodes(elm, null, ch, 0, ch.length - 1, insertedVnodeQueue);
+      } else if (isDef(oldCh)) {
+        removeVnodes(oldCh, 0, oldCh.length - 1);
+      } else if (isDef(oldVnode.text)) {
+        nodeOps.setTextContent(elm, '');
+      }
+    } else if (oldVnode.text !== vnode.text) {
+      nodeOps.setTextContent(elm, vnode.text);
+    }
+    if (isDef(data)) {
+      if (isDef(i = data.hook) && isDef(i = i.postpatch)) { i(oldVnode, vnode); }
+    }
+  }
+
+  function invokeInsertHook (vnode, queue, initial) {
+    // delay insert hooks for component root nodes, invoke them after the
+    // element is really inserted
+    if (isTrue(initial) && isDef(vnode.parent)) {
+      vnode.parent.data.pendingInsert = queue;
+    } else {
+      for (var i = 0; i < queue.length; ++i) {
+        queue[i].data.hook.insert(queue[i]);
+      }
+    }
+  }
+
+  var hydrationBailed = false;
+  // list of modules that can skip create hook during hydration because they
+  // are already rendered on the client or has no need for initialization
+  // Note: style is excluded because it relies on initial clone for future
+  // deep updates (#7063).
+  var isRenderedModule = makeMap('attrs,class,staticClass,staticStyle,key');
+
+  // Note: this is a browser-only function so we can assume elms are DOM nodes.
+  function hydrate (elm, vnode, insertedVnodeQueue, inVPre) {
+    var i;
+    var tag = vnode.tag;
+    var data = vnode.data;
+    var children = vnode.children;
+    inVPre = inVPre || (data && data.pre);
+    vnode.elm = elm;
+
+    if (isTrue(vnode.isComment) && isDef(vnode.asyncFactory)) {
+      vnode.isAsyncPlaceholder = true;
+      return true
+    }
+    // assert node match
+    if (true) {
+      if (!assertNodeMatch(elm, vnode, inVPre)) {
+        return false
+      }
+    }
+    if (isDef(data)) {
+      if (isDef(i = data.hook) && isDef(i = i.init)) { i(vnode, true /* hydrating */); }
+      if (isDef(i = vnode.componentInstance)) {
+        // child component. it should have hydrated its own tree.
+        initComponent(vnode, insertedVnodeQueue);
+        return true
+      }
+    }
+    if (isDef(tag)) {
+      if (isDef(children)) {
+        // empty element, allow client to pick up and populate children
+        if (!elm.hasChildNodes()) {
+          createChildren(vnode, children, insertedVnodeQueue);
+        } else {
+          // v-html and domProps: innerHTML
+          if (isDef(i = data) && isDef(i = i.domProps) && isDef(i = i.innerHTML)) {
+            if (i !== elm.innerHTML) {
+              /* istanbul ignore if */
+              if ( true &&
+                typeof console !== 'undefined' &&
+                !hydrationBailed
+              ) {
+                hydrationBailed = true;
+                console.warn('Parent: ', elm);
+                console.warn('server innerHTML: ', i);
+                console.warn('client innerHTML: ', elm.innerHTML);
+              }
+              return false
+            }
+          } else {
+            // iterate and compare children lists
+            var childrenMatch = true;
+            var childNode = elm.firstChild;
+            for (var i$1 = 0; i$1 < children.length; i$1++) {
+              if (!childNode || !hydrate(childNode, children[i$1], insertedVnodeQueue, inVPre)) {
+                childrenMatch = false;
+                break
+              }
+              childNode = childNode.nextSibling;
+            }
+            // if childNode is not null, it means the actual childNodes list is
+            // longer than the virtual children list.
+            if (!childrenMatch || childNode) {
+              /* istanbul ignore if */
+              if ( true &&
+                typeof console !== 'undefined' &&
+                !hydrationBailed
+              ) {
+                hydrationBailed = true;
+                console.warn('Parent: ', elm);
+                console.warn('Mismatching childNodes vs. VNodes: ', elm.childNodes, children);
+              }
+              return false
+            }
+          }
+        }
+      }
+      if (isDef(data)) {
+        var fullInvoke = false;
+        for (var key in data) {
+          if (!isRenderedModule(key)) {
+            fullInvoke = true;
+            invokeCreateHooks(vnode, insertedVnodeQueue);
+            break
+          }
+        }
+        if (!fullInvoke && data['class']) {
+          // ensure collecting deps for deep class bindings for future updates
+          traverse(data['class']);
+        }
+      }
+    } else if (elm.data !== vnode.text) {
+      elm.data = vnode.text;
+    }
+    return true
+  }
+
+  function assertNodeMatch (node, vnode, inVPre) {
+    if (isDef(vnode.tag)) {
+      return vnode.tag.indexOf('vue-component') === 0 || (
+        !isUnknownElement$$1(vnode, inVPre) &&
+        vnode.tag.toLowerCase() === (node.tagName && node.tagName.toLowerCase())
+      )
+    } else {
+      return node.nodeType === (vnode.isComment ? 8 : 3)
+    }
+  }
+
+  return function patch (oldVnode, vnode, hydrating, removeOnly) {
+    if (isUndef(vnode)) {
+      if (isDef(oldVnode)) { invokeDestroyHook(oldVnode); }
+      return
+    }
+
+    var isInitialPatch = false;
+    var insertedVnodeQueue = [];
+
+    if (isUndef(oldVnode)) {
+      // empty mount (likely as component), create new root element
+      isInitialPatch = true;
+      createElm(vnode, insertedVnodeQueue);
+    } else {
+      var isRealElement = isDef(oldVnode.nodeType);
+      if (!isRealElement && sameVnode(oldVnode, vnode)) {
+        // patch existing root node
+        patchVnode(oldVnode, vnode, insertedVnodeQueue, null, null, removeOnly);
+      } else {
+        if (isRealElement) {
+          // mounting to a real element
+          // check if this is server-rendered content and if we can perform
+          // a successful hydration.
+          if (oldVnode.nodeType === 1 && oldVnode.hasAttribute(SSR_ATTR)) {
+            oldVnode.removeAttribute(SSR_ATTR);
+            hydrating = true;
+          }
+          if (isTrue(hydrating)) {
+            if (hydrate(oldVnode, vnode, insertedVnodeQueue)) {
+              invokeInsertHook(vnode, insertedVnodeQueue, true);
+              return oldVnode
+            } else if (true) {
+              warn(
+                'The client-side rendered virtual DOM tree is not matching ' +
+                'server-rendered content. This is likely caused by incorrect ' +
+                'HTML markup, for example nesting block-level elements inside ' +
+                '<p>, or missing <tbody>. Bailing hydration and performing ' +
+                'full client-side render.'
+              );
+            }
+          }
+          // either not server-rendered, or hydration failed.
+          // create an empty node and replace it
+          oldVnode = emptyNodeAt(oldVnode);
+        }
+
+        // replacing existing element
+        var oldElm = oldVnode.elm;
+        var parentElm = nodeOps.parentNode(oldElm);
+
+        // create new node
+        createElm(
+          vnode,
+          insertedVnodeQueue,
+          // extremely rare edge case: do not insert if old element is in a
+          // leaving transition. Only happens when combining transition +
+          // keep-alive + HOCs. (#4590)
+          oldElm._leaveCb ? null : parentElm,
+          nodeOps.nextSibling(oldElm)
+        );
+
+        // update parent placeholder node element, recursively
+        if (isDef(vnode.parent)) {
+          var ancestor = vnode.parent;
+          var patchable = isPatchable(vnode);
+          while (ancestor) {
+            for (var i = 0; i < cbs.destroy.length; ++i) {
+              cbs.destroy[i](ancestor);
+            }
+            ancestor.elm = vnode.elm;
+            if (patchable) {
+              for (var i$1 = 0; i$1 < cbs.create.length; ++i$1) {
+                cbs.create[i$1](emptyNode, ancestor);
+              }
+              // #6513
+              // invoke insert hooks that may have been merged by create hooks.
+              // e.g. for directives that uses the "inserted" hook.
+              var insert = ancestor.data.hook.insert;
+              if (insert.merged) {
+                // start at index 1 to avoid re-invoking component mounted hook
+                for (var i$2 = 1; i$2 < insert.fns.length; i$2++) {
+                  insert.fns[i$2]();
+                }
+              }
+            } else {
+              registerRef(ancestor);
+            }
+            ancestor = ancestor.parent;
+          }
+        }
+
+        // destroy old node
+        if (isDef(parentElm)) {
+          removeVnodes([oldVnode], 0, 0);
+        } else if (isDef(oldVnode.tag)) {
+          invokeDestroyHook(oldVnode);
+        }
+      }
+    }
+
+    invokeInsertHook(vnode, insertedVnodeQueue, isInitialPatch);
+    return vnode.elm
+  }
+}
+
+/*  */
+
+var directives = {
+  create: updateDirectives,
+  update: updateDirectives,
+  destroy: function unbindDirectives (vnode) {
+    updateDirectives(vnode, emptyNode);
+  }
+};
+
+function updateDirectives (oldVnode, vnode) {
+  if (oldVnode.data.directives || vnode.data.directives) {
+    _update(oldVnode, vnode);
+  }
+}
+
+function _update (oldVnode, vnode) {
+  var isCreate = oldVnode === emptyNode;
+  var isDestroy = vnode === emptyNode;
+  var oldDirs = normalizeDirectives$1(oldVnode.data.directives, oldVnode.context);
+  var newDirs = normalizeDirectives$1(vnode.data.directives, vnode.context);
+
+  var dirsWithInsert = [];
+  var dirsWithPostpatch = [];
+
+  var key, oldDir, dir;
+  for (key in newDirs) {
+    oldDir = oldDirs[key];
+    dir = newDirs[key];
+    if (!oldDir) {
+      // new directive, bind
+      callHook$1(dir, 'bind', vnode, oldVnode);
+      if (dir.def && dir.def.inserted) {
+        dirsWithInsert.push(dir);
+      }
+    } else {
+      // existing directive, update
+      dir.oldValue = oldDir.value;
+      dir.oldArg = oldDir.arg;
+      callHook$1(dir, 'update', vnode, oldVnode);
+      if (dir.def && dir.def.componentUpdated) {
+        dirsWithPostpatch.push(dir);
+      }
+    }
+  }
+
+  if (dirsWithInsert.length) {
+    var callInsert = function () {
+      for (var i = 0; i < dirsWithInsert.length; i++) {
+        callHook$1(dirsWithInsert[i], 'inserted', vnode, oldVnode);
+      }
+    };
+    if (isCreate) {
+      mergeVNodeHook(vnode, 'insert', callInsert);
+    } else {
+      callInsert();
+    }
+  }
+
+  if (dirsWithPostpatch.length) {
+    mergeVNodeHook(vnode, 'postpatch', function () {
+      for (var i = 0; i < dirsWithPostpatch.length; i++) {
+        callHook$1(dirsWithPostpatch[i], 'componentUpdated', vnode, oldVnode);
+      }
+    });
+  }
+
+  if (!isCreate) {
+    for (key in oldDirs) {
+      if (!newDirs[key]) {
+        // no longer present, unbind
+        callHook$1(oldDirs[key], 'unbind', oldVnode, oldVnode, isDestroy);
+      }
+    }
+  }
+}
+
+var emptyModifiers = Object.create(null);
+
+function normalizeDirectives$1 (
+  dirs,
+  vm
+) {
+  var res = Object.create(null);
+  if (!dirs) {
+    // $flow-disable-line
+    return res
+  }
+  var i, dir;
+  for (i = 0; i < dirs.length; i++) {
+    dir = dirs[i];
+    if (!dir.modifiers) {
+      // $flow-disable-line
+      dir.modifiers = emptyModifiers;
+    }
+    res[getRawDirName(dir)] = dir;
+    dir.def = resolveAsset(vm.$options, 'directives', dir.name, true);
+  }
+  // $flow-disable-line
+  return res
+}
+
+function getRawDirName (dir) {
+  return dir.rawName || ((dir.name) + "." + (Object.keys(dir.modifiers || {}).join('.')))
+}
+
+function callHook$1 (dir, hook, vnode, oldVnode, isDestroy) {
+  var fn = dir.def && dir.def[hook];
+  if (fn) {
+    try {
+      fn(vnode.elm, dir, vnode, oldVnode, isDestroy);
+    } catch (e) {
+      handleError(e, vnode.context, ("directive " + (dir.name) + " " + hook + " hook"));
+    }
+  }
+}
+
+var baseModules = [
+  ref,
+  directives
+];
+
+/*  */
+
+function updateAttrs (oldVnode, vnode) {
+  var opts = vnode.componentOptions;
+  if (isDef(opts) && opts.Ctor.options.inheritAttrs === false) {
+    return
+  }
+  if (isUndef(oldVnode.data.attrs) && isUndef(vnode.data.attrs)) {
+    return
+  }
+  var key, cur, old;
+  var elm = vnode.elm;
+  var oldAttrs = oldVnode.data.attrs || {};
+  var attrs = vnode.data.attrs || {};
+  // clone observed objects, as the user probably wants to mutate it
+  if (isDef(attrs.__ob__)) {
+    attrs = vnode.data.attrs = extend({}, attrs);
+  }
+
+  for (key in attrs) {
+    cur = attrs[key];
+    old = oldAttrs[key];
+    if (old !== cur) {
+      setAttr(elm, key, cur);
+    }
+  }
+  // #4391: in IE9, setting type can reset value for input[type=radio]
+  // #6666: IE/Edge forces progress value down to 1 before setting a max
+  /* istanbul ignore if */
+  if ((isIE || isEdge) && attrs.value !== oldAttrs.value) {
+    setAttr(elm, 'value', attrs.value);
+  }
+  for (key in oldAttrs) {
+    if (isUndef(attrs[key])) {
+      if (isXlink(key)) {
+        elm.removeAttributeNS(xlinkNS, getXlinkProp(key));
+      } else if (!isEnumeratedAttr(key)) {
+        elm.removeAttribute(key);
+      }
+    }
+  }
+}
+
+function setAttr (el, key, value) {
+  if (el.tagName.indexOf('-') > -1) {
+    baseSetAttr(el, key, value);
+  } else if (isBooleanAttr(key)) {
+    // set attribute for blank value
+    // e.g. <option disabled>Select one</option>
+    if (isFalsyAttrValue(value)) {
+      el.removeAttribute(key);
+    } else {
+      // technically allowfullscreen is a boolean attribute for <iframe>,
+      // but Flash expects a value of "true" when used on <embed> tag
+      value = key === 'allowfullscreen' && el.tagName === 'EMBED'
+        ? 'true'
+        : key;
+      el.setAttribute(key, value);
+    }
+  } else if (isEnumeratedAttr(key)) {
+    el.setAttribute(key, convertEnumeratedValue(key, value));
+  } else if (isXlink(key)) {
+    if (isFalsyAttrValue(value)) {
+      el.removeAttributeNS(xlinkNS, getXlinkProp(key));
+    } else {
+      el.setAttributeNS(xlinkNS, key, value);
+    }
+  } else {
+    baseSetAttr(el, key, value);
+  }
+}
+
+function baseSetAttr (el, key, value) {
+  if (isFalsyAttrValue(value)) {
+    el.removeAttribute(key);
+  } else {
+    // #7138: IE10 & 11 fires input event when setting placeholder on
+    // <textarea>... block the first input event and remove the blocker
+    // immediately.
+    /* istanbul ignore if */
+    if (
+      isIE && !isIE9 &&
+      el.tagName === 'TEXTAREA' &&
+      key === 'placeholder' && value !== '' && !el.__ieph
+    ) {
+      var blocker = function (e) {
+        e.stopImmediatePropagation();
+        el.removeEventListener('input', blocker);
+      };
+      el.addEventListener('input', blocker);
+      // $flow-disable-line
+      el.__ieph = true; /* IE placeholder patched */
+    }
+    el.setAttribute(key, value);
+  }
+}
+
+var attrs = {
+  create: updateAttrs,
+  update: updateAttrs
+};
+
+/*  */
+
+function updateClass (oldVnode, vnode) {
+  var el = vnode.elm;
+  var data = vnode.data;
+  var oldData = oldVnode.data;
+  if (
+    isUndef(data.staticClass) &&
+    isUndef(data.class) && (
+      isUndef(oldData) || (
+        isUndef(oldData.staticClass) &&
+        isUndef(oldData.class)
+      )
+    )
+  ) {
+    return
+  }
+
+  var cls = genClassForVnode(vnode);
+
+  // handle transition classes
+  var transitionClass = el._transitionClasses;
+  if (isDef(transitionClass)) {
+    cls = concat(cls, stringifyClass(transitionClass));
+  }
+
+  // set the class
+  if (cls !== el._prevClass) {
+    el.setAttribute('class', cls);
+    el._prevClass = cls;
+  }
+}
+
+var klass = {
+  create: updateClass,
+  update: updateClass
+};
+
+/*  */
+
+/*  */
+
+/*  */
+
+/*  */
+
+// in some cases, the event used has to be determined at runtime
+// so we used some reserved tokens during compile.
+var RANGE_TOKEN = '__r';
+var CHECKBOX_RADIO_TOKEN = '__c';
+
+/*  */
+
+// normalize v-model event tokens that can only be determined at runtime.
+// it's important to place the event as the first in the array because
+// the whole point is ensuring the v-model callback gets called before
+// user-attached handlers.
+function normalizeEvents (on) {
+  /* istanbul ignore if */
+  if (isDef(on[RANGE_TOKEN])) {
+    // IE input[type=range] only supports `change` event
+    var event = isIE ? 'change' : 'input';
+    on[event] = [].concat(on[RANGE_TOKEN], on[event] || []);
+    delete on[RANGE_TOKEN];
+  }
+  // This was originally intended to fix #4521 but no longer necessary
+  // after 2.5. Keeping it for backwards compat with generated code from < 2.4
+  /* istanbul ignore if */
+  if (isDef(on[CHECKBOX_RADIO_TOKEN])) {
+    on.change = [].concat(on[CHECKBOX_RADIO_TOKEN], on.change || []);
+    delete on[CHECKBOX_RADIO_TOKEN];
+  }
+}
+
+var target$1;
+
+function createOnceHandler$1 (event, handler, capture) {
+  var _target = target$1; // save current target element in closure
+  return function onceHandler () {
+    var res = handler.apply(null, arguments);
+    if (res !== null) {
+      remove$2(event, onceHandler, capture, _target);
+    }
+  }
+}
+
+// #9446: Firefox <= 53 (in particular, ESR 52) has incorrect Event.timeStamp
+// implementation and does not fire microtasks in between event propagation, so
+// safe to exclude.
+var useMicrotaskFix = isUsingMicroTask && !(isFF && Number(isFF[1]) <= 53);
+
+function add$1 (
+  name,
+  handler,
+  capture,
+  passive
+) {
+  // async edge case #6566: inner click event triggers patch, event handler
+  // attached to outer element during patch, and triggered again. This
+  // happens because browsers fire microtask ticks between event propagation.
+  // the solution is simple: we save the timestamp when a handler is attached,
+  // and the handler would only fire if the event passed to it was fired
+  // AFTER it was attached.
+  if (useMicrotaskFix) {
+    var attachedTimestamp = currentFlushTimestamp;
+    var original = handler;
+    handler = original._wrapper = function (e) {
+      if (
+        // no bubbling, should always fire.
+        // this is just a safety net in case event.timeStamp is unreliable in
+        // certain weird environments...
+        e.target === e.currentTarget ||
+        // event is fired after handler attachment
+        e.timeStamp >= attachedTimestamp ||
+        // bail for environments that have buggy event.timeStamp implementations
+        // #9462 iOS 9 bug: event.timeStamp is 0 after history.pushState
+        // #9681 QtWebEngine event.timeStamp is negative value
+        e.timeStamp <= 0 ||
+        // #9448 bail if event is fired in another document in a multi-page
+        // electron/nw.js app, since event.timeStamp will be using a different
+        // starting reference
+        e.target.ownerDocument !== document
+      ) {
+        return original.apply(this, arguments)
+      }
+    };
+  }
+  target$1.addEventListener(
+    name,
+    handler,
+    supportsPassive
+      ? { capture: capture, passive: passive }
+      : capture
+  );
+}
+
+function remove$2 (
+  name,
+  handler,
+  capture,
+  _target
+) {
+  (_target || target$1).removeEventListener(
+    name,
+    handler._wrapper || handler,
+    capture
+  );
+}
+
+function updateDOMListeners (oldVnode, vnode) {
+  if (isUndef(oldVnode.data.on) && isUndef(vnode.data.on)) {
+    return
+  }
+  var on = vnode.data.on || {};
+  var oldOn = oldVnode.data.on || {};
+  target$1 = vnode.elm;
+  normalizeEvents(on);
+  updateListeners(on, oldOn, add$1, remove$2, createOnceHandler$1, vnode.context);
+  target$1 = undefined;
+}
+
+var events = {
+  create: updateDOMListeners,
+  update: updateDOMListeners
+};
+
+/*  */
+
+var svgContainer;
+
+function updateDOMProps (oldVnode, vnode) {
+  if (isUndef(oldVnode.data.domProps) && isUndef(vnode.data.domProps)) {
+    return
+  }
+  var key, cur;
+  var elm = vnode.elm;
+  var oldProps = oldVnode.data.domProps || {};
+  var props = vnode.data.domProps || {};
+  // clone observed objects, as the user probably wants to mutate it
+  if (isDef(props.__ob__)) {
+    props = vnode.data.domProps = extend({}, props);
+  }
+
+  for (key in oldProps) {
+    if (!(key in props)) {
+      elm[key] = '';
+    }
+  }
+
+  for (key in props) {
+    cur = props[key];
+    // ignore children if the node has textContent or innerHTML,
+    // as these will throw away existing DOM nodes and cause removal errors
+    // on subsequent patches (#3360)
+    if (key === 'textContent' || key === 'innerHTML') {
+      if (vnode.children) { vnode.children.length = 0; }
+      if (cur === oldProps[key]) { continue }
+      // #6601 work around Chrome version <= 55 bug where single textNode
+      // replaced by innerHTML/textContent retains its parentNode property
+      if (elm.childNodes.length === 1) {
+        elm.removeChild(elm.childNodes[0]);
+      }
+    }
+
+    if (key === 'value' && elm.tagName !== 'PROGRESS') {
+      // store value as _value as well since
+      // non-string values will be stringified
+      elm._value = cur;
+      // avoid resetting cursor position when value is the same
+      var strCur = isUndef(cur) ? '' : String(cur);
+      if (shouldUpdateValue(elm, strCur)) {
+        elm.value = strCur;
+      }
+    } else if (key === 'innerHTML' && isSVG(elm.tagName) && isUndef(elm.innerHTML)) {
+      // IE doesn't support innerHTML for SVG elements
+      svgContainer = svgContainer || document.createElement('div');
+      svgContainer.innerHTML = "<svg>" + cur + "</svg>";
+      var svg = svgContainer.firstChild;
+      while (elm.firstChild) {
+        elm.removeChild(elm.firstChild);
+      }
+      while (svg.firstChild) {
+        elm.appendChild(svg.firstChild);
+      }
+    } else if (
+      // skip the update if old and new VDOM state is the same.
+      // `value` is handled separately because the DOM value may be temporarily
+      // out of sync with VDOM state due to focus, composition and modifiers.
+      // This  #4521 by skipping the unnecessary `checked` update.
+      cur !== oldProps[key]
+    ) {
+      // some property updates can throw
+      // e.g. `value` on <progress> w/ non-finite value
+      try {
+        elm[key] = cur;
+      } catch (e) {}
+    }
+  }
+}
+
+// check platforms/web/util/attrs.js acceptValue
+
+
+function shouldUpdateValue (elm, checkVal) {
+  return (!elm.composing && (
+    elm.tagName === 'OPTION' ||
+    isNotInFocusAndDirty(elm, checkVal) ||
+    isDirtyWithModifiers(elm, checkVal)
+  ))
+}
+
+function isNotInFocusAndDirty (elm, checkVal) {
+  // return true when textbox (.number and .trim) loses focus and its value is
+  // not equal to the updated value
+  var notInFocus = true;
+  // #6157
+  // work around IE bug when accessing document.activeElement in an iframe
+  try { notInFocus = document.activeElement !== elm; } catch (e) {}
+  return notInFocus && elm.value !== checkVal
+}
+
+function isDirtyWithModifiers (elm, newVal) {
+  var value = elm.value;
+  var modifiers = elm._vModifiers; // injected by v-model runtime
+  if (isDef(modifiers)) {
+    if (modifiers.number) {
+      return toNumber(value) !== toNumber(newVal)
+    }
+    if (modifiers.trim) {
+      return value.trim() !== newVal.trim()
+    }
+  }
+  return value !== newVal
+}
+
+var domProps = {
+  create: updateDOMProps,
+  update: updateDOMProps
+};
+
+/*  */
+
+var parseStyleText = cached(function (cssText) {
+  var res = {};
+  var listDelimiter = /;(?![^(]*\))/g;
+  var propertyDelimiter = /:(.+)/;
+  cssText.split(listDelimiter).forEach(function (item) {
+    if (item) {
+      var tmp = item.split(propertyDelimiter);
+      tmp.length > 1 && (res[tmp[0].trim()] = tmp[1].trim());
+    }
+  });
+  return res
+});
+
+// merge static and dynamic style data on the same vnode
+function normalizeStyleData (data) {
+  var style = normalizeStyleBinding(data.style);
+  // static style is pre-processed into an object during compilation
+  // and is always a fresh object, so it's safe to merge into it
+  return data.staticStyle
+    ? extend(data.staticStyle, style)
+    : style
+}
+
+// normalize possible array / string values into Object
+function normalizeStyleBinding (bindingStyle) {
+  if (Array.isArray(bindingStyle)) {
+    return toObject(bindingStyle)
+  }
+  if (typeof bindingStyle === 'string') {
+    return parseStyleText(bindingStyle)
+  }
+  return bindingStyle
+}
+
+/**
+ * parent component style should be after child's
+ * so that parent component's style could override it
+ */
+function getStyle (vnode, checkChild) {
+  var res = {};
+  var styleData;
+
+  if (checkChild) {
+    var childNode = vnode;
+    while (childNode.componentInstance) {
+      childNode = childNode.componentInstance._vnode;
+      if (
+        childNode && childNode.data &&
+        (styleData = normalizeStyleData(childNode.data))
+      ) {
+        extend(res, styleData);
+      }
+    }
+  }
+
+  if ((styleData = normalizeStyleData(vnode.data))) {
+    extend(res, styleData);
+  }
+
+  var parentNode = vnode;
+  while ((parentNode = parentNode.parent)) {
+    if (parentNode.data && (styleData = normalizeStyleData(parentNode.data))) {
+      extend(res, styleData);
+    }
+  }
+  return res
+}
+
+/*  */
+
+var cssVarRE = /^--/;
+var importantRE = /\s*!important$/;
+var setProp = function (el, name, val) {
+  /* istanbul ignore if */
+  if (cssVarRE.test(name)) {
+    el.style.setProperty(name, val);
+  } else if (importantRE.test(val)) {
+    el.style.setProperty(hyphenate(name), val.replace(importantRE, ''), 'important');
+  } else {
+    var normalizedName = normalize(name);
+    if (Array.isArray(val)) {
+      // Support values array created by autoprefixer, e.g.
+      // {display: ["-webkit-box", "-ms-flexbox", "flex"]}
+      // Set them one by one, and the browser will only set those it can recognize
+      for (var i = 0, len = val.length; i < len; i++) {
+        el.style[normalizedName] = val[i];
+      }
+    } else {
+      el.style[normalizedName] = val;
+    }
+  }
+};
+
+var vendorNames = ['Webkit', 'Moz', 'ms'];
+
+var emptyStyle;
+var normalize = cached(function (prop) {
+  emptyStyle = emptyStyle || document.createElement('div').style;
+  prop = camelize(prop);
+  if (prop !== 'filter' && (prop in emptyStyle)) {
+    return prop
+  }
+  var capName = prop.charAt(0).toUpperCase() + prop.slice(1);
+  for (var i = 0; i < vendorNames.length; i++) {
+    var name = vendorNames[i] + capName;
+    if (name in emptyStyle) {
+      return name
+    }
+  }
+});
+
+function updateStyle (oldVnode, vnode) {
+  var data = vnode.data;
+  var oldData = oldVnode.data;
+
+  if (isUndef(data.staticStyle) && isUndef(data.style) &&
+    isUndef(oldData.staticStyle) && isUndef(oldData.style)
+  ) {
+    return
+  }
+
+  var cur, name;
+  var el = vnode.elm;
+  var oldStaticStyle = oldData.staticStyle;
+  var oldStyleBinding = oldData.normalizedStyle || oldData.style || {};
+
+  // if static style exists, stylebinding already merged into it when doing normalizeStyleData
+  var oldStyle = oldStaticStyle || oldStyleBinding;
+
+  var style = normalizeStyleBinding(vnode.data.style) || {};
+
+  // store normalized style under a different key for next diff
+  // make sure to clone it if it's reactive, since the user likely wants
+  // to mutate it.
+  vnode.data.normalizedStyle = isDef(style.__ob__)
+    ? extend({}, style)
+    : style;
+
+  var newStyle = getStyle(vnode, true);
+
+  for (name in oldStyle) {
+    if (isUndef(newStyle[name])) {
+      setProp(el, name, '');
+    }
+  }
+  for (name in newStyle) {
+    cur = newStyle[name];
+    if (cur !== oldStyle[name]) {
+      // ie9 setting to null has no effect, must use empty string
+      setProp(el, name, cur == null ? '' : cur);
+    }
+  }
+}
+
+var style = {
+  create: updateStyle,
+  update: updateStyle
+};
+
+/*  */
+
+var whitespaceRE = /\s+/;
+
+/**
+ * Add class with compatibility for SVG since classList is not supported on
+ * SVG elements in IE
+ */
+function addClass (el, cls) {
+  /* istanbul ignore if */
+  if (!cls || !(cls = cls.trim())) {
+    return
+  }
+
+  /* istanbul ignore else */
+  if (el.classList) {
+    if (cls.indexOf(' ') > -1) {
+      cls.split(whitespaceRE).forEach(function (c) { return el.classList.add(c); });
+    } else {
+      el.classList.add(cls);
+    }
+  } else {
+    var cur = " " + (el.getAttribute('class') || '') + " ";
+    if (cur.indexOf(' ' + cls + ' ') < 0) {
+      el.setAttribute('class', (cur + cls).trim());
+    }
+  }
+}
+
+/**
+ * Remove class with compatibility for SVG since classList is not supported on
+ * SVG elements in IE
+ */
+function removeClass (el, cls) {
+  /* istanbul ignore if */
+  if (!cls || !(cls = cls.trim())) {
+    return
+  }
+
+  /* istanbul ignore else */
+  if (el.classList) {
+    if (cls.indexOf(' ') > -1) {
+      cls.split(whitespaceRE).forEach(function (c) { return el.classList.remove(c); });
+    } else {
+      el.classList.remove(cls);
+    }
+    if (!el.classList.length) {
+      el.removeAttribute('class');
+    }
+  } else {
+    var cur = " " + (el.getAttribute('class') || '') + " ";
+    var tar = ' ' + cls + ' ';
+    while (cur.indexOf(tar) >= 0) {
+      cur = cur.replace(tar, ' ');
+    }
+    cur = cur.trim();
+    if (cur) {
+      el.setAttribute('class', cur);
+    } else {
+      el.removeAttribute('class');
+    }
+  }
+}
+
+/*  */
+
+function resolveTransition (def$$1) {
+  if (!def$$1) {
+    return
+  }
+  /* istanbul ignore else */
+  if (typeof def$$1 === 'object') {
+    var res = {};
+    if (def$$1.css !== false) {
+      extend(res, autoCssTransition(def$$1.name || 'v'));
+    }
+    extend(res, def$$1);
+    return res
+  } else if (typeof def$$1 === 'string') {
+    return autoCssTransition(def$$1)
+  }
+}
+
+var autoCssTransition = cached(function (name) {
+  return {
+    enterClass: (name + "-enter"),
+    enterToClass: (name + "-enter-to"),
+    enterActiveClass: (name + "-enter-active"),
+    leaveClass: (name + "-leave"),
+    leaveToClass: (name + "-leave-to"),
+    leaveActiveClass: (name + "-leave-active")
+  }
+});
+
+var hasTransition = inBrowser && !isIE9;
+var TRANSITION = 'transition';
+var ANIMATION = 'animation';
+
+// Transition property/event sniffing
+var transitionProp = 'transition';
+var transitionEndEvent = 'transitionend';
+var animationProp = 'animation';
+var animationEndEvent = 'animationend';
+if (hasTransition) {
+  /* istanbul ignore if */
+  if (window.ontransitionend === undefined &&
+    window.onwebkittransitionend !== undefined
+  ) {
+    transitionProp = 'WebkitTransition';
+    transitionEndEvent = 'webkitTransitionEnd';
+  }
+  if (window.onanimationend === undefined &&
+    window.onwebkitanimationend !== undefined
+  ) {
+    animationProp = 'WebkitAnimation';
+    animationEndEvent = 'webkitAnimationEnd';
+  }
+}
+
+// binding to window is necessary to make hot reload work in IE in strict mode
+var raf = inBrowser
+  ? window.requestAnimationFrame
+    ? window.requestAnimationFrame.bind(window)
+    : setTimeout
+  : /* istanbul ignore next */ function (fn) { return fn(); };
+
+function nextFrame (fn) {
+  raf(function () {
+    raf(fn);
+  });
+}
+
+function addTransitionClass (el, cls) {
+  var transitionClasses = el._transitionClasses || (el._transitionClasses = []);
+  if (transitionClasses.indexOf(cls) < 0) {
+    transitionClasses.push(cls);
+    addClass(el, cls);
+  }
+}
+
+function removeTransitionClass (el, cls) {
+  if (el._transitionClasses) {
+    remove(el._transitionClasses, cls);
+  }
+  removeClass(el, cls);
+}
+
+function whenTransitionEnds (
+  el,
+  expectedType,
+  cb
+) {
+  var ref = getTransitionInfo(el, expectedType);
+  var type = ref.type;
+  var timeout = ref.timeout;
+  var propCount = ref.propCount;
+  if (!type) { return cb() }
+  var event = type === TRANSITION ? transitionEndEvent : animationEndEvent;
+  var ended = 0;
+  var end = function () {
+    el.removeEventListener(event, onEnd);
+    cb();
+  };
+  var onEnd = function (e) {
+    if (e.target === el) {
+      if (++ended >= propCount) {
+        end();
+      }
+    }
+  };
+  setTimeout(function () {
+    if (ended < propCount) {
+      end();
+    }
+  }, timeout + 1);
+  el.addEventListener(event, onEnd);
+}
+
+var transformRE = /\b(transform|all)(,|$)/;
+
+function getTransitionInfo (el, expectedType) {
+  var styles = window.getComputedStyle(el);
+  // JSDOM may return undefined for transition properties
+  var transitionDelays = (styles[transitionProp + 'Delay'] || '').split(', ');
+  var transitionDurations = (styles[transitionProp + 'Duration'] || '').split(', ');
+  var transitionTimeout = getTimeout(transitionDelays, transitionDurations);
+  var animationDelays = (styles[animationProp + 'Delay'] || '').split(', ');
+  var animationDurations = (styles[animationProp + 'Duration'] || '').split(', ');
+  var animationTimeout = getTimeout(animationDelays, animationDurations);
+
+  var type;
+  var timeout = 0;
+  var propCount = 0;
+  /* istanbul ignore if */
+  if (expectedType === TRANSITION) {
+    if (transitionTimeout > 0) {
+      type = TRANSITION;
+      timeout = transitionTimeout;
+      propCount = transitionDurations.length;
+    }
+  } else if (expectedType === ANIMATION) {
+    if (animationTimeout > 0) {
+      type = ANIMATION;
+      timeout = animationTimeout;
+      propCount = animationDurations.length;
+    }
+  } else {
+    timeout = Math.max(transitionTimeout, animationTimeout);
+    type = timeout > 0
+      ? transitionTimeout > animationTimeout
+        ? TRANSITION
+        : ANIMATION
+      : null;
+    propCount = type
+      ? type === TRANSITION
+        ? transitionDurations.length
+        : animationDurations.length
+      : 0;
+  }
+  var hasTransform =
+    type === TRANSITION &&
+    transformRE.test(styles[transitionProp + 'Property']);
+  return {
+    type: type,
+    timeout: timeout,
+    propCount: propCount,
+    hasTransform: hasTransform
+  }
+}
+
+function getTimeout (delays, durations) {
+  /* istanbul ignore next */
+  while (delays.length < durations.length) {
+    delays = delays.concat(delays);
+  }
+
+  return Math.max.apply(null, durations.map(function (d, i) {
+    return toMs(d) + toMs(delays[i])
+  }))
+}
+
+// Old versions of Chromium (below 61.0.3163.100) formats floating pointer numbers
+// in a locale-dependent way, using a comma instead of a dot.
+// If comma is not replaced with a dot, the input will be rounded down (i.e. acting
+// as a floor function) causing unexpected behaviors
+function toMs (s) {
+  return Number(s.slice(0, -1).replace(',', '.')) * 1000
+}
+
+/*  */
+
+function enter (vnode, toggleDisplay) {
+  var el = vnode.elm;
+
+  // call leave callback now
+  if (isDef(el._leaveCb)) {
+    el._leaveCb.cancelled = true;
+    el._leaveCb();
+  }
+
+  var data = resolveTransition(vnode.data.transition);
+  if (isUndef(data)) {
+    return
+  }
+
+  /* istanbul ignore if */
+  if (isDef(el._enterCb) || el.nodeType !== 1) {
+    return
+  }
+
+  var css = data.css;
+  var type = data.type;
+  var enterClass = data.enterClass;
+  var enterToClass = data.enterToClass;
+  var enterActiveClass = data.enterActiveClass;
+  var appearClass = data.appearClass;
+  var appearToClass = data.appearToClass;
+  var appearActiveClass = data.appearActiveClass;
+  var beforeEnter = data.beforeEnter;
+  var enter = data.enter;
+  var afterEnter = data.afterEnter;
+  var enterCancelled = data.enterCancelled;
+  var beforeAppear = data.beforeAppear;
+  var appear = data.appear;
+  var afterAppear = data.afterAppear;
+  var appearCancelled = data.appearCancelled;
+  var duration = data.duration;
+
+  // activeInstance will always be the <transition> component managing this
+  // transition. One edge case to check is when the <transition> is placed
+  // as the root node of a child component. In that case we need to check
+  // <transition>'s parent for appear check.
+  var context = activeInstance;
+  var transitionNode = activeInstance.$vnode;
+  while (transitionNode && transitionNode.parent) {
+    context = transitionNode.context;
+    transitionNode = transitionNode.parent;
+  }
+
+  var isAppear = !context._isMounted || !vnode.isRootInsert;
+
+  if (isAppear && !appear && appear !== '') {
+    return
+  }
+
+  var startClass = isAppear && appearClass
+    ? appearClass
+    : enterClass;
+  var activeClass = isAppear && appearActiveClass
+    ? appearActiveClass
+    : enterActiveClass;
+  var toClass = isAppear && appearToClass
+    ? appearToClass
+    : enterToClass;
+
+  var beforeEnterHook = isAppear
+    ? (beforeAppear || beforeEnter)
+    : beforeEnter;
+  var enterHook = isAppear
+    ? (typeof appear === 'function' ? appear : enter)
+    : enter;
+  var afterEnterHook = isAppear
+    ? (afterAppear || afterEnter)
+    : afterEnter;
+  var enterCancelledHook = isAppear
+    ? (appearCancelled || enterCancelled)
+    : enterCancelled;
+
+  var explicitEnterDuration = toNumber(
+    isObject(duration)
+      ? duration.enter
+      : duration
+  );
+
+  if ( true && explicitEnterDuration != null) {
+    checkDuration(explicitEnterDuration, 'enter', vnode);
+  }
+
+  var expectsCSS = css !== false && !isIE9;
+  var userWantsControl = getHookArgumentsLength(enterHook);
+
+  var cb = el._enterCb = once(function () {
+    if (expectsCSS) {
+      removeTransitionClass(el, toClass);
+      removeTransitionClass(el, activeClass);
+    }
+    if (cb.cancelled) {
+      if (expectsCSS) {
+        removeTransitionClass(el, startClass);
+      }
+      enterCancelledHook && enterCancelledHook(el);
+    } else {
+      afterEnterHook && afterEnterHook(el);
+    }
+    el._enterCb = null;
+  });
+
+  if (!vnode.data.show) {
+    // remove pending leave element on enter by injecting an insert hook
+    mergeVNodeHook(vnode, 'insert', function () {
+      var parent = el.parentNode;
+      var pendingNode = parent && parent._pending && parent._pending[vnode.key];
+      if (pendingNode &&
+        pendingNode.tag === vnode.tag &&
+        pendingNode.elm._leaveCb
+      ) {
+        pendingNode.elm._leaveCb();
+      }
+      enterHook && enterHook(el, cb);
+    });
+  }
+
+  // start enter transition
+  beforeEnterHook && beforeEnterHook(el);
+  if (expectsCSS) {
+    addTransitionClass(el, startClass);
+    addTransitionClass(el, activeClass);
+    nextFrame(function () {
+      removeTransitionClass(el, startClass);
+      if (!cb.cancelled) {
+        addTransitionClass(el, toClass);
+        if (!userWantsControl) {
+          if (isValidDuration(explicitEnterDuration)) {
+            setTimeout(cb, explicitEnterDuration);
+          } else {
+            whenTransitionEnds(el, type, cb);
+          }
+        }
+      }
+    });
+  }
+
+  if (vnode.data.show) {
+    toggleDisplay && toggleDisplay();
+    enterHook && enterHook(el, cb);
+  }
+
+  if (!expectsCSS && !userWantsControl) {
+    cb();
+  }
+}
+
+function leave (vnode, rm) {
+  var el = vnode.elm;
+
+  // call enter callback now
+  if (isDef(el._enterCb)) {
+    el._enterCb.cancelled = true;
+    el._enterCb();
+  }
+
+  var data = resolveTransition(vnode.data.transition);
+  if (isUndef(data) || el.nodeType !== 1) {
+    return rm()
+  }
+
+  /* istanbul ignore if */
+  if (isDef(el._leaveCb)) {
+    return
+  }
+
+  var css = data.css;
+  var type = data.type;
+  var leaveClass = data.leaveClass;
+  var leaveToClass = data.leaveToClass;
+  var leaveActiveClass = data.leaveActiveClass;
+  var beforeLeave = data.beforeLeave;
+  var leave = data.leave;
+  var afterLeave = data.afterLeave;
+  var leaveCancelled = data.leaveCancelled;
+  var delayLeave = data.delayLeave;
+  var duration = data.duration;
+
+  var expectsCSS = css !== false && !isIE9;
+  var userWantsControl = getHookArgumentsLength(leave);
+
+  var explicitLeaveDuration = toNumber(
+    isObject(duration)
+      ? duration.leave
+      : duration
+  );
+
+  if ( true && isDef(explicitLeaveDuration)) {
+    checkDuration(explicitLeaveDuration, 'leave', vnode);
+  }
+
+  var cb = el._leaveCb = once(function () {
+    if (el.parentNode && el.parentNode._pending) {
+      el.parentNode._pending[vnode.key] = null;
+    }
+    if (expectsCSS) {
+      removeTransitionClass(el, leaveToClass);
+      removeTransitionClass(el, leaveActiveClass);
+    }
+    if (cb.cancelled) {
+      if (expectsCSS) {
+        removeTransitionClass(el, leaveClass);
+      }
+      leaveCancelled && leaveCancelled(el);
+    } else {
+      rm();
+      afterLeave && afterLeave(el);
+    }
+    el._leaveCb = null;
+  });
+
+  if (delayLeave) {
+    delayLeave(performLeave);
+  } else {
+    performLeave();
+  }
+
+  function performLeave () {
+    // the delayed leave may have already been cancelled
+    if (cb.cancelled) {
+      return
+    }
+    // record leaving element
+    if (!vnode.data.show && el.parentNode) {
+      (el.parentNode._pending || (el.parentNode._pending = {}))[(vnode.key)] = vnode;
+    }
+    beforeLeave && beforeLeave(el);
+    if (expectsCSS) {
+      addTransitionClass(el, leaveClass);
+      addTransitionClass(el, leaveActiveClass);
+      nextFrame(function () {
+        removeTransitionClass(el, leaveClass);
+        if (!cb.cancelled) {
+          addTransitionClass(el, leaveToClass);
+          if (!userWantsControl) {
+            if (isValidDuration(explicitLeaveDuration)) {
+              setTimeout(cb, explicitLeaveDuration);
+            } else {
+              whenTransitionEnds(el, type, cb);
+            }
+          }
+        }
+      });
+    }
+    leave && leave(el, cb);
+    if (!expectsCSS && !userWantsControl) {
+      cb();
+    }
+  }
+}
+
+// only used in dev mode
+function checkDuration (val, name, vnode) {
+  if (typeof val !== 'number') {
+    warn(
+      "<transition> explicit " + name + " duration is not a valid number - " +
+      "got " + (JSON.stringify(val)) + ".",
+      vnode.context
+    );
+  } else if (isNaN(val)) {
+    warn(
+      "<transition> explicit " + name + " duration is NaN - " +
+      'the duration expression might be incorrect.',
+      vnode.context
+    );
+  }
+}
+
+function isValidDuration (val) {
+  return typeof val === 'number' && !isNaN(val)
+}
+
+/**
+ * Normalize a transition hook's argument length. The hook may be:
+ * - a merged hook (invoker) with the original in .fns
+ * - a wrapped component method (check ._length)
+ * - a plain function (.length)
+ */
+function getHookArgumentsLength (fn) {
+  if (isUndef(fn)) {
+    return false
+  }
+  var invokerFns = fn.fns;
+  if (isDef(invokerFns)) {
+    // invoker
+    return getHookArgumentsLength(
+      Array.isArray(invokerFns)
+        ? invokerFns[0]
+        : invokerFns
+    )
+  } else {
+    return (fn._length || fn.length) > 1
+  }
+}
+
+function _enter (_, vnode) {
+  if (vnode.data.show !== true) {
+    enter(vnode);
+  }
+}
+
+var transition = inBrowser ? {
+  create: _enter,
+  activate: _enter,
+  remove: function remove$$1 (vnode, rm) {
+    /* istanbul ignore else */
+    if (vnode.data.show !== true) {
+      leave(vnode, rm);
+    } else {
+      rm();
+    }
+  }
+} : {};
+
+var platformModules = [
+  attrs,
+  klass,
+  events,
+  domProps,
+  style,
+  transition
+];
+
+/*  */
+
+// the directive module should be applied last, after all
+// built-in modules have been applied.
+var modules = platformModules.concat(baseModules);
+
+var patch = createPatchFunction({ nodeOps: nodeOps, modules: modules });
+
+/**
+ * Not type checking this file because flow doesn't like attaching
+ * properties to Elements.
+ */
+
+/* istanbul ignore if */
+if (isIE9) {
+  // http://www.matts411.com/post/internet-explorer-9-oninput/
+  document.addEventListener('selectionchange', function () {
+    var el = document.activeElement;
+    if (el && el.vmodel) {
+      trigger(el, 'input');
+    }
+  });
+}
+
+var directive = {
+  inserted: function inserted (el, binding, vnode, oldVnode) {
+    if (vnode.tag === 'select') {
+      // #6903
+      if (oldVnode.elm && !oldVnode.elm._vOptions) {
+        mergeVNodeHook(vnode, 'postpatch', function () {
+          directive.componentUpdated(el, binding, vnode);
+        });
+      } else {
+        setSelected(el, binding, vnode.context);
+      }
+      el._vOptions = [].map.call(el.options, getValue);
+    } else if (vnode.tag === 'textarea' || isTextInputType(el.type)) {
+      el._vModifiers = binding.modifiers;
+      if (!binding.modifiers.lazy) {
+        el.addEventListener('compositionstart', onCompositionStart);
+        el.addEventListener('compositionend', onCompositionEnd);
+        // Safari < 10.2 & UIWebView doesn't fire compositionend when
+        // switching focus before confirming composition choice
+        // this also fixes the issue where some browsers e.g. iOS Chrome
+        // fires "change" instead of "input" on autocomplete.
+        el.addEventListener('change', onCompositionEnd);
+        /* istanbul ignore if */
+        if (isIE9) {
+          el.vmodel = true;
+        }
+      }
+    }
+  },
+
+  componentUpdated: function componentUpdated (el, binding, vnode) {
+    if (vnode.tag === 'select') {
+      setSelected(el, binding, vnode.context);
+      // in case the options rendered by v-for have changed,
+      // it's possible that the value is out-of-sync with the rendered options.
+      // detect such cases and filter out values that no longer has a matching
+      // option in the DOM.
+      var prevOptions = el._vOptions;
+      var curOptions = el._vOptions = [].map.call(el.options, getValue);
+      if (curOptions.some(function (o, i) { return !looseEqual(o, prevOptions[i]); })) {
+        // trigger change event if
+        // no matching option found for at least one value
+        var needReset = el.multiple
+          ? binding.value.some(function (v) { return hasNoMatchingOption(v, curOptions); })
+          : binding.value !== binding.oldValue && hasNoMatchingOption(binding.value, curOptions);
+        if (needReset) {
+          trigger(el, 'change');
+        }
+      }
+    }
+  }
+};
+
+function setSelected (el, binding, vm) {
+  actuallySetSelected(el, binding, vm);
+  /* istanbul ignore if */
+  if (isIE || isEdge) {
+    setTimeout(function () {
+      actuallySetSelected(el, binding, vm);
+    }, 0);
+  }
+}
+
+function actuallySetSelected (el, binding, vm) {
+  var value = binding.value;
+  var isMultiple = el.multiple;
+  if (isMultiple && !Array.isArray(value)) {
+     true && warn(
+      "<select multiple v-model=\"" + (binding.expression) + "\"> " +
+      "expects an Array value for its binding, but got " + (Object.prototype.toString.call(value).slice(8, -1)),
+      vm
+    );
+    return
+  }
+  var selected, option;
+  for (var i = 0, l = el.options.length; i < l; i++) {
+    option = el.options[i];
+    if (isMultiple) {
+      selected = looseIndexOf(value, getValue(option)) > -1;
+      if (option.selected !== selected) {
+        option.selected = selected;
+      }
+    } else {
+      if (looseEqual(getValue(option), value)) {
+        if (el.selectedIndex !== i) {
+          el.selectedIndex = i;
+        }
+        return
+      }
+    }
+  }
+  if (!isMultiple) {
+    el.selectedIndex = -1;
+  }
+}
+
+function hasNoMatchingOption (value, options) {
+  return options.every(function (o) { return !looseEqual(o, value); })
+}
+
+function getValue (option) {
+  return '_value' in option
+    ? option._value
+    : option.value
+}
+
+function onCompositionStart (e) {
+  e.target.composing = true;
+}
+
+function onCompositionEnd (e) {
+  // prevent triggering an input event for no reason
+  if (!e.target.composing) { return }
+  e.target.composing = false;
+  trigger(e.target, 'input');
+}
+
+function trigger (el, type) {
+  var e = document.createEvent('HTMLEvents');
+  e.initEvent(type, true, true);
+  el.dispatchEvent(e);
+}
+
+/*  */
+
+// recursively search for possible transition defined inside the component root
+function locateNode (vnode) {
+  return vnode.componentInstance && (!vnode.data || !vnode.data.transition)
+    ? locateNode(vnode.componentInstance._vnode)
+    : vnode
+}
+
+var show = {
+  bind: function bind (el, ref, vnode) {
+    var value = ref.value;
+
+    vnode = locateNode(vnode);
+    var transition$$1 = vnode.data && vnode.data.transition;
+    var originalDisplay = el.__vOriginalDisplay =
+      el.style.display === 'none' ? '' : el.style.display;
+    if (value && transition$$1) {
+      vnode.data.show = true;
+      enter(vnode, function () {
+        el.style.display = originalDisplay;
+      });
+    } else {
+      el.style.display = value ? originalDisplay : 'none';
+    }
+  },
+
+  update: function update (el, ref, vnode) {
+    var value = ref.value;
+    var oldValue = ref.oldValue;
+
+    /* istanbul ignore if */
+    if (!value === !oldValue) { return }
+    vnode = locateNode(vnode);
+    var transition$$1 = vnode.data && vnode.data.transition;
+    if (transition$$1) {
+      vnode.data.show = true;
+      if (value) {
+        enter(vnode, function () {
+          el.style.display = el.__vOriginalDisplay;
+        });
+      } else {
+        leave(vnode, function () {
+          el.style.display = 'none';
+        });
+      }
+    } else {
+      el.style.display = value ? el.__vOriginalDisplay : 'none';
+    }
+  },
+
+  unbind: function unbind (
+    el,
+    binding,
+    vnode,
+    oldVnode,
+    isDestroy
+  ) {
+    if (!isDestroy) {
+      el.style.display = el.__vOriginalDisplay;
+    }
+  }
+};
+
+var platformDirectives = {
+  model: directive,
+  show: show
+};
+
+/*  */
+
+var transitionProps = {
+  name: String,
+  appear: Boolean,
+  css: Boolean,
+  mode: String,
+  type: String,
+  enterClass: String,
+  leaveClass: String,
+  enterToClass: String,
+  leaveToClass: String,
+  enterActiveClass: String,
+  leaveActiveClass: String,
+  appearClass: String,
+  appearActiveClass: String,
+  appearToClass: String,
+  duration: [Number, String, Object]
+};
+
+// in case the child is also an abstract component, e.g. <keep-alive>
+// we want to recursively retrieve the real component to be rendered
+function getRealChild (vnode) {
+  var compOptions = vnode && vnode.componentOptions;
+  if (compOptions && compOptions.Ctor.options.abstract) {
+    return getRealChild(getFirstComponentChild(compOptions.children))
+  } else {
+    return vnode
+  }
+}
+
+function extractTransitionData (comp) {
+  var data = {};
+  var options = comp.$options;
+  // props
+  for (var key in options.propsData) {
+    data[key] = comp[key];
+  }
+  // events.
+  // extract listeners and pass them directly to the transition methods
+  var listeners = options._parentListeners;
+  for (var key$1 in listeners) {
+    data[camelize(key$1)] = listeners[key$1];
+  }
+  return data
+}
+
+function placeholder (h, rawChild) {
+  if (/\d-keep-alive$/.test(rawChild.tag)) {
+    return h('keep-alive', {
+      props: rawChild.componentOptions.propsData
+    })
+  }
+}
+
+function hasParentTransition (vnode) {
+  while ((vnode = vnode.parent)) {
+    if (vnode.data.transition) {
+      return true
+    }
+  }
+}
+
+function isSameChild (child, oldChild) {
+  return oldChild.key === child.key && oldChild.tag === child.tag
+}
+
+var isNotTextNode = function (c) { return c.tag || isAsyncPlaceholder(c); };
+
+var isVShowDirective = function (d) { return d.name === 'show'; };
+
+var Transition = {
+  name: 'transition',
+  props: transitionProps,
+  abstract: true,
+
+  render: function render (h) {
+    var this$1 = this;
+
+    var children = this.$slots.default;
+    if (!children) {
+      return
+    }
+
+    // filter out text nodes (possible whitespaces)
+    children = children.filter(isNotTextNode);
+    /* istanbul ignore if */
+    if (!children.length) {
+      return
+    }
+
+    // warn multiple elements
+    if ( true && children.length > 1) {
+      warn(
+        '<transition> can only be used on a single element. Use ' +
+        '<transition-group> for lists.',
+        this.$parent
+      );
+    }
+
+    var mode = this.mode;
+
+    // warn invalid mode
+    if ( true &&
+      mode && mode !== 'in-out' && mode !== 'out-in'
+    ) {
+      warn(
+        'invalid <transition> mode: ' + mode,
+        this.$parent
+      );
+    }
+
+    var rawChild = children[0];
+
+    // if this is a component root node and the component's
+    // parent container node also has transition, skip.
+    if (hasParentTransition(this.$vnode)) {
+      return rawChild
+    }
+
+    // apply transition data to child
+    // use getRealChild() to ignore abstract components e.g. keep-alive
+    var child = getRealChild(rawChild);
+    /* istanbul ignore if */
+    if (!child) {
+      return rawChild
+    }
+
+    if (this._leaving) {
+      return placeholder(h, rawChild)
+    }
+
+    // ensure a key that is unique to the vnode type and to this transition
+    // component instance. This key will be used to remove pending leaving nodes
+    // during entering.
+    var id = "__transition-" + (this._uid) + "-";
+    child.key = child.key == null
+      ? child.isComment
+        ? id + 'comment'
+        : id + child.tag
+      : isPrimitive(child.key)
+        ? (String(child.key).indexOf(id) === 0 ? child.key : id + child.key)
+        : child.key;
+
+    var data = (child.data || (child.data = {})).transition = extractTransitionData(this);
+    var oldRawChild = this._vnode;
+    var oldChild = getRealChild(oldRawChild);
+
+    // mark v-show
+    // so that the transition module can hand over the control to the directive
+    if (child.data.directives && child.data.directives.some(isVShowDirective)) {
+      child.data.show = true;
+    }
+
+    if (
+      oldChild &&
+      oldChild.data &&
+      !isSameChild(child, oldChild) &&
+      !isAsyncPlaceholder(oldChild) &&
+      // #6687 component root is a comment node
+      !(oldChild.componentInstance && oldChild.componentInstance._vnode.isComment)
+    ) {
+      // replace old child transition data with fresh one
+      // important for dynamic transitions!
+      var oldData = oldChild.data.transition = extend({}, data);
+      // handle transition mode
+      if (mode === 'out-in') {
+        // return placeholder node and queue update when leave finishes
+        this._leaving = true;
+        mergeVNodeHook(oldData, 'afterLeave', function () {
+          this$1._leaving = false;
+          this$1.$forceUpdate();
+        });
+        return placeholder(h, rawChild)
+      } else if (mode === 'in-out') {
+        if (isAsyncPlaceholder(child)) {
+          return oldRawChild
+        }
+        var delayedLeave;
+        var performLeave = function () { delayedLeave(); };
+        mergeVNodeHook(data, 'afterEnter', performLeave);
+        mergeVNodeHook(data, 'enterCancelled', performLeave);
+        mergeVNodeHook(oldData, 'delayLeave', function (leave) { delayedLeave = leave; });
+      }
+    }
+
+    return rawChild
+  }
+};
+
+/*  */
+
+var props = extend({
+  tag: String,
+  moveClass: String
+}, transitionProps);
+
+delete props.mode;
+
+var TransitionGroup = {
+  props: props,
+
+  beforeMount: function beforeMount () {
+    var this$1 = this;
+
+    var update = this._update;
+    this._update = function (vnode, hydrating) {
+      var restoreActiveInstance = setActiveInstance(this$1);
+      // force removing pass
+      this$1.__patch__(
+        this$1._vnode,
+        this$1.kept,
+        false, // hydrating
+        true // removeOnly (!important, avoids unnecessary moves)
+      );
+      this$1._vnode = this$1.kept;
+      restoreActiveInstance();
+      update.call(this$1, vnode, hydrating);
+    };
+  },
+
+  render: function render (h) {
+    var tag = this.tag || this.$vnode.data.tag || 'span';
+    var map = Object.create(null);
+    var prevChildren = this.prevChildren = this.children;
+    var rawChildren = this.$slots.default || [];
+    var children = this.children = [];
+    var transitionData = extractTransitionData(this);
+
+    for (var i = 0; i < rawChildren.length; i++) {
+      var c = rawChildren[i];
+      if (c.tag) {
+        if (c.key != null && String(c.key).indexOf('__vlist') !== 0) {
+          children.push(c);
+          map[c.key] = c
+          ;(c.data || (c.data = {})).transition = transitionData;
+        } else if (true) {
+          var opts = c.componentOptions;
+          var name = opts ? (opts.Ctor.options.name || opts.tag || '') : c.tag;
+          warn(("<transition-group> children must be keyed: <" + name + ">"));
+        }
+      }
+    }
+
+    if (prevChildren) {
+      var kept = [];
+      var removed = [];
+      for (var i$1 = 0; i$1 < prevChildren.length; i$1++) {
+        var c$1 = prevChildren[i$1];
+        c$1.data.transition = transitionData;
+        c$1.data.pos = c$1.elm.getBoundingClientRect();
+        if (map[c$1.key]) {
+          kept.push(c$1);
+        } else {
+          removed.push(c$1);
+        }
+      }
+      this.kept = h(tag, null, kept);
+      this.removed = removed;
+    }
+
+    return h(tag, null, children)
+  },
+
+  updated: function updated () {
+    var children = this.prevChildren;
+    var moveClass = this.moveClass || ((this.name || 'v') + '-move');
+    if (!children.length || !this.hasMove(children[0].elm, moveClass)) {
+      return
+    }
+
+    // we divide the work into three loops to avoid mixing DOM reads and writes
+    // in each iteration - which helps prevent layout thrashing.
+    children.forEach(callPendingCbs);
+    children.forEach(recordPosition);
+    children.forEach(applyTranslation);
+
+    // force reflow to put everything in position
+    // assign to this to avoid being removed in tree-shaking
+    // $flow-disable-line
+    this._reflow = document.body.offsetHeight;
+
+    children.forEach(function (c) {
+      if (c.data.moved) {
+        var el = c.elm;
+        var s = el.style;
+        addTransitionClass(el, moveClass);
+        s.transform = s.WebkitTransform = s.transitionDuration = '';
+        el.addEventListener(transitionEndEvent, el._moveCb = function cb (e) {
+          if (e && e.target !== el) {
+            return
+          }
+          if (!e || /transform$/.test(e.propertyName)) {
+            el.removeEventListener(transitionEndEvent, cb);
+            el._moveCb = null;
+            removeTransitionClass(el, moveClass);
+          }
+        });
+      }
+    });
+  },
+
+  methods: {
+    hasMove: function hasMove (el, moveClass) {
+      /* istanbul ignore if */
+      if (!hasTransition) {
+        return false
+      }
+      /* istanbul ignore if */
+      if (this._hasMove) {
+        return this._hasMove
+      }
+      // Detect whether an element with the move class applied has
+      // CSS transitions. Since the element may be inside an entering
+      // transition at this very moment, we make a clone of it and remove
+      // all other transition classes applied to ensure only the move class
+      // is applied.
+      var clone = el.cloneNode();
+      if (el._transitionClasses) {
+        el._transitionClasses.forEach(function (cls) { removeClass(clone, cls); });
+      }
+      addClass(clone, moveClass);
+      clone.style.display = 'none';
+      this.$el.appendChild(clone);
+      var info = getTransitionInfo(clone);
+      this.$el.removeChild(clone);
+      return (this._hasMove = info.hasTransform)
+    }
+  }
+};
+
+function callPendingCbs (c) {
+  /* istanbul ignore if */
+  if (c.elm._moveCb) {
+    c.elm._moveCb();
+  }
+  /* istanbul ignore if */
+  if (c.elm._enterCb) {
+    c.elm._enterCb();
+  }
+}
+
+function recordPosition (c) {
+  c.data.newPos = c.elm.getBoundingClientRect();
+}
+
+function applyTranslation (c) {
+  var oldPos = c.data.pos;
+  var newPos = c.data.newPos;
+  var dx = oldPos.left - newPos.left;
+  var dy = oldPos.top - newPos.top;
+  if (dx || dy) {
+    c.data.moved = true;
+    var s = c.elm.style;
+    s.transform = s.WebkitTransform = "translate(" + dx + "px," + dy + "px)";
+    s.transitionDuration = '0s';
+  }
+}
+
+var platformComponents = {
+  Transition: Transition,
+  TransitionGroup: TransitionGroup
+};
+
+/*  */
+
+// install platform specific utils
+Vue.config.mustUseProp = mustUseProp;
+Vue.config.isReservedTag = isReservedTag;
+Vue.config.isReservedAttr = isReservedAttr;
+Vue.config.getTagNamespace = getTagNamespace;
+Vue.config.isUnknownElement = isUnknownElement;
+
+// install platform runtime directives & components
+extend(Vue.options.directives, platformDirectives);
+extend(Vue.options.components, platformComponents);
+
+// install platform patch function
+Vue.prototype.__patch__ = inBrowser ? patch : noop;
+
+// public mount method
+Vue.prototype.$mount = function (
+  el,
+  hydrating
+) {
+  el = el && inBrowser ? query(el) : undefined;
+  return mountComponent(this, el, hydrating)
+};
+
+// devtools global hook
+/* istanbul ignore next */
+if (inBrowser) {
+  setTimeout(function () {
+    if (config.devtools) {
+      if (devtools) {
+        devtools.emit('init', Vue);
+      } else if (
+        true
+      ) {
+        console[console.info ? 'info' : 'log'](
+          'Download the Vue Devtools extension for a better development experience:\n' +
+          'https://github.com/vuejs/vue-devtools'
+        );
+      }
+    }
+    if ( true &&
+      config.productionTip !== false &&
+      typeof console !== 'undefined'
+    ) {
+      console[console.info ? 'info' : 'log'](
+        "You are running Vue in development mode.\n" +
+        "Make sure to turn on production mode when deploying for production.\n" +
+        "See more tips at https://vuejs.org/guide/deployment.html"
+      );
+    }
+  }, 0);
+}
+
+/*  */
+
+/* harmony default export */ __webpack_exports__["default"] = (Vue);
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! ./../../timers-browserify/main.js */ "./node_modules/timers-browserify/main.js").setImmediate))
+
+/***/ }),
+
 /***/ "./node_modules/axios/index.js":
 /*!*************************************!*\
   !*** ./node_modules/axios/index.js ***!
@@ -6319,6 +14856,26 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/@mdi/font/css/materialdesignicons.css":
+/*!********************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/@mdi/font/css/materialdesignicons.css ***!
+  \********************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var escape = __webpack_require__(/*! ../../../css-loader/lib/url/escape.js */ "./node_modules/css-loader/lib/url/escape.js");
+exports = module.exports = __webpack_require__(/*! ../../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "/* MaterialDesignIcons.com */\n@font-face {\n  font-family: \"Material Design Icons\";\n  src: url(" + escape(__webpack_require__(/*! ../fonts/materialdesignicons-webfont.eot?v=5.6.55 */ "./node_modules/@mdi/font/fonts/materialdesignicons-webfont.eot?v=5.6.55")) + ");\n  src: url(" + escape(__webpack_require__(/*! ../fonts/materialdesignicons-webfont.eot */ "./node_modules/@mdi/font/fonts/materialdesignicons-webfont.eot")) + "?#iefix&v=5.6.55) format(\"embedded-opentype\"), url(" + escape(__webpack_require__(/*! ../fonts/materialdesignicons-webfont.woff2?v=5.6.55 */ "./node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff2?v=5.6.55")) + ") format(\"woff2\"), url(" + escape(__webpack_require__(/*! ../fonts/materialdesignicons-webfont.woff?v=5.6.55 */ "./node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff?v=5.6.55")) + ") format(\"woff\"), url(" + escape(__webpack_require__(/*! ../fonts/materialdesignicons-webfont.ttf?v=5.6.55 */ "./node_modules/@mdi/font/fonts/materialdesignicons-webfont.ttf?v=5.6.55")) + ") format(\"truetype\");\n  font-weight: normal;\n  font-style: normal;\n}\n\n.mdi:before,\n.mdi-set {\n  display: inline-block;\n  font: normal normal normal 24px/1 \"Material Design Icons\";\n  font-size: inherit;\n  text-rendering: auto;\n  line-height: inherit;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n.mdi-ab-testing::before {\n  content: \"\\F01C9\";\n}\n\n.mdi-abjad-arabic::before {\n  content: \"\\F1328\";\n}\n\n.mdi-abjad-hebrew::before {\n  content: \"\\F1329\";\n}\n\n.mdi-abugida-devanagari::before {\n  content: \"\\F132A\";\n}\n\n.mdi-abugida-thai::before {\n  content: \"\\F132B\";\n}\n\n.mdi-access-point::before {\n  content: \"\\F0003\";\n}\n\n.mdi-access-point-check::before {\n  content: \"\\F1538\";\n}\n\n.mdi-access-point-minus::before {\n  content: \"\\F1539\";\n}\n\n.mdi-access-point-network::before {\n  content: \"\\F0002\";\n}\n\n.mdi-access-point-network-off::before {\n  content: \"\\F0BE1\";\n}\n\n.mdi-access-point-off::before {\n  content: \"\\F1511\";\n}\n\n.mdi-access-point-plus::before {\n  content: \"\\F153A\";\n}\n\n.mdi-access-point-remove::before {\n  content: \"\\F153B\";\n}\n\n.mdi-account::before {\n  content: \"\\F0004\";\n}\n\n.mdi-account-alert::before {\n  content: \"\\F0005\";\n}\n\n.mdi-account-alert-outline::before {\n  content: \"\\F0B50\";\n}\n\n.mdi-account-arrow-left::before {\n  content: \"\\F0B51\";\n}\n\n.mdi-account-arrow-left-outline::before {\n  content: \"\\F0B52\";\n}\n\n.mdi-account-arrow-right::before {\n  content: \"\\F0B53\";\n}\n\n.mdi-account-arrow-right-outline::before {\n  content: \"\\F0B54\";\n}\n\n.mdi-account-box::before {\n  content: \"\\F0006\";\n}\n\n.mdi-account-box-multiple::before {\n  content: \"\\F0934\";\n}\n\n.mdi-account-box-multiple-outline::before {\n  content: \"\\F100A\";\n}\n\n.mdi-account-box-outline::before {\n  content: \"\\F0007\";\n}\n\n.mdi-account-cancel::before {\n  content: \"\\F12DF\";\n}\n\n.mdi-account-cancel-outline::before {\n  content: \"\\F12E0\";\n}\n\n.mdi-account-cash::before {\n  content: \"\\F1097\";\n}\n\n.mdi-account-cash-outline::before {\n  content: \"\\F1098\";\n}\n\n.mdi-account-check::before {\n  content: \"\\F0008\";\n}\n\n.mdi-account-check-outline::before {\n  content: \"\\F0BE2\";\n}\n\n.mdi-account-child::before {\n  content: \"\\F0A89\";\n}\n\n.mdi-account-child-circle::before {\n  content: \"\\F0A8A\";\n}\n\n.mdi-account-child-outline::before {\n  content: \"\\F10C8\";\n}\n\n.mdi-account-circle::before {\n  content: \"\\F0009\";\n}\n\n.mdi-account-circle-outline::before {\n  content: \"\\F0B55\";\n}\n\n.mdi-account-clock::before {\n  content: \"\\F0B56\";\n}\n\n.mdi-account-clock-outline::before {\n  content: \"\\F0B57\";\n}\n\n.mdi-account-cog::before {\n  content: \"\\F1370\";\n}\n\n.mdi-account-cog-outline::before {\n  content: \"\\F1371\";\n}\n\n.mdi-account-convert::before {\n  content: \"\\F000A\";\n}\n\n.mdi-account-convert-outline::before {\n  content: \"\\F1301\";\n}\n\n.mdi-account-cowboy-hat::before {\n  content: \"\\F0E9B\";\n}\n\n.mdi-account-details::before {\n  content: \"\\F0631\";\n}\n\n.mdi-account-details-outline::before {\n  content: \"\\F1372\";\n}\n\n.mdi-account-edit::before {\n  content: \"\\F06BC\";\n}\n\n.mdi-account-edit-outline::before {\n  content: \"\\F0FFB\";\n}\n\n.mdi-account-group::before {\n  content: \"\\F0849\";\n}\n\n.mdi-account-group-outline::before {\n  content: \"\\F0B58\";\n}\n\n.mdi-account-hard-hat::before {\n  content: \"\\F05B5\";\n}\n\n.mdi-account-heart::before {\n  content: \"\\F0899\";\n}\n\n.mdi-account-heart-outline::before {\n  content: \"\\F0BE3\";\n}\n\n.mdi-account-key::before {\n  content: \"\\F000B\";\n}\n\n.mdi-account-key-outline::before {\n  content: \"\\F0BE4\";\n}\n\n.mdi-account-lock::before {\n  content: \"\\F115E\";\n}\n\n.mdi-account-lock-outline::before {\n  content: \"\\F115F\";\n}\n\n.mdi-account-minus::before {\n  content: \"\\F000D\";\n}\n\n.mdi-account-minus-outline::before {\n  content: \"\\F0AEC\";\n}\n\n.mdi-account-multiple::before {\n  content: \"\\F000E\";\n}\n\n.mdi-account-multiple-check::before {\n  content: \"\\F08C5\";\n}\n\n.mdi-account-multiple-check-outline::before {\n  content: \"\\F11FE\";\n}\n\n.mdi-account-multiple-minus::before {\n  content: \"\\F05D3\";\n}\n\n.mdi-account-multiple-minus-outline::before {\n  content: \"\\F0BE5\";\n}\n\n.mdi-account-multiple-outline::before {\n  content: \"\\F000F\";\n}\n\n.mdi-account-multiple-plus::before {\n  content: \"\\F0010\";\n}\n\n.mdi-account-multiple-plus-outline::before {\n  content: \"\\F0800\";\n}\n\n.mdi-account-multiple-remove::before {\n  content: \"\\F120A\";\n}\n\n.mdi-account-multiple-remove-outline::before {\n  content: \"\\F120B\";\n}\n\n.mdi-account-music::before {\n  content: \"\\F0803\";\n}\n\n.mdi-account-music-outline::before {\n  content: \"\\F0CE9\";\n}\n\n.mdi-account-network::before {\n  content: \"\\F0011\";\n}\n\n.mdi-account-network-outline::before {\n  content: \"\\F0BE6\";\n}\n\n.mdi-account-off::before {\n  content: \"\\F0012\";\n}\n\n.mdi-account-off-outline::before {\n  content: \"\\F0BE7\";\n}\n\n.mdi-account-outline::before {\n  content: \"\\F0013\";\n}\n\n.mdi-account-plus::before {\n  content: \"\\F0014\";\n}\n\n.mdi-account-plus-outline::before {\n  content: \"\\F0801\";\n}\n\n.mdi-account-question::before {\n  content: \"\\F0B59\";\n}\n\n.mdi-account-question-outline::before {\n  content: \"\\F0B5A\";\n}\n\n.mdi-account-reactivate::before {\n  content: \"\\F152B\";\n}\n\n.mdi-account-reactivate-outline::before {\n  content: \"\\F152C\";\n}\n\n.mdi-account-remove::before {\n  content: \"\\F0015\";\n}\n\n.mdi-account-remove-outline::before {\n  content: \"\\F0AED\";\n}\n\n.mdi-account-search::before {\n  content: \"\\F0016\";\n}\n\n.mdi-account-search-outline::before {\n  content: \"\\F0935\";\n}\n\n.mdi-account-settings::before {\n  content: \"\\F0630\";\n}\n\n.mdi-account-settings-outline::before {\n  content: \"\\F10C9\";\n}\n\n.mdi-account-star::before {\n  content: \"\\F0017\";\n}\n\n.mdi-account-star-outline::before {\n  content: \"\\F0BE8\";\n}\n\n.mdi-account-supervisor::before {\n  content: \"\\F0A8B\";\n}\n\n.mdi-account-supervisor-circle::before {\n  content: \"\\F0A8C\";\n}\n\n.mdi-account-supervisor-circle-outline::before {\n  content: \"\\F14EC\";\n}\n\n.mdi-account-supervisor-outline::before {\n  content: \"\\F112D\";\n}\n\n.mdi-account-switch::before {\n  content: \"\\F0019\";\n}\n\n.mdi-account-switch-outline::before {\n  content: \"\\F04CB\";\n}\n\n.mdi-account-tie::before {\n  content: \"\\F0CE3\";\n}\n\n.mdi-account-tie-outline::before {\n  content: \"\\F10CA\";\n}\n\n.mdi-account-tie-voice::before {\n  content: \"\\F1308\";\n}\n\n.mdi-account-tie-voice-off::before {\n  content: \"\\F130A\";\n}\n\n.mdi-account-tie-voice-off-outline::before {\n  content: \"\\F130B\";\n}\n\n.mdi-account-tie-voice-outline::before {\n  content: \"\\F1309\";\n}\n\n.mdi-account-voice::before {\n  content: \"\\F05CB\";\n}\n\n.mdi-adjust::before {\n  content: \"\\F001A\";\n}\n\n.mdi-adobe::before {\n  content: \"\\F0936\";\n}\n\n.mdi-adobe-acrobat::before {\n  content: \"\\F0F9D\";\n}\n\n.mdi-air-conditioner::before {\n  content: \"\\F001B\";\n}\n\n.mdi-air-filter::before {\n  content: \"\\F0D43\";\n}\n\n.mdi-air-horn::before {\n  content: \"\\F0DAC\";\n}\n\n.mdi-air-humidifier::before {\n  content: \"\\F1099\";\n}\n\n.mdi-air-humidifier-off::before {\n  content: \"\\F1466\";\n}\n\n.mdi-air-purifier::before {\n  content: \"\\F0D44\";\n}\n\n.mdi-airbag::before {\n  content: \"\\F0BE9\";\n}\n\n.mdi-airballoon::before {\n  content: \"\\F001C\";\n}\n\n.mdi-airballoon-outline::before {\n  content: \"\\F100B\";\n}\n\n.mdi-airplane::before {\n  content: \"\\F001D\";\n}\n\n.mdi-airplane-landing::before {\n  content: \"\\F05D4\";\n}\n\n.mdi-airplane-off::before {\n  content: \"\\F001E\";\n}\n\n.mdi-airplane-takeoff::before {\n  content: \"\\F05D5\";\n}\n\n.mdi-airport::before {\n  content: \"\\F084B\";\n}\n\n.mdi-alarm::before {\n  content: \"\\F0020\";\n}\n\n.mdi-alarm-bell::before {\n  content: \"\\F078E\";\n}\n\n.mdi-alarm-check::before {\n  content: \"\\F0021\";\n}\n\n.mdi-alarm-light::before {\n  content: \"\\F078F\";\n}\n\n.mdi-alarm-light-outline::before {\n  content: \"\\F0BEA\";\n}\n\n.mdi-alarm-multiple::before {\n  content: \"\\F0022\";\n}\n\n.mdi-alarm-note::before {\n  content: \"\\F0E71\";\n}\n\n.mdi-alarm-note-off::before {\n  content: \"\\F0E72\";\n}\n\n.mdi-alarm-off::before {\n  content: \"\\F0023\";\n}\n\n.mdi-alarm-panel::before {\n  content: \"\\F15C4\";\n}\n\n.mdi-alarm-panel-outline::before {\n  content: \"\\F15C5\";\n}\n\n.mdi-alarm-plus::before {\n  content: \"\\F0024\";\n}\n\n.mdi-alarm-snooze::before {\n  content: \"\\F068E\";\n}\n\n.mdi-album::before {\n  content: \"\\F0025\";\n}\n\n.mdi-alert::before {\n  content: \"\\F0026\";\n}\n\n.mdi-alert-box::before {\n  content: \"\\F0027\";\n}\n\n.mdi-alert-box-outline::before {\n  content: \"\\F0CE4\";\n}\n\n.mdi-alert-circle::before {\n  content: \"\\F0028\";\n}\n\n.mdi-alert-circle-check::before {\n  content: \"\\F11ED\";\n}\n\n.mdi-alert-circle-check-outline::before {\n  content: \"\\F11EE\";\n}\n\n.mdi-alert-circle-outline::before {\n  content: \"\\F05D6\";\n}\n\n.mdi-alert-decagram::before {\n  content: \"\\F06BD\";\n}\n\n.mdi-alert-decagram-outline::before {\n  content: \"\\F0CE5\";\n}\n\n.mdi-alert-minus::before {\n  content: \"\\F14BB\";\n}\n\n.mdi-alert-minus-outline::before {\n  content: \"\\F14BE\";\n}\n\n.mdi-alert-octagon::before {\n  content: \"\\F0029\";\n}\n\n.mdi-alert-octagon-outline::before {\n  content: \"\\F0CE6\";\n}\n\n.mdi-alert-octagram::before {\n  content: \"\\F0767\";\n}\n\n.mdi-alert-octagram-outline::before {\n  content: \"\\F0CE7\";\n}\n\n.mdi-alert-outline::before {\n  content: \"\\F002A\";\n}\n\n.mdi-alert-plus::before {\n  content: \"\\F14BA\";\n}\n\n.mdi-alert-plus-outline::before {\n  content: \"\\F14BD\";\n}\n\n.mdi-alert-remove::before {\n  content: \"\\F14BC\";\n}\n\n.mdi-alert-remove-outline::before {\n  content: \"\\F14BF\";\n}\n\n.mdi-alert-rhombus::before {\n  content: \"\\F11CE\";\n}\n\n.mdi-alert-rhombus-outline::before {\n  content: \"\\F11CF\";\n}\n\n.mdi-alien::before {\n  content: \"\\F089A\";\n}\n\n.mdi-alien-outline::before {\n  content: \"\\F10CB\";\n}\n\n.mdi-align-horizontal-center::before {\n  content: \"\\F11C3\";\n}\n\n.mdi-align-horizontal-left::before {\n  content: \"\\F11C2\";\n}\n\n.mdi-align-horizontal-right::before {\n  content: \"\\F11C4\";\n}\n\n.mdi-align-vertical-bottom::before {\n  content: \"\\F11C5\";\n}\n\n.mdi-align-vertical-center::before {\n  content: \"\\F11C6\";\n}\n\n.mdi-align-vertical-top::before {\n  content: \"\\F11C7\";\n}\n\n.mdi-all-inclusive::before {\n  content: \"\\F06BE\";\n}\n\n.mdi-allergy::before {\n  content: \"\\F1258\";\n}\n\n.mdi-alpha::before {\n  content: \"\\F002B\";\n}\n\n.mdi-alpha-a::before {\n  content: \"\\F0AEE\";\n}\n\n.mdi-alpha-a-box::before {\n  content: \"\\F0B08\";\n}\n\n.mdi-alpha-a-box-outline::before {\n  content: \"\\F0BEB\";\n}\n\n.mdi-alpha-a-circle::before {\n  content: \"\\F0BEC\";\n}\n\n.mdi-alpha-a-circle-outline::before {\n  content: \"\\F0BED\";\n}\n\n.mdi-alpha-b::before {\n  content: \"\\F0AEF\";\n}\n\n.mdi-alpha-b-box::before {\n  content: \"\\F0B09\";\n}\n\n.mdi-alpha-b-box-outline::before {\n  content: \"\\F0BEE\";\n}\n\n.mdi-alpha-b-circle::before {\n  content: \"\\F0BEF\";\n}\n\n.mdi-alpha-b-circle-outline::before {\n  content: \"\\F0BF0\";\n}\n\n.mdi-alpha-c::before {\n  content: \"\\F0AF0\";\n}\n\n.mdi-alpha-c-box::before {\n  content: \"\\F0B0A\";\n}\n\n.mdi-alpha-c-box-outline::before {\n  content: \"\\F0BF1\";\n}\n\n.mdi-alpha-c-circle::before {\n  content: \"\\F0BF2\";\n}\n\n.mdi-alpha-c-circle-outline::before {\n  content: \"\\F0BF3\";\n}\n\n.mdi-alpha-d::before {\n  content: \"\\F0AF1\";\n}\n\n.mdi-alpha-d-box::before {\n  content: \"\\F0B0B\";\n}\n\n.mdi-alpha-d-box-outline::before {\n  content: \"\\F0BF4\";\n}\n\n.mdi-alpha-d-circle::before {\n  content: \"\\F0BF5\";\n}\n\n.mdi-alpha-d-circle-outline::before {\n  content: \"\\F0BF6\";\n}\n\n.mdi-alpha-e::before {\n  content: \"\\F0AF2\";\n}\n\n.mdi-alpha-e-box::before {\n  content: \"\\F0B0C\";\n}\n\n.mdi-alpha-e-box-outline::before {\n  content: \"\\F0BF7\";\n}\n\n.mdi-alpha-e-circle::before {\n  content: \"\\F0BF8\";\n}\n\n.mdi-alpha-e-circle-outline::before {\n  content: \"\\F0BF9\";\n}\n\n.mdi-alpha-f::before {\n  content: \"\\F0AF3\";\n}\n\n.mdi-alpha-f-box::before {\n  content: \"\\F0B0D\";\n}\n\n.mdi-alpha-f-box-outline::before {\n  content: \"\\F0BFA\";\n}\n\n.mdi-alpha-f-circle::before {\n  content: \"\\F0BFB\";\n}\n\n.mdi-alpha-f-circle-outline::before {\n  content: \"\\F0BFC\";\n}\n\n.mdi-alpha-g::before {\n  content: \"\\F0AF4\";\n}\n\n.mdi-alpha-g-box::before {\n  content: \"\\F0B0E\";\n}\n\n.mdi-alpha-g-box-outline::before {\n  content: \"\\F0BFD\";\n}\n\n.mdi-alpha-g-circle::before {\n  content: \"\\F0BFE\";\n}\n\n.mdi-alpha-g-circle-outline::before {\n  content: \"\\F0BFF\";\n}\n\n.mdi-alpha-h::before {\n  content: \"\\F0AF5\";\n}\n\n.mdi-alpha-h-box::before {\n  content: \"\\F0B0F\";\n}\n\n.mdi-alpha-h-box-outline::before {\n  content: \"\\F0C00\";\n}\n\n.mdi-alpha-h-circle::before {\n  content: \"\\F0C01\";\n}\n\n.mdi-alpha-h-circle-outline::before {\n  content: \"\\F0C02\";\n}\n\n.mdi-alpha-i::before {\n  content: \"\\F0AF6\";\n}\n\n.mdi-alpha-i-box::before {\n  content: \"\\F0B10\";\n}\n\n.mdi-alpha-i-box-outline::before {\n  content: \"\\F0C03\";\n}\n\n.mdi-alpha-i-circle::before {\n  content: \"\\F0C04\";\n}\n\n.mdi-alpha-i-circle-outline::before {\n  content: \"\\F0C05\";\n}\n\n.mdi-alpha-j::before {\n  content: \"\\F0AF7\";\n}\n\n.mdi-alpha-j-box::before {\n  content: \"\\F0B11\";\n}\n\n.mdi-alpha-j-box-outline::before {\n  content: \"\\F0C06\";\n}\n\n.mdi-alpha-j-circle::before {\n  content: \"\\F0C07\";\n}\n\n.mdi-alpha-j-circle-outline::before {\n  content: \"\\F0C08\";\n}\n\n.mdi-alpha-k::before {\n  content: \"\\F0AF8\";\n}\n\n.mdi-alpha-k-box::before {\n  content: \"\\F0B12\";\n}\n\n.mdi-alpha-k-box-outline::before {\n  content: \"\\F0C09\";\n}\n\n.mdi-alpha-k-circle::before {\n  content: \"\\F0C0A\";\n}\n\n.mdi-alpha-k-circle-outline::before {\n  content: \"\\F0C0B\";\n}\n\n.mdi-alpha-l::before {\n  content: \"\\F0AF9\";\n}\n\n.mdi-alpha-l-box::before {\n  content: \"\\F0B13\";\n}\n\n.mdi-alpha-l-box-outline::before {\n  content: \"\\F0C0C\";\n}\n\n.mdi-alpha-l-circle::before {\n  content: \"\\F0C0D\";\n}\n\n.mdi-alpha-l-circle-outline::before {\n  content: \"\\F0C0E\";\n}\n\n.mdi-alpha-m::before {\n  content: \"\\F0AFA\";\n}\n\n.mdi-alpha-m-box::before {\n  content: \"\\F0B14\";\n}\n\n.mdi-alpha-m-box-outline::before {\n  content: \"\\F0C0F\";\n}\n\n.mdi-alpha-m-circle::before {\n  content: \"\\F0C10\";\n}\n\n.mdi-alpha-m-circle-outline::before {\n  content: \"\\F0C11\";\n}\n\n.mdi-alpha-n::before {\n  content: \"\\F0AFB\";\n}\n\n.mdi-alpha-n-box::before {\n  content: \"\\F0B15\";\n}\n\n.mdi-alpha-n-box-outline::before {\n  content: \"\\F0C12\";\n}\n\n.mdi-alpha-n-circle::before {\n  content: \"\\F0C13\";\n}\n\n.mdi-alpha-n-circle-outline::before {\n  content: \"\\F0C14\";\n}\n\n.mdi-alpha-o::before {\n  content: \"\\F0AFC\";\n}\n\n.mdi-alpha-o-box::before {\n  content: \"\\F0B16\";\n}\n\n.mdi-alpha-o-box-outline::before {\n  content: \"\\F0C15\";\n}\n\n.mdi-alpha-o-circle::before {\n  content: \"\\F0C16\";\n}\n\n.mdi-alpha-o-circle-outline::before {\n  content: \"\\F0C17\";\n}\n\n.mdi-alpha-p::before {\n  content: \"\\F0AFD\";\n}\n\n.mdi-alpha-p-box::before {\n  content: \"\\F0B17\";\n}\n\n.mdi-alpha-p-box-outline::before {\n  content: \"\\F0C18\";\n}\n\n.mdi-alpha-p-circle::before {\n  content: \"\\F0C19\";\n}\n\n.mdi-alpha-p-circle-outline::before {\n  content: \"\\F0C1A\";\n}\n\n.mdi-alpha-q::before {\n  content: \"\\F0AFE\";\n}\n\n.mdi-alpha-q-box::before {\n  content: \"\\F0B18\";\n}\n\n.mdi-alpha-q-box-outline::before {\n  content: \"\\F0C1B\";\n}\n\n.mdi-alpha-q-circle::before {\n  content: \"\\F0C1C\";\n}\n\n.mdi-alpha-q-circle-outline::before {\n  content: \"\\F0C1D\";\n}\n\n.mdi-alpha-r::before {\n  content: \"\\F0AFF\";\n}\n\n.mdi-alpha-r-box::before {\n  content: \"\\F0B19\";\n}\n\n.mdi-alpha-r-box-outline::before {\n  content: \"\\F0C1E\";\n}\n\n.mdi-alpha-r-circle::before {\n  content: \"\\F0C1F\";\n}\n\n.mdi-alpha-r-circle-outline::before {\n  content: \"\\F0C20\";\n}\n\n.mdi-alpha-s::before {\n  content: \"\\F0B00\";\n}\n\n.mdi-alpha-s-box::before {\n  content: \"\\F0B1A\";\n}\n\n.mdi-alpha-s-box-outline::before {\n  content: \"\\F0C21\";\n}\n\n.mdi-alpha-s-circle::before {\n  content: \"\\F0C22\";\n}\n\n.mdi-alpha-s-circle-outline::before {\n  content: \"\\F0C23\";\n}\n\n.mdi-alpha-t::before {\n  content: \"\\F0B01\";\n}\n\n.mdi-alpha-t-box::before {\n  content: \"\\F0B1B\";\n}\n\n.mdi-alpha-t-box-outline::before {\n  content: \"\\F0C24\";\n}\n\n.mdi-alpha-t-circle::before {\n  content: \"\\F0C25\";\n}\n\n.mdi-alpha-t-circle-outline::before {\n  content: \"\\F0C26\";\n}\n\n.mdi-alpha-u::before {\n  content: \"\\F0B02\";\n}\n\n.mdi-alpha-u-box::before {\n  content: \"\\F0B1C\";\n}\n\n.mdi-alpha-u-box-outline::before {\n  content: \"\\F0C27\";\n}\n\n.mdi-alpha-u-circle::before {\n  content: \"\\F0C28\";\n}\n\n.mdi-alpha-u-circle-outline::before {\n  content: \"\\F0C29\";\n}\n\n.mdi-alpha-v::before {\n  content: \"\\F0B03\";\n}\n\n.mdi-alpha-v-box::before {\n  content: \"\\F0B1D\";\n}\n\n.mdi-alpha-v-box-outline::before {\n  content: \"\\F0C2A\";\n}\n\n.mdi-alpha-v-circle::before {\n  content: \"\\F0C2B\";\n}\n\n.mdi-alpha-v-circle-outline::before {\n  content: \"\\F0C2C\";\n}\n\n.mdi-alpha-w::before {\n  content: \"\\F0B04\";\n}\n\n.mdi-alpha-w-box::before {\n  content: \"\\F0B1E\";\n}\n\n.mdi-alpha-w-box-outline::before {\n  content: \"\\F0C2D\";\n}\n\n.mdi-alpha-w-circle::before {\n  content: \"\\F0C2E\";\n}\n\n.mdi-alpha-w-circle-outline::before {\n  content: \"\\F0C2F\";\n}\n\n.mdi-alpha-x::before {\n  content: \"\\F0B05\";\n}\n\n.mdi-alpha-x-box::before {\n  content: \"\\F0B1F\";\n}\n\n.mdi-alpha-x-box-outline::before {\n  content: \"\\F0C30\";\n}\n\n.mdi-alpha-x-circle::before {\n  content: \"\\F0C31\";\n}\n\n.mdi-alpha-x-circle-outline::before {\n  content: \"\\F0C32\";\n}\n\n.mdi-alpha-y::before {\n  content: \"\\F0B06\";\n}\n\n.mdi-alpha-y-box::before {\n  content: \"\\F0B20\";\n}\n\n.mdi-alpha-y-box-outline::before {\n  content: \"\\F0C33\";\n}\n\n.mdi-alpha-y-circle::before {\n  content: \"\\F0C34\";\n}\n\n.mdi-alpha-y-circle-outline::before {\n  content: \"\\F0C35\";\n}\n\n.mdi-alpha-z::before {\n  content: \"\\F0B07\";\n}\n\n.mdi-alpha-z-box::before {\n  content: \"\\F0B21\";\n}\n\n.mdi-alpha-z-box-outline::before {\n  content: \"\\F0C36\";\n}\n\n.mdi-alpha-z-circle::before {\n  content: \"\\F0C37\";\n}\n\n.mdi-alpha-z-circle-outline::before {\n  content: \"\\F0C38\";\n}\n\n.mdi-alphabet-aurebesh::before {\n  content: \"\\F132C\";\n}\n\n.mdi-alphabet-cyrillic::before {\n  content: \"\\F132D\";\n}\n\n.mdi-alphabet-greek::before {\n  content: \"\\F132E\";\n}\n\n.mdi-alphabet-latin::before {\n  content: \"\\F132F\";\n}\n\n.mdi-alphabet-piqad::before {\n  content: \"\\F1330\";\n}\n\n.mdi-alphabet-tengwar::before {\n  content: \"\\F1337\";\n}\n\n.mdi-alphabetical::before {\n  content: \"\\F002C\";\n}\n\n.mdi-alphabetical-off::before {\n  content: \"\\F100C\";\n}\n\n.mdi-alphabetical-variant::before {\n  content: \"\\F100D\";\n}\n\n.mdi-alphabetical-variant-off::before {\n  content: \"\\F100E\";\n}\n\n.mdi-altimeter::before {\n  content: \"\\F05D7\";\n}\n\n.mdi-amazon::before {\n  content: \"\\F002D\";\n}\n\n.mdi-amazon-alexa::before {\n  content: \"\\F08C6\";\n}\n\n.mdi-ambulance::before {\n  content: \"\\F002F\";\n}\n\n.mdi-ammunition::before {\n  content: \"\\F0CE8\";\n}\n\n.mdi-ampersand::before {\n  content: \"\\F0A8D\";\n}\n\n.mdi-amplifier::before {\n  content: \"\\F0030\";\n}\n\n.mdi-amplifier-off::before {\n  content: \"\\F11B5\";\n}\n\n.mdi-anchor::before {\n  content: \"\\F0031\";\n}\n\n.mdi-android::before {\n  content: \"\\F0032\";\n}\n\n.mdi-android-auto::before {\n  content: \"\\F0A8E\";\n}\n\n.mdi-android-debug-bridge::before {\n  content: \"\\F0033\";\n}\n\n.mdi-android-messages::before {\n  content: \"\\F0D45\";\n}\n\n.mdi-android-studio::before {\n  content: \"\\F0034\";\n}\n\n.mdi-angle-acute::before {\n  content: \"\\F0937\";\n}\n\n.mdi-angle-obtuse::before {\n  content: \"\\F0938\";\n}\n\n.mdi-angle-right::before {\n  content: \"\\F0939\";\n}\n\n.mdi-angular::before {\n  content: \"\\F06B2\";\n}\n\n.mdi-angularjs::before {\n  content: \"\\F06BF\";\n}\n\n.mdi-animation::before {\n  content: \"\\F05D8\";\n}\n\n.mdi-animation-outline::before {\n  content: \"\\F0A8F\";\n}\n\n.mdi-animation-play::before {\n  content: \"\\F093A\";\n}\n\n.mdi-animation-play-outline::before {\n  content: \"\\F0A90\";\n}\n\n.mdi-ansible::before {\n  content: \"\\F109A\";\n}\n\n.mdi-antenna::before {\n  content: \"\\F1119\";\n}\n\n.mdi-anvil::before {\n  content: \"\\F089B\";\n}\n\n.mdi-apache-kafka::before {\n  content: \"\\F100F\";\n}\n\n.mdi-api::before {\n  content: \"\\F109B\";\n}\n\n.mdi-api-off::before {\n  content: \"\\F1257\";\n}\n\n.mdi-apple::before {\n  content: \"\\F0035\";\n}\n\n.mdi-apple-airplay::before {\n  content: \"\\F001F\";\n}\n\n.mdi-apple-finder::before {\n  content: \"\\F0036\";\n}\n\n.mdi-apple-icloud::before {\n  content: \"\\F0038\";\n}\n\n.mdi-apple-ios::before {\n  content: \"\\F0037\";\n}\n\n.mdi-apple-keyboard-caps::before {\n  content: \"\\F0632\";\n}\n\n.mdi-apple-keyboard-command::before {\n  content: \"\\F0633\";\n}\n\n.mdi-apple-keyboard-control::before {\n  content: \"\\F0634\";\n}\n\n.mdi-apple-keyboard-option::before {\n  content: \"\\F0635\";\n}\n\n.mdi-apple-keyboard-shift::before {\n  content: \"\\F0636\";\n}\n\n.mdi-apple-safari::before {\n  content: \"\\F0039\";\n}\n\n.mdi-application::before {\n  content: \"\\F0614\";\n}\n\n.mdi-application-cog::before {\n  content: \"\\F1577\";\n}\n\n.mdi-application-export::before {\n  content: \"\\F0DAD\";\n}\n\n.mdi-application-import::before {\n  content: \"\\F0DAE\";\n}\n\n.mdi-application-settings::before {\n  content: \"\\F1555\";\n}\n\n.mdi-approximately-equal::before {\n  content: \"\\F0F9E\";\n}\n\n.mdi-approximately-equal-box::before {\n  content: \"\\F0F9F\";\n}\n\n.mdi-apps::before {\n  content: \"\\F003B\";\n}\n\n.mdi-apps-box::before {\n  content: \"\\F0D46\";\n}\n\n.mdi-arch::before {\n  content: \"\\F08C7\";\n}\n\n.mdi-archive::before {\n  content: \"\\F003C\";\n}\n\n.mdi-archive-alert::before {\n  content: \"\\F14FD\";\n}\n\n.mdi-archive-alert-outline::before {\n  content: \"\\F14FE\";\n}\n\n.mdi-archive-arrow-down::before {\n  content: \"\\F1259\";\n}\n\n.mdi-archive-arrow-down-outline::before {\n  content: \"\\F125A\";\n}\n\n.mdi-archive-arrow-up::before {\n  content: \"\\F125B\";\n}\n\n.mdi-archive-arrow-up-outline::before {\n  content: \"\\F125C\";\n}\n\n.mdi-archive-outline::before {\n  content: \"\\F120E\";\n}\n\n.mdi-arm-flex::before {\n  content: \"\\F0FD7\";\n}\n\n.mdi-arm-flex-outline::before {\n  content: \"\\F0FD6\";\n}\n\n.mdi-arrange-bring-forward::before {\n  content: \"\\F003D\";\n}\n\n.mdi-arrange-bring-to-front::before {\n  content: \"\\F003E\";\n}\n\n.mdi-arrange-send-backward::before {\n  content: \"\\F003F\";\n}\n\n.mdi-arrange-send-to-back::before {\n  content: \"\\F0040\";\n}\n\n.mdi-arrow-all::before {\n  content: \"\\F0041\";\n}\n\n.mdi-arrow-bottom-left::before {\n  content: \"\\F0042\";\n}\n\n.mdi-arrow-bottom-left-bold-outline::before {\n  content: \"\\F09B7\";\n}\n\n.mdi-arrow-bottom-left-thick::before {\n  content: \"\\F09B8\";\n}\n\n.mdi-arrow-bottom-left-thin-circle-outline::before {\n  content: \"\\F1596\";\n}\n\n.mdi-arrow-bottom-right::before {\n  content: \"\\F0043\";\n}\n\n.mdi-arrow-bottom-right-bold-outline::before {\n  content: \"\\F09B9\";\n}\n\n.mdi-arrow-bottom-right-thick::before {\n  content: \"\\F09BA\";\n}\n\n.mdi-arrow-bottom-right-thin-circle-outline::before {\n  content: \"\\F1595\";\n}\n\n.mdi-arrow-collapse::before {\n  content: \"\\F0615\";\n}\n\n.mdi-arrow-collapse-all::before {\n  content: \"\\F0044\";\n}\n\n.mdi-arrow-collapse-down::before {\n  content: \"\\F0792\";\n}\n\n.mdi-arrow-collapse-horizontal::before {\n  content: \"\\F084C\";\n}\n\n.mdi-arrow-collapse-left::before {\n  content: \"\\F0793\";\n}\n\n.mdi-arrow-collapse-right::before {\n  content: \"\\F0794\";\n}\n\n.mdi-arrow-collapse-up::before {\n  content: \"\\F0795\";\n}\n\n.mdi-arrow-collapse-vertical::before {\n  content: \"\\F084D\";\n}\n\n.mdi-arrow-decision::before {\n  content: \"\\F09BB\";\n}\n\n.mdi-arrow-decision-auto::before {\n  content: \"\\F09BC\";\n}\n\n.mdi-arrow-decision-auto-outline::before {\n  content: \"\\F09BD\";\n}\n\n.mdi-arrow-decision-outline::before {\n  content: \"\\F09BE\";\n}\n\n.mdi-arrow-down::before {\n  content: \"\\F0045\";\n}\n\n.mdi-arrow-down-bold::before {\n  content: \"\\F072E\";\n}\n\n.mdi-arrow-down-bold-box::before {\n  content: \"\\F072F\";\n}\n\n.mdi-arrow-down-bold-box-outline::before {\n  content: \"\\F0730\";\n}\n\n.mdi-arrow-down-bold-circle::before {\n  content: \"\\F0047\";\n}\n\n.mdi-arrow-down-bold-circle-outline::before {\n  content: \"\\F0048\";\n}\n\n.mdi-arrow-down-bold-hexagon-outline::before {\n  content: \"\\F0049\";\n}\n\n.mdi-arrow-down-bold-outline::before {\n  content: \"\\F09BF\";\n}\n\n.mdi-arrow-down-box::before {\n  content: \"\\F06C0\";\n}\n\n.mdi-arrow-down-circle::before {\n  content: \"\\F0CDB\";\n}\n\n.mdi-arrow-down-circle-outline::before {\n  content: \"\\F0CDC\";\n}\n\n.mdi-arrow-down-drop-circle::before {\n  content: \"\\F004A\";\n}\n\n.mdi-arrow-down-drop-circle-outline::before {\n  content: \"\\F004B\";\n}\n\n.mdi-arrow-down-thick::before {\n  content: \"\\F0046\";\n}\n\n.mdi-arrow-down-thin-circle-outline::before {\n  content: \"\\F1599\";\n}\n\n.mdi-arrow-expand::before {\n  content: \"\\F0616\";\n}\n\n.mdi-arrow-expand-all::before {\n  content: \"\\F004C\";\n}\n\n.mdi-arrow-expand-down::before {\n  content: \"\\F0796\";\n}\n\n.mdi-arrow-expand-horizontal::before {\n  content: \"\\F084E\";\n}\n\n.mdi-arrow-expand-left::before {\n  content: \"\\F0797\";\n}\n\n.mdi-arrow-expand-right::before {\n  content: \"\\F0798\";\n}\n\n.mdi-arrow-expand-up::before {\n  content: \"\\F0799\";\n}\n\n.mdi-arrow-expand-vertical::before {\n  content: \"\\F084F\";\n}\n\n.mdi-arrow-horizontal-lock::before {\n  content: \"\\F115B\";\n}\n\n.mdi-arrow-left::before {\n  content: \"\\F004D\";\n}\n\n.mdi-arrow-left-bold::before {\n  content: \"\\F0731\";\n}\n\n.mdi-arrow-left-bold-box::before {\n  content: \"\\F0732\";\n}\n\n.mdi-arrow-left-bold-box-outline::before {\n  content: \"\\F0733\";\n}\n\n.mdi-arrow-left-bold-circle::before {\n  content: \"\\F004F\";\n}\n\n.mdi-arrow-left-bold-circle-outline::before {\n  content: \"\\F0050\";\n}\n\n.mdi-arrow-left-bold-hexagon-outline::before {\n  content: \"\\F0051\";\n}\n\n.mdi-arrow-left-bold-outline::before {\n  content: \"\\F09C0\";\n}\n\n.mdi-arrow-left-box::before {\n  content: \"\\F06C1\";\n}\n\n.mdi-arrow-left-circle::before {\n  content: \"\\F0CDD\";\n}\n\n.mdi-arrow-left-circle-outline::before {\n  content: \"\\F0CDE\";\n}\n\n.mdi-arrow-left-drop-circle::before {\n  content: \"\\F0052\";\n}\n\n.mdi-arrow-left-drop-circle-outline::before {\n  content: \"\\F0053\";\n}\n\n.mdi-arrow-left-right::before {\n  content: \"\\F0E73\";\n}\n\n.mdi-arrow-left-right-bold::before {\n  content: \"\\F0E74\";\n}\n\n.mdi-arrow-left-right-bold-outline::before {\n  content: \"\\F09C1\";\n}\n\n.mdi-arrow-left-thick::before {\n  content: \"\\F004E\";\n}\n\n.mdi-arrow-left-thin-circle-outline::before {\n  content: \"\\F159A\";\n}\n\n.mdi-arrow-right::before {\n  content: \"\\F0054\";\n}\n\n.mdi-arrow-right-bold::before {\n  content: \"\\F0734\";\n}\n\n.mdi-arrow-right-bold-box::before {\n  content: \"\\F0735\";\n}\n\n.mdi-arrow-right-bold-box-outline::before {\n  content: \"\\F0736\";\n}\n\n.mdi-arrow-right-bold-circle::before {\n  content: \"\\F0056\";\n}\n\n.mdi-arrow-right-bold-circle-outline::before {\n  content: \"\\F0057\";\n}\n\n.mdi-arrow-right-bold-hexagon-outline::before {\n  content: \"\\F0058\";\n}\n\n.mdi-arrow-right-bold-outline::before {\n  content: \"\\F09C2\";\n}\n\n.mdi-arrow-right-box::before {\n  content: \"\\F06C2\";\n}\n\n.mdi-arrow-right-circle::before {\n  content: \"\\F0CDF\";\n}\n\n.mdi-arrow-right-circle-outline::before {\n  content: \"\\F0CE0\";\n}\n\n.mdi-arrow-right-drop-circle::before {\n  content: \"\\F0059\";\n}\n\n.mdi-arrow-right-drop-circle-outline::before {\n  content: \"\\F005A\";\n}\n\n.mdi-arrow-right-thick::before {\n  content: \"\\F0055\";\n}\n\n.mdi-arrow-right-thin-circle-outline::before {\n  content: \"\\F1598\";\n}\n\n.mdi-arrow-split-horizontal::before {\n  content: \"\\F093B\";\n}\n\n.mdi-arrow-split-vertical::before {\n  content: \"\\F093C\";\n}\n\n.mdi-arrow-top-left::before {\n  content: \"\\F005B\";\n}\n\n.mdi-arrow-top-left-bold-outline::before {\n  content: \"\\F09C3\";\n}\n\n.mdi-arrow-top-left-bottom-right::before {\n  content: \"\\F0E75\";\n}\n\n.mdi-arrow-top-left-bottom-right-bold::before {\n  content: \"\\F0E76\";\n}\n\n.mdi-arrow-top-left-thick::before {\n  content: \"\\F09C4\";\n}\n\n.mdi-arrow-top-left-thin-circle-outline::before {\n  content: \"\\F1593\";\n}\n\n.mdi-arrow-top-right::before {\n  content: \"\\F005C\";\n}\n\n.mdi-arrow-top-right-bold-outline::before {\n  content: \"\\F09C5\";\n}\n\n.mdi-arrow-top-right-bottom-left::before {\n  content: \"\\F0E77\";\n}\n\n.mdi-arrow-top-right-bottom-left-bold::before {\n  content: \"\\F0E78\";\n}\n\n.mdi-arrow-top-right-thick::before {\n  content: \"\\F09C6\";\n}\n\n.mdi-arrow-top-right-thin-circle-outline::before {\n  content: \"\\F1594\";\n}\n\n.mdi-arrow-up::before {\n  content: \"\\F005D\";\n}\n\n.mdi-arrow-up-bold::before {\n  content: \"\\F0737\";\n}\n\n.mdi-arrow-up-bold-box::before {\n  content: \"\\F0738\";\n}\n\n.mdi-arrow-up-bold-box-outline::before {\n  content: \"\\F0739\";\n}\n\n.mdi-arrow-up-bold-circle::before {\n  content: \"\\F005F\";\n}\n\n.mdi-arrow-up-bold-circle-outline::before {\n  content: \"\\F0060\";\n}\n\n.mdi-arrow-up-bold-hexagon-outline::before {\n  content: \"\\F0061\";\n}\n\n.mdi-arrow-up-bold-outline::before {\n  content: \"\\F09C7\";\n}\n\n.mdi-arrow-up-box::before {\n  content: \"\\F06C3\";\n}\n\n.mdi-arrow-up-circle::before {\n  content: \"\\F0CE1\";\n}\n\n.mdi-arrow-up-circle-outline::before {\n  content: \"\\F0CE2\";\n}\n\n.mdi-arrow-up-down::before {\n  content: \"\\F0E79\";\n}\n\n.mdi-arrow-up-down-bold::before {\n  content: \"\\F0E7A\";\n}\n\n.mdi-arrow-up-down-bold-outline::before {\n  content: \"\\F09C8\";\n}\n\n.mdi-arrow-up-drop-circle::before {\n  content: \"\\F0062\";\n}\n\n.mdi-arrow-up-drop-circle-outline::before {\n  content: \"\\F0063\";\n}\n\n.mdi-arrow-up-thick::before {\n  content: \"\\F005E\";\n}\n\n.mdi-arrow-up-thin-circle-outline::before {\n  content: \"\\F1597\";\n}\n\n.mdi-arrow-vertical-lock::before {\n  content: \"\\F115C\";\n}\n\n.mdi-artstation::before {\n  content: \"\\F0B5B\";\n}\n\n.mdi-aspect-ratio::before {\n  content: \"\\F0A24\";\n}\n\n.mdi-assistant::before {\n  content: \"\\F0064\";\n}\n\n.mdi-asterisk::before {\n  content: \"\\F06C4\";\n}\n\n.mdi-at::before {\n  content: \"\\F0065\";\n}\n\n.mdi-atlassian::before {\n  content: \"\\F0804\";\n}\n\n.mdi-atm::before {\n  content: \"\\F0D47\";\n}\n\n.mdi-atom::before {\n  content: \"\\F0768\";\n}\n\n.mdi-atom-variant::before {\n  content: \"\\F0E7B\";\n}\n\n.mdi-attachment::before {\n  content: \"\\F0066\";\n}\n\n.mdi-audio-video::before {\n  content: \"\\F093D\";\n}\n\n.mdi-audio-video-off::before {\n  content: \"\\F11B6\";\n}\n\n.mdi-augmented-reality::before {\n  content: \"\\F0850\";\n}\n\n.mdi-auto-download::before {\n  content: \"\\F137E\";\n}\n\n.mdi-auto-fix::before {\n  content: \"\\F0068\";\n}\n\n.mdi-auto-upload::before {\n  content: \"\\F0069\";\n}\n\n.mdi-autorenew::before {\n  content: \"\\F006A\";\n}\n\n.mdi-av-timer::before {\n  content: \"\\F006B\";\n}\n\n.mdi-aws::before {\n  content: \"\\F0E0F\";\n}\n\n.mdi-axe::before {\n  content: \"\\F08C8\";\n}\n\n.mdi-axis::before {\n  content: \"\\F0D48\";\n}\n\n.mdi-axis-arrow::before {\n  content: \"\\F0D49\";\n}\n\n.mdi-axis-arrow-info::before {\n  content: \"\\F140E\";\n}\n\n.mdi-axis-arrow-lock::before {\n  content: \"\\F0D4A\";\n}\n\n.mdi-axis-lock::before {\n  content: \"\\F0D4B\";\n}\n\n.mdi-axis-x-arrow::before {\n  content: \"\\F0D4C\";\n}\n\n.mdi-axis-x-arrow-lock::before {\n  content: \"\\F0D4D\";\n}\n\n.mdi-axis-x-rotate-clockwise::before {\n  content: \"\\F0D4E\";\n}\n\n.mdi-axis-x-rotate-counterclockwise::before {\n  content: \"\\F0D4F\";\n}\n\n.mdi-axis-x-y-arrow-lock::before {\n  content: \"\\F0D50\";\n}\n\n.mdi-axis-y-arrow::before {\n  content: \"\\F0D51\";\n}\n\n.mdi-axis-y-arrow-lock::before {\n  content: \"\\F0D52\";\n}\n\n.mdi-axis-y-rotate-clockwise::before {\n  content: \"\\F0D53\";\n}\n\n.mdi-axis-y-rotate-counterclockwise::before {\n  content: \"\\F0D54\";\n}\n\n.mdi-axis-z-arrow::before {\n  content: \"\\F0D55\";\n}\n\n.mdi-axis-z-arrow-lock::before {\n  content: \"\\F0D56\";\n}\n\n.mdi-axis-z-rotate-clockwise::before {\n  content: \"\\F0D57\";\n}\n\n.mdi-axis-z-rotate-counterclockwise::before {\n  content: \"\\F0D58\";\n}\n\n.mdi-babel::before {\n  content: \"\\F0A25\";\n}\n\n.mdi-baby::before {\n  content: \"\\F006C\";\n}\n\n.mdi-baby-bottle::before {\n  content: \"\\F0F39\";\n}\n\n.mdi-baby-bottle-outline::before {\n  content: \"\\F0F3A\";\n}\n\n.mdi-baby-buggy::before {\n  content: \"\\F13E0\";\n}\n\n.mdi-baby-carriage::before {\n  content: \"\\F068F\";\n}\n\n.mdi-baby-carriage-off::before {\n  content: \"\\F0FA0\";\n}\n\n.mdi-baby-face::before {\n  content: \"\\F0E7C\";\n}\n\n.mdi-baby-face-outline::before {\n  content: \"\\F0E7D\";\n}\n\n.mdi-backburger::before {\n  content: \"\\F006D\";\n}\n\n.mdi-backspace::before {\n  content: \"\\F006E\";\n}\n\n.mdi-backspace-outline::before {\n  content: \"\\F0B5C\";\n}\n\n.mdi-backspace-reverse::before {\n  content: \"\\F0E7E\";\n}\n\n.mdi-backspace-reverse-outline::before {\n  content: \"\\F0E7F\";\n}\n\n.mdi-backup-restore::before {\n  content: \"\\F006F\";\n}\n\n.mdi-bacteria::before {\n  content: \"\\F0ED5\";\n}\n\n.mdi-bacteria-outline::before {\n  content: \"\\F0ED6\";\n}\n\n.mdi-badge-account::before {\n  content: \"\\F0DA7\";\n}\n\n.mdi-badge-account-alert::before {\n  content: \"\\F0DA8\";\n}\n\n.mdi-badge-account-alert-outline::before {\n  content: \"\\F0DA9\";\n}\n\n.mdi-badge-account-horizontal::before {\n  content: \"\\F0E0D\";\n}\n\n.mdi-badge-account-horizontal-outline::before {\n  content: \"\\F0E0E\";\n}\n\n.mdi-badge-account-outline::before {\n  content: \"\\F0DAA\";\n}\n\n.mdi-badminton::before {\n  content: \"\\F0851\";\n}\n\n.mdi-bag-carry-on::before {\n  content: \"\\F0F3B\";\n}\n\n.mdi-bag-carry-on-check::before {\n  content: \"\\F0D65\";\n}\n\n.mdi-bag-carry-on-off::before {\n  content: \"\\F0F3C\";\n}\n\n.mdi-bag-checked::before {\n  content: \"\\F0F3D\";\n}\n\n.mdi-bag-personal::before {\n  content: \"\\F0E10\";\n}\n\n.mdi-bag-personal-off::before {\n  content: \"\\F0E11\";\n}\n\n.mdi-bag-personal-off-outline::before {\n  content: \"\\F0E12\";\n}\n\n.mdi-bag-personal-outline::before {\n  content: \"\\F0E13\";\n}\n\n.mdi-bag-suitcase::before {\n  content: \"\\F158B\";\n}\n\n.mdi-bag-suitcase-off::before {\n  content: \"\\F158D\";\n}\n\n.mdi-bag-suitcase-off-outline::before {\n  content: \"\\F158E\";\n}\n\n.mdi-bag-suitcase-outline::before {\n  content: \"\\F158C\";\n}\n\n.mdi-baguette::before {\n  content: \"\\F0F3E\";\n}\n\n.mdi-balloon::before {\n  content: \"\\F0A26\";\n}\n\n.mdi-ballot::before {\n  content: \"\\F09C9\";\n}\n\n.mdi-ballot-outline::before {\n  content: \"\\F09CA\";\n}\n\n.mdi-ballot-recount::before {\n  content: \"\\F0C39\";\n}\n\n.mdi-ballot-recount-outline::before {\n  content: \"\\F0C3A\";\n}\n\n.mdi-bandage::before {\n  content: \"\\F0DAF\";\n}\n\n.mdi-bandcamp::before {\n  content: \"\\F0675\";\n}\n\n.mdi-bank::before {\n  content: \"\\F0070\";\n}\n\n.mdi-bank-minus::before {\n  content: \"\\F0DB0\";\n}\n\n.mdi-bank-outline::before {\n  content: \"\\F0E80\";\n}\n\n.mdi-bank-plus::before {\n  content: \"\\F0DB1\";\n}\n\n.mdi-bank-remove::before {\n  content: \"\\F0DB2\";\n}\n\n.mdi-bank-transfer::before {\n  content: \"\\F0A27\";\n}\n\n.mdi-bank-transfer-in::before {\n  content: \"\\F0A28\";\n}\n\n.mdi-bank-transfer-out::before {\n  content: \"\\F0A29\";\n}\n\n.mdi-barcode::before {\n  content: \"\\F0071\";\n}\n\n.mdi-barcode-off::before {\n  content: \"\\F1236\";\n}\n\n.mdi-barcode-scan::before {\n  content: \"\\F0072\";\n}\n\n.mdi-barley::before {\n  content: \"\\F0073\";\n}\n\n.mdi-barley-off::before {\n  content: \"\\F0B5D\";\n}\n\n.mdi-barn::before {\n  content: \"\\F0B5E\";\n}\n\n.mdi-barrel::before {\n  content: \"\\F0074\";\n}\n\n.mdi-baseball::before {\n  content: \"\\F0852\";\n}\n\n.mdi-baseball-bat::before {\n  content: \"\\F0853\";\n}\n\n.mdi-baseball-diamond::before {\n  content: \"\\F15EC\";\n}\n\n.mdi-baseball-diamond-outline::before {\n  content: \"\\F15ED\";\n}\n\n.mdi-bash::before {\n  content: \"\\F1183\";\n}\n\n.mdi-basket::before {\n  content: \"\\F0076\";\n}\n\n.mdi-basket-fill::before {\n  content: \"\\F0077\";\n}\n\n.mdi-basket-minus::before {\n  content: \"\\F1523\";\n}\n\n.mdi-basket-minus-outline::before {\n  content: \"\\F1524\";\n}\n\n.mdi-basket-off::before {\n  content: \"\\F1525\";\n}\n\n.mdi-basket-off-outline::before {\n  content: \"\\F1526\";\n}\n\n.mdi-basket-outline::before {\n  content: \"\\F1181\";\n}\n\n.mdi-basket-plus::before {\n  content: \"\\F1527\";\n}\n\n.mdi-basket-plus-outline::before {\n  content: \"\\F1528\";\n}\n\n.mdi-basket-remove::before {\n  content: \"\\F1529\";\n}\n\n.mdi-basket-remove-outline::before {\n  content: \"\\F152A\";\n}\n\n.mdi-basket-unfill::before {\n  content: \"\\F0078\";\n}\n\n.mdi-basketball::before {\n  content: \"\\F0806\";\n}\n\n.mdi-basketball-hoop::before {\n  content: \"\\F0C3B\";\n}\n\n.mdi-basketball-hoop-outline::before {\n  content: \"\\F0C3C\";\n}\n\n.mdi-bat::before {\n  content: \"\\F0B5F\";\n}\n\n.mdi-battery::before {\n  content: \"\\F0079\";\n}\n\n.mdi-battery-10::before {\n  content: \"\\F007A\";\n}\n\n.mdi-battery-10-bluetooth::before {\n  content: \"\\F093E\";\n}\n\n.mdi-battery-20::before {\n  content: \"\\F007B\";\n}\n\n.mdi-battery-20-bluetooth::before {\n  content: \"\\F093F\";\n}\n\n.mdi-battery-30::before {\n  content: \"\\F007C\";\n}\n\n.mdi-battery-30-bluetooth::before {\n  content: \"\\F0940\";\n}\n\n.mdi-battery-40::before {\n  content: \"\\F007D\";\n}\n\n.mdi-battery-40-bluetooth::before {\n  content: \"\\F0941\";\n}\n\n.mdi-battery-50::before {\n  content: \"\\F007E\";\n}\n\n.mdi-battery-50-bluetooth::before {\n  content: \"\\F0942\";\n}\n\n.mdi-battery-60::before {\n  content: \"\\F007F\";\n}\n\n.mdi-battery-60-bluetooth::before {\n  content: \"\\F0943\";\n}\n\n.mdi-battery-70::before {\n  content: \"\\F0080\";\n}\n\n.mdi-battery-70-bluetooth::before {\n  content: \"\\F0944\";\n}\n\n.mdi-battery-80::before {\n  content: \"\\F0081\";\n}\n\n.mdi-battery-80-bluetooth::before {\n  content: \"\\F0945\";\n}\n\n.mdi-battery-90::before {\n  content: \"\\F0082\";\n}\n\n.mdi-battery-90-bluetooth::before {\n  content: \"\\F0946\";\n}\n\n.mdi-battery-alert::before {\n  content: \"\\F0083\";\n}\n\n.mdi-battery-alert-bluetooth::before {\n  content: \"\\F0947\";\n}\n\n.mdi-battery-alert-variant::before {\n  content: \"\\F10CC\";\n}\n\n.mdi-battery-alert-variant-outline::before {\n  content: \"\\F10CD\";\n}\n\n.mdi-battery-bluetooth::before {\n  content: \"\\F0948\";\n}\n\n.mdi-battery-bluetooth-variant::before {\n  content: \"\\F0949\";\n}\n\n.mdi-battery-charging::before {\n  content: \"\\F0084\";\n}\n\n.mdi-battery-charging-10::before {\n  content: \"\\F089C\";\n}\n\n.mdi-battery-charging-100::before {\n  content: \"\\F0085\";\n}\n\n.mdi-battery-charging-20::before {\n  content: \"\\F0086\";\n}\n\n.mdi-battery-charging-30::before {\n  content: \"\\F0087\";\n}\n\n.mdi-battery-charging-40::before {\n  content: \"\\F0088\";\n}\n\n.mdi-battery-charging-50::before {\n  content: \"\\F089D\";\n}\n\n.mdi-battery-charging-60::before {\n  content: \"\\F0089\";\n}\n\n.mdi-battery-charging-70::before {\n  content: \"\\F089E\";\n}\n\n.mdi-battery-charging-80::before {\n  content: \"\\F008A\";\n}\n\n.mdi-battery-charging-90::before {\n  content: \"\\F008B\";\n}\n\n.mdi-battery-charging-high::before {\n  content: \"\\F12A6\";\n}\n\n.mdi-battery-charging-low::before {\n  content: \"\\F12A4\";\n}\n\n.mdi-battery-charging-medium::before {\n  content: \"\\F12A5\";\n}\n\n.mdi-battery-charging-outline::before {\n  content: \"\\F089F\";\n}\n\n.mdi-battery-charging-wireless::before {\n  content: \"\\F0807\";\n}\n\n.mdi-battery-charging-wireless-10::before {\n  content: \"\\F0808\";\n}\n\n.mdi-battery-charging-wireless-20::before {\n  content: \"\\F0809\";\n}\n\n.mdi-battery-charging-wireless-30::before {\n  content: \"\\F080A\";\n}\n\n.mdi-battery-charging-wireless-40::before {\n  content: \"\\F080B\";\n}\n\n.mdi-battery-charging-wireless-50::before {\n  content: \"\\F080C\";\n}\n\n.mdi-battery-charging-wireless-60::before {\n  content: \"\\F080D\";\n}\n\n.mdi-battery-charging-wireless-70::before {\n  content: \"\\F080E\";\n}\n\n.mdi-battery-charging-wireless-80::before {\n  content: \"\\F080F\";\n}\n\n.mdi-battery-charging-wireless-90::before {\n  content: \"\\F0810\";\n}\n\n.mdi-battery-charging-wireless-alert::before {\n  content: \"\\F0811\";\n}\n\n.mdi-battery-charging-wireless-outline::before {\n  content: \"\\F0812\";\n}\n\n.mdi-battery-heart::before {\n  content: \"\\F120F\";\n}\n\n.mdi-battery-heart-outline::before {\n  content: \"\\F1210\";\n}\n\n.mdi-battery-heart-variant::before {\n  content: \"\\F1211\";\n}\n\n.mdi-battery-high::before {\n  content: \"\\F12A3\";\n}\n\n.mdi-battery-low::before {\n  content: \"\\F12A1\";\n}\n\n.mdi-battery-medium::before {\n  content: \"\\F12A2\";\n}\n\n.mdi-battery-minus::before {\n  content: \"\\F008C\";\n}\n\n.mdi-battery-negative::before {\n  content: \"\\F008D\";\n}\n\n.mdi-battery-off::before {\n  content: \"\\F125D\";\n}\n\n.mdi-battery-off-outline::before {\n  content: \"\\F125E\";\n}\n\n.mdi-battery-outline::before {\n  content: \"\\F008E\";\n}\n\n.mdi-battery-plus::before {\n  content: \"\\F008F\";\n}\n\n.mdi-battery-positive::before {\n  content: \"\\F0090\";\n}\n\n.mdi-battery-unknown::before {\n  content: \"\\F0091\";\n}\n\n.mdi-battery-unknown-bluetooth::before {\n  content: \"\\F094A\";\n}\n\n.mdi-battlenet::before {\n  content: \"\\F0B60\";\n}\n\n.mdi-beach::before {\n  content: \"\\F0092\";\n}\n\n.mdi-beaker::before {\n  content: \"\\F0CEA\";\n}\n\n.mdi-beaker-alert::before {\n  content: \"\\F1229\";\n}\n\n.mdi-beaker-alert-outline::before {\n  content: \"\\F122A\";\n}\n\n.mdi-beaker-check::before {\n  content: \"\\F122B\";\n}\n\n.mdi-beaker-check-outline::before {\n  content: \"\\F122C\";\n}\n\n.mdi-beaker-minus::before {\n  content: \"\\F122D\";\n}\n\n.mdi-beaker-minus-outline::before {\n  content: \"\\F122E\";\n}\n\n.mdi-beaker-outline::before {\n  content: \"\\F0690\";\n}\n\n.mdi-beaker-plus::before {\n  content: \"\\F122F\";\n}\n\n.mdi-beaker-plus-outline::before {\n  content: \"\\F1230\";\n}\n\n.mdi-beaker-question::before {\n  content: \"\\F1231\";\n}\n\n.mdi-beaker-question-outline::before {\n  content: \"\\F1232\";\n}\n\n.mdi-beaker-remove::before {\n  content: \"\\F1233\";\n}\n\n.mdi-beaker-remove-outline::before {\n  content: \"\\F1234\";\n}\n\n.mdi-bed::before {\n  content: \"\\F02E3\";\n}\n\n.mdi-bed-double::before {\n  content: \"\\F0FD4\";\n}\n\n.mdi-bed-double-outline::before {\n  content: \"\\F0FD3\";\n}\n\n.mdi-bed-empty::before {\n  content: \"\\F08A0\";\n}\n\n.mdi-bed-king::before {\n  content: \"\\F0FD2\";\n}\n\n.mdi-bed-king-outline::before {\n  content: \"\\F0FD1\";\n}\n\n.mdi-bed-outline::before {\n  content: \"\\F0099\";\n}\n\n.mdi-bed-queen::before {\n  content: \"\\F0FD0\";\n}\n\n.mdi-bed-queen-outline::before {\n  content: \"\\F0FDB\";\n}\n\n.mdi-bed-single::before {\n  content: \"\\F106D\";\n}\n\n.mdi-bed-single-outline::before {\n  content: \"\\F106E\";\n}\n\n.mdi-bee::before {\n  content: \"\\F0FA1\";\n}\n\n.mdi-bee-flower::before {\n  content: \"\\F0FA2\";\n}\n\n.mdi-beehive-off-outline::before {\n  content: \"\\F13ED\";\n}\n\n.mdi-beehive-outline::before {\n  content: \"\\F10CE\";\n}\n\n.mdi-beekeeper::before {\n  content: \"\\F14E2\";\n}\n\n.mdi-beer::before {\n  content: \"\\F0098\";\n}\n\n.mdi-beer-outline::before {\n  content: \"\\F130C\";\n}\n\n.mdi-bell::before {\n  content: \"\\F009A\";\n}\n\n.mdi-bell-alert::before {\n  content: \"\\F0D59\";\n}\n\n.mdi-bell-alert-outline::before {\n  content: \"\\F0E81\";\n}\n\n.mdi-bell-cancel::before {\n  content: \"\\F13E7\";\n}\n\n.mdi-bell-cancel-outline::before {\n  content: \"\\F13E8\";\n}\n\n.mdi-bell-check::before {\n  content: \"\\F11E5\";\n}\n\n.mdi-bell-check-outline::before {\n  content: \"\\F11E6\";\n}\n\n.mdi-bell-circle::before {\n  content: \"\\F0D5A\";\n}\n\n.mdi-bell-circle-outline::before {\n  content: \"\\F0D5B\";\n}\n\n.mdi-bell-minus::before {\n  content: \"\\F13E9\";\n}\n\n.mdi-bell-minus-outline::before {\n  content: \"\\F13EA\";\n}\n\n.mdi-bell-off::before {\n  content: \"\\F009B\";\n}\n\n.mdi-bell-off-outline::before {\n  content: \"\\F0A91\";\n}\n\n.mdi-bell-outline::before {\n  content: \"\\F009C\";\n}\n\n.mdi-bell-plus::before {\n  content: \"\\F009D\";\n}\n\n.mdi-bell-plus-outline::before {\n  content: \"\\F0A92\";\n}\n\n.mdi-bell-remove::before {\n  content: \"\\F13EB\";\n}\n\n.mdi-bell-remove-outline::before {\n  content: \"\\F13EC\";\n}\n\n.mdi-bell-ring::before {\n  content: \"\\F009E\";\n}\n\n.mdi-bell-ring-outline::before {\n  content: \"\\F009F\";\n}\n\n.mdi-bell-sleep::before {\n  content: \"\\F00A0\";\n}\n\n.mdi-bell-sleep-outline::before {\n  content: \"\\F0A93\";\n}\n\n.mdi-beta::before {\n  content: \"\\F00A1\";\n}\n\n.mdi-betamax::before {\n  content: \"\\F09CB\";\n}\n\n.mdi-biathlon::before {\n  content: \"\\F0E14\";\n}\n\n.mdi-bicycle::before {\n  content: \"\\F109C\";\n}\n\n.mdi-bicycle-basket::before {\n  content: \"\\F1235\";\n}\n\n.mdi-bicycle-electric::before {\n  content: \"\\F15B4\";\n}\n\n.mdi-bicycle-penny-farthing::before {\n  content: \"\\F15E9\";\n}\n\n.mdi-bike::before {\n  content: \"\\F00A3\";\n}\n\n.mdi-bike-fast::before {\n  content: \"\\F111F\";\n}\n\n.mdi-billboard::before {\n  content: \"\\F1010\";\n}\n\n.mdi-billiards::before {\n  content: \"\\F0B61\";\n}\n\n.mdi-billiards-rack::before {\n  content: \"\\F0B62\";\n}\n\n.mdi-binoculars::before {\n  content: \"\\F00A5\";\n}\n\n.mdi-bio::before {\n  content: \"\\F00A6\";\n}\n\n.mdi-biohazard::before {\n  content: \"\\F00A7\";\n}\n\n.mdi-bird::before {\n  content: \"\\F15C6\";\n}\n\n.mdi-bitbucket::before {\n  content: \"\\F00A8\";\n}\n\n.mdi-bitcoin::before {\n  content: \"\\F0813\";\n}\n\n.mdi-black-mesa::before {\n  content: \"\\F00A9\";\n}\n\n.mdi-blender::before {\n  content: \"\\F0CEB\";\n}\n\n.mdi-blender-software::before {\n  content: \"\\F00AB\";\n}\n\n.mdi-blinds::before {\n  content: \"\\F00AC\";\n}\n\n.mdi-blinds-open::before {\n  content: \"\\F1011\";\n}\n\n.mdi-block-helper::before {\n  content: \"\\F00AD\";\n}\n\n.mdi-blogger::before {\n  content: \"\\F00AE\";\n}\n\n.mdi-blood-bag::before {\n  content: \"\\F0CEC\";\n}\n\n.mdi-bluetooth::before {\n  content: \"\\F00AF\";\n}\n\n.mdi-bluetooth-audio::before {\n  content: \"\\F00B0\";\n}\n\n.mdi-bluetooth-connect::before {\n  content: \"\\F00B1\";\n}\n\n.mdi-bluetooth-off::before {\n  content: \"\\F00B2\";\n}\n\n.mdi-bluetooth-settings::before {\n  content: \"\\F00B3\";\n}\n\n.mdi-bluetooth-transfer::before {\n  content: \"\\F00B4\";\n}\n\n.mdi-blur::before {\n  content: \"\\F00B5\";\n}\n\n.mdi-blur-linear::before {\n  content: \"\\F00B6\";\n}\n\n.mdi-blur-off::before {\n  content: \"\\F00B7\";\n}\n\n.mdi-blur-radial::before {\n  content: \"\\F00B8\";\n}\n\n.mdi-bolnisi-cross::before {\n  content: \"\\F0CED\";\n}\n\n.mdi-bolt::before {\n  content: \"\\F0DB3\";\n}\n\n.mdi-bomb::before {\n  content: \"\\F0691\";\n}\n\n.mdi-bomb-off::before {\n  content: \"\\F06C5\";\n}\n\n.mdi-bone::before {\n  content: \"\\F00B9\";\n}\n\n.mdi-book::before {\n  content: \"\\F00BA\";\n}\n\n.mdi-book-account::before {\n  content: \"\\F13AD\";\n}\n\n.mdi-book-account-outline::before {\n  content: \"\\F13AE\";\n}\n\n.mdi-book-alphabet::before {\n  content: \"\\F061D\";\n}\n\n.mdi-book-check::before {\n  content: \"\\F14F3\";\n}\n\n.mdi-book-check-outline::before {\n  content: \"\\F14F4\";\n}\n\n.mdi-book-cross::before {\n  content: \"\\F00A2\";\n}\n\n.mdi-book-information-variant::before {\n  content: \"\\F106F\";\n}\n\n.mdi-book-lock::before {\n  content: \"\\F079A\";\n}\n\n.mdi-book-lock-open::before {\n  content: \"\\F079B\";\n}\n\n.mdi-book-minus::before {\n  content: \"\\F05D9\";\n}\n\n.mdi-book-minus-multiple::before {\n  content: \"\\F0A94\";\n}\n\n.mdi-book-minus-multiple-outline::before {\n  content: \"\\F090B\";\n}\n\n.mdi-book-multiple::before {\n  content: \"\\F00BB\";\n}\n\n.mdi-book-multiple-outline::before {\n  content: \"\\F0436\";\n}\n\n.mdi-book-music::before {\n  content: \"\\F0067\";\n}\n\n.mdi-book-open::before {\n  content: \"\\F00BD\";\n}\n\n.mdi-book-open-blank-variant::before {\n  content: \"\\F00BE\";\n}\n\n.mdi-book-open-outline::before {\n  content: \"\\F0B63\";\n}\n\n.mdi-book-open-page-variant::before {\n  content: \"\\F05DA\";\n}\n\n.mdi-book-open-page-variant-outline::before {\n  content: \"\\F15D6\";\n}\n\n.mdi-book-open-variant::before {\n  content: \"\\F14F7\";\n}\n\n.mdi-book-outline::before {\n  content: \"\\F0B64\";\n}\n\n.mdi-book-play::before {\n  content: \"\\F0E82\";\n}\n\n.mdi-book-play-outline::before {\n  content: \"\\F0E83\";\n}\n\n.mdi-book-plus::before {\n  content: \"\\F05DB\";\n}\n\n.mdi-book-plus-multiple::before {\n  content: \"\\F0A95\";\n}\n\n.mdi-book-plus-multiple-outline::before {\n  content: \"\\F0ADE\";\n}\n\n.mdi-book-remove::before {\n  content: \"\\F0A97\";\n}\n\n.mdi-book-remove-multiple::before {\n  content: \"\\F0A96\";\n}\n\n.mdi-book-remove-multiple-outline::before {\n  content: \"\\F04CA\";\n}\n\n.mdi-book-search::before {\n  content: \"\\F0E84\";\n}\n\n.mdi-book-search-outline::before {\n  content: \"\\F0E85\";\n}\n\n.mdi-book-variant::before {\n  content: \"\\F00BF\";\n}\n\n.mdi-book-variant-multiple::before {\n  content: \"\\F00BC\";\n}\n\n.mdi-bookmark::before {\n  content: \"\\F00C0\";\n}\n\n.mdi-bookmark-check::before {\n  content: \"\\F00C1\";\n}\n\n.mdi-bookmark-check-outline::before {\n  content: \"\\F137B\";\n}\n\n.mdi-bookmark-minus::before {\n  content: \"\\F09CC\";\n}\n\n.mdi-bookmark-minus-outline::before {\n  content: \"\\F09CD\";\n}\n\n.mdi-bookmark-multiple::before {\n  content: \"\\F0E15\";\n}\n\n.mdi-bookmark-multiple-outline::before {\n  content: \"\\F0E16\";\n}\n\n.mdi-bookmark-music::before {\n  content: \"\\F00C2\";\n}\n\n.mdi-bookmark-music-outline::before {\n  content: \"\\F1379\";\n}\n\n.mdi-bookmark-off::before {\n  content: \"\\F09CE\";\n}\n\n.mdi-bookmark-off-outline::before {\n  content: \"\\F09CF\";\n}\n\n.mdi-bookmark-outline::before {\n  content: \"\\F00C3\";\n}\n\n.mdi-bookmark-plus::before {\n  content: \"\\F00C5\";\n}\n\n.mdi-bookmark-plus-outline::before {\n  content: \"\\F00C4\";\n}\n\n.mdi-bookmark-remove::before {\n  content: \"\\F00C6\";\n}\n\n.mdi-bookmark-remove-outline::before {\n  content: \"\\F137A\";\n}\n\n.mdi-bookshelf::before {\n  content: \"\\F125F\";\n}\n\n.mdi-boom-gate::before {\n  content: \"\\F0E86\";\n}\n\n.mdi-boom-gate-alert::before {\n  content: \"\\F0E87\";\n}\n\n.mdi-boom-gate-alert-outline::before {\n  content: \"\\F0E88\";\n}\n\n.mdi-boom-gate-down::before {\n  content: \"\\F0E89\";\n}\n\n.mdi-boom-gate-down-outline::before {\n  content: \"\\F0E8A\";\n}\n\n.mdi-boom-gate-outline::before {\n  content: \"\\F0E8B\";\n}\n\n.mdi-boom-gate-up::before {\n  content: \"\\F0E8C\";\n}\n\n.mdi-boom-gate-up-outline::before {\n  content: \"\\F0E8D\";\n}\n\n.mdi-boombox::before {\n  content: \"\\F05DC\";\n}\n\n.mdi-boomerang::before {\n  content: \"\\F10CF\";\n}\n\n.mdi-bootstrap::before {\n  content: \"\\F06C6\";\n}\n\n.mdi-border-all::before {\n  content: \"\\F00C7\";\n}\n\n.mdi-border-all-variant::before {\n  content: \"\\F08A1\";\n}\n\n.mdi-border-bottom::before {\n  content: \"\\F00C8\";\n}\n\n.mdi-border-bottom-variant::before {\n  content: \"\\F08A2\";\n}\n\n.mdi-border-color::before {\n  content: \"\\F00C9\";\n}\n\n.mdi-border-horizontal::before {\n  content: \"\\F00CA\";\n}\n\n.mdi-border-inside::before {\n  content: \"\\F00CB\";\n}\n\n.mdi-border-left::before {\n  content: \"\\F00CC\";\n}\n\n.mdi-border-left-variant::before {\n  content: \"\\F08A3\";\n}\n\n.mdi-border-none::before {\n  content: \"\\F00CD\";\n}\n\n.mdi-border-none-variant::before {\n  content: \"\\F08A4\";\n}\n\n.mdi-border-outside::before {\n  content: \"\\F00CE\";\n}\n\n.mdi-border-right::before {\n  content: \"\\F00CF\";\n}\n\n.mdi-border-right-variant::before {\n  content: \"\\F08A5\";\n}\n\n.mdi-border-style::before {\n  content: \"\\F00D0\";\n}\n\n.mdi-border-top::before {\n  content: \"\\F00D1\";\n}\n\n.mdi-border-top-variant::before {\n  content: \"\\F08A6\";\n}\n\n.mdi-border-vertical::before {\n  content: \"\\F00D2\";\n}\n\n.mdi-bottle-soda::before {\n  content: \"\\F1070\";\n}\n\n.mdi-bottle-soda-classic::before {\n  content: \"\\F1071\";\n}\n\n.mdi-bottle-soda-classic-outline::before {\n  content: \"\\F1363\";\n}\n\n.mdi-bottle-soda-outline::before {\n  content: \"\\F1072\";\n}\n\n.mdi-bottle-tonic::before {\n  content: \"\\F112E\";\n}\n\n.mdi-bottle-tonic-outline::before {\n  content: \"\\F112F\";\n}\n\n.mdi-bottle-tonic-plus::before {\n  content: \"\\F1130\";\n}\n\n.mdi-bottle-tonic-plus-outline::before {\n  content: \"\\F1131\";\n}\n\n.mdi-bottle-tonic-skull::before {\n  content: \"\\F1132\";\n}\n\n.mdi-bottle-tonic-skull-outline::before {\n  content: \"\\F1133\";\n}\n\n.mdi-bottle-wine::before {\n  content: \"\\F0854\";\n}\n\n.mdi-bottle-wine-outline::before {\n  content: \"\\F1310\";\n}\n\n.mdi-bow-tie::before {\n  content: \"\\F0678\";\n}\n\n.mdi-bowl::before {\n  content: \"\\F028E\";\n}\n\n.mdi-bowl-mix::before {\n  content: \"\\F0617\";\n}\n\n.mdi-bowl-mix-outline::before {\n  content: \"\\F02E4\";\n}\n\n.mdi-bowl-outline::before {\n  content: \"\\F02A9\";\n}\n\n.mdi-bowling::before {\n  content: \"\\F00D3\";\n}\n\n.mdi-box::before {\n  content: \"\\F00D4\";\n}\n\n.mdi-box-cutter::before {\n  content: \"\\F00D5\";\n}\n\n.mdi-box-cutter-off::before {\n  content: \"\\F0B4A\";\n}\n\n.mdi-box-shadow::before {\n  content: \"\\F0637\";\n}\n\n.mdi-boxing-glove::before {\n  content: \"\\F0B65\";\n}\n\n.mdi-braille::before {\n  content: \"\\F09D0\";\n}\n\n.mdi-brain::before {\n  content: \"\\F09D1\";\n}\n\n.mdi-bread-slice::before {\n  content: \"\\F0CEE\";\n}\n\n.mdi-bread-slice-outline::before {\n  content: \"\\F0CEF\";\n}\n\n.mdi-bridge::before {\n  content: \"\\F0618\";\n}\n\n.mdi-briefcase::before {\n  content: \"\\F00D6\";\n}\n\n.mdi-briefcase-account::before {\n  content: \"\\F0CF0\";\n}\n\n.mdi-briefcase-account-outline::before {\n  content: \"\\F0CF1\";\n}\n\n.mdi-briefcase-check::before {\n  content: \"\\F00D7\";\n}\n\n.mdi-briefcase-check-outline::before {\n  content: \"\\F131E\";\n}\n\n.mdi-briefcase-clock::before {\n  content: \"\\F10D0\";\n}\n\n.mdi-briefcase-clock-outline::before {\n  content: \"\\F10D1\";\n}\n\n.mdi-briefcase-download::before {\n  content: \"\\F00D8\";\n}\n\n.mdi-briefcase-download-outline::before {\n  content: \"\\F0C3D\";\n}\n\n.mdi-briefcase-edit::before {\n  content: \"\\F0A98\";\n}\n\n.mdi-briefcase-edit-outline::before {\n  content: \"\\F0C3E\";\n}\n\n.mdi-briefcase-minus::before {\n  content: \"\\F0A2A\";\n}\n\n.mdi-briefcase-minus-outline::before {\n  content: \"\\F0C3F\";\n}\n\n.mdi-briefcase-outline::before {\n  content: \"\\F0814\";\n}\n\n.mdi-briefcase-plus::before {\n  content: \"\\F0A2B\";\n}\n\n.mdi-briefcase-plus-outline::before {\n  content: \"\\F0C40\";\n}\n\n.mdi-briefcase-remove::before {\n  content: \"\\F0A2C\";\n}\n\n.mdi-briefcase-remove-outline::before {\n  content: \"\\F0C41\";\n}\n\n.mdi-briefcase-search::before {\n  content: \"\\F0A2D\";\n}\n\n.mdi-briefcase-search-outline::before {\n  content: \"\\F0C42\";\n}\n\n.mdi-briefcase-upload::before {\n  content: \"\\F00D9\";\n}\n\n.mdi-briefcase-upload-outline::before {\n  content: \"\\F0C43\";\n}\n\n.mdi-briefcase-variant::before {\n  content: \"\\F1494\";\n}\n\n.mdi-briefcase-variant-outline::before {\n  content: \"\\F1495\";\n}\n\n.mdi-brightness-1::before {\n  content: \"\\F00DA\";\n}\n\n.mdi-brightness-2::before {\n  content: \"\\F00DB\";\n}\n\n.mdi-brightness-3::before {\n  content: \"\\F00DC\";\n}\n\n.mdi-brightness-4::before {\n  content: \"\\F00DD\";\n}\n\n.mdi-brightness-5::before {\n  content: \"\\F00DE\";\n}\n\n.mdi-brightness-6::before {\n  content: \"\\F00DF\";\n}\n\n.mdi-brightness-7::before {\n  content: \"\\F00E0\";\n}\n\n.mdi-brightness-auto::before {\n  content: \"\\F00E1\";\n}\n\n.mdi-brightness-percent::before {\n  content: \"\\F0CF2\";\n}\n\n.mdi-broom::before {\n  content: \"\\F00E2\";\n}\n\n.mdi-brush::before {\n  content: \"\\F00E3\";\n}\n\n.mdi-bucket::before {\n  content: \"\\F1415\";\n}\n\n.mdi-bucket-outline::before {\n  content: \"\\F1416\";\n}\n\n.mdi-buddhism::before {\n  content: \"\\F094B\";\n}\n\n.mdi-buffer::before {\n  content: \"\\F0619\";\n}\n\n.mdi-buffet::before {\n  content: \"\\F0578\";\n}\n\n.mdi-bug::before {\n  content: \"\\F00E4\";\n}\n\n.mdi-bug-check::before {\n  content: \"\\F0A2E\";\n}\n\n.mdi-bug-check-outline::before {\n  content: \"\\F0A2F\";\n}\n\n.mdi-bug-outline::before {\n  content: \"\\F0A30\";\n}\n\n.mdi-bugle::before {\n  content: \"\\F0DB4\";\n}\n\n.mdi-bulldozer::before {\n  content: \"\\F0B22\";\n}\n\n.mdi-bullet::before {\n  content: \"\\F0CF3\";\n}\n\n.mdi-bulletin-board::before {\n  content: \"\\F00E5\";\n}\n\n.mdi-bullhorn::before {\n  content: \"\\F00E6\";\n}\n\n.mdi-bullhorn-outline::before {\n  content: \"\\F0B23\";\n}\n\n.mdi-bullseye::before {\n  content: \"\\F05DD\";\n}\n\n.mdi-bullseye-arrow::before {\n  content: \"\\F08C9\";\n}\n\n.mdi-bulma::before {\n  content: \"\\F12E7\";\n}\n\n.mdi-bunk-bed::before {\n  content: \"\\F1302\";\n}\n\n.mdi-bunk-bed-outline::before {\n  content: \"\\F0097\";\n}\n\n.mdi-bus::before {\n  content: \"\\F00E7\";\n}\n\n.mdi-bus-alert::before {\n  content: \"\\F0A99\";\n}\n\n.mdi-bus-articulated-end::before {\n  content: \"\\F079C\";\n}\n\n.mdi-bus-articulated-front::before {\n  content: \"\\F079D\";\n}\n\n.mdi-bus-clock::before {\n  content: \"\\F08CA\";\n}\n\n.mdi-bus-double-decker::before {\n  content: \"\\F079E\";\n}\n\n.mdi-bus-marker::before {\n  content: \"\\F1212\";\n}\n\n.mdi-bus-multiple::before {\n  content: \"\\F0F3F\";\n}\n\n.mdi-bus-school::before {\n  content: \"\\F079F\";\n}\n\n.mdi-bus-side::before {\n  content: \"\\F07A0\";\n}\n\n.mdi-bus-stop::before {\n  content: \"\\F1012\";\n}\n\n.mdi-bus-stop-covered::before {\n  content: \"\\F1013\";\n}\n\n.mdi-bus-stop-uncovered::before {\n  content: \"\\F1014\";\n}\n\n.mdi-butterfly::before {\n  content: \"\\F1589\";\n}\n\n.mdi-butterfly-outline::before {\n  content: \"\\F158A\";\n}\n\n.mdi-cable-data::before {\n  content: \"\\F1394\";\n}\n\n.mdi-cached::before {\n  content: \"\\F00E8\";\n}\n\n.mdi-cactus::before {\n  content: \"\\F0DB5\";\n}\n\n.mdi-cake::before {\n  content: \"\\F00E9\";\n}\n\n.mdi-cake-layered::before {\n  content: \"\\F00EA\";\n}\n\n.mdi-cake-variant::before {\n  content: \"\\F00EB\";\n}\n\n.mdi-calculator::before {\n  content: \"\\F00EC\";\n}\n\n.mdi-calculator-variant::before {\n  content: \"\\F0A9A\";\n}\n\n.mdi-calculator-variant-outline::before {\n  content: \"\\F15A6\";\n}\n\n.mdi-calendar::before {\n  content: \"\\F00ED\";\n}\n\n.mdi-calendar-account::before {\n  content: \"\\F0ED7\";\n}\n\n.mdi-calendar-account-outline::before {\n  content: \"\\F0ED8\";\n}\n\n.mdi-calendar-alert::before {\n  content: \"\\F0A31\";\n}\n\n.mdi-calendar-arrow-left::before {\n  content: \"\\F1134\";\n}\n\n.mdi-calendar-arrow-right::before {\n  content: \"\\F1135\";\n}\n\n.mdi-calendar-blank::before {\n  content: \"\\F00EE\";\n}\n\n.mdi-calendar-blank-multiple::before {\n  content: \"\\F1073\";\n}\n\n.mdi-calendar-blank-outline::before {\n  content: \"\\F0B66\";\n}\n\n.mdi-calendar-check::before {\n  content: \"\\F00EF\";\n}\n\n.mdi-calendar-check-outline::before {\n  content: \"\\F0C44\";\n}\n\n.mdi-calendar-clock::before {\n  content: \"\\F00F0\";\n}\n\n.mdi-calendar-cursor::before {\n  content: \"\\F157B\";\n}\n\n.mdi-calendar-edit::before {\n  content: \"\\F08A7\";\n}\n\n.mdi-calendar-export::before {\n  content: \"\\F0B24\";\n}\n\n.mdi-calendar-heart::before {\n  content: \"\\F09D2\";\n}\n\n.mdi-calendar-import::before {\n  content: \"\\F0B25\";\n}\n\n.mdi-calendar-minus::before {\n  content: \"\\F0D5C\";\n}\n\n.mdi-calendar-month::before {\n  content: \"\\F0E17\";\n}\n\n.mdi-calendar-month-outline::before {\n  content: \"\\F0E18\";\n}\n\n.mdi-calendar-multiple::before {\n  content: \"\\F00F1\";\n}\n\n.mdi-calendar-multiple-check::before {\n  content: \"\\F00F2\";\n}\n\n.mdi-calendar-multiselect::before {\n  content: \"\\F0A32\";\n}\n\n.mdi-calendar-outline::before {\n  content: \"\\F0B67\";\n}\n\n.mdi-calendar-plus::before {\n  content: \"\\F00F3\";\n}\n\n.mdi-calendar-question::before {\n  content: \"\\F0692\";\n}\n\n.mdi-calendar-range::before {\n  content: \"\\F0679\";\n}\n\n.mdi-calendar-range-outline::before {\n  content: \"\\F0B68\";\n}\n\n.mdi-calendar-refresh::before {\n  content: \"\\F01E1\";\n}\n\n.mdi-calendar-refresh-outline::before {\n  content: \"\\F0203\";\n}\n\n.mdi-calendar-remove::before {\n  content: \"\\F00F4\";\n}\n\n.mdi-calendar-remove-outline::before {\n  content: \"\\F0C45\";\n}\n\n.mdi-calendar-search::before {\n  content: \"\\F094C\";\n}\n\n.mdi-calendar-star::before {\n  content: \"\\F09D3\";\n}\n\n.mdi-calendar-sync::before {\n  content: \"\\F0E8E\";\n}\n\n.mdi-calendar-sync-outline::before {\n  content: \"\\F0E8F\";\n}\n\n.mdi-calendar-text::before {\n  content: \"\\F00F5\";\n}\n\n.mdi-calendar-text-outline::before {\n  content: \"\\F0C46\";\n}\n\n.mdi-calendar-today::before {\n  content: \"\\F00F6\";\n}\n\n.mdi-calendar-week::before {\n  content: \"\\F0A33\";\n}\n\n.mdi-calendar-week-begin::before {\n  content: \"\\F0A34\";\n}\n\n.mdi-calendar-weekend::before {\n  content: \"\\F0ED9\";\n}\n\n.mdi-calendar-weekend-outline::before {\n  content: \"\\F0EDA\";\n}\n\n.mdi-call-made::before {\n  content: \"\\F00F7\";\n}\n\n.mdi-call-merge::before {\n  content: \"\\F00F8\";\n}\n\n.mdi-call-missed::before {\n  content: \"\\F00F9\";\n}\n\n.mdi-call-received::before {\n  content: \"\\F00FA\";\n}\n\n.mdi-call-split::before {\n  content: \"\\F00FB\";\n}\n\n.mdi-camcorder::before {\n  content: \"\\F00FC\";\n}\n\n.mdi-camcorder-off::before {\n  content: \"\\F00FF\";\n}\n\n.mdi-camera::before {\n  content: \"\\F0100\";\n}\n\n.mdi-camera-account::before {\n  content: \"\\F08CB\";\n}\n\n.mdi-camera-burst::before {\n  content: \"\\F0693\";\n}\n\n.mdi-camera-control::before {\n  content: \"\\F0B69\";\n}\n\n.mdi-camera-enhance::before {\n  content: \"\\F0101\";\n}\n\n.mdi-camera-enhance-outline::before {\n  content: \"\\F0B6A\";\n}\n\n.mdi-camera-flip::before {\n  content: \"\\F15D9\";\n}\n\n.mdi-camera-flip-outline::before {\n  content: \"\\F15DA\";\n}\n\n.mdi-camera-front::before {\n  content: \"\\F0102\";\n}\n\n.mdi-camera-front-variant::before {\n  content: \"\\F0103\";\n}\n\n.mdi-camera-gopro::before {\n  content: \"\\F07A1\";\n}\n\n.mdi-camera-image::before {\n  content: \"\\F08CC\";\n}\n\n.mdi-camera-iris::before {\n  content: \"\\F0104\";\n}\n\n.mdi-camera-metering-center::before {\n  content: \"\\F07A2\";\n}\n\n.mdi-camera-metering-matrix::before {\n  content: \"\\F07A3\";\n}\n\n.mdi-camera-metering-partial::before {\n  content: \"\\F07A4\";\n}\n\n.mdi-camera-metering-spot::before {\n  content: \"\\F07A5\";\n}\n\n.mdi-camera-off::before {\n  content: \"\\F05DF\";\n}\n\n.mdi-camera-outline::before {\n  content: \"\\F0D5D\";\n}\n\n.mdi-camera-party-mode::before {\n  content: \"\\F0105\";\n}\n\n.mdi-camera-plus::before {\n  content: \"\\F0EDB\";\n}\n\n.mdi-camera-plus-outline::before {\n  content: \"\\F0EDC\";\n}\n\n.mdi-camera-rear::before {\n  content: \"\\F0106\";\n}\n\n.mdi-camera-rear-variant::before {\n  content: \"\\F0107\";\n}\n\n.mdi-camera-retake::before {\n  content: \"\\F0E19\";\n}\n\n.mdi-camera-retake-outline::before {\n  content: \"\\F0E1A\";\n}\n\n.mdi-camera-switch::before {\n  content: \"\\F0108\";\n}\n\n.mdi-camera-switch-outline::before {\n  content: \"\\F084A\";\n}\n\n.mdi-camera-timer::before {\n  content: \"\\F0109\";\n}\n\n.mdi-camera-wireless::before {\n  content: \"\\F0DB6\";\n}\n\n.mdi-camera-wireless-outline::before {\n  content: \"\\F0DB7\";\n}\n\n.mdi-campfire::before {\n  content: \"\\F0EDD\";\n}\n\n.mdi-cancel::before {\n  content: \"\\F073A\";\n}\n\n.mdi-candle::before {\n  content: \"\\F05E2\";\n}\n\n.mdi-candycane::before {\n  content: \"\\F010A\";\n}\n\n.mdi-cannabis::before {\n  content: \"\\F07A6\";\n}\n\n.mdi-caps-lock::before {\n  content: \"\\F0A9B\";\n}\n\n.mdi-car::before {\n  content: \"\\F010B\";\n}\n\n.mdi-car-2-plus::before {\n  content: \"\\F1015\";\n}\n\n.mdi-car-3-plus::before {\n  content: \"\\F1016\";\n}\n\n.mdi-car-arrow-left::before {\n  content: \"\\F13B2\";\n}\n\n.mdi-car-arrow-right::before {\n  content: \"\\F13B3\";\n}\n\n.mdi-car-back::before {\n  content: \"\\F0E1B\";\n}\n\n.mdi-car-battery::before {\n  content: \"\\F010C\";\n}\n\n.mdi-car-brake-abs::before {\n  content: \"\\F0C47\";\n}\n\n.mdi-car-brake-alert::before {\n  content: \"\\F0C48\";\n}\n\n.mdi-car-brake-hold::before {\n  content: \"\\F0D5E\";\n}\n\n.mdi-car-brake-parking::before {\n  content: \"\\F0D5F\";\n}\n\n.mdi-car-brake-retarder::before {\n  content: \"\\F1017\";\n}\n\n.mdi-car-child-seat::before {\n  content: \"\\F0FA3\";\n}\n\n.mdi-car-clutch::before {\n  content: \"\\F1018\";\n}\n\n.mdi-car-cog::before {\n  content: \"\\F13CC\";\n}\n\n.mdi-car-connected::before {\n  content: \"\\F010D\";\n}\n\n.mdi-car-convertible::before {\n  content: \"\\F07A7\";\n}\n\n.mdi-car-coolant-level::before {\n  content: \"\\F1019\";\n}\n\n.mdi-car-cruise-control::before {\n  content: \"\\F0D60\";\n}\n\n.mdi-car-defrost-front::before {\n  content: \"\\F0D61\";\n}\n\n.mdi-car-defrost-rear::before {\n  content: \"\\F0D62\";\n}\n\n.mdi-car-door::before {\n  content: \"\\F0B6B\";\n}\n\n.mdi-car-door-lock::before {\n  content: \"\\F109D\";\n}\n\n.mdi-car-electric::before {\n  content: \"\\F0B6C\";\n}\n\n.mdi-car-electric-outline::before {\n  content: \"\\F15B5\";\n}\n\n.mdi-car-emergency::before {\n  content: \"\\F160F\";\n}\n\n.mdi-car-esp::before {\n  content: \"\\F0C49\";\n}\n\n.mdi-car-estate::before {\n  content: \"\\F07A8\";\n}\n\n.mdi-car-hatchback::before {\n  content: \"\\F07A9\";\n}\n\n.mdi-car-info::before {\n  content: \"\\F11BE\";\n}\n\n.mdi-car-key::before {\n  content: \"\\F0B6D\";\n}\n\n.mdi-car-lifted-pickup::before {\n  content: \"\\F152D\";\n}\n\n.mdi-car-light-dimmed::before {\n  content: \"\\F0C4A\";\n}\n\n.mdi-car-light-fog::before {\n  content: \"\\F0C4B\";\n}\n\n.mdi-car-light-high::before {\n  content: \"\\F0C4C\";\n}\n\n.mdi-car-limousine::before {\n  content: \"\\F08CD\";\n}\n\n.mdi-car-multiple::before {\n  content: \"\\F0B6E\";\n}\n\n.mdi-car-off::before {\n  content: \"\\F0E1C\";\n}\n\n.mdi-car-outline::before {\n  content: \"\\F14ED\";\n}\n\n.mdi-car-parking-lights::before {\n  content: \"\\F0D63\";\n}\n\n.mdi-car-pickup::before {\n  content: \"\\F07AA\";\n}\n\n.mdi-car-seat::before {\n  content: \"\\F0FA4\";\n}\n\n.mdi-car-seat-cooler::before {\n  content: \"\\F0FA5\";\n}\n\n.mdi-car-seat-heater::before {\n  content: \"\\F0FA6\";\n}\n\n.mdi-car-settings::before {\n  content: \"\\F13CD\";\n}\n\n.mdi-car-shift-pattern::before {\n  content: \"\\F0F40\";\n}\n\n.mdi-car-side::before {\n  content: \"\\F07AB\";\n}\n\n.mdi-car-sports::before {\n  content: \"\\F07AC\";\n}\n\n.mdi-car-tire-alert::before {\n  content: \"\\F0C4D\";\n}\n\n.mdi-car-traction-control::before {\n  content: \"\\F0D64\";\n}\n\n.mdi-car-turbocharger::before {\n  content: \"\\F101A\";\n}\n\n.mdi-car-wash::before {\n  content: \"\\F010E\";\n}\n\n.mdi-car-windshield::before {\n  content: \"\\F101B\";\n}\n\n.mdi-car-windshield-outline::before {\n  content: \"\\F101C\";\n}\n\n.mdi-carabiner::before {\n  content: \"\\F14C0\";\n}\n\n.mdi-caravan::before {\n  content: \"\\F07AD\";\n}\n\n.mdi-card::before {\n  content: \"\\F0B6F\";\n}\n\n.mdi-card-account-details::before {\n  content: \"\\F05D2\";\n}\n\n.mdi-card-account-details-outline::before {\n  content: \"\\F0DAB\";\n}\n\n.mdi-card-account-details-star::before {\n  content: \"\\F02A3\";\n}\n\n.mdi-card-account-details-star-outline::before {\n  content: \"\\F06DB\";\n}\n\n.mdi-card-account-mail::before {\n  content: \"\\F018E\";\n}\n\n.mdi-card-account-mail-outline::before {\n  content: \"\\F0E98\";\n}\n\n.mdi-card-account-phone::before {\n  content: \"\\F0E99\";\n}\n\n.mdi-card-account-phone-outline::before {\n  content: \"\\F0E9A\";\n}\n\n.mdi-card-bulleted::before {\n  content: \"\\F0B70\";\n}\n\n.mdi-card-bulleted-off::before {\n  content: \"\\F0B71\";\n}\n\n.mdi-card-bulleted-off-outline::before {\n  content: \"\\F0B72\";\n}\n\n.mdi-card-bulleted-outline::before {\n  content: \"\\F0B73\";\n}\n\n.mdi-card-bulleted-settings::before {\n  content: \"\\F0B74\";\n}\n\n.mdi-card-bulleted-settings-outline::before {\n  content: \"\\F0B75\";\n}\n\n.mdi-card-minus::before {\n  content: \"\\F1600\";\n}\n\n.mdi-card-minus-outline::before {\n  content: \"\\F1601\";\n}\n\n.mdi-card-off::before {\n  content: \"\\F1602\";\n}\n\n.mdi-card-off-outline::before {\n  content: \"\\F1603\";\n}\n\n.mdi-card-outline::before {\n  content: \"\\F0B76\";\n}\n\n.mdi-card-plus::before {\n  content: \"\\F11FF\";\n}\n\n.mdi-card-plus-outline::before {\n  content: \"\\F1200\";\n}\n\n.mdi-card-remove::before {\n  content: \"\\F1604\";\n}\n\n.mdi-card-remove-outline::before {\n  content: \"\\F1605\";\n}\n\n.mdi-card-search::before {\n  content: \"\\F1074\";\n}\n\n.mdi-card-search-outline::before {\n  content: \"\\F1075\";\n}\n\n.mdi-card-text::before {\n  content: \"\\F0B77\";\n}\n\n.mdi-card-text-outline::before {\n  content: \"\\F0B78\";\n}\n\n.mdi-cards::before {\n  content: \"\\F0638\";\n}\n\n.mdi-cards-club::before {\n  content: \"\\F08CE\";\n}\n\n.mdi-cards-diamond::before {\n  content: \"\\F08CF\";\n}\n\n.mdi-cards-diamond-outline::before {\n  content: \"\\F101D\";\n}\n\n.mdi-cards-heart::before {\n  content: \"\\F08D0\";\n}\n\n.mdi-cards-outline::before {\n  content: \"\\F0639\";\n}\n\n.mdi-cards-playing-outline::before {\n  content: \"\\F063A\";\n}\n\n.mdi-cards-spade::before {\n  content: \"\\F08D1\";\n}\n\n.mdi-cards-variant::before {\n  content: \"\\F06C7\";\n}\n\n.mdi-carrot::before {\n  content: \"\\F010F\";\n}\n\n.mdi-cart::before {\n  content: \"\\F0110\";\n}\n\n.mdi-cart-arrow-down::before {\n  content: \"\\F0D66\";\n}\n\n.mdi-cart-arrow-right::before {\n  content: \"\\F0C4E\";\n}\n\n.mdi-cart-arrow-up::before {\n  content: \"\\F0D67\";\n}\n\n.mdi-cart-check::before {\n  content: \"\\F15EA\";\n}\n\n.mdi-cart-minus::before {\n  content: \"\\F0D68\";\n}\n\n.mdi-cart-off::before {\n  content: \"\\F066B\";\n}\n\n.mdi-cart-outline::before {\n  content: \"\\F0111\";\n}\n\n.mdi-cart-plus::before {\n  content: \"\\F0112\";\n}\n\n.mdi-cart-remove::before {\n  content: \"\\F0D69\";\n}\n\n.mdi-cart-variant::before {\n  content: \"\\F15EB\";\n}\n\n.mdi-case-sensitive-alt::before {\n  content: \"\\F0113\";\n}\n\n.mdi-cash::before {\n  content: \"\\F0114\";\n}\n\n.mdi-cash-100::before {\n  content: \"\\F0115\";\n}\n\n.mdi-cash-check::before {\n  content: \"\\F14EE\";\n}\n\n.mdi-cash-lock::before {\n  content: \"\\F14EA\";\n}\n\n.mdi-cash-lock-open::before {\n  content: \"\\F14EB\";\n}\n\n.mdi-cash-marker::before {\n  content: \"\\F0DB8\";\n}\n\n.mdi-cash-minus::before {\n  content: \"\\F1260\";\n}\n\n.mdi-cash-multiple::before {\n  content: \"\\F0116\";\n}\n\n.mdi-cash-plus::before {\n  content: \"\\F1261\";\n}\n\n.mdi-cash-refund::before {\n  content: \"\\F0A9C\";\n}\n\n.mdi-cash-register::before {\n  content: \"\\F0CF4\";\n}\n\n.mdi-cash-remove::before {\n  content: \"\\F1262\";\n}\n\n.mdi-cash-usd::before {\n  content: \"\\F1176\";\n}\n\n.mdi-cash-usd-outline::before {\n  content: \"\\F0117\";\n}\n\n.mdi-cassette::before {\n  content: \"\\F09D4\";\n}\n\n.mdi-cast::before {\n  content: \"\\F0118\";\n}\n\n.mdi-cast-audio::before {\n  content: \"\\F101E\";\n}\n\n.mdi-cast-connected::before {\n  content: \"\\F0119\";\n}\n\n.mdi-cast-education::before {\n  content: \"\\F0E1D\";\n}\n\n.mdi-cast-off::before {\n  content: \"\\F078A\";\n}\n\n.mdi-castle::before {\n  content: \"\\F011A\";\n}\n\n.mdi-cat::before {\n  content: \"\\F011B\";\n}\n\n.mdi-cctv::before {\n  content: \"\\F07AE\";\n}\n\n.mdi-ceiling-light::before {\n  content: \"\\F0769\";\n}\n\n.mdi-cellphone::before {\n  content: \"\\F011C\";\n}\n\n.mdi-cellphone-android::before {\n  content: \"\\F011D\";\n}\n\n.mdi-cellphone-arrow-down::before {\n  content: \"\\F09D5\";\n}\n\n.mdi-cellphone-basic::before {\n  content: \"\\F011E\";\n}\n\n.mdi-cellphone-charging::before {\n  content: \"\\F1397\";\n}\n\n.mdi-cellphone-cog::before {\n  content: \"\\F0951\";\n}\n\n.mdi-cellphone-dock::before {\n  content: \"\\F011F\";\n}\n\n.mdi-cellphone-erase::before {\n  content: \"\\F094D\";\n}\n\n.mdi-cellphone-information::before {\n  content: \"\\F0F41\";\n}\n\n.mdi-cellphone-iphone::before {\n  content: \"\\F0120\";\n}\n\n.mdi-cellphone-key::before {\n  content: \"\\F094E\";\n}\n\n.mdi-cellphone-link::before {\n  content: \"\\F0121\";\n}\n\n.mdi-cellphone-link-off::before {\n  content: \"\\F0122\";\n}\n\n.mdi-cellphone-lock::before {\n  content: \"\\F094F\";\n}\n\n.mdi-cellphone-message::before {\n  content: \"\\F08D3\";\n}\n\n.mdi-cellphone-message-off::before {\n  content: \"\\F10D2\";\n}\n\n.mdi-cellphone-nfc::before {\n  content: \"\\F0E90\";\n}\n\n.mdi-cellphone-nfc-off::before {\n  content: \"\\F12D8\";\n}\n\n.mdi-cellphone-off::before {\n  content: \"\\F0950\";\n}\n\n.mdi-cellphone-play::before {\n  content: \"\\F101F\";\n}\n\n.mdi-cellphone-screenshot::before {\n  content: \"\\F0A35\";\n}\n\n.mdi-cellphone-settings::before {\n  content: \"\\F0123\";\n}\n\n.mdi-cellphone-sound::before {\n  content: \"\\F0952\";\n}\n\n.mdi-cellphone-text::before {\n  content: \"\\F08D2\";\n}\n\n.mdi-cellphone-wireless::before {\n  content: \"\\F0815\";\n}\n\n.mdi-celtic-cross::before {\n  content: \"\\F0CF5\";\n}\n\n.mdi-centos::before {\n  content: \"\\F111A\";\n}\n\n.mdi-certificate::before {\n  content: \"\\F0124\";\n}\n\n.mdi-certificate-outline::before {\n  content: \"\\F1188\";\n}\n\n.mdi-chair-rolling::before {\n  content: \"\\F0F48\";\n}\n\n.mdi-chair-school::before {\n  content: \"\\F0125\";\n}\n\n.mdi-charity::before {\n  content: \"\\F0C4F\";\n}\n\n.mdi-chart-arc::before {\n  content: \"\\F0126\";\n}\n\n.mdi-chart-areaspline::before {\n  content: \"\\F0127\";\n}\n\n.mdi-chart-areaspline-variant::before {\n  content: \"\\F0E91\";\n}\n\n.mdi-chart-bar::before {\n  content: \"\\F0128\";\n}\n\n.mdi-chart-bar-stacked::before {\n  content: \"\\F076A\";\n}\n\n.mdi-chart-bell-curve::before {\n  content: \"\\F0C50\";\n}\n\n.mdi-chart-bell-curve-cumulative::before {\n  content: \"\\F0FA7\";\n}\n\n.mdi-chart-box::before {\n  content: \"\\F154D\";\n}\n\n.mdi-chart-box-outline::before {\n  content: \"\\F154E\";\n}\n\n.mdi-chart-box-plus-outline::before {\n  content: \"\\F154F\";\n}\n\n.mdi-chart-bubble::before {\n  content: \"\\F05E3\";\n}\n\n.mdi-chart-donut::before {\n  content: \"\\F07AF\";\n}\n\n.mdi-chart-donut-variant::before {\n  content: \"\\F07B0\";\n}\n\n.mdi-chart-gantt::before {\n  content: \"\\F066C\";\n}\n\n.mdi-chart-histogram::before {\n  content: \"\\F0129\";\n}\n\n.mdi-chart-line::before {\n  content: \"\\F012A\";\n}\n\n.mdi-chart-line-stacked::before {\n  content: \"\\F076B\";\n}\n\n.mdi-chart-line-variant::before {\n  content: \"\\F07B1\";\n}\n\n.mdi-chart-multiline::before {\n  content: \"\\F08D4\";\n}\n\n.mdi-chart-multiple::before {\n  content: \"\\F1213\";\n}\n\n.mdi-chart-pie::before {\n  content: \"\\F012B\";\n}\n\n.mdi-chart-ppf::before {\n  content: \"\\F1380\";\n}\n\n.mdi-chart-sankey::before {\n  content: \"\\F11DF\";\n}\n\n.mdi-chart-sankey-variant::before {\n  content: \"\\F11E0\";\n}\n\n.mdi-chart-scatter-plot::before {\n  content: \"\\F0E92\";\n}\n\n.mdi-chart-scatter-plot-hexbin::before {\n  content: \"\\F066D\";\n}\n\n.mdi-chart-timeline::before {\n  content: \"\\F066E\";\n}\n\n.mdi-chart-timeline-variant::before {\n  content: \"\\F0E93\";\n}\n\n.mdi-chart-timeline-variant-shimmer::before {\n  content: \"\\F15B6\";\n}\n\n.mdi-chart-tree::before {\n  content: \"\\F0E94\";\n}\n\n.mdi-chat::before {\n  content: \"\\F0B79\";\n}\n\n.mdi-chat-alert::before {\n  content: \"\\F0B7A\";\n}\n\n.mdi-chat-alert-outline::before {\n  content: \"\\F12C9\";\n}\n\n.mdi-chat-minus::before {\n  content: \"\\F1410\";\n}\n\n.mdi-chat-minus-outline::before {\n  content: \"\\F1413\";\n}\n\n.mdi-chat-outline::before {\n  content: \"\\F0EDE\";\n}\n\n.mdi-chat-plus::before {\n  content: \"\\F140F\";\n}\n\n.mdi-chat-plus-outline::before {\n  content: \"\\F1412\";\n}\n\n.mdi-chat-processing::before {\n  content: \"\\F0B7B\";\n}\n\n.mdi-chat-processing-outline::before {\n  content: \"\\F12CA\";\n}\n\n.mdi-chat-remove::before {\n  content: \"\\F1411\";\n}\n\n.mdi-chat-remove-outline::before {\n  content: \"\\F1414\";\n}\n\n.mdi-chat-sleep::before {\n  content: \"\\F12D1\";\n}\n\n.mdi-chat-sleep-outline::before {\n  content: \"\\F12D2\";\n}\n\n.mdi-check::before {\n  content: \"\\F012C\";\n}\n\n.mdi-check-all::before {\n  content: \"\\F012D\";\n}\n\n.mdi-check-bold::before {\n  content: \"\\F0E1E\";\n}\n\n.mdi-check-box-multiple-outline::before {\n  content: \"\\F0C51\";\n}\n\n.mdi-check-box-outline::before {\n  content: \"\\F0C52\";\n}\n\n.mdi-check-circle::before {\n  content: \"\\F05E0\";\n}\n\n.mdi-check-circle-outline::before {\n  content: \"\\F05E1\";\n}\n\n.mdi-check-decagram::before {\n  content: \"\\F0791\";\n}\n\n.mdi-check-network::before {\n  content: \"\\F0C53\";\n}\n\n.mdi-check-network-outline::before {\n  content: \"\\F0C54\";\n}\n\n.mdi-check-outline::before {\n  content: \"\\F0855\";\n}\n\n.mdi-check-underline::before {\n  content: \"\\F0E1F\";\n}\n\n.mdi-check-underline-circle::before {\n  content: \"\\F0E20\";\n}\n\n.mdi-check-underline-circle-outline::before {\n  content: \"\\F0E21\";\n}\n\n.mdi-checkbook::before {\n  content: \"\\F0A9D\";\n}\n\n.mdi-checkbox-blank::before {\n  content: \"\\F012E\";\n}\n\n.mdi-checkbox-blank-circle::before {\n  content: \"\\F012F\";\n}\n\n.mdi-checkbox-blank-circle-outline::before {\n  content: \"\\F0130\";\n}\n\n.mdi-checkbox-blank-off::before {\n  content: \"\\F12EC\";\n}\n\n.mdi-checkbox-blank-off-outline::before {\n  content: \"\\F12ED\";\n}\n\n.mdi-checkbox-blank-outline::before {\n  content: \"\\F0131\";\n}\n\n.mdi-checkbox-intermediate::before {\n  content: \"\\F0856\";\n}\n\n.mdi-checkbox-marked::before {\n  content: \"\\F0132\";\n}\n\n.mdi-checkbox-marked-circle::before {\n  content: \"\\F0133\";\n}\n\n.mdi-checkbox-marked-circle-outline::before {\n  content: \"\\F0134\";\n}\n\n.mdi-checkbox-marked-outline::before {\n  content: \"\\F0135\";\n}\n\n.mdi-checkbox-multiple-blank::before {\n  content: \"\\F0136\";\n}\n\n.mdi-checkbox-multiple-blank-circle::before {\n  content: \"\\F063B\";\n}\n\n.mdi-checkbox-multiple-blank-circle-outline::before {\n  content: \"\\F063C\";\n}\n\n.mdi-checkbox-multiple-blank-outline::before {\n  content: \"\\F0137\";\n}\n\n.mdi-checkbox-multiple-marked::before {\n  content: \"\\F0138\";\n}\n\n.mdi-checkbox-multiple-marked-circle::before {\n  content: \"\\F063D\";\n}\n\n.mdi-checkbox-multiple-marked-circle-outline::before {\n  content: \"\\F063E\";\n}\n\n.mdi-checkbox-multiple-marked-outline::before {\n  content: \"\\F0139\";\n}\n\n.mdi-checkerboard::before {\n  content: \"\\F013A\";\n}\n\n.mdi-checkerboard-minus::before {\n  content: \"\\F1202\";\n}\n\n.mdi-checkerboard-plus::before {\n  content: \"\\F1201\";\n}\n\n.mdi-checkerboard-remove::before {\n  content: \"\\F1203\";\n}\n\n.mdi-cheese::before {\n  content: \"\\F12B9\";\n}\n\n.mdi-cheese-off::before {\n  content: \"\\F13EE\";\n}\n\n.mdi-chef-hat::before {\n  content: \"\\F0B7C\";\n}\n\n.mdi-chemical-weapon::before {\n  content: \"\\F013B\";\n}\n\n.mdi-chess-bishop::before {\n  content: \"\\F085C\";\n}\n\n.mdi-chess-king::before {\n  content: \"\\F0857\";\n}\n\n.mdi-chess-knight::before {\n  content: \"\\F0858\";\n}\n\n.mdi-chess-pawn::before {\n  content: \"\\F0859\";\n}\n\n.mdi-chess-queen::before {\n  content: \"\\F085A\";\n}\n\n.mdi-chess-rook::before {\n  content: \"\\F085B\";\n}\n\n.mdi-chevron-double-down::before {\n  content: \"\\F013C\";\n}\n\n.mdi-chevron-double-left::before {\n  content: \"\\F013D\";\n}\n\n.mdi-chevron-double-right::before {\n  content: \"\\F013E\";\n}\n\n.mdi-chevron-double-up::before {\n  content: \"\\F013F\";\n}\n\n.mdi-chevron-down::before {\n  content: \"\\F0140\";\n}\n\n.mdi-chevron-down-box::before {\n  content: \"\\F09D6\";\n}\n\n.mdi-chevron-down-box-outline::before {\n  content: \"\\F09D7\";\n}\n\n.mdi-chevron-down-circle::before {\n  content: \"\\F0B26\";\n}\n\n.mdi-chevron-down-circle-outline::before {\n  content: \"\\F0B27\";\n}\n\n.mdi-chevron-left::before {\n  content: \"\\F0141\";\n}\n\n.mdi-chevron-left-box::before {\n  content: \"\\F09D8\";\n}\n\n.mdi-chevron-left-box-outline::before {\n  content: \"\\F09D9\";\n}\n\n.mdi-chevron-left-circle::before {\n  content: \"\\F0B28\";\n}\n\n.mdi-chevron-left-circle-outline::before {\n  content: \"\\F0B29\";\n}\n\n.mdi-chevron-right::before {\n  content: \"\\F0142\";\n}\n\n.mdi-chevron-right-box::before {\n  content: \"\\F09DA\";\n}\n\n.mdi-chevron-right-box-outline::before {\n  content: \"\\F09DB\";\n}\n\n.mdi-chevron-right-circle::before {\n  content: \"\\F0B2A\";\n}\n\n.mdi-chevron-right-circle-outline::before {\n  content: \"\\F0B2B\";\n}\n\n.mdi-chevron-triple-down::before {\n  content: \"\\F0DB9\";\n}\n\n.mdi-chevron-triple-left::before {\n  content: \"\\F0DBA\";\n}\n\n.mdi-chevron-triple-right::before {\n  content: \"\\F0DBB\";\n}\n\n.mdi-chevron-triple-up::before {\n  content: \"\\F0DBC\";\n}\n\n.mdi-chevron-up::before {\n  content: \"\\F0143\";\n}\n\n.mdi-chevron-up-box::before {\n  content: \"\\F09DC\";\n}\n\n.mdi-chevron-up-box-outline::before {\n  content: \"\\F09DD\";\n}\n\n.mdi-chevron-up-circle::before {\n  content: \"\\F0B2C\";\n}\n\n.mdi-chevron-up-circle-outline::before {\n  content: \"\\F0B2D\";\n}\n\n.mdi-chili-hot::before {\n  content: \"\\F07B2\";\n}\n\n.mdi-chili-medium::before {\n  content: \"\\F07B3\";\n}\n\n.mdi-chili-mild::before {\n  content: \"\\F07B4\";\n}\n\n.mdi-chili-off::before {\n  content: \"\\F1467\";\n}\n\n.mdi-chip::before {\n  content: \"\\F061A\";\n}\n\n.mdi-christianity::before {\n  content: \"\\F0953\";\n}\n\n.mdi-christianity-outline::before {\n  content: \"\\F0CF6\";\n}\n\n.mdi-church::before {\n  content: \"\\F0144\";\n}\n\n.mdi-cigar::before {\n  content: \"\\F1189\";\n}\n\n.mdi-cigar-off::before {\n  content: \"\\F141B\";\n}\n\n.mdi-circle::before {\n  content: \"\\F0765\";\n}\n\n.mdi-circle-box::before {\n  content: \"\\F15DC\";\n}\n\n.mdi-circle-box-outline::before {\n  content: \"\\F15DD\";\n}\n\n.mdi-circle-double::before {\n  content: \"\\F0E95\";\n}\n\n.mdi-circle-edit-outline::before {\n  content: \"\\F08D5\";\n}\n\n.mdi-circle-expand::before {\n  content: \"\\F0E96\";\n}\n\n.mdi-circle-half::before {\n  content: \"\\F1395\";\n}\n\n.mdi-circle-half-full::before {\n  content: \"\\F1396\";\n}\n\n.mdi-circle-medium::before {\n  content: \"\\F09DE\";\n}\n\n.mdi-circle-multiple::before {\n  content: \"\\F0B38\";\n}\n\n.mdi-circle-multiple-outline::before {\n  content: \"\\F0695\";\n}\n\n.mdi-circle-off-outline::before {\n  content: \"\\F10D3\";\n}\n\n.mdi-circle-outline::before {\n  content: \"\\F0766\";\n}\n\n.mdi-circle-slice-1::before {\n  content: \"\\F0A9E\";\n}\n\n.mdi-circle-slice-2::before {\n  content: \"\\F0A9F\";\n}\n\n.mdi-circle-slice-3::before {\n  content: \"\\F0AA0\";\n}\n\n.mdi-circle-slice-4::before {\n  content: \"\\F0AA1\";\n}\n\n.mdi-circle-slice-5::before {\n  content: \"\\F0AA2\";\n}\n\n.mdi-circle-slice-6::before {\n  content: \"\\F0AA3\";\n}\n\n.mdi-circle-slice-7::before {\n  content: \"\\F0AA4\";\n}\n\n.mdi-circle-slice-8::before {\n  content: \"\\F0AA5\";\n}\n\n.mdi-circle-small::before {\n  content: \"\\F09DF\";\n}\n\n.mdi-circular-saw::before {\n  content: \"\\F0E22\";\n}\n\n.mdi-city::before {\n  content: \"\\F0146\";\n}\n\n.mdi-city-variant::before {\n  content: \"\\F0A36\";\n}\n\n.mdi-city-variant-outline::before {\n  content: \"\\F0A37\";\n}\n\n.mdi-clipboard::before {\n  content: \"\\F0147\";\n}\n\n.mdi-clipboard-account::before {\n  content: \"\\F0148\";\n}\n\n.mdi-clipboard-account-outline::before {\n  content: \"\\F0C55\";\n}\n\n.mdi-clipboard-alert::before {\n  content: \"\\F0149\";\n}\n\n.mdi-clipboard-alert-outline::before {\n  content: \"\\F0CF7\";\n}\n\n.mdi-clipboard-arrow-down::before {\n  content: \"\\F014A\";\n}\n\n.mdi-clipboard-arrow-down-outline::before {\n  content: \"\\F0C56\";\n}\n\n.mdi-clipboard-arrow-left::before {\n  content: \"\\F014B\";\n}\n\n.mdi-clipboard-arrow-left-outline::before {\n  content: \"\\F0CF8\";\n}\n\n.mdi-clipboard-arrow-right::before {\n  content: \"\\F0CF9\";\n}\n\n.mdi-clipboard-arrow-right-outline::before {\n  content: \"\\F0CFA\";\n}\n\n.mdi-clipboard-arrow-up::before {\n  content: \"\\F0C57\";\n}\n\n.mdi-clipboard-arrow-up-outline::before {\n  content: \"\\F0C58\";\n}\n\n.mdi-clipboard-check::before {\n  content: \"\\F014E\";\n}\n\n.mdi-clipboard-check-multiple::before {\n  content: \"\\F1263\";\n}\n\n.mdi-clipboard-check-multiple-outline::before {\n  content: \"\\F1264\";\n}\n\n.mdi-clipboard-check-outline::before {\n  content: \"\\F08A8\";\n}\n\n.mdi-clipboard-edit::before {\n  content: \"\\F14E5\";\n}\n\n.mdi-clipboard-edit-outline::before {\n  content: \"\\F14E6\";\n}\n\n.mdi-clipboard-file::before {\n  content: \"\\F1265\";\n}\n\n.mdi-clipboard-file-outline::before {\n  content: \"\\F1266\";\n}\n\n.mdi-clipboard-flow::before {\n  content: \"\\F06C8\";\n}\n\n.mdi-clipboard-flow-outline::before {\n  content: \"\\F1117\";\n}\n\n.mdi-clipboard-list::before {\n  content: \"\\F10D4\";\n}\n\n.mdi-clipboard-list-outline::before {\n  content: \"\\F10D5\";\n}\n\n.mdi-clipboard-multiple::before {\n  content: \"\\F1267\";\n}\n\n.mdi-clipboard-multiple-outline::before {\n  content: \"\\F1268\";\n}\n\n.mdi-clipboard-outline::before {\n  content: \"\\F014C\";\n}\n\n.mdi-clipboard-play::before {\n  content: \"\\F0C59\";\n}\n\n.mdi-clipboard-play-multiple::before {\n  content: \"\\F1269\";\n}\n\n.mdi-clipboard-play-multiple-outline::before {\n  content: \"\\F126A\";\n}\n\n.mdi-clipboard-play-outline::before {\n  content: \"\\F0C5A\";\n}\n\n.mdi-clipboard-plus::before {\n  content: \"\\F0751\";\n}\n\n.mdi-clipboard-plus-outline::before {\n  content: \"\\F131F\";\n}\n\n.mdi-clipboard-pulse::before {\n  content: \"\\F085D\";\n}\n\n.mdi-clipboard-pulse-outline::before {\n  content: \"\\F085E\";\n}\n\n.mdi-clipboard-text::before {\n  content: \"\\F014D\";\n}\n\n.mdi-clipboard-text-multiple::before {\n  content: \"\\F126B\";\n}\n\n.mdi-clipboard-text-multiple-outline::before {\n  content: \"\\F126C\";\n}\n\n.mdi-clipboard-text-outline::before {\n  content: \"\\F0A38\";\n}\n\n.mdi-clipboard-text-play::before {\n  content: \"\\F0C5B\";\n}\n\n.mdi-clipboard-text-play-outline::before {\n  content: \"\\F0C5C\";\n}\n\n.mdi-clippy::before {\n  content: \"\\F014F\";\n}\n\n.mdi-clock::before {\n  content: \"\\F0954\";\n}\n\n.mdi-clock-alert::before {\n  content: \"\\F0955\";\n}\n\n.mdi-clock-alert-outline::before {\n  content: \"\\F05CE\";\n}\n\n.mdi-clock-check::before {\n  content: \"\\F0FA8\";\n}\n\n.mdi-clock-check-outline::before {\n  content: \"\\F0FA9\";\n}\n\n.mdi-clock-digital::before {\n  content: \"\\F0E97\";\n}\n\n.mdi-clock-end::before {\n  content: \"\\F0151\";\n}\n\n.mdi-clock-fast::before {\n  content: \"\\F0152\";\n}\n\n.mdi-clock-in::before {\n  content: \"\\F0153\";\n}\n\n.mdi-clock-out::before {\n  content: \"\\F0154\";\n}\n\n.mdi-clock-outline::before {\n  content: \"\\F0150\";\n}\n\n.mdi-clock-start::before {\n  content: \"\\F0155\";\n}\n\n.mdi-clock-time-eight::before {\n  content: \"\\F1446\";\n}\n\n.mdi-clock-time-eight-outline::before {\n  content: \"\\F1452\";\n}\n\n.mdi-clock-time-eleven::before {\n  content: \"\\F1449\";\n}\n\n.mdi-clock-time-eleven-outline::before {\n  content: \"\\F1455\";\n}\n\n.mdi-clock-time-five::before {\n  content: \"\\F1443\";\n}\n\n.mdi-clock-time-five-outline::before {\n  content: \"\\F144F\";\n}\n\n.mdi-clock-time-four::before {\n  content: \"\\F1442\";\n}\n\n.mdi-clock-time-four-outline::before {\n  content: \"\\F144E\";\n}\n\n.mdi-clock-time-nine::before {\n  content: \"\\F1447\";\n}\n\n.mdi-clock-time-nine-outline::before {\n  content: \"\\F1453\";\n}\n\n.mdi-clock-time-one::before {\n  content: \"\\F143F\";\n}\n\n.mdi-clock-time-one-outline::before {\n  content: \"\\F144B\";\n}\n\n.mdi-clock-time-seven::before {\n  content: \"\\F1445\";\n}\n\n.mdi-clock-time-seven-outline::before {\n  content: \"\\F1451\";\n}\n\n.mdi-clock-time-six::before {\n  content: \"\\F1444\";\n}\n\n.mdi-clock-time-six-outline::before {\n  content: \"\\F1450\";\n}\n\n.mdi-clock-time-ten::before {\n  content: \"\\F1448\";\n}\n\n.mdi-clock-time-ten-outline::before {\n  content: \"\\F1454\";\n}\n\n.mdi-clock-time-three::before {\n  content: \"\\F1441\";\n}\n\n.mdi-clock-time-three-outline::before {\n  content: \"\\F144D\";\n}\n\n.mdi-clock-time-twelve::before {\n  content: \"\\F144A\";\n}\n\n.mdi-clock-time-twelve-outline::before {\n  content: \"\\F1456\";\n}\n\n.mdi-clock-time-two::before {\n  content: \"\\F1440\";\n}\n\n.mdi-clock-time-two-outline::before {\n  content: \"\\F144C\";\n}\n\n.mdi-close::before {\n  content: \"\\F0156\";\n}\n\n.mdi-close-box::before {\n  content: \"\\F0157\";\n}\n\n.mdi-close-box-multiple::before {\n  content: \"\\F0C5D\";\n}\n\n.mdi-close-box-multiple-outline::before {\n  content: \"\\F0C5E\";\n}\n\n.mdi-close-box-outline::before {\n  content: \"\\F0158\";\n}\n\n.mdi-close-circle::before {\n  content: \"\\F0159\";\n}\n\n.mdi-close-circle-multiple::before {\n  content: \"\\F062A\";\n}\n\n.mdi-close-circle-multiple-outline::before {\n  content: \"\\F0883\";\n}\n\n.mdi-close-circle-outline::before {\n  content: \"\\F015A\";\n}\n\n.mdi-close-network::before {\n  content: \"\\F015B\";\n}\n\n.mdi-close-network-outline::before {\n  content: \"\\F0C5F\";\n}\n\n.mdi-close-octagon::before {\n  content: \"\\F015C\";\n}\n\n.mdi-close-octagon-outline::before {\n  content: \"\\F015D\";\n}\n\n.mdi-close-outline::before {\n  content: \"\\F06C9\";\n}\n\n.mdi-close-thick::before {\n  content: \"\\F1398\";\n}\n\n.mdi-closed-caption::before {\n  content: \"\\F015E\";\n}\n\n.mdi-closed-caption-outline::before {\n  content: \"\\F0DBD\";\n}\n\n.mdi-cloud::before {\n  content: \"\\F015F\";\n}\n\n.mdi-cloud-alert::before {\n  content: \"\\F09E0\";\n}\n\n.mdi-cloud-braces::before {\n  content: \"\\F07B5\";\n}\n\n.mdi-cloud-check::before {\n  content: \"\\F0160\";\n}\n\n.mdi-cloud-check-outline::before {\n  content: \"\\F12CC\";\n}\n\n.mdi-cloud-circle::before {\n  content: \"\\F0161\";\n}\n\n.mdi-cloud-download::before {\n  content: \"\\F0162\";\n}\n\n.mdi-cloud-download-outline::before {\n  content: \"\\F0B7D\";\n}\n\n.mdi-cloud-lock::before {\n  content: \"\\F11F1\";\n}\n\n.mdi-cloud-lock-outline::before {\n  content: \"\\F11F2\";\n}\n\n.mdi-cloud-off-outline::before {\n  content: \"\\F0164\";\n}\n\n.mdi-cloud-outline::before {\n  content: \"\\F0163\";\n}\n\n.mdi-cloud-print::before {\n  content: \"\\F0165\";\n}\n\n.mdi-cloud-print-outline::before {\n  content: \"\\F0166\";\n}\n\n.mdi-cloud-question::before {\n  content: \"\\F0A39\";\n}\n\n.mdi-cloud-refresh::before {\n  content: \"\\F052A\";\n}\n\n.mdi-cloud-search::before {\n  content: \"\\F0956\";\n}\n\n.mdi-cloud-search-outline::before {\n  content: \"\\F0957\";\n}\n\n.mdi-cloud-sync::before {\n  content: \"\\F063F\";\n}\n\n.mdi-cloud-sync-outline::before {\n  content: \"\\F12D6\";\n}\n\n.mdi-cloud-tags::before {\n  content: \"\\F07B6\";\n}\n\n.mdi-cloud-upload::before {\n  content: \"\\F0167\";\n}\n\n.mdi-cloud-upload-outline::before {\n  content: \"\\F0B7E\";\n}\n\n.mdi-clover::before {\n  content: \"\\F0816\";\n}\n\n.mdi-coach-lamp::before {\n  content: \"\\F1020\";\n}\n\n.mdi-coat-rack::before {\n  content: \"\\F109E\";\n}\n\n.mdi-code-array::before {\n  content: \"\\F0168\";\n}\n\n.mdi-code-braces::before {\n  content: \"\\F0169\";\n}\n\n.mdi-code-braces-box::before {\n  content: \"\\F10D6\";\n}\n\n.mdi-code-brackets::before {\n  content: \"\\F016A\";\n}\n\n.mdi-code-equal::before {\n  content: \"\\F016B\";\n}\n\n.mdi-code-greater-than::before {\n  content: \"\\F016C\";\n}\n\n.mdi-code-greater-than-or-equal::before {\n  content: \"\\F016D\";\n}\n\n.mdi-code-json::before {\n  content: \"\\F0626\";\n}\n\n.mdi-code-less-than::before {\n  content: \"\\F016E\";\n}\n\n.mdi-code-less-than-or-equal::before {\n  content: \"\\F016F\";\n}\n\n.mdi-code-not-equal::before {\n  content: \"\\F0170\";\n}\n\n.mdi-code-not-equal-variant::before {\n  content: \"\\F0171\";\n}\n\n.mdi-code-parentheses::before {\n  content: \"\\F0172\";\n}\n\n.mdi-code-parentheses-box::before {\n  content: \"\\F10D7\";\n}\n\n.mdi-code-string::before {\n  content: \"\\F0173\";\n}\n\n.mdi-code-tags::before {\n  content: \"\\F0174\";\n}\n\n.mdi-code-tags-check::before {\n  content: \"\\F0694\";\n}\n\n.mdi-codepen::before {\n  content: \"\\F0175\";\n}\n\n.mdi-coffee::before {\n  content: \"\\F0176\";\n}\n\n.mdi-coffee-maker::before {\n  content: \"\\F109F\";\n}\n\n.mdi-coffee-off::before {\n  content: \"\\F0FAA\";\n}\n\n.mdi-coffee-off-outline::before {\n  content: \"\\F0FAB\";\n}\n\n.mdi-coffee-outline::before {\n  content: \"\\F06CA\";\n}\n\n.mdi-coffee-to-go::before {\n  content: \"\\F0177\";\n}\n\n.mdi-coffee-to-go-outline::before {\n  content: \"\\F130E\";\n}\n\n.mdi-coffin::before {\n  content: \"\\F0B7F\";\n}\n\n.mdi-cog::before {\n  content: \"\\F0493\";\n}\n\n.mdi-cog-box::before {\n  content: \"\\F0494\";\n}\n\n.mdi-cog-clockwise::before {\n  content: \"\\F11DD\";\n}\n\n.mdi-cog-counterclockwise::before {\n  content: \"\\F11DE\";\n}\n\n.mdi-cog-off::before {\n  content: \"\\F13CE\";\n}\n\n.mdi-cog-off-outline::before {\n  content: \"\\F13CF\";\n}\n\n.mdi-cog-outline::before {\n  content: \"\\F08BB\";\n}\n\n.mdi-cog-refresh::before {\n  content: \"\\F145E\";\n}\n\n.mdi-cog-refresh-outline::before {\n  content: \"\\F145F\";\n}\n\n.mdi-cog-sync::before {\n  content: \"\\F1460\";\n}\n\n.mdi-cog-sync-outline::before {\n  content: \"\\F1461\";\n}\n\n.mdi-cog-transfer::before {\n  content: \"\\F105B\";\n}\n\n.mdi-cog-transfer-outline::before {\n  content: \"\\F105C\";\n}\n\n.mdi-cogs::before {\n  content: \"\\F08D6\";\n}\n\n.mdi-collage::before {\n  content: \"\\F0640\";\n}\n\n.mdi-collapse-all::before {\n  content: \"\\F0AA6\";\n}\n\n.mdi-collapse-all-outline::before {\n  content: \"\\F0AA7\";\n}\n\n.mdi-color-helper::before {\n  content: \"\\F0179\";\n}\n\n.mdi-comma::before {\n  content: \"\\F0E23\";\n}\n\n.mdi-comma-box::before {\n  content: \"\\F0E2B\";\n}\n\n.mdi-comma-box-outline::before {\n  content: \"\\F0E24\";\n}\n\n.mdi-comma-circle::before {\n  content: \"\\F0E25\";\n}\n\n.mdi-comma-circle-outline::before {\n  content: \"\\F0E26\";\n}\n\n.mdi-comment::before {\n  content: \"\\F017A\";\n}\n\n.mdi-comment-account::before {\n  content: \"\\F017B\";\n}\n\n.mdi-comment-account-outline::before {\n  content: \"\\F017C\";\n}\n\n.mdi-comment-alert::before {\n  content: \"\\F017D\";\n}\n\n.mdi-comment-alert-outline::before {\n  content: \"\\F017E\";\n}\n\n.mdi-comment-arrow-left::before {\n  content: \"\\F09E1\";\n}\n\n.mdi-comment-arrow-left-outline::before {\n  content: \"\\F09E2\";\n}\n\n.mdi-comment-arrow-right::before {\n  content: \"\\F09E3\";\n}\n\n.mdi-comment-arrow-right-outline::before {\n  content: \"\\F09E4\";\n}\n\n.mdi-comment-bookmark::before {\n  content: \"\\F15AE\";\n}\n\n.mdi-comment-bookmark-outline::before {\n  content: \"\\F15AF\";\n}\n\n.mdi-comment-check::before {\n  content: \"\\F017F\";\n}\n\n.mdi-comment-check-outline::before {\n  content: \"\\F0180\";\n}\n\n.mdi-comment-edit::before {\n  content: \"\\F11BF\";\n}\n\n.mdi-comment-edit-outline::before {\n  content: \"\\F12C4\";\n}\n\n.mdi-comment-eye::before {\n  content: \"\\F0A3A\";\n}\n\n.mdi-comment-eye-outline::before {\n  content: \"\\F0A3B\";\n}\n\n.mdi-comment-flash::before {\n  content: \"\\F15B0\";\n}\n\n.mdi-comment-flash-outline::before {\n  content: \"\\F15B1\";\n}\n\n.mdi-comment-minus::before {\n  content: \"\\F15DF\";\n}\n\n.mdi-comment-minus-outline::before {\n  content: \"\\F15E0\";\n}\n\n.mdi-comment-multiple::before {\n  content: \"\\F085F\";\n}\n\n.mdi-comment-multiple-outline::before {\n  content: \"\\F0181\";\n}\n\n.mdi-comment-off::before {\n  content: \"\\F15E1\";\n}\n\n.mdi-comment-off-outline::before {\n  content: \"\\F15E2\";\n}\n\n.mdi-comment-outline::before {\n  content: \"\\F0182\";\n}\n\n.mdi-comment-plus::before {\n  content: \"\\F09E5\";\n}\n\n.mdi-comment-plus-outline::before {\n  content: \"\\F0183\";\n}\n\n.mdi-comment-processing::before {\n  content: \"\\F0184\";\n}\n\n.mdi-comment-processing-outline::before {\n  content: \"\\F0185\";\n}\n\n.mdi-comment-question::before {\n  content: \"\\F0817\";\n}\n\n.mdi-comment-question-outline::before {\n  content: \"\\F0186\";\n}\n\n.mdi-comment-quote::before {\n  content: \"\\F1021\";\n}\n\n.mdi-comment-quote-outline::before {\n  content: \"\\F1022\";\n}\n\n.mdi-comment-remove::before {\n  content: \"\\F05DE\";\n}\n\n.mdi-comment-remove-outline::before {\n  content: \"\\F0187\";\n}\n\n.mdi-comment-search::before {\n  content: \"\\F0A3C\";\n}\n\n.mdi-comment-search-outline::before {\n  content: \"\\F0A3D\";\n}\n\n.mdi-comment-text::before {\n  content: \"\\F0188\";\n}\n\n.mdi-comment-text-multiple::before {\n  content: \"\\F0860\";\n}\n\n.mdi-comment-text-multiple-outline::before {\n  content: \"\\F0861\";\n}\n\n.mdi-comment-text-outline::before {\n  content: \"\\F0189\";\n}\n\n.mdi-compare::before {\n  content: \"\\F018A\";\n}\n\n.mdi-compare-horizontal::before {\n  content: \"\\F1492\";\n}\n\n.mdi-compare-vertical::before {\n  content: \"\\F1493\";\n}\n\n.mdi-compass::before {\n  content: \"\\F018B\";\n}\n\n.mdi-compass-off::before {\n  content: \"\\F0B80\";\n}\n\n.mdi-compass-off-outline::before {\n  content: \"\\F0B81\";\n}\n\n.mdi-compass-outline::before {\n  content: \"\\F018C\";\n}\n\n.mdi-compass-rose::before {\n  content: \"\\F1382\";\n}\n\n.mdi-concourse-ci::before {\n  content: \"\\F10A0\";\n}\n\n.mdi-connection::before {\n  content: \"\\F1616\";\n}\n\n.mdi-console::before {\n  content: \"\\F018D\";\n}\n\n.mdi-console-line::before {\n  content: \"\\F07B7\";\n}\n\n.mdi-console-network::before {\n  content: \"\\F08A9\";\n}\n\n.mdi-console-network-outline::before {\n  content: \"\\F0C60\";\n}\n\n.mdi-consolidate::before {\n  content: \"\\F10D8\";\n}\n\n.mdi-contactless-payment::before {\n  content: \"\\F0D6A\";\n}\n\n.mdi-contactless-payment-circle::before {\n  content: \"\\F0321\";\n}\n\n.mdi-contactless-payment-circle-outline::before {\n  content: \"\\F0408\";\n}\n\n.mdi-contacts::before {\n  content: \"\\F06CB\";\n}\n\n.mdi-contacts-outline::before {\n  content: \"\\F05B8\";\n}\n\n.mdi-contain::before {\n  content: \"\\F0A3E\";\n}\n\n.mdi-contain-end::before {\n  content: \"\\F0A3F\";\n}\n\n.mdi-contain-start::before {\n  content: \"\\F0A40\";\n}\n\n.mdi-content-copy::before {\n  content: \"\\F018F\";\n}\n\n.mdi-content-cut::before {\n  content: \"\\F0190\";\n}\n\n.mdi-content-duplicate::before {\n  content: \"\\F0191\";\n}\n\n.mdi-content-paste::before {\n  content: \"\\F0192\";\n}\n\n.mdi-content-save::before {\n  content: \"\\F0193\";\n}\n\n.mdi-content-save-alert::before {\n  content: \"\\F0F42\";\n}\n\n.mdi-content-save-alert-outline::before {\n  content: \"\\F0F43\";\n}\n\n.mdi-content-save-all::before {\n  content: \"\\F0194\";\n}\n\n.mdi-content-save-all-outline::before {\n  content: \"\\F0F44\";\n}\n\n.mdi-content-save-cog::before {\n  content: \"\\F145B\";\n}\n\n.mdi-content-save-cog-outline::before {\n  content: \"\\F145C\";\n}\n\n.mdi-content-save-edit::before {\n  content: \"\\F0CFB\";\n}\n\n.mdi-content-save-edit-outline::before {\n  content: \"\\F0CFC\";\n}\n\n.mdi-content-save-move::before {\n  content: \"\\F0E27\";\n}\n\n.mdi-content-save-move-outline::before {\n  content: \"\\F0E28\";\n}\n\n.mdi-content-save-outline::before {\n  content: \"\\F0818\";\n}\n\n.mdi-content-save-settings::before {\n  content: \"\\F061B\";\n}\n\n.mdi-content-save-settings-outline::before {\n  content: \"\\F0B2E\";\n}\n\n.mdi-contrast::before {\n  content: \"\\F0195\";\n}\n\n.mdi-contrast-box::before {\n  content: \"\\F0196\";\n}\n\n.mdi-contrast-circle::before {\n  content: \"\\F0197\";\n}\n\n.mdi-controller-classic::before {\n  content: \"\\F0B82\";\n}\n\n.mdi-controller-classic-outline::before {\n  content: \"\\F0B83\";\n}\n\n.mdi-cookie::before {\n  content: \"\\F0198\";\n}\n\n.mdi-coolant-temperature::before {\n  content: \"\\F03C8\";\n}\n\n.mdi-copyright::before {\n  content: \"\\F05E6\";\n}\n\n.mdi-cordova::before {\n  content: \"\\F0958\";\n}\n\n.mdi-corn::before {\n  content: \"\\F07B8\";\n}\n\n.mdi-corn-off::before {\n  content: \"\\F13EF\";\n}\n\n.mdi-cosine-wave::before {\n  content: \"\\F1479\";\n}\n\n.mdi-counter::before {\n  content: \"\\F0199\";\n}\n\n.mdi-cow::before {\n  content: \"\\F019A\";\n}\n\n.mdi-cpu-32-bit::before {\n  content: \"\\F0EDF\";\n}\n\n.mdi-cpu-64-bit::before {\n  content: \"\\F0EE0\";\n}\n\n.mdi-crane::before {\n  content: \"\\F0862\";\n}\n\n.mdi-creation::before {\n  content: \"\\F0674\";\n}\n\n.mdi-creative-commons::before {\n  content: \"\\F0D6B\";\n}\n\n.mdi-credit-card::before {\n  content: \"\\F0FEF\";\n}\n\n.mdi-credit-card-check::before {\n  content: \"\\F13D0\";\n}\n\n.mdi-credit-card-check-outline::before {\n  content: \"\\F13D1\";\n}\n\n.mdi-credit-card-clock::before {\n  content: \"\\F0EE1\";\n}\n\n.mdi-credit-card-clock-outline::before {\n  content: \"\\F0EE2\";\n}\n\n.mdi-credit-card-marker::before {\n  content: \"\\F06A8\";\n}\n\n.mdi-credit-card-marker-outline::before {\n  content: \"\\F0DBE\";\n}\n\n.mdi-credit-card-minus::before {\n  content: \"\\F0FAC\";\n}\n\n.mdi-credit-card-minus-outline::before {\n  content: \"\\F0FAD\";\n}\n\n.mdi-credit-card-multiple::before {\n  content: \"\\F0FF0\";\n}\n\n.mdi-credit-card-multiple-outline::before {\n  content: \"\\F019C\";\n}\n\n.mdi-credit-card-off::before {\n  content: \"\\F0FF1\";\n}\n\n.mdi-credit-card-off-outline::before {\n  content: \"\\F05E4\";\n}\n\n.mdi-credit-card-outline::before {\n  content: \"\\F019B\";\n}\n\n.mdi-credit-card-plus::before {\n  content: \"\\F0FF2\";\n}\n\n.mdi-credit-card-plus-outline::before {\n  content: \"\\F0676\";\n}\n\n.mdi-credit-card-refund::before {\n  content: \"\\F0FF3\";\n}\n\n.mdi-credit-card-refund-outline::before {\n  content: \"\\F0AA8\";\n}\n\n.mdi-credit-card-remove::before {\n  content: \"\\F0FAE\";\n}\n\n.mdi-credit-card-remove-outline::before {\n  content: \"\\F0FAF\";\n}\n\n.mdi-credit-card-scan::before {\n  content: \"\\F0FF4\";\n}\n\n.mdi-credit-card-scan-outline::before {\n  content: \"\\F019D\";\n}\n\n.mdi-credit-card-settings::before {\n  content: \"\\F0FF5\";\n}\n\n.mdi-credit-card-settings-outline::before {\n  content: \"\\F08D7\";\n}\n\n.mdi-credit-card-wireless::before {\n  content: \"\\F0802\";\n}\n\n.mdi-credit-card-wireless-off::before {\n  content: \"\\F057A\";\n}\n\n.mdi-credit-card-wireless-off-outline::before {\n  content: \"\\F057B\";\n}\n\n.mdi-credit-card-wireless-outline::before {\n  content: \"\\F0D6C\";\n}\n\n.mdi-cricket::before {\n  content: \"\\F0D6D\";\n}\n\n.mdi-crop::before {\n  content: \"\\F019E\";\n}\n\n.mdi-crop-free::before {\n  content: \"\\F019F\";\n}\n\n.mdi-crop-landscape::before {\n  content: \"\\F01A0\";\n}\n\n.mdi-crop-portrait::before {\n  content: \"\\F01A1\";\n}\n\n.mdi-crop-rotate::before {\n  content: \"\\F0696\";\n}\n\n.mdi-crop-square::before {\n  content: \"\\F01A2\";\n}\n\n.mdi-crosshairs::before {\n  content: \"\\F01A3\";\n}\n\n.mdi-crosshairs-gps::before {\n  content: \"\\F01A4\";\n}\n\n.mdi-crosshairs-off::before {\n  content: \"\\F0F45\";\n}\n\n.mdi-crosshairs-question::before {\n  content: \"\\F1136\";\n}\n\n.mdi-crown::before {\n  content: \"\\F01A5\";\n}\n\n.mdi-crown-outline::before {\n  content: \"\\F11D0\";\n}\n\n.mdi-cryengine::before {\n  content: \"\\F0959\";\n}\n\n.mdi-crystal-ball::before {\n  content: \"\\F0B2F\";\n}\n\n.mdi-cube::before {\n  content: \"\\F01A6\";\n}\n\n.mdi-cube-off::before {\n  content: \"\\F141C\";\n}\n\n.mdi-cube-off-outline::before {\n  content: \"\\F141D\";\n}\n\n.mdi-cube-outline::before {\n  content: \"\\F01A7\";\n}\n\n.mdi-cube-scan::before {\n  content: \"\\F0B84\";\n}\n\n.mdi-cube-send::before {\n  content: \"\\F01A8\";\n}\n\n.mdi-cube-unfolded::before {\n  content: \"\\F01A9\";\n}\n\n.mdi-cup::before {\n  content: \"\\F01AA\";\n}\n\n.mdi-cup-off::before {\n  content: \"\\F05E5\";\n}\n\n.mdi-cup-off-outline::before {\n  content: \"\\F137D\";\n}\n\n.mdi-cup-outline::before {\n  content: \"\\F130F\";\n}\n\n.mdi-cup-water::before {\n  content: \"\\F01AB\";\n}\n\n.mdi-cupboard::before {\n  content: \"\\F0F46\";\n}\n\n.mdi-cupboard-outline::before {\n  content: \"\\F0F47\";\n}\n\n.mdi-cupcake::before {\n  content: \"\\F095A\";\n}\n\n.mdi-curling::before {\n  content: \"\\F0863\";\n}\n\n.mdi-currency-bdt::before {\n  content: \"\\F0864\";\n}\n\n.mdi-currency-brl::before {\n  content: \"\\F0B85\";\n}\n\n.mdi-currency-btc::before {\n  content: \"\\F01AC\";\n}\n\n.mdi-currency-cny::before {\n  content: \"\\F07BA\";\n}\n\n.mdi-currency-eth::before {\n  content: \"\\F07BB\";\n}\n\n.mdi-currency-eur::before {\n  content: \"\\F01AD\";\n}\n\n.mdi-currency-eur-off::before {\n  content: \"\\F1315\";\n}\n\n.mdi-currency-gbp::before {\n  content: \"\\F01AE\";\n}\n\n.mdi-currency-ils::before {\n  content: \"\\F0C61\";\n}\n\n.mdi-currency-inr::before {\n  content: \"\\F01AF\";\n}\n\n.mdi-currency-jpy::before {\n  content: \"\\F07BC\";\n}\n\n.mdi-currency-krw::before {\n  content: \"\\F07BD\";\n}\n\n.mdi-currency-kzt::before {\n  content: \"\\F0865\";\n}\n\n.mdi-currency-mnt::before {\n  content: \"\\F1512\";\n}\n\n.mdi-currency-ngn::before {\n  content: \"\\F01B0\";\n}\n\n.mdi-currency-php::before {\n  content: \"\\F09E6\";\n}\n\n.mdi-currency-rial::before {\n  content: \"\\F0E9C\";\n}\n\n.mdi-currency-rub::before {\n  content: \"\\F01B1\";\n}\n\n.mdi-currency-sign::before {\n  content: \"\\F07BE\";\n}\n\n.mdi-currency-try::before {\n  content: \"\\F01B2\";\n}\n\n.mdi-currency-twd::before {\n  content: \"\\F07BF\";\n}\n\n.mdi-currency-usd::before {\n  content: \"\\F01C1\";\n}\n\n.mdi-currency-usd-circle::before {\n  content: \"\\F116B\";\n}\n\n.mdi-currency-usd-circle-outline::before {\n  content: \"\\F0178\";\n}\n\n.mdi-currency-usd-off::before {\n  content: \"\\F067A\";\n}\n\n.mdi-current-ac::before {\n  content: \"\\F1480\";\n}\n\n.mdi-current-dc::before {\n  content: \"\\F095C\";\n}\n\n.mdi-cursor-default::before {\n  content: \"\\F01C0\";\n}\n\n.mdi-cursor-default-click::before {\n  content: \"\\F0CFD\";\n}\n\n.mdi-cursor-default-click-outline::before {\n  content: \"\\F0CFE\";\n}\n\n.mdi-cursor-default-gesture::before {\n  content: \"\\F1127\";\n}\n\n.mdi-cursor-default-gesture-outline::before {\n  content: \"\\F1128\";\n}\n\n.mdi-cursor-default-outline::before {\n  content: \"\\F01BF\";\n}\n\n.mdi-cursor-move::before {\n  content: \"\\F01BE\";\n}\n\n.mdi-cursor-pointer::before {\n  content: \"\\F01BD\";\n}\n\n.mdi-cursor-text::before {\n  content: \"\\F05E7\";\n}\n\n.mdi-dance-ballroom::before {\n  content: \"\\F15FB\";\n}\n\n.mdi-dance-pole::before {\n  content: \"\\F1578\";\n}\n\n.mdi-data-matrix::before {\n  content: \"\\F153C\";\n}\n\n.mdi-data-matrix-edit::before {\n  content: \"\\F153D\";\n}\n\n.mdi-data-matrix-minus::before {\n  content: \"\\F153E\";\n}\n\n.mdi-data-matrix-plus::before {\n  content: \"\\F153F\";\n}\n\n.mdi-data-matrix-remove::before {\n  content: \"\\F1540\";\n}\n\n.mdi-data-matrix-scan::before {\n  content: \"\\F1541\";\n}\n\n.mdi-database::before {\n  content: \"\\F01BC\";\n}\n\n.mdi-database-check::before {\n  content: \"\\F0AA9\";\n}\n\n.mdi-database-edit::before {\n  content: \"\\F0B86\";\n}\n\n.mdi-database-export::before {\n  content: \"\\F095E\";\n}\n\n.mdi-database-import::before {\n  content: \"\\F095D\";\n}\n\n.mdi-database-lock::before {\n  content: \"\\F0AAA\";\n}\n\n.mdi-database-marker::before {\n  content: \"\\F12F6\";\n}\n\n.mdi-database-minus::before {\n  content: \"\\F01BB\";\n}\n\n.mdi-database-plus::before {\n  content: \"\\F01BA\";\n}\n\n.mdi-database-refresh::before {\n  content: \"\\F05C2\";\n}\n\n.mdi-database-remove::before {\n  content: \"\\F0D00\";\n}\n\n.mdi-database-search::before {\n  content: \"\\F0866\";\n}\n\n.mdi-database-settings::before {\n  content: \"\\F0D01\";\n}\n\n.mdi-database-sync::before {\n  content: \"\\F0CFF\";\n}\n\n.mdi-death-star::before {\n  content: \"\\F08D8\";\n}\n\n.mdi-death-star-variant::before {\n  content: \"\\F08D9\";\n}\n\n.mdi-deathly-hallows::before {\n  content: \"\\F0B87\";\n}\n\n.mdi-debian::before {\n  content: \"\\F08DA\";\n}\n\n.mdi-debug-step-into::before {\n  content: \"\\F01B9\";\n}\n\n.mdi-debug-step-out::before {\n  content: \"\\F01B8\";\n}\n\n.mdi-debug-step-over::before {\n  content: \"\\F01B7\";\n}\n\n.mdi-decagram::before {\n  content: \"\\F076C\";\n}\n\n.mdi-decagram-outline::before {\n  content: \"\\F076D\";\n}\n\n.mdi-decimal::before {\n  content: \"\\F10A1\";\n}\n\n.mdi-decimal-comma::before {\n  content: \"\\F10A2\";\n}\n\n.mdi-decimal-comma-decrease::before {\n  content: \"\\F10A3\";\n}\n\n.mdi-decimal-comma-increase::before {\n  content: \"\\F10A4\";\n}\n\n.mdi-decimal-decrease::before {\n  content: \"\\F01B6\";\n}\n\n.mdi-decimal-increase::before {\n  content: \"\\F01B5\";\n}\n\n.mdi-delete::before {\n  content: \"\\F01B4\";\n}\n\n.mdi-delete-alert::before {\n  content: \"\\F10A5\";\n}\n\n.mdi-delete-alert-outline::before {\n  content: \"\\F10A6\";\n}\n\n.mdi-delete-circle::before {\n  content: \"\\F0683\";\n}\n\n.mdi-delete-circle-outline::before {\n  content: \"\\F0B88\";\n}\n\n.mdi-delete-clock::before {\n  content: \"\\F1556\";\n}\n\n.mdi-delete-clock-outline::before {\n  content: \"\\F1557\";\n}\n\n.mdi-delete-empty::before {\n  content: \"\\F06CC\";\n}\n\n.mdi-delete-empty-outline::before {\n  content: \"\\F0E9D\";\n}\n\n.mdi-delete-forever::before {\n  content: \"\\F05E8\";\n}\n\n.mdi-delete-forever-outline::before {\n  content: \"\\F0B89\";\n}\n\n.mdi-delete-off::before {\n  content: \"\\F10A7\";\n}\n\n.mdi-delete-off-outline::before {\n  content: \"\\F10A8\";\n}\n\n.mdi-delete-outline::before {\n  content: \"\\F09E7\";\n}\n\n.mdi-delete-restore::before {\n  content: \"\\F0819\";\n}\n\n.mdi-delete-sweep::before {\n  content: \"\\F05E9\";\n}\n\n.mdi-delete-sweep-outline::before {\n  content: \"\\F0C62\";\n}\n\n.mdi-delete-variant::before {\n  content: \"\\F01B3\";\n}\n\n.mdi-delta::before {\n  content: \"\\F01C2\";\n}\n\n.mdi-desk::before {\n  content: \"\\F1239\";\n}\n\n.mdi-desk-lamp::before {\n  content: \"\\F095F\";\n}\n\n.mdi-deskphone::before {\n  content: \"\\F01C3\";\n}\n\n.mdi-desktop-classic::before {\n  content: \"\\F07C0\";\n}\n\n.mdi-desktop-mac::before {\n  content: \"\\F01C4\";\n}\n\n.mdi-desktop-mac-dashboard::before {\n  content: \"\\F09E8\";\n}\n\n.mdi-desktop-tower::before {\n  content: \"\\F01C5\";\n}\n\n.mdi-desktop-tower-monitor::before {\n  content: \"\\F0AAB\";\n}\n\n.mdi-details::before {\n  content: \"\\F01C6\";\n}\n\n.mdi-dev-to::before {\n  content: \"\\F0D6E\";\n}\n\n.mdi-developer-board::before {\n  content: \"\\F0697\";\n}\n\n.mdi-deviantart::before {\n  content: \"\\F01C7\";\n}\n\n.mdi-devices::before {\n  content: \"\\F0FB0\";\n}\n\n.mdi-diabetes::before {\n  content: \"\\F1126\";\n}\n\n.mdi-dialpad::before {\n  content: \"\\F061C\";\n}\n\n.mdi-diameter::before {\n  content: \"\\F0C63\";\n}\n\n.mdi-diameter-outline::before {\n  content: \"\\F0C64\";\n}\n\n.mdi-diameter-variant::before {\n  content: \"\\F0C65\";\n}\n\n.mdi-diamond::before {\n  content: \"\\F0B8A\";\n}\n\n.mdi-diamond-outline::before {\n  content: \"\\F0B8B\";\n}\n\n.mdi-diamond-stone::before {\n  content: \"\\F01C8\";\n}\n\n.mdi-dice-1::before {\n  content: \"\\F01CA\";\n}\n\n.mdi-dice-1-outline::before {\n  content: \"\\F114A\";\n}\n\n.mdi-dice-2::before {\n  content: \"\\F01CB\";\n}\n\n.mdi-dice-2-outline::before {\n  content: \"\\F114B\";\n}\n\n.mdi-dice-3::before {\n  content: \"\\F01CC\";\n}\n\n.mdi-dice-3-outline::before {\n  content: \"\\F114C\";\n}\n\n.mdi-dice-4::before {\n  content: \"\\F01CD\";\n}\n\n.mdi-dice-4-outline::before {\n  content: \"\\F114D\";\n}\n\n.mdi-dice-5::before {\n  content: \"\\F01CE\";\n}\n\n.mdi-dice-5-outline::before {\n  content: \"\\F114E\";\n}\n\n.mdi-dice-6::before {\n  content: \"\\F01CF\";\n}\n\n.mdi-dice-6-outline::before {\n  content: \"\\F114F\";\n}\n\n.mdi-dice-d10::before {\n  content: \"\\F1153\";\n}\n\n.mdi-dice-d10-outline::before {\n  content: \"\\F076F\";\n}\n\n.mdi-dice-d12::before {\n  content: \"\\F1154\";\n}\n\n.mdi-dice-d12-outline::before {\n  content: \"\\F0867\";\n}\n\n.mdi-dice-d20::before {\n  content: \"\\F1155\";\n}\n\n.mdi-dice-d20-outline::before {\n  content: \"\\F05EA\";\n}\n\n.mdi-dice-d4::before {\n  content: \"\\F1150\";\n}\n\n.mdi-dice-d4-outline::before {\n  content: \"\\F05EB\";\n}\n\n.mdi-dice-d6::before {\n  content: \"\\F1151\";\n}\n\n.mdi-dice-d6-outline::before {\n  content: \"\\F05ED\";\n}\n\n.mdi-dice-d8::before {\n  content: \"\\F1152\";\n}\n\n.mdi-dice-d8-outline::before {\n  content: \"\\F05EC\";\n}\n\n.mdi-dice-multiple::before {\n  content: \"\\F076E\";\n}\n\n.mdi-dice-multiple-outline::before {\n  content: \"\\F1156\";\n}\n\n.mdi-digital-ocean::before {\n  content: \"\\F1237\";\n}\n\n.mdi-dip-switch::before {\n  content: \"\\F07C1\";\n}\n\n.mdi-directions::before {\n  content: \"\\F01D0\";\n}\n\n.mdi-directions-fork::before {\n  content: \"\\F0641\";\n}\n\n.mdi-disc::before {\n  content: \"\\F05EE\";\n}\n\n.mdi-disc-alert::before {\n  content: \"\\F01D1\";\n}\n\n.mdi-disc-player::before {\n  content: \"\\F0960\";\n}\n\n.mdi-discord::before {\n  content: \"\\F066F\";\n}\n\n.mdi-dishwasher::before {\n  content: \"\\F0AAC\";\n}\n\n.mdi-dishwasher-alert::before {\n  content: \"\\F11B8\";\n}\n\n.mdi-dishwasher-off::before {\n  content: \"\\F11B9\";\n}\n\n.mdi-disqus::before {\n  content: \"\\F01D2\";\n}\n\n.mdi-distribute-horizontal-center::before {\n  content: \"\\F11C9\";\n}\n\n.mdi-distribute-horizontal-left::before {\n  content: \"\\F11C8\";\n}\n\n.mdi-distribute-horizontal-right::before {\n  content: \"\\F11CA\";\n}\n\n.mdi-distribute-vertical-bottom::before {\n  content: \"\\F11CB\";\n}\n\n.mdi-distribute-vertical-center::before {\n  content: \"\\F11CC\";\n}\n\n.mdi-distribute-vertical-top::before {\n  content: \"\\F11CD\";\n}\n\n.mdi-diving-flippers::before {\n  content: \"\\F0DBF\";\n}\n\n.mdi-diving-helmet::before {\n  content: \"\\F0DC0\";\n}\n\n.mdi-diving-scuba::before {\n  content: \"\\F0DC1\";\n}\n\n.mdi-diving-scuba-flag::before {\n  content: \"\\F0DC2\";\n}\n\n.mdi-diving-scuba-tank::before {\n  content: \"\\F0DC3\";\n}\n\n.mdi-diving-scuba-tank-multiple::before {\n  content: \"\\F0DC4\";\n}\n\n.mdi-diving-snorkel::before {\n  content: \"\\F0DC5\";\n}\n\n.mdi-division::before {\n  content: \"\\F01D4\";\n}\n\n.mdi-division-box::before {\n  content: \"\\F01D5\";\n}\n\n.mdi-dlna::before {\n  content: \"\\F0A41\";\n}\n\n.mdi-dna::before {\n  content: \"\\F0684\";\n}\n\n.mdi-dns::before {\n  content: \"\\F01D6\";\n}\n\n.mdi-dns-outline::before {\n  content: \"\\F0B8C\";\n}\n\n.mdi-do-not-disturb::before {\n  content: \"\\F0698\";\n}\n\n.mdi-do-not-disturb-off::before {\n  content: \"\\F0699\";\n}\n\n.mdi-dock-bottom::before {\n  content: \"\\F10A9\";\n}\n\n.mdi-dock-left::before {\n  content: \"\\F10AA\";\n}\n\n.mdi-dock-right::before {\n  content: \"\\F10AB\";\n}\n\n.mdi-dock-top::before {\n  content: \"\\F1513\";\n}\n\n.mdi-dock-window::before {\n  content: \"\\F10AC\";\n}\n\n.mdi-docker::before {\n  content: \"\\F0868\";\n}\n\n.mdi-doctor::before {\n  content: \"\\F0A42\";\n}\n\n.mdi-dog::before {\n  content: \"\\F0A43\";\n}\n\n.mdi-dog-service::before {\n  content: \"\\F0AAD\";\n}\n\n.mdi-dog-side::before {\n  content: \"\\F0A44\";\n}\n\n.mdi-dolby::before {\n  content: \"\\F06B3\";\n}\n\n.mdi-dolly::before {\n  content: \"\\F0E9E\";\n}\n\n.mdi-domain::before {\n  content: \"\\F01D7\";\n}\n\n.mdi-domain-off::before {\n  content: \"\\F0D6F\";\n}\n\n.mdi-domain-plus::before {\n  content: \"\\F10AD\";\n}\n\n.mdi-domain-remove::before {\n  content: \"\\F10AE\";\n}\n\n.mdi-dome-light::before {\n  content: \"\\F141E\";\n}\n\n.mdi-domino-mask::before {\n  content: \"\\F1023\";\n}\n\n.mdi-donkey::before {\n  content: \"\\F07C2\";\n}\n\n.mdi-door::before {\n  content: \"\\F081A\";\n}\n\n.mdi-door-closed::before {\n  content: \"\\F081B\";\n}\n\n.mdi-door-closed-lock::before {\n  content: \"\\F10AF\";\n}\n\n.mdi-door-open::before {\n  content: \"\\F081C\";\n}\n\n.mdi-doorbell::before {\n  content: \"\\F12E6\";\n}\n\n.mdi-doorbell-video::before {\n  content: \"\\F0869\";\n}\n\n.mdi-dot-net::before {\n  content: \"\\F0AAE\";\n}\n\n.mdi-dots-grid::before {\n  content: \"\\F15FC\";\n}\n\n.mdi-dots-hexagon::before {\n  content: \"\\F15FF\";\n}\n\n.mdi-dots-horizontal::before {\n  content: \"\\F01D8\";\n}\n\n.mdi-dots-horizontal-circle::before {\n  content: \"\\F07C3\";\n}\n\n.mdi-dots-horizontal-circle-outline::before {\n  content: \"\\F0B8D\";\n}\n\n.mdi-dots-square::before {\n  content: \"\\F15FD\";\n}\n\n.mdi-dots-triangle::before {\n  content: \"\\F15FE\";\n}\n\n.mdi-dots-vertical::before {\n  content: \"\\F01D9\";\n}\n\n.mdi-dots-vertical-circle::before {\n  content: \"\\F07C4\";\n}\n\n.mdi-dots-vertical-circle-outline::before {\n  content: \"\\F0B8E\";\n}\n\n.mdi-douban::before {\n  content: \"\\F069A\";\n}\n\n.mdi-download::before {\n  content: \"\\F01DA\";\n}\n\n.mdi-download-box::before {\n  content: \"\\F1462\";\n}\n\n.mdi-download-box-outline::before {\n  content: \"\\F1463\";\n}\n\n.mdi-download-circle::before {\n  content: \"\\F1464\";\n}\n\n.mdi-download-circle-outline::before {\n  content: \"\\F1465\";\n}\n\n.mdi-download-lock::before {\n  content: \"\\F1320\";\n}\n\n.mdi-download-lock-outline::before {\n  content: \"\\F1321\";\n}\n\n.mdi-download-multiple::before {\n  content: \"\\F09E9\";\n}\n\n.mdi-download-network::before {\n  content: \"\\F06F4\";\n}\n\n.mdi-download-network-outline::before {\n  content: \"\\F0C66\";\n}\n\n.mdi-download-off::before {\n  content: \"\\F10B0\";\n}\n\n.mdi-download-off-outline::before {\n  content: \"\\F10B1\";\n}\n\n.mdi-download-outline::before {\n  content: \"\\F0B8F\";\n}\n\n.mdi-drag::before {\n  content: \"\\F01DB\";\n}\n\n.mdi-drag-horizontal::before {\n  content: \"\\F01DC\";\n}\n\n.mdi-drag-horizontal-variant::before {\n  content: \"\\F12F0\";\n}\n\n.mdi-drag-variant::before {\n  content: \"\\F0B90\";\n}\n\n.mdi-drag-vertical::before {\n  content: \"\\F01DD\";\n}\n\n.mdi-drag-vertical-variant::before {\n  content: \"\\F12F1\";\n}\n\n.mdi-drama-masks::before {\n  content: \"\\F0D02\";\n}\n\n.mdi-draw::before {\n  content: \"\\F0F49\";\n}\n\n.mdi-drawing::before {\n  content: \"\\F01DE\";\n}\n\n.mdi-drawing-box::before {\n  content: \"\\F01DF\";\n}\n\n.mdi-dresser::before {\n  content: \"\\F0F4A\";\n}\n\n.mdi-dresser-outline::before {\n  content: \"\\F0F4B\";\n}\n\n.mdi-drone::before {\n  content: \"\\F01E2\";\n}\n\n.mdi-dropbox::before {\n  content: \"\\F01E3\";\n}\n\n.mdi-drupal::before {\n  content: \"\\F01E4\";\n}\n\n.mdi-duck::before {\n  content: \"\\F01E5\";\n}\n\n.mdi-dumbbell::before {\n  content: \"\\F01E6\";\n}\n\n.mdi-dump-truck::before {\n  content: \"\\F0C67\";\n}\n\n.mdi-ear-hearing::before {\n  content: \"\\F07C5\";\n}\n\n.mdi-ear-hearing-off::before {\n  content: \"\\F0A45\";\n}\n\n.mdi-earth::before {\n  content: \"\\F01E7\";\n}\n\n.mdi-earth-arrow-right::before {\n  content: \"\\F1311\";\n}\n\n.mdi-earth-box::before {\n  content: \"\\F06CD\";\n}\n\n.mdi-earth-box-minus::before {\n  content: \"\\F1407\";\n}\n\n.mdi-earth-box-off::before {\n  content: \"\\F06CE\";\n}\n\n.mdi-earth-box-plus::before {\n  content: \"\\F1406\";\n}\n\n.mdi-earth-box-remove::before {\n  content: \"\\F1408\";\n}\n\n.mdi-earth-minus::before {\n  content: \"\\F1404\";\n}\n\n.mdi-earth-off::before {\n  content: \"\\F01E8\";\n}\n\n.mdi-earth-plus::before {\n  content: \"\\F1403\";\n}\n\n.mdi-earth-remove::before {\n  content: \"\\F1405\";\n}\n\n.mdi-egg::before {\n  content: \"\\F0AAF\";\n}\n\n.mdi-egg-easter::before {\n  content: \"\\F0AB0\";\n}\n\n.mdi-egg-off::before {\n  content: \"\\F13F0\";\n}\n\n.mdi-egg-off-outline::before {\n  content: \"\\F13F1\";\n}\n\n.mdi-egg-outline::before {\n  content: \"\\F13F2\";\n}\n\n.mdi-eiffel-tower::before {\n  content: \"\\F156B\";\n}\n\n.mdi-eight-track::before {\n  content: \"\\F09EA\";\n}\n\n.mdi-eject::before {\n  content: \"\\F01EA\";\n}\n\n.mdi-eject-outline::before {\n  content: \"\\F0B91\";\n}\n\n.mdi-electric-switch::before {\n  content: \"\\F0E9F\";\n}\n\n.mdi-electric-switch-closed::before {\n  content: \"\\F10D9\";\n}\n\n.mdi-electron-framework::before {\n  content: \"\\F1024\";\n}\n\n.mdi-elephant::before {\n  content: \"\\F07C6\";\n}\n\n.mdi-elevation-decline::before {\n  content: \"\\F01EB\";\n}\n\n.mdi-elevation-rise::before {\n  content: \"\\F01EC\";\n}\n\n.mdi-elevator::before {\n  content: \"\\F01ED\";\n}\n\n.mdi-elevator-down::before {\n  content: \"\\F12C2\";\n}\n\n.mdi-elevator-passenger::before {\n  content: \"\\F1381\";\n}\n\n.mdi-elevator-up::before {\n  content: \"\\F12C1\";\n}\n\n.mdi-ellipse::before {\n  content: \"\\F0EA0\";\n}\n\n.mdi-ellipse-outline::before {\n  content: \"\\F0EA1\";\n}\n\n.mdi-email::before {\n  content: \"\\F01EE\";\n}\n\n.mdi-email-alert::before {\n  content: \"\\F06CF\";\n}\n\n.mdi-email-alert-outline::before {\n  content: \"\\F0D42\";\n}\n\n.mdi-email-box::before {\n  content: \"\\F0D03\";\n}\n\n.mdi-email-check::before {\n  content: \"\\F0AB1\";\n}\n\n.mdi-email-check-outline::before {\n  content: \"\\F0AB2\";\n}\n\n.mdi-email-edit::before {\n  content: \"\\F0EE3\";\n}\n\n.mdi-email-edit-outline::before {\n  content: \"\\F0EE4\";\n}\n\n.mdi-email-lock::before {\n  content: \"\\F01F1\";\n}\n\n.mdi-email-mark-as-unread::before {\n  content: \"\\F0B92\";\n}\n\n.mdi-email-minus::before {\n  content: \"\\F0EE5\";\n}\n\n.mdi-email-minus-outline::before {\n  content: \"\\F0EE6\";\n}\n\n.mdi-email-multiple::before {\n  content: \"\\F0EE7\";\n}\n\n.mdi-email-multiple-outline::before {\n  content: \"\\F0EE8\";\n}\n\n.mdi-email-newsletter::before {\n  content: \"\\F0FB1\";\n}\n\n.mdi-email-off::before {\n  content: \"\\F13E3\";\n}\n\n.mdi-email-off-outline::before {\n  content: \"\\F13E4\";\n}\n\n.mdi-email-open::before {\n  content: \"\\F01EF\";\n}\n\n.mdi-email-open-multiple::before {\n  content: \"\\F0EE9\";\n}\n\n.mdi-email-open-multiple-outline::before {\n  content: \"\\F0EEA\";\n}\n\n.mdi-email-open-outline::before {\n  content: \"\\F05EF\";\n}\n\n.mdi-email-outline::before {\n  content: \"\\F01F0\";\n}\n\n.mdi-email-plus::before {\n  content: \"\\F09EB\";\n}\n\n.mdi-email-plus-outline::before {\n  content: \"\\F09EC\";\n}\n\n.mdi-email-receive::before {\n  content: \"\\F10DA\";\n}\n\n.mdi-email-receive-outline::before {\n  content: \"\\F10DB\";\n}\n\n.mdi-email-search::before {\n  content: \"\\F0961\";\n}\n\n.mdi-email-search-outline::before {\n  content: \"\\F0962\";\n}\n\n.mdi-email-send::before {\n  content: \"\\F10DC\";\n}\n\n.mdi-email-send-outline::before {\n  content: \"\\F10DD\";\n}\n\n.mdi-email-sync::before {\n  content: \"\\F12C7\";\n}\n\n.mdi-email-sync-outline::before {\n  content: \"\\F12C8\";\n}\n\n.mdi-email-variant::before {\n  content: \"\\F05F0\";\n}\n\n.mdi-ember::before {\n  content: \"\\F0B30\";\n}\n\n.mdi-emby::before {\n  content: \"\\F06B4\";\n}\n\n.mdi-emoticon::before {\n  content: \"\\F0C68\";\n}\n\n.mdi-emoticon-angry::before {\n  content: \"\\F0C69\";\n}\n\n.mdi-emoticon-angry-outline::before {\n  content: \"\\F0C6A\";\n}\n\n.mdi-emoticon-confused::before {\n  content: \"\\F10DE\";\n}\n\n.mdi-emoticon-confused-outline::before {\n  content: \"\\F10DF\";\n}\n\n.mdi-emoticon-cool::before {\n  content: \"\\F0C6B\";\n}\n\n.mdi-emoticon-cool-outline::before {\n  content: \"\\F01F3\";\n}\n\n.mdi-emoticon-cry::before {\n  content: \"\\F0C6C\";\n}\n\n.mdi-emoticon-cry-outline::before {\n  content: \"\\F0C6D\";\n}\n\n.mdi-emoticon-dead::before {\n  content: \"\\F0C6E\";\n}\n\n.mdi-emoticon-dead-outline::before {\n  content: \"\\F069B\";\n}\n\n.mdi-emoticon-devil::before {\n  content: \"\\F0C6F\";\n}\n\n.mdi-emoticon-devil-outline::before {\n  content: \"\\F01F4\";\n}\n\n.mdi-emoticon-excited::before {\n  content: \"\\F0C70\";\n}\n\n.mdi-emoticon-excited-outline::before {\n  content: \"\\F069C\";\n}\n\n.mdi-emoticon-frown::before {\n  content: \"\\F0F4C\";\n}\n\n.mdi-emoticon-frown-outline::before {\n  content: \"\\F0F4D\";\n}\n\n.mdi-emoticon-happy::before {\n  content: \"\\F0C71\";\n}\n\n.mdi-emoticon-happy-outline::before {\n  content: \"\\F01F5\";\n}\n\n.mdi-emoticon-kiss::before {\n  content: \"\\F0C72\";\n}\n\n.mdi-emoticon-kiss-outline::before {\n  content: \"\\F0C73\";\n}\n\n.mdi-emoticon-lol::before {\n  content: \"\\F1214\";\n}\n\n.mdi-emoticon-lol-outline::before {\n  content: \"\\F1215\";\n}\n\n.mdi-emoticon-neutral::before {\n  content: \"\\F0C74\";\n}\n\n.mdi-emoticon-neutral-outline::before {\n  content: \"\\F01F6\";\n}\n\n.mdi-emoticon-outline::before {\n  content: \"\\F01F2\";\n}\n\n.mdi-emoticon-poop::before {\n  content: \"\\F01F7\";\n}\n\n.mdi-emoticon-poop-outline::before {\n  content: \"\\F0C75\";\n}\n\n.mdi-emoticon-sad::before {\n  content: \"\\F0C76\";\n}\n\n.mdi-emoticon-sad-outline::before {\n  content: \"\\F01F8\";\n}\n\n.mdi-emoticon-sick::before {\n  content: \"\\F157C\";\n}\n\n.mdi-emoticon-sick-outline::before {\n  content: \"\\F157D\";\n}\n\n.mdi-emoticon-tongue::before {\n  content: \"\\F01F9\";\n}\n\n.mdi-emoticon-tongue-outline::before {\n  content: \"\\F0C77\";\n}\n\n.mdi-emoticon-wink::before {\n  content: \"\\F0C78\";\n}\n\n.mdi-emoticon-wink-outline::before {\n  content: \"\\F0C79\";\n}\n\n.mdi-engine::before {\n  content: \"\\F01FA\";\n}\n\n.mdi-engine-off::before {\n  content: \"\\F0A46\";\n}\n\n.mdi-engine-off-outline::before {\n  content: \"\\F0A47\";\n}\n\n.mdi-engine-outline::before {\n  content: \"\\F01FB\";\n}\n\n.mdi-epsilon::before {\n  content: \"\\F10E0\";\n}\n\n.mdi-equal::before {\n  content: \"\\F01FC\";\n}\n\n.mdi-equal-box::before {\n  content: \"\\F01FD\";\n}\n\n.mdi-equalizer::before {\n  content: \"\\F0EA2\";\n}\n\n.mdi-equalizer-outline::before {\n  content: \"\\F0EA3\";\n}\n\n.mdi-eraser::before {\n  content: \"\\F01FE\";\n}\n\n.mdi-eraser-variant::before {\n  content: \"\\F0642\";\n}\n\n.mdi-escalator::before {\n  content: \"\\F01FF\";\n}\n\n.mdi-escalator-box::before {\n  content: \"\\F1399\";\n}\n\n.mdi-escalator-down::before {\n  content: \"\\F12C0\";\n}\n\n.mdi-escalator-up::before {\n  content: \"\\F12BF\";\n}\n\n.mdi-eslint::before {\n  content: \"\\F0C7A\";\n}\n\n.mdi-et::before {\n  content: \"\\F0AB3\";\n}\n\n.mdi-ethereum::before {\n  content: \"\\F086A\";\n}\n\n.mdi-ethernet::before {\n  content: \"\\F0200\";\n}\n\n.mdi-ethernet-cable::before {\n  content: \"\\F0201\";\n}\n\n.mdi-ethernet-cable-off::before {\n  content: \"\\F0202\";\n}\n\n.mdi-ev-plug-ccs1::before {\n  content: \"\\F1519\";\n}\n\n.mdi-ev-plug-ccs2::before {\n  content: \"\\F151A\";\n}\n\n.mdi-ev-plug-chademo::before {\n  content: \"\\F151B\";\n}\n\n.mdi-ev-plug-tesla::before {\n  content: \"\\F151C\";\n}\n\n.mdi-ev-plug-type1::before {\n  content: \"\\F151D\";\n}\n\n.mdi-ev-plug-type2::before {\n  content: \"\\F151E\";\n}\n\n.mdi-ev-station::before {\n  content: \"\\F05F1\";\n}\n\n.mdi-evernote::before {\n  content: \"\\F0204\";\n}\n\n.mdi-excavator::before {\n  content: \"\\F1025\";\n}\n\n.mdi-exclamation::before {\n  content: \"\\F0205\";\n}\n\n.mdi-exclamation-thick::before {\n  content: \"\\F1238\";\n}\n\n.mdi-exit-run::before {\n  content: \"\\F0A48\";\n}\n\n.mdi-exit-to-app::before {\n  content: \"\\F0206\";\n}\n\n.mdi-expand-all::before {\n  content: \"\\F0AB4\";\n}\n\n.mdi-expand-all-outline::before {\n  content: \"\\F0AB5\";\n}\n\n.mdi-expansion-card::before {\n  content: \"\\F08AE\";\n}\n\n.mdi-expansion-card-variant::before {\n  content: \"\\F0FB2\";\n}\n\n.mdi-exponent::before {\n  content: \"\\F0963\";\n}\n\n.mdi-exponent-box::before {\n  content: \"\\F0964\";\n}\n\n.mdi-export::before {\n  content: \"\\F0207\";\n}\n\n.mdi-export-variant::before {\n  content: \"\\F0B93\";\n}\n\n.mdi-eye::before {\n  content: \"\\F0208\";\n}\n\n.mdi-eye-check::before {\n  content: \"\\F0D04\";\n}\n\n.mdi-eye-check-outline::before {\n  content: \"\\F0D05\";\n}\n\n.mdi-eye-circle::before {\n  content: \"\\F0B94\";\n}\n\n.mdi-eye-circle-outline::before {\n  content: \"\\F0B95\";\n}\n\n.mdi-eye-minus::before {\n  content: \"\\F1026\";\n}\n\n.mdi-eye-minus-outline::before {\n  content: \"\\F1027\";\n}\n\n.mdi-eye-off::before {\n  content: \"\\F0209\";\n}\n\n.mdi-eye-off-outline::before {\n  content: \"\\F06D1\";\n}\n\n.mdi-eye-outline::before {\n  content: \"\\F06D0\";\n}\n\n.mdi-eye-plus::before {\n  content: \"\\F086B\";\n}\n\n.mdi-eye-plus-outline::before {\n  content: \"\\F086C\";\n}\n\n.mdi-eye-remove::before {\n  content: \"\\F15E3\";\n}\n\n.mdi-eye-remove-outline::before {\n  content: \"\\F15E4\";\n}\n\n.mdi-eye-settings::before {\n  content: \"\\F086D\";\n}\n\n.mdi-eye-settings-outline::before {\n  content: \"\\F086E\";\n}\n\n.mdi-eyedropper::before {\n  content: \"\\F020A\";\n}\n\n.mdi-eyedropper-minus::before {\n  content: \"\\F13DD\";\n}\n\n.mdi-eyedropper-off::before {\n  content: \"\\F13DF\";\n}\n\n.mdi-eyedropper-plus::before {\n  content: \"\\F13DC\";\n}\n\n.mdi-eyedropper-remove::before {\n  content: \"\\F13DE\";\n}\n\n.mdi-eyedropper-variant::before {\n  content: \"\\F020B\";\n}\n\n.mdi-face::before {\n  content: \"\\F0643\";\n}\n\n.mdi-face-agent::before {\n  content: \"\\F0D70\";\n}\n\n.mdi-face-mask::before {\n  content: \"\\F1586\";\n}\n\n.mdi-face-mask-outline::before {\n  content: \"\\F1587\";\n}\n\n.mdi-face-outline::before {\n  content: \"\\F0B96\";\n}\n\n.mdi-face-profile::before {\n  content: \"\\F0644\";\n}\n\n.mdi-face-profile-woman::before {\n  content: \"\\F1076\";\n}\n\n.mdi-face-recognition::before {\n  content: \"\\F0C7B\";\n}\n\n.mdi-face-shimmer::before {\n  content: \"\\F15CC\";\n}\n\n.mdi-face-shimmer-outline::before {\n  content: \"\\F15CD\";\n}\n\n.mdi-face-woman::before {\n  content: \"\\F1077\";\n}\n\n.mdi-face-woman-outline::before {\n  content: \"\\F1078\";\n}\n\n.mdi-face-woman-shimmer::before {\n  content: \"\\F15CE\";\n}\n\n.mdi-face-woman-shimmer-outline::before {\n  content: \"\\F15CF\";\n}\n\n.mdi-facebook::before {\n  content: \"\\F020C\";\n}\n\n.mdi-facebook-gaming::before {\n  content: \"\\F07DD\";\n}\n\n.mdi-facebook-messenger::before {\n  content: \"\\F020E\";\n}\n\n.mdi-facebook-workplace::before {\n  content: \"\\F0B31\";\n}\n\n.mdi-factory::before {\n  content: \"\\F020F\";\n}\n\n.mdi-family-tree::before {\n  content: \"\\F160E\";\n}\n\n.mdi-fan::before {\n  content: \"\\F0210\";\n}\n\n.mdi-fan-alert::before {\n  content: \"\\F146C\";\n}\n\n.mdi-fan-chevron-down::before {\n  content: \"\\F146D\";\n}\n\n.mdi-fan-chevron-up::before {\n  content: \"\\F146E\";\n}\n\n.mdi-fan-minus::before {\n  content: \"\\F1470\";\n}\n\n.mdi-fan-off::before {\n  content: \"\\F081D\";\n}\n\n.mdi-fan-plus::before {\n  content: \"\\F146F\";\n}\n\n.mdi-fan-remove::before {\n  content: \"\\F1471\";\n}\n\n.mdi-fan-speed-1::before {\n  content: \"\\F1472\";\n}\n\n.mdi-fan-speed-2::before {\n  content: \"\\F1473\";\n}\n\n.mdi-fan-speed-3::before {\n  content: \"\\F1474\";\n}\n\n.mdi-fast-forward::before {\n  content: \"\\F0211\";\n}\n\n.mdi-fast-forward-10::before {\n  content: \"\\F0D71\";\n}\n\n.mdi-fast-forward-30::before {\n  content: \"\\F0D06\";\n}\n\n.mdi-fast-forward-5::before {\n  content: \"\\F11F8\";\n}\n\n.mdi-fast-forward-60::before {\n  content: \"\\F160B\";\n}\n\n.mdi-fast-forward-outline::before {\n  content: \"\\F06D2\";\n}\n\n.mdi-fax::before {\n  content: \"\\F0212\";\n}\n\n.mdi-feather::before {\n  content: \"\\F06D3\";\n}\n\n.mdi-feature-search::before {\n  content: \"\\F0A49\";\n}\n\n.mdi-feature-search-outline::before {\n  content: \"\\F0A4A\";\n}\n\n.mdi-fedora::before {\n  content: \"\\F08DB\";\n}\n\n.mdi-fencing::before {\n  content: \"\\F14C1\";\n}\n\n.mdi-ferris-wheel::before {\n  content: \"\\F0EA4\";\n}\n\n.mdi-ferry::before {\n  content: \"\\F0213\";\n}\n\n.mdi-file::before {\n  content: \"\\F0214\";\n}\n\n.mdi-file-account::before {\n  content: \"\\F073B\";\n}\n\n.mdi-file-account-outline::before {\n  content: \"\\F1028\";\n}\n\n.mdi-file-alert::before {\n  content: \"\\F0A4B\";\n}\n\n.mdi-file-alert-outline::before {\n  content: \"\\F0A4C\";\n}\n\n.mdi-file-cabinet::before {\n  content: \"\\F0AB6\";\n}\n\n.mdi-file-cad::before {\n  content: \"\\F0EEB\";\n}\n\n.mdi-file-cad-box::before {\n  content: \"\\F0EEC\";\n}\n\n.mdi-file-cancel::before {\n  content: \"\\F0DC6\";\n}\n\n.mdi-file-cancel-outline::before {\n  content: \"\\F0DC7\";\n}\n\n.mdi-file-certificate::before {\n  content: \"\\F1186\";\n}\n\n.mdi-file-certificate-outline::before {\n  content: \"\\F1187\";\n}\n\n.mdi-file-chart::before {\n  content: \"\\F0215\";\n}\n\n.mdi-file-chart-outline::before {\n  content: \"\\F1029\";\n}\n\n.mdi-file-check::before {\n  content: \"\\F0216\";\n}\n\n.mdi-file-check-outline::before {\n  content: \"\\F0E29\";\n}\n\n.mdi-file-clock::before {\n  content: \"\\F12E1\";\n}\n\n.mdi-file-clock-outline::before {\n  content: \"\\F12E2\";\n}\n\n.mdi-file-cloud::before {\n  content: \"\\F0217\";\n}\n\n.mdi-file-cloud-outline::before {\n  content: \"\\F102A\";\n}\n\n.mdi-file-code::before {\n  content: \"\\F022E\";\n}\n\n.mdi-file-code-outline::before {\n  content: \"\\F102B\";\n}\n\n.mdi-file-cog::before {\n  content: \"\\F107B\";\n}\n\n.mdi-file-cog-outline::before {\n  content: \"\\F107C\";\n}\n\n.mdi-file-compare::before {\n  content: \"\\F08AA\";\n}\n\n.mdi-file-delimited::before {\n  content: \"\\F0218\";\n}\n\n.mdi-file-delimited-outline::before {\n  content: \"\\F0EA5\";\n}\n\n.mdi-file-document::before {\n  content: \"\\F0219\";\n}\n\n.mdi-file-document-edit::before {\n  content: \"\\F0DC8\";\n}\n\n.mdi-file-document-edit-outline::before {\n  content: \"\\F0DC9\";\n}\n\n.mdi-file-document-multiple::before {\n  content: \"\\F1517\";\n}\n\n.mdi-file-document-multiple-outline::before {\n  content: \"\\F1518\";\n}\n\n.mdi-file-document-outline::before {\n  content: \"\\F09EE\";\n}\n\n.mdi-file-download::before {\n  content: \"\\F0965\";\n}\n\n.mdi-file-download-outline::before {\n  content: \"\\F0966\";\n}\n\n.mdi-file-edit::before {\n  content: \"\\F11E7\";\n}\n\n.mdi-file-edit-outline::before {\n  content: \"\\F11E8\";\n}\n\n.mdi-file-excel::before {\n  content: \"\\F021B\";\n}\n\n.mdi-file-excel-box::before {\n  content: \"\\F021C\";\n}\n\n.mdi-file-excel-box-outline::before {\n  content: \"\\F102C\";\n}\n\n.mdi-file-excel-outline::before {\n  content: \"\\F102D\";\n}\n\n.mdi-file-export::before {\n  content: \"\\F021D\";\n}\n\n.mdi-file-export-outline::before {\n  content: \"\\F102E\";\n}\n\n.mdi-file-eye::before {\n  content: \"\\F0DCA\";\n}\n\n.mdi-file-eye-outline::before {\n  content: \"\\F0DCB\";\n}\n\n.mdi-file-find::before {\n  content: \"\\F021E\";\n}\n\n.mdi-file-find-outline::before {\n  content: \"\\F0B97\";\n}\n\n.mdi-file-hidden::before {\n  content: \"\\F0613\";\n}\n\n.mdi-file-image::before {\n  content: \"\\F021F\";\n}\n\n.mdi-file-image-outline::before {\n  content: \"\\F0EB0\";\n}\n\n.mdi-file-import::before {\n  content: \"\\F0220\";\n}\n\n.mdi-file-import-outline::before {\n  content: \"\\F102F\";\n}\n\n.mdi-file-key::before {\n  content: \"\\F1184\";\n}\n\n.mdi-file-key-outline::before {\n  content: \"\\F1185\";\n}\n\n.mdi-file-link::before {\n  content: \"\\F1177\";\n}\n\n.mdi-file-link-outline::before {\n  content: \"\\F1178\";\n}\n\n.mdi-file-lock::before {\n  content: \"\\F0221\";\n}\n\n.mdi-file-lock-outline::before {\n  content: \"\\F1030\";\n}\n\n.mdi-file-move::before {\n  content: \"\\F0AB9\";\n}\n\n.mdi-file-move-outline::before {\n  content: \"\\F1031\";\n}\n\n.mdi-file-multiple::before {\n  content: \"\\F0222\";\n}\n\n.mdi-file-multiple-outline::before {\n  content: \"\\F1032\";\n}\n\n.mdi-file-music::before {\n  content: \"\\F0223\";\n}\n\n.mdi-file-music-outline::before {\n  content: \"\\F0E2A\";\n}\n\n.mdi-file-outline::before {\n  content: \"\\F0224\";\n}\n\n.mdi-file-pdf::before {\n  content: \"\\F0225\";\n}\n\n.mdi-file-pdf-box::before {\n  content: \"\\F0226\";\n}\n\n.mdi-file-pdf-box-outline::before {\n  content: \"\\F0FB3\";\n}\n\n.mdi-file-pdf-outline::before {\n  content: \"\\F0E2D\";\n}\n\n.mdi-file-percent::before {\n  content: \"\\F081E\";\n}\n\n.mdi-file-percent-outline::before {\n  content: \"\\F1033\";\n}\n\n.mdi-file-phone::before {\n  content: \"\\F1179\";\n}\n\n.mdi-file-phone-outline::before {\n  content: \"\\F117A\";\n}\n\n.mdi-file-plus::before {\n  content: \"\\F0752\";\n}\n\n.mdi-file-plus-outline::before {\n  content: \"\\F0EED\";\n}\n\n.mdi-file-powerpoint::before {\n  content: \"\\F0227\";\n}\n\n.mdi-file-powerpoint-box::before {\n  content: \"\\F0228\";\n}\n\n.mdi-file-powerpoint-box-outline::before {\n  content: \"\\F1034\";\n}\n\n.mdi-file-powerpoint-outline::before {\n  content: \"\\F1035\";\n}\n\n.mdi-file-presentation-box::before {\n  content: \"\\F0229\";\n}\n\n.mdi-file-question::before {\n  content: \"\\F086F\";\n}\n\n.mdi-file-question-outline::before {\n  content: \"\\F1036\";\n}\n\n.mdi-file-refresh::before {\n  content: \"\\F0918\";\n}\n\n.mdi-file-refresh-outline::before {\n  content: \"\\F0541\";\n}\n\n.mdi-file-remove::before {\n  content: \"\\F0B98\";\n}\n\n.mdi-file-remove-outline::before {\n  content: \"\\F1037\";\n}\n\n.mdi-file-replace::before {\n  content: \"\\F0B32\";\n}\n\n.mdi-file-replace-outline::before {\n  content: \"\\F0B33\";\n}\n\n.mdi-file-restore::before {\n  content: \"\\F0670\";\n}\n\n.mdi-file-restore-outline::before {\n  content: \"\\F1038\";\n}\n\n.mdi-file-search::before {\n  content: \"\\F0C7C\";\n}\n\n.mdi-file-search-outline::before {\n  content: \"\\F0C7D\";\n}\n\n.mdi-file-send::before {\n  content: \"\\F022A\";\n}\n\n.mdi-file-send-outline::before {\n  content: \"\\F1039\";\n}\n\n.mdi-file-settings::before {\n  content: \"\\F1079\";\n}\n\n.mdi-file-settings-outline::before {\n  content: \"\\F107A\";\n}\n\n.mdi-file-star::before {\n  content: \"\\F103A\";\n}\n\n.mdi-file-star-outline::before {\n  content: \"\\F103B\";\n}\n\n.mdi-file-swap::before {\n  content: \"\\F0FB4\";\n}\n\n.mdi-file-swap-outline::before {\n  content: \"\\F0FB5\";\n}\n\n.mdi-file-sync::before {\n  content: \"\\F1216\";\n}\n\n.mdi-file-sync-outline::before {\n  content: \"\\F1217\";\n}\n\n.mdi-file-table::before {\n  content: \"\\F0C7E\";\n}\n\n.mdi-file-table-box::before {\n  content: \"\\F10E1\";\n}\n\n.mdi-file-table-box-multiple::before {\n  content: \"\\F10E2\";\n}\n\n.mdi-file-table-box-multiple-outline::before {\n  content: \"\\F10E3\";\n}\n\n.mdi-file-table-box-outline::before {\n  content: \"\\F10E4\";\n}\n\n.mdi-file-table-outline::before {\n  content: \"\\F0C7F\";\n}\n\n.mdi-file-tree::before {\n  content: \"\\F0645\";\n}\n\n.mdi-file-tree-outline::before {\n  content: \"\\F13D2\";\n}\n\n.mdi-file-undo::before {\n  content: \"\\F08DC\";\n}\n\n.mdi-file-undo-outline::before {\n  content: \"\\F103C\";\n}\n\n.mdi-file-upload::before {\n  content: \"\\F0A4D\";\n}\n\n.mdi-file-upload-outline::before {\n  content: \"\\F0A4E\";\n}\n\n.mdi-file-video::before {\n  content: \"\\F022B\";\n}\n\n.mdi-file-video-outline::before {\n  content: \"\\F0E2C\";\n}\n\n.mdi-file-word::before {\n  content: \"\\F022C\";\n}\n\n.mdi-file-word-box::before {\n  content: \"\\F022D\";\n}\n\n.mdi-file-word-box-outline::before {\n  content: \"\\F103D\";\n}\n\n.mdi-file-word-outline::before {\n  content: \"\\F103E\";\n}\n\n.mdi-film::before {\n  content: \"\\F022F\";\n}\n\n.mdi-filmstrip::before {\n  content: \"\\F0230\";\n}\n\n.mdi-filmstrip-box::before {\n  content: \"\\F0332\";\n}\n\n.mdi-filmstrip-box-multiple::before {\n  content: \"\\F0D18\";\n}\n\n.mdi-filmstrip-off::before {\n  content: \"\\F0231\";\n}\n\n.mdi-filter::before {\n  content: \"\\F0232\";\n}\n\n.mdi-filter-menu::before {\n  content: \"\\F10E5\";\n}\n\n.mdi-filter-menu-outline::before {\n  content: \"\\F10E6\";\n}\n\n.mdi-filter-minus::before {\n  content: \"\\F0EEE\";\n}\n\n.mdi-filter-minus-outline::before {\n  content: \"\\F0EEF\";\n}\n\n.mdi-filter-off::before {\n  content: \"\\F14EF\";\n}\n\n.mdi-filter-off-outline::before {\n  content: \"\\F14F0\";\n}\n\n.mdi-filter-outline::before {\n  content: \"\\F0233\";\n}\n\n.mdi-filter-plus::before {\n  content: \"\\F0EF0\";\n}\n\n.mdi-filter-plus-outline::before {\n  content: \"\\F0EF1\";\n}\n\n.mdi-filter-remove::before {\n  content: \"\\F0234\";\n}\n\n.mdi-filter-remove-outline::before {\n  content: \"\\F0235\";\n}\n\n.mdi-filter-variant::before {\n  content: \"\\F0236\";\n}\n\n.mdi-filter-variant-minus::before {\n  content: \"\\F1112\";\n}\n\n.mdi-filter-variant-plus::before {\n  content: \"\\F1113\";\n}\n\n.mdi-filter-variant-remove::before {\n  content: \"\\F103F\";\n}\n\n.mdi-finance::before {\n  content: \"\\F081F\";\n}\n\n.mdi-find-replace::before {\n  content: \"\\F06D4\";\n}\n\n.mdi-fingerprint::before {\n  content: \"\\F0237\";\n}\n\n.mdi-fingerprint-off::before {\n  content: \"\\F0EB1\";\n}\n\n.mdi-fire::before {\n  content: \"\\F0238\";\n}\n\n.mdi-fire-alert::before {\n  content: \"\\F15D7\";\n}\n\n.mdi-fire-extinguisher::before {\n  content: \"\\F0EF2\";\n}\n\n.mdi-fire-hydrant::before {\n  content: \"\\F1137\";\n}\n\n.mdi-fire-hydrant-alert::before {\n  content: \"\\F1138\";\n}\n\n.mdi-fire-hydrant-off::before {\n  content: \"\\F1139\";\n}\n\n.mdi-fire-truck::before {\n  content: \"\\F08AB\";\n}\n\n.mdi-firebase::before {\n  content: \"\\F0967\";\n}\n\n.mdi-firefox::before {\n  content: \"\\F0239\";\n}\n\n.mdi-fireplace::before {\n  content: \"\\F0E2E\";\n}\n\n.mdi-fireplace-off::before {\n  content: \"\\F0E2F\";\n}\n\n.mdi-firework::before {\n  content: \"\\F0E30\";\n}\n\n.mdi-fish::before {\n  content: \"\\F023A\";\n}\n\n.mdi-fish-off::before {\n  content: \"\\F13F3\";\n}\n\n.mdi-fishbowl::before {\n  content: \"\\F0EF3\";\n}\n\n.mdi-fishbowl-outline::before {\n  content: \"\\F0EF4\";\n}\n\n.mdi-fit-to-page::before {\n  content: \"\\F0EF5\";\n}\n\n.mdi-fit-to-page-outline::before {\n  content: \"\\F0EF6\";\n}\n\n.mdi-flag::before {\n  content: \"\\F023B\";\n}\n\n.mdi-flag-checkered::before {\n  content: \"\\F023C\";\n}\n\n.mdi-flag-minus::before {\n  content: \"\\F0B99\";\n}\n\n.mdi-flag-minus-outline::before {\n  content: \"\\F10B2\";\n}\n\n.mdi-flag-outline::before {\n  content: \"\\F023D\";\n}\n\n.mdi-flag-plus::before {\n  content: \"\\F0B9A\";\n}\n\n.mdi-flag-plus-outline::before {\n  content: \"\\F10B3\";\n}\n\n.mdi-flag-remove::before {\n  content: \"\\F0B9B\";\n}\n\n.mdi-flag-remove-outline::before {\n  content: \"\\F10B4\";\n}\n\n.mdi-flag-triangle::before {\n  content: \"\\F023F\";\n}\n\n.mdi-flag-variant::before {\n  content: \"\\F0240\";\n}\n\n.mdi-flag-variant-outline::before {\n  content: \"\\F023E\";\n}\n\n.mdi-flare::before {\n  content: \"\\F0D72\";\n}\n\n.mdi-flash::before {\n  content: \"\\F0241\";\n}\n\n.mdi-flash-alert::before {\n  content: \"\\F0EF7\";\n}\n\n.mdi-flash-alert-outline::before {\n  content: \"\\F0EF8\";\n}\n\n.mdi-flash-auto::before {\n  content: \"\\F0242\";\n}\n\n.mdi-flash-circle::before {\n  content: \"\\F0820\";\n}\n\n.mdi-flash-off::before {\n  content: \"\\F0243\";\n}\n\n.mdi-flash-outline::before {\n  content: \"\\F06D5\";\n}\n\n.mdi-flash-red-eye::before {\n  content: \"\\F067B\";\n}\n\n.mdi-flashlight::before {\n  content: \"\\F0244\";\n}\n\n.mdi-flashlight-off::before {\n  content: \"\\F0245\";\n}\n\n.mdi-flask::before {\n  content: \"\\F0093\";\n}\n\n.mdi-flask-empty::before {\n  content: \"\\F0094\";\n}\n\n.mdi-flask-empty-minus::before {\n  content: \"\\F123A\";\n}\n\n.mdi-flask-empty-minus-outline::before {\n  content: \"\\F123B\";\n}\n\n.mdi-flask-empty-off::before {\n  content: \"\\F13F4\";\n}\n\n.mdi-flask-empty-off-outline::before {\n  content: \"\\F13F5\";\n}\n\n.mdi-flask-empty-outline::before {\n  content: \"\\F0095\";\n}\n\n.mdi-flask-empty-plus::before {\n  content: \"\\F123C\";\n}\n\n.mdi-flask-empty-plus-outline::before {\n  content: \"\\F123D\";\n}\n\n.mdi-flask-empty-remove::before {\n  content: \"\\F123E\";\n}\n\n.mdi-flask-empty-remove-outline::before {\n  content: \"\\F123F\";\n}\n\n.mdi-flask-minus::before {\n  content: \"\\F1240\";\n}\n\n.mdi-flask-minus-outline::before {\n  content: \"\\F1241\";\n}\n\n.mdi-flask-off::before {\n  content: \"\\F13F6\";\n}\n\n.mdi-flask-off-outline::before {\n  content: \"\\F13F7\";\n}\n\n.mdi-flask-outline::before {\n  content: \"\\F0096\";\n}\n\n.mdi-flask-plus::before {\n  content: \"\\F1242\";\n}\n\n.mdi-flask-plus-outline::before {\n  content: \"\\F1243\";\n}\n\n.mdi-flask-remove::before {\n  content: \"\\F1244\";\n}\n\n.mdi-flask-remove-outline::before {\n  content: \"\\F1245\";\n}\n\n.mdi-flask-round-bottom::before {\n  content: \"\\F124B\";\n}\n\n.mdi-flask-round-bottom-empty::before {\n  content: \"\\F124C\";\n}\n\n.mdi-flask-round-bottom-empty-outline::before {\n  content: \"\\F124D\";\n}\n\n.mdi-flask-round-bottom-outline::before {\n  content: \"\\F124E\";\n}\n\n.mdi-fleur-de-lis::before {\n  content: \"\\F1303\";\n}\n\n.mdi-flip-horizontal::before {\n  content: \"\\F10E7\";\n}\n\n.mdi-flip-to-back::before {\n  content: \"\\F0247\";\n}\n\n.mdi-flip-to-front::before {\n  content: \"\\F0248\";\n}\n\n.mdi-flip-vertical::before {\n  content: \"\\F10E8\";\n}\n\n.mdi-floor-lamp::before {\n  content: \"\\F08DD\";\n}\n\n.mdi-floor-lamp-dual::before {\n  content: \"\\F1040\";\n}\n\n.mdi-floor-lamp-variant::before {\n  content: \"\\F1041\";\n}\n\n.mdi-floor-plan::before {\n  content: \"\\F0821\";\n}\n\n.mdi-floppy::before {\n  content: \"\\F0249\";\n}\n\n.mdi-floppy-variant::before {\n  content: \"\\F09EF\";\n}\n\n.mdi-flower::before {\n  content: \"\\F024A\";\n}\n\n.mdi-flower-outline::before {\n  content: \"\\F09F0\";\n}\n\n.mdi-flower-poppy::before {\n  content: \"\\F0D08\";\n}\n\n.mdi-flower-tulip::before {\n  content: \"\\F09F1\";\n}\n\n.mdi-flower-tulip-outline::before {\n  content: \"\\F09F2\";\n}\n\n.mdi-focus-auto::before {\n  content: \"\\F0F4E\";\n}\n\n.mdi-focus-field::before {\n  content: \"\\F0F4F\";\n}\n\n.mdi-focus-field-horizontal::before {\n  content: \"\\F0F50\";\n}\n\n.mdi-focus-field-vertical::before {\n  content: \"\\F0F51\";\n}\n\n.mdi-folder::before {\n  content: \"\\F024B\";\n}\n\n.mdi-folder-account::before {\n  content: \"\\F024C\";\n}\n\n.mdi-folder-account-outline::before {\n  content: \"\\F0B9C\";\n}\n\n.mdi-folder-alert::before {\n  content: \"\\F0DCC\";\n}\n\n.mdi-folder-alert-outline::before {\n  content: \"\\F0DCD\";\n}\n\n.mdi-folder-clock::before {\n  content: \"\\F0ABA\";\n}\n\n.mdi-folder-clock-outline::before {\n  content: \"\\F0ABB\";\n}\n\n.mdi-folder-cog::before {\n  content: \"\\F107F\";\n}\n\n.mdi-folder-cog-outline::before {\n  content: \"\\F1080\";\n}\n\n.mdi-folder-download::before {\n  content: \"\\F024D\";\n}\n\n.mdi-folder-download-outline::before {\n  content: \"\\F10E9\";\n}\n\n.mdi-folder-edit::before {\n  content: \"\\F08DE\";\n}\n\n.mdi-folder-edit-outline::before {\n  content: \"\\F0DCE\";\n}\n\n.mdi-folder-google-drive::before {\n  content: \"\\F024E\";\n}\n\n.mdi-folder-heart::before {\n  content: \"\\F10EA\";\n}\n\n.mdi-folder-heart-outline::before {\n  content: \"\\F10EB\";\n}\n\n.mdi-folder-home::before {\n  content: \"\\F10B5\";\n}\n\n.mdi-folder-home-outline::before {\n  content: \"\\F10B6\";\n}\n\n.mdi-folder-image::before {\n  content: \"\\F024F\";\n}\n\n.mdi-folder-information::before {\n  content: \"\\F10B7\";\n}\n\n.mdi-folder-information-outline::before {\n  content: \"\\F10B8\";\n}\n\n.mdi-folder-key::before {\n  content: \"\\F08AC\";\n}\n\n.mdi-folder-key-network::before {\n  content: \"\\F08AD\";\n}\n\n.mdi-folder-key-network-outline::before {\n  content: \"\\F0C80\";\n}\n\n.mdi-folder-key-outline::before {\n  content: \"\\F10EC\";\n}\n\n.mdi-folder-lock::before {\n  content: \"\\F0250\";\n}\n\n.mdi-folder-lock-open::before {\n  content: \"\\F0251\";\n}\n\n.mdi-folder-marker::before {\n  content: \"\\F126D\";\n}\n\n.mdi-folder-marker-outline::before {\n  content: \"\\F126E\";\n}\n\n.mdi-folder-move::before {\n  content: \"\\F0252\";\n}\n\n.mdi-folder-move-outline::before {\n  content: \"\\F1246\";\n}\n\n.mdi-folder-multiple::before {\n  content: \"\\F0253\";\n}\n\n.mdi-folder-multiple-image::before {\n  content: \"\\F0254\";\n}\n\n.mdi-folder-multiple-outline::before {\n  content: \"\\F0255\";\n}\n\n.mdi-folder-multiple-plus::before {\n  content: \"\\F147E\";\n}\n\n.mdi-folder-multiple-plus-outline::before {\n  content: \"\\F147F\";\n}\n\n.mdi-folder-music::before {\n  content: \"\\F1359\";\n}\n\n.mdi-folder-music-outline::before {\n  content: \"\\F135A\";\n}\n\n.mdi-folder-network::before {\n  content: \"\\F0870\";\n}\n\n.mdi-folder-network-outline::before {\n  content: \"\\F0C81\";\n}\n\n.mdi-folder-open::before {\n  content: \"\\F0770\";\n}\n\n.mdi-folder-open-outline::before {\n  content: \"\\F0DCF\";\n}\n\n.mdi-folder-outline::before {\n  content: \"\\F0256\";\n}\n\n.mdi-folder-plus::before {\n  content: \"\\F0257\";\n}\n\n.mdi-folder-plus-outline::before {\n  content: \"\\F0B9D\";\n}\n\n.mdi-folder-pound::before {\n  content: \"\\F0D09\";\n}\n\n.mdi-folder-pound-outline::before {\n  content: \"\\F0D0A\";\n}\n\n.mdi-folder-refresh::before {\n  content: \"\\F0749\";\n}\n\n.mdi-folder-refresh-outline::before {\n  content: \"\\F0542\";\n}\n\n.mdi-folder-remove::before {\n  content: \"\\F0258\";\n}\n\n.mdi-folder-remove-outline::before {\n  content: \"\\F0B9E\";\n}\n\n.mdi-folder-search::before {\n  content: \"\\F0968\";\n}\n\n.mdi-folder-search-outline::before {\n  content: \"\\F0969\";\n}\n\n.mdi-folder-settings::before {\n  content: \"\\F107D\";\n}\n\n.mdi-folder-settings-outline::before {\n  content: \"\\F107E\";\n}\n\n.mdi-folder-star::before {\n  content: \"\\F069D\";\n}\n\n.mdi-folder-star-multiple::before {\n  content: \"\\F13D3\";\n}\n\n.mdi-folder-star-multiple-outline::before {\n  content: \"\\F13D4\";\n}\n\n.mdi-folder-star-outline::before {\n  content: \"\\F0B9F\";\n}\n\n.mdi-folder-swap::before {\n  content: \"\\F0FB6\";\n}\n\n.mdi-folder-swap-outline::before {\n  content: \"\\F0FB7\";\n}\n\n.mdi-folder-sync::before {\n  content: \"\\F0D0B\";\n}\n\n.mdi-folder-sync-outline::before {\n  content: \"\\F0D0C\";\n}\n\n.mdi-folder-table::before {\n  content: \"\\F12E3\";\n}\n\n.mdi-folder-table-outline::before {\n  content: \"\\F12E4\";\n}\n\n.mdi-folder-text::before {\n  content: \"\\F0C82\";\n}\n\n.mdi-folder-text-outline::before {\n  content: \"\\F0C83\";\n}\n\n.mdi-folder-upload::before {\n  content: \"\\F0259\";\n}\n\n.mdi-folder-upload-outline::before {\n  content: \"\\F10ED\";\n}\n\n.mdi-folder-zip::before {\n  content: \"\\F06EB\";\n}\n\n.mdi-folder-zip-outline::before {\n  content: \"\\F07B9\";\n}\n\n.mdi-font-awesome::before {\n  content: \"\\F003A\";\n}\n\n.mdi-food::before {\n  content: \"\\F025A\";\n}\n\n.mdi-food-apple::before {\n  content: \"\\F025B\";\n}\n\n.mdi-food-apple-outline::before {\n  content: \"\\F0C84\";\n}\n\n.mdi-food-croissant::before {\n  content: \"\\F07C8\";\n}\n\n.mdi-food-drumstick::before {\n  content: \"\\F141F\";\n}\n\n.mdi-food-drumstick-off::before {\n  content: \"\\F1468\";\n}\n\n.mdi-food-drumstick-off-outline::before {\n  content: \"\\F1469\";\n}\n\n.mdi-food-drumstick-outline::before {\n  content: \"\\F1420\";\n}\n\n.mdi-food-fork-drink::before {\n  content: \"\\F05F2\";\n}\n\n.mdi-food-halal::before {\n  content: \"\\F1572\";\n}\n\n.mdi-food-kosher::before {\n  content: \"\\F1573\";\n}\n\n.mdi-food-off::before {\n  content: \"\\F05F3\";\n}\n\n.mdi-food-steak::before {\n  content: \"\\F146A\";\n}\n\n.mdi-food-steak-off::before {\n  content: \"\\F146B\";\n}\n\n.mdi-food-variant::before {\n  content: \"\\F025C\";\n}\n\n.mdi-food-variant-off::before {\n  content: \"\\F13E5\";\n}\n\n.mdi-foot-print::before {\n  content: \"\\F0F52\";\n}\n\n.mdi-football::before {\n  content: \"\\F025D\";\n}\n\n.mdi-football-australian::before {\n  content: \"\\F025E\";\n}\n\n.mdi-football-helmet::before {\n  content: \"\\F025F\";\n}\n\n.mdi-forklift::before {\n  content: \"\\F07C9\";\n}\n\n.mdi-form-dropdown::before {\n  content: \"\\F1400\";\n}\n\n.mdi-form-select::before {\n  content: \"\\F1401\";\n}\n\n.mdi-form-textarea::before {\n  content: \"\\F1095\";\n}\n\n.mdi-form-textbox::before {\n  content: \"\\F060E\";\n}\n\n.mdi-form-textbox-lock::before {\n  content: \"\\F135D\";\n}\n\n.mdi-form-textbox-password::before {\n  content: \"\\F07F5\";\n}\n\n.mdi-format-align-bottom::before {\n  content: \"\\F0753\";\n}\n\n.mdi-format-align-center::before {\n  content: \"\\F0260\";\n}\n\n.mdi-format-align-justify::before {\n  content: \"\\F0261\";\n}\n\n.mdi-format-align-left::before {\n  content: \"\\F0262\";\n}\n\n.mdi-format-align-middle::before {\n  content: \"\\F0754\";\n}\n\n.mdi-format-align-right::before {\n  content: \"\\F0263\";\n}\n\n.mdi-format-align-top::before {\n  content: \"\\F0755\";\n}\n\n.mdi-format-annotation-minus::before {\n  content: \"\\F0ABC\";\n}\n\n.mdi-format-annotation-plus::before {\n  content: \"\\F0646\";\n}\n\n.mdi-format-bold::before {\n  content: \"\\F0264\";\n}\n\n.mdi-format-clear::before {\n  content: \"\\F0265\";\n}\n\n.mdi-format-color-fill::before {\n  content: \"\\F0266\";\n}\n\n.mdi-format-color-highlight::before {\n  content: \"\\F0E31\";\n}\n\n.mdi-format-color-marker-cancel::before {\n  content: \"\\F1313\";\n}\n\n.mdi-format-color-text::before {\n  content: \"\\F069E\";\n}\n\n.mdi-format-columns::before {\n  content: \"\\F08DF\";\n}\n\n.mdi-format-float-center::before {\n  content: \"\\F0267\";\n}\n\n.mdi-format-float-left::before {\n  content: \"\\F0268\";\n}\n\n.mdi-format-float-none::before {\n  content: \"\\F0269\";\n}\n\n.mdi-format-float-right::before {\n  content: \"\\F026A\";\n}\n\n.mdi-format-font::before {\n  content: \"\\F06D6\";\n}\n\n.mdi-format-font-size-decrease::before {\n  content: \"\\F09F3\";\n}\n\n.mdi-format-font-size-increase::before {\n  content: \"\\F09F4\";\n}\n\n.mdi-format-header-1::before {\n  content: \"\\F026B\";\n}\n\n.mdi-format-header-2::before {\n  content: \"\\F026C\";\n}\n\n.mdi-format-header-3::before {\n  content: \"\\F026D\";\n}\n\n.mdi-format-header-4::before {\n  content: \"\\F026E\";\n}\n\n.mdi-format-header-5::before {\n  content: \"\\F026F\";\n}\n\n.mdi-format-header-6::before {\n  content: \"\\F0270\";\n}\n\n.mdi-format-header-decrease::before {\n  content: \"\\F0271\";\n}\n\n.mdi-format-header-equal::before {\n  content: \"\\F0272\";\n}\n\n.mdi-format-header-increase::before {\n  content: \"\\F0273\";\n}\n\n.mdi-format-header-pound::before {\n  content: \"\\F0274\";\n}\n\n.mdi-format-horizontal-align-center::before {\n  content: \"\\F061E\";\n}\n\n.mdi-format-horizontal-align-left::before {\n  content: \"\\F061F\";\n}\n\n.mdi-format-horizontal-align-right::before {\n  content: \"\\F0620\";\n}\n\n.mdi-format-indent-decrease::before {\n  content: \"\\F0275\";\n}\n\n.mdi-format-indent-increase::before {\n  content: \"\\F0276\";\n}\n\n.mdi-format-italic::before {\n  content: \"\\F0277\";\n}\n\n.mdi-format-letter-case::before {\n  content: \"\\F0B34\";\n}\n\n.mdi-format-letter-case-lower::before {\n  content: \"\\F0B35\";\n}\n\n.mdi-format-letter-case-upper::before {\n  content: \"\\F0B36\";\n}\n\n.mdi-format-letter-ends-with::before {\n  content: \"\\F0FB8\";\n}\n\n.mdi-format-letter-matches::before {\n  content: \"\\F0FB9\";\n}\n\n.mdi-format-letter-starts-with::before {\n  content: \"\\F0FBA\";\n}\n\n.mdi-format-line-spacing::before {\n  content: \"\\F0278\";\n}\n\n.mdi-format-line-style::before {\n  content: \"\\F05C8\";\n}\n\n.mdi-format-line-weight::before {\n  content: \"\\F05C9\";\n}\n\n.mdi-format-list-bulleted::before {\n  content: \"\\F0279\";\n}\n\n.mdi-format-list-bulleted-square::before {\n  content: \"\\F0DD0\";\n}\n\n.mdi-format-list-bulleted-triangle::before {\n  content: \"\\F0EB2\";\n}\n\n.mdi-format-list-bulleted-type::before {\n  content: \"\\F027A\";\n}\n\n.mdi-format-list-checkbox::before {\n  content: \"\\F096A\";\n}\n\n.mdi-format-list-checks::before {\n  content: \"\\F0756\";\n}\n\n.mdi-format-list-numbered::before {\n  content: \"\\F027B\";\n}\n\n.mdi-format-list-numbered-rtl::before {\n  content: \"\\F0D0D\";\n}\n\n.mdi-format-list-text::before {\n  content: \"\\F126F\";\n}\n\n.mdi-format-overline::before {\n  content: \"\\F0EB3\";\n}\n\n.mdi-format-page-break::before {\n  content: \"\\F06D7\";\n}\n\n.mdi-format-paint::before {\n  content: \"\\F027C\";\n}\n\n.mdi-format-paragraph::before {\n  content: \"\\F027D\";\n}\n\n.mdi-format-pilcrow::before {\n  content: \"\\F06D8\";\n}\n\n.mdi-format-quote-close::before {\n  content: \"\\F027E\";\n}\n\n.mdi-format-quote-close-outline::before {\n  content: \"\\F11A8\";\n}\n\n.mdi-format-quote-open::before {\n  content: \"\\F0757\";\n}\n\n.mdi-format-quote-open-outline::before {\n  content: \"\\F11A7\";\n}\n\n.mdi-format-rotate-90::before {\n  content: \"\\F06AA\";\n}\n\n.mdi-format-section::before {\n  content: \"\\F069F\";\n}\n\n.mdi-format-size::before {\n  content: \"\\F027F\";\n}\n\n.mdi-format-strikethrough::before {\n  content: \"\\F0280\";\n}\n\n.mdi-format-strikethrough-variant::before {\n  content: \"\\F0281\";\n}\n\n.mdi-format-subscript::before {\n  content: \"\\F0282\";\n}\n\n.mdi-format-superscript::before {\n  content: \"\\F0283\";\n}\n\n.mdi-format-text::before {\n  content: \"\\F0284\";\n}\n\n.mdi-format-text-rotation-angle-down::before {\n  content: \"\\F0FBB\";\n}\n\n.mdi-format-text-rotation-angle-up::before {\n  content: \"\\F0FBC\";\n}\n\n.mdi-format-text-rotation-down::before {\n  content: \"\\F0D73\";\n}\n\n.mdi-format-text-rotation-down-vertical::before {\n  content: \"\\F0FBD\";\n}\n\n.mdi-format-text-rotation-none::before {\n  content: \"\\F0D74\";\n}\n\n.mdi-format-text-rotation-up::before {\n  content: \"\\F0FBE\";\n}\n\n.mdi-format-text-rotation-vertical::before {\n  content: \"\\F0FBF\";\n}\n\n.mdi-format-text-variant::before {\n  content: \"\\F0E32\";\n}\n\n.mdi-format-text-variant-outline::before {\n  content: \"\\F150F\";\n}\n\n.mdi-format-text-wrapping-clip::before {\n  content: \"\\F0D0E\";\n}\n\n.mdi-format-text-wrapping-overflow::before {\n  content: \"\\F0D0F\";\n}\n\n.mdi-format-text-wrapping-wrap::before {\n  content: \"\\F0D10\";\n}\n\n.mdi-format-textbox::before {\n  content: \"\\F0D11\";\n}\n\n.mdi-format-textdirection-l-to-r::before {\n  content: \"\\F0285\";\n}\n\n.mdi-format-textdirection-r-to-l::before {\n  content: \"\\F0286\";\n}\n\n.mdi-format-title::before {\n  content: \"\\F05F4\";\n}\n\n.mdi-format-underline::before {\n  content: \"\\F0287\";\n}\n\n.mdi-format-vertical-align-bottom::before {\n  content: \"\\F0621\";\n}\n\n.mdi-format-vertical-align-center::before {\n  content: \"\\F0622\";\n}\n\n.mdi-format-vertical-align-top::before {\n  content: \"\\F0623\";\n}\n\n.mdi-format-wrap-inline::before {\n  content: \"\\F0288\";\n}\n\n.mdi-format-wrap-square::before {\n  content: \"\\F0289\";\n}\n\n.mdi-format-wrap-tight::before {\n  content: \"\\F028A\";\n}\n\n.mdi-format-wrap-top-bottom::before {\n  content: \"\\F028B\";\n}\n\n.mdi-forum::before {\n  content: \"\\F028C\";\n}\n\n.mdi-forum-outline::before {\n  content: \"\\F0822\";\n}\n\n.mdi-forward::before {\n  content: \"\\F028D\";\n}\n\n.mdi-forwardburger::before {\n  content: \"\\F0D75\";\n}\n\n.mdi-fountain::before {\n  content: \"\\F096B\";\n}\n\n.mdi-fountain-pen::before {\n  content: \"\\F0D12\";\n}\n\n.mdi-fountain-pen-tip::before {\n  content: \"\\F0D13\";\n}\n\n.mdi-freebsd::before {\n  content: \"\\F08E0\";\n}\n\n.mdi-frequently-asked-questions::before {\n  content: \"\\F0EB4\";\n}\n\n.mdi-fridge::before {\n  content: \"\\F0290\";\n}\n\n.mdi-fridge-alert::before {\n  content: \"\\F11B1\";\n}\n\n.mdi-fridge-alert-outline::before {\n  content: \"\\F11B2\";\n}\n\n.mdi-fridge-bottom::before {\n  content: \"\\F0292\";\n}\n\n.mdi-fridge-industrial::before {\n  content: \"\\F15EE\";\n}\n\n.mdi-fridge-industrial-alert::before {\n  content: \"\\F15EF\";\n}\n\n.mdi-fridge-industrial-alert-outline::before {\n  content: \"\\F15F0\";\n}\n\n.mdi-fridge-industrial-off::before {\n  content: \"\\F15F1\";\n}\n\n.mdi-fridge-industrial-off-outline::before {\n  content: \"\\F15F2\";\n}\n\n.mdi-fridge-industrial-outline::before {\n  content: \"\\F15F3\";\n}\n\n.mdi-fridge-off::before {\n  content: \"\\F11AF\";\n}\n\n.mdi-fridge-off-outline::before {\n  content: \"\\F11B0\";\n}\n\n.mdi-fridge-outline::before {\n  content: \"\\F028F\";\n}\n\n.mdi-fridge-top::before {\n  content: \"\\F0291\";\n}\n\n.mdi-fridge-variant::before {\n  content: \"\\F15F4\";\n}\n\n.mdi-fridge-variant-alert::before {\n  content: \"\\F15F5\";\n}\n\n.mdi-fridge-variant-alert-outline::before {\n  content: \"\\F15F6\";\n}\n\n.mdi-fridge-variant-off::before {\n  content: \"\\F15F7\";\n}\n\n.mdi-fridge-variant-off-outline::before {\n  content: \"\\F15F8\";\n}\n\n.mdi-fridge-variant-outline::before {\n  content: \"\\F15F9\";\n}\n\n.mdi-fruit-cherries::before {\n  content: \"\\F1042\";\n}\n\n.mdi-fruit-cherries-off::before {\n  content: \"\\F13F8\";\n}\n\n.mdi-fruit-citrus::before {\n  content: \"\\F1043\";\n}\n\n.mdi-fruit-citrus-off::before {\n  content: \"\\F13F9\";\n}\n\n.mdi-fruit-grapes::before {\n  content: \"\\F1044\";\n}\n\n.mdi-fruit-grapes-outline::before {\n  content: \"\\F1045\";\n}\n\n.mdi-fruit-pineapple::before {\n  content: \"\\F1046\";\n}\n\n.mdi-fruit-watermelon::before {\n  content: \"\\F1047\";\n}\n\n.mdi-fuel::before {\n  content: \"\\F07CA\";\n}\n\n.mdi-fullscreen::before {\n  content: \"\\F0293\";\n}\n\n.mdi-fullscreen-exit::before {\n  content: \"\\F0294\";\n}\n\n.mdi-function::before {\n  content: \"\\F0295\";\n}\n\n.mdi-function-variant::before {\n  content: \"\\F0871\";\n}\n\n.mdi-furigana-horizontal::before {\n  content: \"\\F1081\";\n}\n\n.mdi-furigana-vertical::before {\n  content: \"\\F1082\";\n}\n\n.mdi-fuse::before {\n  content: \"\\F0C85\";\n}\n\n.mdi-fuse-alert::before {\n  content: \"\\F142D\";\n}\n\n.mdi-fuse-blade::before {\n  content: \"\\F0C86\";\n}\n\n.mdi-fuse-off::before {\n  content: \"\\F142C\";\n}\n\n.mdi-gamepad::before {\n  content: \"\\F0296\";\n}\n\n.mdi-gamepad-circle::before {\n  content: \"\\F0E33\";\n}\n\n.mdi-gamepad-circle-down::before {\n  content: \"\\F0E34\";\n}\n\n.mdi-gamepad-circle-left::before {\n  content: \"\\F0E35\";\n}\n\n.mdi-gamepad-circle-outline::before {\n  content: \"\\F0E36\";\n}\n\n.mdi-gamepad-circle-right::before {\n  content: \"\\F0E37\";\n}\n\n.mdi-gamepad-circle-up::before {\n  content: \"\\F0E38\";\n}\n\n.mdi-gamepad-down::before {\n  content: \"\\F0E39\";\n}\n\n.mdi-gamepad-left::before {\n  content: \"\\F0E3A\";\n}\n\n.mdi-gamepad-right::before {\n  content: \"\\F0E3B\";\n}\n\n.mdi-gamepad-round::before {\n  content: \"\\F0E3C\";\n}\n\n.mdi-gamepad-round-down::before {\n  content: \"\\F0E3D\";\n}\n\n.mdi-gamepad-round-left::before {\n  content: \"\\F0E3E\";\n}\n\n.mdi-gamepad-round-outline::before {\n  content: \"\\F0E3F\";\n}\n\n.mdi-gamepad-round-right::before {\n  content: \"\\F0E40\";\n}\n\n.mdi-gamepad-round-up::before {\n  content: \"\\F0E41\";\n}\n\n.mdi-gamepad-square::before {\n  content: \"\\F0EB5\";\n}\n\n.mdi-gamepad-square-outline::before {\n  content: \"\\F0EB6\";\n}\n\n.mdi-gamepad-up::before {\n  content: \"\\F0E42\";\n}\n\n.mdi-gamepad-variant::before {\n  content: \"\\F0297\";\n}\n\n.mdi-gamepad-variant-outline::before {\n  content: \"\\F0EB7\";\n}\n\n.mdi-gamma::before {\n  content: \"\\F10EE\";\n}\n\n.mdi-gantry-crane::before {\n  content: \"\\F0DD1\";\n}\n\n.mdi-garage::before {\n  content: \"\\F06D9\";\n}\n\n.mdi-garage-alert::before {\n  content: \"\\F0872\";\n}\n\n.mdi-garage-alert-variant::before {\n  content: \"\\F12D5\";\n}\n\n.mdi-garage-open::before {\n  content: \"\\F06DA\";\n}\n\n.mdi-garage-open-variant::before {\n  content: \"\\F12D4\";\n}\n\n.mdi-garage-variant::before {\n  content: \"\\F12D3\";\n}\n\n.mdi-gas-cylinder::before {\n  content: \"\\F0647\";\n}\n\n.mdi-gas-station::before {\n  content: \"\\F0298\";\n}\n\n.mdi-gas-station-off::before {\n  content: \"\\F1409\";\n}\n\n.mdi-gas-station-off-outline::before {\n  content: \"\\F140A\";\n}\n\n.mdi-gas-station-outline::before {\n  content: \"\\F0EB8\";\n}\n\n.mdi-gate::before {\n  content: \"\\F0299\";\n}\n\n.mdi-gate-and::before {\n  content: \"\\F08E1\";\n}\n\n.mdi-gate-arrow-right::before {\n  content: \"\\F1169\";\n}\n\n.mdi-gate-nand::before {\n  content: \"\\F08E2\";\n}\n\n.mdi-gate-nor::before {\n  content: \"\\F08E3\";\n}\n\n.mdi-gate-not::before {\n  content: \"\\F08E4\";\n}\n\n.mdi-gate-open::before {\n  content: \"\\F116A\";\n}\n\n.mdi-gate-or::before {\n  content: \"\\F08E5\";\n}\n\n.mdi-gate-xnor::before {\n  content: \"\\F08E6\";\n}\n\n.mdi-gate-xor::before {\n  content: \"\\F08E7\";\n}\n\n.mdi-gatsby::before {\n  content: \"\\F0E43\";\n}\n\n.mdi-gauge::before {\n  content: \"\\F029A\";\n}\n\n.mdi-gauge-empty::before {\n  content: \"\\F0873\";\n}\n\n.mdi-gauge-full::before {\n  content: \"\\F0874\";\n}\n\n.mdi-gauge-low::before {\n  content: \"\\F0875\";\n}\n\n.mdi-gavel::before {\n  content: \"\\F029B\";\n}\n\n.mdi-gender-female::before {\n  content: \"\\F029C\";\n}\n\n.mdi-gender-male::before {\n  content: \"\\F029D\";\n}\n\n.mdi-gender-male-female::before {\n  content: \"\\F029E\";\n}\n\n.mdi-gender-male-female-variant::before {\n  content: \"\\F113F\";\n}\n\n.mdi-gender-non-binary::before {\n  content: \"\\F1140\";\n}\n\n.mdi-gender-transgender::before {\n  content: \"\\F029F\";\n}\n\n.mdi-gentoo::before {\n  content: \"\\F08E8\";\n}\n\n.mdi-gesture::before {\n  content: \"\\F07CB\";\n}\n\n.mdi-gesture-double-tap::before {\n  content: \"\\F073C\";\n}\n\n.mdi-gesture-pinch::before {\n  content: \"\\F0ABD\";\n}\n\n.mdi-gesture-spread::before {\n  content: \"\\F0ABE\";\n}\n\n.mdi-gesture-swipe::before {\n  content: \"\\F0D76\";\n}\n\n.mdi-gesture-swipe-down::before {\n  content: \"\\F073D\";\n}\n\n.mdi-gesture-swipe-horizontal::before {\n  content: \"\\F0ABF\";\n}\n\n.mdi-gesture-swipe-left::before {\n  content: \"\\F073E\";\n}\n\n.mdi-gesture-swipe-right::before {\n  content: \"\\F073F\";\n}\n\n.mdi-gesture-swipe-up::before {\n  content: \"\\F0740\";\n}\n\n.mdi-gesture-swipe-vertical::before {\n  content: \"\\F0AC0\";\n}\n\n.mdi-gesture-tap::before {\n  content: \"\\F0741\";\n}\n\n.mdi-gesture-tap-box::before {\n  content: \"\\F12A9\";\n}\n\n.mdi-gesture-tap-button::before {\n  content: \"\\F12A8\";\n}\n\n.mdi-gesture-tap-hold::before {\n  content: \"\\F0D77\";\n}\n\n.mdi-gesture-two-double-tap::before {\n  content: \"\\F0742\";\n}\n\n.mdi-gesture-two-tap::before {\n  content: \"\\F0743\";\n}\n\n.mdi-ghost::before {\n  content: \"\\F02A0\";\n}\n\n.mdi-ghost-off::before {\n  content: \"\\F09F5\";\n}\n\n.mdi-gif::before {\n  content: \"\\F0D78\";\n}\n\n.mdi-gift::before {\n  content: \"\\F0E44\";\n}\n\n.mdi-gift-outline::before {\n  content: \"\\F02A1\";\n}\n\n.mdi-git::before {\n  content: \"\\F02A2\";\n}\n\n.mdi-github::before {\n  content: \"\\F02A4\";\n}\n\n.mdi-gitlab::before {\n  content: \"\\F0BA0\";\n}\n\n.mdi-glass-cocktail::before {\n  content: \"\\F0356\";\n}\n\n.mdi-glass-cocktail-off::before {\n  content: \"\\F15E6\";\n}\n\n.mdi-glass-flute::before {\n  content: \"\\F02A5\";\n}\n\n.mdi-glass-mug::before {\n  content: \"\\F02A6\";\n}\n\n.mdi-glass-mug-off::before {\n  content: \"\\F15E7\";\n}\n\n.mdi-glass-mug-variant::before {\n  content: \"\\F1116\";\n}\n\n.mdi-glass-mug-variant-off::before {\n  content: \"\\F15E8\";\n}\n\n.mdi-glass-pint-outline::before {\n  content: \"\\F130D\";\n}\n\n.mdi-glass-stange::before {\n  content: \"\\F02A7\";\n}\n\n.mdi-glass-tulip::before {\n  content: \"\\F02A8\";\n}\n\n.mdi-glass-wine::before {\n  content: \"\\F0876\";\n}\n\n.mdi-glasses::before {\n  content: \"\\F02AA\";\n}\n\n.mdi-globe-light::before {\n  content: \"\\F12D7\";\n}\n\n.mdi-globe-model::before {\n  content: \"\\F08E9\";\n}\n\n.mdi-gmail::before {\n  content: \"\\F02AB\";\n}\n\n.mdi-gnome::before {\n  content: \"\\F02AC\";\n}\n\n.mdi-go-kart::before {\n  content: \"\\F0D79\";\n}\n\n.mdi-go-kart-track::before {\n  content: \"\\F0D7A\";\n}\n\n.mdi-gog::before {\n  content: \"\\F0BA1\";\n}\n\n.mdi-gold::before {\n  content: \"\\F124F\";\n}\n\n.mdi-golf::before {\n  content: \"\\F0823\";\n}\n\n.mdi-golf-cart::before {\n  content: \"\\F11A4\";\n}\n\n.mdi-golf-tee::before {\n  content: \"\\F1083\";\n}\n\n.mdi-gondola::before {\n  content: \"\\F0686\";\n}\n\n.mdi-goodreads::before {\n  content: \"\\F0D7B\";\n}\n\n.mdi-google::before {\n  content: \"\\F02AD\";\n}\n\n.mdi-google-ads::before {\n  content: \"\\F0C87\";\n}\n\n.mdi-google-analytics::before {\n  content: \"\\F07CC\";\n}\n\n.mdi-google-assistant::before {\n  content: \"\\F07CD\";\n}\n\n.mdi-google-cardboard::before {\n  content: \"\\F02AE\";\n}\n\n.mdi-google-chrome::before {\n  content: \"\\F02AF\";\n}\n\n.mdi-google-circles::before {\n  content: \"\\F02B0\";\n}\n\n.mdi-google-circles-communities::before {\n  content: \"\\F02B1\";\n}\n\n.mdi-google-circles-extended::before {\n  content: \"\\F02B2\";\n}\n\n.mdi-google-circles-group::before {\n  content: \"\\F02B3\";\n}\n\n.mdi-google-classroom::before {\n  content: \"\\F02C0\";\n}\n\n.mdi-google-cloud::before {\n  content: \"\\F11F6\";\n}\n\n.mdi-google-controller::before {\n  content: \"\\F02B4\";\n}\n\n.mdi-google-controller-off::before {\n  content: \"\\F02B5\";\n}\n\n.mdi-google-downasaur::before {\n  content: \"\\F1362\";\n}\n\n.mdi-google-drive::before {\n  content: \"\\F02B6\";\n}\n\n.mdi-google-earth::before {\n  content: \"\\F02B7\";\n}\n\n.mdi-google-fit::before {\n  content: \"\\F096C\";\n}\n\n.mdi-google-glass::before {\n  content: \"\\F02B8\";\n}\n\n.mdi-google-hangouts::before {\n  content: \"\\F02C9\";\n}\n\n.mdi-google-home::before {\n  content: \"\\F0824\";\n}\n\n.mdi-google-keep::before {\n  content: \"\\F06DC\";\n}\n\n.mdi-google-lens::before {\n  content: \"\\F09F6\";\n}\n\n.mdi-google-maps::before {\n  content: \"\\F05F5\";\n}\n\n.mdi-google-my-business::before {\n  content: \"\\F1048\";\n}\n\n.mdi-google-nearby::before {\n  content: \"\\F02B9\";\n}\n\n.mdi-google-photos::before {\n  content: \"\\F06DD\";\n}\n\n.mdi-google-play::before {\n  content: \"\\F02BC\";\n}\n\n.mdi-google-plus::before {\n  content: \"\\F02BD\";\n}\n\n.mdi-google-podcast::before {\n  content: \"\\F0EB9\";\n}\n\n.mdi-google-spreadsheet::before {\n  content: \"\\F09F7\";\n}\n\n.mdi-google-street-view::before {\n  content: \"\\F0C88\";\n}\n\n.mdi-google-translate::before {\n  content: \"\\F02BF\";\n}\n\n.mdi-gradient::before {\n  content: \"\\F06A0\";\n}\n\n.mdi-grain::before {\n  content: \"\\F0D7C\";\n}\n\n.mdi-graph::before {\n  content: \"\\F1049\";\n}\n\n.mdi-graph-outline::before {\n  content: \"\\F104A\";\n}\n\n.mdi-graphql::before {\n  content: \"\\F0877\";\n}\n\n.mdi-grass::before {\n  content: \"\\F1510\";\n}\n\n.mdi-grave-stone::before {\n  content: \"\\F0BA2\";\n}\n\n.mdi-grease-pencil::before {\n  content: \"\\F0648\";\n}\n\n.mdi-greater-than::before {\n  content: \"\\F096D\";\n}\n\n.mdi-greater-than-or-equal::before {\n  content: \"\\F096E\";\n}\n\n.mdi-grid::before {\n  content: \"\\F02C1\";\n}\n\n.mdi-grid-large::before {\n  content: \"\\F0758\";\n}\n\n.mdi-grid-off::before {\n  content: \"\\F02C2\";\n}\n\n.mdi-grill::before {\n  content: \"\\F0E45\";\n}\n\n.mdi-grill-outline::before {\n  content: \"\\F118A\";\n}\n\n.mdi-group::before {\n  content: \"\\F02C3\";\n}\n\n.mdi-guitar-acoustic::before {\n  content: \"\\F0771\";\n}\n\n.mdi-guitar-electric::before {\n  content: \"\\F02C4\";\n}\n\n.mdi-guitar-pick::before {\n  content: \"\\F02C5\";\n}\n\n.mdi-guitar-pick-outline::before {\n  content: \"\\F02C6\";\n}\n\n.mdi-guy-fawkes-mask::before {\n  content: \"\\F0825\";\n}\n\n.mdi-hail::before {\n  content: \"\\F0AC1\";\n}\n\n.mdi-hair-dryer::before {\n  content: \"\\F10EF\";\n}\n\n.mdi-hair-dryer-outline::before {\n  content: \"\\F10F0\";\n}\n\n.mdi-halloween::before {\n  content: \"\\F0BA3\";\n}\n\n.mdi-hamburger::before {\n  content: \"\\F0685\";\n}\n\n.mdi-hammer::before {\n  content: \"\\F08EA\";\n}\n\n.mdi-hammer-screwdriver::before {\n  content: \"\\F1322\";\n}\n\n.mdi-hammer-wrench::before {\n  content: \"\\F1323\";\n}\n\n.mdi-hand::before {\n  content: \"\\F0A4F\";\n}\n\n.mdi-hand-heart::before {\n  content: \"\\F10F1\";\n}\n\n.mdi-hand-heart-outline::before {\n  content: \"\\F157E\";\n}\n\n.mdi-hand-left::before {\n  content: \"\\F0E46\";\n}\n\n.mdi-hand-okay::before {\n  content: \"\\F0A50\";\n}\n\n.mdi-hand-peace::before {\n  content: \"\\F0A51\";\n}\n\n.mdi-hand-peace-variant::before {\n  content: \"\\F0A52\";\n}\n\n.mdi-hand-pointing-down::before {\n  content: \"\\F0A53\";\n}\n\n.mdi-hand-pointing-left::before {\n  content: \"\\F0A54\";\n}\n\n.mdi-hand-pointing-right::before {\n  content: \"\\F02C7\";\n}\n\n.mdi-hand-pointing-up::before {\n  content: \"\\F0A55\";\n}\n\n.mdi-hand-right::before {\n  content: \"\\F0E47\";\n}\n\n.mdi-hand-saw::before {\n  content: \"\\F0E48\";\n}\n\n.mdi-hand-wash::before {\n  content: \"\\F157F\";\n}\n\n.mdi-hand-wash-outline::before {\n  content: \"\\F1580\";\n}\n\n.mdi-hand-water::before {\n  content: \"\\F139F\";\n}\n\n.mdi-handball::before {\n  content: \"\\F0F53\";\n}\n\n.mdi-handcuffs::before {\n  content: \"\\F113E\";\n}\n\n.mdi-handshake::before {\n  content: \"\\F1218\";\n}\n\n.mdi-handshake-outline::before {\n  content: \"\\F15A1\";\n}\n\n.mdi-hanger::before {\n  content: \"\\F02C8\";\n}\n\n.mdi-hard-hat::before {\n  content: \"\\F096F\";\n}\n\n.mdi-harddisk::before {\n  content: \"\\F02CA\";\n}\n\n.mdi-harddisk-plus::before {\n  content: \"\\F104B\";\n}\n\n.mdi-harddisk-remove::before {\n  content: \"\\F104C\";\n}\n\n.mdi-hat-fedora::before {\n  content: \"\\F0BA4\";\n}\n\n.mdi-hazard-lights::before {\n  content: \"\\F0C89\";\n}\n\n.mdi-hdr::before {\n  content: \"\\F0D7D\";\n}\n\n.mdi-hdr-off::before {\n  content: \"\\F0D7E\";\n}\n\n.mdi-head::before {\n  content: \"\\F135E\";\n}\n\n.mdi-head-alert::before {\n  content: \"\\F1338\";\n}\n\n.mdi-head-alert-outline::before {\n  content: \"\\F1339\";\n}\n\n.mdi-head-check::before {\n  content: \"\\F133A\";\n}\n\n.mdi-head-check-outline::before {\n  content: \"\\F133B\";\n}\n\n.mdi-head-cog::before {\n  content: \"\\F133C\";\n}\n\n.mdi-head-cog-outline::before {\n  content: \"\\F133D\";\n}\n\n.mdi-head-dots-horizontal::before {\n  content: \"\\F133E\";\n}\n\n.mdi-head-dots-horizontal-outline::before {\n  content: \"\\F133F\";\n}\n\n.mdi-head-flash::before {\n  content: \"\\F1340\";\n}\n\n.mdi-head-flash-outline::before {\n  content: \"\\F1341\";\n}\n\n.mdi-head-heart::before {\n  content: \"\\F1342\";\n}\n\n.mdi-head-heart-outline::before {\n  content: \"\\F1343\";\n}\n\n.mdi-head-lightbulb::before {\n  content: \"\\F1344\";\n}\n\n.mdi-head-lightbulb-outline::before {\n  content: \"\\F1345\";\n}\n\n.mdi-head-minus::before {\n  content: \"\\F1346\";\n}\n\n.mdi-head-minus-outline::before {\n  content: \"\\F1347\";\n}\n\n.mdi-head-outline::before {\n  content: \"\\F135F\";\n}\n\n.mdi-head-plus::before {\n  content: \"\\F1348\";\n}\n\n.mdi-head-plus-outline::before {\n  content: \"\\F1349\";\n}\n\n.mdi-head-question::before {\n  content: \"\\F134A\";\n}\n\n.mdi-head-question-outline::before {\n  content: \"\\F134B\";\n}\n\n.mdi-head-remove::before {\n  content: \"\\F134C\";\n}\n\n.mdi-head-remove-outline::before {\n  content: \"\\F134D\";\n}\n\n.mdi-head-snowflake::before {\n  content: \"\\F134E\";\n}\n\n.mdi-head-snowflake-outline::before {\n  content: \"\\F134F\";\n}\n\n.mdi-head-sync::before {\n  content: \"\\F1350\";\n}\n\n.mdi-head-sync-outline::before {\n  content: \"\\F1351\";\n}\n\n.mdi-headphones::before {\n  content: \"\\F02CB\";\n}\n\n.mdi-headphones-bluetooth::before {\n  content: \"\\F0970\";\n}\n\n.mdi-headphones-box::before {\n  content: \"\\F02CC\";\n}\n\n.mdi-headphones-off::before {\n  content: \"\\F07CE\";\n}\n\n.mdi-headphones-settings::before {\n  content: \"\\F02CD\";\n}\n\n.mdi-headset::before {\n  content: \"\\F02CE\";\n}\n\n.mdi-headset-dock::before {\n  content: \"\\F02CF\";\n}\n\n.mdi-headset-off::before {\n  content: \"\\F02D0\";\n}\n\n.mdi-heart::before {\n  content: \"\\F02D1\";\n}\n\n.mdi-heart-box::before {\n  content: \"\\F02D2\";\n}\n\n.mdi-heart-box-outline::before {\n  content: \"\\F02D3\";\n}\n\n.mdi-heart-broken::before {\n  content: \"\\F02D4\";\n}\n\n.mdi-heart-broken-outline::before {\n  content: \"\\F0D14\";\n}\n\n.mdi-heart-circle::before {\n  content: \"\\F0971\";\n}\n\n.mdi-heart-circle-outline::before {\n  content: \"\\F0972\";\n}\n\n.mdi-heart-flash::before {\n  content: \"\\F0EF9\";\n}\n\n.mdi-heart-half::before {\n  content: \"\\F06DF\";\n}\n\n.mdi-heart-half-full::before {\n  content: \"\\F06DE\";\n}\n\n.mdi-heart-half-outline::before {\n  content: \"\\F06E0\";\n}\n\n.mdi-heart-minus::before {\n  content: \"\\F142F\";\n}\n\n.mdi-heart-minus-outline::before {\n  content: \"\\F1432\";\n}\n\n.mdi-heart-multiple::before {\n  content: \"\\F0A56\";\n}\n\n.mdi-heart-multiple-outline::before {\n  content: \"\\F0A57\";\n}\n\n.mdi-heart-off::before {\n  content: \"\\F0759\";\n}\n\n.mdi-heart-off-outline::before {\n  content: \"\\F1434\";\n}\n\n.mdi-heart-outline::before {\n  content: \"\\F02D5\";\n}\n\n.mdi-heart-plus::before {\n  content: \"\\F142E\";\n}\n\n.mdi-heart-plus-outline::before {\n  content: \"\\F1431\";\n}\n\n.mdi-heart-pulse::before {\n  content: \"\\F05F6\";\n}\n\n.mdi-heart-remove::before {\n  content: \"\\F1430\";\n}\n\n.mdi-heart-remove-outline::before {\n  content: \"\\F1433\";\n}\n\n.mdi-helicopter::before {\n  content: \"\\F0AC2\";\n}\n\n.mdi-help::before {\n  content: \"\\F02D6\";\n}\n\n.mdi-help-box::before {\n  content: \"\\F078B\";\n}\n\n.mdi-help-circle::before {\n  content: \"\\F02D7\";\n}\n\n.mdi-help-circle-outline::before {\n  content: \"\\F0625\";\n}\n\n.mdi-help-network::before {\n  content: \"\\F06F5\";\n}\n\n.mdi-help-network-outline::before {\n  content: \"\\F0C8A\";\n}\n\n.mdi-help-rhombus::before {\n  content: \"\\F0BA5\";\n}\n\n.mdi-help-rhombus-outline::before {\n  content: \"\\F0BA6\";\n}\n\n.mdi-hexadecimal::before {\n  content: \"\\F12A7\";\n}\n\n.mdi-hexagon::before {\n  content: \"\\F02D8\";\n}\n\n.mdi-hexagon-multiple::before {\n  content: \"\\F06E1\";\n}\n\n.mdi-hexagon-multiple-outline::before {\n  content: \"\\F10F2\";\n}\n\n.mdi-hexagon-outline::before {\n  content: \"\\F02D9\";\n}\n\n.mdi-hexagon-slice-1::before {\n  content: \"\\F0AC3\";\n}\n\n.mdi-hexagon-slice-2::before {\n  content: \"\\F0AC4\";\n}\n\n.mdi-hexagon-slice-3::before {\n  content: \"\\F0AC5\";\n}\n\n.mdi-hexagon-slice-4::before {\n  content: \"\\F0AC6\";\n}\n\n.mdi-hexagon-slice-5::before {\n  content: \"\\F0AC7\";\n}\n\n.mdi-hexagon-slice-6::before {\n  content: \"\\F0AC8\";\n}\n\n.mdi-hexagram::before {\n  content: \"\\F0AC9\";\n}\n\n.mdi-hexagram-outline::before {\n  content: \"\\F0ACA\";\n}\n\n.mdi-high-definition::before {\n  content: \"\\F07CF\";\n}\n\n.mdi-high-definition-box::before {\n  content: \"\\F0878\";\n}\n\n.mdi-highway::before {\n  content: \"\\F05F7\";\n}\n\n.mdi-hiking::before {\n  content: \"\\F0D7F\";\n}\n\n.mdi-hinduism::before {\n  content: \"\\F0973\";\n}\n\n.mdi-history::before {\n  content: \"\\F02DA\";\n}\n\n.mdi-hockey-puck::before {\n  content: \"\\F0879\";\n}\n\n.mdi-hockey-sticks::before {\n  content: \"\\F087A\";\n}\n\n.mdi-hololens::before {\n  content: \"\\F02DB\";\n}\n\n.mdi-home::before {\n  content: \"\\F02DC\";\n}\n\n.mdi-home-account::before {\n  content: \"\\F0826\";\n}\n\n.mdi-home-alert::before {\n  content: \"\\F087B\";\n}\n\n.mdi-home-alert-outline::before {\n  content: \"\\F15D0\";\n}\n\n.mdi-home-analytics::before {\n  content: \"\\F0EBA\";\n}\n\n.mdi-home-assistant::before {\n  content: \"\\F07D0\";\n}\n\n.mdi-home-automation::before {\n  content: \"\\F07D1\";\n}\n\n.mdi-home-circle::before {\n  content: \"\\F07D2\";\n}\n\n.mdi-home-circle-outline::before {\n  content: \"\\F104D\";\n}\n\n.mdi-home-city::before {\n  content: \"\\F0D15\";\n}\n\n.mdi-home-city-outline::before {\n  content: \"\\F0D16\";\n}\n\n.mdi-home-currency-usd::before {\n  content: \"\\F08AF\";\n}\n\n.mdi-home-edit::before {\n  content: \"\\F1159\";\n}\n\n.mdi-home-edit-outline::before {\n  content: \"\\F115A\";\n}\n\n.mdi-home-export-outline::before {\n  content: \"\\F0F9B\";\n}\n\n.mdi-home-flood::before {\n  content: \"\\F0EFA\";\n}\n\n.mdi-home-floor-0::before {\n  content: \"\\F0DD2\";\n}\n\n.mdi-home-floor-1::before {\n  content: \"\\F0D80\";\n}\n\n.mdi-home-floor-2::before {\n  content: \"\\F0D81\";\n}\n\n.mdi-home-floor-3::before {\n  content: \"\\F0D82\";\n}\n\n.mdi-home-floor-a::before {\n  content: \"\\F0D83\";\n}\n\n.mdi-home-floor-b::before {\n  content: \"\\F0D84\";\n}\n\n.mdi-home-floor-g::before {\n  content: \"\\F0D85\";\n}\n\n.mdi-home-floor-l::before {\n  content: \"\\F0D86\";\n}\n\n.mdi-home-floor-negative-1::before {\n  content: \"\\F0DD3\";\n}\n\n.mdi-home-group::before {\n  content: \"\\F0DD4\";\n}\n\n.mdi-home-heart::before {\n  content: \"\\F0827\";\n}\n\n.mdi-home-import-outline::before {\n  content: \"\\F0F9C\";\n}\n\n.mdi-home-lightbulb::before {\n  content: \"\\F1251\";\n}\n\n.mdi-home-lightbulb-outline::before {\n  content: \"\\F1252\";\n}\n\n.mdi-home-lock::before {\n  content: \"\\F08EB\";\n}\n\n.mdi-home-lock-open::before {\n  content: \"\\F08EC\";\n}\n\n.mdi-home-map-marker::before {\n  content: \"\\F05F8\";\n}\n\n.mdi-home-minus::before {\n  content: \"\\F0974\";\n}\n\n.mdi-home-minus-outline::before {\n  content: \"\\F13D5\";\n}\n\n.mdi-home-modern::before {\n  content: \"\\F02DD\";\n}\n\n.mdi-home-outline::before {\n  content: \"\\F06A1\";\n}\n\n.mdi-home-plus::before {\n  content: \"\\F0975\";\n}\n\n.mdi-home-plus-outline::before {\n  content: \"\\F13D6\";\n}\n\n.mdi-home-remove::before {\n  content: \"\\F1247\";\n}\n\n.mdi-home-remove-outline::before {\n  content: \"\\F13D7\";\n}\n\n.mdi-home-roof::before {\n  content: \"\\F112B\";\n}\n\n.mdi-home-search::before {\n  content: \"\\F13B0\";\n}\n\n.mdi-home-search-outline::before {\n  content: \"\\F13B1\";\n}\n\n.mdi-home-thermometer::before {\n  content: \"\\F0F54\";\n}\n\n.mdi-home-thermometer-outline::before {\n  content: \"\\F0F55\";\n}\n\n.mdi-home-variant::before {\n  content: \"\\F02DE\";\n}\n\n.mdi-home-variant-outline::before {\n  content: \"\\F0BA7\";\n}\n\n.mdi-hook::before {\n  content: \"\\F06E2\";\n}\n\n.mdi-hook-off::before {\n  content: \"\\F06E3\";\n}\n\n.mdi-hops::before {\n  content: \"\\F02DF\";\n}\n\n.mdi-horizontal-rotate-clockwise::before {\n  content: \"\\F10F3\";\n}\n\n.mdi-horizontal-rotate-counterclockwise::before {\n  content: \"\\F10F4\";\n}\n\n.mdi-horse::before {\n  content: \"\\F15BF\";\n}\n\n.mdi-horse-human::before {\n  content: \"\\F15C0\";\n}\n\n.mdi-horse-variant::before {\n  content: \"\\F15C1\";\n}\n\n.mdi-horseshoe::before {\n  content: \"\\F0A58\";\n}\n\n.mdi-hospital::before {\n  content: \"\\F0FF6\";\n}\n\n.mdi-hospital-box::before {\n  content: \"\\F02E0\";\n}\n\n.mdi-hospital-box-outline::before {\n  content: \"\\F0FF7\";\n}\n\n.mdi-hospital-building::before {\n  content: \"\\F02E1\";\n}\n\n.mdi-hospital-marker::before {\n  content: \"\\F02E2\";\n}\n\n.mdi-hot-tub::before {\n  content: \"\\F0828\";\n}\n\n.mdi-hours-24::before {\n  content: \"\\F1478\";\n}\n\n.mdi-hubspot::before {\n  content: \"\\F0D17\";\n}\n\n.mdi-hulu::before {\n  content: \"\\F0829\";\n}\n\n.mdi-human::before {\n  content: \"\\F02E6\";\n}\n\n.mdi-human-baby-changing-table::before {\n  content: \"\\F138B\";\n}\n\n.mdi-human-cane::before {\n  content: \"\\F1581\";\n}\n\n.mdi-human-capacity-decrease::before {\n  content: \"\\F159B\";\n}\n\n.mdi-human-capacity-increase::before {\n  content: \"\\F159C\";\n}\n\n.mdi-human-child::before {\n  content: \"\\F02E7\";\n}\n\n.mdi-human-edit::before {\n  content: \"\\F14E8\";\n}\n\n.mdi-human-female::before {\n  content: \"\\F0649\";\n}\n\n.mdi-human-female-boy::before {\n  content: \"\\F0A59\";\n}\n\n.mdi-human-female-dance::before {\n  content: \"\\F15C9\";\n}\n\n.mdi-human-female-female::before {\n  content: \"\\F0A5A\";\n}\n\n.mdi-human-female-girl::before {\n  content: \"\\F0A5B\";\n}\n\n.mdi-human-greeting::before {\n  content: \"\\F064A\";\n}\n\n.mdi-human-greeting-proximity::before {\n  content: \"\\F159D\";\n}\n\n.mdi-human-handsdown::before {\n  content: \"\\F064B\";\n}\n\n.mdi-human-handsup::before {\n  content: \"\\F064C\";\n}\n\n.mdi-human-male::before {\n  content: \"\\F064D\";\n}\n\n.mdi-human-male-boy::before {\n  content: \"\\F0A5C\";\n}\n\n.mdi-human-male-child::before {\n  content: \"\\F138C\";\n}\n\n.mdi-human-male-female::before {\n  content: \"\\F02E8\";\n}\n\n.mdi-human-male-girl::before {\n  content: \"\\F0A5D\";\n}\n\n.mdi-human-male-height::before {\n  content: \"\\F0EFB\";\n}\n\n.mdi-human-male-height-variant::before {\n  content: \"\\F0EFC\";\n}\n\n.mdi-human-male-male::before {\n  content: \"\\F0A5E\";\n}\n\n.mdi-human-pregnant::before {\n  content: \"\\F05CF\";\n}\n\n.mdi-human-queue::before {\n  content: \"\\F1571\";\n}\n\n.mdi-human-scooter::before {\n  content: \"\\F11E9\";\n}\n\n.mdi-human-wheelchair::before {\n  content: \"\\F138D\";\n}\n\n.mdi-humble-bundle::before {\n  content: \"\\F0744\";\n}\n\n.mdi-hvac::before {\n  content: \"\\F1352\";\n}\n\n.mdi-hvac-off::before {\n  content: \"\\F159E\";\n}\n\n.mdi-hydraulic-oil-level::before {\n  content: \"\\F1324\";\n}\n\n.mdi-hydraulic-oil-temperature::before {\n  content: \"\\F1325\";\n}\n\n.mdi-hydro-power::before {\n  content: \"\\F12E5\";\n}\n\n.mdi-ice-cream::before {\n  content: \"\\F082A\";\n}\n\n.mdi-ice-cream-off::before {\n  content: \"\\F0E52\";\n}\n\n.mdi-ice-pop::before {\n  content: \"\\F0EFD\";\n}\n\n.mdi-id-card::before {\n  content: \"\\F0FC0\";\n}\n\n.mdi-identifier::before {\n  content: \"\\F0EFE\";\n}\n\n.mdi-ideogram-cjk::before {\n  content: \"\\F1331\";\n}\n\n.mdi-ideogram-cjk-variant::before {\n  content: \"\\F1332\";\n}\n\n.mdi-iframe::before {\n  content: \"\\F0C8B\";\n}\n\n.mdi-iframe-array::before {\n  content: \"\\F10F5\";\n}\n\n.mdi-iframe-array-outline::before {\n  content: \"\\F10F6\";\n}\n\n.mdi-iframe-braces::before {\n  content: \"\\F10F7\";\n}\n\n.mdi-iframe-braces-outline::before {\n  content: \"\\F10F8\";\n}\n\n.mdi-iframe-outline::before {\n  content: \"\\F0C8C\";\n}\n\n.mdi-iframe-parentheses::before {\n  content: \"\\F10F9\";\n}\n\n.mdi-iframe-parentheses-outline::before {\n  content: \"\\F10FA\";\n}\n\n.mdi-iframe-variable::before {\n  content: \"\\F10FB\";\n}\n\n.mdi-iframe-variable-outline::before {\n  content: \"\\F10FC\";\n}\n\n.mdi-image::before {\n  content: \"\\F02E9\";\n}\n\n.mdi-image-album::before {\n  content: \"\\F02EA\";\n}\n\n.mdi-image-area::before {\n  content: \"\\F02EB\";\n}\n\n.mdi-image-area-close::before {\n  content: \"\\F02EC\";\n}\n\n.mdi-image-auto-adjust::before {\n  content: \"\\F0FC1\";\n}\n\n.mdi-image-broken::before {\n  content: \"\\F02ED\";\n}\n\n.mdi-image-broken-variant::before {\n  content: \"\\F02EE\";\n}\n\n.mdi-image-edit::before {\n  content: \"\\F11E3\";\n}\n\n.mdi-image-edit-outline::before {\n  content: \"\\F11E4\";\n}\n\n.mdi-image-filter-black-white::before {\n  content: \"\\F02F0\";\n}\n\n.mdi-image-filter-center-focus::before {\n  content: \"\\F02F1\";\n}\n\n.mdi-image-filter-center-focus-strong::before {\n  content: \"\\F0EFF\";\n}\n\n.mdi-image-filter-center-focus-strong-outline::before {\n  content: \"\\F0F00\";\n}\n\n.mdi-image-filter-center-focus-weak::before {\n  content: \"\\F02F2\";\n}\n\n.mdi-image-filter-drama::before {\n  content: \"\\F02F3\";\n}\n\n.mdi-image-filter-frames::before {\n  content: \"\\F02F4\";\n}\n\n.mdi-image-filter-hdr::before {\n  content: \"\\F02F5\";\n}\n\n.mdi-image-filter-none::before {\n  content: \"\\F02F6\";\n}\n\n.mdi-image-filter-tilt-shift::before {\n  content: \"\\F02F7\";\n}\n\n.mdi-image-filter-vintage::before {\n  content: \"\\F02F8\";\n}\n\n.mdi-image-frame::before {\n  content: \"\\F0E49\";\n}\n\n.mdi-image-minus::before {\n  content: \"\\F1419\";\n}\n\n.mdi-image-move::before {\n  content: \"\\F09F8\";\n}\n\n.mdi-image-multiple::before {\n  content: \"\\F02F9\";\n}\n\n.mdi-image-multiple-outline::before {\n  content: \"\\F02EF\";\n}\n\n.mdi-image-off::before {\n  content: \"\\F082B\";\n}\n\n.mdi-image-off-outline::before {\n  content: \"\\F11D1\";\n}\n\n.mdi-image-outline::before {\n  content: \"\\F0976\";\n}\n\n.mdi-image-plus::before {\n  content: \"\\F087C\";\n}\n\n.mdi-image-remove::before {\n  content: \"\\F1418\";\n}\n\n.mdi-image-search::before {\n  content: \"\\F0977\";\n}\n\n.mdi-image-search-outline::before {\n  content: \"\\F0978\";\n}\n\n.mdi-image-size-select-actual::before {\n  content: \"\\F0C8D\";\n}\n\n.mdi-image-size-select-large::before {\n  content: \"\\F0C8E\";\n}\n\n.mdi-image-size-select-small::before {\n  content: \"\\F0C8F\";\n}\n\n.mdi-image-text::before {\n  content: \"\\F160D\";\n}\n\n.mdi-import::before {\n  content: \"\\F02FA\";\n}\n\n.mdi-inbox::before {\n  content: \"\\F0687\";\n}\n\n.mdi-inbox-arrow-down::before {\n  content: \"\\F02FB\";\n}\n\n.mdi-inbox-arrow-down-outline::before {\n  content: \"\\F1270\";\n}\n\n.mdi-inbox-arrow-up::before {\n  content: \"\\F03D1\";\n}\n\n.mdi-inbox-arrow-up-outline::before {\n  content: \"\\F1271\";\n}\n\n.mdi-inbox-full::before {\n  content: \"\\F1272\";\n}\n\n.mdi-inbox-full-outline::before {\n  content: \"\\F1273\";\n}\n\n.mdi-inbox-multiple::before {\n  content: \"\\F08B0\";\n}\n\n.mdi-inbox-multiple-outline::before {\n  content: \"\\F0BA8\";\n}\n\n.mdi-inbox-outline::before {\n  content: \"\\F1274\";\n}\n\n.mdi-inbox-remove::before {\n  content: \"\\F159F\";\n}\n\n.mdi-inbox-remove-outline::before {\n  content: \"\\F15A0\";\n}\n\n.mdi-incognito::before {\n  content: \"\\F05F9\";\n}\n\n.mdi-incognito-circle::before {\n  content: \"\\F1421\";\n}\n\n.mdi-incognito-circle-off::before {\n  content: \"\\F1422\";\n}\n\n.mdi-incognito-off::before {\n  content: \"\\F0075\";\n}\n\n.mdi-infinity::before {\n  content: \"\\F06E4\";\n}\n\n.mdi-information::before {\n  content: \"\\F02FC\";\n}\n\n.mdi-information-outline::before {\n  content: \"\\F02FD\";\n}\n\n.mdi-information-variant::before {\n  content: \"\\F064E\";\n}\n\n.mdi-instagram::before {\n  content: \"\\F02FE\";\n}\n\n.mdi-instrument-triangle::before {\n  content: \"\\F104E\";\n}\n\n.mdi-invert-colors::before {\n  content: \"\\F0301\";\n}\n\n.mdi-invert-colors-off::before {\n  content: \"\\F0E4A\";\n}\n\n.mdi-iobroker::before {\n  content: \"\\F12E8\";\n}\n\n.mdi-ip::before {\n  content: \"\\F0A5F\";\n}\n\n.mdi-ip-network::before {\n  content: \"\\F0A60\";\n}\n\n.mdi-ip-network-outline::before {\n  content: \"\\F0C90\";\n}\n\n.mdi-ipod::before {\n  content: \"\\F0C91\";\n}\n\n.mdi-islam::before {\n  content: \"\\F0979\";\n}\n\n.mdi-island::before {\n  content: \"\\F104F\";\n}\n\n.mdi-iv-bag::before {\n  content: \"\\F10B9\";\n}\n\n.mdi-jabber::before {\n  content: \"\\F0DD5\";\n}\n\n.mdi-jeepney::before {\n  content: \"\\F0302\";\n}\n\n.mdi-jellyfish::before {\n  content: \"\\F0F01\";\n}\n\n.mdi-jellyfish-outline::before {\n  content: \"\\F0F02\";\n}\n\n.mdi-jira::before {\n  content: \"\\F0303\";\n}\n\n.mdi-jquery::before {\n  content: \"\\F087D\";\n}\n\n.mdi-jsfiddle::before {\n  content: \"\\F0304\";\n}\n\n.mdi-judaism::before {\n  content: \"\\F097A\";\n}\n\n.mdi-jump-rope::before {\n  content: \"\\F12FF\";\n}\n\n.mdi-kabaddi::before {\n  content: \"\\F0D87\";\n}\n\n.mdi-kangaroo::before {\n  content: \"\\F1558\";\n}\n\n.mdi-karate::before {\n  content: \"\\F082C\";\n}\n\n.mdi-keg::before {\n  content: \"\\F0305\";\n}\n\n.mdi-kettle::before {\n  content: \"\\F05FA\";\n}\n\n.mdi-kettle-alert::before {\n  content: \"\\F1317\";\n}\n\n.mdi-kettle-alert-outline::before {\n  content: \"\\F1318\";\n}\n\n.mdi-kettle-off::before {\n  content: \"\\F131B\";\n}\n\n.mdi-kettle-off-outline::before {\n  content: \"\\F131C\";\n}\n\n.mdi-kettle-outline::before {\n  content: \"\\F0F56\";\n}\n\n.mdi-kettle-steam::before {\n  content: \"\\F1319\";\n}\n\n.mdi-kettle-steam-outline::before {\n  content: \"\\F131A\";\n}\n\n.mdi-kettlebell::before {\n  content: \"\\F1300\";\n}\n\n.mdi-key::before {\n  content: \"\\F0306\";\n}\n\n.mdi-key-arrow-right::before {\n  content: \"\\F1312\";\n}\n\n.mdi-key-chain::before {\n  content: \"\\F1574\";\n}\n\n.mdi-key-chain-variant::before {\n  content: \"\\F1575\";\n}\n\n.mdi-key-change::before {\n  content: \"\\F0307\";\n}\n\n.mdi-key-link::before {\n  content: \"\\F119F\";\n}\n\n.mdi-key-minus::before {\n  content: \"\\F0308\";\n}\n\n.mdi-key-outline::before {\n  content: \"\\F0DD6\";\n}\n\n.mdi-key-plus::before {\n  content: \"\\F0309\";\n}\n\n.mdi-key-remove::before {\n  content: \"\\F030A\";\n}\n\n.mdi-key-star::before {\n  content: \"\\F119E\";\n}\n\n.mdi-key-variant::before {\n  content: \"\\F030B\";\n}\n\n.mdi-key-wireless::before {\n  content: \"\\F0FC2\";\n}\n\n.mdi-keyboard::before {\n  content: \"\\F030C\";\n}\n\n.mdi-keyboard-backspace::before {\n  content: \"\\F030D\";\n}\n\n.mdi-keyboard-caps::before {\n  content: \"\\F030E\";\n}\n\n.mdi-keyboard-close::before {\n  content: \"\\F030F\";\n}\n\n.mdi-keyboard-esc::before {\n  content: \"\\F12B7\";\n}\n\n.mdi-keyboard-f1::before {\n  content: \"\\F12AB\";\n}\n\n.mdi-keyboard-f10::before {\n  content: \"\\F12B4\";\n}\n\n.mdi-keyboard-f11::before {\n  content: \"\\F12B5\";\n}\n\n.mdi-keyboard-f12::before {\n  content: \"\\F12B6\";\n}\n\n.mdi-keyboard-f2::before {\n  content: \"\\F12AC\";\n}\n\n.mdi-keyboard-f3::before {\n  content: \"\\F12AD\";\n}\n\n.mdi-keyboard-f4::before {\n  content: \"\\F12AE\";\n}\n\n.mdi-keyboard-f5::before {\n  content: \"\\F12AF\";\n}\n\n.mdi-keyboard-f6::before {\n  content: \"\\F12B0\";\n}\n\n.mdi-keyboard-f7::before {\n  content: \"\\F12B1\";\n}\n\n.mdi-keyboard-f8::before {\n  content: \"\\F12B2\";\n}\n\n.mdi-keyboard-f9::before {\n  content: \"\\F12B3\";\n}\n\n.mdi-keyboard-off::before {\n  content: \"\\F0310\";\n}\n\n.mdi-keyboard-off-outline::before {\n  content: \"\\F0E4B\";\n}\n\n.mdi-keyboard-outline::before {\n  content: \"\\F097B\";\n}\n\n.mdi-keyboard-return::before {\n  content: \"\\F0311\";\n}\n\n.mdi-keyboard-settings::before {\n  content: \"\\F09F9\";\n}\n\n.mdi-keyboard-settings-outline::before {\n  content: \"\\F09FA\";\n}\n\n.mdi-keyboard-space::before {\n  content: \"\\F1050\";\n}\n\n.mdi-keyboard-tab::before {\n  content: \"\\F0312\";\n}\n\n.mdi-keyboard-variant::before {\n  content: \"\\F0313\";\n}\n\n.mdi-khanda::before {\n  content: \"\\F10FD\";\n}\n\n.mdi-kickstarter::before {\n  content: \"\\F0745\";\n}\n\n.mdi-klingon::before {\n  content: \"\\F135B\";\n}\n\n.mdi-knife::before {\n  content: \"\\F09FB\";\n}\n\n.mdi-knife-military::before {\n  content: \"\\F09FC\";\n}\n\n.mdi-kodi::before {\n  content: \"\\F0314\";\n}\n\n.mdi-kubernetes::before {\n  content: \"\\F10FE\";\n}\n\n.mdi-label::before {\n  content: \"\\F0315\";\n}\n\n.mdi-label-multiple::before {\n  content: \"\\F1375\";\n}\n\n.mdi-label-multiple-outline::before {\n  content: \"\\F1376\";\n}\n\n.mdi-label-off::before {\n  content: \"\\F0ACB\";\n}\n\n.mdi-label-off-outline::before {\n  content: \"\\F0ACC\";\n}\n\n.mdi-label-outline::before {\n  content: \"\\F0316\";\n}\n\n.mdi-label-percent::before {\n  content: \"\\F12EA\";\n}\n\n.mdi-label-percent-outline::before {\n  content: \"\\F12EB\";\n}\n\n.mdi-label-variant::before {\n  content: \"\\F0ACD\";\n}\n\n.mdi-label-variant-outline::before {\n  content: \"\\F0ACE\";\n}\n\n.mdi-ladder::before {\n  content: \"\\F15A2\";\n}\n\n.mdi-ladybug::before {\n  content: \"\\F082D\";\n}\n\n.mdi-lambda::before {\n  content: \"\\F0627\";\n}\n\n.mdi-lamp::before {\n  content: \"\\F06B5\";\n}\n\n.mdi-lamps::before {\n  content: \"\\F1576\";\n}\n\n.mdi-lan::before {\n  content: \"\\F0317\";\n}\n\n.mdi-lan-check::before {\n  content: \"\\F12AA\";\n}\n\n.mdi-lan-connect::before {\n  content: \"\\F0318\";\n}\n\n.mdi-lan-disconnect::before {\n  content: \"\\F0319\";\n}\n\n.mdi-lan-pending::before {\n  content: \"\\F031A\";\n}\n\n.mdi-language-c::before {\n  content: \"\\F0671\";\n}\n\n.mdi-language-cpp::before {\n  content: \"\\F0672\";\n}\n\n.mdi-language-csharp::before {\n  content: \"\\F031B\";\n}\n\n.mdi-language-css3::before {\n  content: \"\\F031C\";\n}\n\n.mdi-language-fortran::before {\n  content: \"\\F121A\";\n}\n\n.mdi-language-go::before {\n  content: \"\\F07D3\";\n}\n\n.mdi-language-haskell::before {\n  content: \"\\F0C92\";\n}\n\n.mdi-language-html5::before {\n  content: \"\\F031D\";\n}\n\n.mdi-language-java::before {\n  content: \"\\F0B37\";\n}\n\n.mdi-language-javascript::before {\n  content: \"\\F031E\";\n}\n\n.mdi-language-kotlin::before {\n  content: \"\\F1219\";\n}\n\n.mdi-language-lua::before {\n  content: \"\\F08B1\";\n}\n\n.mdi-language-markdown::before {\n  content: \"\\F0354\";\n}\n\n.mdi-language-markdown-outline::before {\n  content: \"\\F0F5B\";\n}\n\n.mdi-language-php::before {\n  content: \"\\F031F\";\n}\n\n.mdi-language-python::before {\n  content: \"\\F0320\";\n}\n\n.mdi-language-r::before {\n  content: \"\\F07D4\";\n}\n\n.mdi-language-ruby::before {\n  content: \"\\F0D2D\";\n}\n\n.mdi-language-ruby-on-rails::before {\n  content: \"\\F0ACF\";\n}\n\n.mdi-language-rust::before {\n  content: \"\\F1617\";\n}\n\n.mdi-language-swift::before {\n  content: \"\\F06E5\";\n}\n\n.mdi-language-typescript::before {\n  content: \"\\F06E6\";\n}\n\n.mdi-language-xaml::before {\n  content: \"\\F0673\";\n}\n\n.mdi-laptop::before {\n  content: \"\\F0322\";\n}\n\n.mdi-laptop-chromebook::before {\n  content: \"\\F0323\";\n}\n\n.mdi-laptop-mac::before {\n  content: \"\\F0324\";\n}\n\n.mdi-laptop-off::before {\n  content: \"\\F06E7\";\n}\n\n.mdi-laptop-windows::before {\n  content: \"\\F0325\";\n}\n\n.mdi-laravel::before {\n  content: \"\\F0AD0\";\n}\n\n.mdi-laser-pointer::before {\n  content: \"\\F1484\";\n}\n\n.mdi-lasso::before {\n  content: \"\\F0F03\";\n}\n\n.mdi-lastpass::before {\n  content: \"\\F0446\";\n}\n\n.mdi-latitude::before {\n  content: \"\\F0F57\";\n}\n\n.mdi-launch::before {\n  content: \"\\F0327\";\n}\n\n.mdi-lava-lamp::before {\n  content: \"\\F07D5\";\n}\n\n.mdi-layers::before {\n  content: \"\\F0328\";\n}\n\n.mdi-layers-minus::before {\n  content: \"\\F0E4C\";\n}\n\n.mdi-layers-off::before {\n  content: \"\\F0329\";\n}\n\n.mdi-layers-off-outline::before {\n  content: \"\\F09FD\";\n}\n\n.mdi-layers-outline::before {\n  content: \"\\F09FE\";\n}\n\n.mdi-layers-plus::before {\n  content: \"\\F0E4D\";\n}\n\n.mdi-layers-remove::before {\n  content: \"\\F0E4E\";\n}\n\n.mdi-layers-search::before {\n  content: \"\\F1206\";\n}\n\n.mdi-layers-search-outline::before {\n  content: \"\\F1207\";\n}\n\n.mdi-layers-triple::before {\n  content: \"\\F0F58\";\n}\n\n.mdi-layers-triple-outline::before {\n  content: \"\\F0F59\";\n}\n\n.mdi-lead-pencil::before {\n  content: \"\\F064F\";\n}\n\n.mdi-leaf::before {\n  content: \"\\F032A\";\n}\n\n.mdi-leaf-maple::before {\n  content: \"\\F0C93\";\n}\n\n.mdi-leaf-maple-off::before {\n  content: \"\\F12DA\";\n}\n\n.mdi-leaf-off::before {\n  content: \"\\F12D9\";\n}\n\n.mdi-leak::before {\n  content: \"\\F0DD7\";\n}\n\n.mdi-leak-off::before {\n  content: \"\\F0DD8\";\n}\n\n.mdi-led-off::before {\n  content: \"\\F032B\";\n}\n\n.mdi-led-on::before {\n  content: \"\\F032C\";\n}\n\n.mdi-led-outline::before {\n  content: \"\\F032D\";\n}\n\n.mdi-led-strip::before {\n  content: \"\\F07D6\";\n}\n\n.mdi-led-strip-variant::before {\n  content: \"\\F1051\";\n}\n\n.mdi-led-variant-off::before {\n  content: \"\\F032E\";\n}\n\n.mdi-led-variant-on::before {\n  content: \"\\F032F\";\n}\n\n.mdi-led-variant-outline::before {\n  content: \"\\F0330\";\n}\n\n.mdi-leek::before {\n  content: \"\\F117D\";\n}\n\n.mdi-less-than::before {\n  content: \"\\F097C\";\n}\n\n.mdi-less-than-or-equal::before {\n  content: \"\\F097D\";\n}\n\n.mdi-library::before {\n  content: \"\\F0331\";\n}\n\n.mdi-library-shelves::before {\n  content: \"\\F0BA9\";\n}\n\n.mdi-license::before {\n  content: \"\\F0FC3\";\n}\n\n.mdi-lifebuoy::before {\n  content: \"\\F087E\";\n}\n\n.mdi-light-switch::before {\n  content: \"\\F097E\";\n}\n\n.mdi-lightbulb::before {\n  content: \"\\F0335\";\n}\n\n.mdi-lightbulb-cfl::before {\n  content: \"\\F1208\";\n}\n\n.mdi-lightbulb-cfl-off::before {\n  content: \"\\F1209\";\n}\n\n.mdi-lightbulb-cfl-spiral::before {\n  content: \"\\F1275\";\n}\n\n.mdi-lightbulb-cfl-spiral-off::before {\n  content: \"\\F12C3\";\n}\n\n.mdi-lightbulb-group::before {\n  content: \"\\F1253\";\n}\n\n.mdi-lightbulb-group-off::before {\n  content: \"\\F12CD\";\n}\n\n.mdi-lightbulb-group-off-outline::before {\n  content: \"\\F12CE\";\n}\n\n.mdi-lightbulb-group-outline::before {\n  content: \"\\F1254\";\n}\n\n.mdi-lightbulb-multiple::before {\n  content: \"\\F1255\";\n}\n\n.mdi-lightbulb-multiple-off::before {\n  content: \"\\F12CF\";\n}\n\n.mdi-lightbulb-multiple-off-outline::before {\n  content: \"\\F12D0\";\n}\n\n.mdi-lightbulb-multiple-outline::before {\n  content: \"\\F1256\";\n}\n\n.mdi-lightbulb-off::before {\n  content: \"\\F0E4F\";\n}\n\n.mdi-lightbulb-off-outline::before {\n  content: \"\\F0E50\";\n}\n\n.mdi-lightbulb-on::before {\n  content: \"\\F06E8\";\n}\n\n.mdi-lightbulb-on-outline::before {\n  content: \"\\F06E9\";\n}\n\n.mdi-lightbulb-outline::before {\n  content: \"\\F0336\";\n}\n\n.mdi-lighthouse::before {\n  content: \"\\F09FF\";\n}\n\n.mdi-lighthouse-on::before {\n  content: \"\\F0A00\";\n}\n\n.mdi-lightning-bolt::before {\n  content: \"\\F140B\";\n}\n\n.mdi-lightning-bolt-outline::before {\n  content: \"\\F140C\";\n}\n\n.mdi-lingerie::before {\n  content: \"\\F1476\";\n}\n\n.mdi-link::before {\n  content: \"\\F0337\";\n}\n\n.mdi-link-box::before {\n  content: \"\\F0D1A\";\n}\n\n.mdi-link-box-outline::before {\n  content: \"\\F0D1B\";\n}\n\n.mdi-link-box-variant::before {\n  content: \"\\F0D1C\";\n}\n\n.mdi-link-box-variant-outline::before {\n  content: \"\\F0D1D\";\n}\n\n.mdi-link-lock::before {\n  content: \"\\F10BA\";\n}\n\n.mdi-link-off::before {\n  content: \"\\F0338\";\n}\n\n.mdi-link-plus::before {\n  content: \"\\F0C94\";\n}\n\n.mdi-link-variant::before {\n  content: \"\\F0339\";\n}\n\n.mdi-link-variant-minus::before {\n  content: \"\\F10FF\";\n}\n\n.mdi-link-variant-off::before {\n  content: \"\\F033A\";\n}\n\n.mdi-link-variant-plus::before {\n  content: \"\\F1100\";\n}\n\n.mdi-link-variant-remove::before {\n  content: \"\\F1101\";\n}\n\n.mdi-linkedin::before {\n  content: \"\\F033B\";\n}\n\n.mdi-linux::before {\n  content: \"\\F033D\";\n}\n\n.mdi-linux-mint::before {\n  content: \"\\F08ED\";\n}\n\n.mdi-lipstick::before {\n  content: \"\\F13B5\";\n}\n\n.mdi-list-status::before {\n  content: \"\\F15AB\";\n}\n\n.mdi-litecoin::before {\n  content: \"\\F0A61\";\n}\n\n.mdi-loading::before {\n  content: \"\\F0772\";\n}\n\n.mdi-location-enter::before {\n  content: \"\\F0FC4\";\n}\n\n.mdi-location-exit::before {\n  content: \"\\F0FC5\";\n}\n\n.mdi-lock::before {\n  content: \"\\F033E\";\n}\n\n.mdi-lock-alert::before {\n  content: \"\\F08EE\";\n}\n\n.mdi-lock-alert-outline::before {\n  content: \"\\F15D1\";\n}\n\n.mdi-lock-check::before {\n  content: \"\\F139A\";\n}\n\n.mdi-lock-clock::before {\n  content: \"\\F097F\";\n}\n\n.mdi-lock-open::before {\n  content: \"\\F033F\";\n}\n\n.mdi-lock-open-alert::before {\n  content: \"\\F139B\";\n}\n\n.mdi-lock-open-alert-outline::before {\n  content: \"\\F15D2\";\n}\n\n.mdi-lock-open-check::before {\n  content: \"\\F139C\";\n}\n\n.mdi-lock-open-outline::before {\n  content: \"\\F0340\";\n}\n\n.mdi-lock-open-variant::before {\n  content: \"\\F0FC6\";\n}\n\n.mdi-lock-open-variant-outline::before {\n  content: \"\\F0FC7\";\n}\n\n.mdi-lock-outline::before {\n  content: \"\\F0341\";\n}\n\n.mdi-lock-pattern::before {\n  content: \"\\F06EA\";\n}\n\n.mdi-lock-plus::before {\n  content: \"\\F05FB\";\n}\n\n.mdi-lock-question::before {\n  content: \"\\F08EF\";\n}\n\n.mdi-lock-reset::before {\n  content: \"\\F0773\";\n}\n\n.mdi-lock-smart::before {\n  content: \"\\F08B2\";\n}\n\n.mdi-locker::before {\n  content: \"\\F07D7\";\n}\n\n.mdi-locker-multiple::before {\n  content: \"\\F07D8\";\n}\n\n.mdi-login::before {\n  content: \"\\F0342\";\n}\n\n.mdi-login-variant::before {\n  content: \"\\F05FC\";\n}\n\n.mdi-logout::before {\n  content: \"\\F0343\";\n}\n\n.mdi-logout-variant::before {\n  content: \"\\F05FD\";\n}\n\n.mdi-longitude::before {\n  content: \"\\F0F5A\";\n}\n\n.mdi-looks::before {\n  content: \"\\F0344\";\n}\n\n.mdi-lotion::before {\n  content: \"\\F1582\";\n}\n\n.mdi-lotion-outline::before {\n  content: \"\\F1583\";\n}\n\n.mdi-lotion-plus::before {\n  content: \"\\F1584\";\n}\n\n.mdi-lotion-plus-outline::before {\n  content: \"\\F1585\";\n}\n\n.mdi-loupe::before {\n  content: \"\\F0345\";\n}\n\n.mdi-lumx::before {\n  content: \"\\F0346\";\n}\n\n.mdi-lungs::before {\n  content: \"\\F1084\";\n}\n\n.mdi-magnet::before {\n  content: \"\\F0347\";\n}\n\n.mdi-magnet-on::before {\n  content: \"\\F0348\";\n}\n\n.mdi-magnify::before {\n  content: \"\\F0349\";\n}\n\n.mdi-magnify-close::before {\n  content: \"\\F0980\";\n}\n\n.mdi-magnify-minus::before {\n  content: \"\\F034A\";\n}\n\n.mdi-magnify-minus-cursor::before {\n  content: \"\\F0A62\";\n}\n\n.mdi-magnify-minus-outline::before {\n  content: \"\\F06EC\";\n}\n\n.mdi-magnify-plus::before {\n  content: \"\\F034B\";\n}\n\n.mdi-magnify-plus-cursor::before {\n  content: \"\\F0A63\";\n}\n\n.mdi-magnify-plus-outline::before {\n  content: \"\\F06ED\";\n}\n\n.mdi-magnify-remove-cursor::before {\n  content: \"\\F120C\";\n}\n\n.mdi-magnify-remove-outline::before {\n  content: \"\\F120D\";\n}\n\n.mdi-magnify-scan::before {\n  content: \"\\F1276\";\n}\n\n.mdi-mail::before {\n  content: \"\\F0EBB\";\n}\n\n.mdi-mailbox::before {\n  content: \"\\F06EE\";\n}\n\n.mdi-mailbox-open::before {\n  content: \"\\F0D88\";\n}\n\n.mdi-mailbox-open-outline::before {\n  content: \"\\F0D89\";\n}\n\n.mdi-mailbox-open-up::before {\n  content: \"\\F0D8A\";\n}\n\n.mdi-mailbox-open-up-outline::before {\n  content: \"\\F0D8B\";\n}\n\n.mdi-mailbox-outline::before {\n  content: \"\\F0D8C\";\n}\n\n.mdi-mailbox-up::before {\n  content: \"\\F0D8D\";\n}\n\n.mdi-mailbox-up-outline::before {\n  content: \"\\F0D8E\";\n}\n\n.mdi-manjaro::before {\n  content: \"\\F160A\";\n}\n\n.mdi-map::before {\n  content: \"\\F034D\";\n}\n\n.mdi-map-check::before {\n  content: \"\\F0EBC\";\n}\n\n.mdi-map-check-outline::before {\n  content: \"\\F0EBD\";\n}\n\n.mdi-map-clock::before {\n  content: \"\\F0D1E\";\n}\n\n.mdi-map-clock-outline::before {\n  content: \"\\F0D1F\";\n}\n\n.mdi-map-legend::before {\n  content: \"\\F0A01\";\n}\n\n.mdi-map-marker::before {\n  content: \"\\F034E\";\n}\n\n.mdi-map-marker-alert::before {\n  content: \"\\F0F05\";\n}\n\n.mdi-map-marker-alert-outline::before {\n  content: \"\\F0F06\";\n}\n\n.mdi-map-marker-check::before {\n  content: \"\\F0C95\";\n}\n\n.mdi-map-marker-check-outline::before {\n  content: \"\\F12FB\";\n}\n\n.mdi-map-marker-circle::before {\n  content: \"\\F034F\";\n}\n\n.mdi-map-marker-distance::before {\n  content: \"\\F08F0\";\n}\n\n.mdi-map-marker-down::before {\n  content: \"\\F1102\";\n}\n\n.mdi-map-marker-left::before {\n  content: \"\\F12DB\";\n}\n\n.mdi-map-marker-left-outline::before {\n  content: \"\\F12DD\";\n}\n\n.mdi-map-marker-minus::before {\n  content: \"\\F0650\";\n}\n\n.mdi-map-marker-minus-outline::before {\n  content: \"\\F12F9\";\n}\n\n.mdi-map-marker-multiple::before {\n  content: \"\\F0350\";\n}\n\n.mdi-map-marker-multiple-outline::before {\n  content: \"\\F1277\";\n}\n\n.mdi-map-marker-off::before {\n  content: \"\\F0351\";\n}\n\n.mdi-map-marker-off-outline::before {\n  content: \"\\F12FD\";\n}\n\n.mdi-map-marker-outline::before {\n  content: \"\\F07D9\";\n}\n\n.mdi-map-marker-path::before {\n  content: \"\\F0D20\";\n}\n\n.mdi-map-marker-plus::before {\n  content: \"\\F0651\";\n}\n\n.mdi-map-marker-plus-outline::before {\n  content: \"\\F12F8\";\n}\n\n.mdi-map-marker-question::before {\n  content: \"\\F0F07\";\n}\n\n.mdi-map-marker-question-outline::before {\n  content: \"\\F0F08\";\n}\n\n.mdi-map-marker-radius::before {\n  content: \"\\F0352\";\n}\n\n.mdi-map-marker-radius-outline::before {\n  content: \"\\F12FC\";\n}\n\n.mdi-map-marker-remove::before {\n  content: \"\\F0F09\";\n}\n\n.mdi-map-marker-remove-outline::before {\n  content: \"\\F12FA\";\n}\n\n.mdi-map-marker-remove-variant::before {\n  content: \"\\F0F0A\";\n}\n\n.mdi-map-marker-right::before {\n  content: \"\\F12DC\";\n}\n\n.mdi-map-marker-right-outline::before {\n  content: \"\\F12DE\";\n}\n\n.mdi-map-marker-star::before {\n  content: \"\\F1608\";\n}\n\n.mdi-map-marker-star-outline::before {\n  content: \"\\F1609\";\n}\n\n.mdi-map-marker-up::before {\n  content: \"\\F1103\";\n}\n\n.mdi-map-minus::before {\n  content: \"\\F0981\";\n}\n\n.mdi-map-outline::before {\n  content: \"\\F0982\";\n}\n\n.mdi-map-plus::before {\n  content: \"\\F0983\";\n}\n\n.mdi-map-search::before {\n  content: \"\\F0984\";\n}\n\n.mdi-map-search-outline::before {\n  content: \"\\F0985\";\n}\n\n.mdi-mapbox::before {\n  content: \"\\F0BAA\";\n}\n\n.mdi-margin::before {\n  content: \"\\F0353\";\n}\n\n.mdi-marker::before {\n  content: \"\\F0652\";\n}\n\n.mdi-marker-cancel::before {\n  content: \"\\F0DD9\";\n}\n\n.mdi-marker-check::before {\n  content: \"\\F0355\";\n}\n\n.mdi-mastodon::before {\n  content: \"\\F0AD1\";\n}\n\n.mdi-material-design::before {\n  content: \"\\F0986\";\n}\n\n.mdi-material-ui::before {\n  content: \"\\F0357\";\n}\n\n.mdi-math-compass::before {\n  content: \"\\F0358\";\n}\n\n.mdi-math-cos::before {\n  content: \"\\F0C96\";\n}\n\n.mdi-math-integral::before {\n  content: \"\\F0FC8\";\n}\n\n.mdi-math-integral-box::before {\n  content: \"\\F0FC9\";\n}\n\n.mdi-math-log::before {\n  content: \"\\F1085\";\n}\n\n.mdi-math-norm::before {\n  content: \"\\F0FCA\";\n}\n\n.mdi-math-norm-box::before {\n  content: \"\\F0FCB\";\n}\n\n.mdi-math-sin::before {\n  content: \"\\F0C97\";\n}\n\n.mdi-math-tan::before {\n  content: \"\\F0C98\";\n}\n\n.mdi-matrix::before {\n  content: \"\\F0628\";\n}\n\n.mdi-medal::before {\n  content: \"\\F0987\";\n}\n\n.mdi-medal-outline::before {\n  content: \"\\F1326\";\n}\n\n.mdi-medical-bag::before {\n  content: \"\\F06EF\";\n}\n\n.mdi-meditation::before {\n  content: \"\\F117B\";\n}\n\n.mdi-memory::before {\n  content: \"\\F035B\";\n}\n\n.mdi-menu::before {\n  content: \"\\F035C\";\n}\n\n.mdi-menu-down::before {\n  content: \"\\F035D\";\n}\n\n.mdi-menu-down-outline::before {\n  content: \"\\F06B6\";\n}\n\n.mdi-menu-left::before {\n  content: \"\\F035E\";\n}\n\n.mdi-menu-left-outline::before {\n  content: \"\\F0A02\";\n}\n\n.mdi-menu-open::before {\n  content: \"\\F0BAB\";\n}\n\n.mdi-menu-right::before {\n  content: \"\\F035F\";\n}\n\n.mdi-menu-right-outline::before {\n  content: \"\\F0A03\";\n}\n\n.mdi-menu-swap::before {\n  content: \"\\F0A64\";\n}\n\n.mdi-menu-swap-outline::before {\n  content: \"\\F0A65\";\n}\n\n.mdi-menu-up::before {\n  content: \"\\F0360\";\n}\n\n.mdi-menu-up-outline::before {\n  content: \"\\F06B7\";\n}\n\n.mdi-merge::before {\n  content: \"\\F0F5C\";\n}\n\n.mdi-message::before {\n  content: \"\\F0361\";\n}\n\n.mdi-message-alert::before {\n  content: \"\\F0362\";\n}\n\n.mdi-message-alert-outline::before {\n  content: \"\\F0A04\";\n}\n\n.mdi-message-arrow-left::before {\n  content: \"\\F12F2\";\n}\n\n.mdi-message-arrow-left-outline::before {\n  content: \"\\F12F3\";\n}\n\n.mdi-message-arrow-right::before {\n  content: \"\\F12F4\";\n}\n\n.mdi-message-arrow-right-outline::before {\n  content: \"\\F12F5\";\n}\n\n.mdi-message-bookmark::before {\n  content: \"\\F15AC\";\n}\n\n.mdi-message-bookmark-outline::before {\n  content: \"\\F15AD\";\n}\n\n.mdi-message-bulleted::before {\n  content: \"\\F06A2\";\n}\n\n.mdi-message-bulleted-off::before {\n  content: \"\\F06A3\";\n}\n\n.mdi-message-cog::before {\n  content: \"\\F06F1\";\n}\n\n.mdi-message-cog-outline::before {\n  content: \"\\F1172\";\n}\n\n.mdi-message-draw::before {\n  content: \"\\F0363\";\n}\n\n.mdi-message-flash::before {\n  content: \"\\F15A9\";\n}\n\n.mdi-message-flash-outline::before {\n  content: \"\\F15AA\";\n}\n\n.mdi-message-image::before {\n  content: \"\\F0364\";\n}\n\n.mdi-message-image-outline::before {\n  content: \"\\F116C\";\n}\n\n.mdi-message-lock::before {\n  content: \"\\F0FCC\";\n}\n\n.mdi-message-lock-outline::before {\n  content: \"\\F116D\";\n}\n\n.mdi-message-minus::before {\n  content: \"\\F116E\";\n}\n\n.mdi-message-minus-outline::before {\n  content: \"\\F116F\";\n}\n\n.mdi-message-outline::before {\n  content: \"\\F0365\";\n}\n\n.mdi-message-plus::before {\n  content: \"\\F0653\";\n}\n\n.mdi-message-plus-outline::before {\n  content: \"\\F10BB\";\n}\n\n.mdi-message-processing::before {\n  content: \"\\F0366\";\n}\n\n.mdi-message-processing-outline::before {\n  content: \"\\F1170\";\n}\n\n.mdi-message-reply::before {\n  content: \"\\F0367\";\n}\n\n.mdi-message-reply-text::before {\n  content: \"\\F0368\";\n}\n\n.mdi-message-settings::before {\n  content: \"\\F06F0\";\n}\n\n.mdi-message-settings-outline::before {\n  content: \"\\F1171\";\n}\n\n.mdi-message-text::before {\n  content: \"\\F0369\";\n}\n\n.mdi-message-text-clock::before {\n  content: \"\\F1173\";\n}\n\n.mdi-message-text-clock-outline::before {\n  content: \"\\F1174\";\n}\n\n.mdi-message-text-lock::before {\n  content: \"\\F0FCD\";\n}\n\n.mdi-message-text-lock-outline::before {\n  content: \"\\F1175\";\n}\n\n.mdi-message-text-outline::before {\n  content: \"\\F036A\";\n}\n\n.mdi-message-video::before {\n  content: \"\\F036B\";\n}\n\n.mdi-meteor::before {\n  content: \"\\F0629\";\n}\n\n.mdi-metronome::before {\n  content: \"\\F07DA\";\n}\n\n.mdi-metronome-tick::before {\n  content: \"\\F07DB\";\n}\n\n.mdi-micro-sd::before {\n  content: \"\\F07DC\";\n}\n\n.mdi-microphone::before {\n  content: \"\\F036C\";\n}\n\n.mdi-microphone-minus::before {\n  content: \"\\F08B3\";\n}\n\n.mdi-microphone-off::before {\n  content: \"\\F036D\";\n}\n\n.mdi-microphone-outline::before {\n  content: \"\\F036E\";\n}\n\n.mdi-microphone-plus::before {\n  content: \"\\F08B4\";\n}\n\n.mdi-microphone-settings::before {\n  content: \"\\F036F\";\n}\n\n.mdi-microphone-variant::before {\n  content: \"\\F0370\";\n}\n\n.mdi-microphone-variant-off::before {\n  content: \"\\F0371\";\n}\n\n.mdi-microscope::before {\n  content: \"\\F0654\";\n}\n\n.mdi-microsoft::before {\n  content: \"\\F0372\";\n}\n\n.mdi-microsoft-access::before {\n  content: \"\\F138E\";\n}\n\n.mdi-microsoft-azure::before {\n  content: \"\\F0805\";\n}\n\n.mdi-microsoft-azure-devops::before {\n  content: \"\\F0FD5\";\n}\n\n.mdi-microsoft-bing::before {\n  content: \"\\F00A4\";\n}\n\n.mdi-microsoft-dynamics-365::before {\n  content: \"\\F0988\";\n}\n\n.mdi-microsoft-edge::before {\n  content: \"\\F01E9\";\n}\n\n.mdi-microsoft-edge-legacy::before {\n  content: \"\\F1250\";\n}\n\n.mdi-microsoft-excel::before {\n  content: \"\\F138F\";\n}\n\n.mdi-microsoft-internet-explorer::before {\n  content: \"\\F0300\";\n}\n\n.mdi-microsoft-office::before {\n  content: \"\\F03C6\";\n}\n\n.mdi-microsoft-onedrive::before {\n  content: \"\\F03CA\";\n}\n\n.mdi-microsoft-onenote::before {\n  content: \"\\F0747\";\n}\n\n.mdi-microsoft-outlook::before {\n  content: \"\\F0D22\";\n}\n\n.mdi-microsoft-powerpoint::before {\n  content: \"\\F1390\";\n}\n\n.mdi-microsoft-sharepoint::before {\n  content: \"\\F1391\";\n}\n\n.mdi-microsoft-teams::before {\n  content: \"\\F02BB\";\n}\n\n.mdi-microsoft-visual-studio::before {\n  content: \"\\F0610\";\n}\n\n.mdi-microsoft-visual-studio-code::before {\n  content: \"\\F0A1E\";\n}\n\n.mdi-microsoft-windows::before {\n  content: \"\\F05B3\";\n}\n\n.mdi-microsoft-windows-classic::before {\n  content: \"\\F0A21\";\n}\n\n.mdi-microsoft-word::before {\n  content: \"\\F1392\";\n}\n\n.mdi-microsoft-xbox::before {\n  content: \"\\F05B9\";\n}\n\n.mdi-microsoft-xbox-controller::before {\n  content: \"\\F05BA\";\n}\n\n.mdi-microsoft-xbox-controller-battery-alert::before {\n  content: \"\\F074B\";\n}\n\n.mdi-microsoft-xbox-controller-battery-charging::before {\n  content: \"\\F0A22\";\n}\n\n.mdi-microsoft-xbox-controller-battery-empty::before {\n  content: \"\\F074C\";\n}\n\n.mdi-microsoft-xbox-controller-battery-full::before {\n  content: \"\\F074D\";\n}\n\n.mdi-microsoft-xbox-controller-battery-low::before {\n  content: \"\\F074E\";\n}\n\n.mdi-microsoft-xbox-controller-battery-medium::before {\n  content: \"\\F074F\";\n}\n\n.mdi-microsoft-xbox-controller-battery-unknown::before {\n  content: \"\\F0750\";\n}\n\n.mdi-microsoft-xbox-controller-menu::before {\n  content: \"\\F0E6F\";\n}\n\n.mdi-microsoft-xbox-controller-off::before {\n  content: \"\\F05BB\";\n}\n\n.mdi-microsoft-xbox-controller-view::before {\n  content: \"\\F0E70\";\n}\n\n.mdi-microsoft-yammer::before {\n  content: \"\\F0789\";\n}\n\n.mdi-microwave::before {\n  content: \"\\F0C99\";\n}\n\n.mdi-microwave-off::before {\n  content: \"\\F1423\";\n}\n\n.mdi-middleware::before {\n  content: \"\\F0F5D\";\n}\n\n.mdi-middleware-outline::before {\n  content: \"\\F0F5E\";\n}\n\n.mdi-midi::before {\n  content: \"\\F08F1\";\n}\n\n.mdi-midi-port::before {\n  content: \"\\F08F2\";\n}\n\n.mdi-mine::before {\n  content: \"\\F0DDA\";\n}\n\n.mdi-minecraft::before {\n  content: \"\\F0373\";\n}\n\n.mdi-mini-sd::before {\n  content: \"\\F0A05\";\n}\n\n.mdi-minidisc::before {\n  content: \"\\F0A06\";\n}\n\n.mdi-minus::before {\n  content: \"\\F0374\";\n}\n\n.mdi-minus-box::before {\n  content: \"\\F0375\";\n}\n\n.mdi-minus-box-multiple::before {\n  content: \"\\F1141\";\n}\n\n.mdi-minus-box-multiple-outline::before {\n  content: \"\\F1142\";\n}\n\n.mdi-minus-box-outline::before {\n  content: \"\\F06F2\";\n}\n\n.mdi-minus-circle::before {\n  content: \"\\F0376\";\n}\n\n.mdi-minus-circle-multiple::before {\n  content: \"\\F035A\";\n}\n\n.mdi-minus-circle-multiple-outline::before {\n  content: \"\\F0AD3\";\n}\n\n.mdi-minus-circle-off::before {\n  content: \"\\F1459\";\n}\n\n.mdi-minus-circle-off-outline::before {\n  content: \"\\F145A\";\n}\n\n.mdi-minus-circle-outline::before {\n  content: \"\\F0377\";\n}\n\n.mdi-minus-network::before {\n  content: \"\\F0378\";\n}\n\n.mdi-minus-network-outline::before {\n  content: \"\\F0C9A\";\n}\n\n.mdi-mirror::before {\n  content: \"\\F11FD\";\n}\n\n.mdi-mixed-martial-arts::before {\n  content: \"\\F0D8F\";\n}\n\n.mdi-mixed-reality::before {\n  content: \"\\F087F\";\n}\n\n.mdi-molecule::before {\n  content: \"\\F0BAC\";\n}\n\n.mdi-molecule-co::before {\n  content: \"\\F12FE\";\n}\n\n.mdi-molecule-co2::before {\n  content: \"\\F07E4\";\n}\n\n.mdi-monitor::before {\n  content: \"\\F0379\";\n}\n\n.mdi-monitor-cellphone::before {\n  content: \"\\F0989\";\n}\n\n.mdi-monitor-cellphone-star::before {\n  content: \"\\F098A\";\n}\n\n.mdi-monitor-clean::before {\n  content: \"\\F1104\";\n}\n\n.mdi-monitor-dashboard::before {\n  content: \"\\F0A07\";\n}\n\n.mdi-monitor-edit::before {\n  content: \"\\F12C6\";\n}\n\n.mdi-monitor-eye::before {\n  content: \"\\F13B4\";\n}\n\n.mdi-monitor-lock::before {\n  content: \"\\F0DDB\";\n}\n\n.mdi-monitor-multiple::before {\n  content: \"\\F037A\";\n}\n\n.mdi-monitor-off::before {\n  content: \"\\F0D90\";\n}\n\n.mdi-monitor-screenshot::before {\n  content: \"\\F0E51\";\n}\n\n.mdi-monitor-share::before {\n  content: \"\\F1483\";\n}\n\n.mdi-monitor-speaker::before {\n  content: \"\\F0F5F\";\n}\n\n.mdi-monitor-speaker-off::before {\n  content: \"\\F0F60\";\n}\n\n.mdi-monitor-star::before {\n  content: \"\\F0DDC\";\n}\n\n.mdi-moon-first-quarter::before {\n  content: \"\\F0F61\";\n}\n\n.mdi-moon-full::before {\n  content: \"\\F0F62\";\n}\n\n.mdi-moon-last-quarter::before {\n  content: \"\\F0F63\";\n}\n\n.mdi-moon-new::before {\n  content: \"\\F0F64\";\n}\n\n.mdi-moon-waning-crescent::before {\n  content: \"\\F0F65\";\n}\n\n.mdi-moon-waning-gibbous::before {\n  content: \"\\F0F66\";\n}\n\n.mdi-moon-waxing-crescent::before {\n  content: \"\\F0F67\";\n}\n\n.mdi-moon-waxing-gibbous::before {\n  content: \"\\F0F68\";\n}\n\n.mdi-moped::before {\n  content: \"\\F1086\";\n}\n\n.mdi-moped-electric::before {\n  content: \"\\F15B7\";\n}\n\n.mdi-moped-electric-outline::before {\n  content: \"\\F15B8\";\n}\n\n.mdi-moped-outline::before {\n  content: \"\\F15B9\";\n}\n\n.mdi-more::before {\n  content: \"\\F037B\";\n}\n\n.mdi-mother-heart::before {\n  content: \"\\F1314\";\n}\n\n.mdi-mother-nurse::before {\n  content: \"\\F0D21\";\n}\n\n.mdi-motion::before {\n  content: \"\\F15B2\";\n}\n\n.mdi-motion-outline::before {\n  content: \"\\F15B3\";\n}\n\n.mdi-motion-pause::before {\n  content: \"\\F1590\";\n}\n\n.mdi-motion-pause-outline::before {\n  content: \"\\F1592\";\n}\n\n.mdi-motion-play::before {\n  content: \"\\F158F\";\n}\n\n.mdi-motion-play-outline::before {\n  content: \"\\F1591\";\n}\n\n.mdi-motion-sensor::before {\n  content: \"\\F0D91\";\n}\n\n.mdi-motion-sensor-off::before {\n  content: \"\\F1435\";\n}\n\n.mdi-motorbike::before {\n  content: \"\\F037C\";\n}\n\n.mdi-motorbike-electric::before {\n  content: \"\\F15BA\";\n}\n\n.mdi-mouse::before {\n  content: \"\\F037D\";\n}\n\n.mdi-mouse-bluetooth::before {\n  content: \"\\F098B\";\n}\n\n.mdi-mouse-move-down::before {\n  content: \"\\F1550\";\n}\n\n.mdi-mouse-move-up::before {\n  content: \"\\F1551\";\n}\n\n.mdi-mouse-move-vertical::before {\n  content: \"\\F1552\";\n}\n\n.mdi-mouse-off::before {\n  content: \"\\F037E\";\n}\n\n.mdi-mouse-variant::before {\n  content: \"\\F037F\";\n}\n\n.mdi-mouse-variant-off::before {\n  content: \"\\F0380\";\n}\n\n.mdi-move-resize::before {\n  content: \"\\F0655\";\n}\n\n.mdi-move-resize-variant::before {\n  content: \"\\F0656\";\n}\n\n.mdi-movie::before {\n  content: \"\\F0381\";\n}\n\n.mdi-movie-edit::before {\n  content: \"\\F1122\";\n}\n\n.mdi-movie-edit-outline::before {\n  content: \"\\F1123\";\n}\n\n.mdi-movie-filter::before {\n  content: \"\\F1124\";\n}\n\n.mdi-movie-filter-outline::before {\n  content: \"\\F1125\";\n}\n\n.mdi-movie-open::before {\n  content: \"\\F0FCE\";\n}\n\n.mdi-movie-open-outline::before {\n  content: \"\\F0FCF\";\n}\n\n.mdi-movie-outline::before {\n  content: \"\\F0DDD\";\n}\n\n.mdi-movie-roll::before {\n  content: \"\\F07DE\";\n}\n\n.mdi-movie-search::before {\n  content: \"\\F11D2\";\n}\n\n.mdi-movie-search-outline::before {\n  content: \"\\F11D3\";\n}\n\n.mdi-muffin::before {\n  content: \"\\F098C\";\n}\n\n.mdi-multiplication::before {\n  content: \"\\F0382\";\n}\n\n.mdi-multiplication-box::before {\n  content: \"\\F0383\";\n}\n\n.mdi-mushroom::before {\n  content: \"\\F07DF\";\n}\n\n.mdi-mushroom-off::before {\n  content: \"\\F13FA\";\n}\n\n.mdi-mushroom-off-outline::before {\n  content: \"\\F13FB\";\n}\n\n.mdi-mushroom-outline::before {\n  content: \"\\F07E0\";\n}\n\n.mdi-music::before {\n  content: \"\\F075A\";\n}\n\n.mdi-music-accidental-double-flat::before {\n  content: \"\\F0F69\";\n}\n\n.mdi-music-accidental-double-sharp::before {\n  content: \"\\F0F6A\";\n}\n\n.mdi-music-accidental-flat::before {\n  content: \"\\F0F6B\";\n}\n\n.mdi-music-accidental-natural::before {\n  content: \"\\F0F6C\";\n}\n\n.mdi-music-accidental-sharp::before {\n  content: \"\\F0F6D\";\n}\n\n.mdi-music-box::before {\n  content: \"\\F0384\";\n}\n\n.mdi-music-box-multiple::before {\n  content: \"\\F0333\";\n}\n\n.mdi-music-box-multiple-outline::before {\n  content: \"\\F0F04\";\n}\n\n.mdi-music-box-outline::before {\n  content: \"\\F0385\";\n}\n\n.mdi-music-circle::before {\n  content: \"\\F0386\";\n}\n\n.mdi-music-circle-outline::before {\n  content: \"\\F0AD4\";\n}\n\n.mdi-music-clef-alto::before {\n  content: \"\\F0F6E\";\n}\n\n.mdi-music-clef-bass::before {\n  content: \"\\F0F6F\";\n}\n\n.mdi-music-clef-treble::before {\n  content: \"\\F0F70\";\n}\n\n.mdi-music-note::before {\n  content: \"\\F0387\";\n}\n\n.mdi-music-note-bluetooth::before {\n  content: \"\\F05FE\";\n}\n\n.mdi-music-note-bluetooth-off::before {\n  content: \"\\F05FF\";\n}\n\n.mdi-music-note-eighth::before {\n  content: \"\\F0388\";\n}\n\n.mdi-music-note-eighth-dotted::before {\n  content: \"\\F0F71\";\n}\n\n.mdi-music-note-half::before {\n  content: \"\\F0389\";\n}\n\n.mdi-music-note-half-dotted::before {\n  content: \"\\F0F72\";\n}\n\n.mdi-music-note-off::before {\n  content: \"\\F038A\";\n}\n\n.mdi-music-note-off-outline::before {\n  content: \"\\F0F73\";\n}\n\n.mdi-music-note-outline::before {\n  content: \"\\F0F74\";\n}\n\n.mdi-music-note-plus::before {\n  content: \"\\F0DDE\";\n}\n\n.mdi-music-note-quarter::before {\n  content: \"\\F038B\";\n}\n\n.mdi-music-note-quarter-dotted::before {\n  content: \"\\F0F75\";\n}\n\n.mdi-music-note-sixteenth::before {\n  content: \"\\F038C\";\n}\n\n.mdi-music-note-sixteenth-dotted::before {\n  content: \"\\F0F76\";\n}\n\n.mdi-music-note-whole::before {\n  content: \"\\F038D\";\n}\n\n.mdi-music-note-whole-dotted::before {\n  content: \"\\F0F77\";\n}\n\n.mdi-music-off::before {\n  content: \"\\F075B\";\n}\n\n.mdi-music-rest-eighth::before {\n  content: \"\\F0F78\";\n}\n\n.mdi-music-rest-half::before {\n  content: \"\\F0F79\";\n}\n\n.mdi-music-rest-quarter::before {\n  content: \"\\F0F7A\";\n}\n\n.mdi-music-rest-sixteenth::before {\n  content: \"\\F0F7B\";\n}\n\n.mdi-music-rest-whole::before {\n  content: \"\\F0F7C\";\n}\n\n.mdi-mustache::before {\n  content: \"\\F15DE\";\n}\n\n.mdi-nail::before {\n  content: \"\\F0DDF\";\n}\n\n.mdi-nas::before {\n  content: \"\\F08F3\";\n}\n\n.mdi-nativescript::before {\n  content: \"\\F0880\";\n}\n\n.mdi-nature::before {\n  content: \"\\F038E\";\n}\n\n.mdi-nature-people::before {\n  content: \"\\F038F\";\n}\n\n.mdi-navigation::before {\n  content: \"\\F0390\";\n}\n\n.mdi-navigation-outline::before {\n  content: \"\\F1607\";\n}\n\n.mdi-near-me::before {\n  content: \"\\F05CD\";\n}\n\n.mdi-necklace::before {\n  content: \"\\F0F0B\";\n}\n\n.mdi-needle::before {\n  content: \"\\F0391\";\n}\n\n.mdi-netflix::before {\n  content: \"\\F0746\";\n}\n\n.mdi-network::before {\n  content: \"\\F06F3\";\n}\n\n.mdi-network-off::before {\n  content: \"\\F0C9B\";\n}\n\n.mdi-network-off-outline::before {\n  content: \"\\F0C9C\";\n}\n\n.mdi-network-outline::before {\n  content: \"\\F0C9D\";\n}\n\n.mdi-network-strength-1::before {\n  content: \"\\F08F4\";\n}\n\n.mdi-network-strength-1-alert::before {\n  content: \"\\F08F5\";\n}\n\n.mdi-network-strength-2::before {\n  content: \"\\F08F6\";\n}\n\n.mdi-network-strength-2-alert::before {\n  content: \"\\F08F7\";\n}\n\n.mdi-network-strength-3::before {\n  content: \"\\F08F8\";\n}\n\n.mdi-network-strength-3-alert::before {\n  content: \"\\F08F9\";\n}\n\n.mdi-network-strength-4::before {\n  content: \"\\F08FA\";\n}\n\n.mdi-network-strength-4-alert::before {\n  content: \"\\F08FB\";\n}\n\n.mdi-network-strength-off::before {\n  content: \"\\F08FC\";\n}\n\n.mdi-network-strength-off-outline::before {\n  content: \"\\F08FD\";\n}\n\n.mdi-network-strength-outline::before {\n  content: \"\\F08FE\";\n}\n\n.mdi-new-box::before {\n  content: \"\\F0394\";\n}\n\n.mdi-newspaper::before {\n  content: \"\\F0395\";\n}\n\n.mdi-newspaper-minus::before {\n  content: \"\\F0F0C\";\n}\n\n.mdi-newspaper-plus::before {\n  content: \"\\F0F0D\";\n}\n\n.mdi-newspaper-variant::before {\n  content: \"\\F1001\";\n}\n\n.mdi-newspaper-variant-multiple::before {\n  content: \"\\F1002\";\n}\n\n.mdi-newspaper-variant-multiple-outline::before {\n  content: \"\\F1003\";\n}\n\n.mdi-newspaper-variant-outline::before {\n  content: \"\\F1004\";\n}\n\n.mdi-nfc::before {\n  content: \"\\F0396\";\n}\n\n.mdi-nfc-search-variant::before {\n  content: \"\\F0E53\";\n}\n\n.mdi-nfc-tap::before {\n  content: \"\\F0397\";\n}\n\n.mdi-nfc-variant::before {\n  content: \"\\F0398\";\n}\n\n.mdi-nfc-variant-off::before {\n  content: \"\\F0E54\";\n}\n\n.mdi-ninja::before {\n  content: \"\\F0774\";\n}\n\n.mdi-nintendo-game-boy::before {\n  content: \"\\F1393\";\n}\n\n.mdi-nintendo-switch::before {\n  content: \"\\F07E1\";\n}\n\n.mdi-nintendo-wii::before {\n  content: \"\\F05AB\";\n}\n\n.mdi-nintendo-wiiu::before {\n  content: \"\\F072D\";\n}\n\n.mdi-nix::before {\n  content: \"\\F1105\";\n}\n\n.mdi-nodejs::before {\n  content: \"\\F0399\";\n}\n\n.mdi-noodles::before {\n  content: \"\\F117E\";\n}\n\n.mdi-not-equal::before {\n  content: \"\\F098D\";\n}\n\n.mdi-not-equal-variant::before {\n  content: \"\\F098E\";\n}\n\n.mdi-note::before {\n  content: \"\\F039A\";\n}\n\n.mdi-note-multiple::before {\n  content: \"\\F06B8\";\n}\n\n.mdi-note-multiple-outline::before {\n  content: \"\\F06B9\";\n}\n\n.mdi-note-outline::before {\n  content: \"\\F039B\";\n}\n\n.mdi-note-plus::before {\n  content: \"\\F039C\";\n}\n\n.mdi-note-plus-outline::before {\n  content: \"\\F039D\";\n}\n\n.mdi-note-text::before {\n  content: \"\\F039E\";\n}\n\n.mdi-note-text-outline::before {\n  content: \"\\F11D7\";\n}\n\n.mdi-notebook::before {\n  content: \"\\F082E\";\n}\n\n.mdi-notebook-check::before {\n  content: \"\\F14F5\";\n}\n\n.mdi-notebook-check-outline::before {\n  content: \"\\F14F6\";\n}\n\n.mdi-notebook-edit::before {\n  content: \"\\F14E7\";\n}\n\n.mdi-notebook-edit-outline::before {\n  content: \"\\F14E9\";\n}\n\n.mdi-notebook-minus::before {\n  content: \"\\F1610\";\n}\n\n.mdi-notebook-minus-outline::before {\n  content: \"\\F1611\";\n}\n\n.mdi-notebook-multiple::before {\n  content: \"\\F0E55\";\n}\n\n.mdi-notebook-outline::before {\n  content: \"\\F0EBF\";\n}\n\n.mdi-notebook-plus::before {\n  content: \"\\F1612\";\n}\n\n.mdi-notebook-plus-outline::before {\n  content: \"\\F1613\";\n}\n\n.mdi-notebook-remove::before {\n  content: \"\\F1614\";\n}\n\n.mdi-notebook-remove-outline::before {\n  content: \"\\F1615\";\n}\n\n.mdi-notification-clear-all::before {\n  content: \"\\F039F\";\n}\n\n.mdi-npm::before {\n  content: \"\\F06F7\";\n}\n\n.mdi-nuke::before {\n  content: \"\\F06A4\";\n}\n\n.mdi-null::before {\n  content: \"\\F07E2\";\n}\n\n.mdi-numeric::before {\n  content: \"\\F03A0\";\n}\n\n.mdi-numeric-0::before {\n  content: \"\\F0B39\";\n}\n\n.mdi-numeric-0-box::before {\n  content: \"\\F03A1\";\n}\n\n.mdi-numeric-0-box-multiple::before {\n  content: \"\\F0F0E\";\n}\n\n.mdi-numeric-0-box-multiple-outline::before {\n  content: \"\\F03A2\";\n}\n\n.mdi-numeric-0-box-outline::before {\n  content: \"\\F03A3\";\n}\n\n.mdi-numeric-0-circle::before {\n  content: \"\\F0C9E\";\n}\n\n.mdi-numeric-0-circle-outline::before {\n  content: \"\\F0C9F\";\n}\n\n.mdi-numeric-1::before {\n  content: \"\\F0B3A\";\n}\n\n.mdi-numeric-1-box::before {\n  content: \"\\F03A4\";\n}\n\n.mdi-numeric-1-box-multiple::before {\n  content: \"\\F0F0F\";\n}\n\n.mdi-numeric-1-box-multiple-outline::before {\n  content: \"\\F03A5\";\n}\n\n.mdi-numeric-1-box-outline::before {\n  content: \"\\F03A6\";\n}\n\n.mdi-numeric-1-circle::before {\n  content: \"\\F0CA0\";\n}\n\n.mdi-numeric-1-circle-outline::before {\n  content: \"\\F0CA1\";\n}\n\n.mdi-numeric-10::before {\n  content: \"\\F0FE9\";\n}\n\n.mdi-numeric-10-box::before {\n  content: \"\\F0F7D\";\n}\n\n.mdi-numeric-10-box-multiple::before {\n  content: \"\\F0FEA\";\n}\n\n.mdi-numeric-10-box-multiple-outline::before {\n  content: \"\\F0FEB\";\n}\n\n.mdi-numeric-10-box-outline::before {\n  content: \"\\F0F7E\";\n}\n\n.mdi-numeric-10-circle::before {\n  content: \"\\F0FEC\";\n}\n\n.mdi-numeric-10-circle-outline::before {\n  content: \"\\F0FED\";\n}\n\n.mdi-numeric-2::before {\n  content: \"\\F0B3B\";\n}\n\n.mdi-numeric-2-box::before {\n  content: \"\\F03A7\";\n}\n\n.mdi-numeric-2-box-multiple::before {\n  content: \"\\F0F10\";\n}\n\n.mdi-numeric-2-box-multiple-outline::before {\n  content: \"\\F03A8\";\n}\n\n.mdi-numeric-2-box-outline::before {\n  content: \"\\F03A9\";\n}\n\n.mdi-numeric-2-circle::before {\n  content: \"\\F0CA2\";\n}\n\n.mdi-numeric-2-circle-outline::before {\n  content: \"\\F0CA3\";\n}\n\n.mdi-numeric-3::before {\n  content: \"\\F0B3C\";\n}\n\n.mdi-numeric-3-box::before {\n  content: \"\\F03AA\";\n}\n\n.mdi-numeric-3-box-multiple::before {\n  content: \"\\F0F11\";\n}\n\n.mdi-numeric-3-box-multiple-outline::before {\n  content: \"\\F03AB\";\n}\n\n.mdi-numeric-3-box-outline::before {\n  content: \"\\F03AC\";\n}\n\n.mdi-numeric-3-circle::before {\n  content: \"\\F0CA4\";\n}\n\n.mdi-numeric-3-circle-outline::before {\n  content: \"\\F0CA5\";\n}\n\n.mdi-numeric-4::before {\n  content: \"\\F0B3D\";\n}\n\n.mdi-numeric-4-box::before {\n  content: \"\\F03AD\";\n}\n\n.mdi-numeric-4-box-multiple::before {\n  content: \"\\F0F12\";\n}\n\n.mdi-numeric-4-box-multiple-outline::before {\n  content: \"\\F03B2\";\n}\n\n.mdi-numeric-4-box-outline::before {\n  content: \"\\F03AE\";\n}\n\n.mdi-numeric-4-circle::before {\n  content: \"\\F0CA6\";\n}\n\n.mdi-numeric-4-circle-outline::before {\n  content: \"\\F0CA7\";\n}\n\n.mdi-numeric-5::before {\n  content: \"\\F0B3E\";\n}\n\n.mdi-numeric-5-box::before {\n  content: \"\\F03B1\";\n}\n\n.mdi-numeric-5-box-multiple::before {\n  content: \"\\F0F13\";\n}\n\n.mdi-numeric-5-box-multiple-outline::before {\n  content: \"\\F03AF\";\n}\n\n.mdi-numeric-5-box-outline::before {\n  content: \"\\F03B0\";\n}\n\n.mdi-numeric-5-circle::before {\n  content: \"\\F0CA8\";\n}\n\n.mdi-numeric-5-circle-outline::before {\n  content: \"\\F0CA9\";\n}\n\n.mdi-numeric-6::before {\n  content: \"\\F0B3F\";\n}\n\n.mdi-numeric-6-box::before {\n  content: \"\\F03B3\";\n}\n\n.mdi-numeric-6-box-multiple::before {\n  content: \"\\F0F14\";\n}\n\n.mdi-numeric-6-box-multiple-outline::before {\n  content: \"\\F03B4\";\n}\n\n.mdi-numeric-6-box-outline::before {\n  content: \"\\F03B5\";\n}\n\n.mdi-numeric-6-circle::before {\n  content: \"\\F0CAA\";\n}\n\n.mdi-numeric-6-circle-outline::before {\n  content: \"\\F0CAB\";\n}\n\n.mdi-numeric-7::before {\n  content: \"\\F0B40\";\n}\n\n.mdi-numeric-7-box::before {\n  content: \"\\F03B6\";\n}\n\n.mdi-numeric-7-box-multiple::before {\n  content: \"\\F0F15\";\n}\n\n.mdi-numeric-7-box-multiple-outline::before {\n  content: \"\\F03B7\";\n}\n\n.mdi-numeric-7-box-outline::before {\n  content: \"\\F03B8\";\n}\n\n.mdi-numeric-7-circle::before {\n  content: \"\\F0CAC\";\n}\n\n.mdi-numeric-7-circle-outline::before {\n  content: \"\\F0CAD\";\n}\n\n.mdi-numeric-8::before {\n  content: \"\\F0B41\";\n}\n\n.mdi-numeric-8-box::before {\n  content: \"\\F03B9\";\n}\n\n.mdi-numeric-8-box-multiple::before {\n  content: \"\\F0F16\";\n}\n\n.mdi-numeric-8-box-multiple-outline::before {\n  content: \"\\F03BA\";\n}\n\n.mdi-numeric-8-box-outline::before {\n  content: \"\\F03BB\";\n}\n\n.mdi-numeric-8-circle::before {\n  content: \"\\F0CAE\";\n}\n\n.mdi-numeric-8-circle-outline::before {\n  content: \"\\F0CAF\";\n}\n\n.mdi-numeric-9::before {\n  content: \"\\F0B42\";\n}\n\n.mdi-numeric-9-box::before {\n  content: \"\\F03BC\";\n}\n\n.mdi-numeric-9-box-multiple::before {\n  content: \"\\F0F17\";\n}\n\n.mdi-numeric-9-box-multiple-outline::before {\n  content: \"\\F03BD\";\n}\n\n.mdi-numeric-9-box-outline::before {\n  content: \"\\F03BE\";\n}\n\n.mdi-numeric-9-circle::before {\n  content: \"\\F0CB0\";\n}\n\n.mdi-numeric-9-circle-outline::before {\n  content: \"\\F0CB1\";\n}\n\n.mdi-numeric-9-plus::before {\n  content: \"\\F0FEE\";\n}\n\n.mdi-numeric-9-plus-box::before {\n  content: \"\\F03BF\";\n}\n\n.mdi-numeric-9-plus-box-multiple::before {\n  content: \"\\F0F18\";\n}\n\n.mdi-numeric-9-plus-box-multiple-outline::before {\n  content: \"\\F03C0\";\n}\n\n.mdi-numeric-9-plus-box-outline::before {\n  content: \"\\F03C1\";\n}\n\n.mdi-numeric-9-plus-circle::before {\n  content: \"\\F0CB2\";\n}\n\n.mdi-numeric-9-plus-circle-outline::before {\n  content: \"\\F0CB3\";\n}\n\n.mdi-numeric-negative-1::before {\n  content: \"\\F1052\";\n}\n\n.mdi-numeric-positive-1::before {\n  content: \"\\F15CB\";\n}\n\n.mdi-nut::before {\n  content: \"\\F06F8\";\n}\n\n.mdi-nutrition::before {\n  content: \"\\F03C2\";\n}\n\n.mdi-nuxt::before {\n  content: \"\\F1106\";\n}\n\n.mdi-oar::before {\n  content: \"\\F067C\";\n}\n\n.mdi-ocarina::before {\n  content: \"\\F0DE0\";\n}\n\n.mdi-oci::before {\n  content: \"\\F12E9\";\n}\n\n.mdi-ocr::before {\n  content: \"\\F113A\";\n}\n\n.mdi-octagon::before {\n  content: \"\\F03C3\";\n}\n\n.mdi-octagon-outline::before {\n  content: \"\\F03C4\";\n}\n\n.mdi-octagram::before {\n  content: \"\\F06F9\";\n}\n\n.mdi-octagram-outline::before {\n  content: \"\\F0775\";\n}\n\n.mdi-odnoklassniki::before {\n  content: \"\\F03C5\";\n}\n\n.mdi-offer::before {\n  content: \"\\F121B\";\n}\n\n.mdi-office-building::before {\n  content: \"\\F0991\";\n}\n\n.mdi-office-building-marker::before {\n  content: \"\\F1520\";\n}\n\n.mdi-office-building-marker-outline::before {\n  content: \"\\F1521\";\n}\n\n.mdi-office-building-outline::before {\n  content: \"\\F151F\";\n}\n\n.mdi-oil::before {\n  content: \"\\F03C7\";\n}\n\n.mdi-oil-lamp::before {\n  content: \"\\F0F19\";\n}\n\n.mdi-oil-level::before {\n  content: \"\\F1053\";\n}\n\n.mdi-oil-temperature::before {\n  content: \"\\F0FF8\";\n}\n\n.mdi-omega::before {\n  content: \"\\F03C9\";\n}\n\n.mdi-one-up::before {\n  content: \"\\F0BAD\";\n}\n\n.mdi-onepassword::before {\n  content: \"\\F0881\";\n}\n\n.mdi-opacity::before {\n  content: \"\\F05CC\";\n}\n\n.mdi-open-in-app::before {\n  content: \"\\F03CB\";\n}\n\n.mdi-open-in-new::before {\n  content: \"\\F03CC\";\n}\n\n.mdi-open-source-initiative::before {\n  content: \"\\F0BAE\";\n}\n\n.mdi-openid::before {\n  content: \"\\F03CD\";\n}\n\n.mdi-opera::before {\n  content: \"\\F03CE\";\n}\n\n.mdi-orbit::before {\n  content: \"\\F0018\";\n}\n\n.mdi-orbit-variant::before {\n  content: \"\\F15DB\";\n}\n\n.mdi-order-alphabetical-ascending::before {\n  content: \"\\F020D\";\n}\n\n.mdi-order-alphabetical-descending::before {\n  content: \"\\F0D07\";\n}\n\n.mdi-order-bool-ascending::before {\n  content: \"\\F02BE\";\n}\n\n.mdi-order-bool-ascending-variant::before {\n  content: \"\\F098F\";\n}\n\n.mdi-order-bool-descending::before {\n  content: \"\\F1384\";\n}\n\n.mdi-order-bool-descending-variant::before {\n  content: \"\\F0990\";\n}\n\n.mdi-order-numeric-ascending::before {\n  content: \"\\F0545\";\n}\n\n.mdi-order-numeric-descending::before {\n  content: \"\\F0546\";\n}\n\n.mdi-origin::before {\n  content: \"\\F0B43\";\n}\n\n.mdi-ornament::before {\n  content: \"\\F03CF\";\n}\n\n.mdi-ornament-variant::before {\n  content: \"\\F03D0\";\n}\n\n.mdi-outdoor-lamp::before {\n  content: \"\\F1054\";\n}\n\n.mdi-overscan::before {\n  content: \"\\F1005\";\n}\n\n.mdi-owl::before {\n  content: \"\\F03D2\";\n}\n\n.mdi-pac-man::before {\n  content: \"\\F0BAF\";\n}\n\n.mdi-package::before {\n  content: \"\\F03D3\";\n}\n\n.mdi-package-down::before {\n  content: \"\\F03D4\";\n}\n\n.mdi-package-up::before {\n  content: \"\\F03D5\";\n}\n\n.mdi-package-variant::before {\n  content: \"\\F03D6\";\n}\n\n.mdi-package-variant-closed::before {\n  content: \"\\F03D7\";\n}\n\n.mdi-page-first::before {\n  content: \"\\F0600\";\n}\n\n.mdi-page-last::before {\n  content: \"\\F0601\";\n}\n\n.mdi-page-layout-body::before {\n  content: \"\\F06FA\";\n}\n\n.mdi-page-layout-footer::before {\n  content: \"\\F06FB\";\n}\n\n.mdi-page-layout-header::before {\n  content: \"\\F06FC\";\n}\n\n.mdi-page-layout-header-footer::before {\n  content: \"\\F0F7F\";\n}\n\n.mdi-page-layout-sidebar-left::before {\n  content: \"\\F06FD\";\n}\n\n.mdi-page-layout-sidebar-right::before {\n  content: \"\\F06FE\";\n}\n\n.mdi-page-next::before {\n  content: \"\\F0BB0\";\n}\n\n.mdi-page-next-outline::before {\n  content: \"\\F0BB1\";\n}\n\n.mdi-page-previous::before {\n  content: \"\\F0BB2\";\n}\n\n.mdi-page-previous-outline::before {\n  content: \"\\F0BB3\";\n}\n\n.mdi-pail::before {\n  content: \"\\F1417\";\n}\n\n.mdi-pail-minus::before {\n  content: \"\\F1437\";\n}\n\n.mdi-pail-minus-outline::before {\n  content: \"\\F143C\";\n}\n\n.mdi-pail-off::before {\n  content: \"\\F1439\";\n}\n\n.mdi-pail-off-outline::before {\n  content: \"\\F143E\";\n}\n\n.mdi-pail-outline::before {\n  content: \"\\F143A\";\n}\n\n.mdi-pail-plus::before {\n  content: \"\\F1436\";\n}\n\n.mdi-pail-plus-outline::before {\n  content: \"\\F143B\";\n}\n\n.mdi-pail-remove::before {\n  content: \"\\F1438\";\n}\n\n.mdi-pail-remove-outline::before {\n  content: \"\\F143D\";\n}\n\n.mdi-palette::before {\n  content: \"\\F03D8\";\n}\n\n.mdi-palette-advanced::before {\n  content: \"\\F03D9\";\n}\n\n.mdi-palette-outline::before {\n  content: \"\\F0E0C\";\n}\n\n.mdi-palette-swatch::before {\n  content: \"\\F08B5\";\n}\n\n.mdi-palette-swatch-outline::before {\n  content: \"\\F135C\";\n}\n\n.mdi-palm-tree::before {\n  content: \"\\F1055\";\n}\n\n.mdi-pan::before {\n  content: \"\\F0BB4\";\n}\n\n.mdi-pan-bottom-left::before {\n  content: \"\\F0BB5\";\n}\n\n.mdi-pan-bottom-right::before {\n  content: \"\\F0BB6\";\n}\n\n.mdi-pan-down::before {\n  content: \"\\F0BB7\";\n}\n\n.mdi-pan-horizontal::before {\n  content: \"\\F0BB8\";\n}\n\n.mdi-pan-left::before {\n  content: \"\\F0BB9\";\n}\n\n.mdi-pan-right::before {\n  content: \"\\F0BBA\";\n}\n\n.mdi-pan-top-left::before {\n  content: \"\\F0BBB\";\n}\n\n.mdi-pan-top-right::before {\n  content: \"\\F0BBC\";\n}\n\n.mdi-pan-up::before {\n  content: \"\\F0BBD\";\n}\n\n.mdi-pan-vertical::before {\n  content: \"\\F0BBE\";\n}\n\n.mdi-panda::before {\n  content: \"\\F03DA\";\n}\n\n.mdi-pandora::before {\n  content: \"\\F03DB\";\n}\n\n.mdi-panorama::before {\n  content: \"\\F03DC\";\n}\n\n.mdi-panorama-fisheye::before {\n  content: \"\\F03DD\";\n}\n\n.mdi-panorama-horizontal::before {\n  content: \"\\F03DE\";\n}\n\n.mdi-panorama-vertical::before {\n  content: \"\\F03DF\";\n}\n\n.mdi-panorama-wide-angle::before {\n  content: \"\\F03E0\";\n}\n\n.mdi-paper-cut-vertical::before {\n  content: \"\\F03E1\";\n}\n\n.mdi-paper-roll::before {\n  content: \"\\F1157\";\n}\n\n.mdi-paper-roll-outline::before {\n  content: \"\\F1158\";\n}\n\n.mdi-paperclip::before {\n  content: \"\\F03E2\";\n}\n\n.mdi-parachute::before {\n  content: \"\\F0CB4\";\n}\n\n.mdi-parachute-outline::before {\n  content: \"\\F0CB5\";\n}\n\n.mdi-parking::before {\n  content: \"\\F03E3\";\n}\n\n.mdi-party-popper::before {\n  content: \"\\F1056\";\n}\n\n.mdi-passport::before {\n  content: \"\\F07E3\";\n}\n\n.mdi-passport-biometric::before {\n  content: \"\\F0DE1\";\n}\n\n.mdi-pasta::before {\n  content: \"\\F1160\";\n}\n\n.mdi-patio-heater::before {\n  content: \"\\F0F80\";\n}\n\n.mdi-patreon::before {\n  content: \"\\F0882\";\n}\n\n.mdi-pause::before {\n  content: \"\\F03E4\";\n}\n\n.mdi-pause-circle::before {\n  content: \"\\F03E5\";\n}\n\n.mdi-pause-circle-outline::before {\n  content: \"\\F03E6\";\n}\n\n.mdi-pause-octagon::before {\n  content: \"\\F03E7\";\n}\n\n.mdi-pause-octagon-outline::before {\n  content: \"\\F03E8\";\n}\n\n.mdi-paw::before {\n  content: \"\\F03E9\";\n}\n\n.mdi-paw-off::before {\n  content: \"\\F0657\";\n}\n\n.mdi-pdf-box::before {\n  content: \"\\F0E56\";\n}\n\n.mdi-peace::before {\n  content: \"\\F0884\";\n}\n\n.mdi-peanut::before {\n  content: \"\\F0FFC\";\n}\n\n.mdi-peanut-off::before {\n  content: \"\\F0FFD\";\n}\n\n.mdi-peanut-off-outline::before {\n  content: \"\\F0FFF\";\n}\n\n.mdi-peanut-outline::before {\n  content: \"\\F0FFE\";\n}\n\n.mdi-pen::before {\n  content: \"\\F03EA\";\n}\n\n.mdi-pen-lock::before {\n  content: \"\\F0DE2\";\n}\n\n.mdi-pen-minus::before {\n  content: \"\\F0DE3\";\n}\n\n.mdi-pen-off::before {\n  content: \"\\F0DE4\";\n}\n\n.mdi-pen-plus::before {\n  content: \"\\F0DE5\";\n}\n\n.mdi-pen-remove::before {\n  content: \"\\F0DE6\";\n}\n\n.mdi-pencil::before {\n  content: \"\\F03EB\";\n}\n\n.mdi-pencil-box::before {\n  content: \"\\F03EC\";\n}\n\n.mdi-pencil-box-multiple::before {\n  content: \"\\F1144\";\n}\n\n.mdi-pencil-box-multiple-outline::before {\n  content: \"\\F1145\";\n}\n\n.mdi-pencil-box-outline::before {\n  content: \"\\F03ED\";\n}\n\n.mdi-pencil-circle::before {\n  content: \"\\F06FF\";\n}\n\n.mdi-pencil-circle-outline::before {\n  content: \"\\F0776\";\n}\n\n.mdi-pencil-lock::before {\n  content: \"\\F03EE\";\n}\n\n.mdi-pencil-lock-outline::before {\n  content: \"\\F0DE7\";\n}\n\n.mdi-pencil-minus::before {\n  content: \"\\F0DE8\";\n}\n\n.mdi-pencil-minus-outline::before {\n  content: \"\\F0DE9\";\n}\n\n.mdi-pencil-off::before {\n  content: \"\\F03EF\";\n}\n\n.mdi-pencil-off-outline::before {\n  content: \"\\F0DEA\";\n}\n\n.mdi-pencil-outline::before {\n  content: \"\\F0CB6\";\n}\n\n.mdi-pencil-plus::before {\n  content: \"\\F0DEB\";\n}\n\n.mdi-pencil-plus-outline::before {\n  content: \"\\F0DEC\";\n}\n\n.mdi-pencil-remove::before {\n  content: \"\\F0DED\";\n}\n\n.mdi-pencil-remove-outline::before {\n  content: \"\\F0DEE\";\n}\n\n.mdi-pencil-ruler::before {\n  content: \"\\F1353\";\n}\n\n.mdi-penguin::before {\n  content: \"\\F0EC0\";\n}\n\n.mdi-pentagon::before {\n  content: \"\\F0701\";\n}\n\n.mdi-pentagon-outline::before {\n  content: \"\\F0700\";\n}\n\n.mdi-percent::before {\n  content: \"\\F03F0\";\n}\n\n.mdi-percent-outline::before {\n  content: \"\\F1278\";\n}\n\n.mdi-periodic-table::before {\n  content: \"\\F08B6\";\n}\n\n.mdi-perspective-less::before {\n  content: \"\\F0D23\";\n}\n\n.mdi-perspective-more::before {\n  content: \"\\F0D24\";\n}\n\n.mdi-pharmacy::before {\n  content: \"\\F03F1\";\n}\n\n.mdi-phone::before {\n  content: \"\\F03F2\";\n}\n\n.mdi-phone-alert::before {\n  content: \"\\F0F1A\";\n}\n\n.mdi-phone-alert-outline::before {\n  content: \"\\F118E\";\n}\n\n.mdi-phone-bluetooth::before {\n  content: \"\\F03F3\";\n}\n\n.mdi-phone-bluetooth-outline::before {\n  content: \"\\F118F\";\n}\n\n.mdi-phone-cancel::before {\n  content: \"\\F10BC\";\n}\n\n.mdi-phone-cancel-outline::before {\n  content: \"\\F1190\";\n}\n\n.mdi-phone-check::before {\n  content: \"\\F11A9\";\n}\n\n.mdi-phone-check-outline::before {\n  content: \"\\F11AA\";\n}\n\n.mdi-phone-classic::before {\n  content: \"\\F0602\";\n}\n\n.mdi-phone-classic-off::before {\n  content: \"\\F1279\";\n}\n\n.mdi-phone-dial::before {\n  content: \"\\F1559\";\n}\n\n.mdi-phone-dial-outline::before {\n  content: \"\\F155A\";\n}\n\n.mdi-phone-forward::before {\n  content: \"\\F03F4\";\n}\n\n.mdi-phone-forward-outline::before {\n  content: \"\\F1191\";\n}\n\n.mdi-phone-hangup::before {\n  content: \"\\F03F5\";\n}\n\n.mdi-phone-hangup-outline::before {\n  content: \"\\F1192\";\n}\n\n.mdi-phone-in-talk::before {\n  content: \"\\F03F6\";\n}\n\n.mdi-phone-in-talk-outline::before {\n  content: \"\\F1182\";\n}\n\n.mdi-phone-incoming::before {\n  content: \"\\F03F7\";\n}\n\n.mdi-phone-incoming-outline::before {\n  content: \"\\F1193\";\n}\n\n.mdi-phone-lock::before {\n  content: \"\\F03F8\";\n}\n\n.mdi-phone-lock-outline::before {\n  content: \"\\F1194\";\n}\n\n.mdi-phone-log::before {\n  content: \"\\F03F9\";\n}\n\n.mdi-phone-log-outline::before {\n  content: \"\\F1195\";\n}\n\n.mdi-phone-message::before {\n  content: \"\\F1196\";\n}\n\n.mdi-phone-message-outline::before {\n  content: \"\\F1197\";\n}\n\n.mdi-phone-minus::before {\n  content: \"\\F0658\";\n}\n\n.mdi-phone-minus-outline::before {\n  content: \"\\F1198\";\n}\n\n.mdi-phone-missed::before {\n  content: \"\\F03FA\";\n}\n\n.mdi-phone-missed-outline::before {\n  content: \"\\F11A5\";\n}\n\n.mdi-phone-off::before {\n  content: \"\\F0DEF\";\n}\n\n.mdi-phone-off-outline::before {\n  content: \"\\F11A6\";\n}\n\n.mdi-phone-outgoing::before {\n  content: \"\\F03FB\";\n}\n\n.mdi-phone-outgoing-outline::before {\n  content: \"\\F1199\";\n}\n\n.mdi-phone-outline::before {\n  content: \"\\F0DF0\";\n}\n\n.mdi-phone-paused::before {\n  content: \"\\F03FC\";\n}\n\n.mdi-phone-paused-outline::before {\n  content: \"\\F119A\";\n}\n\n.mdi-phone-plus::before {\n  content: \"\\F0659\";\n}\n\n.mdi-phone-plus-outline::before {\n  content: \"\\F119B\";\n}\n\n.mdi-phone-remove::before {\n  content: \"\\F152F\";\n}\n\n.mdi-phone-remove-outline::before {\n  content: \"\\F1530\";\n}\n\n.mdi-phone-return::before {\n  content: \"\\F082F\";\n}\n\n.mdi-phone-return-outline::before {\n  content: \"\\F119C\";\n}\n\n.mdi-phone-ring::before {\n  content: \"\\F11AB\";\n}\n\n.mdi-phone-ring-outline::before {\n  content: \"\\F11AC\";\n}\n\n.mdi-phone-rotate-landscape::before {\n  content: \"\\F0885\";\n}\n\n.mdi-phone-rotate-portrait::before {\n  content: \"\\F0886\";\n}\n\n.mdi-phone-settings::before {\n  content: \"\\F03FD\";\n}\n\n.mdi-phone-settings-outline::before {\n  content: \"\\F119D\";\n}\n\n.mdi-phone-voip::before {\n  content: \"\\F03FE\";\n}\n\n.mdi-pi::before {\n  content: \"\\F03FF\";\n}\n\n.mdi-pi-box::before {\n  content: \"\\F0400\";\n}\n\n.mdi-pi-hole::before {\n  content: \"\\F0DF1\";\n}\n\n.mdi-piano::before {\n  content: \"\\F067D\";\n}\n\n.mdi-pickaxe::before {\n  content: \"\\F08B7\";\n}\n\n.mdi-picture-in-picture-bottom-right::before {\n  content: \"\\F0E57\";\n}\n\n.mdi-picture-in-picture-bottom-right-outline::before {\n  content: \"\\F0E58\";\n}\n\n.mdi-picture-in-picture-top-right::before {\n  content: \"\\F0E59\";\n}\n\n.mdi-picture-in-picture-top-right-outline::before {\n  content: \"\\F0E5A\";\n}\n\n.mdi-pier::before {\n  content: \"\\F0887\";\n}\n\n.mdi-pier-crane::before {\n  content: \"\\F0888\";\n}\n\n.mdi-pig::before {\n  content: \"\\F0401\";\n}\n\n.mdi-pig-variant::before {\n  content: \"\\F1006\";\n}\n\n.mdi-piggy-bank::before {\n  content: \"\\F1007\";\n}\n\n.mdi-pill::before {\n  content: \"\\F0402\";\n}\n\n.mdi-pillar::before {\n  content: \"\\F0702\";\n}\n\n.mdi-pin::before {\n  content: \"\\F0403\";\n}\n\n.mdi-pin-off::before {\n  content: \"\\F0404\";\n}\n\n.mdi-pin-off-outline::before {\n  content: \"\\F0930\";\n}\n\n.mdi-pin-outline::before {\n  content: \"\\F0931\";\n}\n\n.mdi-pine-tree::before {\n  content: \"\\F0405\";\n}\n\n.mdi-pine-tree-box::before {\n  content: \"\\F0406\";\n}\n\n.mdi-pine-tree-fire::before {\n  content: \"\\F141A\";\n}\n\n.mdi-pinterest::before {\n  content: \"\\F0407\";\n}\n\n.mdi-pinwheel::before {\n  content: \"\\F0AD5\";\n}\n\n.mdi-pinwheel-outline::before {\n  content: \"\\F0AD6\";\n}\n\n.mdi-pipe::before {\n  content: \"\\F07E5\";\n}\n\n.mdi-pipe-disconnected::before {\n  content: \"\\F07E6\";\n}\n\n.mdi-pipe-leak::before {\n  content: \"\\F0889\";\n}\n\n.mdi-pipe-wrench::before {\n  content: \"\\F1354\";\n}\n\n.mdi-pirate::before {\n  content: \"\\F0A08\";\n}\n\n.mdi-pistol::before {\n  content: \"\\F0703\";\n}\n\n.mdi-piston::before {\n  content: \"\\F088A\";\n}\n\n.mdi-pitchfork::before {\n  content: \"\\F1553\";\n}\n\n.mdi-pizza::before {\n  content: \"\\F0409\";\n}\n\n.mdi-play::before {\n  content: \"\\F040A\";\n}\n\n.mdi-play-box::before {\n  content: \"\\F127A\";\n}\n\n.mdi-play-box-multiple::before {\n  content: \"\\F0D19\";\n}\n\n.mdi-play-box-multiple-outline::before {\n  content: \"\\F13E6\";\n}\n\n.mdi-play-box-outline::before {\n  content: \"\\F040B\";\n}\n\n.mdi-play-circle::before {\n  content: \"\\F040C\";\n}\n\n.mdi-play-circle-outline::before {\n  content: \"\\F040D\";\n}\n\n.mdi-play-network::before {\n  content: \"\\F088B\";\n}\n\n.mdi-play-network-outline::before {\n  content: \"\\F0CB7\";\n}\n\n.mdi-play-outline::before {\n  content: \"\\F0F1B\";\n}\n\n.mdi-play-pause::before {\n  content: \"\\F040E\";\n}\n\n.mdi-play-protected-content::before {\n  content: \"\\F040F\";\n}\n\n.mdi-play-speed::before {\n  content: \"\\F08FF\";\n}\n\n.mdi-playlist-check::before {\n  content: \"\\F05C7\";\n}\n\n.mdi-playlist-edit::before {\n  content: \"\\F0900\";\n}\n\n.mdi-playlist-minus::before {\n  content: \"\\F0410\";\n}\n\n.mdi-playlist-music::before {\n  content: \"\\F0CB8\";\n}\n\n.mdi-playlist-music-outline::before {\n  content: \"\\F0CB9\";\n}\n\n.mdi-playlist-play::before {\n  content: \"\\F0411\";\n}\n\n.mdi-playlist-plus::before {\n  content: \"\\F0412\";\n}\n\n.mdi-playlist-remove::before {\n  content: \"\\F0413\";\n}\n\n.mdi-playlist-star::before {\n  content: \"\\F0DF2\";\n}\n\n.mdi-plex::before {\n  content: \"\\F06BA\";\n}\n\n.mdi-plus::before {\n  content: \"\\F0415\";\n}\n\n.mdi-plus-box::before {\n  content: \"\\F0416\";\n}\n\n.mdi-plus-box-multiple::before {\n  content: \"\\F0334\";\n}\n\n.mdi-plus-box-multiple-outline::before {\n  content: \"\\F1143\";\n}\n\n.mdi-plus-box-outline::before {\n  content: \"\\F0704\";\n}\n\n.mdi-plus-circle::before {\n  content: \"\\F0417\";\n}\n\n.mdi-plus-circle-multiple::before {\n  content: \"\\F034C\";\n}\n\n.mdi-plus-circle-multiple-outline::before {\n  content: \"\\F0418\";\n}\n\n.mdi-plus-circle-outline::before {\n  content: \"\\F0419\";\n}\n\n.mdi-plus-minus::before {\n  content: \"\\F0992\";\n}\n\n.mdi-plus-minus-box::before {\n  content: \"\\F0993\";\n}\n\n.mdi-plus-minus-variant::before {\n  content: \"\\F14C9\";\n}\n\n.mdi-plus-network::before {\n  content: \"\\F041A\";\n}\n\n.mdi-plus-network-outline::before {\n  content: \"\\F0CBA\";\n}\n\n.mdi-plus-one::before {\n  content: \"\\F041B\";\n}\n\n.mdi-plus-outline::before {\n  content: \"\\F0705\";\n}\n\n.mdi-plus-thick::before {\n  content: \"\\F11EC\";\n}\n\n.mdi-podcast::before {\n  content: \"\\F0994\";\n}\n\n.mdi-podium::before {\n  content: \"\\F0D25\";\n}\n\n.mdi-podium-bronze::before {\n  content: \"\\F0D26\";\n}\n\n.mdi-podium-gold::before {\n  content: \"\\F0D27\";\n}\n\n.mdi-podium-silver::before {\n  content: \"\\F0D28\";\n}\n\n.mdi-point-of-sale::before {\n  content: \"\\F0D92\";\n}\n\n.mdi-pokeball::before {\n  content: \"\\F041D\";\n}\n\n.mdi-pokemon-go::before {\n  content: \"\\F0A09\";\n}\n\n.mdi-poker-chip::before {\n  content: \"\\F0830\";\n}\n\n.mdi-polaroid::before {\n  content: \"\\F041E\";\n}\n\n.mdi-police-badge::before {\n  content: \"\\F1167\";\n}\n\n.mdi-police-badge-outline::before {\n  content: \"\\F1168\";\n}\n\n.mdi-poll::before {\n  content: \"\\F041F\";\n}\n\n.mdi-poll-box::before {\n  content: \"\\F0420\";\n}\n\n.mdi-poll-box-outline::before {\n  content: \"\\F127B\";\n}\n\n.mdi-polo::before {\n  content: \"\\F14C3\";\n}\n\n.mdi-polymer::before {\n  content: \"\\F0421\";\n}\n\n.mdi-pool::before {\n  content: \"\\F0606\";\n}\n\n.mdi-popcorn::before {\n  content: \"\\F0422\";\n}\n\n.mdi-post::before {\n  content: \"\\F1008\";\n}\n\n.mdi-post-outline::before {\n  content: \"\\F1009\";\n}\n\n.mdi-postage-stamp::before {\n  content: \"\\F0CBB\";\n}\n\n.mdi-pot::before {\n  content: \"\\F02E5\";\n}\n\n.mdi-pot-mix::before {\n  content: \"\\F065B\";\n}\n\n.mdi-pot-mix-outline::before {\n  content: \"\\F0677\";\n}\n\n.mdi-pot-outline::before {\n  content: \"\\F02FF\";\n}\n\n.mdi-pot-steam::before {\n  content: \"\\F065A\";\n}\n\n.mdi-pot-steam-outline::before {\n  content: \"\\F0326\";\n}\n\n.mdi-pound::before {\n  content: \"\\F0423\";\n}\n\n.mdi-pound-box::before {\n  content: \"\\F0424\";\n}\n\n.mdi-pound-box-outline::before {\n  content: \"\\F117F\";\n}\n\n.mdi-power::before {\n  content: \"\\F0425\";\n}\n\n.mdi-power-cycle::before {\n  content: \"\\F0901\";\n}\n\n.mdi-power-off::before {\n  content: \"\\F0902\";\n}\n\n.mdi-power-on::before {\n  content: \"\\F0903\";\n}\n\n.mdi-power-plug::before {\n  content: \"\\F06A5\";\n}\n\n.mdi-power-plug-off::before {\n  content: \"\\F06A6\";\n}\n\n.mdi-power-plug-off-outline::before {\n  content: \"\\F1424\";\n}\n\n.mdi-power-plug-outline::before {\n  content: \"\\F1425\";\n}\n\n.mdi-power-settings::before {\n  content: \"\\F0426\";\n}\n\n.mdi-power-sleep::before {\n  content: \"\\F0904\";\n}\n\n.mdi-power-socket::before {\n  content: \"\\F0427\";\n}\n\n.mdi-power-socket-au::before {\n  content: \"\\F0905\";\n}\n\n.mdi-power-socket-de::before {\n  content: \"\\F1107\";\n}\n\n.mdi-power-socket-eu::before {\n  content: \"\\F07E7\";\n}\n\n.mdi-power-socket-fr::before {\n  content: \"\\F1108\";\n}\n\n.mdi-power-socket-it::before {\n  content: \"\\F14FF\";\n}\n\n.mdi-power-socket-jp::before {\n  content: \"\\F1109\";\n}\n\n.mdi-power-socket-uk::before {\n  content: \"\\F07E8\";\n}\n\n.mdi-power-socket-us::before {\n  content: \"\\F07E9\";\n}\n\n.mdi-power-standby::before {\n  content: \"\\F0906\";\n}\n\n.mdi-powershell::before {\n  content: \"\\F0A0A\";\n}\n\n.mdi-prescription::before {\n  content: \"\\F0706\";\n}\n\n.mdi-presentation::before {\n  content: \"\\F0428\";\n}\n\n.mdi-presentation-play::before {\n  content: \"\\F0429\";\n}\n\n.mdi-pretzel::before {\n  content: \"\\F1562\";\n}\n\n.mdi-printer::before {\n  content: \"\\F042A\";\n}\n\n.mdi-printer-3d::before {\n  content: \"\\F042B\";\n}\n\n.mdi-printer-3d-nozzle::before {\n  content: \"\\F0E5B\";\n}\n\n.mdi-printer-3d-nozzle-alert::before {\n  content: \"\\F11C0\";\n}\n\n.mdi-printer-3d-nozzle-alert-outline::before {\n  content: \"\\F11C1\";\n}\n\n.mdi-printer-3d-nozzle-outline::before {\n  content: \"\\F0E5C\";\n}\n\n.mdi-printer-alert::before {\n  content: \"\\F042C\";\n}\n\n.mdi-printer-check::before {\n  content: \"\\F1146\";\n}\n\n.mdi-printer-eye::before {\n  content: \"\\F1458\";\n}\n\n.mdi-printer-off::before {\n  content: \"\\F0E5D\";\n}\n\n.mdi-printer-pos::before {\n  content: \"\\F1057\";\n}\n\n.mdi-printer-search::before {\n  content: \"\\F1457\";\n}\n\n.mdi-printer-settings::before {\n  content: \"\\F0707\";\n}\n\n.mdi-printer-wireless::before {\n  content: \"\\F0A0B\";\n}\n\n.mdi-priority-high::before {\n  content: \"\\F0603\";\n}\n\n.mdi-priority-low::before {\n  content: \"\\F0604\";\n}\n\n.mdi-professional-hexagon::before {\n  content: \"\\F042D\";\n}\n\n.mdi-progress-alert::before {\n  content: \"\\F0CBC\";\n}\n\n.mdi-progress-check::before {\n  content: \"\\F0995\";\n}\n\n.mdi-progress-clock::before {\n  content: \"\\F0996\";\n}\n\n.mdi-progress-close::before {\n  content: \"\\F110A\";\n}\n\n.mdi-progress-download::before {\n  content: \"\\F0997\";\n}\n\n.mdi-progress-question::before {\n  content: \"\\F1522\";\n}\n\n.mdi-progress-upload::before {\n  content: \"\\F0998\";\n}\n\n.mdi-progress-wrench::before {\n  content: \"\\F0CBD\";\n}\n\n.mdi-projector::before {\n  content: \"\\F042E\";\n}\n\n.mdi-projector-screen::before {\n  content: \"\\F042F\";\n}\n\n.mdi-propane-tank::before {\n  content: \"\\F1357\";\n}\n\n.mdi-propane-tank-outline::before {\n  content: \"\\F1358\";\n}\n\n.mdi-protocol::before {\n  content: \"\\F0FD8\";\n}\n\n.mdi-publish::before {\n  content: \"\\F06A7\";\n}\n\n.mdi-pulse::before {\n  content: \"\\F0430\";\n}\n\n.mdi-pump::before {\n  content: \"\\F1402\";\n}\n\n.mdi-pumpkin::before {\n  content: \"\\F0BBF\";\n}\n\n.mdi-purse::before {\n  content: \"\\F0F1C\";\n}\n\n.mdi-purse-outline::before {\n  content: \"\\F0F1D\";\n}\n\n.mdi-puzzle::before {\n  content: \"\\F0431\";\n}\n\n.mdi-puzzle-check::before {\n  content: \"\\F1426\";\n}\n\n.mdi-puzzle-check-outline::before {\n  content: \"\\F1427\";\n}\n\n.mdi-puzzle-edit::before {\n  content: \"\\F14D3\";\n}\n\n.mdi-puzzle-edit-outline::before {\n  content: \"\\F14D9\";\n}\n\n.mdi-puzzle-heart::before {\n  content: \"\\F14D4\";\n}\n\n.mdi-puzzle-heart-outline::before {\n  content: \"\\F14DA\";\n}\n\n.mdi-puzzle-minus::before {\n  content: \"\\F14D1\";\n}\n\n.mdi-puzzle-minus-outline::before {\n  content: \"\\F14D7\";\n}\n\n.mdi-puzzle-outline::before {\n  content: \"\\F0A66\";\n}\n\n.mdi-puzzle-plus::before {\n  content: \"\\F14D0\";\n}\n\n.mdi-puzzle-plus-outline::before {\n  content: \"\\F14D6\";\n}\n\n.mdi-puzzle-remove::before {\n  content: \"\\F14D2\";\n}\n\n.mdi-puzzle-remove-outline::before {\n  content: \"\\F14D8\";\n}\n\n.mdi-puzzle-star::before {\n  content: \"\\F14D5\";\n}\n\n.mdi-puzzle-star-outline::before {\n  content: \"\\F14DB\";\n}\n\n.mdi-qi::before {\n  content: \"\\F0999\";\n}\n\n.mdi-qqchat::before {\n  content: \"\\F0605\";\n}\n\n.mdi-qrcode::before {\n  content: \"\\F0432\";\n}\n\n.mdi-qrcode-edit::before {\n  content: \"\\F08B8\";\n}\n\n.mdi-qrcode-minus::before {\n  content: \"\\F118C\";\n}\n\n.mdi-qrcode-plus::before {\n  content: \"\\F118B\";\n}\n\n.mdi-qrcode-remove::before {\n  content: \"\\F118D\";\n}\n\n.mdi-qrcode-scan::before {\n  content: \"\\F0433\";\n}\n\n.mdi-quadcopter::before {\n  content: \"\\F0434\";\n}\n\n.mdi-quality-high::before {\n  content: \"\\F0435\";\n}\n\n.mdi-quality-low::before {\n  content: \"\\F0A0C\";\n}\n\n.mdi-quality-medium::before {\n  content: \"\\F0A0D\";\n}\n\n.mdi-quora::before {\n  content: \"\\F0D29\";\n}\n\n.mdi-rabbit::before {\n  content: \"\\F0907\";\n}\n\n.mdi-racing-helmet::before {\n  content: \"\\F0D93\";\n}\n\n.mdi-racquetball::before {\n  content: \"\\F0D94\";\n}\n\n.mdi-radar::before {\n  content: \"\\F0437\";\n}\n\n.mdi-radiator::before {\n  content: \"\\F0438\";\n}\n\n.mdi-radiator-disabled::before {\n  content: \"\\F0AD7\";\n}\n\n.mdi-radiator-off::before {\n  content: \"\\F0AD8\";\n}\n\n.mdi-radio::before {\n  content: \"\\F0439\";\n}\n\n.mdi-radio-am::before {\n  content: \"\\F0CBE\";\n}\n\n.mdi-radio-fm::before {\n  content: \"\\F0CBF\";\n}\n\n.mdi-radio-handheld::before {\n  content: \"\\F043A\";\n}\n\n.mdi-radio-off::before {\n  content: \"\\F121C\";\n}\n\n.mdi-radio-tower::before {\n  content: \"\\F043B\";\n}\n\n.mdi-radioactive::before {\n  content: \"\\F043C\";\n}\n\n.mdi-radioactive-off::before {\n  content: \"\\F0EC1\";\n}\n\n.mdi-radiobox-blank::before {\n  content: \"\\F043D\";\n}\n\n.mdi-radiobox-marked::before {\n  content: \"\\F043E\";\n}\n\n.mdi-radiology-box::before {\n  content: \"\\F14C5\";\n}\n\n.mdi-radiology-box-outline::before {\n  content: \"\\F14C6\";\n}\n\n.mdi-radius::before {\n  content: \"\\F0CC0\";\n}\n\n.mdi-radius-outline::before {\n  content: \"\\F0CC1\";\n}\n\n.mdi-railroad-light::before {\n  content: \"\\F0F1E\";\n}\n\n.mdi-rake::before {\n  content: \"\\F1544\";\n}\n\n.mdi-raspberry-pi::before {\n  content: \"\\F043F\";\n}\n\n.mdi-ray-end::before {\n  content: \"\\F0440\";\n}\n\n.mdi-ray-end-arrow::before {\n  content: \"\\F0441\";\n}\n\n.mdi-ray-start::before {\n  content: \"\\F0442\";\n}\n\n.mdi-ray-start-arrow::before {\n  content: \"\\F0443\";\n}\n\n.mdi-ray-start-end::before {\n  content: \"\\F0444\";\n}\n\n.mdi-ray-start-vertex-end::before {\n  content: \"\\F15D8\";\n}\n\n.mdi-ray-vertex::before {\n  content: \"\\F0445\";\n}\n\n.mdi-react::before {\n  content: \"\\F0708\";\n}\n\n.mdi-read::before {\n  content: \"\\F0447\";\n}\n\n.mdi-receipt::before {\n  content: \"\\F0449\";\n}\n\n.mdi-record::before {\n  content: \"\\F044A\";\n}\n\n.mdi-record-circle::before {\n  content: \"\\F0EC2\";\n}\n\n.mdi-record-circle-outline::before {\n  content: \"\\F0EC3\";\n}\n\n.mdi-record-player::before {\n  content: \"\\F099A\";\n}\n\n.mdi-record-rec::before {\n  content: \"\\F044B\";\n}\n\n.mdi-rectangle::before {\n  content: \"\\F0E5E\";\n}\n\n.mdi-rectangle-outline::before {\n  content: \"\\F0E5F\";\n}\n\n.mdi-recycle::before {\n  content: \"\\F044C\";\n}\n\n.mdi-recycle-variant::before {\n  content: \"\\F139D\";\n}\n\n.mdi-reddit::before {\n  content: \"\\F044D\";\n}\n\n.mdi-redhat::before {\n  content: \"\\F111B\";\n}\n\n.mdi-redo::before {\n  content: \"\\F044E\";\n}\n\n.mdi-redo-variant::before {\n  content: \"\\F044F\";\n}\n\n.mdi-reflect-horizontal::before {\n  content: \"\\F0A0E\";\n}\n\n.mdi-reflect-vertical::before {\n  content: \"\\F0A0F\";\n}\n\n.mdi-refresh::before {\n  content: \"\\F0450\";\n}\n\n.mdi-refresh-circle::before {\n  content: \"\\F1377\";\n}\n\n.mdi-regex::before {\n  content: \"\\F0451\";\n}\n\n.mdi-registered-trademark::before {\n  content: \"\\F0A67\";\n}\n\n.mdi-reiterate::before {\n  content: \"\\F1588\";\n}\n\n.mdi-relation-many-to-many::before {\n  content: \"\\F1496\";\n}\n\n.mdi-relation-many-to-one::before {\n  content: \"\\F1497\";\n}\n\n.mdi-relation-many-to-one-or-many::before {\n  content: \"\\F1498\";\n}\n\n.mdi-relation-many-to-only-one::before {\n  content: \"\\F1499\";\n}\n\n.mdi-relation-many-to-zero-or-many::before {\n  content: \"\\F149A\";\n}\n\n.mdi-relation-many-to-zero-or-one::before {\n  content: \"\\F149B\";\n}\n\n.mdi-relation-one-or-many-to-many::before {\n  content: \"\\F149C\";\n}\n\n.mdi-relation-one-or-many-to-one::before {\n  content: \"\\F149D\";\n}\n\n.mdi-relation-one-or-many-to-one-or-many::before {\n  content: \"\\F149E\";\n}\n\n.mdi-relation-one-or-many-to-only-one::before {\n  content: \"\\F149F\";\n}\n\n.mdi-relation-one-or-many-to-zero-or-many::before {\n  content: \"\\F14A0\";\n}\n\n.mdi-relation-one-or-many-to-zero-or-one::before {\n  content: \"\\F14A1\";\n}\n\n.mdi-relation-one-to-many::before {\n  content: \"\\F14A2\";\n}\n\n.mdi-relation-one-to-one::before {\n  content: \"\\F14A3\";\n}\n\n.mdi-relation-one-to-one-or-many::before {\n  content: \"\\F14A4\";\n}\n\n.mdi-relation-one-to-only-one::before {\n  content: \"\\F14A5\";\n}\n\n.mdi-relation-one-to-zero-or-many::before {\n  content: \"\\F14A6\";\n}\n\n.mdi-relation-one-to-zero-or-one::before {\n  content: \"\\F14A7\";\n}\n\n.mdi-relation-only-one-to-many::before {\n  content: \"\\F14A8\";\n}\n\n.mdi-relation-only-one-to-one::before {\n  content: \"\\F14A9\";\n}\n\n.mdi-relation-only-one-to-one-or-many::before {\n  content: \"\\F14AA\";\n}\n\n.mdi-relation-only-one-to-only-one::before {\n  content: \"\\F14AB\";\n}\n\n.mdi-relation-only-one-to-zero-or-many::before {\n  content: \"\\F14AC\";\n}\n\n.mdi-relation-only-one-to-zero-or-one::before {\n  content: \"\\F14AD\";\n}\n\n.mdi-relation-zero-or-many-to-many::before {\n  content: \"\\F14AE\";\n}\n\n.mdi-relation-zero-or-many-to-one::before {\n  content: \"\\F14AF\";\n}\n\n.mdi-relation-zero-or-many-to-one-or-many::before {\n  content: \"\\F14B0\";\n}\n\n.mdi-relation-zero-or-many-to-only-one::before {\n  content: \"\\F14B1\";\n}\n\n.mdi-relation-zero-or-many-to-zero-or-many::before {\n  content: \"\\F14B2\";\n}\n\n.mdi-relation-zero-or-many-to-zero-or-one::before {\n  content: \"\\F14B3\";\n}\n\n.mdi-relation-zero-or-one-to-many::before {\n  content: \"\\F14B4\";\n}\n\n.mdi-relation-zero-or-one-to-one::before {\n  content: \"\\F14B5\";\n}\n\n.mdi-relation-zero-or-one-to-one-or-many::before {\n  content: \"\\F14B6\";\n}\n\n.mdi-relation-zero-or-one-to-only-one::before {\n  content: \"\\F14B7\";\n}\n\n.mdi-relation-zero-or-one-to-zero-or-many::before {\n  content: \"\\F14B8\";\n}\n\n.mdi-relation-zero-or-one-to-zero-or-one::before {\n  content: \"\\F14B9\";\n}\n\n.mdi-relative-scale::before {\n  content: \"\\F0452\";\n}\n\n.mdi-reload::before {\n  content: \"\\F0453\";\n}\n\n.mdi-reload-alert::before {\n  content: \"\\F110B\";\n}\n\n.mdi-reminder::before {\n  content: \"\\F088C\";\n}\n\n.mdi-remote::before {\n  content: \"\\F0454\";\n}\n\n.mdi-remote-desktop::before {\n  content: \"\\F08B9\";\n}\n\n.mdi-remote-off::before {\n  content: \"\\F0EC4\";\n}\n\n.mdi-remote-tv::before {\n  content: \"\\F0EC5\";\n}\n\n.mdi-remote-tv-off::before {\n  content: \"\\F0EC6\";\n}\n\n.mdi-rename-box::before {\n  content: \"\\F0455\";\n}\n\n.mdi-reorder-horizontal::before {\n  content: \"\\F0688\";\n}\n\n.mdi-reorder-vertical::before {\n  content: \"\\F0689\";\n}\n\n.mdi-repeat::before {\n  content: \"\\F0456\";\n}\n\n.mdi-repeat-off::before {\n  content: \"\\F0457\";\n}\n\n.mdi-repeat-once::before {\n  content: \"\\F0458\";\n}\n\n.mdi-replay::before {\n  content: \"\\F0459\";\n}\n\n.mdi-reply::before {\n  content: \"\\F045A\";\n}\n\n.mdi-reply-all::before {\n  content: \"\\F045B\";\n}\n\n.mdi-reply-all-outline::before {\n  content: \"\\F0F1F\";\n}\n\n.mdi-reply-circle::before {\n  content: \"\\F11AE\";\n}\n\n.mdi-reply-outline::before {\n  content: \"\\F0F20\";\n}\n\n.mdi-reproduction::before {\n  content: \"\\F045C\";\n}\n\n.mdi-resistor::before {\n  content: \"\\F0B44\";\n}\n\n.mdi-resistor-nodes::before {\n  content: \"\\F0B45\";\n}\n\n.mdi-resize::before {\n  content: \"\\F0A68\";\n}\n\n.mdi-resize-bottom-right::before {\n  content: \"\\F045D\";\n}\n\n.mdi-responsive::before {\n  content: \"\\F045E\";\n}\n\n.mdi-restart::before {\n  content: \"\\F0709\";\n}\n\n.mdi-restart-alert::before {\n  content: \"\\F110C\";\n}\n\n.mdi-restart-off::before {\n  content: \"\\F0D95\";\n}\n\n.mdi-restore::before {\n  content: \"\\F099B\";\n}\n\n.mdi-restore-alert::before {\n  content: \"\\F110D\";\n}\n\n.mdi-rewind::before {\n  content: \"\\F045F\";\n}\n\n.mdi-rewind-10::before {\n  content: \"\\F0D2A\";\n}\n\n.mdi-rewind-30::before {\n  content: \"\\F0D96\";\n}\n\n.mdi-rewind-5::before {\n  content: \"\\F11F9\";\n}\n\n.mdi-rewind-60::before {\n  content: \"\\F160C\";\n}\n\n.mdi-rewind-outline::before {\n  content: \"\\F070A\";\n}\n\n.mdi-rhombus::before {\n  content: \"\\F070B\";\n}\n\n.mdi-rhombus-medium::before {\n  content: \"\\F0A10\";\n}\n\n.mdi-rhombus-medium-outline::before {\n  content: \"\\F14DC\";\n}\n\n.mdi-rhombus-outline::before {\n  content: \"\\F070C\";\n}\n\n.mdi-rhombus-split::before {\n  content: \"\\F0A11\";\n}\n\n.mdi-rhombus-split-outline::before {\n  content: \"\\F14DD\";\n}\n\n.mdi-ribbon::before {\n  content: \"\\F0460\";\n}\n\n.mdi-rice::before {\n  content: \"\\F07EA\";\n}\n\n.mdi-rickshaw::before {\n  content: \"\\F15BB\";\n}\n\n.mdi-rickshaw-electric::before {\n  content: \"\\F15BC\";\n}\n\n.mdi-ring::before {\n  content: \"\\F07EB\";\n}\n\n.mdi-rivet::before {\n  content: \"\\F0E60\";\n}\n\n.mdi-road::before {\n  content: \"\\F0461\";\n}\n\n.mdi-road-variant::before {\n  content: \"\\F0462\";\n}\n\n.mdi-robber::before {\n  content: \"\\F1058\";\n}\n\n.mdi-robot::before {\n  content: \"\\F06A9\";\n}\n\n.mdi-robot-industrial::before {\n  content: \"\\F0B46\";\n}\n\n.mdi-robot-mower::before {\n  content: \"\\F11F7\";\n}\n\n.mdi-robot-mower-outline::before {\n  content: \"\\F11F3\";\n}\n\n.mdi-robot-vacuum::before {\n  content: \"\\F070D\";\n}\n\n.mdi-robot-vacuum-variant::before {\n  content: \"\\F0908\";\n}\n\n.mdi-rocket::before {\n  content: \"\\F0463\";\n}\n\n.mdi-rocket-launch::before {\n  content: \"\\F14DE\";\n}\n\n.mdi-rocket-launch-outline::before {\n  content: \"\\F14DF\";\n}\n\n.mdi-rocket-outline::before {\n  content: \"\\F13AF\";\n}\n\n.mdi-rodent::before {\n  content: \"\\F1327\";\n}\n\n.mdi-roller-skate::before {\n  content: \"\\F0D2B\";\n}\n\n.mdi-roller-skate-off::before {\n  content: \"\\F0145\";\n}\n\n.mdi-rollerblade::before {\n  content: \"\\F0D2C\";\n}\n\n.mdi-rollerblade-off::before {\n  content: \"\\F002E\";\n}\n\n.mdi-rollupjs::before {\n  content: \"\\F0BC0\";\n}\n\n.mdi-roman-numeral-1::before {\n  content: \"\\F1088\";\n}\n\n.mdi-roman-numeral-10::before {\n  content: \"\\F1091\";\n}\n\n.mdi-roman-numeral-2::before {\n  content: \"\\F1089\";\n}\n\n.mdi-roman-numeral-3::before {\n  content: \"\\F108A\";\n}\n\n.mdi-roman-numeral-4::before {\n  content: \"\\F108B\";\n}\n\n.mdi-roman-numeral-5::before {\n  content: \"\\F108C\";\n}\n\n.mdi-roman-numeral-6::before {\n  content: \"\\F108D\";\n}\n\n.mdi-roman-numeral-7::before {\n  content: \"\\F108E\";\n}\n\n.mdi-roman-numeral-8::before {\n  content: \"\\F108F\";\n}\n\n.mdi-roman-numeral-9::before {\n  content: \"\\F1090\";\n}\n\n.mdi-room-service::before {\n  content: \"\\F088D\";\n}\n\n.mdi-room-service-outline::before {\n  content: \"\\F0D97\";\n}\n\n.mdi-rotate-3d::before {\n  content: \"\\F0EC7\";\n}\n\n.mdi-rotate-3d-variant::before {\n  content: \"\\F0464\";\n}\n\n.mdi-rotate-left::before {\n  content: \"\\F0465\";\n}\n\n.mdi-rotate-left-variant::before {\n  content: \"\\F0466\";\n}\n\n.mdi-rotate-orbit::before {\n  content: \"\\F0D98\";\n}\n\n.mdi-rotate-right::before {\n  content: \"\\F0467\";\n}\n\n.mdi-rotate-right-variant::before {\n  content: \"\\F0468\";\n}\n\n.mdi-rounded-corner::before {\n  content: \"\\F0607\";\n}\n\n.mdi-router::before {\n  content: \"\\F11E2\";\n}\n\n.mdi-router-network::before {\n  content: \"\\F1087\";\n}\n\n.mdi-router-wireless::before {\n  content: \"\\F0469\";\n}\n\n.mdi-router-wireless-off::before {\n  content: \"\\F15A3\";\n}\n\n.mdi-router-wireless-settings::before {\n  content: \"\\F0A69\";\n}\n\n.mdi-routes::before {\n  content: \"\\F046A\";\n}\n\n.mdi-routes-clock::before {\n  content: \"\\F1059\";\n}\n\n.mdi-rowing::before {\n  content: \"\\F0608\";\n}\n\n.mdi-rss::before {\n  content: \"\\F046B\";\n}\n\n.mdi-rss-box::before {\n  content: \"\\F046C\";\n}\n\n.mdi-rss-off::before {\n  content: \"\\F0F21\";\n}\n\n.mdi-rug::before {\n  content: \"\\F1475\";\n}\n\n.mdi-rugby::before {\n  content: \"\\F0D99\";\n}\n\n.mdi-ruler::before {\n  content: \"\\F046D\";\n}\n\n.mdi-ruler-square::before {\n  content: \"\\F0CC2\";\n}\n\n.mdi-ruler-square-compass::before {\n  content: \"\\F0EBE\";\n}\n\n.mdi-run::before {\n  content: \"\\F070E\";\n}\n\n.mdi-run-fast::before {\n  content: \"\\F046E\";\n}\n\n.mdi-rv-truck::before {\n  content: \"\\F11D4\";\n}\n\n.mdi-sack::before {\n  content: \"\\F0D2E\";\n}\n\n.mdi-sack-percent::before {\n  content: \"\\F0D2F\";\n}\n\n.mdi-safe::before {\n  content: \"\\F0A6A\";\n}\n\n.mdi-safe-square::before {\n  content: \"\\F127C\";\n}\n\n.mdi-safe-square-outline::before {\n  content: \"\\F127D\";\n}\n\n.mdi-safety-goggles::before {\n  content: \"\\F0D30\";\n}\n\n.mdi-sail-boat::before {\n  content: \"\\F0EC8\";\n}\n\n.mdi-sale::before {\n  content: \"\\F046F\";\n}\n\n.mdi-salesforce::before {\n  content: \"\\F088E\";\n}\n\n.mdi-sass::before {\n  content: \"\\F07EC\";\n}\n\n.mdi-satellite::before {\n  content: \"\\F0470\";\n}\n\n.mdi-satellite-uplink::before {\n  content: \"\\F0909\";\n}\n\n.mdi-satellite-variant::before {\n  content: \"\\F0471\";\n}\n\n.mdi-sausage::before {\n  content: \"\\F08BA\";\n}\n\n.mdi-saw-blade::before {\n  content: \"\\F0E61\";\n}\n\n.mdi-sawtooth-wave::before {\n  content: \"\\F147A\";\n}\n\n.mdi-saxophone::before {\n  content: \"\\F0609\";\n}\n\n.mdi-scale::before {\n  content: \"\\F0472\";\n}\n\n.mdi-scale-balance::before {\n  content: \"\\F05D1\";\n}\n\n.mdi-scale-bathroom::before {\n  content: \"\\F0473\";\n}\n\n.mdi-scale-off::before {\n  content: \"\\F105A\";\n}\n\n.mdi-scan-helper::before {\n  content: \"\\F13D8\";\n}\n\n.mdi-scanner::before {\n  content: \"\\F06AB\";\n}\n\n.mdi-scanner-off::before {\n  content: \"\\F090A\";\n}\n\n.mdi-scatter-plot::before {\n  content: \"\\F0EC9\";\n}\n\n.mdi-scatter-plot-outline::before {\n  content: \"\\F0ECA\";\n}\n\n.mdi-school::before {\n  content: \"\\F0474\";\n}\n\n.mdi-school-outline::before {\n  content: \"\\F1180\";\n}\n\n.mdi-scissors-cutting::before {\n  content: \"\\F0A6B\";\n}\n\n.mdi-scooter::before {\n  content: \"\\F15BD\";\n}\n\n.mdi-scooter-electric::before {\n  content: \"\\F15BE\";\n}\n\n.mdi-scoreboard::before {\n  content: \"\\F127E\";\n}\n\n.mdi-scoreboard-outline::before {\n  content: \"\\F127F\";\n}\n\n.mdi-screen-rotation::before {\n  content: \"\\F0475\";\n}\n\n.mdi-screen-rotation-lock::before {\n  content: \"\\F0478\";\n}\n\n.mdi-screw-flat-top::before {\n  content: \"\\F0DF3\";\n}\n\n.mdi-screw-lag::before {\n  content: \"\\F0DF4\";\n}\n\n.mdi-screw-machine-flat-top::before {\n  content: \"\\F0DF5\";\n}\n\n.mdi-screw-machine-round-top::before {\n  content: \"\\F0DF6\";\n}\n\n.mdi-screw-round-top::before {\n  content: \"\\F0DF7\";\n}\n\n.mdi-screwdriver::before {\n  content: \"\\F0476\";\n}\n\n.mdi-script::before {\n  content: \"\\F0BC1\";\n}\n\n.mdi-script-outline::before {\n  content: \"\\F0477\";\n}\n\n.mdi-script-text::before {\n  content: \"\\F0BC2\";\n}\n\n.mdi-script-text-outline::before {\n  content: \"\\F0BC3\";\n}\n\n.mdi-sd::before {\n  content: \"\\F0479\";\n}\n\n.mdi-seal::before {\n  content: \"\\F047A\";\n}\n\n.mdi-seal-variant::before {\n  content: \"\\F0FD9\";\n}\n\n.mdi-search-web::before {\n  content: \"\\F070F\";\n}\n\n.mdi-seat::before {\n  content: \"\\F0CC3\";\n}\n\n.mdi-seat-flat::before {\n  content: \"\\F047B\";\n}\n\n.mdi-seat-flat-angled::before {\n  content: \"\\F047C\";\n}\n\n.mdi-seat-individual-suite::before {\n  content: \"\\F047D\";\n}\n\n.mdi-seat-legroom-extra::before {\n  content: \"\\F047E\";\n}\n\n.mdi-seat-legroom-normal::before {\n  content: \"\\F047F\";\n}\n\n.mdi-seat-legroom-reduced::before {\n  content: \"\\F0480\";\n}\n\n.mdi-seat-outline::before {\n  content: \"\\F0CC4\";\n}\n\n.mdi-seat-passenger::before {\n  content: \"\\F1249\";\n}\n\n.mdi-seat-recline-extra::before {\n  content: \"\\F0481\";\n}\n\n.mdi-seat-recline-normal::before {\n  content: \"\\F0482\";\n}\n\n.mdi-seatbelt::before {\n  content: \"\\F0CC5\";\n}\n\n.mdi-security::before {\n  content: \"\\F0483\";\n}\n\n.mdi-security-network::before {\n  content: \"\\F0484\";\n}\n\n.mdi-seed::before {\n  content: \"\\F0E62\";\n}\n\n.mdi-seed-off::before {\n  content: \"\\F13FD\";\n}\n\n.mdi-seed-off-outline::before {\n  content: \"\\F13FE\";\n}\n\n.mdi-seed-outline::before {\n  content: \"\\F0E63\";\n}\n\n.mdi-seesaw::before {\n  content: \"\\F15A4\";\n}\n\n.mdi-segment::before {\n  content: \"\\F0ECB\";\n}\n\n.mdi-select::before {\n  content: \"\\F0485\";\n}\n\n.mdi-select-all::before {\n  content: \"\\F0486\";\n}\n\n.mdi-select-color::before {\n  content: \"\\F0D31\";\n}\n\n.mdi-select-compare::before {\n  content: \"\\F0AD9\";\n}\n\n.mdi-select-drag::before {\n  content: \"\\F0A6C\";\n}\n\n.mdi-select-group::before {\n  content: \"\\F0F82\";\n}\n\n.mdi-select-inverse::before {\n  content: \"\\F0487\";\n}\n\n.mdi-select-marker::before {\n  content: \"\\F1280\";\n}\n\n.mdi-select-multiple::before {\n  content: \"\\F1281\";\n}\n\n.mdi-select-multiple-marker::before {\n  content: \"\\F1282\";\n}\n\n.mdi-select-off::before {\n  content: \"\\F0488\";\n}\n\n.mdi-select-place::before {\n  content: \"\\F0FDA\";\n}\n\n.mdi-select-search::before {\n  content: \"\\F1204\";\n}\n\n.mdi-selection::before {\n  content: \"\\F0489\";\n}\n\n.mdi-selection-drag::before {\n  content: \"\\F0A6D\";\n}\n\n.mdi-selection-ellipse::before {\n  content: \"\\F0D32\";\n}\n\n.mdi-selection-ellipse-arrow-inside::before {\n  content: \"\\F0F22\";\n}\n\n.mdi-selection-marker::before {\n  content: \"\\F1283\";\n}\n\n.mdi-selection-multiple::before {\n  content: \"\\F1285\";\n}\n\n.mdi-selection-multiple-marker::before {\n  content: \"\\F1284\";\n}\n\n.mdi-selection-off::before {\n  content: \"\\F0777\";\n}\n\n.mdi-selection-search::before {\n  content: \"\\F1205\";\n}\n\n.mdi-semantic-web::before {\n  content: \"\\F1316\";\n}\n\n.mdi-send::before {\n  content: \"\\F048A\";\n}\n\n.mdi-send-check::before {\n  content: \"\\F1161\";\n}\n\n.mdi-send-check-outline::before {\n  content: \"\\F1162\";\n}\n\n.mdi-send-circle::before {\n  content: \"\\F0DF8\";\n}\n\n.mdi-send-circle-outline::before {\n  content: \"\\F0DF9\";\n}\n\n.mdi-send-clock::before {\n  content: \"\\F1163\";\n}\n\n.mdi-send-clock-outline::before {\n  content: \"\\F1164\";\n}\n\n.mdi-send-lock::before {\n  content: \"\\F07ED\";\n}\n\n.mdi-send-lock-outline::before {\n  content: \"\\F1166\";\n}\n\n.mdi-send-outline::before {\n  content: \"\\F1165\";\n}\n\n.mdi-serial-port::before {\n  content: \"\\F065C\";\n}\n\n.mdi-server::before {\n  content: \"\\F048B\";\n}\n\n.mdi-server-minus::before {\n  content: \"\\F048C\";\n}\n\n.mdi-server-network::before {\n  content: \"\\F048D\";\n}\n\n.mdi-server-network-off::before {\n  content: \"\\F048E\";\n}\n\n.mdi-server-off::before {\n  content: \"\\F048F\";\n}\n\n.mdi-server-plus::before {\n  content: \"\\F0490\";\n}\n\n.mdi-server-remove::before {\n  content: \"\\F0491\";\n}\n\n.mdi-server-security::before {\n  content: \"\\F0492\";\n}\n\n.mdi-set-all::before {\n  content: \"\\F0778\";\n}\n\n.mdi-set-center::before {\n  content: \"\\F0779\";\n}\n\n.mdi-set-center-right::before {\n  content: \"\\F077A\";\n}\n\n.mdi-set-left::before {\n  content: \"\\F077B\";\n}\n\n.mdi-set-left-center::before {\n  content: \"\\F077C\";\n}\n\n.mdi-set-left-right::before {\n  content: \"\\F077D\";\n}\n\n.mdi-set-merge::before {\n  content: \"\\F14E0\";\n}\n\n.mdi-set-none::before {\n  content: \"\\F077E\";\n}\n\n.mdi-set-right::before {\n  content: \"\\F077F\";\n}\n\n.mdi-set-split::before {\n  content: \"\\F14E1\";\n}\n\n.mdi-set-square::before {\n  content: \"\\F145D\";\n}\n\n.mdi-set-top-box::before {\n  content: \"\\F099F\";\n}\n\n.mdi-settings-helper::before {\n  content: \"\\F0A6E\";\n}\n\n.mdi-shaker::before {\n  content: \"\\F110E\";\n}\n\n.mdi-shaker-outline::before {\n  content: \"\\F110F\";\n}\n\n.mdi-shape::before {\n  content: \"\\F0831\";\n}\n\n.mdi-shape-circle-plus::before {\n  content: \"\\F065D\";\n}\n\n.mdi-shape-outline::before {\n  content: \"\\F0832\";\n}\n\n.mdi-shape-oval-plus::before {\n  content: \"\\F11FA\";\n}\n\n.mdi-shape-plus::before {\n  content: \"\\F0495\";\n}\n\n.mdi-shape-polygon-plus::before {\n  content: \"\\F065E\";\n}\n\n.mdi-shape-rectangle-plus::before {\n  content: \"\\F065F\";\n}\n\n.mdi-shape-square-plus::before {\n  content: \"\\F0660\";\n}\n\n.mdi-shape-square-rounded-plus::before {\n  content: \"\\F14FA\";\n}\n\n.mdi-share::before {\n  content: \"\\F0496\";\n}\n\n.mdi-share-all::before {\n  content: \"\\F11F4\";\n}\n\n.mdi-share-all-outline::before {\n  content: \"\\F11F5\";\n}\n\n.mdi-share-circle::before {\n  content: \"\\F11AD\";\n}\n\n.mdi-share-off::before {\n  content: \"\\F0F23\";\n}\n\n.mdi-share-off-outline::before {\n  content: \"\\F0F24\";\n}\n\n.mdi-share-outline::before {\n  content: \"\\F0932\";\n}\n\n.mdi-share-variant::before {\n  content: \"\\F0497\";\n}\n\n.mdi-share-variant-outline::before {\n  content: \"\\F1514\";\n}\n\n.mdi-sheep::before {\n  content: \"\\F0CC6\";\n}\n\n.mdi-shield::before {\n  content: \"\\F0498\";\n}\n\n.mdi-shield-account::before {\n  content: \"\\F088F\";\n}\n\n.mdi-shield-account-outline::before {\n  content: \"\\F0A12\";\n}\n\n.mdi-shield-account-variant::before {\n  content: \"\\F15A7\";\n}\n\n.mdi-shield-account-variant-outline::before {\n  content: \"\\F15A8\";\n}\n\n.mdi-shield-airplane::before {\n  content: \"\\F06BB\";\n}\n\n.mdi-shield-airplane-outline::before {\n  content: \"\\F0CC7\";\n}\n\n.mdi-shield-alert::before {\n  content: \"\\F0ECC\";\n}\n\n.mdi-shield-alert-outline::before {\n  content: \"\\F0ECD\";\n}\n\n.mdi-shield-bug::before {\n  content: \"\\F13DA\";\n}\n\n.mdi-shield-bug-outline::before {\n  content: \"\\F13DB\";\n}\n\n.mdi-shield-car::before {\n  content: \"\\F0F83\";\n}\n\n.mdi-shield-check::before {\n  content: \"\\F0565\";\n}\n\n.mdi-shield-check-outline::before {\n  content: \"\\F0CC8\";\n}\n\n.mdi-shield-cross::before {\n  content: \"\\F0CC9\";\n}\n\n.mdi-shield-cross-outline::before {\n  content: \"\\F0CCA\";\n}\n\n.mdi-shield-edit::before {\n  content: \"\\F11A0\";\n}\n\n.mdi-shield-edit-outline::before {\n  content: \"\\F11A1\";\n}\n\n.mdi-shield-half::before {\n  content: \"\\F1360\";\n}\n\n.mdi-shield-half-full::before {\n  content: \"\\F0780\";\n}\n\n.mdi-shield-home::before {\n  content: \"\\F068A\";\n}\n\n.mdi-shield-home-outline::before {\n  content: \"\\F0CCB\";\n}\n\n.mdi-shield-key::before {\n  content: \"\\F0BC4\";\n}\n\n.mdi-shield-key-outline::before {\n  content: \"\\F0BC5\";\n}\n\n.mdi-shield-link-variant::before {\n  content: \"\\F0D33\";\n}\n\n.mdi-shield-link-variant-outline::before {\n  content: \"\\F0D34\";\n}\n\n.mdi-shield-lock::before {\n  content: \"\\F099D\";\n}\n\n.mdi-shield-lock-outline::before {\n  content: \"\\F0CCC\";\n}\n\n.mdi-shield-off::before {\n  content: \"\\F099E\";\n}\n\n.mdi-shield-off-outline::before {\n  content: \"\\F099C\";\n}\n\n.mdi-shield-outline::before {\n  content: \"\\F0499\";\n}\n\n.mdi-shield-plus::before {\n  content: \"\\F0ADA\";\n}\n\n.mdi-shield-plus-outline::before {\n  content: \"\\F0ADB\";\n}\n\n.mdi-shield-refresh::before {\n  content: \"\\F00AA\";\n}\n\n.mdi-shield-refresh-outline::before {\n  content: \"\\F01E0\";\n}\n\n.mdi-shield-remove::before {\n  content: \"\\F0ADC\";\n}\n\n.mdi-shield-remove-outline::before {\n  content: \"\\F0ADD\";\n}\n\n.mdi-shield-search::before {\n  content: \"\\F0D9A\";\n}\n\n.mdi-shield-star::before {\n  content: \"\\F113B\";\n}\n\n.mdi-shield-star-outline::before {\n  content: \"\\F113C\";\n}\n\n.mdi-shield-sun::before {\n  content: \"\\F105D\";\n}\n\n.mdi-shield-sun-outline::before {\n  content: \"\\F105E\";\n}\n\n.mdi-shield-sync::before {\n  content: \"\\F11A2\";\n}\n\n.mdi-shield-sync-outline::before {\n  content: \"\\F11A3\";\n}\n\n.mdi-ship-wheel::before {\n  content: \"\\F0833\";\n}\n\n.mdi-shoe-ballet::before {\n  content: \"\\F15CA\";\n}\n\n.mdi-shoe-cleat::before {\n  content: \"\\F15C7\";\n}\n\n.mdi-shoe-formal::before {\n  content: \"\\F0B47\";\n}\n\n.mdi-shoe-heel::before {\n  content: \"\\F0B48\";\n}\n\n.mdi-shoe-print::before {\n  content: \"\\F0DFA\";\n}\n\n.mdi-shoe-sneaker::before {\n  content: \"\\F15C8\";\n}\n\n.mdi-shopping::before {\n  content: \"\\F049A\";\n}\n\n.mdi-shopping-music::before {\n  content: \"\\F049B\";\n}\n\n.mdi-shopping-outline::before {\n  content: \"\\F11D5\";\n}\n\n.mdi-shopping-search::before {\n  content: \"\\F0F84\";\n}\n\n.mdi-shore::before {\n  content: \"\\F14F9\";\n}\n\n.mdi-shovel::before {\n  content: \"\\F0710\";\n}\n\n.mdi-shovel-off::before {\n  content: \"\\F0711\";\n}\n\n.mdi-shower::before {\n  content: \"\\F09A0\";\n}\n\n.mdi-shower-head::before {\n  content: \"\\F09A1\";\n}\n\n.mdi-shredder::before {\n  content: \"\\F049C\";\n}\n\n.mdi-shuffle::before {\n  content: \"\\F049D\";\n}\n\n.mdi-shuffle-disabled::before {\n  content: \"\\F049E\";\n}\n\n.mdi-shuffle-variant::before {\n  content: \"\\F049F\";\n}\n\n.mdi-shuriken::before {\n  content: \"\\F137F\";\n}\n\n.mdi-sigma::before {\n  content: \"\\F04A0\";\n}\n\n.mdi-sigma-lower::before {\n  content: \"\\F062B\";\n}\n\n.mdi-sign-caution::before {\n  content: \"\\F04A1\";\n}\n\n.mdi-sign-direction::before {\n  content: \"\\F0781\";\n}\n\n.mdi-sign-direction-minus::before {\n  content: \"\\F1000\";\n}\n\n.mdi-sign-direction-plus::before {\n  content: \"\\F0FDC\";\n}\n\n.mdi-sign-direction-remove::before {\n  content: \"\\F0FDD\";\n}\n\n.mdi-sign-pole::before {\n  content: \"\\F14F8\";\n}\n\n.mdi-sign-real-estate::before {\n  content: \"\\F1118\";\n}\n\n.mdi-sign-text::before {\n  content: \"\\F0782\";\n}\n\n.mdi-signal::before {\n  content: \"\\F04A2\";\n}\n\n.mdi-signal-2g::before {\n  content: \"\\F0712\";\n}\n\n.mdi-signal-3g::before {\n  content: \"\\F0713\";\n}\n\n.mdi-signal-4g::before {\n  content: \"\\F0714\";\n}\n\n.mdi-signal-5g::before {\n  content: \"\\F0A6F\";\n}\n\n.mdi-signal-cellular-1::before {\n  content: \"\\F08BC\";\n}\n\n.mdi-signal-cellular-2::before {\n  content: \"\\F08BD\";\n}\n\n.mdi-signal-cellular-3::before {\n  content: \"\\F08BE\";\n}\n\n.mdi-signal-cellular-outline::before {\n  content: \"\\F08BF\";\n}\n\n.mdi-signal-distance-variant::before {\n  content: \"\\F0E64\";\n}\n\n.mdi-signal-hspa::before {\n  content: \"\\F0715\";\n}\n\n.mdi-signal-hspa-plus::before {\n  content: \"\\F0716\";\n}\n\n.mdi-signal-off::before {\n  content: \"\\F0783\";\n}\n\n.mdi-signal-variant::before {\n  content: \"\\F060A\";\n}\n\n.mdi-signature::before {\n  content: \"\\F0DFB\";\n}\n\n.mdi-signature-freehand::before {\n  content: \"\\F0DFC\";\n}\n\n.mdi-signature-image::before {\n  content: \"\\F0DFD\";\n}\n\n.mdi-signature-text::before {\n  content: \"\\F0DFE\";\n}\n\n.mdi-silo::before {\n  content: \"\\F0B49\";\n}\n\n.mdi-silverware::before {\n  content: \"\\F04A3\";\n}\n\n.mdi-silverware-clean::before {\n  content: \"\\F0FDE\";\n}\n\n.mdi-silverware-fork::before {\n  content: \"\\F04A4\";\n}\n\n.mdi-silverware-fork-knife::before {\n  content: \"\\F0A70\";\n}\n\n.mdi-silverware-spoon::before {\n  content: \"\\F04A5\";\n}\n\n.mdi-silverware-variant::before {\n  content: \"\\F04A6\";\n}\n\n.mdi-sim::before {\n  content: \"\\F04A7\";\n}\n\n.mdi-sim-alert::before {\n  content: \"\\F04A8\";\n}\n\n.mdi-sim-alert-outline::before {\n  content: \"\\F15D3\";\n}\n\n.mdi-sim-off::before {\n  content: \"\\F04A9\";\n}\n\n.mdi-sim-off-outline::before {\n  content: \"\\F15D4\";\n}\n\n.mdi-sim-outline::before {\n  content: \"\\F15D5\";\n}\n\n.mdi-simple-icons::before {\n  content: \"\\F131D\";\n}\n\n.mdi-sina-weibo::before {\n  content: \"\\F0ADF\";\n}\n\n.mdi-sine-wave::before {\n  content: \"\\F095B\";\n}\n\n.mdi-sitemap::before {\n  content: \"\\F04AA\";\n}\n\n.mdi-size-l::before {\n  content: \"\\F13A6\";\n}\n\n.mdi-size-m::before {\n  content: \"\\F13A5\";\n}\n\n.mdi-size-s::before {\n  content: \"\\F13A4\";\n}\n\n.mdi-size-xl::before {\n  content: \"\\F13A7\";\n}\n\n.mdi-size-xs::before {\n  content: \"\\F13A3\";\n}\n\n.mdi-size-xxl::before {\n  content: \"\\F13A8\";\n}\n\n.mdi-size-xxs::before {\n  content: \"\\F13A2\";\n}\n\n.mdi-size-xxxl::before {\n  content: \"\\F13A9\";\n}\n\n.mdi-skate::before {\n  content: \"\\F0D35\";\n}\n\n.mdi-skateboard::before {\n  content: \"\\F14C2\";\n}\n\n.mdi-skew-less::before {\n  content: \"\\F0D36\";\n}\n\n.mdi-skew-more::before {\n  content: \"\\F0D37\";\n}\n\n.mdi-ski::before {\n  content: \"\\F1304\";\n}\n\n.mdi-ski-cross-country::before {\n  content: \"\\F1305\";\n}\n\n.mdi-ski-water::before {\n  content: \"\\F1306\";\n}\n\n.mdi-skip-backward::before {\n  content: \"\\F04AB\";\n}\n\n.mdi-skip-backward-outline::before {\n  content: \"\\F0F25\";\n}\n\n.mdi-skip-forward::before {\n  content: \"\\F04AC\";\n}\n\n.mdi-skip-forward-outline::before {\n  content: \"\\F0F26\";\n}\n\n.mdi-skip-next::before {\n  content: \"\\F04AD\";\n}\n\n.mdi-skip-next-circle::before {\n  content: \"\\F0661\";\n}\n\n.mdi-skip-next-circle-outline::before {\n  content: \"\\F0662\";\n}\n\n.mdi-skip-next-outline::before {\n  content: \"\\F0F27\";\n}\n\n.mdi-skip-previous::before {\n  content: \"\\F04AE\";\n}\n\n.mdi-skip-previous-circle::before {\n  content: \"\\F0663\";\n}\n\n.mdi-skip-previous-circle-outline::before {\n  content: \"\\F0664\";\n}\n\n.mdi-skip-previous-outline::before {\n  content: \"\\F0F28\";\n}\n\n.mdi-skull::before {\n  content: \"\\F068C\";\n}\n\n.mdi-skull-crossbones::before {\n  content: \"\\F0BC6\";\n}\n\n.mdi-skull-crossbones-outline::before {\n  content: \"\\F0BC7\";\n}\n\n.mdi-skull-outline::before {\n  content: \"\\F0BC8\";\n}\n\n.mdi-skull-scan::before {\n  content: \"\\F14C7\";\n}\n\n.mdi-skull-scan-outline::before {\n  content: \"\\F14C8\";\n}\n\n.mdi-skype::before {\n  content: \"\\F04AF\";\n}\n\n.mdi-skype-business::before {\n  content: \"\\F04B0\";\n}\n\n.mdi-slack::before {\n  content: \"\\F04B1\";\n}\n\n.mdi-slash-forward::before {\n  content: \"\\F0FDF\";\n}\n\n.mdi-slash-forward-box::before {\n  content: \"\\F0FE0\";\n}\n\n.mdi-sleep::before {\n  content: \"\\F04B2\";\n}\n\n.mdi-sleep-off::before {\n  content: \"\\F04B3\";\n}\n\n.mdi-slide::before {\n  content: \"\\F15A5\";\n}\n\n.mdi-slope-downhill::before {\n  content: \"\\F0DFF\";\n}\n\n.mdi-slope-uphill::before {\n  content: \"\\F0E00\";\n}\n\n.mdi-slot-machine::before {\n  content: \"\\F1114\";\n}\n\n.mdi-slot-machine-outline::before {\n  content: \"\\F1115\";\n}\n\n.mdi-smart-card::before {\n  content: \"\\F10BD\";\n}\n\n.mdi-smart-card-outline::before {\n  content: \"\\F10BE\";\n}\n\n.mdi-smart-card-reader::before {\n  content: \"\\F10BF\";\n}\n\n.mdi-smart-card-reader-outline::before {\n  content: \"\\F10C0\";\n}\n\n.mdi-smog::before {\n  content: \"\\F0A71\";\n}\n\n.mdi-smoke-detector::before {\n  content: \"\\F0392\";\n}\n\n.mdi-smoking::before {\n  content: \"\\F04B4\";\n}\n\n.mdi-smoking-off::before {\n  content: \"\\F04B5\";\n}\n\n.mdi-smoking-pipe::before {\n  content: \"\\F140D\";\n}\n\n.mdi-smoking-pipe-off::before {\n  content: \"\\F1428\";\n}\n\n.mdi-snake::before {\n  content: \"\\F150E\";\n}\n\n.mdi-snapchat::before {\n  content: \"\\F04B6\";\n}\n\n.mdi-snowboard::before {\n  content: \"\\F1307\";\n}\n\n.mdi-snowflake::before {\n  content: \"\\F0717\";\n}\n\n.mdi-snowflake-alert::before {\n  content: \"\\F0F29\";\n}\n\n.mdi-snowflake-melt::before {\n  content: \"\\F12CB\";\n}\n\n.mdi-snowflake-off::before {\n  content: \"\\F14E3\";\n}\n\n.mdi-snowflake-variant::before {\n  content: \"\\F0F2A\";\n}\n\n.mdi-snowman::before {\n  content: \"\\F04B7\";\n}\n\n.mdi-soccer::before {\n  content: \"\\F04B8\";\n}\n\n.mdi-soccer-field::before {\n  content: \"\\F0834\";\n}\n\n.mdi-social-distance-2-meters::before {\n  content: \"\\F1579\";\n}\n\n.mdi-social-distance-6-feet::before {\n  content: \"\\F157A\";\n}\n\n.mdi-sofa::before {\n  content: \"\\F04B9\";\n}\n\n.mdi-sofa-outline::before {\n  content: \"\\F156D\";\n}\n\n.mdi-sofa-single::before {\n  content: \"\\F156E\";\n}\n\n.mdi-sofa-single-outline::before {\n  content: \"\\F156F\";\n}\n\n.mdi-solar-panel::before {\n  content: \"\\F0D9B\";\n}\n\n.mdi-solar-panel-large::before {\n  content: \"\\F0D9C\";\n}\n\n.mdi-solar-power::before {\n  content: \"\\F0A72\";\n}\n\n.mdi-soldering-iron::before {\n  content: \"\\F1092\";\n}\n\n.mdi-solid::before {\n  content: \"\\F068D\";\n}\n\n.mdi-sony-playstation::before {\n  content: \"\\F0414\";\n}\n\n.mdi-sort::before {\n  content: \"\\F04BA\";\n}\n\n.mdi-sort-alphabetical-ascending::before {\n  content: \"\\F05BD\";\n}\n\n.mdi-sort-alphabetical-ascending-variant::before {\n  content: \"\\F1148\";\n}\n\n.mdi-sort-alphabetical-descending::before {\n  content: \"\\F05BF\";\n}\n\n.mdi-sort-alphabetical-descending-variant::before {\n  content: \"\\F1149\";\n}\n\n.mdi-sort-alphabetical-variant::before {\n  content: \"\\F04BB\";\n}\n\n.mdi-sort-ascending::before {\n  content: \"\\F04BC\";\n}\n\n.mdi-sort-bool-ascending::before {\n  content: \"\\F1385\";\n}\n\n.mdi-sort-bool-ascending-variant::before {\n  content: \"\\F1386\";\n}\n\n.mdi-sort-bool-descending::before {\n  content: \"\\F1387\";\n}\n\n.mdi-sort-bool-descending-variant::before {\n  content: \"\\F1388\";\n}\n\n.mdi-sort-calendar-ascending::before {\n  content: \"\\F1547\";\n}\n\n.mdi-sort-calendar-descending::before {\n  content: \"\\F1548\";\n}\n\n.mdi-sort-clock-ascending::before {\n  content: \"\\F1549\";\n}\n\n.mdi-sort-clock-ascending-outline::before {\n  content: \"\\F154A\";\n}\n\n.mdi-sort-clock-descending::before {\n  content: \"\\F154B\";\n}\n\n.mdi-sort-clock-descending-outline::before {\n  content: \"\\F154C\";\n}\n\n.mdi-sort-descending::before {\n  content: \"\\F04BD\";\n}\n\n.mdi-sort-numeric-ascending::before {\n  content: \"\\F1389\";\n}\n\n.mdi-sort-numeric-ascending-variant::before {\n  content: \"\\F090D\";\n}\n\n.mdi-sort-numeric-descending::before {\n  content: \"\\F138A\";\n}\n\n.mdi-sort-numeric-descending-variant::before {\n  content: \"\\F0AD2\";\n}\n\n.mdi-sort-numeric-variant::before {\n  content: \"\\F04BE\";\n}\n\n.mdi-sort-reverse-variant::before {\n  content: \"\\F033C\";\n}\n\n.mdi-sort-variant::before {\n  content: \"\\F04BF\";\n}\n\n.mdi-sort-variant-lock::before {\n  content: \"\\F0CCD\";\n}\n\n.mdi-sort-variant-lock-open::before {\n  content: \"\\F0CCE\";\n}\n\n.mdi-sort-variant-remove::before {\n  content: \"\\F1147\";\n}\n\n.mdi-soundcloud::before {\n  content: \"\\F04C0\";\n}\n\n.mdi-source-branch::before {\n  content: \"\\F062C\";\n}\n\n.mdi-source-branch-check::before {\n  content: \"\\F14CF\";\n}\n\n.mdi-source-branch-minus::before {\n  content: \"\\F14CB\";\n}\n\n.mdi-source-branch-plus::before {\n  content: \"\\F14CA\";\n}\n\n.mdi-source-branch-refresh::before {\n  content: \"\\F14CD\";\n}\n\n.mdi-source-branch-remove::before {\n  content: \"\\F14CC\";\n}\n\n.mdi-source-branch-sync::before {\n  content: \"\\F14CE\";\n}\n\n.mdi-source-commit::before {\n  content: \"\\F0718\";\n}\n\n.mdi-source-commit-end::before {\n  content: \"\\F0719\";\n}\n\n.mdi-source-commit-end-local::before {\n  content: \"\\F071A\";\n}\n\n.mdi-source-commit-local::before {\n  content: \"\\F071B\";\n}\n\n.mdi-source-commit-next-local::before {\n  content: \"\\F071C\";\n}\n\n.mdi-source-commit-start::before {\n  content: \"\\F071D\";\n}\n\n.mdi-source-commit-start-next-local::before {\n  content: \"\\F071E\";\n}\n\n.mdi-source-fork::before {\n  content: \"\\F04C1\";\n}\n\n.mdi-source-merge::before {\n  content: \"\\F062D\";\n}\n\n.mdi-source-pull::before {\n  content: \"\\F04C2\";\n}\n\n.mdi-source-repository::before {\n  content: \"\\F0CCF\";\n}\n\n.mdi-source-repository-multiple::before {\n  content: \"\\F0CD0\";\n}\n\n.mdi-soy-sauce::before {\n  content: \"\\F07EE\";\n}\n\n.mdi-soy-sauce-off::before {\n  content: \"\\F13FC\";\n}\n\n.mdi-spa::before {\n  content: \"\\F0CD1\";\n}\n\n.mdi-spa-outline::before {\n  content: \"\\F0CD2\";\n}\n\n.mdi-space-invaders::before {\n  content: \"\\F0BC9\";\n}\n\n.mdi-space-station::before {\n  content: \"\\F1383\";\n}\n\n.mdi-spade::before {\n  content: \"\\F0E65\";\n}\n\n.mdi-sparkles::before {\n  content: \"\\F1545\";\n}\n\n.mdi-speaker::before {\n  content: \"\\F04C3\";\n}\n\n.mdi-speaker-bluetooth::before {\n  content: \"\\F09A2\";\n}\n\n.mdi-speaker-multiple::before {\n  content: \"\\F0D38\";\n}\n\n.mdi-speaker-off::before {\n  content: \"\\F04C4\";\n}\n\n.mdi-speaker-wireless::before {\n  content: \"\\F071F\";\n}\n\n.mdi-speedometer::before {\n  content: \"\\F04C5\";\n}\n\n.mdi-speedometer-medium::before {\n  content: \"\\F0F85\";\n}\n\n.mdi-speedometer-slow::before {\n  content: \"\\F0F86\";\n}\n\n.mdi-spellcheck::before {\n  content: \"\\F04C6\";\n}\n\n.mdi-spider::before {\n  content: \"\\F11EA\";\n}\n\n.mdi-spider-thread::before {\n  content: \"\\F11EB\";\n}\n\n.mdi-spider-web::before {\n  content: \"\\F0BCA\";\n}\n\n.mdi-spirit-level::before {\n  content: \"\\F14F1\";\n}\n\n.mdi-spoon-sugar::before {\n  content: \"\\F1429\";\n}\n\n.mdi-spotify::before {\n  content: \"\\F04C7\";\n}\n\n.mdi-spotlight::before {\n  content: \"\\F04C8\";\n}\n\n.mdi-spotlight-beam::before {\n  content: \"\\F04C9\";\n}\n\n.mdi-spray::before {\n  content: \"\\F0665\";\n}\n\n.mdi-spray-bottle::before {\n  content: \"\\F0AE0\";\n}\n\n.mdi-sprinkler::before {\n  content: \"\\F105F\";\n}\n\n.mdi-sprinkler-variant::before {\n  content: \"\\F1060\";\n}\n\n.mdi-sprout::before {\n  content: \"\\F0E66\";\n}\n\n.mdi-sprout-outline::before {\n  content: \"\\F0E67\";\n}\n\n.mdi-square::before {\n  content: \"\\F0764\";\n}\n\n.mdi-square-circle::before {\n  content: \"\\F1500\";\n}\n\n.mdi-square-edit-outline::before {\n  content: \"\\F090C\";\n}\n\n.mdi-square-medium::before {\n  content: \"\\F0A13\";\n}\n\n.mdi-square-medium-outline::before {\n  content: \"\\F0A14\";\n}\n\n.mdi-square-off::before {\n  content: \"\\F12EE\";\n}\n\n.mdi-square-off-outline::before {\n  content: \"\\F12EF\";\n}\n\n.mdi-square-outline::before {\n  content: \"\\F0763\";\n}\n\n.mdi-square-root::before {\n  content: \"\\F0784\";\n}\n\n.mdi-square-root-box::before {\n  content: \"\\F09A3\";\n}\n\n.mdi-square-rounded::before {\n  content: \"\\F14FB\";\n}\n\n.mdi-square-rounded-outline::before {\n  content: \"\\F14FC\";\n}\n\n.mdi-square-small::before {\n  content: \"\\F0A15\";\n}\n\n.mdi-square-wave::before {\n  content: \"\\F147B\";\n}\n\n.mdi-squeegee::before {\n  content: \"\\F0AE1\";\n}\n\n.mdi-ssh::before {\n  content: \"\\F08C0\";\n}\n\n.mdi-stack-exchange::before {\n  content: \"\\F060B\";\n}\n\n.mdi-stack-overflow::before {\n  content: \"\\F04CC\";\n}\n\n.mdi-stackpath::before {\n  content: \"\\F0359\";\n}\n\n.mdi-stadium::before {\n  content: \"\\F0FF9\";\n}\n\n.mdi-stadium-variant::before {\n  content: \"\\F0720\";\n}\n\n.mdi-stairs::before {\n  content: \"\\F04CD\";\n}\n\n.mdi-stairs-box::before {\n  content: \"\\F139E\";\n}\n\n.mdi-stairs-down::before {\n  content: \"\\F12BE\";\n}\n\n.mdi-stairs-up::before {\n  content: \"\\F12BD\";\n}\n\n.mdi-stamper::before {\n  content: \"\\F0D39\";\n}\n\n.mdi-standard-definition::before {\n  content: \"\\F07EF\";\n}\n\n.mdi-star::before {\n  content: \"\\F04CE\";\n}\n\n.mdi-star-box::before {\n  content: \"\\F0A73\";\n}\n\n.mdi-star-box-multiple::before {\n  content: \"\\F1286\";\n}\n\n.mdi-star-box-multiple-outline::before {\n  content: \"\\F1287\";\n}\n\n.mdi-star-box-outline::before {\n  content: \"\\F0A74\";\n}\n\n.mdi-star-check::before {\n  content: \"\\F1566\";\n}\n\n.mdi-star-check-outline::before {\n  content: \"\\F156A\";\n}\n\n.mdi-star-circle::before {\n  content: \"\\F04CF\";\n}\n\n.mdi-star-circle-outline::before {\n  content: \"\\F09A4\";\n}\n\n.mdi-star-face::before {\n  content: \"\\F09A5\";\n}\n\n.mdi-star-four-points::before {\n  content: \"\\F0AE2\";\n}\n\n.mdi-star-four-points-outline::before {\n  content: \"\\F0AE3\";\n}\n\n.mdi-star-half::before {\n  content: \"\\F0246\";\n}\n\n.mdi-star-half-full::before {\n  content: \"\\F04D0\";\n}\n\n.mdi-star-minus::before {\n  content: \"\\F1564\";\n}\n\n.mdi-star-minus-outline::before {\n  content: \"\\F1568\";\n}\n\n.mdi-star-off::before {\n  content: \"\\F04D1\";\n}\n\n.mdi-star-off-outline::before {\n  content: \"\\F155B\";\n}\n\n.mdi-star-outline::before {\n  content: \"\\F04D2\";\n}\n\n.mdi-star-plus::before {\n  content: \"\\F1563\";\n}\n\n.mdi-star-plus-outline::before {\n  content: \"\\F1567\";\n}\n\n.mdi-star-remove::before {\n  content: \"\\F1565\";\n}\n\n.mdi-star-remove-outline::before {\n  content: \"\\F1569\";\n}\n\n.mdi-star-three-points::before {\n  content: \"\\F0AE4\";\n}\n\n.mdi-star-three-points-outline::before {\n  content: \"\\F0AE5\";\n}\n\n.mdi-state-machine::before {\n  content: \"\\F11EF\";\n}\n\n.mdi-steam::before {\n  content: \"\\F04D3\";\n}\n\n.mdi-steering::before {\n  content: \"\\F04D4\";\n}\n\n.mdi-steering-off::before {\n  content: \"\\F090E\";\n}\n\n.mdi-step-backward::before {\n  content: \"\\F04D5\";\n}\n\n.mdi-step-backward-2::before {\n  content: \"\\F04D6\";\n}\n\n.mdi-step-forward::before {\n  content: \"\\F04D7\";\n}\n\n.mdi-step-forward-2::before {\n  content: \"\\F04D8\";\n}\n\n.mdi-stethoscope::before {\n  content: \"\\F04D9\";\n}\n\n.mdi-sticker::before {\n  content: \"\\F1364\";\n}\n\n.mdi-sticker-alert::before {\n  content: \"\\F1365\";\n}\n\n.mdi-sticker-alert-outline::before {\n  content: \"\\F1366\";\n}\n\n.mdi-sticker-check::before {\n  content: \"\\F1367\";\n}\n\n.mdi-sticker-check-outline::before {\n  content: \"\\F1368\";\n}\n\n.mdi-sticker-circle-outline::before {\n  content: \"\\F05D0\";\n}\n\n.mdi-sticker-emoji::before {\n  content: \"\\F0785\";\n}\n\n.mdi-sticker-minus::before {\n  content: \"\\F1369\";\n}\n\n.mdi-sticker-minus-outline::before {\n  content: \"\\F136A\";\n}\n\n.mdi-sticker-outline::before {\n  content: \"\\F136B\";\n}\n\n.mdi-sticker-plus::before {\n  content: \"\\F136C\";\n}\n\n.mdi-sticker-plus-outline::before {\n  content: \"\\F136D\";\n}\n\n.mdi-sticker-remove::before {\n  content: \"\\F136E\";\n}\n\n.mdi-sticker-remove-outline::before {\n  content: \"\\F136F\";\n}\n\n.mdi-stocking::before {\n  content: \"\\F04DA\";\n}\n\n.mdi-stomach::before {\n  content: \"\\F1093\";\n}\n\n.mdi-stop::before {\n  content: \"\\F04DB\";\n}\n\n.mdi-stop-circle::before {\n  content: \"\\F0666\";\n}\n\n.mdi-stop-circle-outline::before {\n  content: \"\\F0667\";\n}\n\n.mdi-store::before {\n  content: \"\\F04DC\";\n}\n\n.mdi-store-24-hour::before {\n  content: \"\\F04DD\";\n}\n\n.mdi-store-outline::before {\n  content: \"\\F1361\";\n}\n\n.mdi-storefront::before {\n  content: \"\\F07C7\";\n}\n\n.mdi-storefront-outline::before {\n  content: \"\\F10C1\";\n}\n\n.mdi-stove::before {\n  content: \"\\F04DE\";\n}\n\n.mdi-strategy::before {\n  content: \"\\F11D6\";\n}\n\n.mdi-stretch-to-page::before {\n  content: \"\\F0F2B\";\n}\n\n.mdi-stretch-to-page-outline::before {\n  content: \"\\F0F2C\";\n}\n\n.mdi-string-lights::before {\n  content: \"\\F12BA\";\n}\n\n.mdi-string-lights-off::before {\n  content: \"\\F12BB\";\n}\n\n.mdi-subdirectory-arrow-left::before {\n  content: \"\\F060C\";\n}\n\n.mdi-subdirectory-arrow-right::before {\n  content: \"\\F060D\";\n}\n\n.mdi-submarine::before {\n  content: \"\\F156C\";\n}\n\n.mdi-subtitles::before {\n  content: \"\\F0A16\";\n}\n\n.mdi-subtitles-outline::before {\n  content: \"\\F0A17\";\n}\n\n.mdi-subway::before {\n  content: \"\\F06AC\";\n}\n\n.mdi-subway-alert-variant::before {\n  content: \"\\F0D9D\";\n}\n\n.mdi-subway-variant::before {\n  content: \"\\F04DF\";\n}\n\n.mdi-summit::before {\n  content: \"\\F0786\";\n}\n\n.mdi-sunglasses::before {\n  content: \"\\F04E0\";\n}\n\n.mdi-surround-sound::before {\n  content: \"\\F05C5\";\n}\n\n.mdi-surround-sound-2-0::before {\n  content: \"\\F07F0\";\n}\n\n.mdi-surround-sound-3-1::before {\n  content: \"\\F07F1\";\n}\n\n.mdi-surround-sound-5-1::before {\n  content: \"\\F07F2\";\n}\n\n.mdi-surround-sound-7-1::before {\n  content: \"\\F07F3\";\n}\n\n.mdi-svg::before {\n  content: \"\\F0721\";\n}\n\n.mdi-swap-horizontal::before {\n  content: \"\\F04E1\";\n}\n\n.mdi-swap-horizontal-bold::before {\n  content: \"\\F0BCD\";\n}\n\n.mdi-swap-horizontal-circle::before {\n  content: \"\\F0FE1\";\n}\n\n.mdi-swap-horizontal-circle-outline::before {\n  content: \"\\F0FE2\";\n}\n\n.mdi-swap-horizontal-variant::before {\n  content: \"\\F08C1\";\n}\n\n.mdi-swap-vertical::before {\n  content: \"\\F04E2\";\n}\n\n.mdi-swap-vertical-bold::before {\n  content: \"\\F0BCE\";\n}\n\n.mdi-swap-vertical-circle::before {\n  content: \"\\F0FE3\";\n}\n\n.mdi-swap-vertical-circle-outline::before {\n  content: \"\\F0FE4\";\n}\n\n.mdi-swap-vertical-variant::before {\n  content: \"\\F08C2\";\n}\n\n.mdi-swim::before {\n  content: \"\\F04E3\";\n}\n\n.mdi-switch::before {\n  content: \"\\F04E4\";\n}\n\n.mdi-sword::before {\n  content: \"\\F04E5\";\n}\n\n.mdi-sword-cross::before {\n  content: \"\\F0787\";\n}\n\n.mdi-syllabary-hangul::before {\n  content: \"\\F1333\";\n}\n\n.mdi-syllabary-hiragana::before {\n  content: \"\\F1334\";\n}\n\n.mdi-syllabary-katakana::before {\n  content: \"\\F1335\";\n}\n\n.mdi-syllabary-katakana-halfwidth::before {\n  content: \"\\F1336\";\n}\n\n.mdi-symbol::before {\n  content: \"\\F1501\";\n}\n\n.mdi-symfony::before {\n  content: \"\\F0AE6\";\n}\n\n.mdi-sync::before {\n  content: \"\\F04E6\";\n}\n\n.mdi-sync-alert::before {\n  content: \"\\F04E7\";\n}\n\n.mdi-sync-circle::before {\n  content: \"\\F1378\";\n}\n\n.mdi-sync-off::before {\n  content: \"\\F04E8\";\n}\n\n.mdi-tab::before {\n  content: \"\\F04E9\";\n}\n\n.mdi-tab-minus::before {\n  content: \"\\F0B4B\";\n}\n\n.mdi-tab-plus::before {\n  content: \"\\F075C\";\n}\n\n.mdi-tab-remove::before {\n  content: \"\\F0B4C\";\n}\n\n.mdi-tab-unselected::before {\n  content: \"\\F04EA\";\n}\n\n.mdi-table::before {\n  content: \"\\F04EB\";\n}\n\n.mdi-table-account::before {\n  content: \"\\F13B9\";\n}\n\n.mdi-table-alert::before {\n  content: \"\\F13BA\";\n}\n\n.mdi-table-arrow-down::before {\n  content: \"\\F13BB\";\n}\n\n.mdi-table-arrow-left::before {\n  content: \"\\F13BC\";\n}\n\n.mdi-table-arrow-right::before {\n  content: \"\\F13BD\";\n}\n\n.mdi-table-arrow-up::before {\n  content: \"\\F13BE\";\n}\n\n.mdi-table-border::before {\n  content: \"\\F0A18\";\n}\n\n.mdi-table-cancel::before {\n  content: \"\\F13BF\";\n}\n\n.mdi-table-chair::before {\n  content: \"\\F1061\";\n}\n\n.mdi-table-check::before {\n  content: \"\\F13C0\";\n}\n\n.mdi-table-clock::before {\n  content: \"\\F13C1\";\n}\n\n.mdi-table-cog::before {\n  content: \"\\F13C2\";\n}\n\n.mdi-table-column::before {\n  content: \"\\F0835\";\n}\n\n.mdi-table-column-plus-after::before {\n  content: \"\\F04EC\";\n}\n\n.mdi-table-column-plus-before::before {\n  content: \"\\F04ED\";\n}\n\n.mdi-table-column-remove::before {\n  content: \"\\F04EE\";\n}\n\n.mdi-table-column-width::before {\n  content: \"\\F04EF\";\n}\n\n.mdi-table-edit::before {\n  content: \"\\F04F0\";\n}\n\n.mdi-table-eye::before {\n  content: \"\\F1094\";\n}\n\n.mdi-table-eye-off::before {\n  content: \"\\F13C3\";\n}\n\n.mdi-table-furniture::before {\n  content: \"\\F05BC\";\n}\n\n.mdi-table-headers-eye::before {\n  content: \"\\F121D\";\n}\n\n.mdi-table-headers-eye-off::before {\n  content: \"\\F121E\";\n}\n\n.mdi-table-heart::before {\n  content: \"\\F13C4\";\n}\n\n.mdi-table-key::before {\n  content: \"\\F13C5\";\n}\n\n.mdi-table-large::before {\n  content: \"\\F04F1\";\n}\n\n.mdi-table-large-plus::before {\n  content: \"\\F0F87\";\n}\n\n.mdi-table-large-remove::before {\n  content: \"\\F0F88\";\n}\n\n.mdi-table-lock::before {\n  content: \"\\F13C6\";\n}\n\n.mdi-table-merge-cells::before {\n  content: \"\\F09A6\";\n}\n\n.mdi-table-minus::before {\n  content: \"\\F13C7\";\n}\n\n.mdi-table-multiple::before {\n  content: \"\\F13C8\";\n}\n\n.mdi-table-network::before {\n  content: \"\\F13C9\";\n}\n\n.mdi-table-of-contents::before {\n  content: \"\\F0836\";\n}\n\n.mdi-table-off::before {\n  content: \"\\F13CA\";\n}\n\n.mdi-table-plus::before {\n  content: \"\\F0A75\";\n}\n\n.mdi-table-refresh::before {\n  content: \"\\F13A0\";\n}\n\n.mdi-table-remove::before {\n  content: \"\\F0A76\";\n}\n\n.mdi-table-row::before {\n  content: \"\\F0837\";\n}\n\n.mdi-table-row-height::before {\n  content: \"\\F04F2\";\n}\n\n.mdi-table-row-plus-after::before {\n  content: \"\\F04F3\";\n}\n\n.mdi-table-row-plus-before::before {\n  content: \"\\F04F4\";\n}\n\n.mdi-table-row-remove::before {\n  content: \"\\F04F5\";\n}\n\n.mdi-table-search::before {\n  content: \"\\F090F\";\n}\n\n.mdi-table-settings::before {\n  content: \"\\F0838\";\n}\n\n.mdi-table-split-cell::before {\n  content: \"\\F142A\";\n}\n\n.mdi-table-star::before {\n  content: \"\\F13CB\";\n}\n\n.mdi-table-sync::before {\n  content: \"\\F13A1\";\n}\n\n.mdi-table-tennis::before {\n  content: \"\\F0E68\";\n}\n\n.mdi-tablet::before {\n  content: \"\\F04F6\";\n}\n\n.mdi-tablet-android::before {\n  content: \"\\F04F7\";\n}\n\n.mdi-tablet-cellphone::before {\n  content: \"\\F09A7\";\n}\n\n.mdi-tablet-dashboard::before {\n  content: \"\\F0ECE\";\n}\n\n.mdi-tablet-ipad::before {\n  content: \"\\F04F8\";\n}\n\n.mdi-taco::before {\n  content: \"\\F0762\";\n}\n\n.mdi-tag::before {\n  content: \"\\F04F9\";\n}\n\n.mdi-tag-faces::before {\n  content: \"\\F04FA\";\n}\n\n.mdi-tag-heart::before {\n  content: \"\\F068B\";\n}\n\n.mdi-tag-heart-outline::before {\n  content: \"\\F0BCF\";\n}\n\n.mdi-tag-minus::before {\n  content: \"\\F0910\";\n}\n\n.mdi-tag-minus-outline::before {\n  content: \"\\F121F\";\n}\n\n.mdi-tag-multiple::before {\n  content: \"\\F04FB\";\n}\n\n.mdi-tag-multiple-outline::before {\n  content: \"\\F12F7\";\n}\n\n.mdi-tag-off::before {\n  content: \"\\F1220\";\n}\n\n.mdi-tag-off-outline::before {\n  content: \"\\F1221\";\n}\n\n.mdi-tag-outline::before {\n  content: \"\\F04FC\";\n}\n\n.mdi-tag-plus::before {\n  content: \"\\F0722\";\n}\n\n.mdi-tag-plus-outline::before {\n  content: \"\\F1222\";\n}\n\n.mdi-tag-remove::before {\n  content: \"\\F0723\";\n}\n\n.mdi-tag-remove-outline::before {\n  content: \"\\F1223\";\n}\n\n.mdi-tag-text::before {\n  content: \"\\F1224\";\n}\n\n.mdi-tag-text-outline::before {\n  content: \"\\F04FD\";\n}\n\n.mdi-tailwind::before {\n  content: \"\\F13FF\";\n}\n\n.mdi-tank::before {\n  content: \"\\F0D3A\";\n}\n\n.mdi-tanker-truck::before {\n  content: \"\\F0FE5\";\n}\n\n.mdi-tape-measure::before {\n  content: \"\\F0B4D\";\n}\n\n.mdi-target::before {\n  content: \"\\F04FE\";\n}\n\n.mdi-target-account::before {\n  content: \"\\F0BD0\";\n}\n\n.mdi-target-variant::before {\n  content: \"\\F0A77\";\n}\n\n.mdi-taxi::before {\n  content: \"\\F04FF\";\n}\n\n.mdi-tea::before {\n  content: \"\\F0D9E\";\n}\n\n.mdi-tea-outline::before {\n  content: \"\\F0D9F\";\n}\n\n.mdi-teach::before {\n  content: \"\\F0890\";\n}\n\n.mdi-teamviewer::before {\n  content: \"\\F0500\";\n}\n\n.mdi-telegram::before {\n  content: \"\\F0501\";\n}\n\n.mdi-telescope::before {\n  content: \"\\F0B4E\";\n}\n\n.mdi-television::before {\n  content: \"\\F0502\";\n}\n\n.mdi-television-ambient-light::before {\n  content: \"\\F1356\";\n}\n\n.mdi-television-box::before {\n  content: \"\\F0839\";\n}\n\n.mdi-television-classic::before {\n  content: \"\\F07F4\";\n}\n\n.mdi-television-classic-off::before {\n  content: \"\\F083A\";\n}\n\n.mdi-television-clean::before {\n  content: \"\\F1110\";\n}\n\n.mdi-television-guide::before {\n  content: \"\\F0503\";\n}\n\n.mdi-television-off::before {\n  content: \"\\F083B\";\n}\n\n.mdi-television-pause::before {\n  content: \"\\F0F89\";\n}\n\n.mdi-television-play::before {\n  content: \"\\F0ECF\";\n}\n\n.mdi-television-stop::before {\n  content: \"\\F0F8A\";\n}\n\n.mdi-temperature-celsius::before {\n  content: \"\\F0504\";\n}\n\n.mdi-temperature-fahrenheit::before {\n  content: \"\\F0505\";\n}\n\n.mdi-temperature-kelvin::before {\n  content: \"\\F0506\";\n}\n\n.mdi-tennis::before {\n  content: \"\\F0DA0\";\n}\n\n.mdi-tennis-ball::before {\n  content: \"\\F0507\";\n}\n\n.mdi-tent::before {\n  content: \"\\F0508\";\n}\n\n.mdi-terraform::before {\n  content: \"\\F1062\";\n}\n\n.mdi-terrain::before {\n  content: \"\\F0509\";\n}\n\n.mdi-test-tube::before {\n  content: \"\\F0668\";\n}\n\n.mdi-test-tube-empty::before {\n  content: \"\\F0911\";\n}\n\n.mdi-test-tube-off::before {\n  content: \"\\F0912\";\n}\n\n.mdi-text::before {\n  content: \"\\F09A8\";\n}\n\n.mdi-text-account::before {\n  content: \"\\F1570\";\n}\n\n.mdi-text-box::before {\n  content: \"\\F021A\";\n}\n\n.mdi-text-box-check::before {\n  content: \"\\F0EA6\";\n}\n\n.mdi-text-box-check-outline::before {\n  content: \"\\F0EA7\";\n}\n\n.mdi-text-box-minus::before {\n  content: \"\\F0EA8\";\n}\n\n.mdi-text-box-minus-outline::before {\n  content: \"\\F0EA9\";\n}\n\n.mdi-text-box-multiple::before {\n  content: \"\\F0AB7\";\n}\n\n.mdi-text-box-multiple-outline::before {\n  content: \"\\F0AB8\";\n}\n\n.mdi-text-box-outline::before {\n  content: \"\\F09ED\";\n}\n\n.mdi-text-box-plus::before {\n  content: \"\\F0EAA\";\n}\n\n.mdi-text-box-plus-outline::before {\n  content: \"\\F0EAB\";\n}\n\n.mdi-text-box-remove::before {\n  content: \"\\F0EAC\";\n}\n\n.mdi-text-box-remove-outline::before {\n  content: \"\\F0EAD\";\n}\n\n.mdi-text-box-search::before {\n  content: \"\\F0EAE\";\n}\n\n.mdi-text-box-search-outline::before {\n  content: \"\\F0EAF\";\n}\n\n.mdi-text-recognition::before {\n  content: \"\\F113D\";\n}\n\n.mdi-text-search::before {\n  content: \"\\F13B8\";\n}\n\n.mdi-text-shadow::before {\n  content: \"\\F0669\";\n}\n\n.mdi-text-short::before {\n  content: \"\\F09A9\";\n}\n\n.mdi-text-subject::before {\n  content: \"\\F09AA\";\n}\n\n.mdi-text-to-speech::before {\n  content: \"\\F050A\";\n}\n\n.mdi-text-to-speech-off::before {\n  content: \"\\F050B\";\n}\n\n.mdi-texture::before {\n  content: \"\\F050C\";\n}\n\n.mdi-texture-box::before {\n  content: \"\\F0FE6\";\n}\n\n.mdi-theater::before {\n  content: \"\\F050D\";\n}\n\n.mdi-theme-light-dark::before {\n  content: \"\\F050E\";\n}\n\n.mdi-thermometer::before {\n  content: \"\\F050F\";\n}\n\n.mdi-thermometer-alert::before {\n  content: \"\\F0E01\";\n}\n\n.mdi-thermometer-chevron-down::before {\n  content: \"\\F0E02\";\n}\n\n.mdi-thermometer-chevron-up::before {\n  content: \"\\F0E03\";\n}\n\n.mdi-thermometer-high::before {\n  content: \"\\F10C2\";\n}\n\n.mdi-thermometer-lines::before {\n  content: \"\\F0510\";\n}\n\n.mdi-thermometer-low::before {\n  content: \"\\F10C3\";\n}\n\n.mdi-thermometer-minus::before {\n  content: \"\\F0E04\";\n}\n\n.mdi-thermometer-off::before {\n  content: \"\\F1531\";\n}\n\n.mdi-thermometer-plus::before {\n  content: \"\\F0E05\";\n}\n\n.mdi-thermostat::before {\n  content: \"\\F0393\";\n}\n\n.mdi-thermostat-box::before {\n  content: \"\\F0891\";\n}\n\n.mdi-thought-bubble::before {\n  content: \"\\F07F6\";\n}\n\n.mdi-thought-bubble-outline::before {\n  content: \"\\F07F7\";\n}\n\n.mdi-thumb-down::before {\n  content: \"\\F0511\";\n}\n\n.mdi-thumb-down-outline::before {\n  content: \"\\F0512\";\n}\n\n.mdi-thumb-up::before {\n  content: \"\\F0513\";\n}\n\n.mdi-thumb-up-outline::before {\n  content: \"\\F0514\";\n}\n\n.mdi-thumbs-up-down::before {\n  content: \"\\F0515\";\n}\n\n.mdi-ticket::before {\n  content: \"\\F0516\";\n}\n\n.mdi-ticket-account::before {\n  content: \"\\F0517\";\n}\n\n.mdi-ticket-confirmation::before {\n  content: \"\\F0518\";\n}\n\n.mdi-ticket-confirmation-outline::before {\n  content: \"\\F13AA\";\n}\n\n.mdi-ticket-outline::before {\n  content: \"\\F0913\";\n}\n\n.mdi-ticket-percent::before {\n  content: \"\\F0724\";\n}\n\n.mdi-ticket-percent-outline::before {\n  content: \"\\F142B\";\n}\n\n.mdi-tie::before {\n  content: \"\\F0519\";\n}\n\n.mdi-tilde::before {\n  content: \"\\F0725\";\n}\n\n.mdi-timelapse::before {\n  content: \"\\F051A\";\n}\n\n.mdi-timeline::before {\n  content: \"\\F0BD1\";\n}\n\n.mdi-timeline-alert::before {\n  content: \"\\F0F95\";\n}\n\n.mdi-timeline-alert-outline::before {\n  content: \"\\F0F98\";\n}\n\n.mdi-timeline-check::before {\n  content: \"\\F1532\";\n}\n\n.mdi-timeline-check-outline::before {\n  content: \"\\F1533\";\n}\n\n.mdi-timeline-clock::before {\n  content: \"\\F11FB\";\n}\n\n.mdi-timeline-clock-outline::before {\n  content: \"\\F11FC\";\n}\n\n.mdi-timeline-help::before {\n  content: \"\\F0F99\";\n}\n\n.mdi-timeline-help-outline::before {\n  content: \"\\F0F9A\";\n}\n\n.mdi-timeline-minus::before {\n  content: \"\\F1534\";\n}\n\n.mdi-timeline-minus-outline::before {\n  content: \"\\F1535\";\n}\n\n.mdi-timeline-outline::before {\n  content: \"\\F0BD2\";\n}\n\n.mdi-timeline-plus::before {\n  content: \"\\F0F96\";\n}\n\n.mdi-timeline-plus-outline::before {\n  content: \"\\F0F97\";\n}\n\n.mdi-timeline-remove::before {\n  content: \"\\F1536\";\n}\n\n.mdi-timeline-remove-outline::before {\n  content: \"\\F1537\";\n}\n\n.mdi-timeline-text::before {\n  content: \"\\F0BD3\";\n}\n\n.mdi-timeline-text-outline::before {\n  content: \"\\F0BD4\";\n}\n\n.mdi-timer::before {\n  content: \"\\F13AB\";\n}\n\n.mdi-timer-10::before {\n  content: \"\\F051C\";\n}\n\n.mdi-timer-3::before {\n  content: \"\\F051D\";\n}\n\n.mdi-timer-off::before {\n  content: \"\\F13AC\";\n}\n\n.mdi-timer-off-outline::before {\n  content: \"\\F051E\";\n}\n\n.mdi-timer-outline::before {\n  content: \"\\F051B\";\n}\n\n.mdi-timer-sand::before {\n  content: \"\\F051F\";\n}\n\n.mdi-timer-sand-empty::before {\n  content: \"\\F06AD\";\n}\n\n.mdi-timer-sand-full::before {\n  content: \"\\F078C\";\n}\n\n.mdi-timetable::before {\n  content: \"\\F0520\";\n}\n\n.mdi-toaster::before {\n  content: \"\\F1063\";\n}\n\n.mdi-toaster-off::before {\n  content: \"\\F11B7\";\n}\n\n.mdi-toaster-oven::before {\n  content: \"\\F0CD3\";\n}\n\n.mdi-toggle-switch::before {\n  content: \"\\F0521\";\n}\n\n.mdi-toggle-switch-off::before {\n  content: \"\\F0522\";\n}\n\n.mdi-toggle-switch-off-outline::before {\n  content: \"\\F0A19\";\n}\n\n.mdi-toggle-switch-outline::before {\n  content: \"\\F0A1A\";\n}\n\n.mdi-toilet::before {\n  content: \"\\F09AB\";\n}\n\n.mdi-toolbox::before {\n  content: \"\\F09AC\";\n}\n\n.mdi-toolbox-outline::before {\n  content: \"\\F09AD\";\n}\n\n.mdi-tools::before {\n  content: \"\\F1064\";\n}\n\n.mdi-tooltip::before {\n  content: \"\\F0523\";\n}\n\n.mdi-tooltip-account::before {\n  content: \"\\F000C\";\n}\n\n.mdi-tooltip-check::before {\n  content: \"\\F155C\";\n}\n\n.mdi-tooltip-check-outline::before {\n  content: \"\\F155D\";\n}\n\n.mdi-tooltip-edit::before {\n  content: \"\\F0524\";\n}\n\n.mdi-tooltip-edit-outline::before {\n  content: \"\\F12C5\";\n}\n\n.mdi-tooltip-image::before {\n  content: \"\\F0525\";\n}\n\n.mdi-tooltip-image-outline::before {\n  content: \"\\F0BD5\";\n}\n\n.mdi-tooltip-minus::before {\n  content: \"\\F155E\";\n}\n\n.mdi-tooltip-minus-outline::before {\n  content: \"\\F155F\";\n}\n\n.mdi-tooltip-outline::before {\n  content: \"\\F0526\";\n}\n\n.mdi-tooltip-plus::before {\n  content: \"\\F0BD6\";\n}\n\n.mdi-tooltip-plus-outline::before {\n  content: \"\\F0527\";\n}\n\n.mdi-tooltip-remove::before {\n  content: \"\\F1560\";\n}\n\n.mdi-tooltip-remove-outline::before {\n  content: \"\\F1561\";\n}\n\n.mdi-tooltip-text::before {\n  content: \"\\F0528\";\n}\n\n.mdi-tooltip-text-outline::before {\n  content: \"\\F0BD7\";\n}\n\n.mdi-tooth::before {\n  content: \"\\F08C3\";\n}\n\n.mdi-tooth-outline::before {\n  content: \"\\F0529\";\n}\n\n.mdi-toothbrush::before {\n  content: \"\\F1129\";\n}\n\n.mdi-toothbrush-electric::before {\n  content: \"\\F112C\";\n}\n\n.mdi-toothbrush-paste::before {\n  content: \"\\F112A\";\n}\n\n.mdi-torch::before {\n  content: \"\\F1606\";\n}\n\n.mdi-tortoise::before {\n  content: \"\\F0D3B\";\n}\n\n.mdi-toslink::before {\n  content: \"\\F12B8\";\n}\n\n.mdi-tournament::before {\n  content: \"\\F09AE\";\n}\n\n.mdi-tow-truck::before {\n  content: \"\\F083C\";\n}\n\n.mdi-tower-beach::before {\n  content: \"\\F0681\";\n}\n\n.mdi-tower-fire::before {\n  content: \"\\F0682\";\n}\n\n.mdi-toy-brick::before {\n  content: \"\\F1288\";\n}\n\n.mdi-toy-brick-marker::before {\n  content: \"\\F1289\";\n}\n\n.mdi-toy-brick-marker-outline::before {\n  content: \"\\F128A\";\n}\n\n.mdi-toy-brick-minus::before {\n  content: \"\\F128B\";\n}\n\n.mdi-toy-brick-minus-outline::before {\n  content: \"\\F128C\";\n}\n\n.mdi-toy-brick-outline::before {\n  content: \"\\F128D\";\n}\n\n.mdi-toy-brick-plus::before {\n  content: \"\\F128E\";\n}\n\n.mdi-toy-brick-plus-outline::before {\n  content: \"\\F128F\";\n}\n\n.mdi-toy-brick-remove::before {\n  content: \"\\F1290\";\n}\n\n.mdi-toy-brick-remove-outline::before {\n  content: \"\\F1291\";\n}\n\n.mdi-toy-brick-search::before {\n  content: \"\\F1292\";\n}\n\n.mdi-toy-brick-search-outline::before {\n  content: \"\\F1293\";\n}\n\n.mdi-track-light::before {\n  content: \"\\F0914\";\n}\n\n.mdi-trackpad::before {\n  content: \"\\F07F8\";\n}\n\n.mdi-trackpad-lock::before {\n  content: \"\\F0933\";\n}\n\n.mdi-tractor::before {\n  content: \"\\F0892\";\n}\n\n.mdi-tractor-variant::before {\n  content: \"\\F14C4\";\n}\n\n.mdi-trademark::before {\n  content: \"\\F0A78\";\n}\n\n.mdi-traffic-cone::before {\n  content: \"\\F137C\";\n}\n\n.mdi-traffic-light::before {\n  content: \"\\F052B\";\n}\n\n.mdi-train::before {\n  content: \"\\F052C\";\n}\n\n.mdi-train-car::before {\n  content: \"\\F0BD8\";\n}\n\n.mdi-train-variant::before {\n  content: \"\\F08C4\";\n}\n\n.mdi-tram::before {\n  content: \"\\F052D\";\n}\n\n.mdi-tram-side::before {\n  content: \"\\F0FE7\";\n}\n\n.mdi-transcribe::before {\n  content: \"\\F052E\";\n}\n\n.mdi-transcribe-close::before {\n  content: \"\\F052F\";\n}\n\n.mdi-transfer::before {\n  content: \"\\F1065\";\n}\n\n.mdi-transfer-down::before {\n  content: \"\\F0DA1\";\n}\n\n.mdi-transfer-left::before {\n  content: \"\\F0DA2\";\n}\n\n.mdi-transfer-right::before {\n  content: \"\\F0530\";\n}\n\n.mdi-transfer-up::before {\n  content: \"\\F0DA3\";\n}\n\n.mdi-transit-connection::before {\n  content: \"\\F0D3C\";\n}\n\n.mdi-transit-connection-horizontal::before {\n  content: \"\\F1546\";\n}\n\n.mdi-transit-connection-variant::before {\n  content: \"\\F0D3D\";\n}\n\n.mdi-transit-detour::before {\n  content: \"\\F0F8B\";\n}\n\n.mdi-transit-skip::before {\n  content: \"\\F1515\";\n}\n\n.mdi-transit-transfer::before {\n  content: \"\\F06AE\";\n}\n\n.mdi-transition::before {\n  content: \"\\F0915\";\n}\n\n.mdi-transition-masked::before {\n  content: \"\\F0916\";\n}\n\n.mdi-translate::before {\n  content: \"\\F05CA\";\n}\n\n.mdi-translate-off::before {\n  content: \"\\F0E06\";\n}\n\n.mdi-transmission-tower::before {\n  content: \"\\F0D3E\";\n}\n\n.mdi-trash-can::before {\n  content: \"\\F0A79\";\n}\n\n.mdi-trash-can-outline::before {\n  content: \"\\F0A7A\";\n}\n\n.mdi-tray::before {\n  content: \"\\F1294\";\n}\n\n.mdi-tray-alert::before {\n  content: \"\\F1295\";\n}\n\n.mdi-tray-full::before {\n  content: \"\\F1296\";\n}\n\n.mdi-tray-minus::before {\n  content: \"\\F1297\";\n}\n\n.mdi-tray-plus::before {\n  content: \"\\F1298\";\n}\n\n.mdi-tray-remove::before {\n  content: \"\\F1299\";\n}\n\n.mdi-treasure-chest::before {\n  content: \"\\F0726\";\n}\n\n.mdi-tree::before {\n  content: \"\\F0531\";\n}\n\n.mdi-tree-outline::before {\n  content: \"\\F0E69\";\n}\n\n.mdi-trello::before {\n  content: \"\\F0532\";\n}\n\n.mdi-trending-down::before {\n  content: \"\\F0533\";\n}\n\n.mdi-trending-neutral::before {\n  content: \"\\F0534\";\n}\n\n.mdi-trending-up::before {\n  content: \"\\F0535\";\n}\n\n.mdi-triangle::before {\n  content: \"\\F0536\";\n}\n\n.mdi-triangle-outline::before {\n  content: \"\\F0537\";\n}\n\n.mdi-triangle-wave::before {\n  content: \"\\F147C\";\n}\n\n.mdi-triforce::before {\n  content: \"\\F0BD9\";\n}\n\n.mdi-trophy::before {\n  content: \"\\F0538\";\n}\n\n.mdi-trophy-award::before {\n  content: \"\\F0539\";\n}\n\n.mdi-trophy-broken::before {\n  content: \"\\F0DA4\";\n}\n\n.mdi-trophy-outline::before {\n  content: \"\\F053A\";\n}\n\n.mdi-trophy-variant::before {\n  content: \"\\F053B\";\n}\n\n.mdi-trophy-variant-outline::before {\n  content: \"\\F053C\";\n}\n\n.mdi-truck::before {\n  content: \"\\F053D\";\n}\n\n.mdi-truck-check::before {\n  content: \"\\F0CD4\";\n}\n\n.mdi-truck-check-outline::before {\n  content: \"\\F129A\";\n}\n\n.mdi-truck-delivery::before {\n  content: \"\\F053E\";\n}\n\n.mdi-truck-delivery-outline::before {\n  content: \"\\F129B\";\n}\n\n.mdi-truck-fast::before {\n  content: \"\\F0788\";\n}\n\n.mdi-truck-fast-outline::before {\n  content: \"\\F129C\";\n}\n\n.mdi-truck-outline::before {\n  content: \"\\F129D\";\n}\n\n.mdi-truck-trailer::before {\n  content: \"\\F0727\";\n}\n\n.mdi-trumpet::before {\n  content: \"\\F1096\";\n}\n\n.mdi-tshirt-crew::before {\n  content: \"\\F0A7B\";\n}\n\n.mdi-tshirt-crew-outline::before {\n  content: \"\\F053F\";\n}\n\n.mdi-tshirt-v::before {\n  content: \"\\F0A7C\";\n}\n\n.mdi-tshirt-v-outline::before {\n  content: \"\\F0540\";\n}\n\n.mdi-tumble-dryer::before {\n  content: \"\\F0917\";\n}\n\n.mdi-tumble-dryer-alert::before {\n  content: \"\\F11BA\";\n}\n\n.mdi-tumble-dryer-off::before {\n  content: \"\\F11BB\";\n}\n\n.mdi-tune::before {\n  content: \"\\F062E\";\n}\n\n.mdi-tune-variant::before {\n  content: \"\\F1542\";\n}\n\n.mdi-tune-vertical::before {\n  content: \"\\F066A\";\n}\n\n.mdi-tune-vertical-variant::before {\n  content: \"\\F1543\";\n}\n\n.mdi-turnstile::before {\n  content: \"\\F0CD5\";\n}\n\n.mdi-turnstile-outline::before {\n  content: \"\\F0CD6\";\n}\n\n.mdi-turtle::before {\n  content: \"\\F0CD7\";\n}\n\n.mdi-twitch::before {\n  content: \"\\F0543\";\n}\n\n.mdi-twitter::before {\n  content: \"\\F0544\";\n}\n\n.mdi-twitter-retweet::before {\n  content: \"\\F0547\";\n}\n\n.mdi-two-factor-authentication::before {\n  content: \"\\F09AF\";\n}\n\n.mdi-typewriter::before {\n  content: \"\\F0F2D\";\n}\n\n.mdi-ubisoft::before {\n  content: \"\\F0BDA\";\n}\n\n.mdi-ubuntu::before {\n  content: \"\\F0548\";\n}\n\n.mdi-ufo::before {\n  content: \"\\F10C4\";\n}\n\n.mdi-ufo-outline::before {\n  content: \"\\F10C5\";\n}\n\n.mdi-ultra-high-definition::before {\n  content: \"\\F07F9\";\n}\n\n.mdi-umbraco::before {\n  content: \"\\F0549\";\n}\n\n.mdi-umbrella::before {\n  content: \"\\F054A\";\n}\n\n.mdi-umbrella-closed::before {\n  content: \"\\F09B0\";\n}\n\n.mdi-umbrella-closed-outline::before {\n  content: \"\\F13E2\";\n}\n\n.mdi-umbrella-closed-variant::before {\n  content: \"\\F13E1\";\n}\n\n.mdi-umbrella-outline::before {\n  content: \"\\F054B\";\n}\n\n.mdi-undo::before {\n  content: \"\\F054C\";\n}\n\n.mdi-undo-variant::before {\n  content: \"\\F054D\";\n}\n\n.mdi-unfold-less-horizontal::before {\n  content: \"\\F054E\";\n}\n\n.mdi-unfold-less-vertical::before {\n  content: \"\\F0760\";\n}\n\n.mdi-unfold-more-horizontal::before {\n  content: \"\\F054F\";\n}\n\n.mdi-unfold-more-vertical::before {\n  content: \"\\F0761\";\n}\n\n.mdi-ungroup::before {\n  content: \"\\F0550\";\n}\n\n.mdi-unicode::before {\n  content: \"\\F0ED0\";\n}\n\n.mdi-unicorn::before {\n  content: \"\\F15C2\";\n}\n\n.mdi-unicorn-variant::before {\n  content: \"\\F15C3\";\n}\n\n.mdi-unicycle::before {\n  content: \"\\F15E5\";\n}\n\n.mdi-unity::before {\n  content: \"\\F06AF\";\n}\n\n.mdi-unreal::before {\n  content: \"\\F09B1\";\n}\n\n.mdi-untappd::before {\n  content: \"\\F0551\";\n}\n\n.mdi-update::before {\n  content: \"\\F06B0\";\n}\n\n.mdi-upload::before {\n  content: \"\\F0552\";\n}\n\n.mdi-upload-lock::before {\n  content: \"\\F1373\";\n}\n\n.mdi-upload-lock-outline::before {\n  content: \"\\F1374\";\n}\n\n.mdi-upload-multiple::before {\n  content: \"\\F083D\";\n}\n\n.mdi-upload-network::before {\n  content: \"\\F06F6\";\n}\n\n.mdi-upload-network-outline::before {\n  content: \"\\F0CD8\";\n}\n\n.mdi-upload-off::before {\n  content: \"\\F10C6\";\n}\n\n.mdi-upload-off-outline::before {\n  content: \"\\F10C7\";\n}\n\n.mdi-upload-outline::before {\n  content: \"\\F0E07\";\n}\n\n.mdi-usb::before {\n  content: \"\\F0553\";\n}\n\n.mdi-usb-flash-drive::before {\n  content: \"\\F129E\";\n}\n\n.mdi-usb-flash-drive-outline::before {\n  content: \"\\F129F\";\n}\n\n.mdi-usb-port::before {\n  content: \"\\F11F0\";\n}\n\n.mdi-valve::before {\n  content: \"\\F1066\";\n}\n\n.mdi-valve-closed::before {\n  content: \"\\F1067\";\n}\n\n.mdi-valve-open::before {\n  content: \"\\F1068\";\n}\n\n.mdi-van-passenger::before {\n  content: \"\\F07FA\";\n}\n\n.mdi-van-utility::before {\n  content: \"\\F07FB\";\n}\n\n.mdi-vanish::before {\n  content: \"\\F07FC\";\n}\n\n.mdi-vanish-quarter::before {\n  content: \"\\F1554\";\n}\n\n.mdi-vanity-light::before {\n  content: \"\\F11E1\";\n}\n\n.mdi-variable::before {\n  content: \"\\F0AE7\";\n}\n\n.mdi-variable-box::before {\n  content: \"\\F1111\";\n}\n\n.mdi-vector-arrange-above::before {\n  content: \"\\F0554\";\n}\n\n.mdi-vector-arrange-below::before {\n  content: \"\\F0555\";\n}\n\n.mdi-vector-bezier::before {\n  content: \"\\F0AE8\";\n}\n\n.mdi-vector-circle::before {\n  content: \"\\F0556\";\n}\n\n.mdi-vector-circle-variant::before {\n  content: \"\\F0557\";\n}\n\n.mdi-vector-combine::before {\n  content: \"\\F0558\";\n}\n\n.mdi-vector-curve::before {\n  content: \"\\F0559\";\n}\n\n.mdi-vector-difference::before {\n  content: \"\\F055A\";\n}\n\n.mdi-vector-difference-ab::before {\n  content: \"\\F055B\";\n}\n\n.mdi-vector-difference-ba::before {\n  content: \"\\F055C\";\n}\n\n.mdi-vector-ellipse::before {\n  content: \"\\F0893\";\n}\n\n.mdi-vector-intersection::before {\n  content: \"\\F055D\";\n}\n\n.mdi-vector-line::before {\n  content: \"\\F055E\";\n}\n\n.mdi-vector-link::before {\n  content: \"\\F0FE8\";\n}\n\n.mdi-vector-point::before {\n  content: \"\\F055F\";\n}\n\n.mdi-vector-polygon::before {\n  content: \"\\F0560\";\n}\n\n.mdi-vector-polyline::before {\n  content: \"\\F0561\";\n}\n\n.mdi-vector-polyline-edit::before {\n  content: \"\\F1225\";\n}\n\n.mdi-vector-polyline-minus::before {\n  content: \"\\F1226\";\n}\n\n.mdi-vector-polyline-plus::before {\n  content: \"\\F1227\";\n}\n\n.mdi-vector-polyline-remove::before {\n  content: \"\\F1228\";\n}\n\n.mdi-vector-radius::before {\n  content: \"\\F074A\";\n}\n\n.mdi-vector-rectangle::before {\n  content: \"\\F05C6\";\n}\n\n.mdi-vector-selection::before {\n  content: \"\\F0562\";\n}\n\n.mdi-vector-square::before {\n  content: \"\\F0001\";\n}\n\n.mdi-vector-triangle::before {\n  content: \"\\F0563\";\n}\n\n.mdi-vector-union::before {\n  content: \"\\F0564\";\n}\n\n.mdi-vhs::before {\n  content: \"\\F0A1B\";\n}\n\n.mdi-vibrate::before {\n  content: \"\\F0566\";\n}\n\n.mdi-vibrate-off::before {\n  content: \"\\F0CD9\";\n}\n\n.mdi-video::before {\n  content: \"\\F0567\";\n}\n\n.mdi-video-3d::before {\n  content: \"\\F07FD\";\n}\n\n.mdi-video-3d-off::before {\n  content: \"\\F13D9\";\n}\n\n.mdi-video-3d-variant::before {\n  content: \"\\F0ED1\";\n}\n\n.mdi-video-4k-box::before {\n  content: \"\\F083E\";\n}\n\n.mdi-video-account::before {\n  content: \"\\F0919\";\n}\n\n.mdi-video-box::before {\n  content: \"\\F00FD\";\n}\n\n.mdi-video-box-off::before {\n  content: \"\\F00FE\";\n}\n\n.mdi-video-check::before {\n  content: \"\\F1069\";\n}\n\n.mdi-video-check-outline::before {\n  content: \"\\F106A\";\n}\n\n.mdi-video-high-definition::before {\n  content: \"\\F152E\";\n}\n\n.mdi-video-image::before {\n  content: \"\\F091A\";\n}\n\n.mdi-video-input-antenna::before {\n  content: \"\\F083F\";\n}\n\n.mdi-video-input-component::before {\n  content: \"\\F0840\";\n}\n\n.mdi-video-input-hdmi::before {\n  content: \"\\F0841\";\n}\n\n.mdi-video-input-scart::before {\n  content: \"\\F0F8C\";\n}\n\n.mdi-video-input-svideo::before {\n  content: \"\\F0842\";\n}\n\n.mdi-video-minus::before {\n  content: \"\\F09B2\";\n}\n\n.mdi-video-minus-outline::before {\n  content: \"\\F02BA\";\n}\n\n.mdi-video-off::before {\n  content: \"\\F0568\";\n}\n\n.mdi-video-off-outline::before {\n  content: \"\\F0BDB\";\n}\n\n.mdi-video-outline::before {\n  content: \"\\F0BDC\";\n}\n\n.mdi-video-plus::before {\n  content: \"\\F09B3\";\n}\n\n.mdi-video-plus-outline::before {\n  content: \"\\F01D3\";\n}\n\n.mdi-video-stabilization::before {\n  content: \"\\F091B\";\n}\n\n.mdi-video-switch::before {\n  content: \"\\F0569\";\n}\n\n.mdi-video-switch-outline::before {\n  content: \"\\F0790\";\n}\n\n.mdi-video-vintage::before {\n  content: \"\\F0A1C\";\n}\n\n.mdi-video-wireless::before {\n  content: \"\\F0ED2\";\n}\n\n.mdi-video-wireless-outline::before {\n  content: \"\\F0ED3\";\n}\n\n.mdi-view-agenda::before {\n  content: \"\\F056A\";\n}\n\n.mdi-view-agenda-outline::before {\n  content: \"\\F11D8\";\n}\n\n.mdi-view-array::before {\n  content: \"\\F056B\";\n}\n\n.mdi-view-array-outline::before {\n  content: \"\\F1485\";\n}\n\n.mdi-view-carousel::before {\n  content: \"\\F056C\";\n}\n\n.mdi-view-carousel-outline::before {\n  content: \"\\F1486\";\n}\n\n.mdi-view-column::before {\n  content: \"\\F056D\";\n}\n\n.mdi-view-column-outline::before {\n  content: \"\\F1487\";\n}\n\n.mdi-view-comfy::before {\n  content: \"\\F0E6A\";\n}\n\n.mdi-view-comfy-outline::before {\n  content: \"\\F1488\";\n}\n\n.mdi-view-compact::before {\n  content: \"\\F0E6B\";\n}\n\n.mdi-view-compact-outline::before {\n  content: \"\\F0E6C\";\n}\n\n.mdi-view-dashboard::before {\n  content: \"\\F056E\";\n}\n\n.mdi-view-dashboard-outline::before {\n  content: \"\\F0A1D\";\n}\n\n.mdi-view-dashboard-variant::before {\n  content: \"\\F0843\";\n}\n\n.mdi-view-dashboard-variant-outline::before {\n  content: \"\\F1489\";\n}\n\n.mdi-view-day::before {\n  content: \"\\F056F\";\n}\n\n.mdi-view-day-outline::before {\n  content: \"\\F148A\";\n}\n\n.mdi-view-grid::before {\n  content: \"\\F0570\";\n}\n\n.mdi-view-grid-outline::before {\n  content: \"\\F11D9\";\n}\n\n.mdi-view-grid-plus::before {\n  content: \"\\F0F8D\";\n}\n\n.mdi-view-grid-plus-outline::before {\n  content: \"\\F11DA\";\n}\n\n.mdi-view-headline::before {\n  content: \"\\F0571\";\n}\n\n.mdi-view-list::before {\n  content: \"\\F0572\";\n}\n\n.mdi-view-list-outline::before {\n  content: \"\\F148B\";\n}\n\n.mdi-view-module::before {\n  content: \"\\F0573\";\n}\n\n.mdi-view-module-outline::before {\n  content: \"\\F148C\";\n}\n\n.mdi-view-parallel::before {\n  content: \"\\F0728\";\n}\n\n.mdi-view-parallel-outline::before {\n  content: \"\\F148D\";\n}\n\n.mdi-view-quilt::before {\n  content: \"\\F0574\";\n}\n\n.mdi-view-quilt-outline::before {\n  content: \"\\F148E\";\n}\n\n.mdi-view-sequential::before {\n  content: \"\\F0729\";\n}\n\n.mdi-view-sequential-outline::before {\n  content: \"\\F148F\";\n}\n\n.mdi-view-split-horizontal::before {\n  content: \"\\F0BCB\";\n}\n\n.mdi-view-split-vertical::before {\n  content: \"\\F0BCC\";\n}\n\n.mdi-view-stream::before {\n  content: \"\\F0575\";\n}\n\n.mdi-view-stream-outline::before {\n  content: \"\\F1490\";\n}\n\n.mdi-view-week::before {\n  content: \"\\F0576\";\n}\n\n.mdi-view-week-outline::before {\n  content: \"\\F1491\";\n}\n\n.mdi-vimeo::before {\n  content: \"\\F0577\";\n}\n\n.mdi-violin::before {\n  content: \"\\F060F\";\n}\n\n.mdi-virtual-reality::before {\n  content: \"\\F0894\";\n}\n\n.mdi-virus::before {\n  content: \"\\F13B6\";\n}\n\n.mdi-virus-outline::before {\n  content: \"\\F13B7\";\n}\n\n.mdi-vk::before {\n  content: \"\\F0579\";\n}\n\n.mdi-vlc::before {\n  content: \"\\F057C\";\n}\n\n.mdi-voice-off::before {\n  content: \"\\F0ED4\";\n}\n\n.mdi-voicemail::before {\n  content: \"\\F057D\";\n}\n\n.mdi-volleyball::before {\n  content: \"\\F09B4\";\n}\n\n.mdi-volume-high::before {\n  content: \"\\F057E\";\n}\n\n.mdi-volume-low::before {\n  content: \"\\F057F\";\n}\n\n.mdi-volume-medium::before {\n  content: \"\\F0580\";\n}\n\n.mdi-volume-minus::before {\n  content: \"\\F075E\";\n}\n\n.mdi-volume-mute::before {\n  content: \"\\F075F\";\n}\n\n.mdi-volume-off::before {\n  content: \"\\F0581\";\n}\n\n.mdi-volume-plus::before {\n  content: \"\\F075D\";\n}\n\n.mdi-volume-source::before {\n  content: \"\\F1120\";\n}\n\n.mdi-volume-variant-off::before {\n  content: \"\\F0E08\";\n}\n\n.mdi-volume-vibrate::before {\n  content: \"\\F1121\";\n}\n\n.mdi-vote::before {\n  content: \"\\F0A1F\";\n}\n\n.mdi-vote-outline::before {\n  content: \"\\F0A20\";\n}\n\n.mdi-vpn::before {\n  content: \"\\F0582\";\n}\n\n.mdi-vuejs::before {\n  content: \"\\F0844\";\n}\n\n.mdi-vuetify::before {\n  content: \"\\F0E6D\";\n}\n\n.mdi-walk::before {\n  content: \"\\F0583\";\n}\n\n.mdi-wall::before {\n  content: \"\\F07FE\";\n}\n\n.mdi-wall-sconce::before {\n  content: \"\\F091C\";\n}\n\n.mdi-wall-sconce-flat::before {\n  content: \"\\F091D\";\n}\n\n.mdi-wall-sconce-flat-variant::before {\n  content: \"\\F041C\";\n}\n\n.mdi-wall-sconce-round::before {\n  content: \"\\F0748\";\n}\n\n.mdi-wall-sconce-round-variant::before {\n  content: \"\\F091E\";\n}\n\n.mdi-wallet::before {\n  content: \"\\F0584\";\n}\n\n.mdi-wallet-giftcard::before {\n  content: \"\\F0585\";\n}\n\n.mdi-wallet-membership::before {\n  content: \"\\F0586\";\n}\n\n.mdi-wallet-outline::before {\n  content: \"\\F0BDD\";\n}\n\n.mdi-wallet-plus::before {\n  content: \"\\F0F8E\";\n}\n\n.mdi-wallet-plus-outline::before {\n  content: \"\\F0F8F\";\n}\n\n.mdi-wallet-travel::before {\n  content: \"\\F0587\";\n}\n\n.mdi-wallpaper::before {\n  content: \"\\F0E09\";\n}\n\n.mdi-wan::before {\n  content: \"\\F0588\";\n}\n\n.mdi-wardrobe::before {\n  content: \"\\F0F90\";\n}\n\n.mdi-wardrobe-outline::before {\n  content: \"\\F0F91\";\n}\n\n.mdi-warehouse::before {\n  content: \"\\F0F81\";\n}\n\n.mdi-washing-machine::before {\n  content: \"\\F072A\";\n}\n\n.mdi-washing-machine-alert::before {\n  content: \"\\F11BC\";\n}\n\n.mdi-washing-machine-off::before {\n  content: \"\\F11BD\";\n}\n\n.mdi-watch::before {\n  content: \"\\F0589\";\n}\n\n.mdi-watch-export::before {\n  content: \"\\F058A\";\n}\n\n.mdi-watch-export-variant::before {\n  content: \"\\F0895\";\n}\n\n.mdi-watch-import::before {\n  content: \"\\F058B\";\n}\n\n.mdi-watch-import-variant::before {\n  content: \"\\F0896\";\n}\n\n.mdi-watch-variant::before {\n  content: \"\\F0897\";\n}\n\n.mdi-watch-vibrate::before {\n  content: \"\\F06B1\";\n}\n\n.mdi-watch-vibrate-off::before {\n  content: \"\\F0CDA\";\n}\n\n.mdi-water::before {\n  content: \"\\F058C\";\n}\n\n.mdi-water-alert::before {\n  content: \"\\F1502\";\n}\n\n.mdi-water-alert-outline::before {\n  content: \"\\F1503\";\n}\n\n.mdi-water-boiler::before {\n  content: \"\\F0F92\";\n}\n\n.mdi-water-boiler-alert::before {\n  content: \"\\F11B3\";\n}\n\n.mdi-water-boiler-off::before {\n  content: \"\\F11B4\";\n}\n\n.mdi-water-check::before {\n  content: \"\\F1504\";\n}\n\n.mdi-water-check-outline::before {\n  content: \"\\F1505\";\n}\n\n.mdi-water-minus::before {\n  content: \"\\F1506\";\n}\n\n.mdi-water-minus-outline::before {\n  content: \"\\F1507\";\n}\n\n.mdi-water-off::before {\n  content: \"\\F058D\";\n}\n\n.mdi-water-off-outline::before {\n  content: \"\\F1508\";\n}\n\n.mdi-water-outline::before {\n  content: \"\\F0E0A\";\n}\n\n.mdi-water-percent::before {\n  content: \"\\F058E\";\n}\n\n.mdi-water-percent-alert::before {\n  content: \"\\F1509\";\n}\n\n.mdi-water-plus::before {\n  content: \"\\F150A\";\n}\n\n.mdi-water-plus-outline::before {\n  content: \"\\F150B\";\n}\n\n.mdi-water-polo::before {\n  content: \"\\F12A0\";\n}\n\n.mdi-water-pump::before {\n  content: \"\\F058F\";\n}\n\n.mdi-water-pump-off::before {\n  content: \"\\F0F93\";\n}\n\n.mdi-water-remove::before {\n  content: \"\\F150C\";\n}\n\n.mdi-water-remove-outline::before {\n  content: \"\\F150D\";\n}\n\n.mdi-water-well::before {\n  content: \"\\F106B\";\n}\n\n.mdi-water-well-outline::before {\n  content: \"\\F106C\";\n}\n\n.mdi-watering-can::before {\n  content: \"\\F1481\";\n}\n\n.mdi-watering-can-outline::before {\n  content: \"\\F1482\";\n}\n\n.mdi-watermark::before {\n  content: \"\\F0612\";\n}\n\n.mdi-wave::before {\n  content: \"\\F0F2E\";\n}\n\n.mdi-waveform::before {\n  content: \"\\F147D\";\n}\n\n.mdi-waves::before {\n  content: \"\\F078D\";\n}\n\n.mdi-waze::before {\n  content: \"\\F0BDE\";\n}\n\n.mdi-weather-cloudy::before {\n  content: \"\\F0590\";\n}\n\n.mdi-weather-cloudy-alert::before {\n  content: \"\\F0F2F\";\n}\n\n.mdi-weather-cloudy-arrow-right::before {\n  content: \"\\F0E6E\";\n}\n\n.mdi-weather-fog::before {\n  content: \"\\F0591\";\n}\n\n.mdi-weather-hail::before {\n  content: \"\\F0592\";\n}\n\n.mdi-weather-hazy::before {\n  content: \"\\F0F30\";\n}\n\n.mdi-weather-hurricane::before {\n  content: \"\\F0898\";\n}\n\n.mdi-weather-lightning::before {\n  content: \"\\F0593\";\n}\n\n.mdi-weather-lightning-rainy::before {\n  content: \"\\F067E\";\n}\n\n.mdi-weather-night::before {\n  content: \"\\F0594\";\n}\n\n.mdi-weather-night-partly-cloudy::before {\n  content: \"\\F0F31\";\n}\n\n.mdi-weather-partly-cloudy::before {\n  content: \"\\F0595\";\n}\n\n.mdi-weather-partly-lightning::before {\n  content: \"\\F0F32\";\n}\n\n.mdi-weather-partly-rainy::before {\n  content: \"\\F0F33\";\n}\n\n.mdi-weather-partly-snowy::before {\n  content: \"\\F0F34\";\n}\n\n.mdi-weather-partly-snowy-rainy::before {\n  content: \"\\F0F35\";\n}\n\n.mdi-weather-pouring::before {\n  content: \"\\F0596\";\n}\n\n.mdi-weather-rainy::before {\n  content: \"\\F0597\";\n}\n\n.mdi-weather-snowy::before {\n  content: \"\\F0598\";\n}\n\n.mdi-weather-snowy-heavy::before {\n  content: \"\\F0F36\";\n}\n\n.mdi-weather-snowy-rainy::before {\n  content: \"\\F067F\";\n}\n\n.mdi-weather-sunny::before {\n  content: \"\\F0599\";\n}\n\n.mdi-weather-sunny-alert::before {\n  content: \"\\F0F37\";\n}\n\n.mdi-weather-sunny-off::before {\n  content: \"\\F14E4\";\n}\n\n.mdi-weather-sunset::before {\n  content: \"\\F059A\";\n}\n\n.mdi-weather-sunset-down::before {\n  content: \"\\F059B\";\n}\n\n.mdi-weather-sunset-up::before {\n  content: \"\\F059C\";\n}\n\n.mdi-weather-tornado::before {\n  content: \"\\F0F38\";\n}\n\n.mdi-weather-windy::before {\n  content: \"\\F059D\";\n}\n\n.mdi-weather-windy-variant::before {\n  content: \"\\F059E\";\n}\n\n.mdi-web::before {\n  content: \"\\F059F\";\n}\n\n.mdi-web-box::before {\n  content: \"\\F0F94\";\n}\n\n.mdi-web-clock::before {\n  content: \"\\F124A\";\n}\n\n.mdi-webcam::before {\n  content: \"\\F05A0\";\n}\n\n.mdi-webhook::before {\n  content: \"\\F062F\";\n}\n\n.mdi-webpack::before {\n  content: \"\\F072B\";\n}\n\n.mdi-webrtc::before {\n  content: \"\\F1248\";\n}\n\n.mdi-wechat::before {\n  content: \"\\F0611\";\n}\n\n.mdi-weight::before {\n  content: \"\\F05A1\";\n}\n\n.mdi-weight-gram::before {\n  content: \"\\F0D3F\";\n}\n\n.mdi-weight-kilogram::before {\n  content: \"\\F05A2\";\n}\n\n.mdi-weight-lifter::before {\n  content: \"\\F115D\";\n}\n\n.mdi-weight-pound::before {\n  content: \"\\F09B5\";\n}\n\n.mdi-whatsapp::before {\n  content: \"\\F05A3\";\n}\n\n.mdi-wheel-barrow::before {\n  content: \"\\F14F2\";\n}\n\n.mdi-wheelchair-accessibility::before {\n  content: \"\\F05A4\";\n}\n\n.mdi-whistle::before {\n  content: \"\\F09B6\";\n}\n\n.mdi-whistle-outline::before {\n  content: \"\\F12BC\";\n}\n\n.mdi-white-balance-auto::before {\n  content: \"\\F05A5\";\n}\n\n.mdi-white-balance-incandescent::before {\n  content: \"\\F05A6\";\n}\n\n.mdi-white-balance-iridescent::before {\n  content: \"\\F05A7\";\n}\n\n.mdi-white-balance-sunny::before {\n  content: \"\\F05A8\";\n}\n\n.mdi-widgets::before {\n  content: \"\\F072C\";\n}\n\n.mdi-widgets-outline::before {\n  content: \"\\F1355\";\n}\n\n.mdi-wifi::before {\n  content: \"\\F05A9\";\n}\n\n.mdi-wifi-off::before {\n  content: \"\\F05AA\";\n}\n\n.mdi-wifi-star::before {\n  content: \"\\F0E0B\";\n}\n\n.mdi-wifi-strength-1::before {\n  content: \"\\F091F\";\n}\n\n.mdi-wifi-strength-1-alert::before {\n  content: \"\\F0920\";\n}\n\n.mdi-wifi-strength-1-lock::before {\n  content: \"\\F0921\";\n}\n\n.mdi-wifi-strength-2::before {\n  content: \"\\F0922\";\n}\n\n.mdi-wifi-strength-2-alert::before {\n  content: \"\\F0923\";\n}\n\n.mdi-wifi-strength-2-lock::before {\n  content: \"\\F0924\";\n}\n\n.mdi-wifi-strength-3::before {\n  content: \"\\F0925\";\n}\n\n.mdi-wifi-strength-3-alert::before {\n  content: \"\\F0926\";\n}\n\n.mdi-wifi-strength-3-lock::before {\n  content: \"\\F0927\";\n}\n\n.mdi-wifi-strength-4::before {\n  content: \"\\F0928\";\n}\n\n.mdi-wifi-strength-4-alert::before {\n  content: \"\\F0929\";\n}\n\n.mdi-wifi-strength-4-lock::before {\n  content: \"\\F092A\";\n}\n\n.mdi-wifi-strength-alert-outline::before {\n  content: \"\\F092B\";\n}\n\n.mdi-wifi-strength-lock-outline::before {\n  content: \"\\F092C\";\n}\n\n.mdi-wifi-strength-off::before {\n  content: \"\\F092D\";\n}\n\n.mdi-wifi-strength-off-outline::before {\n  content: \"\\F092E\";\n}\n\n.mdi-wifi-strength-outline::before {\n  content: \"\\F092F\";\n}\n\n.mdi-wikipedia::before {\n  content: \"\\F05AC\";\n}\n\n.mdi-wind-turbine::before {\n  content: \"\\F0DA5\";\n}\n\n.mdi-window-close::before {\n  content: \"\\F05AD\";\n}\n\n.mdi-window-closed::before {\n  content: \"\\F05AE\";\n}\n\n.mdi-window-closed-variant::before {\n  content: \"\\F11DB\";\n}\n\n.mdi-window-maximize::before {\n  content: \"\\F05AF\";\n}\n\n.mdi-window-minimize::before {\n  content: \"\\F05B0\";\n}\n\n.mdi-window-open::before {\n  content: \"\\F05B1\";\n}\n\n.mdi-window-open-variant::before {\n  content: \"\\F11DC\";\n}\n\n.mdi-window-restore::before {\n  content: \"\\F05B2\";\n}\n\n.mdi-window-shutter::before {\n  content: \"\\F111C\";\n}\n\n.mdi-window-shutter-alert::before {\n  content: \"\\F111D\";\n}\n\n.mdi-window-shutter-open::before {\n  content: \"\\F111E\";\n}\n\n.mdi-windsock::before {\n  content: \"\\F15FA\";\n}\n\n.mdi-wiper::before {\n  content: \"\\F0AE9\";\n}\n\n.mdi-wiper-wash::before {\n  content: \"\\F0DA6\";\n}\n\n.mdi-wizard-hat::before {\n  content: \"\\F1477\";\n}\n\n.mdi-wordpress::before {\n  content: \"\\F05B4\";\n}\n\n.mdi-wrap::before {\n  content: \"\\F05B6\";\n}\n\n.mdi-wrap-disabled::before {\n  content: \"\\F0BDF\";\n}\n\n.mdi-wrench::before {\n  content: \"\\F05B7\";\n}\n\n.mdi-wrench-outline::before {\n  content: \"\\F0BE0\";\n}\n\n.mdi-xamarin::before {\n  content: \"\\F0845\";\n}\n\n.mdi-xamarin-outline::before {\n  content: \"\\F0846\";\n}\n\n.mdi-xing::before {\n  content: \"\\F05BE\";\n}\n\n.mdi-xml::before {\n  content: \"\\F05C0\";\n}\n\n.mdi-xmpp::before {\n  content: \"\\F07FF\";\n}\n\n.mdi-y-combinator::before {\n  content: \"\\F0624\";\n}\n\n.mdi-yahoo::before {\n  content: \"\\F0B4F\";\n}\n\n.mdi-yeast::before {\n  content: \"\\F05C1\";\n}\n\n.mdi-yin-yang::before {\n  content: \"\\F0680\";\n}\n\n.mdi-yoga::before {\n  content: \"\\F117C\";\n}\n\n.mdi-youtube::before {\n  content: \"\\F05C3\";\n}\n\n.mdi-youtube-gaming::before {\n  content: \"\\F0848\";\n}\n\n.mdi-youtube-studio::before {\n  content: \"\\F0847\";\n}\n\n.mdi-youtube-subscription::before {\n  content: \"\\F0D40\";\n}\n\n.mdi-youtube-tv::before {\n  content: \"\\F0448\";\n}\n\n.mdi-yurt::before {\n  content: \"\\F1516\";\n}\n\n.mdi-z-wave::before {\n  content: \"\\F0AEA\";\n}\n\n.mdi-zend::before {\n  content: \"\\F0AEB\";\n}\n\n.mdi-zigbee::before {\n  content: \"\\F0D41\";\n}\n\n.mdi-zip-box::before {\n  content: \"\\F05C4\";\n}\n\n.mdi-zip-box-outline::before {\n  content: \"\\F0FFA\";\n}\n\n.mdi-zip-disk::before {\n  content: \"\\F0A23\";\n}\n\n.mdi-zodiac-aquarius::before {\n  content: \"\\F0A7D\";\n}\n\n.mdi-zodiac-aries::before {\n  content: \"\\F0A7E\";\n}\n\n.mdi-zodiac-cancer::before {\n  content: \"\\F0A7F\";\n}\n\n.mdi-zodiac-capricorn::before {\n  content: \"\\F0A80\";\n}\n\n.mdi-zodiac-gemini::before {\n  content: \"\\F0A81\";\n}\n\n.mdi-zodiac-leo::before {\n  content: \"\\F0A82\";\n}\n\n.mdi-zodiac-libra::before {\n  content: \"\\F0A83\";\n}\n\n.mdi-zodiac-pisces::before {\n  content: \"\\F0A84\";\n}\n\n.mdi-zodiac-sagittarius::before {\n  content: \"\\F0A85\";\n}\n\n.mdi-zodiac-scorpio::before {\n  content: \"\\F0A86\";\n}\n\n.mdi-zodiac-taurus::before {\n  content: \"\\F0A87\";\n}\n\n.mdi-zodiac-virgo::before {\n  content: \"\\F0A88\";\n}\n\n.mdi-blank::before {\n  content: \"\\F68C\";\n  visibility: hidden;\n}\n\n.mdi-18px.mdi-set, .mdi-18px.mdi:before {\n  font-size: 18px;\n}\n\n.mdi-24px.mdi-set, .mdi-24px.mdi:before {\n  font-size: 24px;\n}\n\n.mdi-36px.mdi-set, .mdi-36px.mdi:before {\n  font-size: 36px;\n}\n\n.mdi-48px.mdi-set, .mdi-48px.mdi:before {\n  font-size: 48px;\n}\n\n.mdi-dark:before {\n  color: rgba(0, 0, 0, 0.54);\n}\n\n.mdi-dark.mdi-inactive:before {\n  color: rgba(0, 0, 0, 0.26);\n}\n\n.mdi-light:before {\n  color: white;\n}\n\n.mdi-light.mdi-inactive:before {\n  color: rgba(255, 255, 255, 0.3);\n}\n\n.mdi-rotate-45 {\n  /*\r\n        // Not included in production\r\n        &.mdi-flip-h:before {\r\n            -webkit-transform: scaleX(-1) rotate(45deg);\r\n            transform: scaleX(-1) rotate(45deg);\r\n            filter: FlipH;\r\n            -ms-filter: \"FlipH\";\r\n        }\r\n        &.mdi-flip-v:before {\r\n            -webkit-transform: scaleY(-1) rotate(45deg);\r\n            -ms-transform: rotate(45deg);\r\n            transform: scaleY(-1) rotate(45deg);\r\n            filter: FlipV;\r\n            -ms-filter: \"FlipV\";\r\n        }\r\n        */\n}\n\n.mdi-rotate-45:before {\n  transform: rotate(45deg);\n}\n\n.mdi-rotate-90 {\n  /*\r\n        // Not included in production\r\n        &.mdi-flip-h:before {\r\n            -webkit-transform: scaleX(-1) rotate(90deg);\r\n            transform: scaleX(-1) rotate(90deg);\r\n            filter: FlipH;\r\n            -ms-filter: \"FlipH\";\r\n        }\r\n        &.mdi-flip-v:before {\r\n            -webkit-transform: scaleY(-1) rotate(90deg);\r\n            -ms-transform: rotate(90deg);\r\n            transform: scaleY(-1) rotate(90deg);\r\n            filter: FlipV;\r\n            -ms-filter: \"FlipV\";\r\n        }\r\n        */\n}\n\n.mdi-rotate-90:before {\n  transform: rotate(90deg);\n}\n\n.mdi-rotate-135 {\n  /*\r\n        // Not included in production\r\n        &.mdi-flip-h:before {\r\n            -webkit-transform: scaleX(-1) rotate(135deg);\r\n            transform: scaleX(-1) rotate(135deg);\r\n            filter: FlipH;\r\n            -ms-filter: \"FlipH\";\r\n        }\r\n        &.mdi-flip-v:before {\r\n            -webkit-transform: scaleY(-1) rotate(135deg);\r\n            -ms-transform: rotate(135deg);\r\n            transform: scaleY(-1) rotate(135deg);\r\n            filter: FlipV;\r\n            -ms-filter: \"FlipV\";\r\n        }\r\n        */\n}\n\n.mdi-rotate-135:before {\n  transform: rotate(135deg);\n}\n\n.mdi-rotate-180 {\n  /*\r\n        // Not included in production\r\n        &.mdi-flip-h:before {\r\n            -webkit-transform: scaleX(-1) rotate(180deg);\r\n            transform: scaleX(-1) rotate(180deg);\r\n            filter: FlipH;\r\n            -ms-filter: \"FlipH\";\r\n        }\r\n        &.mdi-flip-v:before {\r\n            -webkit-transform: scaleY(-1) rotate(180deg);\r\n            -ms-transform: rotate(180deg);\r\n            transform: scaleY(-1) rotate(180deg);\r\n            filter: FlipV;\r\n            -ms-filter: \"FlipV\";\r\n        }\r\n        */\n}\n\n.mdi-rotate-180:before {\n  transform: rotate(180deg);\n}\n\n.mdi-rotate-225 {\n  /*\r\n        // Not included in production\r\n        &.mdi-flip-h:before {\r\n            -webkit-transform: scaleX(-1) rotate(225deg);\r\n            transform: scaleX(-1) rotate(225deg);\r\n            filter: FlipH;\r\n            -ms-filter: \"FlipH\";\r\n        }\r\n        &.mdi-flip-v:before {\r\n            -webkit-transform: scaleY(-1) rotate(225deg);\r\n            -ms-transform: rotate(225deg);\r\n            transform: scaleY(-1) rotate(225deg);\r\n            filter: FlipV;\r\n            -ms-filter: \"FlipV\";\r\n        }\r\n        */\n}\n\n.mdi-rotate-225:before {\n  transform: rotate(225deg);\n}\n\n.mdi-rotate-270 {\n  /*\r\n        // Not included in production\r\n        &.mdi-flip-h:before {\r\n            -webkit-transform: scaleX(-1) rotate(270deg);\r\n            transform: scaleX(-1) rotate(270deg);\r\n            filter: FlipH;\r\n            -ms-filter: \"FlipH\";\r\n        }\r\n        &.mdi-flip-v:before {\r\n            -webkit-transform: scaleY(-1) rotate(270deg);\r\n            -ms-transform: rotate(270deg);\r\n            transform: scaleY(-1) rotate(270deg);\r\n            filter: FlipV;\r\n            -ms-filter: \"FlipV\";\r\n        }\r\n        */\n}\n\n.mdi-rotate-270:before {\n  transform: rotate(270deg);\n}\n\n.mdi-rotate-315 {\n  /*\r\n        // Not included in production\r\n        &.mdi-flip-h:before {\r\n            -webkit-transform: scaleX(-1) rotate(315deg);\r\n            transform: scaleX(-1) rotate(315deg);\r\n            filter: FlipH;\r\n            -ms-filter: \"FlipH\";\r\n        }\r\n        &.mdi-flip-v:before {\r\n            -webkit-transform: scaleY(-1) rotate(315deg);\r\n            -ms-transform: rotate(315deg);\r\n            transform: scaleY(-1) rotate(315deg);\r\n            filter: FlipV;\r\n            -ms-filter: \"FlipV\";\r\n        }\r\n        */\n}\n\n.mdi-rotate-315:before {\n  transform: rotate(315deg);\n}\n\n.mdi-flip-h:before {\n  transform: scaleX(-1);\n  filter: FlipH;\n  -ms-filter: \"FlipH\";\n}\n\n.mdi-flip-v:before {\n  transform: scaleY(-1);\n  filter: FlipV;\n  -ms-filter: \"FlipV\";\n}\n\n.mdi-spin:before {\n  -webkit-animation: mdi-spin 2s infinite linear;\n  animation: mdi-spin 2s infinite linear;\n}\n\n@-webkit-keyframes mdi-spin {\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(359deg);\n  }\n}\n\n@keyframes mdi-spin {\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(359deg);\n  }\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/vuetify/dist/vuetify.min.css":
 /*!***********************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/vuetify/dist/vuetify.min.css ***!
@@ -6350,7 +14907,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.v-application--wrap{\n    background: #c9c9c9;\n}\n.content{\n    height: 90vh;\n    max-width: 1100px;\n}\n.menu {\n    height: 10vh;\n    border-radius: 0px !important;\n}\n\n", ""]);
+exports.push([module.i, "\n.v-application--wrap{\n    background: #c9c9c9;\n}\n.content{\n    max-width: 1100px;\n}\n.menu {\n    height: 10vh;\n    border-radius: 0px !important;\n}\n\n", ""]);
 
 // exports
 
@@ -6496,6 +15053,33 @@ function toComment(sourceMap) {
 	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
 
 	return '/*# ' + data + ' */';
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/lib/url/escape.js":
+/*!***************************************************!*\
+  !*** ./node_modules/css-loader/lib/url/escape.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function escape(url) {
+    if (typeof url !== 'string') {
+        return url
+    }
+    // If url is already wrapped in quotes, remove them
+    if (/^['"].*['"]$/.test(url)) {
+        url = url.slice(1, -1);
+    }
+    // Should url be wrapped?
+    // See https://drafts.csswg.org/css-values-3/#urls
+    if (/["'() \t\n]/.test(url)) {
+        return '"' + url.replace(/"/g, '\\"').replace(/\n/g, '\\n') + '"'
+    }
+
+    return url
 }
 
 
@@ -20408,6 +28992,3721 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
+/***/ "./node_modules/sortablejs/modular/sortable.esm.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/sortablejs/modular/sortable.esm.js ***!
+  \*********************************************************/
+/*! exports provided: default, MultiDrag, Sortable, Swap */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MultiDrag", function() { return MultiDragPlugin; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Sortable", function() { return Sortable; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Swap", function() { return SwapPlugin; });
+/**!
+ * Sortable 1.10.2
+ * @author	RubaXa   <trash@rubaxa.org>
+ * @author	owenm    <owen23355@gmail.com>
+ * @license MIT
+ */
+function _typeof(obj) {
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    _typeof = function (obj) {
+      return typeof obj;
+    };
+  } else {
+    _typeof = function (obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return _typeof(obj);
+}
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+function _objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+    var ownKeys = Object.keys(source);
+
+    if (typeof Object.getOwnPropertySymbols === 'function') {
+      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
+        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
+      }));
+    }
+
+    ownKeys.forEach(function (key) {
+      _defineProperty(target, key, source[key]);
+    });
+  }
+
+  return target;
+}
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+
+  var target = _objectWithoutPropertiesLoose(source, excluded);
+
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+
+function _toConsumableArray(arr) {
+  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
+}
+
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) {
+    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];
+
+    return arr2;
+  }
+}
+
+function _iterableToArray(iter) {
+  if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
+}
+
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance");
+}
+
+var version = "1.10.2";
+
+function userAgent(pattern) {
+  if (typeof window !== 'undefined' && window.navigator) {
+    return !!
+    /*@__PURE__*/
+    navigator.userAgent.match(pattern);
+  }
+}
+
+var IE11OrLess = userAgent(/(?:Trident.*rv[ :]?11\.|msie|iemobile|Windows Phone)/i);
+var Edge = userAgent(/Edge/i);
+var FireFox = userAgent(/firefox/i);
+var Safari = userAgent(/safari/i) && !userAgent(/chrome/i) && !userAgent(/android/i);
+var IOS = userAgent(/iP(ad|od|hone)/i);
+var ChromeForAndroid = userAgent(/chrome/i) && userAgent(/android/i);
+
+var captureMode = {
+  capture: false,
+  passive: false
+};
+
+function on(el, event, fn) {
+  el.addEventListener(event, fn, !IE11OrLess && captureMode);
+}
+
+function off(el, event, fn) {
+  el.removeEventListener(event, fn, !IE11OrLess && captureMode);
+}
+
+function matches(
+/**HTMLElement*/
+el,
+/**String*/
+selector) {
+  if (!selector) return;
+  selector[0] === '>' && (selector = selector.substring(1));
+
+  if (el) {
+    try {
+      if (el.matches) {
+        return el.matches(selector);
+      } else if (el.msMatchesSelector) {
+        return el.msMatchesSelector(selector);
+      } else if (el.webkitMatchesSelector) {
+        return el.webkitMatchesSelector(selector);
+      }
+    } catch (_) {
+      return false;
+    }
+  }
+
+  return false;
+}
+
+function getParentOrHost(el) {
+  return el.host && el !== document && el.host.nodeType ? el.host : el.parentNode;
+}
+
+function closest(
+/**HTMLElement*/
+el,
+/**String*/
+selector,
+/**HTMLElement*/
+ctx, includeCTX) {
+  if (el) {
+    ctx = ctx || document;
+
+    do {
+      if (selector != null && (selector[0] === '>' ? el.parentNode === ctx && matches(el, selector) : matches(el, selector)) || includeCTX && el === ctx) {
+        return el;
+      }
+
+      if (el === ctx) break;
+      /* jshint boss:true */
+    } while (el = getParentOrHost(el));
+  }
+
+  return null;
+}
+
+var R_SPACE = /\s+/g;
+
+function toggleClass(el, name, state) {
+  if (el && name) {
+    if (el.classList) {
+      el.classList[state ? 'add' : 'remove'](name);
+    } else {
+      var className = (' ' + el.className + ' ').replace(R_SPACE, ' ').replace(' ' + name + ' ', ' ');
+      el.className = (className + (state ? ' ' + name : '')).replace(R_SPACE, ' ');
+    }
+  }
+}
+
+function css(el, prop, val) {
+  var style = el && el.style;
+
+  if (style) {
+    if (val === void 0) {
+      if (document.defaultView && document.defaultView.getComputedStyle) {
+        val = document.defaultView.getComputedStyle(el, '');
+      } else if (el.currentStyle) {
+        val = el.currentStyle;
+      }
+
+      return prop === void 0 ? val : val[prop];
+    } else {
+      if (!(prop in style) && prop.indexOf('webkit') === -1) {
+        prop = '-webkit-' + prop;
+      }
+
+      style[prop] = val + (typeof val === 'string' ? '' : 'px');
+    }
+  }
+}
+
+function matrix(el, selfOnly) {
+  var appliedTransforms = '';
+
+  if (typeof el === 'string') {
+    appliedTransforms = el;
+  } else {
+    do {
+      var transform = css(el, 'transform');
+
+      if (transform && transform !== 'none') {
+        appliedTransforms = transform + ' ' + appliedTransforms;
+      }
+      /* jshint boss:true */
+
+    } while (!selfOnly && (el = el.parentNode));
+  }
+
+  var matrixFn = window.DOMMatrix || window.WebKitCSSMatrix || window.CSSMatrix || window.MSCSSMatrix;
+  /*jshint -W056 */
+
+  return matrixFn && new matrixFn(appliedTransforms);
+}
+
+function find(ctx, tagName, iterator) {
+  if (ctx) {
+    var list = ctx.getElementsByTagName(tagName),
+        i = 0,
+        n = list.length;
+
+    if (iterator) {
+      for (; i < n; i++) {
+        iterator(list[i], i);
+      }
+    }
+
+    return list;
+  }
+
+  return [];
+}
+
+function getWindowScrollingElement() {
+  var scrollingElement = document.scrollingElement;
+
+  if (scrollingElement) {
+    return scrollingElement;
+  } else {
+    return document.documentElement;
+  }
+}
+/**
+ * Returns the "bounding client rect" of given element
+ * @param  {HTMLElement} el                       The element whose boundingClientRect is wanted
+ * @param  {[Boolean]} relativeToContainingBlock  Whether the rect should be relative to the containing block of (including) the container
+ * @param  {[Boolean]} relativeToNonStaticParent  Whether the rect should be relative to the relative parent of (including) the contaienr
+ * @param  {[Boolean]} undoScale                  Whether the container's scale() should be undone
+ * @param  {[HTMLElement]} container              The parent the element will be placed in
+ * @return {Object}                               The boundingClientRect of el, with specified adjustments
+ */
+
+
+function getRect(el, relativeToContainingBlock, relativeToNonStaticParent, undoScale, container) {
+  if (!el.getBoundingClientRect && el !== window) return;
+  var elRect, top, left, bottom, right, height, width;
+
+  if (el !== window && el !== getWindowScrollingElement()) {
+    elRect = el.getBoundingClientRect();
+    top = elRect.top;
+    left = elRect.left;
+    bottom = elRect.bottom;
+    right = elRect.right;
+    height = elRect.height;
+    width = elRect.width;
+  } else {
+    top = 0;
+    left = 0;
+    bottom = window.innerHeight;
+    right = window.innerWidth;
+    height = window.innerHeight;
+    width = window.innerWidth;
+  }
+
+  if ((relativeToContainingBlock || relativeToNonStaticParent) && el !== window) {
+    // Adjust for translate()
+    container = container || el.parentNode; // solves #1123 (see: https://stackoverflow.com/a/37953806/6088312)
+    // Not needed on <= IE11
+
+    if (!IE11OrLess) {
+      do {
+        if (container && container.getBoundingClientRect && (css(container, 'transform') !== 'none' || relativeToNonStaticParent && css(container, 'position') !== 'static')) {
+          var containerRect = container.getBoundingClientRect(); // Set relative to edges of padding box of container
+
+          top -= containerRect.top + parseInt(css(container, 'border-top-width'));
+          left -= containerRect.left + parseInt(css(container, 'border-left-width'));
+          bottom = top + elRect.height;
+          right = left + elRect.width;
+          break;
+        }
+        /* jshint boss:true */
+
+      } while (container = container.parentNode);
+    }
+  }
+
+  if (undoScale && el !== window) {
+    // Adjust for scale()
+    var elMatrix = matrix(container || el),
+        scaleX = elMatrix && elMatrix.a,
+        scaleY = elMatrix && elMatrix.d;
+
+    if (elMatrix) {
+      top /= scaleY;
+      left /= scaleX;
+      width /= scaleX;
+      height /= scaleY;
+      bottom = top + height;
+      right = left + width;
+    }
+  }
+
+  return {
+    top: top,
+    left: left,
+    bottom: bottom,
+    right: right,
+    width: width,
+    height: height
+  };
+}
+/**
+ * Checks if a side of an element is scrolled past a side of its parents
+ * @param  {HTMLElement}  el           The element who's side being scrolled out of view is in question
+ * @param  {String}       elSide       Side of the element in question ('top', 'left', 'right', 'bottom')
+ * @param  {String}       parentSide   Side of the parent in question ('top', 'left', 'right', 'bottom')
+ * @return {HTMLElement}               The parent scroll element that the el's side is scrolled past, or null if there is no such element
+ */
+
+
+function isScrolledPast(el, elSide, parentSide) {
+  var parent = getParentAutoScrollElement(el, true),
+      elSideVal = getRect(el)[elSide];
+  /* jshint boss:true */
+
+  while (parent) {
+    var parentSideVal = getRect(parent)[parentSide],
+        visible = void 0;
+
+    if (parentSide === 'top' || parentSide === 'left') {
+      visible = elSideVal >= parentSideVal;
+    } else {
+      visible = elSideVal <= parentSideVal;
+    }
+
+    if (!visible) return parent;
+    if (parent === getWindowScrollingElement()) break;
+    parent = getParentAutoScrollElement(parent, false);
+  }
+
+  return false;
+}
+/**
+ * Gets nth child of el, ignoring hidden children, sortable's elements (does not ignore clone if it's visible)
+ * and non-draggable elements
+ * @param  {HTMLElement} el       The parent element
+ * @param  {Number} childNum      The index of the child
+ * @param  {Object} options       Parent Sortable's options
+ * @return {HTMLElement}          The child at index childNum, or null if not found
+ */
+
+
+function getChild(el, childNum, options) {
+  var currentChild = 0,
+      i = 0,
+      children = el.children;
+
+  while (i < children.length) {
+    if (children[i].style.display !== 'none' && children[i] !== Sortable.ghost && children[i] !== Sortable.dragged && closest(children[i], options.draggable, el, false)) {
+      if (currentChild === childNum) {
+        return children[i];
+      }
+
+      currentChild++;
+    }
+
+    i++;
+  }
+
+  return null;
+}
+/**
+ * Gets the last child in the el, ignoring ghostEl or invisible elements (clones)
+ * @param  {HTMLElement} el       Parent element
+ * @param  {selector} selector    Any other elements that should be ignored
+ * @return {HTMLElement}          The last child, ignoring ghostEl
+ */
+
+
+function lastChild(el, selector) {
+  var last = el.lastElementChild;
+
+  while (last && (last === Sortable.ghost || css(last, 'display') === 'none' || selector && !matches(last, selector))) {
+    last = last.previousElementSibling;
+  }
+
+  return last || null;
+}
+/**
+ * Returns the index of an element within its parent for a selected set of
+ * elements
+ * @param  {HTMLElement} el
+ * @param  {selector} selector
+ * @return {number}
+ */
+
+
+function index(el, selector) {
+  var index = 0;
+
+  if (!el || !el.parentNode) {
+    return -1;
+  }
+  /* jshint boss:true */
+
+
+  while (el = el.previousElementSibling) {
+    if (el.nodeName.toUpperCase() !== 'TEMPLATE' && el !== Sortable.clone && (!selector || matches(el, selector))) {
+      index++;
+    }
+  }
+
+  return index;
+}
+/**
+ * Returns the scroll offset of the given element, added with all the scroll offsets of parent elements.
+ * The value is returned in real pixels.
+ * @param  {HTMLElement} el
+ * @return {Array}             Offsets in the format of [left, top]
+ */
+
+
+function getRelativeScrollOffset(el) {
+  var offsetLeft = 0,
+      offsetTop = 0,
+      winScroller = getWindowScrollingElement();
+
+  if (el) {
+    do {
+      var elMatrix = matrix(el),
+          scaleX = elMatrix.a,
+          scaleY = elMatrix.d;
+      offsetLeft += el.scrollLeft * scaleX;
+      offsetTop += el.scrollTop * scaleY;
+    } while (el !== winScroller && (el = el.parentNode));
+  }
+
+  return [offsetLeft, offsetTop];
+}
+/**
+ * Returns the index of the object within the given array
+ * @param  {Array} arr   Array that may or may not hold the object
+ * @param  {Object} obj  An object that has a key-value pair unique to and identical to a key-value pair in the object you want to find
+ * @return {Number}      The index of the object in the array, or -1
+ */
+
+
+function indexOfObject(arr, obj) {
+  for (var i in arr) {
+    if (!arr.hasOwnProperty(i)) continue;
+
+    for (var key in obj) {
+      if (obj.hasOwnProperty(key) && obj[key] === arr[i][key]) return Number(i);
+    }
+  }
+
+  return -1;
+}
+
+function getParentAutoScrollElement(el, includeSelf) {
+  // skip to window
+  if (!el || !el.getBoundingClientRect) return getWindowScrollingElement();
+  var elem = el;
+  var gotSelf = false;
+
+  do {
+    // we don't need to get elem css if it isn't even overflowing in the first place (performance)
+    if (elem.clientWidth < elem.scrollWidth || elem.clientHeight < elem.scrollHeight) {
+      var elemCSS = css(elem);
+
+      if (elem.clientWidth < elem.scrollWidth && (elemCSS.overflowX == 'auto' || elemCSS.overflowX == 'scroll') || elem.clientHeight < elem.scrollHeight && (elemCSS.overflowY == 'auto' || elemCSS.overflowY == 'scroll')) {
+        if (!elem.getBoundingClientRect || elem === document.body) return getWindowScrollingElement();
+        if (gotSelf || includeSelf) return elem;
+        gotSelf = true;
+      }
+    }
+    /* jshint boss:true */
+
+  } while (elem = elem.parentNode);
+
+  return getWindowScrollingElement();
+}
+
+function extend(dst, src) {
+  if (dst && src) {
+    for (var key in src) {
+      if (src.hasOwnProperty(key)) {
+        dst[key] = src[key];
+      }
+    }
+  }
+
+  return dst;
+}
+
+function isRectEqual(rect1, rect2) {
+  return Math.round(rect1.top) === Math.round(rect2.top) && Math.round(rect1.left) === Math.round(rect2.left) && Math.round(rect1.height) === Math.round(rect2.height) && Math.round(rect1.width) === Math.round(rect2.width);
+}
+
+var _throttleTimeout;
+
+function throttle(callback, ms) {
+  return function () {
+    if (!_throttleTimeout) {
+      var args = arguments,
+          _this = this;
+
+      if (args.length === 1) {
+        callback.call(_this, args[0]);
+      } else {
+        callback.apply(_this, args);
+      }
+
+      _throttleTimeout = setTimeout(function () {
+        _throttleTimeout = void 0;
+      }, ms);
+    }
+  };
+}
+
+function cancelThrottle() {
+  clearTimeout(_throttleTimeout);
+  _throttleTimeout = void 0;
+}
+
+function scrollBy(el, x, y) {
+  el.scrollLeft += x;
+  el.scrollTop += y;
+}
+
+function clone(el) {
+  var Polymer = window.Polymer;
+  var $ = window.jQuery || window.Zepto;
+
+  if (Polymer && Polymer.dom) {
+    return Polymer.dom(el).cloneNode(true);
+  } else if ($) {
+    return $(el).clone(true)[0];
+  } else {
+    return el.cloneNode(true);
+  }
+}
+
+function setRect(el, rect) {
+  css(el, 'position', 'absolute');
+  css(el, 'top', rect.top);
+  css(el, 'left', rect.left);
+  css(el, 'width', rect.width);
+  css(el, 'height', rect.height);
+}
+
+function unsetRect(el) {
+  css(el, 'position', '');
+  css(el, 'top', '');
+  css(el, 'left', '');
+  css(el, 'width', '');
+  css(el, 'height', '');
+}
+
+var expando = 'Sortable' + new Date().getTime();
+
+function AnimationStateManager() {
+  var animationStates = [],
+      animationCallbackId;
+  return {
+    captureAnimationState: function captureAnimationState() {
+      animationStates = [];
+      if (!this.options.animation) return;
+      var children = [].slice.call(this.el.children);
+      children.forEach(function (child) {
+        if (css(child, 'display') === 'none' || child === Sortable.ghost) return;
+        animationStates.push({
+          target: child,
+          rect: getRect(child)
+        });
+
+        var fromRect = _objectSpread({}, animationStates[animationStates.length - 1].rect); // If animating: compensate for current animation
+
+
+        if (child.thisAnimationDuration) {
+          var childMatrix = matrix(child, true);
+
+          if (childMatrix) {
+            fromRect.top -= childMatrix.f;
+            fromRect.left -= childMatrix.e;
+          }
+        }
+
+        child.fromRect = fromRect;
+      });
+    },
+    addAnimationState: function addAnimationState(state) {
+      animationStates.push(state);
+    },
+    removeAnimationState: function removeAnimationState(target) {
+      animationStates.splice(indexOfObject(animationStates, {
+        target: target
+      }), 1);
+    },
+    animateAll: function animateAll(callback) {
+      var _this = this;
+
+      if (!this.options.animation) {
+        clearTimeout(animationCallbackId);
+        if (typeof callback === 'function') callback();
+        return;
+      }
+
+      var animating = false,
+          animationTime = 0;
+      animationStates.forEach(function (state) {
+        var time = 0,
+            target = state.target,
+            fromRect = target.fromRect,
+            toRect = getRect(target),
+            prevFromRect = target.prevFromRect,
+            prevToRect = target.prevToRect,
+            animatingRect = state.rect,
+            targetMatrix = matrix(target, true);
+
+        if (targetMatrix) {
+          // Compensate for current animation
+          toRect.top -= targetMatrix.f;
+          toRect.left -= targetMatrix.e;
+        }
+
+        target.toRect = toRect;
+
+        if (target.thisAnimationDuration) {
+          // Could also check if animatingRect is between fromRect and toRect
+          if (isRectEqual(prevFromRect, toRect) && !isRectEqual(fromRect, toRect) && // Make sure animatingRect is on line between toRect & fromRect
+          (animatingRect.top - toRect.top) / (animatingRect.left - toRect.left) === (fromRect.top - toRect.top) / (fromRect.left - toRect.left)) {
+            // If returning to same place as started from animation and on same axis
+            time = calculateRealTime(animatingRect, prevFromRect, prevToRect, _this.options);
+          }
+        } // if fromRect != toRect: animate
+
+
+        if (!isRectEqual(toRect, fromRect)) {
+          target.prevFromRect = fromRect;
+          target.prevToRect = toRect;
+
+          if (!time) {
+            time = _this.options.animation;
+          }
+
+          _this.animate(target, animatingRect, toRect, time);
+        }
+
+        if (time) {
+          animating = true;
+          animationTime = Math.max(animationTime, time);
+          clearTimeout(target.animationResetTimer);
+          target.animationResetTimer = setTimeout(function () {
+            target.animationTime = 0;
+            target.prevFromRect = null;
+            target.fromRect = null;
+            target.prevToRect = null;
+            target.thisAnimationDuration = null;
+          }, time);
+          target.thisAnimationDuration = time;
+        }
+      });
+      clearTimeout(animationCallbackId);
+
+      if (!animating) {
+        if (typeof callback === 'function') callback();
+      } else {
+        animationCallbackId = setTimeout(function () {
+          if (typeof callback === 'function') callback();
+        }, animationTime);
+      }
+
+      animationStates = [];
+    },
+    animate: function animate(target, currentRect, toRect, duration) {
+      if (duration) {
+        css(target, 'transition', '');
+        css(target, 'transform', '');
+        var elMatrix = matrix(this.el),
+            scaleX = elMatrix && elMatrix.a,
+            scaleY = elMatrix && elMatrix.d,
+            translateX = (currentRect.left - toRect.left) / (scaleX || 1),
+            translateY = (currentRect.top - toRect.top) / (scaleY || 1);
+        target.animatingX = !!translateX;
+        target.animatingY = !!translateY;
+        css(target, 'transform', 'translate3d(' + translateX + 'px,' + translateY + 'px,0)');
+        repaint(target); // repaint
+
+        css(target, 'transition', 'transform ' + duration + 'ms' + (this.options.easing ? ' ' + this.options.easing : ''));
+        css(target, 'transform', 'translate3d(0,0,0)');
+        typeof target.animated === 'number' && clearTimeout(target.animated);
+        target.animated = setTimeout(function () {
+          css(target, 'transition', '');
+          css(target, 'transform', '');
+          target.animated = false;
+          target.animatingX = false;
+          target.animatingY = false;
+        }, duration);
+      }
+    }
+  };
+}
+
+function repaint(target) {
+  return target.offsetWidth;
+}
+
+function calculateRealTime(animatingRect, fromRect, toRect, options) {
+  return Math.sqrt(Math.pow(fromRect.top - animatingRect.top, 2) + Math.pow(fromRect.left - animatingRect.left, 2)) / Math.sqrt(Math.pow(fromRect.top - toRect.top, 2) + Math.pow(fromRect.left - toRect.left, 2)) * options.animation;
+}
+
+var plugins = [];
+var defaults = {
+  initializeByDefault: true
+};
+var PluginManager = {
+  mount: function mount(plugin) {
+    // Set default static properties
+    for (var option in defaults) {
+      if (defaults.hasOwnProperty(option) && !(option in plugin)) {
+        plugin[option] = defaults[option];
+      }
+    }
+
+    plugins.push(plugin);
+  },
+  pluginEvent: function pluginEvent(eventName, sortable, evt) {
+    var _this = this;
+
+    this.eventCanceled = false;
+
+    evt.cancel = function () {
+      _this.eventCanceled = true;
+    };
+
+    var eventNameGlobal = eventName + 'Global';
+    plugins.forEach(function (plugin) {
+      if (!sortable[plugin.pluginName]) return; // Fire global events if it exists in this sortable
+
+      if (sortable[plugin.pluginName][eventNameGlobal]) {
+        sortable[plugin.pluginName][eventNameGlobal](_objectSpread({
+          sortable: sortable
+        }, evt));
+      } // Only fire plugin event if plugin is enabled in this sortable,
+      // and plugin has event defined
+
+
+      if (sortable.options[plugin.pluginName] && sortable[plugin.pluginName][eventName]) {
+        sortable[plugin.pluginName][eventName](_objectSpread({
+          sortable: sortable
+        }, evt));
+      }
+    });
+  },
+  initializePlugins: function initializePlugins(sortable, el, defaults, options) {
+    plugins.forEach(function (plugin) {
+      var pluginName = plugin.pluginName;
+      if (!sortable.options[pluginName] && !plugin.initializeByDefault) return;
+      var initialized = new plugin(sortable, el, sortable.options);
+      initialized.sortable = sortable;
+      initialized.options = sortable.options;
+      sortable[pluginName] = initialized; // Add default options from plugin
+
+      _extends(defaults, initialized.defaults);
+    });
+
+    for (var option in sortable.options) {
+      if (!sortable.options.hasOwnProperty(option)) continue;
+      var modified = this.modifyOption(sortable, option, sortable.options[option]);
+
+      if (typeof modified !== 'undefined') {
+        sortable.options[option] = modified;
+      }
+    }
+  },
+  getEventProperties: function getEventProperties(name, sortable) {
+    var eventProperties = {};
+    plugins.forEach(function (plugin) {
+      if (typeof plugin.eventProperties !== 'function') return;
+
+      _extends(eventProperties, plugin.eventProperties.call(sortable[plugin.pluginName], name));
+    });
+    return eventProperties;
+  },
+  modifyOption: function modifyOption(sortable, name, value) {
+    var modifiedValue;
+    plugins.forEach(function (plugin) {
+      // Plugin must exist on the Sortable
+      if (!sortable[plugin.pluginName]) return; // If static option listener exists for this option, call in the context of the Sortable's instance of this plugin
+
+      if (plugin.optionListeners && typeof plugin.optionListeners[name] === 'function') {
+        modifiedValue = plugin.optionListeners[name].call(sortable[plugin.pluginName], value);
+      }
+    });
+    return modifiedValue;
+  }
+};
+
+function dispatchEvent(_ref) {
+  var sortable = _ref.sortable,
+      rootEl = _ref.rootEl,
+      name = _ref.name,
+      targetEl = _ref.targetEl,
+      cloneEl = _ref.cloneEl,
+      toEl = _ref.toEl,
+      fromEl = _ref.fromEl,
+      oldIndex = _ref.oldIndex,
+      newIndex = _ref.newIndex,
+      oldDraggableIndex = _ref.oldDraggableIndex,
+      newDraggableIndex = _ref.newDraggableIndex,
+      originalEvent = _ref.originalEvent,
+      putSortable = _ref.putSortable,
+      extraEventProperties = _ref.extraEventProperties;
+  sortable = sortable || rootEl && rootEl[expando];
+  if (!sortable) return;
+  var evt,
+      options = sortable.options,
+      onName = 'on' + name.charAt(0).toUpperCase() + name.substr(1); // Support for new CustomEvent feature
+
+  if (window.CustomEvent && !IE11OrLess && !Edge) {
+    evt = new CustomEvent(name, {
+      bubbles: true,
+      cancelable: true
+    });
+  } else {
+    evt = document.createEvent('Event');
+    evt.initEvent(name, true, true);
+  }
+
+  evt.to = toEl || rootEl;
+  evt.from = fromEl || rootEl;
+  evt.item = targetEl || rootEl;
+  evt.clone = cloneEl;
+  evt.oldIndex = oldIndex;
+  evt.newIndex = newIndex;
+  evt.oldDraggableIndex = oldDraggableIndex;
+  evt.newDraggableIndex = newDraggableIndex;
+  evt.originalEvent = originalEvent;
+  evt.pullMode = putSortable ? putSortable.lastPutMode : undefined;
+
+  var allEventProperties = _objectSpread({}, extraEventProperties, PluginManager.getEventProperties(name, sortable));
+
+  for (var option in allEventProperties) {
+    evt[option] = allEventProperties[option];
+  }
+
+  if (rootEl) {
+    rootEl.dispatchEvent(evt);
+  }
+
+  if (options[onName]) {
+    options[onName].call(sortable, evt);
+  }
+}
+
+var pluginEvent = function pluginEvent(eventName, sortable) {
+  var _ref = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {},
+      originalEvent = _ref.evt,
+      data = _objectWithoutProperties(_ref, ["evt"]);
+
+  PluginManager.pluginEvent.bind(Sortable)(eventName, sortable, _objectSpread({
+    dragEl: dragEl,
+    parentEl: parentEl,
+    ghostEl: ghostEl,
+    rootEl: rootEl,
+    nextEl: nextEl,
+    lastDownEl: lastDownEl,
+    cloneEl: cloneEl,
+    cloneHidden: cloneHidden,
+    dragStarted: moved,
+    putSortable: putSortable,
+    activeSortable: Sortable.active,
+    originalEvent: originalEvent,
+    oldIndex: oldIndex,
+    oldDraggableIndex: oldDraggableIndex,
+    newIndex: newIndex,
+    newDraggableIndex: newDraggableIndex,
+    hideGhostForTarget: _hideGhostForTarget,
+    unhideGhostForTarget: _unhideGhostForTarget,
+    cloneNowHidden: function cloneNowHidden() {
+      cloneHidden = true;
+    },
+    cloneNowShown: function cloneNowShown() {
+      cloneHidden = false;
+    },
+    dispatchSortableEvent: function dispatchSortableEvent(name) {
+      _dispatchEvent({
+        sortable: sortable,
+        name: name,
+        originalEvent: originalEvent
+      });
+    }
+  }, data));
+};
+
+function _dispatchEvent(info) {
+  dispatchEvent(_objectSpread({
+    putSortable: putSortable,
+    cloneEl: cloneEl,
+    targetEl: dragEl,
+    rootEl: rootEl,
+    oldIndex: oldIndex,
+    oldDraggableIndex: oldDraggableIndex,
+    newIndex: newIndex,
+    newDraggableIndex: newDraggableIndex
+  }, info));
+}
+
+var dragEl,
+    parentEl,
+    ghostEl,
+    rootEl,
+    nextEl,
+    lastDownEl,
+    cloneEl,
+    cloneHidden,
+    oldIndex,
+    newIndex,
+    oldDraggableIndex,
+    newDraggableIndex,
+    activeGroup,
+    putSortable,
+    awaitingDragStarted = false,
+    ignoreNextClick = false,
+    sortables = [],
+    tapEvt,
+    touchEvt,
+    lastDx,
+    lastDy,
+    tapDistanceLeft,
+    tapDistanceTop,
+    moved,
+    lastTarget,
+    lastDirection,
+    pastFirstInvertThresh = false,
+    isCircumstantialInvert = false,
+    targetMoveDistance,
+    // For positioning ghost absolutely
+ghostRelativeParent,
+    ghostRelativeParentInitialScroll = [],
+    // (left, top)
+_silent = false,
+    savedInputChecked = [];
+/** @const */
+
+var documentExists = typeof document !== 'undefined',
+    PositionGhostAbsolutely = IOS,
+    CSSFloatProperty = Edge || IE11OrLess ? 'cssFloat' : 'float',
+    // This will not pass for IE9, because IE9 DnD only works on anchors
+supportDraggable = documentExists && !ChromeForAndroid && !IOS && 'draggable' in document.createElement('div'),
+    supportCssPointerEvents = function () {
+  if (!documentExists) return; // false when <= IE11
+
+  if (IE11OrLess) {
+    return false;
+  }
+
+  var el = document.createElement('x');
+  el.style.cssText = 'pointer-events:auto';
+  return el.style.pointerEvents === 'auto';
+}(),
+    _detectDirection = function _detectDirection(el, options) {
+  var elCSS = css(el),
+      elWidth = parseInt(elCSS.width) - parseInt(elCSS.paddingLeft) - parseInt(elCSS.paddingRight) - parseInt(elCSS.borderLeftWidth) - parseInt(elCSS.borderRightWidth),
+      child1 = getChild(el, 0, options),
+      child2 = getChild(el, 1, options),
+      firstChildCSS = child1 && css(child1),
+      secondChildCSS = child2 && css(child2),
+      firstChildWidth = firstChildCSS && parseInt(firstChildCSS.marginLeft) + parseInt(firstChildCSS.marginRight) + getRect(child1).width,
+      secondChildWidth = secondChildCSS && parseInt(secondChildCSS.marginLeft) + parseInt(secondChildCSS.marginRight) + getRect(child2).width;
+
+  if (elCSS.display === 'flex') {
+    return elCSS.flexDirection === 'column' || elCSS.flexDirection === 'column-reverse' ? 'vertical' : 'horizontal';
+  }
+
+  if (elCSS.display === 'grid') {
+    return elCSS.gridTemplateColumns.split(' ').length <= 1 ? 'vertical' : 'horizontal';
+  }
+
+  if (child1 && firstChildCSS["float"] && firstChildCSS["float"] !== 'none') {
+    var touchingSideChild2 = firstChildCSS["float"] === 'left' ? 'left' : 'right';
+    return child2 && (secondChildCSS.clear === 'both' || secondChildCSS.clear === touchingSideChild2) ? 'vertical' : 'horizontal';
+  }
+
+  return child1 && (firstChildCSS.display === 'block' || firstChildCSS.display === 'flex' || firstChildCSS.display === 'table' || firstChildCSS.display === 'grid' || firstChildWidth >= elWidth && elCSS[CSSFloatProperty] === 'none' || child2 && elCSS[CSSFloatProperty] === 'none' && firstChildWidth + secondChildWidth > elWidth) ? 'vertical' : 'horizontal';
+},
+    _dragElInRowColumn = function _dragElInRowColumn(dragRect, targetRect, vertical) {
+  var dragElS1Opp = vertical ? dragRect.left : dragRect.top,
+      dragElS2Opp = vertical ? dragRect.right : dragRect.bottom,
+      dragElOppLength = vertical ? dragRect.width : dragRect.height,
+      targetS1Opp = vertical ? targetRect.left : targetRect.top,
+      targetS2Opp = vertical ? targetRect.right : targetRect.bottom,
+      targetOppLength = vertical ? targetRect.width : targetRect.height;
+  return dragElS1Opp === targetS1Opp || dragElS2Opp === targetS2Opp || dragElS1Opp + dragElOppLength / 2 === targetS1Opp + targetOppLength / 2;
+},
+
+/**
+ * Detects first nearest empty sortable to X and Y position using emptyInsertThreshold.
+ * @param  {Number} x      X position
+ * @param  {Number} y      Y position
+ * @return {HTMLElement}   Element of the first found nearest Sortable
+ */
+_detectNearestEmptySortable = function _detectNearestEmptySortable(x, y) {
+  var ret;
+  sortables.some(function (sortable) {
+    if (lastChild(sortable)) return;
+    var rect = getRect(sortable),
+        threshold = sortable[expando].options.emptyInsertThreshold,
+        insideHorizontally = x >= rect.left - threshold && x <= rect.right + threshold,
+        insideVertically = y >= rect.top - threshold && y <= rect.bottom + threshold;
+
+    if (threshold && insideHorizontally && insideVertically) {
+      return ret = sortable;
+    }
+  });
+  return ret;
+},
+    _prepareGroup = function _prepareGroup(options) {
+  function toFn(value, pull) {
+    return function (to, from, dragEl, evt) {
+      var sameGroup = to.options.group.name && from.options.group.name && to.options.group.name === from.options.group.name;
+
+      if (value == null && (pull || sameGroup)) {
+        // Default pull value
+        // Default pull and put value if same group
+        return true;
+      } else if (value == null || value === false) {
+        return false;
+      } else if (pull && value === 'clone') {
+        return value;
+      } else if (typeof value === 'function') {
+        return toFn(value(to, from, dragEl, evt), pull)(to, from, dragEl, evt);
+      } else {
+        var otherGroup = (pull ? to : from).options.group.name;
+        return value === true || typeof value === 'string' && value === otherGroup || value.join && value.indexOf(otherGroup) > -1;
+      }
+    };
+  }
+
+  var group = {};
+  var originalGroup = options.group;
+
+  if (!originalGroup || _typeof(originalGroup) != 'object') {
+    originalGroup = {
+      name: originalGroup
+    };
+  }
+
+  group.name = originalGroup.name;
+  group.checkPull = toFn(originalGroup.pull, true);
+  group.checkPut = toFn(originalGroup.put);
+  group.revertClone = originalGroup.revertClone;
+  options.group = group;
+},
+    _hideGhostForTarget = function _hideGhostForTarget() {
+  if (!supportCssPointerEvents && ghostEl) {
+    css(ghostEl, 'display', 'none');
+  }
+},
+    _unhideGhostForTarget = function _unhideGhostForTarget() {
+  if (!supportCssPointerEvents && ghostEl) {
+    css(ghostEl, 'display', '');
+  }
+}; // #1184 fix - Prevent click event on fallback if dragged but item not changed position
+
+
+if (documentExists) {
+  document.addEventListener('click', function (evt) {
+    if (ignoreNextClick) {
+      evt.preventDefault();
+      evt.stopPropagation && evt.stopPropagation();
+      evt.stopImmediatePropagation && evt.stopImmediatePropagation();
+      ignoreNextClick = false;
+      return false;
+    }
+  }, true);
+}
+
+var nearestEmptyInsertDetectEvent = function nearestEmptyInsertDetectEvent(evt) {
+  if (dragEl) {
+    evt = evt.touches ? evt.touches[0] : evt;
+
+    var nearest = _detectNearestEmptySortable(evt.clientX, evt.clientY);
+
+    if (nearest) {
+      // Create imitation event
+      var event = {};
+
+      for (var i in evt) {
+        if (evt.hasOwnProperty(i)) {
+          event[i] = evt[i];
+        }
+      }
+
+      event.target = event.rootEl = nearest;
+      event.preventDefault = void 0;
+      event.stopPropagation = void 0;
+
+      nearest[expando]._onDragOver(event);
+    }
+  }
+};
+
+var _checkOutsideTargetEl = function _checkOutsideTargetEl(evt) {
+  if (dragEl) {
+    dragEl.parentNode[expando]._isOutsideThisEl(evt.target);
+  }
+};
+/**
+ * @class  Sortable
+ * @param  {HTMLElement}  el
+ * @param  {Object}       [options]
+ */
+
+
+function Sortable(el, options) {
+  if (!(el && el.nodeType && el.nodeType === 1)) {
+    throw "Sortable: `el` must be an HTMLElement, not ".concat({}.toString.call(el));
+  }
+
+  this.el = el; // root element
+
+  this.options = options = _extends({}, options); // Export instance
+
+  el[expando] = this;
+  var defaults = {
+    group: null,
+    sort: true,
+    disabled: false,
+    store: null,
+    handle: null,
+    draggable: /^[uo]l$/i.test(el.nodeName) ? '>li' : '>*',
+    swapThreshold: 1,
+    // percentage; 0 <= x <= 1
+    invertSwap: false,
+    // invert always
+    invertedSwapThreshold: null,
+    // will be set to same as swapThreshold if default
+    removeCloneOnHide: true,
+    direction: function direction() {
+      return _detectDirection(el, this.options);
+    },
+    ghostClass: 'sortable-ghost',
+    chosenClass: 'sortable-chosen',
+    dragClass: 'sortable-drag',
+    ignore: 'a, img',
+    filter: null,
+    preventOnFilter: true,
+    animation: 0,
+    easing: null,
+    setData: function setData(dataTransfer, dragEl) {
+      dataTransfer.setData('Text', dragEl.textContent);
+    },
+    dropBubble: false,
+    dragoverBubble: false,
+    dataIdAttr: 'data-id',
+    delay: 0,
+    delayOnTouchOnly: false,
+    touchStartThreshold: (Number.parseInt ? Number : window).parseInt(window.devicePixelRatio, 10) || 1,
+    forceFallback: false,
+    fallbackClass: 'sortable-fallback',
+    fallbackOnBody: false,
+    fallbackTolerance: 0,
+    fallbackOffset: {
+      x: 0,
+      y: 0
+    },
+    supportPointer: Sortable.supportPointer !== false && 'PointerEvent' in window,
+    emptyInsertThreshold: 5
+  };
+  PluginManager.initializePlugins(this, el, defaults); // Set default options
+
+  for (var name in defaults) {
+    !(name in options) && (options[name] = defaults[name]);
+  }
+
+  _prepareGroup(options); // Bind all private methods
+
+
+  for (var fn in this) {
+    if (fn.charAt(0) === '_' && typeof this[fn] === 'function') {
+      this[fn] = this[fn].bind(this);
+    }
+  } // Setup drag mode
+
+
+  this.nativeDraggable = options.forceFallback ? false : supportDraggable;
+
+  if (this.nativeDraggable) {
+    // Touch start threshold cannot be greater than the native dragstart threshold
+    this.options.touchStartThreshold = 1;
+  } // Bind events
+
+
+  if (options.supportPointer) {
+    on(el, 'pointerdown', this._onTapStart);
+  } else {
+    on(el, 'mousedown', this._onTapStart);
+    on(el, 'touchstart', this._onTapStart);
+  }
+
+  if (this.nativeDraggable) {
+    on(el, 'dragover', this);
+    on(el, 'dragenter', this);
+  }
+
+  sortables.push(this.el); // Restore sorting
+
+  options.store && options.store.get && this.sort(options.store.get(this) || []); // Add animation state manager
+
+  _extends(this, AnimationStateManager());
+}
+
+Sortable.prototype =
+/** @lends Sortable.prototype */
+{
+  constructor: Sortable,
+  _isOutsideThisEl: function _isOutsideThisEl(target) {
+    if (!this.el.contains(target) && target !== this.el) {
+      lastTarget = null;
+    }
+  },
+  _getDirection: function _getDirection(evt, target) {
+    return typeof this.options.direction === 'function' ? this.options.direction.call(this, evt, target, dragEl) : this.options.direction;
+  },
+  _onTapStart: function _onTapStart(
+  /** Event|TouchEvent */
+  evt) {
+    if (!evt.cancelable) return;
+
+    var _this = this,
+        el = this.el,
+        options = this.options,
+        preventOnFilter = options.preventOnFilter,
+        type = evt.type,
+        touch = evt.touches && evt.touches[0] || evt.pointerType && evt.pointerType === 'touch' && evt,
+        target = (touch || evt).target,
+        originalTarget = evt.target.shadowRoot && (evt.path && evt.path[0] || evt.composedPath && evt.composedPath()[0]) || target,
+        filter = options.filter;
+
+    _saveInputCheckedState(el); // Don't trigger start event when an element is been dragged, otherwise the evt.oldindex always wrong when set option.group.
+
+
+    if (dragEl) {
+      return;
+    }
+
+    if (/mousedown|pointerdown/.test(type) && evt.button !== 0 || options.disabled) {
+      return; // only left button and enabled
+    } // cancel dnd if original target is content editable
+
+
+    if (originalTarget.isContentEditable) {
+      return;
+    }
+
+    target = closest(target, options.draggable, el, false);
+
+    if (target && target.animated) {
+      return;
+    }
+
+    if (lastDownEl === target) {
+      // Ignoring duplicate `down`
+      return;
+    } // Get the index of the dragged element within its parent
+
+
+    oldIndex = index(target);
+    oldDraggableIndex = index(target, options.draggable); // Check filter
+
+    if (typeof filter === 'function') {
+      if (filter.call(this, evt, target, this)) {
+        _dispatchEvent({
+          sortable: _this,
+          rootEl: originalTarget,
+          name: 'filter',
+          targetEl: target,
+          toEl: el,
+          fromEl: el
+        });
+
+        pluginEvent('filter', _this, {
+          evt: evt
+        });
+        preventOnFilter && evt.cancelable && evt.preventDefault();
+        return; // cancel dnd
+      }
+    } else if (filter) {
+      filter = filter.split(',').some(function (criteria) {
+        criteria = closest(originalTarget, criteria.trim(), el, false);
+
+        if (criteria) {
+          _dispatchEvent({
+            sortable: _this,
+            rootEl: criteria,
+            name: 'filter',
+            targetEl: target,
+            fromEl: el,
+            toEl: el
+          });
+
+          pluginEvent('filter', _this, {
+            evt: evt
+          });
+          return true;
+        }
+      });
+
+      if (filter) {
+        preventOnFilter && evt.cancelable && evt.preventDefault();
+        return; // cancel dnd
+      }
+    }
+
+    if (options.handle && !closest(originalTarget, options.handle, el, false)) {
+      return;
+    } // Prepare `dragstart`
+
+
+    this._prepareDragStart(evt, touch, target);
+  },
+  _prepareDragStart: function _prepareDragStart(
+  /** Event */
+  evt,
+  /** Touch */
+  touch,
+  /** HTMLElement */
+  target) {
+    var _this = this,
+        el = _this.el,
+        options = _this.options,
+        ownerDocument = el.ownerDocument,
+        dragStartFn;
+
+    if (target && !dragEl && target.parentNode === el) {
+      var dragRect = getRect(target);
+      rootEl = el;
+      dragEl = target;
+      parentEl = dragEl.parentNode;
+      nextEl = dragEl.nextSibling;
+      lastDownEl = target;
+      activeGroup = options.group;
+      Sortable.dragged = dragEl;
+      tapEvt = {
+        target: dragEl,
+        clientX: (touch || evt).clientX,
+        clientY: (touch || evt).clientY
+      };
+      tapDistanceLeft = tapEvt.clientX - dragRect.left;
+      tapDistanceTop = tapEvt.clientY - dragRect.top;
+      this._lastX = (touch || evt).clientX;
+      this._lastY = (touch || evt).clientY;
+      dragEl.style['will-change'] = 'all';
+
+      dragStartFn = function dragStartFn() {
+        pluginEvent('delayEnded', _this, {
+          evt: evt
+        });
+
+        if (Sortable.eventCanceled) {
+          _this._onDrop();
+
+          return;
+        } // Delayed drag has been triggered
+        // we can re-enable the events: touchmove/mousemove
+
+
+        _this._disableDelayedDragEvents();
+
+        if (!FireFox && _this.nativeDraggable) {
+          dragEl.draggable = true;
+        } // Bind the events: dragstart/dragend
+
+
+        _this._triggerDragStart(evt, touch); // Drag start event
+
+
+        _dispatchEvent({
+          sortable: _this,
+          name: 'choose',
+          originalEvent: evt
+        }); // Chosen item
+
+
+        toggleClass(dragEl, options.chosenClass, true);
+      }; // Disable "draggable"
+
+
+      options.ignore.split(',').forEach(function (criteria) {
+        find(dragEl, criteria.trim(), _disableDraggable);
+      });
+      on(ownerDocument, 'dragover', nearestEmptyInsertDetectEvent);
+      on(ownerDocument, 'mousemove', nearestEmptyInsertDetectEvent);
+      on(ownerDocument, 'touchmove', nearestEmptyInsertDetectEvent);
+      on(ownerDocument, 'mouseup', _this._onDrop);
+      on(ownerDocument, 'touchend', _this._onDrop);
+      on(ownerDocument, 'touchcancel', _this._onDrop); // Make dragEl draggable (must be before delay for FireFox)
+
+      if (FireFox && this.nativeDraggable) {
+        this.options.touchStartThreshold = 4;
+        dragEl.draggable = true;
+      }
+
+      pluginEvent('delayStart', this, {
+        evt: evt
+      }); // Delay is impossible for native DnD in Edge or IE
+
+      if (options.delay && (!options.delayOnTouchOnly || touch) && (!this.nativeDraggable || !(Edge || IE11OrLess))) {
+        if (Sortable.eventCanceled) {
+          this._onDrop();
+
+          return;
+        } // If the user moves the pointer or let go the click or touch
+        // before the delay has been reached:
+        // disable the delayed drag
+
+
+        on(ownerDocument, 'mouseup', _this._disableDelayedDrag);
+        on(ownerDocument, 'touchend', _this._disableDelayedDrag);
+        on(ownerDocument, 'touchcancel', _this._disableDelayedDrag);
+        on(ownerDocument, 'mousemove', _this._delayedDragTouchMoveHandler);
+        on(ownerDocument, 'touchmove', _this._delayedDragTouchMoveHandler);
+        options.supportPointer && on(ownerDocument, 'pointermove', _this._delayedDragTouchMoveHandler);
+        _this._dragStartTimer = setTimeout(dragStartFn, options.delay);
+      } else {
+        dragStartFn();
+      }
+    }
+  },
+  _delayedDragTouchMoveHandler: function _delayedDragTouchMoveHandler(
+  /** TouchEvent|PointerEvent **/
+  e) {
+    var touch = e.touches ? e.touches[0] : e;
+
+    if (Math.max(Math.abs(touch.clientX - this._lastX), Math.abs(touch.clientY - this._lastY)) >= Math.floor(this.options.touchStartThreshold / (this.nativeDraggable && window.devicePixelRatio || 1))) {
+      this._disableDelayedDrag();
+    }
+  },
+  _disableDelayedDrag: function _disableDelayedDrag() {
+    dragEl && _disableDraggable(dragEl);
+    clearTimeout(this._dragStartTimer);
+
+    this._disableDelayedDragEvents();
+  },
+  _disableDelayedDragEvents: function _disableDelayedDragEvents() {
+    var ownerDocument = this.el.ownerDocument;
+    off(ownerDocument, 'mouseup', this._disableDelayedDrag);
+    off(ownerDocument, 'touchend', this._disableDelayedDrag);
+    off(ownerDocument, 'touchcancel', this._disableDelayedDrag);
+    off(ownerDocument, 'mousemove', this._delayedDragTouchMoveHandler);
+    off(ownerDocument, 'touchmove', this._delayedDragTouchMoveHandler);
+    off(ownerDocument, 'pointermove', this._delayedDragTouchMoveHandler);
+  },
+  _triggerDragStart: function _triggerDragStart(
+  /** Event */
+  evt,
+  /** Touch */
+  touch) {
+    touch = touch || evt.pointerType == 'touch' && evt;
+
+    if (!this.nativeDraggable || touch) {
+      if (this.options.supportPointer) {
+        on(document, 'pointermove', this._onTouchMove);
+      } else if (touch) {
+        on(document, 'touchmove', this._onTouchMove);
+      } else {
+        on(document, 'mousemove', this._onTouchMove);
+      }
+    } else {
+      on(dragEl, 'dragend', this);
+      on(rootEl, 'dragstart', this._onDragStart);
+    }
+
+    try {
+      if (document.selection) {
+        // Timeout neccessary for IE9
+        _nextTick(function () {
+          document.selection.empty();
+        });
+      } else {
+        window.getSelection().removeAllRanges();
+      }
+    } catch (err) {}
+  },
+  _dragStarted: function _dragStarted(fallback, evt) {
+
+    awaitingDragStarted = false;
+
+    if (rootEl && dragEl) {
+      pluginEvent('dragStarted', this, {
+        evt: evt
+      });
+
+      if (this.nativeDraggable) {
+        on(document, 'dragover', _checkOutsideTargetEl);
+      }
+
+      var options = this.options; // Apply effect
+
+      !fallback && toggleClass(dragEl, options.dragClass, false);
+      toggleClass(dragEl, options.ghostClass, true);
+      Sortable.active = this;
+      fallback && this._appendGhost(); // Drag start event
+
+      _dispatchEvent({
+        sortable: this,
+        name: 'start',
+        originalEvent: evt
+      });
+    } else {
+      this._nulling();
+    }
+  },
+  _emulateDragOver: function _emulateDragOver() {
+    if (touchEvt) {
+      this._lastX = touchEvt.clientX;
+      this._lastY = touchEvt.clientY;
+
+      _hideGhostForTarget();
+
+      var target = document.elementFromPoint(touchEvt.clientX, touchEvt.clientY);
+      var parent = target;
+
+      while (target && target.shadowRoot) {
+        target = target.shadowRoot.elementFromPoint(touchEvt.clientX, touchEvt.clientY);
+        if (target === parent) break;
+        parent = target;
+      }
+
+      dragEl.parentNode[expando]._isOutsideThisEl(target);
+
+      if (parent) {
+        do {
+          if (parent[expando]) {
+            var inserted = void 0;
+            inserted = parent[expando]._onDragOver({
+              clientX: touchEvt.clientX,
+              clientY: touchEvt.clientY,
+              target: target,
+              rootEl: parent
+            });
+
+            if (inserted && !this.options.dragoverBubble) {
+              break;
+            }
+          }
+
+          target = parent; // store last element
+        }
+        /* jshint boss:true */
+        while (parent = parent.parentNode);
+      }
+
+      _unhideGhostForTarget();
+    }
+  },
+  _onTouchMove: function _onTouchMove(
+  /**TouchEvent*/
+  evt) {
+    if (tapEvt) {
+      var options = this.options,
+          fallbackTolerance = options.fallbackTolerance,
+          fallbackOffset = options.fallbackOffset,
+          touch = evt.touches ? evt.touches[0] : evt,
+          ghostMatrix = ghostEl && matrix(ghostEl, true),
+          scaleX = ghostEl && ghostMatrix && ghostMatrix.a,
+          scaleY = ghostEl && ghostMatrix && ghostMatrix.d,
+          relativeScrollOffset = PositionGhostAbsolutely && ghostRelativeParent && getRelativeScrollOffset(ghostRelativeParent),
+          dx = (touch.clientX - tapEvt.clientX + fallbackOffset.x) / (scaleX || 1) + (relativeScrollOffset ? relativeScrollOffset[0] - ghostRelativeParentInitialScroll[0] : 0) / (scaleX || 1),
+          dy = (touch.clientY - tapEvt.clientY + fallbackOffset.y) / (scaleY || 1) + (relativeScrollOffset ? relativeScrollOffset[1] - ghostRelativeParentInitialScroll[1] : 0) / (scaleY || 1); // only set the status to dragging, when we are actually dragging
+
+      if (!Sortable.active && !awaitingDragStarted) {
+        if (fallbackTolerance && Math.max(Math.abs(touch.clientX - this._lastX), Math.abs(touch.clientY - this._lastY)) < fallbackTolerance) {
+          return;
+        }
+
+        this._onDragStart(evt, true);
+      }
+
+      if (ghostEl) {
+        if (ghostMatrix) {
+          ghostMatrix.e += dx - (lastDx || 0);
+          ghostMatrix.f += dy - (lastDy || 0);
+        } else {
+          ghostMatrix = {
+            a: 1,
+            b: 0,
+            c: 0,
+            d: 1,
+            e: dx,
+            f: dy
+          };
+        }
+
+        var cssMatrix = "matrix(".concat(ghostMatrix.a, ",").concat(ghostMatrix.b, ",").concat(ghostMatrix.c, ",").concat(ghostMatrix.d, ",").concat(ghostMatrix.e, ",").concat(ghostMatrix.f, ")");
+        css(ghostEl, 'webkitTransform', cssMatrix);
+        css(ghostEl, 'mozTransform', cssMatrix);
+        css(ghostEl, 'msTransform', cssMatrix);
+        css(ghostEl, 'transform', cssMatrix);
+        lastDx = dx;
+        lastDy = dy;
+        touchEvt = touch;
+      }
+
+      evt.cancelable && evt.preventDefault();
+    }
+  },
+  _appendGhost: function _appendGhost() {
+    // Bug if using scale(): https://stackoverflow.com/questions/2637058
+    // Not being adjusted for
+    if (!ghostEl) {
+      var container = this.options.fallbackOnBody ? document.body : rootEl,
+          rect = getRect(dragEl, true, PositionGhostAbsolutely, true, container),
+          options = this.options; // Position absolutely
+
+      if (PositionGhostAbsolutely) {
+        // Get relatively positioned parent
+        ghostRelativeParent = container;
+
+        while (css(ghostRelativeParent, 'position') === 'static' && css(ghostRelativeParent, 'transform') === 'none' && ghostRelativeParent !== document) {
+          ghostRelativeParent = ghostRelativeParent.parentNode;
+        }
+
+        if (ghostRelativeParent !== document.body && ghostRelativeParent !== document.documentElement) {
+          if (ghostRelativeParent === document) ghostRelativeParent = getWindowScrollingElement();
+          rect.top += ghostRelativeParent.scrollTop;
+          rect.left += ghostRelativeParent.scrollLeft;
+        } else {
+          ghostRelativeParent = getWindowScrollingElement();
+        }
+
+        ghostRelativeParentInitialScroll = getRelativeScrollOffset(ghostRelativeParent);
+      }
+
+      ghostEl = dragEl.cloneNode(true);
+      toggleClass(ghostEl, options.ghostClass, false);
+      toggleClass(ghostEl, options.fallbackClass, true);
+      toggleClass(ghostEl, options.dragClass, true);
+      css(ghostEl, 'transition', '');
+      css(ghostEl, 'transform', '');
+      css(ghostEl, 'box-sizing', 'border-box');
+      css(ghostEl, 'margin', 0);
+      css(ghostEl, 'top', rect.top);
+      css(ghostEl, 'left', rect.left);
+      css(ghostEl, 'width', rect.width);
+      css(ghostEl, 'height', rect.height);
+      css(ghostEl, 'opacity', '0.8');
+      css(ghostEl, 'position', PositionGhostAbsolutely ? 'absolute' : 'fixed');
+      css(ghostEl, 'zIndex', '100000');
+      css(ghostEl, 'pointerEvents', 'none');
+      Sortable.ghost = ghostEl;
+      container.appendChild(ghostEl); // Set transform-origin
+
+      css(ghostEl, 'transform-origin', tapDistanceLeft / parseInt(ghostEl.style.width) * 100 + '% ' + tapDistanceTop / parseInt(ghostEl.style.height) * 100 + '%');
+    }
+  },
+  _onDragStart: function _onDragStart(
+  /**Event*/
+  evt,
+  /**boolean*/
+  fallback) {
+    var _this = this;
+
+    var dataTransfer = evt.dataTransfer;
+    var options = _this.options;
+    pluginEvent('dragStart', this, {
+      evt: evt
+    });
+
+    if (Sortable.eventCanceled) {
+      this._onDrop();
+
+      return;
+    }
+
+    pluginEvent('setupClone', this);
+
+    if (!Sortable.eventCanceled) {
+      cloneEl = clone(dragEl);
+      cloneEl.draggable = false;
+      cloneEl.style['will-change'] = '';
+
+      this._hideClone();
+
+      toggleClass(cloneEl, this.options.chosenClass, false);
+      Sortable.clone = cloneEl;
+    } // #1143: IFrame support workaround
+
+
+    _this.cloneId = _nextTick(function () {
+      pluginEvent('clone', _this);
+      if (Sortable.eventCanceled) return;
+
+      if (!_this.options.removeCloneOnHide) {
+        rootEl.insertBefore(cloneEl, dragEl);
+      }
+
+      _this._hideClone();
+
+      _dispatchEvent({
+        sortable: _this,
+        name: 'clone'
+      });
+    });
+    !fallback && toggleClass(dragEl, options.dragClass, true); // Set proper drop events
+
+    if (fallback) {
+      ignoreNextClick = true;
+      _this._loopId = setInterval(_this._emulateDragOver, 50);
+    } else {
+      // Undo what was set in _prepareDragStart before drag started
+      off(document, 'mouseup', _this._onDrop);
+      off(document, 'touchend', _this._onDrop);
+      off(document, 'touchcancel', _this._onDrop);
+
+      if (dataTransfer) {
+        dataTransfer.effectAllowed = 'move';
+        options.setData && options.setData.call(_this, dataTransfer, dragEl);
+      }
+
+      on(document, 'drop', _this); // #1276 fix:
+
+      css(dragEl, 'transform', 'translateZ(0)');
+    }
+
+    awaitingDragStarted = true;
+    _this._dragStartId = _nextTick(_this._dragStarted.bind(_this, fallback, evt));
+    on(document, 'selectstart', _this);
+    moved = true;
+
+    if (Safari) {
+      css(document.body, 'user-select', 'none');
+    }
+  },
+  // Returns true - if no further action is needed (either inserted or another condition)
+  _onDragOver: function _onDragOver(
+  /**Event*/
+  evt) {
+    var el = this.el,
+        target = evt.target,
+        dragRect,
+        targetRect,
+        revert,
+        options = this.options,
+        group = options.group,
+        activeSortable = Sortable.active,
+        isOwner = activeGroup === group,
+        canSort = options.sort,
+        fromSortable = putSortable || activeSortable,
+        vertical,
+        _this = this,
+        completedFired = false;
+
+    if (_silent) return;
+
+    function dragOverEvent(name, extra) {
+      pluginEvent(name, _this, _objectSpread({
+        evt: evt,
+        isOwner: isOwner,
+        axis: vertical ? 'vertical' : 'horizontal',
+        revert: revert,
+        dragRect: dragRect,
+        targetRect: targetRect,
+        canSort: canSort,
+        fromSortable: fromSortable,
+        target: target,
+        completed: completed,
+        onMove: function onMove(target, after) {
+          return _onMove(rootEl, el, dragEl, dragRect, target, getRect(target), evt, after);
+        },
+        changed: changed
+      }, extra));
+    } // Capture animation state
+
+
+    function capture() {
+      dragOverEvent('dragOverAnimationCapture');
+
+      _this.captureAnimationState();
+
+      if (_this !== fromSortable) {
+        fromSortable.captureAnimationState();
+      }
+    } // Return invocation when dragEl is inserted (or completed)
+
+
+    function completed(insertion) {
+      dragOverEvent('dragOverCompleted', {
+        insertion: insertion
+      });
+
+      if (insertion) {
+        // Clones must be hidden before folding animation to capture dragRectAbsolute properly
+        if (isOwner) {
+          activeSortable._hideClone();
+        } else {
+          activeSortable._showClone(_this);
+        }
+
+        if (_this !== fromSortable) {
+          // Set ghost class to new sortable's ghost class
+          toggleClass(dragEl, putSortable ? putSortable.options.ghostClass : activeSortable.options.ghostClass, false);
+          toggleClass(dragEl, options.ghostClass, true);
+        }
+
+        if (putSortable !== _this && _this !== Sortable.active) {
+          putSortable = _this;
+        } else if (_this === Sortable.active && putSortable) {
+          putSortable = null;
+        } // Animation
+
+
+        if (fromSortable === _this) {
+          _this._ignoreWhileAnimating = target;
+        }
+
+        _this.animateAll(function () {
+          dragOverEvent('dragOverAnimationComplete');
+          _this._ignoreWhileAnimating = null;
+        });
+
+        if (_this !== fromSortable) {
+          fromSortable.animateAll();
+          fromSortable._ignoreWhileAnimating = null;
+        }
+      } // Null lastTarget if it is not inside a previously swapped element
+
+
+      if (target === dragEl && !dragEl.animated || target === el && !target.animated) {
+        lastTarget = null;
+      } // no bubbling and not fallback
+
+
+      if (!options.dragoverBubble && !evt.rootEl && target !== document) {
+        dragEl.parentNode[expando]._isOutsideThisEl(evt.target); // Do not detect for empty insert if already inserted
+
+
+        !insertion && nearestEmptyInsertDetectEvent(evt);
+      }
+
+      !options.dragoverBubble && evt.stopPropagation && evt.stopPropagation();
+      return completedFired = true;
+    } // Call when dragEl has been inserted
+
+
+    function changed() {
+      newIndex = index(dragEl);
+      newDraggableIndex = index(dragEl, options.draggable);
+
+      _dispatchEvent({
+        sortable: _this,
+        name: 'change',
+        toEl: el,
+        newIndex: newIndex,
+        newDraggableIndex: newDraggableIndex,
+        originalEvent: evt
+      });
+    }
+
+    if (evt.preventDefault !== void 0) {
+      evt.cancelable && evt.preventDefault();
+    }
+
+    target = closest(target, options.draggable, el, true);
+    dragOverEvent('dragOver');
+    if (Sortable.eventCanceled) return completedFired;
+
+    if (dragEl.contains(evt.target) || target.animated && target.animatingX && target.animatingY || _this._ignoreWhileAnimating === target) {
+      return completed(false);
+    }
+
+    ignoreNextClick = false;
+
+    if (activeSortable && !options.disabled && (isOwner ? canSort || (revert = !rootEl.contains(dragEl)) // Reverting item into the original list
+    : putSortable === this || (this.lastPutMode = activeGroup.checkPull(this, activeSortable, dragEl, evt)) && group.checkPut(this, activeSortable, dragEl, evt))) {
+      vertical = this._getDirection(evt, target) === 'vertical';
+      dragRect = getRect(dragEl);
+      dragOverEvent('dragOverValid');
+      if (Sortable.eventCanceled) return completedFired;
+
+      if (revert) {
+        parentEl = rootEl; // actualization
+
+        capture();
+
+        this._hideClone();
+
+        dragOverEvent('revert');
+
+        if (!Sortable.eventCanceled) {
+          if (nextEl) {
+            rootEl.insertBefore(dragEl, nextEl);
+          } else {
+            rootEl.appendChild(dragEl);
+          }
+        }
+
+        return completed(true);
+      }
+
+      var elLastChild = lastChild(el, options.draggable);
+
+      if (!elLastChild || _ghostIsLast(evt, vertical, this) && !elLastChild.animated) {
+        // If already at end of list: Do not insert
+        if (elLastChild === dragEl) {
+          return completed(false);
+        } // assign target only if condition is true
+
+
+        if (elLastChild && el === evt.target) {
+          target = elLastChild;
+        }
+
+        if (target) {
+          targetRect = getRect(target);
+        }
+
+        if (_onMove(rootEl, el, dragEl, dragRect, target, targetRect, evt, !!target) !== false) {
+          capture();
+          el.appendChild(dragEl);
+          parentEl = el; // actualization
+
+          changed();
+          return completed(true);
+        }
+      } else if (target.parentNode === el) {
+        targetRect = getRect(target);
+        var direction = 0,
+            targetBeforeFirstSwap,
+            differentLevel = dragEl.parentNode !== el,
+            differentRowCol = !_dragElInRowColumn(dragEl.animated && dragEl.toRect || dragRect, target.animated && target.toRect || targetRect, vertical),
+            side1 = vertical ? 'top' : 'left',
+            scrolledPastTop = isScrolledPast(target, 'top', 'top') || isScrolledPast(dragEl, 'top', 'top'),
+            scrollBefore = scrolledPastTop ? scrolledPastTop.scrollTop : void 0;
+
+        if (lastTarget !== target) {
+          targetBeforeFirstSwap = targetRect[side1];
+          pastFirstInvertThresh = false;
+          isCircumstantialInvert = !differentRowCol && options.invertSwap || differentLevel;
+        }
+
+        direction = _getSwapDirection(evt, target, targetRect, vertical, differentRowCol ? 1 : options.swapThreshold, options.invertedSwapThreshold == null ? options.swapThreshold : options.invertedSwapThreshold, isCircumstantialInvert, lastTarget === target);
+        var sibling;
+
+        if (direction !== 0) {
+          // Check if target is beside dragEl in respective direction (ignoring hidden elements)
+          var dragIndex = index(dragEl);
+
+          do {
+            dragIndex -= direction;
+            sibling = parentEl.children[dragIndex];
+          } while (sibling && (css(sibling, 'display') === 'none' || sibling === ghostEl));
+        } // If dragEl is already beside target: Do not insert
+
+
+        if (direction === 0 || sibling === target) {
+          return completed(false);
+        }
+
+        lastTarget = target;
+        lastDirection = direction;
+        var nextSibling = target.nextElementSibling,
+            after = false;
+        after = direction === 1;
+
+        var moveVector = _onMove(rootEl, el, dragEl, dragRect, target, targetRect, evt, after);
+
+        if (moveVector !== false) {
+          if (moveVector === 1 || moveVector === -1) {
+            after = moveVector === 1;
+          }
+
+          _silent = true;
+          setTimeout(_unsilent, 30);
+          capture();
+
+          if (after && !nextSibling) {
+            el.appendChild(dragEl);
+          } else {
+            target.parentNode.insertBefore(dragEl, after ? nextSibling : target);
+          } // Undo chrome's scroll adjustment (has no effect on other browsers)
+
+
+          if (scrolledPastTop) {
+            scrollBy(scrolledPastTop, 0, scrollBefore - scrolledPastTop.scrollTop);
+          }
+
+          parentEl = dragEl.parentNode; // actualization
+          // must be done before animation
+
+          if (targetBeforeFirstSwap !== undefined && !isCircumstantialInvert) {
+            targetMoveDistance = Math.abs(targetBeforeFirstSwap - getRect(target)[side1]);
+          }
+
+          changed();
+          return completed(true);
+        }
+      }
+
+      if (el.contains(dragEl)) {
+        return completed(false);
+      }
+    }
+
+    return false;
+  },
+  _ignoreWhileAnimating: null,
+  _offMoveEvents: function _offMoveEvents() {
+    off(document, 'mousemove', this._onTouchMove);
+    off(document, 'touchmove', this._onTouchMove);
+    off(document, 'pointermove', this._onTouchMove);
+    off(document, 'dragover', nearestEmptyInsertDetectEvent);
+    off(document, 'mousemove', nearestEmptyInsertDetectEvent);
+    off(document, 'touchmove', nearestEmptyInsertDetectEvent);
+  },
+  _offUpEvents: function _offUpEvents() {
+    var ownerDocument = this.el.ownerDocument;
+    off(ownerDocument, 'mouseup', this._onDrop);
+    off(ownerDocument, 'touchend', this._onDrop);
+    off(ownerDocument, 'pointerup', this._onDrop);
+    off(ownerDocument, 'touchcancel', this._onDrop);
+    off(document, 'selectstart', this);
+  },
+  _onDrop: function _onDrop(
+  /**Event*/
+  evt) {
+    var el = this.el,
+        options = this.options; // Get the index of the dragged element within its parent
+
+    newIndex = index(dragEl);
+    newDraggableIndex = index(dragEl, options.draggable);
+    pluginEvent('drop', this, {
+      evt: evt
+    });
+    parentEl = dragEl && dragEl.parentNode; // Get again after plugin event
+
+    newIndex = index(dragEl);
+    newDraggableIndex = index(dragEl, options.draggable);
+
+    if (Sortable.eventCanceled) {
+      this._nulling();
+
+      return;
+    }
+
+    awaitingDragStarted = false;
+    isCircumstantialInvert = false;
+    pastFirstInvertThresh = false;
+    clearInterval(this._loopId);
+    clearTimeout(this._dragStartTimer);
+
+    _cancelNextTick(this.cloneId);
+
+    _cancelNextTick(this._dragStartId); // Unbind events
+
+
+    if (this.nativeDraggable) {
+      off(document, 'drop', this);
+      off(el, 'dragstart', this._onDragStart);
+    }
+
+    this._offMoveEvents();
+
+    this._offUpEvents();
+
+    if (Safari) {
+      css(document.body, 'user-select', '');
+    }
+
+    css(dragEl, 'transform', '');
+
+    if (evt) {
+      if (moved) {
+        evt.cancelable && evt.preventDefault();
+        !options.dropBubble && evt.stopPropagation();
+      }
+
+      ghostEl && ghostEl.parentNode && ghostEl.parentNode.removeChild(ghostEl);
+
+      if (rootEl === parentEl || putSortable && putSortable.lastPutMode !== 'clone') {
+        // Remove clone(s)
+        cloneEl && cloneEl.parentNode && cloneEl.parentNode.removeChild(cloneEl);
+      }
+
+      if (dragEl) {
+        if (this.nativeDraggable) {
+          off(dragEl, 'dragend', this);
+        }
+
+        _disableDraggable(dragEl);
+
+        dragEl.style['will-change'] = ''; // Remove classes
+        // ghostClass is added in dragStarted
+
+        if (moved && !awaitingDragStarted) {
+          toggleClass(dragEl, putSortable ? putSortable.options.ghostClass : this.options.ghostClass, false);
+        }
+
+        toggleClass(dragEl, this.options.chosenClass, false); // Drag stop event
+
+        _dispatchEvent({
+          sortable: this,
+          name: 'unchoose',
+          toEl: parentEl,
+          newIndex: null,
+          newDraggableIndex: null,
+          originalEvent: evt
+        });
+
+        if (rootEl !== parentEl) {
+          if (newIndex >= 0) {
+            // Add event
+            _dispatchEvent({
+              rootEl: parentEl,
+              name: 'add',
+              toEl: parentEl,
+              fromEl: rootEl,
+              originalEvent: evt
+            }); // Remove event
+
+
+            _dispatchEvent({
+              sortable: this,
+              name: 'remove',
+              toEl: parentEl,
+              originalEvent: evt
+            }); // drag from one list and drop into another
+
+
+            _dispatchEvent({
+              rootEl: parentEl,
+              name: 'sort',
+              toEl: parentEl,
+              fromEl: rootEl,
+              originalEvent: evt
+            });
+
+            _dispatchEvent({
+              sortable: this,
+              name: 'sort',
+              toEl: parentEl,
+              originalEvent: evt
+            });
+          }
+
+          putSortable && putSortable.save();
+        } else {
+          if (newIndex !== oldIndex) {
+            if (newIndex >= 0) {
+              // drag & drop within the same list
+              _dispatchEvent({
+                sortable: this,
+                name: 'update',
+                toEl: parentEl,
+                originalEvent: evt
+              });
+
+              _dispatchEvent({
+                sortable: this,
+                name: 'sort',
+                toEl: parentEl,
+                originalEvent: evt
+              });
+            }
+          }
+        }
+
+        if (Sortable.active) {
+          /* jshint eqnull:true */
+          if (newIndex == null || newIndex === -1) {
+            newIndex = oldIndex;
+            newDraggableIndex = oldDraggableIndex;
+          }
+
+          _dispatchEvent({
+            sortable: this,
+            name: 'end',
+            toEl: parentEl,
+            originalEvent: evt
+          }); // Save sorting
+
+
+          this.save();
+        }
+      }
+    }
+
+    this._nulling();
+  },
+  _nulling: function _nulling() {
+    pluginEvent('nulling', this);
+    rootEl = dragEl = parentEl = ghostEl = nextEl = cloneEl = lastDownEl = cloneHidden = tapEvt = touchEvt = moved = newIndex = newDraggableIndex = oldIndex = oldDraggableIndex = lastTarget = lastDirection = putSortable = activeGroup = Sortable.dragged = Sortable.ghost = Sortable.clone = Sortable.active = null;
+    savedInputChecked.forEach(function (el) {
+      el.checked = true;
+    });
+    savedInputChecked.length = lastDx = lastDy = 0;
+  },
+  handleEvent: function handleEvent(
+  /**Event*/
+  evt) {
+    switch (evt.type) {
+      case 'drop':
+      case 'dragend':
+        this._onDrop(evt);
+
+        break;
+
+      case 'dragenter':
+      case 'dragover':
+        if (dragEl) {
+          this._onDragOver(evt);
+
+          _globalDragOver(evt);
+        }
+
+        break;
+
+      case 'selectstart':
+        evt.preventDefault();
+        break;
+    }
+  },
+
+  /**
+   * Serializes the item into an array of string.
+   * @returns {String[]}
+   */
+  toArray: function toArray() {
+    var order = [],
+        el,
+        children = this.el.children,
+        i = 0,
+        n = children.length,
+        options = this.options;
+
+    for (; i < n; i++) {
+      el = children[i];
+
+      if (closest(el, options.draggable, this.el, false)) {
+        order.push(el.getAttribute(options.dataIdAttr) || _generateId(el));
+      }
+    }
+
+    return order;
+  },
+
+  /**
+   * Sorts the elements according to the array.
+   * @param  {String[]}  order  order of the items
+   */
+  sort: function sort(order) {
+    var items = {},
+        rootEl = this.el;
+    this.toArray().forEach(function (id, i) {
+      var el = rootEl.children[i];
+
+      if (closest(el, this.options.draggable, rootEl, false)) {
+        items[id] = el;
+      }
+    }, this);
+    order.forEach(function (id) {
+      if (items[id]) {
+        rootEl.removeChild(items[id]);
+        rootEl.appendChild(items[id]);
+      }
+    });
+  },
+
+  /**
+   * Save the current sorting
+   */
+  save: function save() {
+    var store = this.options.store;
+    store && store.set && store.set(this);
+  },
+
+  /**
+   * For each element in the set, get the first element that matches the selector by testing the element itself and traversing up through its ancestors in the DOM tree.
+   * @param   {HTMLElement}  el
+   * @param   {String}       [selector]  default: `options.draggable`
+   * @returns {HTMLElement|null}
+   */
+  closest: function closest$1(el, selector) {
+    return closest(el, selector || this.options.draggable, this.el, false);
+  },
+
+  /**
+   * Set/get option
+   * @param   {string} name
+   * @param   {*}      [value]
+   * @returns {*}
+   */
+  option: function option(name, value) {
+    var options = this.options;
+
+    if (value === void 0) {
+      return options[name];
+    } else {
+      var modifiedValue = PluginManager.modifyOption(this, name, value);
+
+      if (typeof modifiedValue !== 'undefined') {
+        options[name] = modifiedValue;
+      } else {
+        options[name] = value;
+      }
+
+      if (name === 'group') {
+        _prepareGroup(options);
+      }
+    }
+  },
+
+  /**
+   * Destroy
+   */
+  destroy: function destroy() {
+    pluginEvent('destroy', this);
+    var el = this.el;
+    el[expando] = null;
+    off(el, 'mousedown', this._onTapStart);
+    off(el, 'touchstart', this._onTapStart);
+    off(el, 'pointerdown', this._onTapStart);
+
+    if (this.nativeDraggable) {
+      off(el, 'dragover', this);
+      off(el, 'dragenter', this);
+    } // Remove draggable attributes
+
+
+    Array.prototype.forEach.call(el.querySelectorAll('[draggable]'), function (el) {
+      el.removeAttribute('draggable');
+    });
+
+    this._onDrop();
+
+    this._disableDelayedDragEvents();
+
+    sortables.splice(sortables.indexOf(this.el), 1);
+    this.el = el = null;
+  },
+  _hideClone: function _hideClone() {
+    if (!cloneHidden) {
+      pluginEvent('hideClone', this);
+      if (Sortable.eventCanceled) return;
+      css(cloneEl, 'display', 'none');
+
+      if (this.options.removeCloneOnHide && cloneEl.parentNode) {
+        cloneEl.parentNode.removeChild(cloneEl);
+      }
+
+      cloneHidden = true;
+    }
+  },
+  _showClone: function _showClone(putSortable) {
+    if (putSortable.lastPutMode !== 'clone') {
+      this._hideClone();
+
+      return;
+    }
+
+    if (cloneHidden) {
+      pluginEvent('showClone', this);
+      if (Sortable.eventCanceled) return; // show clone at dragEl or original position
+
+      if (rootEl.contains(dragEl) && !this.options.group.revertClone) {
+        rootEl.insertBefore(cloneEl, dragEl);
+      } else if (nextEl) {
+        rootEl.insertBefore(cloneEl, nextEl);
+      } else {
+        rootEl.appendChild(cloneEl);
+      }
+
+      if (this.options.group.revertClone) {
+        this.animate(dragEl, cloneEl);
+      }
+
+      css(cloneEl, 'display', '');
+      cloneHidden = false;
+    }
+  }
+};
+
+function _globalDragOver(
+/**Event*/
+evt) {
+  if (evt.dataTransfer) {
+    evt.dataTransfer.dropEffect = 'move';
+  }
+
+  evt.cancelable && evt.preventDefault();
+}
+
+function _onMove(fromEl, toEl, dragEl, dragRect, targetEl, targetRect, originalEvent, willInsertAfter) {
+  var evt,
+      sortable = fromEl[expando],
+      onMoveFn = sortable.options.onMove,
+      retVal; // Support for new CustomEvent feature
+
+  if (window.CustomEvent && !IE11OrLess && !Edge) {
+    evt = new CustomEvent('move', {
+      bubbles: true,
+      cancelable: true
+    });
+  } else {
+    evt = document.createEvent('Event');
+    evt.initEvent('move', true, true);
+  }
+
+  evt.to = toEl;
+  evt.from = fromEl;
+  evt.dragged = dragEl;
+  evt.draggedRect = dragRect;
+  evt.related = targetEl || toEl;
+  evt.relatedRect = targetRect || getRect(toEl);
+  evt.willInsertAfter = willInsertAfter;
+  evt.originalEvent = originalEvent;
+  fromEl.dispatchEvent(evt);
+
+  if (onMoveFn) {
+    retVal = onMoveFn.call(sortable, evt, originalEvent);
+  }
+
+  return retVal;
+}
+
+function _disableDraggable(el) {
+  el.draggable = false;
+}
+
+function _unsilent() {
+  _silent = false;
+}
+
+function _ghostIsLast(evt, vertical, sortable) {
+  var rect = getRect(lastChild(sortable.el, sortable.options.draggable));
+  var spacer = 10;
+  return vertical ? evt.clientX > rect.right + spacer || evt.clientX <= rect.right && evt.clientY > rect.bottom && evt.clientX >= rect.left : evt.clientX > rect.right && evt.clientY > rect.top || evt.clientX <= rect.right && evt.clientY > rect.bottom + spacer;
+}
+
+function _getSwapDirection(evt, target, targetRect, vertical, swapThreshold, invertedSwapThreshold, invertSwap, isLastTarget) {
+  var mouseOnAxis = vertical ? evt.clientY : evt.clientX,
+      targetLength = vertical ? targetRect.height : targetRect.width,
+      targetS1 = vertical ? targetRect.top : targetRect.left,
+      targetS2 = vertical ? targetRect.bottom : targetRect.right,
+      invert = false;
+
+  if (!invertSwap) {
+    // Never invert or create dragEl shadow when target movemenet causes mouse to move past the end of regular swapThreshold
+    if (isLastTarget && targetMoveDistance < targetLength * swapThreshold) {
+      // multiplied only by swapThreshold because mouse will already be inside target by (1 - threshold) * targetLength / 2
+      // check if past first invert threshold on side opposite of lastDirection
+      if (!pastFirstInvertThresh && (lastDirection === 1 ? mouseOnAxis > targetS1 + targetLength * invertedSwapThreshold / 2 : mouseOnAxis < targetS2 - targetLength * invertedSwapThreshold / 2)) {
+        // past first invert threshold, do not restrict inverted threshold to dragEl shadow
+        pastFirstInvertThresh = true;
+      }
+
+      if (!pastFirstInvertThresh) {
+        // dragEl shadow (target move distance shadow)
+        if (lastDirection === 1 ? mouseOnAxis < targetS1 + targetMoveDistance // over dragEl shadow
+        : mouseOnAxis > targetS2 - targetMoveDistance) {
+          return -lastDirection;
+        }
+      } else {
+        invert = true;
+      }
+    } else {
+      // Regular
+      if (mouseOnAxis > targetS1 + targetLength * (1 - swapThreshold) / 2 && mouseOnAxis < targetS2 - targetLength * (1 - swapThreshold) / 2) {
+        return _getInsertDirection(target);
+      }
+    }
+  }
+
+  invert = invert || invertSwap;
+
+  if (invert) {
+    // Invert of regular
+    if (mouseOnAxis < targetS1 + targetLength * invertedSwapThreshold / 2 || mouseOnAxis > targetS2 - targetLength * invertedSwapThreshold / 2) {
+      return mouseOnAxis > targetS1 + targetLength / 2 ? 1 : -1;
+    }
+  }
+
+  return 0;
+}
+/**
+ * Gets the direction dragEl must be swapped relative to target in order to make it
+ * seem that dragEl has been "inserted" into that element's position
+ * @param  {HTMLElement} target       The target whose position dragEl is being inserted at
+ * @return {Number}                   Direction dragEl must be swapped
+ */
+
+
+function _getInsertDirection(target) {
+  if (index(dragEl) < index(target)) {
+    return 1;
+  } else {
+    return -1;
+  }
+}
+/**
+ * Generate id
+ * @param   {HTMLElement} el
+ * @returns {String}
+ * @private
+ */
+
+
+function _generateId(el) {
+  var str = el.tagName + el.className + el.src + el.href + el.textContent,
+      i = str.length,
+      sum = 0;
+
+  while (i--) {
+    sum += str.charCodeAt(i);
+  }
+
+  return sum.toString(36);
+}
+
+function _saveInputCheckedState(root) {
+  savedInputChecked.length = 0;
+  var inputs = root.getElementsByTagName('input');
+  var idx = inputs.length;
+
+  while (idx--) {
+    var el = inputs[idx];
+    el.checked && savedInputChecked.push(el);
+  }
+}
+
+function _nextTick(fn) {
+  return setTimeout(fn, 0);
+}
+
+function _cancelNextTick(id) {
+  return clearTimeout(id);
+} // Fixed #973:
+
+
+if (documentExists) {
+  on(document, 'touchmove', function (evt) {
+    if ((Sortable.active || awaitingDragStarted) && evt.cancelable) {
+      evt.preventDefault();
+    }
+  });
+} // Export utils
+
+
+Sortable.utils = {
+  on: on,
+  off: off,
+  css: css,
+  find: find,
+  is: function is(el, selector) {
+    return !!closest(el, selector, el, false);
+  },
+  extend: extend,
+  throttle: throttle,
+  closest: closest,
+  toggleClass: toggleClass,
+  clone: clone,
+  index: index,
+  nextTick: _nextTick,
+  cancelNextTick: _cancelNextTick,
+  detectDirection: _detectDirection,
+  getChild: getChild
+};
+/**
+ * Get the Sortable instance of an element
+ * @param  {HTMLElement} element The element
+ * @return {Sortable|undefined}         The instance of Sortable
+ */
+
+Sortable.get = function (element) {
+  return element[expando];
+};
+/**
+ * Mount a plugin to Sortable
+ * @param  {...SortablePlugin|SortablePlugin[]} plugins       Plugins being mounted
+ */
+
+
+Sortable.mount = function () {
+  for (var _len = arguments.length, plugins = new Array(_len), _key = 0; _key < _len; _key++) {
+    plugins[_key] = arguments[_key];
+  }
+
+  if (plugins[0].constructor === Array) plugins = plugins[0];
+  plugins.forEach(function (plugin) {
+    if (!plugin.prototype || !plugin.prototype.constructor) {
+      throw "Sortable: Mounted plugin must be a constructor function, not ".concat({}.toString.call(plugin));
+    }
+
+    if (plugin.utils) Sortable.utils = _objectSpread({}, Sortable.utils, plugin.utils);
+    PluginManager.mount(plugin);
+  });
+};
+/**
+ * Create sortable instance
+ * @param {HTMLElement}  el
+ * @param {Object}      [options]
+ */
+
+
+Sortable.create = function (el, options) {
+  return new Sortable(el, options);
+}; // Export
+
+
+Sortable.version = version;
+
+var autoScrolls = [],
+    scrollEl,
+    scrollRootEl,
+    scrolling = false,
+    lastAutoScrollX,
+    lastAutoScrollY,
+    touchEvt$1,
+    pointerElemChangedInterval;
+
+function AutoScrollPlugin() {
+  function AutoScroll() {
+    this.defaults = {
+      scroll: true,
+      scrollSensitivity: 30,
+      scrollSpeed: 10,
+      bubbleScroll: true
+    }; // Bind all private methods
+
+    for (var fn in this) {
+      if (fn.charAt(0) === '_' && typeof this[fn] === 'function') {
+        this[fn] = this[fn].bind(this);
+      }
+    }
+  }
+
+  AutoScroll.prototype = {
+    dragStarted: function dragStarted(_ref) {
+      var originalEvent = _ref.originalEvent;
+
+      if (this.sortable.nativeDraggable) {
+        on(document, 'dragover', this._handleAutoScroll);
+      } else {
+        if (this.options.supportPointer) {
+          on(document, 'pointermove', this._handleFallbackAutoScroll);
+        } else if (originalEvent.touches) {
+          on(document, 'touchmove', this._handleFallbackAutoScroll);
+        } else {
+          on(document, 'mousemove', this._handleFallbackAutoScroll);
+        }
+      }
+    },
+    dragOverCompleted: function dragOverCompleted(_ref2) {
+      var originalEvent = _ref2.originalEvent;
+
+      // For when bubbling is canceled and using fallback (fallback 'touchmove' always reached)
+      if (!this.options.dragOverBubble && !originalEvent.rootEl) {
+        this._handleAutoScroll(originalEvent);
+      }
+    },
+    drop: function drop() {
+      if (this.sortable.nativeDraggable) {
+        off(document, 'dragover', this._handleAutoScroll);
+      } else {
+        off(document, 'pointermove', this._handleFallbackAutoScroll);
+        off(document, 'touchmove', this._handleFallbackAutoScroll);
+        off(document, 'mousemove', this._handleFallbackAutoScroll);
+      }
+
+      clearPointerElemChangedInterval();
+      clearAutoScrolls();
+      cancelThrottle();
+    },
+    nulling: function nulling() {
+      touchEvt$1 = scrollRootEl = scrollEl = scrolling = pointerElemChangedInterval = lastAutoScrollX = lastAutoScrollY = null;
+      autoScrolls.length = 0;
+    },
+    _handleFallbackAutoScroll: function _handleFallbackAutoScroll(evt) {
+      this._handleAutoScroll(evt, true);
+    },
+    _handleAutoScroll: function _handleAutoScroll(evt, fallback) {
+      var _this = this;
+
+      var x = (evt.touches ? evt.touches[0] : evt).clientX,
+          y = (evt.touches ? evt.touches[0] : evt).clientY,
+          elem = document.elementFromPoint(x, y);
+      touchEvt$1 = evt; // IE does not seem to have native autoscroll,
+      // Edge's autoscroll seems too conditional,
+      // MACOS Safari does not have autoscroll,
+      // Firefox and Chrome are good
+
+      if (fallback || Edge || IE11OrLess || Safari) {
+        autoScroll(evt, this.options, elem, fallback); // Listener for pointer element change
+
+        var ogElemScroller = getParentAutoScrollElement(elem, true);
+
+        if (scrolling && (!pointerElemChangedInterval || x !== lastAutoScrollX || y !== lastAutoScrollY)) {
+          pointerElemChangedInterval && clearPointerElemChangedInterval(); // Detect for pointer elem change, emulating native DnD behaviour
+
+          pointerElemChangedInterval = setInterval(function () {
+            var newElem = getParentAutoScrollElement(document.elementFromPoint(x, y), true);
+
+            if (newElem !== ogElemScroller) {
+              ogElemScroller = newElem;
+              clearAutoScrolls();
+            }
+
+            autoScroll(evt, _this.options, newElem, fallback);
+          }, 10);
+          lastAutoScrollX = x;
+          lastAutoScrollY = y;
+        }
+      } else {
+        // if DnD is enabled (and browser has good autoscrolling), first autoscroll will already scroll, so get parent autoscroll of first autoscroll
+        if (!this.options.bubbleScroll || getParentAutoScrollElement(elem, true) === getWindowScrollingElement()) {
+          clearAutoScrolls();
+          return;
+        }
+
+        autoScroll(evt, this.options, getParentAutoScrollElement(elem, false), false);
+      }
+    }
+  };
+  return _extends(AutoScroll, {
+    pluginName: 'scroll',
+    initializeByDefault: true
+  });
+}
+
+function clearAutoScrolls() {
+  autoScrolls.forEach(function (autoScroll) {
+    clearInterval(autoScroll.pid);
+  });
+  autoScrolls = [];
+}
+
+function clearPointerElemChangedInterval() {
+  clearInterval(pointerElemChangedInterval);
+}
+
+var autoScroll = throttle(function (evt, options, rootEl, isFallback) {
+  // Bug: https://bugzilla.mozilla.org/show_bug.cgi?id=505521
+  if (!options.scroll) return;
+  var x = (evt.touches ? evt.touches[0] : evt).clientX,
+      y = (evt.touches ? evt.touches[0] : evt).clientY,
+      sens = options.scrollSensitivity,
+      speed = options.scrollSpeed,
+      winScroller = getWindowScrollingElement();
+  var scrollThisInstance = false,
+      scrollCustomFn; // New scroll root, set scrollEl
+
+  if (scrollRootEl !== rootEl) {
+    scrollRootEl = rootEl;
+    clearAutoScrolls();
+    scrollEl = options.scroll;
+    scrollCustomFn = options.scrollFn;
+
+    if (scrollEl === true) {
+      scrollEl = getParentAutoScrollElement(rootEl, true);
+    }
+  }
+
+  var layersOut = 0;
+  var currentParent = scrollEl;
+
+  do {
+    var el = currentParent,
+        rect = getRect(el),
+        top = rect.top,
+        bottom = rect.bottom,
+        left = rect.left,
+        right = rect.right,
+        width = rect.width,
+        height = rect.height,
+        canScrollX = void 0,
+        canScrollY = void 0,
+        scrollWidth = el.scrollWidth,
+        scrollHeight = el.scrollHeight,
+        elCSS = css(el),
+        scrollPosX = el.scrollLeft,
+        scrollPosY = el.scrollTop;
+
+    if (el === winScroller) {
+      canScrollX = width < scrollWidth && (elCSS.overflowX === 'auto' || elCSS.overflowX === 'scroll' || elCSS.overflowX === 'visible');
+      canScrollY = height < scrollHeight && (elCSS.overflowY === 'auto' || elCSS.overflowY === 'scroll' || elCSS.overflowY === 'visible');
+    } else {
+      canScrollX = width < scrollWidth && (elCSS.overflowX === 'auto' || elCSS.overflowX === 'scroll');
+      canScrollY = height < scrollHeight && (elCSS.overflowY === 'auto' || elCSS.overflowY === 'scroll');
+    }
+
+    var vx = canScrollX && (Math.abs(right - x) <= sens && scrollPosX + width < scrollWidth) - (Math.abs(left - x) <= sens && !!scrollPosX);
+    var vy = canScrollY && (Math.abs(bottom - y) <= sens && scrollPosY + height < scrollHeight) - (Math.abs(top - y) <= sens && !!scrollPosY);
+
+    if (!autoScrolls[layersOut]) {
+      for (var i = 0; i <= layersOut; i++) {
+        if (!autoScrolls[i]) {
+          autoScrolls[i] = {};
+        }
+      }
+    }
+
+    if (autoScrolls[layersOut].vx != vx || autoScrolls[layersOut].vy != vy || autoScrolls[layersOut].el !== el) {
+      autoScrolls[layersOut].el = el;
+      autoScrolls[layersOut].vx = vx;
+      autoScrolls[layersOut].vy = vy;
+      clearInterval(autoScrolls[layersOut].pid);
+
+      if (vx != 0 || vy != 0) {
+        scrollThisInstance = true;
+        /* jshint loopfunc:true */
+
+        autoScrolls[layersOut].pid = setInterval(function () {
+          // emulate drag over during autoscroll (fallback), emulating native DnD behaviour
+          if (isFallback && this.layer === 0) {
+            Sortable.active._onTouchMove(touchEvt$1); // To move ghost if it is positioned absolutely
+
+          }
+
+          var scrollOffsetY = autoScrolls[this.layer].vy ? autoScrolls[this.layer].vy * speed : 0;
+          var scrollOffsetX = autoScrolls[this.layer].vx ? autoScrolls[this.layer].vx * speed : 0;
+
+          if (typeof scrollCustomFn === 'function') {
+            if (scrollCustomFn.call(Sortable.dragged.parentNode[expando], scrollOffsetX, scrollOffsetY, evt, touchEvt$1, autoScrolls[this.layer].el) !== 'continue') {
+              return;
+            }
+          }
+
+          scrollBy(autoScrolls[this.layer].el, scrollOffsetX, scrollOffsetY);
+        }.bind({
+          layer: layersOut
+        }), 24);
+      }
+    }
+
+    layersOut++;
+  } while (options.bubbleScroll && currentParent !== winScroller && (currentParent = getParentAutoScrollElement(currentParent, false)));
+
+  scrolling = scrollThisInstance; // in case another function catches scrolling as false in between when it is not
+}, 30);
+
+var drop = function drop(_ref) {
+  var originalEvent = _ref.originalEvent,
+      putSortable = _ref.putSortable,
+      dragEl = _ref.dragEl,
+      activeSortable = _ref.activeSortable,
+      dispatchSortableEvent = _ref.dispatchSortableEvent,
+      hideGhostForTarget = _ref.hideGhostForTarget,
+      unhideGhostForTarget = _ref.unhideGhostForTarget;
+  if (!originalEvent) return;
+  var toSortable = putSortable || activeSortable;
+  hideGhostForTarget();
+  var touch = originalEvent.changedTouches && originalEvent.changedTouches.length ? originalEvent.changedTouches[0] : originalEvent;
+  var target = document.elementFromPoint(touch.clientX, touch.clientY);
+  unhideGhostForTarget();
+
+  if (toSortable && !toSortable.el.contains(target)) {
+    dispatchSortableEvent('spill');
+    this.onSpill({
+      dragEl: dragEl,
+      putSortable: putSortable
+    });
+  }
+};
+
+function Revert() {}
+
+Revert.prototype = {
+  startIndex: null,
+  dragStart: function dragStart(_ref2) {
+    var oldDraggableIndex = _ref2.oldDraggableIndex;
+    this.startIndex = oldDraggableIndex;
+  },
+  onSpill: function onSpill(_ref3) {
+    var dragEl = _ref3.dragEl,
+        putSortable = _ref3.putSortable;
+    this.sortable.captureAnimationState();
+
+    if (putSortable) {
+      putSortable.captureAnimationState();
+    }
+
+    var nextSibling = getChild(this.sortable.el, this.startIndex, this.options);
+
+    if (nextSibling) {
+      this.sortable.el.insertBefore(dragEl, nextSibling);
+    } else {
+      this.sortable.el.appendChild(dragEl);
+    }
+
+    this.sortable.animateAll();
+
+    if (putSortable) {
+      putSortable.animateAll();
+    }
+  },
+  drop: drop
+};
+
+_extends(Revert, {
+  pluginName: 'revertOnSpill'
+});
+
+function Remove() {}
+
+Remove.prototype = {
+  onSpill: function onSpill(_ref4) {
+    var dragEl = _ref4.dragEl,
+        putSortable = _ref4.putSortable;
+    var parentSortable = putSortable || this.sortable;
+    parentSortable.captureAnimationState();
+    dragEl.parentNode && dragEl.parentNode.removeChild(dragEl);
+    parentSortable.animateAll();
+  },
+  drop: drop
+};
+
+_extends(Remove, {
+  pluginName: 'removeOnSpill'
+});
+
+var lastSwapEl;
+
+function SwapPlugin() {
+  function Swap() {
+    this.defaults = {
+      swapClass: 'sortable-swap-highlight'
+    };
+  }
+
+  Swap.prototype = {
+    dragStart: function dragStart(_ref) {
+      var dragEl = _ref.dragEl;
+      lastSwapEl = dragEl;
+    },
+    dragOverValid: function dragOverValid(_ref2) {
+      var completed = _ref2.completed,
+          target = _ref2.target,
+          onMove = _ref2.onMove,
+          activeSortable = _ref2.activeSortable,
+          changed = _ref2.changed,
+          cancel = _ref2.cancel;
+      if (!activeSortable.options.swap) return;
+      var el = this.sortable.el,
+          options = this.options;
+
+      if (target && target !== el) {
+        var prevSwapEl = lastSwapEl;
+
+        if (onMove(target) !== false) {
+          toggleClass(target, options.swapClass, true);
+          lastSwapEl = target;
+        } else {
+          lastSwapEl = null;
+        }
+
+        if (prevSwapEl && prevSwapEl !== lastSwapEl) {
+          toggleClass(prevSwapEl, options.swapClass, false);
+        }
+      }
+
+      changed();
+      completed(true);
+      cancel();
+    },
+    drop: function drop(_ref3) {
+      var activeSortable = _ref3.activeSortable,
+          putSortable = _ref3.putSortable,
+          dragEl = _ref3.dragEl;
+      var toSortable = putSortable || this.sortable;
+      var options = this.options;
+      lastSwapEl && toggleClass(lastSwapEl, options.swapClass, false);
+
+      if (lastSwapEl && (options.swap || putSortable && putSortable.options.swap)) {
+        if (dragEl !== lastSwapEl) {
+          toSortable.captureAnimationState();
+          if (toSortable !== activeSortable) activeSortable.captureAnimationState();
+          swapNodes(dragEl, lastSwapEl);
+          toSortable.animateAll();
+          if (toSortable !== activeSortable) activeSortable.animateAll();
+        }
+      }
+    },
+    nulling: function nulling() {
+      lastSwapEl = null;
+    }
+  };
+  return _extends(Swap, {
+    pluginName: 'swap',
+    eventProperties: function eventProperties() {
+      return {
+        swapItem: lastSwapEl
+      };
+    }
+  });
+}
+
+function swapNodes(n1, n2) {
+  var p1 = n1.parentNode,
+      p2 = n2.parentNode,
+      i1,
+      i2;
+  if (!p1 || !p2 || p1.isEqualNode(n2) || p2.isEqualNode(n1)) return;
+  i1 = index(n1);
+  i2 = index(n2);
+
+  if (p1.isEqualNode(p2) && i1 < i2) {
+    i2++;
+  }
+
+  p1.insertBefore(n2, p1.children[i1]);
+  p2.insertBefore(n1, p2.children[i2]);
+}
+
+var multiDragElements = [],
+    multiDragClones = [],
+    lastMultiDragSelect,
+    // for selection with modifier key down (SHIFT)
+multiDragSortable,
+    initialFolding = false,
+    // Initial multi-drag fold when drag started
+folding = false,
+    // Folding any other time
+dragStarted = false,
+    dragEl$1,
+    clonesFromRect,
+    clonesHidden;
+
+function MultiDragPlugin() {
+  function MultiDrag(sortable) {
+    // Bind all private methods
+    for (var fn in this) {
+      if (fn.charAt(0) === '_' && typeof this[fn] === 'function') {
+        this[fn] = this[fn].bind(this);
+      }
+    }
+
+    if (sortable.options.supportPointer) {
+      on(document, 'pointerup', this._deselectMultiDrag);
+    } else {
+      on(document, 'mouseup', this._deselectMultiDrag);
+      on(document, 'touchend', this._deselectMultiDrag);
+    }
+
+    on(document, 'keydown', this._checkKeyDown);
+    on(document, 'keyup', this._checkKeyUp);
+    this.defaults = {
+      selectedClass: 'sortable-selected',
+      multiDragKey: null,
+      setData: function setData(dataTransfer, dragEl) {
+        var data = '';
+
+        if (multiDragElements.length && multiDragSortable === sortable) {
+          multiDragElements.forEach(function (multiDragElement, i) {
+            data += (!i ? '' : ', ') + multiDragElement.textContent;
+          });
+        } else {
+          data = dragEl.textContent;
+        }
+
+        dataTransfer.setData('Text', data);
+      }
+    };
+  }
+
+  MultiDrag.prototype = {
+    multiDragKeyDown: false,
+    isMultiDrag: false,
+    delayStartGlobal: function delayStartGlobal(_ref) {
+      var dragged = _ref.dragEl;
+      dragEl$1 = dragged;
+    },
+    delayEnded: function delayEnded() {
+      this.isMultiDrag = ~multiDragElements.indexOf(dragEl$1);
+    },
+    setupClone: function setupClone(_ref2) {
+      var sortable = _ref2.sortable,
+          cancel = _ref2.cancel;
+      if (!this.isMultiDrag) return;
+
+      for (var i = 0; i < multiDragElements.length; i++) {
+        multiDragClones.push(clone(multiDragElements[i]));
+        multiDragClones[i].sortableIndex = multiDragElements[i].sortableIndex;
+        multiDragClones[i].draggable = false;
+        multiDragClones[i].style['will-change'] = '';
+        toggleClass(multiDragClones[i], this.options.selectedClass, false);
+        multiDragElements[i] === dragEl$1 && toggleClass(multiDragClones[i], this.options.chosenClass, false);
+      }
+
+      sortable._hideClone();
+
+      cancel();
+    },
+    clone: function clone(_ref3) {
+      var sortable = _ref3.sortable,
+          rootEl = _ref3.rootEl,
+          dispatchSortableEvent = _ref3.dispatchSortableEvent,
+          cancel = _ref3.cancel;
+      if (!this.isMultiDrag) return;
+
+      if (!this.options.removeCloneOnHide) {
+        if (multiDragElements.length && multiDragSortable === sortable) {
+          insertMultiDragClones(true, rootEl);
+          dispatchSortableEvent('clone');
+          cancel();
+        }
+      }
+    },
+    showClone: function showClone(_ref4) {
+      var cloneNowShown = _ref4.cloneNowShown,
+          rootEl = _ref4.rootEl,
+          cancel = _ref4.cancel;
+      if (!this.isMultiDrag) return;
+      insertMultiDragClones(false, rootEl);
+      multiDragClones.forEach(function (clone) {
+        css(clone, 'display', '');
+      });
+      cloneNowShown();
+      clonesHidden = false;
+      cancel();
+    },
+    hideClone: function hideClone(_ref5) {
+      var _this = this;
+
+      var sortable = _ref5.sortable,
+          cloneNowHidden = _ref5.cloneNowHidden,
+          cancel = _ref5.cancel;
+      if (!this.isMultiDrag) return;
+      multiDragClones.forEach(function (clone) {
+        css(clone, 'display', 'none');
+
+        if (_this.options.removeCloneOnHide && clone.parentNode) {
+          clone.parentNode.removeChild(clone);
+        }
+      });
+      cloneNowHidden();
+      clonesHidden = true;
+      cancel();
+    },
+    dragStartGlobal: function dragStartGlobal(_ref6) {
+      var sortable = _ref6.sortable;
+
+      if (!this.isMultiDrag && multiDragSortable) {
+        multiDragSortable.multiDrag._deselectMultiDrag();
+      }
+
+      multiDragElements.forEach(function (multiDragElement) {
+        multiDragElement.sortableIndex = index(multiDragElement);
+      }); // Sort multi-drag elements
+
+      multiDragElements = multiDragElements.sort(function (a, b) {
+        return a.sortableIndex - b.sortableIndex;
+      });
+      dragStarted = true;
+    },
+    dragStarted: function dragStarted(_ref7) {
+      var _this2 = this;
+
+      var sortable = _ref7.sortable;
+      if (!this.isMultiDrag) return;
+
+      if (this.options.sort) {
+        // Capture rects,
+        // hide multi drag elements (by positioning them absolute),
+        // set multi drag elements rects to dragRect,
+        // show multi drag elements,
+        // animate to rects,
+        // unset rects & remove from DOM
+        sortable.captureAnimationState();
+
+        if (this.options.animation) {
+          multiDragElements.forEach(function (multiDragElement) {
+            if (multiDragElement === dragEl$1) return;
+            css(multiDragElement, 'position', 'absolute');
+          });
+          var dragRect = getRect(dragEl$1, false, true, true);
+          multiDragElements.forEach(function (multiDragElement) {
+            if (multiDragElement === dragEl$1) return;
+            setRect(multiDragElement, dragRect);
+          });
+          folding = true;
+          initialFolding = true;
+        }
+      }
+
+      sortable.animateAll(function () {
+        folding = false;
+        initialFolding = false;
+
+        if (_this2.options.animation) {
+          multiDragElements.forEach(function (multiDragElement) {
+            unsetRect(multiDragElement);
+          });
+        } // Remove all auxiliary multidrag items from el, if sorting enabled
+
+
+        if (_this2.options.sort) {
+          removeMultiDragElements();
+        }
+      });
+    },
+    dragOver: function dragOver(_ref8) {
+      var target = _ref8.target,
+          completed = _ref8.completed,
+          cancel = _ref8.cancel;
+
+      if (folding && ~multiDragElements.indexOf(target)) {
+        completed(false);
+        cancel();
+      }
+    },
+    revert: function revert(_ref9) {
+      var fromSortable = _ref9.fromSortable,
+          rootEl = _ref9.rootEl,
+          sortable = _ref9.sortable,
+          dragRect = _ref9.dragRect;
+
+      if (multiDragElements.length > 1) {
+        // Setup unfold animation
+        multiDragElements.forEach(function (multiDragElement) {
+          sortable.addAnimationState({
+            target: multiDragElement,
+            rect: folding ? getRect(multiDragElement) : dragRect
+          });
+          unsetRect(multiDragElement);
+          multiDragElement.fromRect = dragRect;
+          fromSortable.removeAnimationState(multiDragElement);
+        });
+        folding = false;
+        insertMultiDragElements(!this.options.removeCloneOnHide, rootEl);
+      }
+    },
+    dragOverCompleted: function dragOverCompleted(_ref10) {
+      var sortable = _ref10.sortable,
+          isOwner = _ref10.isOwner,
+          insertion = _ref10.insertion,
+          activeSortable = _ref10.activeSortable,
+          parentEl = _ref10.parentEl,
+          putSortable = _ref10.putSortable;
+      var options = this.options;
+
+      if (insertion) {
+        // Clones must be hidden before folding animation to capture dragRectAbsolute properly
+        if (isOwner) {
+          activeSortable._hideClone();
+        }
+
+        initialFolding = false; // If leaving sort:false root, or already folding - Fold to new location
+
+        if (options.animation && multiDragElements.length > 1 && (folding || !isOwner && !activeSortable.options.sort && !putSortable)) {
+          // Fold: Set all multi drag elements's rects to dragEl's rect when multi-drag elements are invisible
+          var dragRectAbsolute = getRect(dragEl$1, false, true, true);
+          multiDragElements.forEach(function (multiDragElement) {
+            if (multiDragElement === dragEl$1) return;
+            setRect(multiDragElement, dragRectAbsolute); // Move element(s) to end of parentEl so that it does not interfere with multi-drag clones insertion if they are inserted
+            // while folding, and so that we can capture them again because old sortable will no longer be fromSortable
+
+            parentEl.appendChild(multiDragElement);
+          });
+          folding = true;
+        } // Clones must be shown (and check to remove multi drags) after folding when interfering multiDragElements are moved out
+
+
+        if (!isOwner) {
+          // Only remove if not folding (folding will remove them anyways)
+          if (!folding) {
+            removeMultiDragElements();
+          }
+
+          if (multiDragElements.length > 1) {
+            var clonesHiddenBefore = clonesHidden;
+
+            activeSortable._showClone(sortable); // Unfold animation for clones if showing from hidden
+
+
+            if (activeSortable.options.animation && !clonesHidden && clonesHiddenBefore) {
+              multiDragClones.forEach(function (clone) {
+                activeSortable.addAnimationState({
+                  target: clone,
+                  rect: clonesFromRect
+                });
+                clone.fromRect = clonesFromRect;
+                clone.thisAnimationDuration = null;
+              });
+            }
+          } else {
+            activeSortable._showClone(sortable);
+          }
+        }
+      }
+    },
+    dragOverAnimationCapture: function dragOverAnimationCapture(_ref11) {
+      var dragRect = _ref11.dragRect,
+          isOwner = _ref11.isOwner,
+          activeSortable = _ref11.activeSortable;
+      multiDragElements.forEach(function (multiDragElement) {
+        multiDragElement.thisAnimationDuration = null;
+      });
+
+      if (activeSortable.options.animation && !isOwner && activeSortable.multiDrag.isMultiDrag) {
+        clonesFromRect = _extends({}, dragRect);
+        var dragMatrix = matrix(dragEl$1, true);
+        clonesFromRect.top -= dragMatrix.f;
+        clonesFromRect.left -= dragMatrix.e;
+      }
+    },
+    dragOverAnimationComplete: function dragOverAnimationComplete() {
+      if (folding) {
+        folding = false;
+        removeMultiDragElements();
+      }
+    },
+    drop: function drop(_ref12) {
+      var evt = _ref12.originalEvent,
+          rootEl = _ref12.rootEl,
+          parentEl = _ref12.parentEl,
+          sortable = _ref12.sortable,
+          dispatchSortableEvent = _ref12.dispatchSortableEvent,
+          oldIndex = _ref12.oldIndex,
+          putSortable = _ref12.putSortable;
+      var toSortable = putSortable || this.sortable;
+      if (!evt) return;
+      var options = this.options,
+          children = parentEl.children; // Multi-drag selection
+
+      if (!dragStarted) {
+        if (options.multiDragKey && !this.multiDragKeyDown) {
+          this._deselectMultiDrag();
+        }
+
+        toggleClass(dragEl$1, options.selectedClass, !~multiDragElements.indexOf(dragEl$1));
+
+        if (!~multiDragElements.indexOf(dragEl$1)) {
+          multiDragElements.push(dragEl$1);
+          dispatchEvent({
+            sortable: sortable,
+            rootEl: rootEl,
+            name: 'select',
+            targetEl: dragEl$1,
+            originalEvt: evt
+          }); // Modifier activated, select from last to dragEl
+
+          if (evt.shiftKey && lastMultiDragSelect && sortable.el.contains(lastMultiDragSelect)) {
+            var lastIndex = index(lastMultiDragSelect),
+                currentIndex = index(dragEl$1);
+
+            if (~lastIndex && ~currentIndex && lastIndex !== currentIndex) {
+              // Must include lastMultiDragSelect (select it), in case modified selection from no selection
+              // (but previous selection existed)
+              var n, i;
+
+              if (currentIndex > lastIndex) {
+                i = lastIndex;
+                n = currentIndex;
+              } else {
+                i = currentIndex;
+                n = lastIndex + 1;
+              }
+
+              for (; i < n; i++) {
+                if (~multiDragElements.indexOf(children[i])) continue;
+                toggleClass(children[i], options.selectedClass, true);
+                multiDragElements.push(children[i]);
+                dispatchEvent({
+                  sortable: sortable,
+                  rootEl: rootEl,
+                  name: 'select',
+                  targetEl: children[i],
+                  originalEvt: evt
+                });
+              }
+            }
+          } else {
+            lastMultiDragSelect = dragEl$1;
+          }
+
+          multiDragSortable = toSortable;
+        } else {
+          multiDragElements.splice(multiDragElements.indexOf(dragEl$1), 1);
+          lastMultiDragSelect = null;
+          dispatchEvent({
+            sortable: sortable,
+            rootEl: rootEl,
+            name: 'deselect',
+            targetEl: dragEl$1,
+            originalEvt: evt
+          });
+        }
+      } // Multi-drag drop
+
+
+      if (dragStarted && this.isMultiDrag) {
+        // Do not "unfold" after around dragEl if reverted
+        if ((parentEl[expando].options.sort || parentEl !== rootEl) && multiDragElements.length > 1) {
+          var dragRect = getRect(dragEl$1),
+              multiDragIndex = index(dragEl$1, ':not(.' + this.options.selectedClass + ')');
+          if (!initialFolding && options.animation) dragEl$1.thisAnimationDuration = null;
+          toSortable.captureAnimationState();
+
+          if (!initialFolding) {
+            if (options.animation) {
+              dragEl$1.fromRect = dragRect;
+              multiDragElements.forEach(function (multiDragElement) {
+                multiDragElement.thisAnimationDuration = null;
+
+                if (multiDragElement !== dragEl$1) {
+                  var rect = folding ? getRect(multiDragElement) : dragRect;
+                  multiDragElement.fromRect = rect; // Prepare unfold animation
+
+                  toSortable.addAnimationState({
+                    target: multiDragElement,
+                    rect: rect
+                  });
+                }
+              });
+            } // Multi drag elements are not necessarily removed from the DOM on drop, so to reinsert
+            // properly they must all be removed
+
+
+            removeMultiDragElements();
+            multiDragElements.forEach(function (multiDragElement) {
+              if (children[multiDragIndex]) {
+                parentEl.insertBefore(multiDragElement, children[multiDragIndex]);
+              } else {
+                parentEl.appendChild(multiDragElement);
+              }
+
+              multiDragIndex++;
+            }); // If initial folding is done, the elements may have changed position because they are now
+            // unfolding around dragEl, even though dragEl may not have his index changed, so update event
+            // must be fired here as Sortable will not.
+
+            if (oldIndex === index(dragEl$1)) {
+              var update = false;
+              multiDragElements.forEach(function (multiDragElement) {
+                if (multiDragElement.sortableIndex !== index(multiDragElement)) {
+                  update = true;
+                  return;
+                }
+              });
+
+              if (update) {
+                dispatchSortableEvent('update');
+              }
+            }
+          } // Must be done after capturing individual rects (scroll bar)
+
+
+          multiDragElements.forEach(function (multiDragElement) {
+            unsetRect(multiDragElement);
+          });
+          toSortable.animateAll();
+        }
+
+        multiDragSortable = toSortable;
+      } // Remove clones if necessary
+
+
+      if (rootEl === parentEl || putSortable && putSortable.lastPutMode !== 'clone') {
+        multiDragClones.forEach(function (clone) {
+          clone.parentNode && clone.parentNode.removeChild(clone);
+        });
+      }
+    },
+    nullingGlobal: function nullingGlobal() {
+      this.isMultiDrag = dragStarted = false;
+      multiDragClones.length = 0;
+    },
+    destroyGlobal: function destroyGlobal() {
+      this._deselectMultiDrag();
+
+      off(document, 'pointerup', this._deselectMultiDrag);
+      off(document, 'mouseup', this._deselectMultiDrag);
+      off(document, 'touchend', this._deselectMultiDrag);
+      off(document, 'keydown', this._checkKeyDown);
+      off(document, 'keyup', this._checkKeyUp);
+    },
+    _deselectMultiDrag: function _deselectMultiDrag(evt) {
+      if (typeof dragStarted !== "undefined" && dragStarted) return; // Only deselect if selection is in this sortable
+
+      if (multiDragSortable !== this.sortable) return; // Only deselect if target is not item in this sortable
+
+      if (evt && closest(evt.target, this.options.draggable, this.sortable.el, false)) return; // Only deselect if left click
+
+      if (evt && evt.button !== 0) return;
+
+      while (multiDragElements.length) {
+        var el = multiDragElements[0];
+        toggleClass(el, this.options.selectedClass, false);
+        multiDragElements.shift();
+        dispatchEvent({
+          sortable: this.sortable,
+          rootEl: this.sortable.el,
+          name: 'deselect',
+          targetEl: el,
+          originalEvt: evt
+        });
+      }
+    },
+    _checkKeyDown: function _checkKeyDown(evt) {
+      if (evt.key === this.options.multiDragKey) {
+        this.multiDragKeyDown = true;
+      }
+    },
+    _checkKeyUp: function _checkKeyUp(evt) {
+      if (evt.key === this.options.multiDragKey) {
+        this.multiDragKeyDown = false;
+      }
+    }
+  };
+  return _extends(MultiDrag, {
+    // Static methods & properties
+    pluginName: 'multiDrag',
+    utils: {
+      /**
+       * Selects the provided multi-drag item
+       * @param  {HTMLElement} el    The element to be selected
+       */
+      select: function select(el) {
+        var sortable = el.parentNode[expando];
+        if (!sortable || !sortable.options.multiDrag || ~multiDragElements.indexOf(el)) return;
+
+        if (multiDragSortable && multiDragSortable !== sortable) {
+          multiDragSortable.multiDrag._deselectMultiDrag();
+
+          multiDragSortable = sortable;
+        }
+
+        toggleClass(el, sortable.options.selectedClass, true);
+        multiDragElements.push(el);
+      },
+
+      /**
+       * Deselects the provided multi-drag item
+       * @param  {HTMLElement} el    The element to be deselected
+       */
+      deselect: function deselect(el) {
+        var sortable = el.parentNode[expando],
+            index = multiDragElements.indexOf(el);
+        if (!sortable || !sortable.options.multiDrag || !~index) return;
+        toggleClass(el, sortable.options.selectedClass, false);
+        multiDragElements.splice(index, 1);
+      }
+    },
+    eventProperties: function eventProperties() {
+      var _this3 = this;
+
+      var oldIndicies = [],
+          newIndicies = [];
+      multiDragElements.forEach(function (multiDragElement) {
+        oldIndicies.push({
+          multiDragElement: multiDragElement,
+          index: multiDragElement.sortableIndex
+        }); // multiDragElements will already be sorted if folding
+
+        var newIndex;
+
+        if (folding && multiDragElement !== dragEl$1) {
+          newIndex = -1;
+        } else if (folding) {
+          newIndex = index(multiDragElement, ':not(.' + _this3.options.selectedClass + ')');
+        } else {
+          newIndex = index(multiDragElement);
+        }
+
+        newIndicies.push({
+          multiDragElement: multiDragElement,
+          index: newIndex
+        });
+      });
+      return {
+        items: _toConsumableArray(multiDragElements),
+        clones: [].concat(multiDragClones),
+        oldIndicies: oldIndicies,
+        newIndicies: newIndicies
+      };
+    },
+    optionListeners: {
+      multiDragKey: function multiDragKey(key) {
+        key = key.toLowerCase();
+
+        if (key === 'ctrl') {
+          key = 'Control';
+        } else if (key.length > 1) {
+          key = key.charAt(0).toUpperCase() + key.substr(1);
+        }
+
+        return key;
+      }
+    }
+  });
+}
+
+function insertMultiDragElements(clonesInserted, rootEl) {
+  multiDragElements.forEach(function (multiDragElement, i) {
+    var target = rootEl.children[multiDragElement.sortableIndex + (clonesInserted ? Number(i) : 0)];
+
+    if (target) {
+      rootEl.insertBefore(multiDragElement, target);
+    } else {
+      rootEl.appendChild(multiDragElement);
+    }
+  });
+}
+/**
+ * Insert multi-drag clones
+ * @param  {[Boolean]} elementsInserted  Whether the multi-drag elements are inserted
+ * @param  {HTMLElement} rootEl
+ */
+
+
+function insertMultiDragClones(elementsInserted, rootEl) {
+  multiDragClones.forEach(function (clone, i) {
+    var target = rootEl.children[clone.sortableIndex + (elementsInserted ? Number(i) : 0)];
+
+    if (target) {
+      rootEl.insertBefore(clone, target);
+    } else {
+      rootEl.appendChild(clone);
+    }
+  });
+}
+
+function removeMultiDragElements() {
+  multiDragElements.forEach(function (multiDragElement) {
+    if (multiDragElement === dragEl$1) return;
+    multiDragElement.parentNode && multiDragElement.parentNode.removeChild(multiDragElement);
+  });
+}
+
+Sortable.mount(new AutoScrollPlugin());
+Sortable.mount(Remove, Revert);
+
+/* harmony default export */ __webpack_exports__["default"] = (Sortable);
+
+
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Main.vue?vue&type=style&index=0&lang=css&":
 /*!**************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader??ref--7-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Main.vue?vue&type=style&index=0&lang=css& ***!
@@ -21179,10 +33478,12 @@ var MainApp = /** @class */ (function (_super) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
-/* harmony import */ var vue_class_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-class-component */ "./node_modules/vue-class-component/dist/vue-class-component.common.js");
-/* harmony import */ var vue_class_component__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_class_component__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var vuedraggable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuedraggable */ "./node_modules/vuedraggable/dist/vuedraggable.common.js");
+/* harmony import */ var vuedraggable__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vuedraggable__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _ListElement_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ListElement.vue */ "./resources/js/components/components/ListElement.vue");
+/* harmony import */ var vue_class_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-class-component */ "./node_modules/vue-class-component/dist/vue-class-component.common.js");
+/* harmony import */ var vue_class_component__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vue_class_component__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../store */ "./resources/js/store.ts");
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -21241,36 +33542,248 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 
 
 
-var Menu = /** @class */ (function (_super) {
-    __extends(Menu, _super);
-    function Menu() {
+
+
+var List = /** @class */ (function (_super) {
+    __extends(List, _super);
+    function List() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.tree = null;
+        _this.buttons = 0;
+        _this.sortedTree = null;
         return _this;
     }
-    Menu.prototype.mounted = function () {
-        this.init();
+    Object.defineProperty(List.prototype, "options", {
+        get: function () {
+            return {
+                onEnd: function (evt) {
+                    console.log('asd');
+                },
+                onAdd: function (/**Event*/ evt) {
+                    console.log('asdasdadsasd');
+                }
+            };
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(List.prototype, "tree", {
+        get: function () {
+            return _store__WEBPACK_IMPORTED_MODULE_4__["default"].getters.getTree;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(List.prototype, "expand", {
+        get: function () {
+            return _store__WEBPACK_IMPORTED_MODULE_4__["default"].getters.getExpand;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    List.prototype.expandList = function () {
+        _store__WEBPACK_IMPORTED_MODULE_4__["default"].commit('setExpand');
     };
-    Menu.prototype.init = function () {
+    List.prototype.sortAscending = function () {
+        this.sortTreeAscending(this.sortedTree);
+    };
+    List.prototype.sortDescending = function () {
+        this.sortTreeDescending(this.sortedTree);
+    };
+    List.prototype.sortTreeAscending = function (tree) {
+        var _this = this;
+        tree.sort(function (a, b) {
+            if (a.name > b.name)
+                return 1;
+            if (b.name > a.name)
+                return -1;
+            return 0;
+        });
+        tree.forEach(function (node) {
+            if (_this.nodeHasChildren(node)) {
+                _this.sortTreeAscending(node.all_children);
+            }
+        });
+    };
+    List.prototype.sortTreeDescending = function (tree) {
+        var _this = this;
+        tree.sort(function (a, b) {
+            if (a.name < b.name)
+                return 1;
+            if (b.name < a.name)
+                return -1;
+            return 0;
+        });
+        tree.forEach(function (node) {
+            if (_this.nodeHasChildren(node)) {
+                _this.sortTreeAscending(node.all_children);
+            }
+        });
+    };
+    List.prototype.nodeHasChildren = function (tree) {
+        if (tree.all_children.length > 0) {
+            return true;
+        }
+        return false;
+    };
+    List.prototype.init = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var tree;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('//localhost:8000/api/trees')];
+            var _a;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        _a = this;
+                        return [4 /*yield*/, _store__WEBPACK_IMPORTED_MODULE_4__["default"].dispatch('downloadTree')];
                     case 1:
-                        tree = _a.sent();
-                        this.tree = tree.data;
+                        _a.sortedTree = _b.sent();
+                        this.sortTreeAscending(this.sortedTree);
                         return [2 /*return*/];
                 }
             });
         });
     };
-    Menu = __decorate([
-        vue_class_component__WEBPACK_IMPORTED_MODULE_1___default.a
-    ], Menu);
-    return Menu;
+    List.prototype.mounted = function () {
+        this.init();
+    };
+    List = __decorate([
+        vue_class_component__WEBPACK_IMPORTED_MODULE_3___default()({
+            components: {
+                ListElement: _ListElement_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+                draggable: vuedraggable__WEBPACK_IMPORTED_MODULE_1___default.a
+            }
+        })
+    ], List);
+    return List;
 }(vue__WEBPACK_IMPORTED_MODULE_0__["default"]));
-/* harmony default export */ __webpack_exports__["default"] = (Menu);
+/* harmony default export */ __webpack_exports__["default"] = (List);
+;
+
+
+/***/ }),
+
+/***/ "./node_modules/ts-loader/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/components/ListElement.vue?vue&type=script&lang=ts&":
+/*!************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/ts-loader??ref--5!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/components/ListElement.vue?vue&type=script&lang=ts& ***!
+  \************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var Vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! Vue */ "./node_modules/Vue/dist/vue.runtime.esm.js");
+/* harmony import */ var vuedraggable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuedraggable */ "./node_modules/vuedraggable/dist/vuedraggable.common.js");
+/* harmony import */ var vuedraggable__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vuedraggable__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var vue_class_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-class-component */ "./node_modules/vue-class-component/dist/vue-class-component.common.js");
+/* harmony import */ var vue_class_component__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue_class_component__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var vue_property_decorator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-property-decorator */ "./node_modules/vue-property-decorator/lib/vue-property-decorator.js");
+/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../store */ "./resources/js/store.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+var ListElement = /** @class */ (function (_super) {
+    __extends(ListElement, _super);
+    function ListElement() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.message = '';
+        _this.show = false;
+        return _this;
+    }
+    Object.defineProperty(ListElement.prototype, "options", {
+        get: function () {
+            return {
+                put: function (evt) {
+                    console.log('asd');
+                    return true;
+                },
+                add: function () {
+                    console.log('penis');
+                }
+            };
+        },
+        enumerable: false,
+        configurable: true
+    });
+    ListElement.prototype.onAdd = function (/**Event*/ evt) {
+        console.log('asd');
+        // same properties as onEnd
+    };
+    ListElement.prototype.asd = function () {
+        console.log('dropped');
+    };
+    ListElement.prototype.onExpandChanged = function (val, oldVal) {
+        if (oldVal) {
+            this.show = false;
+        }
+        else {
+            this.show = true;
+        }
+    };
+    Object.defineProperty(ListElement.prototype, "expand", {
+        get: function () {
+            return _store__WEBPACK_IMPORTED_MODULE_4__["default"].getters.getExpand;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(ListElement.prototype, "hasChild", {
+        get: function () {
+            if (this.el.all_children.length > 0)
+                return true;
+            return false;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    ListElement.prototype.showTree = function () {
+        this.show = !this.show;
+    };
+    ListElement.prototype.date = function (value) {
+        var date = new Date(value);
+        var day = date.getDate() > 10 ? date.getDate() : "0" + date.getDate();
+        var month = date.getMonth() + 1 > 10 ? date.getMonth() + 1 : "0" + date.getMonth();
+        var year = date.getFullYear();
+        var hours = date.getHours() > 10 ? date.getHours() : "0" + date.getHours();
+        var minutes = date.getMinutes() > 10 ? date.getMinutes() : "0" + date.getMinutes();
+        return year + "-" + month + "-" + day + " " + hours + ":" + minutes;
+    };
+    __decorate([
+        Object(vue_property_decorator__WEBPACK_IMPORTED_MODULE_3__["Prop"])()
+    ], ListElement.prototype, "el", void 0);
+    __decorate([
+        Object(vue_property_decorator__WEBPACK_IMPORTED_MODULE_3__["Watch"])('expand')
+    ], ListElement.prototype, "onExpandChanged", null);
+    ListElement = __decorate([
+        vue_class_component__WEBPACK_IMPORTED_MODULE_2___default()({
+            components: {
+                draggable: vuedraggable__WEBPACK_IMPORTED_MODULE_1___default.a,
+            },
+            name: 'ListElement'
+        })
+    ], ListElement);
+    return ListElement;
+}(Vue__WEBPACK_IMPORTED_MODULE_0__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (ListElement);
+;
 
 
 /***/ }),
@@ -21406,22 +33919,73 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var __spreadArrays = (undefined && undefined.__spreadArrays) || function () {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+};
 
 
 
 
-var Menu = /** @class */ (function (_super) {
-    __extends(Menu, _super);
-    function Menu() {
+var NewNode = /** @class */ (function (_super) {
+    __extends(NewNode, _super);
+    function NewNode() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.name = '';
-        _this.exampleList = [{ name: 'null', value: null }, { name: '9', value: 9 }, { name: '20', value: 20 }, { name: '23', value: 23 }];
+        _this.nameError = '';
+        _this.selectValue = null;
+        _this.selectError = "";
         _this.node = true;
-        _this.selectValue = '';
         _this.result = '';
+        _this.tree = [];
+        _this.paths = [];
         return _this;
     }
-    Object.defineProperty(Menu.prototype, "label", {
+    NewNode.prototype.text = function (item) {
+        var path = "";
+        item.path.forEach(function (i) {
+            path += " / " + i;
+        });
+        path += ' /';
+        return path;
+    };
+    NewNode.prototype.init = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var tree, paths;
+            var _this = this;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, _store__WEBPACK_IMPORTED_MODULE_2__["default"].dispatch('downloadTree').then(function (result) {
+                            _this.tree = result;
+                        })];
+                    case 1:
+                        _a.sent();
+                        tree = __spreadArrays(this.tree);
+                        paths = [];
+                        tree.forEach(function (item) {
+                            item.path = [];
+                        });
+                        this.printNode(tree, []);
+                        return [2 /*return*/, tree];
+                }
+            });
+        });
+    };
+    NewNode.prototype.printNode = function (tree, path) {
+        var _this = this;
+        if (!tree)
+            return null;
+        tree.forEach(function (item) {
+            item.path = __spreadArrays(path);
+            item.path.push(item.name);
+            _this.paths.push(item);
+            _this.printNode(item.all_children, item.path);
+        });
+    };
+    Object.defineProperty(NewNode.prototype, "label", {
         get: function () {
             if (this.node) {
                 return 'Node';
@@ -21431,14 +33995,17 @@ var Menu = /** @class */ (function (_super) {
         enumerable: false,
         configurable: true
     });
-    Menu.prototype.addNode = function () {
+    NewNode.prototype.addNode = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var token, asd;
+            var token;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, _store__WEBPACK_IMPORTED_MODULE_2__["default"].getters.getToken];
                     case 1:
                         token = _a.sent();
+                        if (!this.validateNewNode()) {
+                            return [2 /*return*/, false];
+                        }
                         return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_3___default.a.post('//localhost:8000/api/tree', {
                                 name: this.name,
                                 is_node: this.node,
@@ -21448,19 +34015,60 @@ var Menu = /** @class */ (function (_super) {
                                 console.log(er);
                             })];
                     case 2:
-                        asd = _a.sent();
-                        console.log(asd);
+                        _a.sent();
+                        return [4 /*yield*/, this.refresh()];
+                    case 3:
+                        _a.sent();
+                        this.name = '';
+                        this.selectValue = null;
                         return [2 /*return*/];
                 }
             });
         });
     };
-    Menu = __decorate([
+    NewNode.prototype.refresh = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var tree;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        tree = null;
+                        return [4 /*yield*/, _store__WEBPACK_IMPORTED_MODULE_2__["default"].dispatch('refresh')];
+                    case 1:
+                        tree = _a.sent();
+                        console.log(tree);
+                        tree.forEach(function (item) {
+                            item.path = [];
+                        });
+                        this.printNode(tree, []);
+                        return [2 /*return*/, true];
+                }
+            });
+        });
+    };
+    NewNode.prototype.validateNewNode = function () {
+        var regex = new RegExp('^[a-zA-z. ]{3,32}$');
+        if (!regex.test(this.name)) {
+            this.nameError = "Only letter, length between 3 and 32";
+            return false;
+        }
+        if (!this.selectValue) {
+            this.selectError = 'Select parent';
+            return false;
+        }
+        this.nameError = '';
+        this.selectError = '';
+        return true;
+    };
+    NewNode.prototype.mounted = function () {
+        this.init();
+    };
+    NewNode = __decorate([
         vue_class_component__WEBPACK_IMPORTED_MODULE_1___default.a
-    ], Menu);
-    return Menu;
+    ], NewNode);
+    return NewNode;
 }(vue__WEBPACK_IMPORTED_MODULE_0__["default"]));
-/* harmony default export */ __webpack_exports__["default"] = (Menu);
+/* harmony default export */ __webpack_exports__["default"] = (NewNode);
 
 
 /***/ }),
@@ -22155,7 +34763,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "v-app",
-    { staticClass: "body" },
+    {},
     [
       _c(
         "v-card",
@@ -22166,7 +34774,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "content container" },
+        { staticClass: "content container body pa-10" },
         [
           _c(
             "v-fade-transition",
@@ -22204,16 +34812,187 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm.tree
-      ? _c("div", [
+    _c("div", { staticClass: " pa-10 row justify-space-between" }, [
+      _c("h1", [_vm._v("Tree")]),
+      _vm._v(" "),
+      _c("div", [
+        _c(
+          "div",
+          { staticClass: "d-flex align-center" },
+          [
+            _c(
+              "v-btn-toggle",
+              {
+                model: {
+                  value: _vm.buttons,
+                  callback: function($$v) {
+                    _vm.buttons = $$v
+                  },
+                  expression: "buttons"
+                }
+              },
+              [
+                _c(
+                  "v-btn",
+                  {
+                    attrs: { "max-height": "36px" },
+                    on: { click: _vm.sortAscending }
+                  },
+                  [_c("v-icon", [_vm._v("mdi-sort-alphabetical-ascending")])],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "v-btn",
+                  {
+                    attrs: { "max-height": "36px" },
+                    on: { click: _vm.sortDescending }
+                  },
+                  [_c("v-icon", [_vm._v("mdi-sort-alphabetical-descending")])],
+                  1
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "v-btn",
+              { staticClass: "ml-5", on: { click: _vm.expandList } },
+              [
+                !_vm.expand
+                  ? _c("span", [_vm._v("Show all")])
+                  : _c("span", [_vm._v("Hide all")])
+              ]
+            )
+          ],
+          1
+        )
+      ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      [
+        _c(
+          "draggable",
+          _vm._b(
+            {
+              staticClass: "dragArea",
+              attrs: { list: _vm.sortedTree, group: { name: "g1" } }
+            },
+            "draggable",
+            _vm.options,
+            false
+          ),
+          _vm._l(_vm.sortedTree, function(el) {
+            return _c(
+              "div",
+              { key: el.id },
+              [_c("ListElement", { attrs: { el: el } })],
+              1
+            )
+          }),
+          0
+        )
+      ],
+      1
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/components/ListElement.vue?vue&type=template&id=178e3f20&scoped=true&":
+/*!*************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/components/ListElement.vue?vue&type=template&id=178e3f20&scoped=true& ***!
+  \*************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "pl-5" },
+    [
+      _c(
+        "div",
+        [
+          _c(
+            "v-btn",
+            {
+              attrs: { disabled: !_vm.hasChild, icon: "" },
+              on: { click: _vm.showTree }
+            },
+            [
+              !_vm.show
+                ? _c("v-icon", [_vm._v("mdi-chevron-right")])
+                : _c("v-icon", [_vm._v("mdi-chevron-down")])
+            ],
+            1
+          ),
           _vm._v(
-            "\n   " +
-              _vm._s(_vm.tree[0].all_children[4].all_children) +
+            "\n        " +
+              _vm._s(_vm.el.name) +
+              " " +
+              _vm._s(_vm.date(_vm.el.created_at)) +
               "\n    "
           )
-        ])
-      : _c("div", [_vm._v("\n        cokolwiek\n    ")])
-  ])
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("v-expand-transition", [
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.show,
+                expression: "show"
+              }
+            ]
+          },
+          [
+            _c(
+              "draggable",
+              _vm._b(
+                {
+                  staticClass: "dragArea",
+                  attrs: {
+                    list: _vm.el.all_children,
+                    tag: "ul",
+                    group: { name: "g1" }
+                  }
+                },
+                "draggable",
+                _vm.options,
+                false
+              ),
+              _vm._l(_vm.el.all_children, function(e) {
+                return _c("div", [_c("ListElement", { attrs: { el: e } })], 1)
+              }),
+              0
+            )
+          ],
+          1
+        )
+      ])
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -22333,7 +35112,11 @@ var render = function() {
             { staticClass: "col-6 pa-5" },
             [
               _c("v-text-field", {
-                attrs: { label: "Name" },
+                attrs: {
+                  error: _vm.nameError.length > 0,
+                  "error-messages": _vm.nameError,
+                  label: "Name"
+                },
                 model: {
                   value: _vm.name,
                   callback: function($$v) {
@@ -22370,10 +35153,12 @@ var render = function() {
             [
               _c("v-select", {
                 attrs: {
-                  "item-value": "value",
-                  "item-text": "name",
+                  "item-value": "id",
+                  error: _vm.selectError.length > 0,
+                  "error-messages": _vm.selectError,
+                  "item-text": _vm.text,
                   type: "radio",
-                  items: _vm.exampleList
+                  items: _vm.paths
                 },
                 model: {
                   value: _vm.selectValue,
@@ -37996,6 +50781,2470 @@ Vue.compile = compileToFunctions;
 /* harmony default export */ __webpack_exports__["default"] = (Vue);
 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! ./../../timers-browserify/main.js */ "./node_modules/timers-browserify/main.js").setImmediate))
+
+/***/ }),
+
+/***/ "./node_modules/vuedraggable/dist/vuedraggable.common.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/vuedraggable/dist/vuedraggable.common.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports =
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "fb15");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "01f9":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var LIBRARY = __webpack_require__("2d00");
+var $export = __webpack_require__("5ca1");
+var redefine = __webpack_require__("2aba");
+var hide = __webpack_require__("32e9");
+var Iterators = __webpack_require__("84f2");
+var $iterCreate = __webpack_require__("41a0");
+var setToStringTag = __webpack_require__("7f20");
+var getPrototypeOf = __webpack_require__("38fd");
+var ITERATOR = __webpack_require__("2b4c")('iterator');
+var BUGGY = !([].keys && 'next' in [].keys()); // Safari has buggy iterators w/o `next`
+var FF_ITERATOR = '@@iterator';
+var KEYS = 'keys';
+var VALUES = 'values';
+
+var returnThis = function () { return this; };
+
+module.exports = function (Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCED) {
+  $iterCreate(Constructor, NAME, next);
+  var getMethod = function (kind) {
+    if (!BUGGY && kind in proto) return proto[kind];
+    switch (kind) {
+      case KEYS: return function keys() { return new Constructor(this, kind); };
+      case VALUES: return function values() { return new Constructor(this, kind); };
+    } return function entries() { return new Constructor(this, kind); };
+  };
+  var TAG = NAME + ' Iterator';
+  var DEF_VALUES = DEFAULT == VALUES;
+  var VALUES_BUG = false;
+  var proto = Base.prototype;
+  var $native = proto[ITERATOR] || proto[FF_ITERATOR] || DEFAULT && proto[DEFAULT];
+  var $default = $native || getMethod(DEFAULT);
+  var $entries = DEFAULT ? !DEF_VALUES ? $default : getMethod('entries') : undefined;
+  var $anyNative = NAME == 'Array' ? proto.entries || $native : $native;
+  var methods, key, IteratorPrototype;
+  // Fix native
+  if ($anyNative) {
+    IteratorPrototype = getPrototypeOf($anyNative.call(new Base()));
+    if (IteratorPrototype !== Object.prototype && IteratorPrototype.next) {
+      // Set @@toStringTag to native iterators
+      setToStringTag(IteratorPrototype, TAG, true);
+      // fix for some old engines
+      if (!LIBRARY && typeof IteratorPrototype[ITERATOR] != 'function') hide(IteratorPrototype, ITERATOR, returnThis);
+    }
+  }
+  // fix Array#{values, @@iterator}.name in V8 / FF
+  if (DEF_VALUES && $native && $native.name !== VALUES) {
+    VALUES_BUG = true;
+    $default = function values() { return $native.call(this); };
+  }
+  // Define iterator
+  if ((!LIBRARY || FORCED) && (BUGGY || VALUES_BUG || !proto[ITERATOR])) {
+    hide(proto, ITERATOR, $default);
+  }
+  // Plug for library
+  Iterators[NAME] = $default;
+  Iterators[TAG] = returnThis;
+  if (DEFAULT) {
+    methods = {
+      values: DEF_VALUES ? $default : getMethod(VALUES),
+      keys: IS_SET ? $default : getMethod(KEYS),
+      entries: $entries
+    };
+    if (FORCED) for (key in methods) {
+      if (!(key in proto)) redefine(proto, key, methods[key]);
+    } else $export($export.P + $export.F * (BUGGY || VALUES_BUG), NAME, methods);
+  }
+  return methods;
+};
+
+
+/***/ }),
+
+/***/ "02f4":
+/***/ (function(module, exports, __webpack_require__) {
+
+var toInteger = __webpack_require__("4588");
+var defined = __webpack_require__("be13");
+// true  -> String#at
+// false -> String#codePointAt
+module.exports = function (TO_STRING) {
+  return function (that, pos) {
+    var s = String(defined(that));
+    var i = toInteger(pos);
+    var l = s.length;
+    var a, b;
+    if (i < 0 || i >= l) return TO_STRING ? '' : undefined;
+    a = s.charCodeAt(i);
+    return a < 0xd800 || a > 0xdbff || i + 1 === l || (b = s.charCodeAt(i + 1)) < 0xdc00 || b > 0xdfff
+      ? TO_STRING ? s.charAt(i) : a
+      : TO_STRING ? s.slice(i, i + 2) : (a - 0xd800 << 10) + (b - 0xdc00) + 0x10000;
+  };
+};
+
+
+/***/ }),
+
+/***/ "0390":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var at = __webpack_require__("02f4")(true);
+
+ // `AdvanceStringIndex` abstract operation
+// https://tc39.github.io/ecma262/#sec-advancestringindex
+module.exports = function (S, index, unicode) {
+  return index + (unicode ? at(S, index).length : 1);
+};
+
+
+/***/ }),
+
+/***/ "0bfb":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+// 21.2.5.3 get RegExp.prototype.flags
+var anObject = __webpack_require__("cb7c");
+module.exports = function () {
+  var that = anObject(this);
+  var result = '';
+  if (that.global) result += 'g';
+  if (that.ignoreCase) result += 'i';
+  if (that.multiline) result += 'm';
+  if (that.unicode) result += 'u';
+  if (that.sticky) result += 'y';
+  return result;
+};
+
+
+/***/ }),
+
+/***/ "0d58":
+/***/ (function(module, exports, __webpack_require__) {
+
+// 19.1.2.14 / 15.2.3.14 Object.keys(O)
+var $keys = __webpack_require__("ce10");
+var enumBugKeys = __webpack_require__("e11e");
+
+module.exports = Object.keys || function keys(O) {
+  return $keys(O, enumBugKeys);
+};
+
+
+/***/ }),
+
+/***/ "1495":
+/***/ (function(module, exports, __webpack_require__) {
+
+var dP = __webpack_require__("86cc");
+var anObject = __webpack_require__("cb7c");
+var getKeys = __webpack_require__("0d58");
+
+module.exports = __webpack_require__("9e1e") ? Object.defineProperties : function defineProperties(O, Properties) {
+  anObject(O);
+  var keys = getKeys(Properties);
+  var length = keys.length;
+  var i = 0;
+  var P;
+  while (length > i) dP.f(O, P = keys[i++], Properties[P]);
+  return O;
+};
+
+
+/***/ }),
+
+/***/ "214f":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+__webpack_require__("b0c5");
+var redefine = __webpack_require__("2aba");
+var hide = __webpack_require__("32e9");
+var fails = __webpack_require__("79e5");
+var defined = __webpack_require__("be13");
+var wks = __webpack_require__("2b4c");
+var regexpExec = __webpack_require__("520a");
+
+var SPECIES = wks('species');
+
+var REPLACE_SUPPORTS_NAMED_GROUPS = !fails(function () {
+  // #replace needs built-in support for named groups.
+  // #match works fine because it just return the exec results, even if it has
+  // a "grops" property.
+  var re = /./;
+  re.exec = function () {
+    var result = [];
+    result.groups = { a: '7' };
+    return result;
+  };
+  return ''.replace(re, '$<a>') !== '7';
+});
+
+var SPLIT_WORKS_WITH_OVERWRITTEN_EXEC = (function () {
+  // Chrome 51 has a buggy "split" implementation when RegExp#exec !== nativeExec
+  var re = /(?:)/;
+  var originalExec = re.exec;
+  re.exec = function () { return originalExec.apply(this, arguments); };
+  var result = 'ab'.split(re);
+  return result.length === 2 && result[0] === 'a' && result[1] === 'b';
+})();
+
+module.exports = function (KEY, length, exec) {
+  var SYMBOL = wks(KEY);
+
+  var DELEGATES_TO_SYMBOL = !fails(function () {
+    // String methods call symbol-named RegEp methods
+    var O = {};
+    O[SYMBOL] = function () { return 7; };
+    return ''[KEY](O) != 7;
+  });
+
+  var DELEGATES_TO_EXEC = DELEGATES_TO_SYMBOL ? !fails(function () {
+    // Symbol-named RegExp methods call .exec
+    var execCalled = false;
+    var re = /a/;
+    re.exec = function () { execCalled = true; return null; };
+    if (KEY === 'split') {
+      // RegExp[@@split] doesn't call the regex's exec method, but first creates
+      // a new one. We need to return the patched regex when creating the new one.
+      re.constructor = {};
+      re.constructor[SPECIES] = function () { return re; };
+    }
+    re[SYMBOL]('');
+    return !execCalled;
+  }) : undefined;
+
+  if (
+    !DELEGATES_TO_SYMBOL ||
+    !DELEGATES_TO_EXEC ||
+    (KEY === 'replace' && !REPLACE_SUPPORTS_NAMED_GROUPS) ||
+    (KEY === 'split' && !SPLIT_WORKS_WITH_OVERWRITTEN_EXEC)
+  ) {
+    var nativeRegExpMethod = /./[SYMBOL];
+    var fns = exec(
+      defined,
+      SYMBOL,
+      ''[KEY],
+      function maybeCallNative(nativeMethod, regexp, str, arg2, forceStringMethod) {
+        if (regexp.exec === regexpExec) {
+          if (DELEGATES_TO_SYMBOL && !forceStringMethod) {
+            // The native String method already delegates to @@method (this
+            // polyfilled function), leasing to infinite recursion.
+            // We avoid it by directly calling the native @@method method.
+            return { done: true, value: nativeRegExpMethod.call(regexp, str, arg2) };
+          }
+          return { done: true, value: nativeMethod.call(str, regexp, arg2) };
+        }
+        return { done: false };
+      }
+    );
+    var strfn = fns[0];
+    var rxfn = fns[1];
+
+    redefine(String.prototype, KEY, strfn);
+    hide(RegExp.prototype, SYMBOL, length == 2
+      // 21.2.5.8 RegExp.prototype[@@replace](string, replaceValue)
+      // 21.2.5.11 RegExp.prototype[@@split](string, limit)
+      ? function (string, arg) { return rxfn.call(string, this, arg); }
+      // 21.2.5.6 RegExp.prototype[@@match](string)
+      // 21.2.5.9 RegExp.prototype[@@search](string)
+      : function (string) { return rxfn.call(string, this); }
+    );
+  }
+};
+
+
+/***/ }),
+
+/***/ "230e":
+/***/ (function(module, exports, __webpack_require__) {
+
+var isObject = __webpack_require__("d3f4");
+var document = __webpack_require__("7726").document;
+// typeof document.createElement is 'object' in old IE
+var is = isObject(document) && isObject(document.createElement);
+module.exports = function (it) {
+  return is ? document.createElement(it) : {};
+};
+
+
+/***/ }),
+
+/***/ "23c6":
+/***/ (function(module, exports, __webpack_require__) {
+
+// getting tag from 19.1.3.6 Object.prototype.toString()
+var cof = __webpack_require__("2d95");
+var TAG = __webpack_require__("2b4c")('toStringTag');
+// ES3 wrong here
+var ARG = cof(function () { return arguments; }()) == 'Arguments';
+
+// fallback for IE11 Script Access Denied error
+var tryGet = function (it, key) {
+  try {
+    return it[key];
+  } catch (e) { /* empty */ }
+};
+
+module.exports = function (it) {
+  var O, T, B;
+  return it === undefined ? 'Undefined' : it === null ? 'Null'
+    // @@toStringTag case
+    : typeof (T = tryGet(O = Object(it), TAG)) == 'string' ? T
+    // builtinTag case
+    : ARG ? cof(O)
+    // ES3 arguments fallback
+    : (B = cof(O)) == 'Object' && typeof O.callee == 'function' ? 'Arguments' : B;
+};
+
+
+/***/ }),
+
+/***/ "2621":
+/***/ (function(module, exports) {
+
+exports.f = Object.getOwnPropertySymbols;
+
+
+/***/ }),
+
+/***/ "2aba":
+/***/ (function(module, exports, __webpack_require__) {
+
+var global = __webpack_require__("7726");
+var hide = __webpack_require__("32e9");
+var has = __webpack_require__("69a8");
+var SRC = __webpack_require__("ca5a")('src');
+var $toString = __webpack_require__("fa5b");
+var TO_STRING = 'toString';
+var TPL = ('' + $toString).split(TO_STRING);
+
+__webpack_require__("8378").inspectSource = function (it) {
+  return $toString.call(it);
+};
+
+(module.exports = function (O, key, val, safe) {
+  var isFunction = typeof val == 'function';
+  if (isFunction) has(val, 'name') || hide(val, 'name', key);
+  if (O[key] === val) return;
+  if (isFunction) has(val, SRC) || hide(val, SRC, O[key] ? '' + O[key] : TPL.join(String(key)));
+  if (O === global) {
+    O[key] = val;
+  } else if (!safe) {
+    delete O[key];
+    hide(O, key, val);
+  } else if (O[key]) {
+    O[key] = val;
+  } else {
+    hide(O, key, val);
+  }
+// add fake Function#toString for correct work wrapped methods / constructors with methods like LoDash isNative
+})(Function.prototype, TO_STRING, function toString() {
+  return typeof this == 'function' && this[SRC] || $toString.call(this);
+});
+
+
+/***/ }),
+
+/***/ "2aeb":
+/***/ (function(module, exports, __webpack_require__) {
+
+// 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
+var anObject = __webpack_require__("cb7c");
+var dPs = __webpack_require__("1495");
+var enumBugKeys = __webpack_require__("e11e");
+var IE_PROTO = __webpack_require__("613b")('IE_PROTO');
+var Empty = function () { /* empty */ };
+var PROTOTYPE = 'prototype';
+
+// Create object with fake `null` prototype: use iframe Object with cleared prototype
+var createDict = function () {
+  // Thrash, waste and sodomy: IE GC bug
+  var iframe = __webpack_require__("230e")('iframe');
+  var i = enumBugKeys.length;
+  var lt = '<';
+  var gt = '>';
+  var iframeDocument;
+  iframe.style.display = 'none';
+  __webpack_require__("fab2").appendChild(iframe);
+  iframe.src = 'javascript:'; // eslint-disable-line no-script-url
+  // createDict = iframe.contentWindow.Object;
+  // html.removeChild(iframe);
+  iframeDocument = iframe.contentWindow.document;
+  iframeDocument.open();
+  iframeDocument.write(lt + 'script' + gt + 'document.F=Object' + lt + '/script' + gt);
+  iframeDocument.close();
+  createDict = iframeDocument.F;
+  while (i--) delete createDict[PROTOTYPE][enumBugKeys[i]];
+  return createDict();
+};
+
+module.exports = Object.create || function create(O, Properties) {
+  var result;
+  if (O !== null) {
+    Empty[PROTOTYPE] = anObject(O);
+    result = new Empty();
+    Empty[PROTOTYPE] = null;
+    // add "__proto__" for Object.getPrototypeOf polyfill
+    result[IE_PROTO] = O;
+  } else result = createDict();
+  return Properties === undefined ? result : dPs(result, Properties);
+};
+
+
+/***/ }),
+
+/***/ "2b4c":
+/***/ (function(module, exports, __webpack_require__) {
+
+var store = __webpack_require__("5537")('wks');
+var uid = __webpack_require__("ca5a");
+var Symbol = __webpack_require__("7726").Symbol;
+var USE_SYMBOL = typeof Symbol == 'function';
+
+var $exports = module.exports = function (name) {
+  return store[name] || (store[name] =
+    USE_SYMBOL && Symbol[name] || (USE_SYMBOL ? Symbol : uid)('Symbol.' + name));
+};
+
+$exports.store = store;
+
+
+/***/ }),
+
+/***/ "2d00":
+/***/ (function(module, exports) {
+
+module.exports = false;
+
+
+/***/ }),
+
+/***/ "2d95":
+/***/ (function(module, exports) {
+
+var toString = {}.toString;
+
+module.exports = function (it) {
+  return toString.call(it).slice(8, -1);
+};
+
+
+/***/ }),
+
+/***/ "2fdb":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+// 21.1.3.7 String.prototype.includes(searchString, position = 0)
+
+var $export = __webpack_require__("5ca1");
+var context = __webpack_require__("d2c8");
+var INCLUDES = 'includes';
+
+$export($export.P + $export.F * __webpack_require__("5147")(INCLUDES), 'String', {
+  includes: function includes(searchString /* , position = 0 */) {
+    return !!~context(this, searchString, INCLUDES)
+      .indexOf(searchString, arguments.length > 1 ? arguments[1] : undefined);
+  }
+});
+
+
+/***/ }),
+
+/***/ "32e9":
+/***/ (function(module, exports, __webpack_require__) {
+
+var dP = __webpack_require__("86cc");
+var createDesc = __webpack_require__("4630");
+module.exports = __webpack_require__("9e1e") ? function (object, key, value) {
+  return dP.f(object, key, createDesc(1, value));
+} : function (object, key, value) {
+  object[key] = value;
+  return object;
+};
+
+
+/***/ }),
+
+/***/ "38fd":
+/***/ (function(module, exports, __webpack_require__) {
+
+// 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
+var has = __webpack_require__("69a8");
+var toObject = __webpack_require__("4bf8");
+var IE_PROTO = __webpack_require__("613b")('IE_PROTO');
+var ObjectProto = Object.prototype;
+
+module.exports = Object.getPrototypeOf || function (O) {
+  O = toObject(O);
+  if (has(O, IE_PROTO)) return O[IE_PROTO];
+  if (typeof O.constructor == 'function' && O instanceof O.constructor) {
+    return O.constructor.prototype;
+  } return O instanceof Object ? ObjectProto : null;
+};
+
+
+/***/ }),
+
+/***/ "41a0":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var create = __webpack_require__("2aeb");
+var descriptor = __webpack_require__("4630");
+var setToStringTag = __webpack_require__("7f20");
+var IteratorPrototype = {};
+
+// 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
+__webpack_require__("32e9")(IteratorPrototype, __webpack_require__("2b4c")('iterator'), function () { return this; });
+
+module.exports = function (Constructor, NAME, next) {
+  Constructor.prototype = create(IteratorPrototype, { next: descriptor(1, next) });
+  setToStringTag(Constructor, NAME + ' Iterator');
+};
+
+
+/***/ }),
+
+/***/ "456d":
+/***/ (function(module, exports, __webpack_require__) {
+
+// 19.1.2.14 Object.keys(O)
+var toObject = __webpack_require__("4bf8");
+var $keys = __webpack_require__("0d58");
+
+__webpack_require__("5eda")('keys', function () {
+  return function keys(it) {
+    return $keys(toObject(it));
+  };
+});
+
+
+/***/ }),
+
+/***/ "4588":
+/***/ (function(module, exports) {
+
+// 7.1.4 ToInteger
+var ceil = Math.ceil;
+var floor = Math.floor;
+module.exports = function (it) {
+  return isNaN(it = +it) ? 0 : (it > 0 ? floor : ceil)(it);
+};
+
+
+/***/ }),
+
+/***/ "4630":
+/***/ (function(module, exports) {
+
+module.exports = function (bitmap, value) {
+  return {
+    enumerable: !(bitmap & 1),
+    configurable: !(bitmap & 2),
+    writable: !(bitmap & 4),
+    value: value
+  };
+};
+
+
+/***/ }),
+
+/***/ "4bf8":
+/***/ (function(module, exports, __webpack_require__) {
+
+// 7.1.13 ToObject(argument)
+var defined = __webpack_require__("be13");
+module.exports = function (it) {
+  return Object(defined(it));
+};
+
+
+/***/ }),
+
+/***/ "5147":
+/***/ (function(module, exports, __webpack_require__) {
+
+var MATCH = __webpack_require__("2b4c")('match');
+module.exports = function (KEY) {
+  var re = /./;
+  try {
+    '/./'[KEY](re);
+  } catch (e) {
+    try {
+      re[MATCH] = false;
+      return !'/./'[KEY](re);
+    } catch (f) { /* empty */ }
+  } return true;
+};
+
+
+/***/ }),
+
+/***/ "520a":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var regexpFlags = __webpack_require__("0bfb");
+
+var nativeExec = RegExp.prototype.exec;
+// This always refers to the native implementation, because the
+// String#replace polyfill uses ./fix-regexp-well-known-symbol-logic.js,
+// which loads this file before patching the method.
+var nativeReplace = String.prototype.replace;
+
+var patchedExec = nativeExec;
+
+var LAST_INDEX = 'lastIndex';
+
+var UPDATES_LAST_INDEX_WRONG = (function () {
+  var re1 = /a/,
+      re2 = /b*/g;
+  nativeExec.call(re1, 'a');
+  nativeExec.call(re2, 'a');
+  return re1[LAST_INDEX] !== 0 || re2[LAST_INDEX] !== 0;
+})();
+
+// nonparticipating capturing group, copied from es5-shim's String#split patch.
+var NPCG_INCLUDED = /()??/.exec('')[1] !== undefined;
+
+var PATCH = UPDATES_LAST_INDEX_WRONG || NPCG_INCLUDED;
+
+if (PATCH) {
+  patchedExec = function exec(str) {
+    var re = this;
+    var lastIndex, reCopy, match, i;
+
+    if (NPCG_INCLUDED) {
+      reCopy = new RegExp('^' + re.source + '$(?!\\s)', regexpFlags.call(re));
+    }
+    if (UPDATES_LAST_INDEX_WRONG) lastIndex = re[LAST_INDEX];
+
+    match = nativeExec.call(re, str);
+
+    if (UPDATES_LAST_INDEX_WRONG && match) {
+      re[LAST_INDEX] = re.global ? match.index + match[0].length : lastIndex;
+    }
+    if (NPCG_INCLUDED && match && match.length > 1) {
+      // Fix browsers whose `exec` methods don't consistently return `undefined`
+      // for NPCG, like IE8. NOTE: This doesn' work for /(.?)?/
+      // eslint-disable-next-line no-loop-func
+      nativeReplace.call(match[0], reCopy, function () {
+        for (i = 1; i < arguments.length - 2; i++) {
+          if (arguments[i] === undefined) match[i] = undefined;
+        }
+      });
+    }
+
+    return match;
+  };
+}
+
+module.exports = patchedExec;
+
+
+/***/ }),
+
+/***/ "52a7":
+/***/ (function(module, exports) {
+
+exports.f = {}.propertyIsEnumerable;
+
+
+/***/ }),
+
+/***/ "5537":
+/***/ (function(module, exports, __webpack_require__) {
+
+var core = __webpack_require__("8378");
+var global = __webpack_require__("7726");
+var SHARED = '__core-js_shared__';
+var store = global[SHARED] || (global[SHARED] = {});
+
+(module.exports = function (key, value) {
+  return store[key] || (store[key] = value !== undefined ? value : {});
+})('versions', []).push({
+  version: core.version,
+  mode: __webpack_require__("2d00") ? 'pure' : 'global',
+  copyright: '© 2019 Denis Pushkarev (zloirock.ru)'
+});
+
+
+/***/ }),
+
+/***/ "5ca1":
+/***/ (function(module, exports, __webpack_require__) {
+
+var global = __webpack_require__("7726");
+var core = __webpack_require__("8378");
+var hide = __webpack_require__("32e9");
+var redefine = __webpack_require__("2aba");
+var ctx = __webpack_require__("9b43");
+var PROTOTYPE = 'prototype';
+
+var $export = function (type, name, source) {
+  var IS_FORCED = type & $export.F;
+  var IS_GLOBAL = type & $export.G;
+  var IS_STATIC = type & $export.S;
+  var IS_PROTO = type & $export.P;
+  var IS_BIND = type & $export.B;
+  var target = IS_GLOBAL ? global : IS_STATIC ? global[name] || (global[name] = {}) : (global[name] || {})[PROTOTYPE];
+  var exports = IS_GLOBAL ? core : core[name] || (core[name] = {});
+  var expProto = exports[PROTOTYPE] || (exports[PROTOTYPE] = {});
+  var key, own, out, exp;
+  if (IS_GLOBAL) source = name;
+  for (key in source) {
+    // contains in native
+    own = !IS_FORCED && target && target[key] !== undefined;
+    // export native or passed
+    out = (own ? target : source)[key];
+    // bind timers to global for call from export context
+    exp = IS_BIND && own ? ctx(out, global) : IS_PROTO && typeof out == 'function' ? ctx(Function.call, out) : out;
+    // extend global
+    if (target) redefine(target, key, out, type & $export.U);
+    // export
+    if (exports[key] != out) hide(exports, key, exp);
+    if (IS_PROTO && expProto[key] != out) expProto[key] = out;
+  }
+};
+global.core = core;
+// type bitmap
+$export.F = 1;   // forced
+$export.G = 2;   // global
+$export.S = 4;   // static
+$export.P = 8;   // proto
+$export.B = 16;  // bind
+$export.W = 32;  // wrap
+$export.U = 64;  // safe
+$export.R = 128; // real proto method for `library`
+module.exports = $export;
+
+
+/***/ }),
+
+/***/ "5eda":
+/***/ (function(module, exports, __webpack_require__) {
+
+// most Object methods by ES6 should accept primitives
+var $export = __webpack_require__("5ca1");
+var core = __webpack_require__("8378");
+var fails = __webpack_require__("79e5");
+module.exports = function (KEY, exec) {
+  var fn = (core.Object || {})[KEY] || Object[KEY];
+  var exp = {};
+  exp[KEY] = exec(fn);
+  $export($export.S + $export.F * fails(function () { fn(1); }), 'Object', exp);
+};
+
+
+/***/ }),
+
+/***/ "5f1b":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var classof = __webpack_require__("23c6");
+var builtinExec = RegExp.prototype.exec;
+
+ // `RegExpExec` abstract operation
+// https://tc39.github.io/ecma262/#sec-regexpexec
+module.exports = function (R, S) {
+  var exec = R.exec;
+  if (typeof exec === 'function') {
+    var result = exec.call(R, S);
+    if (typeof result !== 'object') {
+      throw new TypeError('RegExp exec method returned something other than an Object or null');
+    }
+    return result;
+  }
+  if (classof(R) !== 'RegExp') {
+    throw new TypeError('RegExp#exec called on incompatible receiver');
+  }
+  return builtinExec.call(R, S);
+};
+
+
+/***/ }),
+
+/***/ "613b":
+/***/ (function(module, exports, __webpack_require__) {
+
+var shared = __webpack_require__("5537")('keys');
+var uid = __webpack_require__("ca5a");
+module.exports = function (key) {
+  return shared[key] || (shared[key] = uid(key));
+};
+
+
+/***/ }),
+
+/***/ "626a":
+/***/ (function(module, exports, __webpack_require__) {
+
+// fallback for non-array-like ES3 and non-enumerable old V8 strings
+var cof = __webpack_require__("2d95");
+// eslint-disable-next-line no-prototype-builtins
+module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
+  return cof(it) == 'String' ? it.split('') : Object(it);
+};
+
+
+/***/ }),
+
+/***/ "6762":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+// https://github.com/tc39/Array.prototype.includes
+var $export = __webpack_require__("5ca1");
+var $includes = __webpack_require__("c366")(true);
+
+$export($export.P, 'Array', {
+  includes: function includes(el /* , fromIndex = 0 */) {
+    return $includes(this, el, arguments.length > 1 ? arguments[1] : undefined);
+  }
+});
+
+__webpack_require__("9c6c")('includes');
+
+
+/***/ }),
+
+/***/ "6821":
+/***/ (function(module, exports, __webpack_require__) {
+
+// to indexed object, toObject with fallback for non-array-like ES3 strings
+var IObject = __webpack_require__("626a");
+var defined = __webpack_require__("be13");
+module.exports = function (it) {
+  return IObject(defined(it));
+};
+
+
+/***/ }),
+
+/***/ "69a8":
+/***/ (function(module, exports) {
+
+var hasOwnProperty = {}.hasOwnProperty;
+module.exports = function (it, key) {
+  return hasOwnProperty.call(it, key);
+};
+
+
+/***/ }),
+
+/***/ "6a99":
+/***/ (function(module, exports, __webpack_require__) {
+
+// 7.1.1 ToPrimitive(input [, PreferredType])
+var isObject = __webpack_require__("d3f4");
+// instead of the ES6 spec version, we didn't implement @@toPrimitive case
+// and the second argument - flag - preferred type is a string
+module.exports = function (it, S) {
+  if (!isObject(it)) return it;
+  var fn, val;
+  if (S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it))) return val;
+  if (typeof (fn = it.valueOf) == 'function' && !isObject(val = fn.call(it))) return val;
+  if (!S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it))) return val;
+  throw TypeError("Can't convert object to primitive value");
+};
+
+
+/***/ }),
+
+/***/ "7333":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+// 19.1.2.1 Object.assign(target, source, ...)
+var DESCRIPTORS = __webpack_require__("9e1e");
+var getKeys = __webpack_require__("0d58");
+var gOPS = __webpack_require__("2621");
+var pIE = __webpack_require__("52a7");
+var toObject = __webpack_require__("4bf8");
+var IObject = __webpack_require__("626a");
+var $assign = Object.assign;
+
+// should work with symbols and should have deterministic property order (V8 bug)
+module.exports = !$assign || __webpack_require__("79e5")(function () {
+  var A = {};
+  var B = {};
+  // eslint-disable-next-line no-undef
+  var S = Symbol();
+  var K = 'abcdefghijklmnopqrst';
+  A[S] = 7;
+  K.split('').forEach(function (k) { B[k] = k; });
+  return $assign({}, A)[S] != 7 || Object.keys($assign({}, B)).join('') != K;
+}) ? function assign(target, source) { // eslint-disable-line no-unused-vars
+  var T = toObject(target);
+  var aLen = arguments.length;
+  var index = 1;
+  var getSymbols = gOPS.f;
+  var isEnum = pIE.f;
+  while (aLen > index) {
+    var S = IObject(arguments[index++]);
+    var keys = getSymbols ? getKeys(S).concat(getSymbols(S)) : getKeys(S);
+    var length = keys.length;
+    var j = 0;
+    var key;
+    while (length > j) {
+      key = keys[j++];
+      if (!DESCRIPTORS || isEnum.call(S, key)) T[key] = S[key];
+    }
+  } return T;
+} : $assign;
+
+
+/***/ }),
+
+/***/ "7726":
+/***/ (function(module, exports) {
+
+// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
+var global = module.exports = typeof window != 'undefined' && window.Math == Math
+  ? window : typeof self != 'undefined' && self.Math == Math ? self
+  // eslint-disable-next-line no-new-func
+  : Function('return this')();
+if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
+
+
+/***/ }),
+
+/***/ "77f1":
+/***/ (function(module, exports, __webpack_require__) {
+
+var toInteger = __webpack_require__("4588");
+var max = Math.max;
+var min = Math.min;
+module.exports = function (index, length) {
+  index = toInteger(index);
+  return index < 0 ? max(index + length, 0) : min(index, length);
+};
+
+
+/***/ }),
+
+/***/ "79e5":
+/***/ (function(module, exports) {
+
+module.exports = function (exec) {
+  try {
+    return !!exec();
+  } catch (e) {
+    return true;
+  }
+};
+
+
+/***/ }),
+
+/***/ "7f20":
+/***/ (function(module, exports, __webpack_require__) {
+
+var def = __webpack_require__("86cc").f;
+var has = __webpack_require__("69a8");
+var TAG = __webpack_require__("2b4c")('toStringTag');
+
+module.exports = function (it, tag, stat) {
+  if (it && !has(it = stat ? it : it.prototype, TAG)) def(it, TAG, { configurable: true, value: tag });
+};
+
+
+/***/ }),
+
+/***/ "8378":
+/***/ (function(module, exports) {
+
+var core = module.exports = { version: '2.6.11' };
+if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
+
+
+/***/ }),
+
+/***/ "84f2":
+/***/ (function(module, exports) {
+
+module.exports = {};
+
+
+/***/ }),
+
+/***/ "86cc":
+/***/ (function(module, exports, __webpack_require__) {
+
+var anObject = __webpack_require__("cb7c");
+var IE8_DOM_DEFINE = __webpack_require__("c69a");
+var toPrimitive = __webpack_require__("6a99");
+var dP = Object.defineProperty;
+
+exports.f = __webpack_require__("9e1e") ? Object.defineProperty : function defineProperty(O, P, Attributes) {
+  anObject(O);
+  P = toPrimitive(P, true);
+  anObject(Attributes);
+  if (IE8_DOM_DEFINE) try {
+    return dP(O, P, Attributes);
+  } catch (e) { /* empty */ }
+  if ('get' in Attributes || 'set' in Attributes) throw TypeError('Accessors not supported!');
+  if ('value' in Attributes) O[P] = Attributes.value;
+  return O;
+};
+
+
+/***/ }),
+
+/***/ "9b43":
+/***/ (function(module, exports, __webpack_require__) {
+
+// optional / simple context binding
+var aFunction = __webpack_require__("d8e8");
+module.exports = function (fn, that, length) {
+  aFunction(fn);
+  if (that === undefined) return fn;
+  switch (length) {
+    case 1: return function (a) {
+      return fn.call(that, a);
+    };
+    case 2: return function (a, b) {
+      return fn.call(that, a, b);
+    };
+    case 3: return function (a, b, c) {
+      return fn.call(that, a, b, c);
+    };
+  }
+  return function (/* ...args */) {
+    return fn.apply(that, arguments);
+  };
+};
+
+
+/***/ }),
+
+/***/ "9c6c":
+/***/ (function(module, exports, __webpack_require__) {
+
+// 22.1.3.31 Array.prototype[@@unscopables]
+var UNSCOPABLES = __webpack_require__("2b4c")('unscopables');
+var ArrayProto = Array.prototype;
+if (ArrayProto[UNSCOPABLES] == undefined) __webpack_require__("32e9")(ArrayProto, UNSCOPABLES, {});
+module.exports = function (key) {
+  ArrayProto[UNSCOPABLES][key] = true;
+};
+
+
+/***/ }),
+
+/***/ "9def":
+/***/ (function(module, exports, __webpack_require__) {
+
+// 7.1.15 ToLength
+var toInteger = __webpack_require__("4588");
+var min = Math.min;
+module.exports = function (it) {
+  return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
+};
+
+
+/***/ }),
+
+/***/ "9e1e":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Thank's IE8 for his funny defineProperty
+module.exports = !__webpack_require__("79e5")(function () {
+  return Object.defineProperty({}, 'a', { get: function () { return 7; } }).a != 7;
+});
+
+
+/***/ }),
+
+/***/ "a352":
+/***/ (function(module, exports) {
+
+module.exports = __webpack_require__(/*! sortablejs */ "./node_modules/sortablejs/modular/sortable.esm.js");
+
+/***/ }),
+
+/***/ "a481":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var anObject = __webpack_require__("cb7c");
+var toObject = __webpack_require__("4bf8");
+var toLength = __webpack_require__("9def");
+var toInteger = __webpack_require__("4588");
+var advanceStringIndex = __webpack_require__("0390");
+var regExpExec = __webpack_require__("5f1b");
+var max = Math.max;
+var min = Math.min;
+var floor = Math.floor;
+var SUBSTITUTION_SYMBOLS = /\$([$&`']|\d\d?|<[^>]*>)/g;
+var SUBSTITUTION_SYMBOLS_NO_NAMED = /\$([$&`']|\d\d?)/g;
+
+var maybeToString = function (it) {
+  return it === undefined ? it : String(it);
+};
+
+// @@replace logic
+__webpack_require__("214f")('replace', 2, function (defined, REPLACE, $replace, maybeCallNative) {
+  return [
+    // `String.prototype.replace` method
+    // https://tc39.github.io/ecma262/#sec-string.prototype.replace
+    function replace(searchValue, replaceValue) {
+      var O = defined(this);
+      var fn = searchValue == undefined ? undefined : searchValue[REPLACE];
+      return fn !== undefined
+        ? fn.call(searchValue, O, replaceValue)
+        : $replace.call(String(O), searchValue, replaceValue);
+    },
+    // `RegExp.prototype[@@replace]` method
+    // https://tc39.github.io/ecma262/#sec-regexp.prototype-@@replace
+    function (regexp, replaceValue) {
+      var res = maybeCallNative($replace, regexp, this, replaceValue);
+      if (res.done) return res.value;
+
+      var rx = anObject(regexp);
+      var S = String(this);
+      var functionalReplace = typeof replaceValue === 'function';
+      if (!functionalReplace) replaceValue = String(replaceValue);
+      var global = rx.global;
+      if (global) {
+        var fullUnicode = rx.unicode;
+        rx.lastIndex = 0;
+      }
+      var results = [];
+      while (true) {
+        var result = regExpExec(rx, S);
+        if (result === null) break;
+        results.push(result);
+        if (!global) break;
+        var matchStr = String(result[0]);
+        if (matchStr === '') rx.lastIndex = advanceStringIndex(S, toLength(rx.lastIndex), fullUnicode);
+      }
+      var accumulatedResult = '';
+      var nextSourcePosition = 0;
+      for (var i = 0; i < results.length; i++) {
+        result = results[i];
+        var matched = String(result[0]);
+        var position = max(min(toInteger(result.index), S.length), 0);
+        var captures = [];
+        // NOTE: This is equivalent to
+        //   captures = result.slice(1).map(maybeToString)
+        // but for some reason `nativeSlice.call(result, 1, result.length)` (called in
+        // the slice polyfill when slicing native arrays) "doesn't work" in safari 9 and
+        // causes a crash (https://pastebin.com/N21QzeQA) when trying to debug it.
+        for (var j = 1; j < result.length; j++) captures.push(maybeToString(result[j]));
+        var namedCaptures = result.groups;
+        if (functionalReplace) {
+          var replacerArgs = [matched].concat(captures, position, S);
+          if (namedCaptures !== undefined) replacerArgs.push(namedCaptures);
+          var replacement = String(replaceValue.apply(undefined, replacerArgs));
+        } else {
+          replacement = getSubstitution(matched, S, position, captures, namedCaptures, replaceValue);
+        }
+        if (position >= nextSourcePosition) {
+          accumulatedResult += S.slice(nextSourcePosition, position) + replacement;
+          nextSourcePosition = position + matched.length;
+        }
+      }
+      return accumulatedResult + S.slice(nextSourcePosition);
+    }
+  ];
+
+    // https://tc39.github.io/ecma262/#sec-getsubstitution
+  function getSubstitution(matched, str, position, captures, namedCaptures, replacement) {
+    var tailPos = position + matched.length;
+    var m = captures.length;
+    var symbols = SUBSTITUTION_SYMBOLS_NO_NAMED;
+    if (namedCaptures !== undefined) {
+      namedCaptures = toObject(namedCaptures);
+      symbols = SUBSTITUTION_SYMBOLS;
+    }
+    return $replace.call(replacement, symbols, function (match, ch) {
+      var capture;
+      switch (ch.charAt(0)) {
+        case '$': return '$';
+        case '&': return matched;
+        case '`': return str.slice(0, position);
+        case "'": return str.slice(tailPos);
+        case '<':
+          capture = namedCaptures[ch.slice(1, -1)];
+          break;
+        default: // \d\d?
+          var n = +ch;
+          if (n === 0) return match;
+          if (n > m) {
+            var f = floor(n / 10);
+            if (f === 0) return match;
+            if (f <= m) return captures[f - 1] === undefined ? ch.charAt(1) : captures[f - 1] + ch.charAt(1);
+            return match;
+          }
+          capture = captures[n - 1];
+      }
+      return capture === undefined ? '' : capture;
+    });
+  }
+});
+
+
+/***/ }),
+
+/***/ "aae3":
+/***/ (function(module, exports, __webpack_require__) {
+
+// 7.2.8 IsRegExp(argument)
+var isObject = __webpack_require__("d3f4");
+var cof = __webpack_require__("2d95");
+var MATCH = __webpack_require__("2b4c")('match');
+module.exports = function (it) {
+  var isRegExp;
+  return isObject(it) && ((isRegExp = it[MATCH]) !== undefined ? !!isRegExp : cof(it) == 'RegExp');
+};
+
+
+/***/ }),
+
+/***/ "ac6a":
+/***/ (function(module, exports, __webpack_require__) {
+
+var $iterators = __webpack_require__("cadf");
+var getKeys = __webpack_require__("0d58");
+var redefine = __webpack_require__("2aba");
+var global = __webpack_require__("7726");
+var hide = __webpack_require__("32e9");
+var Iterators = __webpack_require__("84f2");
+var wks = __webpack_require__("2b4c");
+var ITERATOR = wks('iterator');
+var TO_STRING_TAG = wks('toStringTag');
+var ArrayValues = Iterators.Array;
+
+var DOMIterables = {
+  CSSRuleList: true, // TODO: Not spec compliant, should be false.
+  CSSStyleDeclaration: false,
+  CSSValueList: false,
+  ClientRectList: false,
+  DOMRectList: false,
+  DOMStringList: false,
+  DOMTokenList: true,
+  DataTransferItemList: false,
+  FileList: false,
+  HTMLAllCollection: false,
+  HTMLCollection: false,
+  HTMLFormElement: false,
+  HTMLSelectElement: false,
+  MediaList: true, // TODO: Not spec compliant, should be false.
+  MimeTypeArray: false,
+  NamedNodeMap: false,
+  NodeList: true,
+  PaintRequestList: false,
+  Plugin: false,
+  PluginArray: false,
+  SVGLengthList: false,
+  SVGNumberList: false,
+  SVGPathSegList: false,
+  SVGPointList: false,
+  SVGStringList: false,
+  SVGTransformList: false,
+  SourceBufferList: false,
+  StyleSheetList: true, // TODO: Not spec compliant, should be false.
+  TextTrackCueList: false,
+  TextTrackList: false,
+  TouchList: false
+};
+
+for (var collections = getKeys(DOMIterables), i = 0; i < collections.length; i++) {
+  var NAME = collections[i];
+  var explicit = DOMIterables[NAME];
+  var Collection = global[NAME];
+  var proto = Collection && Collection.prototype;
+  var key;
+  if (proto) {
+    if (!proto[ITERATOR]) hide(proto, ITERATOR, ArrayValues);
+    if (!proto[TO_STRING_TAG]) hide(proto, TO_STRING_TAG, NAME);
+    Iterators[NAME] = ArrayValues;
+    if (explicit) for (key in $iterators) if (!proto[key]) redefine(proto, key, $iterators[key], true);
+  }
+}
+
+
+/***/ }),
+
+/***/ "b0c5":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var regexpExec = __webpack_require__("520a");
+__webpack_require__("5ca1")({
+  target: 'RegExp',
+  proto: true,
+  forced: regexpExec !== /./.exec
+}, {
+  exec: regexpExec
+});
+
+
+/***/ }),
+
+/***/ "be13":
+/***/ (function(module, exports) {
+
+// 7.2.1 RequireObjectCoercible(argument)
+module.exports = function (it) {
+  if (it == undefined) throw TypeError("Can't call method on  " + it);
+  return it;
+};
+
+
+/***/ }),
+
+/***/ "c366":
+/***/ (function(module, exports, __webpack_require__) {
+
+// false -> Array#indexOf
+// true  -> Array#includes
+var toIObject = __webpack_require__("6821");
+var toLength = __webpack_require__("9def");
+var toAbsoluteIndex = __webpack_require__("77f1");
+module.exports = function (IS_INCLUDES) {
+  return function ($this, el, fromIndex) {
+    var O = toIObject($this);
+    var length = toLength(O.length);
+    var index = toAbsoluteIndex(fromIndex, length);
+    var value;
+    // Array#includes uses SameValueZero equality algorithm
+    // eslint-disable-next-line no-self-compare
+    if (IS_INCLUDES && el != el) while (length > index) {
+      value = O[index++];
+      // eslint-disable-next-line no-self-compare
+      if (value != value) return true;
+    // Array#indexOf ignores holes, Array#includes - not
+    } else for (;length > index; index++) if (IS_INCLUDES || index in O) {
+      if (O[index] === el) return IS_INCLUDES || index || 0;
+    } return !IS_INCLUDES && -1;
+  };
+};
+
+
+/***/ }),
+
+/***/ "c649":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(global) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return insertNodeAt; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return camelize; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return console; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return removeNode; });
+/* harmony import */ var core_js_modules_es6_regexp_replace__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("a481");
+/* harmony import */ var core_js_modules_es6_regexp_replace__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es6_regexp_replace__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function getConsole() {
+  if (typeof window !== "undefined") {
+    return window.console;
+  }
+
+  return global.console;
+}
+
+var console = getConsole();
+
+function cached(fn) {
+  var cache = Object.create(null);
+  return function cachedFn(str) {
+    var hit = cache[str];
+    return hit || (cache[str] = fn(str));
+  };
+}
+
+var regex = /-(\w)/g;
+var camelize = cached(function (str) {
+  return str.replace(regex, function (_, c) {
+    return c ? c.toUpperCase() : "";
+  });
+});
+
+function removeNode(node) {
+  if (node.parentElement !== null) {
+    node.parentElement.removeChild(node);
+  }
+}
+
+function insertNodeAt(fatherNode, node, position) {
+  var refNode = position === 0 ? fatherNode.children[0] : fatherNode.children[position - 1].nextSibling;
+  fatherNode.insertBefore(node, refNode);
+}
+
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__("c8ba")))
+
+/***/ }),
+
+/***/ "c69a":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = !__webpack_require__("9e1e") && !__webpack_require__("79e5")(function () {
+  return Object.defineProperty(__webpack_require__("230e")('div'), 'a', { get: function () { return 7; } }).a != 7;
+});
+
+
+/***/ }),
+
+/***/ "c8ba":
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || new Function("return this")();
+} catch (e) {
+	// This works if the window reference is available
+	if (typeof window === "object") g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+
+/***/ "ca5a":
+/***/ (function(module, exports) {
+
+var id = 0;
+var px = Math.random();
+module.exports = function (key) {
+  return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + px).toString(36));
+};
+
+
+/***/ }),
+
+/***/ "cadf":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var addToUnscopables = __webpack_require__("9c6c");
+var step = __webpack_require__("d53b");
+var Iterators = __webpack_require__("84f2");
+var toIObject = __webpack_require__("6821");
+
+// 22.1.3.4 Array.prototype.entries()
+// 22.1.3.13 Array.prototype.keys()
+// 22.1.3.29 Array.prototype.values()
+// 22.1.3.30 Array.prototype[@@iterator]()
+module.exports = __webpack_require__("01f9")(Array, 'Array', function (iterated, kind) {
+  this._t = toIObject(iterated); // target
+  this._i = 0;                   // next index
+  this._k = kind;                // kind
+// 22.1.5.2.1 %ArrayIteratorPrototype%.next()
+}, function () {
+  var O = this._t;
+  var kind = this._k;
+  var index = this._i++;
+  if (!O || index >= O.length) {
+    this._t = undefined;
+    return step(1);
+  }
+  if (kind == 'keys') return step(0, index);
+  if (kind == 'values') return step(0, O[index]);
+  return step(0, [index, O[index]]);
+}, 'values');
+
+// argumentsList[@@iterator] is %ArrayProto_values% (9.4.4.6, 9.4.4.7)
+Iterators.Arguments = Iterators.Array;
+
+addToUnscopables('keys');
+addToUnscopables('values');
+addToUnscopables('entries');
+
+
+/***/ }),
+
+/***/ "cb7c":
+/***/ (function(module, exports, __webpack_require__) {
+
+var isObject = __webpack_require__("d3f4");
+module.exports = function (it) {
+  if (!isObject(it)) throw TypeError(it + ' is not an object!');
+  return it;
+};
+
+
+/***/ }),
+
+/***/ "ce10":
+/***/ (function(module, exports, __webpack_require__) {
+
+var has = __webpack_require__("69a8");
+var toIObject = __webpack_require__("6821");
+var arrayIndexOf = __webpack_require__("c366")(false);
+var IE_PROTO = __webpack_require__("613b")('IE_PROTO');
+
+module.exports = function (object, names) {
+  var O = toIObject(object);
+  var i = 0;
+  var result = [];
+  var key;
+  for (key in O) if (key != IE_PROTO) has(O, key) && result.push(key);
+  // Don't enum bug & hidden keys
+  while (names.length > i) if (has(O, key = names[i++])) {
+    ~arrayIndexOf(result, key) || result.push(key);
+  }
+  return result;
+};
+
+
+/***/ }),
+
+/***/ "d2c8":
+/***/ (function(module, exports, __webpack_require__) {
+
+// helper for String#{startsWith, endsWith, includes}
+var isRegExp = __webpack_require__("aae3");
+var defined = __webpack_require__("be13");
+
+module.exports = function (that, searchString, NAME) {
+  if (isRegExp(searchString)) throw TypeError('String#' + NAME + " doesn't accept regex!");
+  return String(defined(that));
+};
+
+
+/***/ }),
+
+/***/ "d3f4":
+/***/ (function(module, exports) {
+
+module.exports = function (it) {
+  return typeof it === 'object' ? it !== null : typeof it === 'function';
+};
+
+
+/***/ }),
+
+/***/ "d53b":
+/***/ (function(module, exports) {
+
+module.exports = function (done, value) {
+  return { value: value, done: !!done };
+};
+
+
+/***/ }),
+
+/***/ "d8e8":
+/***/ (function(module, exports) {
+
+module.exports = function (it) {
+  if (typeof it != 'function') throw TypeError(it + ' is not a function!');
+  return it;
+};
+
+
+/***/ }),
+
+/***/ "e11e":
+/***/ (function(module, exports) {
+
+// IE 8- don't enum bug keys
+module.exports = (
+  'constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf'
+).split(',');
+
+
+/***/ }),
+
+/***/ "f559":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+// 21.1.3.18 String.prototype.startsWith(searchString [, position ])
+
+var $export = __webpack_require__("5ca1");
+var toLength = __webpack_require__("9def");
+var context = __webpack_require__("d2c8");
+var STARTS_WITH = 'startsWith';
+var $startsWith = ''[STARTS_WITH];
+
+$export($export.P + $export.F * __webpack_require__("5147")(STARTS_WITH), 'String', {
+  startsWith: function startsWith(searchString /* , position = 0 */) {
+    var that = context(this, searchString, STARTS_WITH);
+    var index = toLength(Math.min(arguments.length > 1 ? arguments[1] : undefined, that.length));
+    var search = String(searchString);
+    return $startsWith
+      ? $startsWith.call(that, search, index)
+      : that.slice(index, index + search.length) === search;
+  }
+});
+
+
+/***/ }),
+
+/***/ "f6fd":
+/***/ (function(module, exports) {
+
+// document.currentScript polyfill by Adam Miller
+
+// MIT license
+
+(function(document){
+  var currentScript = "currentScript",
+      scripts = document.getElementsByTagName('script'); // Live NodeList collection
+
+  // If browser needs currentScript polyfill, add get currentScript() to the document object
+  if (!(currentScript in document)) {
+    Object.defineProperty(document, currentScript, {
+      get: function(){
+
+        // IE 6-10 supports script readyState
+        // IE 10+ support stack trace
+        try { throw new Error(); }
+        catch (err) {
+
+          // Find the second match for the "at" string to get file src url from stack.
+          // Specifically works with the format of stack traces in IE.
+          var i, res = ((/.*at [^\(]*\((.*):.+:.+\)$/ig).exec(err.stack) || [false])[1];
+
+          // For all scripts on the page, if src matches or if ready state is interactive, return the script tag
+          for(i in scripts){
+            if(scripts[i].src == res || scripts[i].readyState == "interactive"){
+              return scripts[i];
+            }
+          }
+
+          // If no match, return null
+          return null;
+        }
+      }
+    });
+  }
+})(document);
+
+
+/***/ }),
+
+/***/ "f751":
+/***/ (function(module, exports, __webpack_require__) {
+
+// 19.1.3.1 Object.assign(target, source)
+var $export = __webpack_require__("5ca1");
+
+$export($export.S + $export.F, 'Object', { assign: __webpack_require__("7333") });
+
+
+/***/ }),
+
+/***/ "fa5b":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__("5537")('native-function-to-string', Function.toString);
+
+
+/***/ }),
+
+/***/ "fab2":
+/***/ (function(module, exports, __webpack_require__) {
+
+var document = __webpack_require__("7726").document;
+module.exports = document && document.documentElement;
+
+
+/***/ }),
+
+/***/ "fb15":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/setPublicPath.js
+// This file is imported into lib/wc client bundles.
+
+if (typeof window !== 'undefined') {
+  if (true) {
+    __webpack_require__("f6fd")
+  }
+
+  var setPublicPath_i
+  if ((setPublicPath_i = window.document.currentScript) && (setPublicPath_i = setPublicPath_i.src.match(/(.+\/)[^/]+\.js(\?.*)?$/))) {
+    __webpack_require__.p = setPublicPath_i[1] // eslint-disable-line
+  }
+}
+
+// Indicate to webpack that this file can be concatenated
+/* harmony default export */ var setPublicPath = (null);
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.object.assign.js
+var es6_object_assign = __webpack_require__("f751");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.string.starts-with.js
+var es6_string_starts_with = __webpack_require__("f559");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/web.dom.iterable.js
+var web_dom_iterable = __webpack_require__("ac6a");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.array.iterator.js
+var es6_array_iterator = __webpack_require__("cadf");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.object.keys.js
+var es6_object_keys = __webpack_require__("456d");
+
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js
+function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js
+function _iterableToArrayLimit(arr, i) {
+  if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;
+  var _arr = [];
+  var _n = true;
+  var _d = false;
+  var _e = undefined;
+
+  try {
+    for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);
+
+      if (i && _arr.length === i) break;
+    }
+  } catch (err) {
+    _d = true;
+    _e = err;
+  } finally {
+    try {
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
+    }
+  }
+
+  return _arr;
+}
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) {
+    arr2[i] = arr[i];
+  }
+
+  return arr2;
+}
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/nonIterableRest.js
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js
+
+
+
+
+function _slicedToArray(arr, i) {
+  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
+}
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es7.array.includes.js
+var es7_array_includes = __webpack_require__("6762");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.string.includes.js
+var es6_string_includes = __webpack_require__("2fdb");
+
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js
+
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) return _arrayLikeToArray(arr);
+}
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/iterableToArray.js
+function _iterableToArray(iter) {
+  if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);
+}
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js
+
+
+
+
+function _toConsumableArray(arr) {
+  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
+}
+// EXTERNAL MODULE: external {"commonjs":"sortablejs","commonjs2":"sortablejs","amd":"sortablejs","root":"Sortable"}
+var external_commonjs_sortablejs_commonjs2_sortablejs_amd_sortablejs_root_Sortable_ = __webpack_require__("a352");
+var external_commonjs_sortablejs_commonjs2_sortablejs_amd_sortablejs_root_Sortable_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_sortablejs_commonjs2_sortablejs_amd_sortablejs_root_Sortable_);
+
+// EXTERNAL MODULE: ./src/util/helper.js
+var helper = __webpack_require__("c649");
+
+// CONCATENATED MODULE: ./src/vuedraggable.js
+
+
+
+
+
+
+
+
+
+
+
+
+function buildAttribute(object, propName, value) {
+  if (value === undefined) {
+    return object;
+  }
+
+  object = object || {};
+  object[propName] = value;
+  return object;
+}
+
+function computeVmIndex(vnodes, element) {
+  return vnodes.map(function (elt) {
+    return elt.elm;
+  }).indexOf(element);
+}
+
+function _computeIndexes(slots, children, isTransition, footerOffset) {
+  if (!slots) {
+    return [];
+  }
+
+  var elmFromNodes = slots.map(function (elt) {
+    return elt.elm;
+  });
+  var footerIndex = children.length - footerOffset;
+
+  var rawIndexes = _toConsumableArray(children).map(function (elt, idx) {
+    return idx >= footerIndex ? elmFromNodes.length : elmFromNodes.indexOf(elt);
+  });
+
+  return isTransition ? rawIndexes.filter(function (ind) {
+    return ind !== -1;
+  }) : rawIndexes;
+}
+
+function emit(evtName, evtData) {
+  var _this = this;
+
+  this.$nextTick(function () {
+    return _this.$emit(evtName.toLowerCase(), evtData);
+  });
+}
+
+function delegateAndEmit(evtName) {
+  var _this2 = this;
+
+  return function (evtData) {
+    if (_this2.realList !== null) {
+      _this2["onDrag" + evtName](evtData);
+    }
+
+    emit.call(_this2, evtName, evtData);
+  };
+}
+
+function isTransitionName(name) {
+  return ["transition-group", "TransitionGroup"].includes(name);
+}
+
+function vuedraggable_isTransition(slots) {
+  if (!slots || slots.length !== 1) {
+    return false;
+  }
+
+  var _slots = _slicedToArray(slots, 1),
+      componentOptions = _slots[0].componentOptions;
+
+  if (!componentOptions) {
+    return false;
+  }
+
+  return isTransitionName(componentOptions.tag);
+}
+
+function getSlot(slot, scopedSlot, key) {
+  return slot[key] || (scopedSlot[key] ? scopedSlot[key]() : undefined);
+}
+
+function computeChildrenAndOffsets(children, slot, scopedSlot) {
+  var headerOffset = 0;
+  var footerOffset = 0;
+  var header = getSlot(slot, scopedSlot, "header");
+
+  if (header) {
+    headerOffset = header.length;
+    children = children ? [].concat(_toConsumableArray(header), _toConsumableArray(children)) : _toConsumableArray(header);
+  }
+
+  var footer = getSlot(slot, scopedSlot, "footer");
+
+  if (footer) {
+    footerOffset = footer.length;
+    children = children ? [].concat(_toConsumableArray(children), _toConsumableArray(footer)) : _toConsumableArray(footer);
+  }
+
+  return {
+    children: children,
+    headerOffset: headerOffset,
+    footerOffset: footerOffset
+  };
+}
+
+function getComponentAttributes($attrs, componentData) {
+  var attributes = null;
+
+  var update = function update(name, value) {
+    attributes = buildAttribute(attributes, name, value);
+  };
+
+  var attrs = Object.keys($attrs).filter(function (key) {
+    return key === "id" || key.startsWith("data-");
+  }).reduce(function (res, key) {
+    res[key] = $attrs[key];
+    return res;
+  }, {});
+  update("attrs", attrs);
+
+  if (!componentData) {
+    return attributes;
+  }
+
+  var on = componentData.on,
+      props = componentData.props,
+      componentDataAttrs = componentData.attrs;
+  update("on", on);
+  update("props", props);
+  Object.assign(attributes.attrs, componentDataAttrs);
+  return attributes;
+}
+
+var eventsListened = ["Start", "Add", "Remove", "Update", "End"];
+var eventsToEmit = ["Choose", "Unchoose", "Sort", "Filter", "Clone"];
+var readonlyProperties = ["Move"].concat(eventsListened, eventsToEmit).map(function (evt) {
+  return "on" + evt;
+});
+var draggingElement = null;
+var props = {
+  options: Object,
+  list: {
+    type: Array,
+    required: false,
+    default: null
+  },
+  value: {
+    type: Array,
+    required: false,
+    default: null
+  },
+  noTransitionOnDrag: {
+    type: Boolean,
+    default: false
+  },
+  clone: {
+    type: Function,
+    default: function _default(original) {
+      return original;
+    }
+  },
+  element: {
+    type: String,
+    default: "div"
+  },
+  tag: {
+    type: String,
+    default: null
+  },
+  move: {
+    type: Function,
+    default: null
+  },
+  componentData: {
+    type: Object,
+    required: false,
+    default: null
+  }
+};
+var draggableComponent = {
+  name: "draggable",
+  inheritAttrs: false,
+  props: props,
+  data: function data() {
+    return {
+      transitionMode: false,
+      noneFunctionalComponentMode: false
+    };
+  },
+  render: function render(h) {
+    var slots = this.$slots.default;
+    this.transitionMode = vuedraggable_isTransition(slots);
+
+    var _computeChildrenAndOf = computeChildrenAndOffsets(slots, this.$slots, this.$scopedSlots),
+        children = _computeChildrenAndOf.children,
+        headerOffset = _computeChildrenAndOf.headerOffset,
+        footerOffset = _computeChildrenAndOf.footerOffset;
+
+    this.headerOffset = headerOffset;
+    this.footerOffset = footerOffset;
+    var attributes = getComponentAttributes(this.$attrs, this.componentData);
+    return h(this.getTag(), attributes, children);
+  },
+  created: function created() {
+    if (this.list !== null && this.value !== null) {
+      helper["b" /* console */].error("Value and list props are mutually exclusive! Please set one or another.");
+    }
+
+    if (this.element !== "div") {
+      helper["b" /* console */].warn("Element props is deprecated please use tag props instead. See https://github.com/SortableJS/Vue.Draggable/blob/master/documentation/migrate.md#element-props");
+    }
+
+    if (this.options !== undefined) {
+      helper["b" /* console */].warn("Options props is deprecated, add sortable options directly as vue.draggable item, or use v-bind. See https://github.com/SortableJS/Vue.Draggable/blob/master/documentation/migrate.md#options-props");
+    }
+  },
+  mounted: function mounted() {
+    var _this3 = this;
+
+    this.noneFunctionalComponentMode = this.getTag().toLowerCase() !== this.$el.nodeName.toLowerCase() && !this.getIsFunctional();
+
+    if (this.noneFunctionalComponentMode && this.transitionMode) {
+      throw new Error("Transition-group inside component is not supported. Please alter tag value or remove transition-group. Current tag value: ".concat(this.getTag()));
+    }
+
+    var optionsAdded = {};
+    eventsListened.forEach(function (elt) {
+      optionsAdded["on" + elt] = delegateAndEmit.call(_this3, elt);
+    });
+    eventsToEmit.forEach(function (elt) {
+      optionsAdded["on" + elt] = emit.bind(_this3, elt);
+    });
+    var attributes = Object.keys(this.$attrs).reduce(function (res, key) {
+      res[Object(helper["a" /* camelize */])(key)] = _this3.$attrs[key];
+      return res;
+    }, {});
+    var options = Object.assign({}, this.options, attributes, optionsAdded, {
+      onMove: function onMove(evt, originalEvent) {
+        return _this3.onDragMove(evt, originalEvent);
+      }
+    });
+    !("draggable" in options) && (options.draggable = ">*");
+    this._sortable = new external_commonjs_sortablejs_commonjs2_sortablejs_amd_sortablejs_root_Sortable_default.a(this.rootContainer, options);
+    this.computeIndexes();
+  },
+  beforeDestroy: function beforeDestroy() {
+    if (this._sortable !== undefined) this._sortable.destroy();
+  },
+  computed: {
+    rootContainer: function rootContainer() {
+      return this.transitionMode ? this.$el.children[0] : this.$el;
+    },
+    realList: function realList() {
+      return this.list ? this.list : this.value;
+    }
+  },
+  watch: {
+    options: {
+      handler: function handler(newOptionValue) {
+        this.updateOptions(newOptionValue);
+      },
+      deep: true
+    },
+    $attrs: {
+      handler: function handler(newOptionValue) {
+        this.updateOptions(newOptionValue);
+      },
+      deep: true
+    },
+    realList: function realList() {
+      this.computeIndexes();
+    }
+  },
+  methods: {
+    getIsFunctional: function getIsFunctional() {
+      var fnOptions = this._vnode.fnOptions;
+      return fnOptions && fnOptions.functional;
+    },
+    getTag: function getTag() {
+      return this.tag || this.element;
+    },
+    updateOptions: function updateOptions(newOptionValue) {
+      for (var property in newOptionValue) {
+        var value = Object(helper["a" /* camelize */])(property);
+
+        if (readonlyProperties.indexOf(value) === -1) {
+          this._sortable.option(value, newOptionValue[property]);
+        }
+      }
+    },
+    getChildrenNodes: function getChildrenNodes() {
+      if (this.noneFunctionalComponentMode) {
+        return this.$children[0].$slots.default;
+      }
+
+      var rawNodes = this.$slots.default;
+      return this.transitionMode ? rawNodes[0].child.$slots.default : rawNodes;
+    },
+    computeIndexes: function computeIndexes() {
+      var _this4 = this;
+
+      this.$nextTick(function () {
+        _this4.visibleIndexes = _computeIndexes(_this4.getChildrenNodes(), _this4.rootContainer.children, _this4.transitionMode, _this4.footerOffset);
+      });
+    },
+    getUnderlyingVm: function getUnderlyingVm(htmlElt) {
+      var index = computeVmIndex(this.getChildrenNodes() || [], htmlElt);
+
+      if (index === -1) {
+        //Edge case during move callback: related element might be
+        //an element different from collection
+        return null;
+      }
+
+      var element = this.realList[index];
+      return {
+        index: index,
+        element: element
+      };
+    },
+    getUnderlyingPotencialDraggableComponent: function getUnderlyingPotencialDraggableComponent(_ref) {
+      var vue = _ref.__vue__;
+
+      if (!vue || !vue.$options || !isTransitionName(vue.$options._componentTag)) {
+        if (!("realList" in vue) && vue.$children.length === 1 && "realList" in vue.$children[0]) return vue.$children[0];
+        return vue;
+      }
+
+      return vue.$parent;
+    },
+    emitChanges: function emitChanges(evt) {
+      var _this5 = this;
+
+      this.$nextTick(function () {
+        _this5.$emit("change", evt);
+      });
+    },
+    alterList: function alterList(onList) {
+      if (this.list) {
+        onList(this.list);
+        return;
+      }
+
+      var newList = _toConsumableArray(this.value);
+
+      onList(newList);
+      this.$emit("input", newList);
+    },
+    spliceList: function spliceList() {
+      var _arguments = arguments;
+
+      var spliceList = function spliceList(list) {
+        return list.splice.apply(list, _toConsumableArray(_arguments));
+      };
+
+      this.alterList(spliceList);
+    },
+    updatePosition: function updatePosition(oldIndex, newIndex) {
+      var updatePosition = function updatePosition(list) {
+        return list.splice(newIndex, 0, list.splice(oldIndex, 1)[0]);
+      };
+
+      this.alterList(updatePosition);
+    },
+    getRelatedContextFromMoveEvent: function getRelatedContextFromMoveEvent(_ref2) {
+      var to = _ref2.to,
+          related = _ref2.related;
+      var component = this.getUnderlyingPotencialDraggableComponent(to);
+
+      if (!component) {
+        return {
+          component: component
+        };
+      }
+
+      var list = component.realList;
+      var context = {
+        list: list,
+        component: component
+      };
+
+      if (to !== related && list && component.getUnderlyingVm) {
+        var destination = component.getUnderlyingVm(related);
+
+        if (destination) {
+          return Object.assign(destination, context);
+        }
+      }
+
+      return context;
+    },
+    getVmIndex: function getVmIndex(domIndex) {
+      var indexes = this.visibleIndexes;
+      var numberIndexes = indexes.length;
+      return domIndex > numberIndexes - 1 ? numberIndexes : indexes[domIndex];
+    },
+    getComponent: function getComponent() {
+      return this.$slots.default[0].componentInstance;
+    },
+    resetTransitionData: function resetTransitionData(index) {
+      if (!this.noTransitionOnDrag || !this.transitionMode) {
+        return;
+      }
+
+      var nodes = this.getChildrenNodes();
+      nodes[index].data = null;
+      var transitionContainer = this.getComponent();
+      transitionContainer.children = [];
+      transitionContainer.kept = undefined;
+    },
+    onDragStart: function onDragStart(evt) {
+      this.context = this.getUnderlyingVm(evt.item);
+      evt.item._underlying_vm_ = this.clone(this.context.element);
+      draggingElement = evt.item;
+    },
+    onDragAdd: function onDragAdd(evt) {
+      var element = evt.item._underlying_vm_;
+
+      if (element === undefined) {
+        return;
+      }
+
+      Object(helper["d" /* removeNode */])(evt.item);
+      var newIndex = this.getVmIndex(evt.newIndex);
+      this.spliceList(newIndex, 0, element);
+      this.computeIndexes();
+      var added = {
+        element: element,
+        newIndex: newIndex
+      };
+      this.emitChanges({
+        added: added
+      });
+    },
+    onDragRemove: function onDragRemove(evt) {
+      Object(helper["c" /* insertNodeAt */])(this.rootContainer, evt.item, evt.oldIndex);
+
+      if (evt.pullMode === "clone") {
+        Object(helper["d" /* removeNode */])(evt.clone);
+        return;
+      }
+
+      var oldIndex = this.context.index;
+      this.spliceList(oldIndex, 1);
+      var removed = {
+        element: this.context.element,
+        oldIndex: oldIndex
+      };
+      this.resetTransitionData(oldIndex);
+      this.emitChanges({
+        removed: removed
+      });
+    },
+    onDragUpdate: function onDragUpdate(evt) {
+      Object(helper["d" /* removeNode */])(evt.item);
+      Object(helper["c" /* insertNodeAt */])(evt.from, evt.item, evt.oldIndex);
+      var oldIndex = this.context.index;
+      var newIndex = this.getVmIndex(evt.newIndex);
+      this.updatePosition(oldIndex, newIndex);
+      var moved = {
+        element: this.context.element,
+        oldIndex: oldIndex,
+        newIndex: newIndex
+      };
+      this.emitChanges({
+        moved: moved
+      });
+    },
+    updateProperty: function updateProperty(evt, propertyName) {
+      evt.hasOwnProperty(propertyName) && (evt[propertyName] += this.headerOffset);
+    },
+    computeFutureIndex: function computeFutureIndex(relatedContext, evt) {
+      if (!relatedContext.element) {
+        return 0;
+      }
+
+      var domChildren = _toConsumableArray(evt.to.children).filter(function (el) {
+        return el.style["display"] !== "none";
+      });
+
+      var currentDOMIndex = domChildren.indexOf(evt.related);
+      var currentIndex = relatedContext.component.getVmIndex(currentDOMIndex);
+      var draggedInList = domChildren.indexOf(draggingElement) !== -1;
+      return draggedInList || !evt.willInsertAfter ? currentIndex : currentIndex + 1;
+    },
+    onDragMove: function onDragMove(evt, originalEvent) {
+      var onMove = this.move;
+
+      if (!onMove || !this.realList) {
+        return true;
+      }
+
+      var relatedContext = this.getRelatedContextFromMoveEvent(evt);
+      var draggedContext = this.context;
+      var futureIndex = this.computeFutureIndex(relatedContext, evt);
+      Object.assign(draggedContext, {
+        futureIndex: futureIndex
+      });
+      var sendEvt = Object.assign({}, evt, {
+        relatedContext: relatedContext,
+        draggedContext: draggedContext
+      });
+      return onMove(sendEvt, originalEvent);
+    },
+    onDragEnd: function onDragEnd() {
+      this.computeIndexes();
+      draggingElement = null;
+    }
+  }
+};
+
+if (typeof window !== "undefined" && "Vue" in window) {
+  window.Vue.component("draggable", draggableComponent);
+}
+
+/* harmony default export */ var vuedraggable = (draggableComponent);
+// CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
+
+
+/* harmony default export */ var entry_lib = __webpack_exports__["default"] = (vuedraggable);
+
+
+
+/***/ })
+
+/******/ })["default"];
+//# sourceMappingURL=vuedraggable.common.js.map
 
 /***/ }),
 
@@ -83267,6 +98516,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/components/ListElement.vue":
+/*!************************************************************!*\
+  !*** ./resources/js/components/components/ListElement.vue ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ListElement_vue_vue_type_template_id_178e3f20_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ListElement.vue?vue&type=template&id=178e3f20&scoped=true& */ "./resources/js/components/components/ListElement.vue?vue&type=template&id=178e3f20&scoped=true&");
+/* harmony import */ var _ListElement_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ListElement.vue?vue&type=script&lang=ts& */ "./resources/js/components/components/ListElement.vue?vue&type=script&lang=ts&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ListElement_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ListElement_vue_vue_type_template_id_178e3f20_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ListElement_vue_vue_type_template_id_178e3f20_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "178e3f20",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/components/ListElement.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/components/ListElement.vue?vue&type=script&lang=ts&":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/components/components/ListElement.vue?vue&type=script&lang=ts& ***!
+  \*************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_ts_loader_index_js_ref_5_node_modules_vue_loader_lib_index_js_vue_loader_options_ListElement_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/ts-loader??ref--5!../../../../node_modules/vue-loader/lib??vue-loader-options!./ListElement.vue?vue&type=script&lang=ts& */ "./node_modules/ts-loader/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/components/ListElement.vue?vue&type=script&lang=ts&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_ts_loader_index_js_ref_5_node_modules_vue_loader_lib_index_js_vue_loader_options_ListElement_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/components/ListElement.vue?vue&type=template&id=178e3f20&scoped=true&":
+/*!*******************************************************************************************************!*\
+  !*** ./resources/js/components/components/ListElement.vue?vue&type=template&id=178e3f20&scoped=true& ***!
+  \*******************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ListElement_vue_vue_type_template_id_178e3f20_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./ListElement.vue?vue&type=template&id=178e3f20&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/components/ListElement.vue?vue&type=template&id=178e3f20&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ListElement_vue_vue_type_template_id_178e3f20_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ListElement_vue_vue_type_template_id_178e3f20_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/components/Menu.vue":
 /*!*****************************************************!*\
   !*** ./resources/js/components/components/Menu.vue ***!
@@ -83863,6 +99181,8 @@ vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vuex__WEBPACK_IMPORTED_MODULE_1_
 var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     state: {
         token:  false || localStorage.getItem('token'),
+        tree: null,
+        expand: false,
     },
     getters: {
         getToken: function (state) {
@@ -83873,6 +99193,12 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
                 return true;
             return false;
         },
+        getTree: function (state) {
+            return state.tree;
+        },
+        getExpand: function (state) {
+            return state.expand;
+        }
     },
     mutations: {
         setToken: function (state, token) {
@@ -83882,6 +99208,12 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
         deleteToken: function (state) {
             localStorage.removeItem('token');
             state.token = null;
+        },
+        setTree: function (state, tree) {
+            state.tree = tree;
+        },
+        setExpand: function (state) {
+            state.expand = !state.expand;
         }
     },
     actions: {
@@ -83937,10 +99269,46 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
                                     Authorization: "Bearer " + token
                                 }
                             };
-                            return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('http://localhost:8000/api/auth/logout', { hello: 'world' }, options)];
+                            return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('http://localhost:8000/api/auth/logout', {}, options)];
                         case 1:
                             res = _a.sent();
                             return [2 /*return*/, true];
+                    }
+                });
+            });
+        },
+        downloadTree: function (state) {
+            return __awaiter(this, void 0, void 0, function () {
+                var tree;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0:
+                            tree = state.getters.getTree;
+                            if (tree)
+                                return [2 /*return*/, tree];
+                            return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('//localhost:8000/api/trees')];
+                        case 1:
+                            tree = _a.sent();
+                            return [4 /*yield*/, state.commit('setTree', tree.data)];
+                        case 2:
+                            _a.sent();
+                            return [2 /*return*/, tree.data];
+                    }
+                });
+            });
+        },
+        refresh: function (state) {
+            return __awaiter(this, void 0, void 0, function () {
+                var tree;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0: return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('//localhost:8000/api/trees')];
+                        case 1:
+                            tree = _a.sent();
+                            return [4 /*yield*/, state.commit('setTree', tree.data)];
+                        case 2:
+                            _a.sent();
+                            return [2 /*return*/, tree.data];
                     }
                 });
             });
@@ -83967,6 +99335,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuetify__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vuetify__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var vuetify_dist_vuetify_min_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuetify/dist/vuetify.min.css */ "./node_modules/vuetify/dist/vuetify.min.css");
 /* harmony import */ var vuetify_dist_vuetify_min_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vuetify_dist_vuetify_min_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _mdi_font_css_materialdesignicons_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mdi/font/css/materialdesignicons.css */ "./node_modules/@mdi/font/css/materialdesignicons.css");
+/* harmony import */ var _mdi_font_css_materialdesignicons_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_mdi_font_css_materialdesignicons_css__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 

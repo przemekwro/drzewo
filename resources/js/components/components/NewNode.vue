@@ -6,7 +6,7 @@
             </div>
             <div class="row align-center">
                 <div class="col-6 pa-5">
-                    <v-text-field v-model="name" label="Name"></v-text-field>
+                    <v-text-field v-model="name" :error="nameError.length>0" :error-messages="nameError" label="Name"></v-text-field>
                 </div>
                 <div class="col-6 d-flex justify-center">
                     <v-switch
@@ -15,7 +15,7 @@
                     ></v-switch>
                 </div>
                 <div class="col-9">
-                    <v-select item-value="value" item-text="name" v-model="selectValue" type="radio" :items="exampleList"></v-select>
+                    <v-select item-value="id" :error="selectError.length>0" :error-messages="selectError" :item-text="text" v-model="selectValue" type="radio" :items="paths"></v-select>
                 </div>
                 <div class="col-3 d-flex justify-end">
                     <v-btn @click="addNode">Add</v-btn>
@@ -32,13 +32,54 @@ import state from '../../store'
 import axios from 'axios'
 
 @Component
-export default class Menu extends Vue {
+export default class NewNode extends Vue {
     name='';
-    exampleList=[{name:'null', value: null},{name:'9', value:9},{name:'20', value:20},{name:'23', value:23}];
-    node=true;
-    selectValue='';
+    nameError='';
+    selectValue=null;
+    selectError="";
 
+    node=true;
     result = '';
+    tree = [];
+    paths:Array<Object> = [];
+
+    private text(item:any){
+        let path = ``;
+        item.path.forEach((i:any)=>{
+            path+=` / ${i}`
+        })
+        path+=' /'
+        return path
+    }
+
+
+    private async init (){
+
+        await state.dispatch('downloadTree').then(result=>{
+            this.tree = result
+        })
+        let tree = [...this.tree]
+        let paths =[];
+
+        tree.forEach((item:any)=>{
+            item.path = []
+        })
+
+        this.printNode(tree, []);
+        return tree
+    }
+
+    printNode( tree:any, path:any){
+        if(!tree) return null
+
+        tree.forEach((item: any)=>{
+            item.path=[...path]
+            item.path.push(item.name)
+            this.paths.push(item)
+
+            this.printNode(item.all_children, item.path)
+        });
+    }
 
     get label(){
         if(this.node){
@@ -50,7 +91,11 @@ export default class Menu extends Vue {
     private async addNode(){
         let token  = await state.getters.getToken;
 
-        let asd =  await axios.post('//localhost:8000/api/tree',{
+        if(!this.validateNewNode()){
+            return false
+        }
+
+        await axios.post('//localhost:8000/api/tree',{
             name:this.name,
             is_node:this.node,
             parent_id:this.selectValue,
@@ -58,7 +103,43 @@ export default class Menu extends Vue {
             }).catch(er =>{
                 console.log(er)
         })
-        console.log(asd)
+        await this.refresh();
+
+        this.name='';
+        this.selectValue=null;
+    }
+
+    private async refresh(){
+        let tree = null
+        tree = await state.dispatch('refresh')
+        console.log(tree)
+        tree.forEach((item:any)=>{
+            item.path = []
+        })
+
+        this.printNode(tree, []);
+        return true
+    }
+
+    private validateNewNode(){
+        const regex = new RegExp('^[a-zA-z. ]{3,32}$');
+        if(!regex.test(this.name)){
+            this.nameError="Only letter, length between 3 and 32"
+            return false
+        }
+        if(!this.selectValue){
+            this.selectError='Select parent';
+            return false
+        }
+
+        this.nameError='';
+        this.selectError='';
+
+        return true
+    }
+
+    mounted (){
+        this.init()
     }
 }
 </script>
