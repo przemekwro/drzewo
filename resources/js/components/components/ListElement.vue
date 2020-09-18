@@ -1,21 +1,34 @@
 <template>
-    <div class="pl-5">
-        <div>
+    <div :id="el.id" class="pl-5">
+        <div class="row d-flex align-center">
             <v-btn @click="showTree" :disabled="!hasChild" icon>
                 <v-icon v-if="!show">mdi-chevron-right</v-icon>
                 <v-icon v-else>mdi-chevron-down</v-icon>
             </v-btn>
-            {{ el.name }} {{ date(el.created_at) }}
+            <div class="d-flex align-center">
+                <div class="d-flex mt-6 mr-5">
+                    <v-text-field :error="true" :readonly="!isEdit" :error-messages="nameError" v-model="el.name"
+                                  solo></v-text-field>
+                </div>
+                <div>
+                    <v-btn class="mr-5" @click="editNode">edit</v-btn>
+                    <v-btn @click="deleteNode">Delete</v-btn>
+                </div>
+            </div>
+
+            <v-dialog v-model="deleteNodeConfirm">
+                <DeleteNode :el="el" @deleteNodeConfirm="deleteNode"></DeleteNode>
+            </v-dialog>
         </div>
 
         <v-expand-transition>
             <div v-show="show">
-                <draggable :id="el.id" :list="el.all_children" @add="add" class="dragArea" tag="div" :group="{ name: 'g1' }">
-                    <div v-for="e in el.all_children">
-                        <ListElement :el="e"></ListElement>
-                    </div>
-
-                </draggable>
+                <div>
+                    <draggable :id="el.id" style="width: fit-content" v-bind="options" :list="el.all_children"
+                               @remove="removed" tag="div" :group="{ name: 'g1' }">
+                        <ListElement v-for="e in el.all_children" :key="e.id" :id="e.id" :el="e"></ListElement>
+                    </draggable>
+                </div>
             </div>
         </v-expand-transition>
     </div>
@@ -26,34 +39,33 @@ import draggable from "vuedraggable";
 import Component, {mixins} from "vue-class-component";
 import {Prop, Watch} from "vue-property-decorator";
 import state from '../../store'
+import axios from 'axios'
+import DeleteNode from "./DeleteNode.vue";
 
 @Component({
     components: {
-        draggable,
+        draggable,DeleteNode
     }, name: 'ListElement'
 })
 export default class ListElement extends Vue {
-
-
     @Prop()
     el: any
-    message = '';
+
+    private nameError: string = '';
     private show: boolean = false;
+    private isEdit: boolean = false;
+    private deleteNodeConfirm: boolean = false;
 
-    add(evt:any){
-        console.log(evt.to)
-        console.log(evt.from)
-    }
-
-
-    @Watch('expand')
-    onExpandChanged(val: boolean, oldVal: boolean) {
-        if (oldVal) {
-            this.show = false;
-        } else {
-            this.show = true;
+    get options() {
+        return {
+            group: {
+                name: 'g1',
+                pull: true,
+                put: true,
+            }
         }
     }
+
 
     get expand() {
         return state.getters.getExpand
@@ -64,11 +76,66 @@ export default class ListElement extends Vue {
         return false
     }
 
+    get name() {
+        return this.el.name
+    }
+
+    removed(evt: any) {
+        const data = {'parent_id': evt.to.id}
+
+        axios.put(`//localhost:8000/api/tree/parent/${evt.item.id}`, data)
+    }
+
     showTree() {
         this.show = !this.show
     }
 
-    date (value:any) {
+    validate() {
+        const regex = new RegExp('^[a-zA-z. ]{3,32}$');
+        if (!regex.test(this.el.name)) {
+            this.nameError = "Only letter, length between 3 and 32"
+            return false
+        }
+    }
+
+    editNode() {
+        if (!this.isEdit)
+            return this.isEdit = true
+
+        const options = {'name': this.name}
+
+        axios.put(`//localhost:8000/api/tree/${this.el.id}`, options)
+        this.isEdit = false
+    }
+
+    deleteNode() {
+        return this.deleteNodeConfirm = !this.deleteNodeConfirm;
+
+    }
+
+    async deleteNodeConfirmed() {
+        await axios.delete(`//localhost:8000/api/tree/${this.el.id}`);
+        await state.dispatch('refresh');
+    }
+
+    @Watch('expand')
+    onExpandChanged(val: boolean, oldVal: boolean) {
+        if (oldVal) {
+            this.show = false;
+        } else {
+            this.show = true;
+        }
+    }
+
+    @Watch('name')
+    onNameChanged() {
+        this.nameError = '';
+        setTimeout(() => {
+            this.validate()
+        }, 500)
+    }
+
+    date(value: any) {
         const date = new Date(value)
 
         let day = date.getDate() > 10 ? date.getDate() : `0${date.getDate()}`

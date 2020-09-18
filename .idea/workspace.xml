@@ -21,11 +21,12 @@
   <component name="ChangeListManager">
     <list default="true" id="c858d20f-ede2-4813-8b2f-837786bf5834" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TreeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TreeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/components/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/components/List.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/components/ListElement.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/components/ListElement.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/components/NewNode.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/components/NewNode.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,14 +182,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wronek\Desktop\projekty\drzewo\resources\js" />
+      <recent name="C:\Users\wronek\Desktop\projekty\drzewo" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\wronek\Desktop\projekty\drzewo\resources\js\components\components" />
       <recent name="C:\Users\wronek\Desktop\projekty\drzewo\resources\js\components\views" />
       <recent name="C:\Users\wronek\Desktop\projekty\drzewo\database\migrations" />
-      <recent name="C:\Users\wronek\Desktop\projekty\drzewo" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\wronek\Desktop\projekty\drzewo\resources\js" />
       <recent name="C:\Users\wronek\Desktop\projekty\drzewo" />
     </key>
   </component>
@@ -208,7 +209,8 @@
       <updated>1600174719119</updated>
       <workItem from="1600174720206" duration="10429000" />
       <workItem from="1600241142524" duration="26049000" />
-      <workItem from="1600325225093" duration="29469000" />
+      <workItem from="1600325225093" duration="30070000" />
+      <workItem from="1600415367240" duration="22538000" />
     </task>
     <servers />
   </component>
@@ -252,10 +254,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600176717503" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1600357228527">
+    <state x="616" y="240" key="run.anything.popup" timestamp="1600418419869">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600357228527" />
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600418419869" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1600435952049">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600435952049" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -65,11 +65,11 @@ export default class NewNode extends Vue {
             item.path = []
         })
 
-        this.printNode(tree, []);
+        this.createTree(tree, []);
         return tree
     }
 
-    printNode( tree:any, path:any){
+    createTree( tree:any, path:any){
         if(!tree) return null
 
         tree.forEach((item: any)=>{
@@ -77,7 +77,7 @@ export default class NewNode extends Vue {
             item.path.push(item.name)
             this.paths.push(item)
 
-            this.printNode(item.all_children, item.path)
+            this.createTree(item.all_children, item.path)
         });
     }
 
@@ -117,7 +117,7 @@ export default class NewNode extends Vue {
             item.path = []
         })
 
-        this.printNode(tree, []);
+        this.createTree(tree, []);
         return true
     }
 
