@@ -39,5 +39,4 @@ export default class MainApp extends Vue {
     height: 10vh;
     border-radius: 0px !important;
 }
-
 </style>

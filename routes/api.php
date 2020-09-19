@@ -27,11 +27,15 @@ Route::group(['middleware' => 'api','prefix' => 'auth'], function ($router) {
     Route::post('me', 'AuthController@me');
 });
 
-Route::post('tree','TreeController@store');
+Route::group(['middleware'=>'auth'],function(){
+    Route::post('tree','TreeController@store');
+    Route::put('tree/parent/{id}', 'TreeController@updateParent');
+    Route::put('tree/{id}', 'TreeController@update');
+    Route::delete('tree/{id}', 'TreeController@deleteTree');
+    Route::delete('tree/node/{id}', 'TreeController@deleteNode');
+});
+
 Route::get('tree','TreeController@index');
 Route::get('trees','TreeController@indexWithKids');
-Route::put('tree/parent/{id}', 'TreeController@updateParent');
-Route::put('tree/{id}', 'TreeController@update');
-Route::delete('tree/{id}', 'TreeController@deleteTree');
-Route::delete('tree/node/{id}', 'TreeController@deleteNode');
+
 

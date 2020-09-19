@@ -10,7 +10,7 @@
                     <v-text-field :error="true" :readonly="!isEdit" :error-messages="nameError" v-model="el.name"
                                   solo></v-text-field>
                 </div>
-                <div>
+                <div v-if="isAuthenticated">
                     <v-btn class="mr-5" @click="editNode">edit</v-btn>
                     <v-btn @click="deleteNode">Delete</v-btn>
                 </div>
@@ -24,8 +24,8 @@
         <v-expand-transition>
             <div v-show="show">
                 <div>
-                    <draggable :id="el.id" style="width: fit-content" v-bind="options" :list="el.all_children"
-                               @remove="removed" tag="div" :group="{ name: 'g1' }">
+                    <draggable :id="el.id" v-bind="options" :list="el.all_children"
+                               @remove="removed" tag="div">
                         <ListElement v-for="e in el.all_children" :key="e.id" :id="e.id" :el="e"></ListElement>
                     </draggable>
                 </div>
@@ -56,16 +56,30 @@ export default class ListElement extends Vue {
     private isEdit: boolean = false;
     private deleteNodeConfirm: boolean = false;
 
-    get options() {
+
+    get isAuthenticated(){
+        return state.getters.isAuthenticated;
+    }
+
+    get options(){
         return {
-            group: {
-                name: 'g1',
-                pull: true,
-                put: true,
+            group:{
+                name:'g1',
+                put:()=>{
+                    if(!this.isAuthenticated){
+                        return false
+                    }
+                    return true;
+                },
+                pull:()=>{
+                    if(!this.isAuthenticated){
+                        return false
+                    }
+                    return true;
+                }
             }
         }
     }
-
 
     get expand() {
         return state.getters.getExpand
@@ -80,10 +94,11 @@ export default class ListElement extends Vue {
         return this.el.name
     }
 
-    removed(evt: any) {
-        const data = {'parent_id': evt.to.id}
-
-        axios.put(`//localhost:8000/api/tree/parent/${evt.item.id}`, data)
+    async removed(evt: any) {
+        await state.dispatch('moveNode',{
+            item:evt.item.id,
+            parent_id:evt.to.id,
+        })
     }
 
     showTree() {
@@ -103,19 +118,15 @@ export default class ListElement extends Vue {
             return this.isEdit = true
 
         const options = {'name': this.name}
+        const headers = state.getters.getHeaders
 
-        axios.put(`//localhost:8000/api/tree/${this.el.id}`, options)
+        axios.put(`//localhost:8000/api/tree/${this.el.id}`, options,headers)
         this.isEdit = false
     }
 
     deleteNode() {
         return this.deleteNodeConfirm = !this.deleteNodeConfirm;
 
-    }
-
-    async deleteNodeConfirmed() {
-        await axios.delete(`//localhost:8000/api/tree/${this.el.id}`);
-        await state.dispatch('refresh');
     }
 
     @Watch('expand')

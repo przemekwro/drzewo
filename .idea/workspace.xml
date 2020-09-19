@@ -21,11 +21,22 @@
   <component name="ChangeListManager">
     <list default="true" id="c858d20f-ede2-4813-8b2f-837786bf5834" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TreeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TreeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/jwt.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/jwt.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_15_075746_create_trees_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_15_075746_create_trees_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Main.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Main.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/components/DeleteNode.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/components/DeleteNode.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/components/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/components/List.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/components/ListElement.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/components/ListElement.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/components/Menu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/components/Menu.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/components/NewNode.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/components/NewNode.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/views/Error404.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/views/Error404.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/views/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/router.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -182,14 +193,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\wronek\Desktop\projekty\drzewo\resources\js" />
-      <recent name="C:\Users\wronek\Desktop\projekty\drzewo" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\wronek\Desktop\projekty\drzewo\resources\js\components\components" />
       <recent name="C:\Users\wronek\Desktop\projekty\drzewo\resources\js\components\views" />
       <recent name="C:\Users\wronek\Desktop\projekty\drzewo\database\migrations" />
+      <recent name="C:\Users\wronek\Desktop\projekty\drzewo" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wronek\Desktop\projekty\drzewo\resources\js" />
       <recent name="C:\Users\wronek\Desktop\projekty\drzewo" />
     </key>
   </component>
@@ -211,6 +222,7 @@
       <workItem from="1600241142524" duration="26049000" />
       <workItem from="1600325225093" duration="30070000" />
       <workItem from="1600415367240" duration="22538000" />
+      <workItem from="1600505894547" duration="17188000" />
     </task>
     <servers />
   </component>
@@ -270,11 +282,6 @@
           <url>file://$PROJECT_DIR$/routes/web.php</url>
           <line>18</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/resources/js/components/views/Home.vue</url>
-          <line>13</line>
-          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

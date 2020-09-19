@@ -1,16 +1,24 @@
 <template>
     <div class="container d-flex justify-space-between align-center">
-        <div class="logo text-uppercase">
-            Logo
+        <div class="row d-flex align-center ">
+            <v-img max-height="64px" max-width="64px" src="https://image.flaticon.com/icons/png/512/93/93701.png"></v-img>
+        <div class="ml-5 logo text-uppercase">
+            Tree
+        </div>
         </div>
         <div class="d-flex justify-end">
             <div v-if="!isAuthenticated">
-                <router-link to="/login">
+                <router-link to="/" exact>
+                    <v-btn text>
+                        Home
+                    </v-btn>
+                </router-link>
+                <router-link to="/login" exact>
                     <v-btn text>
                         Login
                     </v-btn>
                 </router-link>
-                <router-link to="/register">
+                <router-link to="/register" exact>
                     <v-btn text>
                         Register
                     </v-btn>

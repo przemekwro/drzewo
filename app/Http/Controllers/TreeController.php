@@ -17,7 +17,6 @@ class TreeController extends Controller
         Auth::user($request->bearerToken());
         return Tree::create([
             'name'=>$request->name,
-            'is_node'=>$request->is_node,
             'parent_id'=>$request->parent_id,
         ]);
     }

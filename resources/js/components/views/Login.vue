@@ -39,7 +39,7 @@ export default class Login extends Vue {
             return false
         }
         this.loginError='';
-        this.$router.push({name:'Home'});
+        await this.$router.push({name:'Home'});
     }
 }
 </script>

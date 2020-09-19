@@ -1,29 +1,25 @@
 <template>
-    <div elevation="0" class="error404 d-flex justify-center align-center">
+    <v-card elevation="0" class="error404 d-flex justify-center align-center mt-10 pa-10 pt-16 pb-16">
         <div>
-            <div class="">
+            <div class="pa-0">
                 <h1>Error 404</h1>
             </div>
-            <div class="">
-                <h5>Not found</h5>
+            <div class="pa-0">
+                <h5 cla>Not found</h5>
             </div>
         </div>
-    </div>
+    </v-card>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import {Component} from "vue-property-decorator";
+import Component from "vue-class-component";
 
 @Component
-export default class Login extends Vue {
-    name = "Login";
-    email = '';
-    password = '';
+export default class Error404 extends Vue {
 
-    login() {
-        this.email = '';
-        this.password = '';
+    mounted(){
+        console.log('component error')
     }
 }
 </script>

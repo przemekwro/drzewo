@@ -17,7 +17,6 @@ class CreateTreesTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name');
-            $table->boolean('is_node');
             $table->unsignedBigInteger('parent_id')->nullable();
             $table->foreign('parent_id')->references('id')->on('Trees')->onDelete('cascade');
         });

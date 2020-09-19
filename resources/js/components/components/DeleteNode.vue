@@ -33,10 +33,11 @@ export default class ListElement extends Vue {
     @Prop()
     el: any
 
-    removed(evt: any) {
+    async removed(evt: any) {
         const data = {'parent_id': evt.to.id}
+        const headers = state.getters.getHeaders;
 
-        axios.put(`//localhost:8000/api/tree/parent/${evt.item.id}`, data)
+        await axios.put(`//localhost:8000/api/tree/parent/${evt.item.id}`, data, headers)
     }
 
     cancelDelete(){
@@ -44,15 +45,22 @@ export default class ListElement extends Vue {
     }
 
     async deleteNode() {
-        await axios.delete(`//localhost:8000/api/tree/${this.el.id}`);
-        this.refresh()
+        const headers = state.getters.getHeaders;
+        await axios.delete(`//localhost:8000/api/tree/${this.el.id}`,headers);
+        await this.refresh()
     }
+
     async deleteOnlyNode() {
-        await axios.delete(`//localhost:8000/api/tree/node/${this.el.id}`);
+        const headers = state.getters.getHeaders;
+        await axios.delete(`//localhost:8000/api/tree/node/${this.el.id}`,headers);
         this.refresh()
     }
+
+
+
     refresh(){
-        state.dispatch('refresh');
+        state.dispatch('refreshTree');
+        state.commit('setRemoveAction',true);
     }
 };
 </script>

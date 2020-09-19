@@ -18,7 +18,7 @@
             </div>
         </div>
         <div v-if="loaded">
-            <draggable :id="tree.id" group="g1" :list="tree[0].all_children">
+            <draggable v-bind="options" :disable="!isAuthenticated" @remove="removed" :id="tree[0].id" :list="tree[0].all_children">
                 <div v-for="el in tree[0].all_children" :key="el.id" :id="el.id">
                     <ListElement class="pa-5" :el="el"/>
                 </div>
@@ -44,6 +44,38 @@ import axios from "axios";
 export default class List extends Vue {
     buttons = 0
     loaded = false;
+
+    get options(){
+        return {
+            group:{
+                name:'g1',
+                put:()=>{
+                    if(!this.isAuthenticated){
+                        return false
+                    }
+                    return true;
+                },
+                pull:()=>{
+                      if(!this.isAuthenticated){
+                          return false
+                      }
+                      return true;
+                },
+                disabled:this.isAuthenticated
+            }
+        }
+    }
+
+    get isAuthenticated(){
+        return state.getters.isAuthenticated;
+    }
+
+    async removed(evt: any) {
+        await state.dispatch('moveNode',{
+            item:evt.item.id,
+            parent_id:evt.to.id,
+        })
+    }
 
     get tree() {
         return state.getters.getTree
@@ -100,7 +132,6 @@ export default class List extends Vue {
 
     async init() {
         await state.dispatch('downloadTree')
-        console.log(this.tree)
         await this.sortTreeAscending(this.tree[0].all_children)
         this.loaded = true
     }

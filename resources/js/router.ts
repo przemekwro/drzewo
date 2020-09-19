@@ -15,7 +15,7 @@ const routes=[
         path: '/',
         component:Home,
         meta:{
-            requireAuth:true,
+            requireAuth:false,
         },
     },
     {
@@ -38,19 +38,13 @@ const routes=[
         path: '*',
         name:'404',
         component: Error404,
-    }
+    },
 ]
 
 
 const router = new VueRouter({
     routes,
     mode: 'history'
-})
-
-router.beforeEach(function (to, from, next){
-    if (to.meta.requireAuth === true && !state.getters.isAuthenticated) next({ name: 'Login' })
-    else if(to.meta.requireAuth === false && state.getters.isAuthenticated) next({name:'Home'})
-    else next()
 })
 
 export default router;

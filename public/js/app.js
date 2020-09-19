@@ -14907,7 +14907,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.v-application--wrap{\n    background: #c9c9c9;\n}\n.content{\n    max-width: 1100px;\n}\n.menu {\n    height: 10vh;\n    border-radius: 0px !important;\n}\n\n", ""]);
+exports.push([module.i, "\n.v-application--wrap{\n    background: #c9c9c9;\n}\n.content{\n    max-width: 1100px;\n}\n.menu {\n    height: 10vh;\n    border-radius: 0px !important;\n}\n", ""]);
 
 // exports
 
@@ -29887,20 +29887,37 @@ var ListElement = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     ListElement.prototype.removed = function (evt) {
-        var data = { 'parent_id': evt.to.id };
-        axios__WEBPACK_IMPORTED_MODULE_5___default.a.put("//localhost:8000/api/tree/parent/" + evt.item.id, data);
+        return __awaiter(this, void 0, void 0, function () {
+            var data, headers;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        data = { 'parent_id': evt.to.id };
+                        headers = _store__WEBPACK_IMPORTED_MODULE_4__["default"].getters.getHeaders;
+                        return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_5___default.a.put("//localhost:8000/api/tree/parent/" + evt.item.id, data, headers)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
     };
     ListElement.prototype.cancelDelete = function () {
         this.$emit('deleteNodeConfirm', false);
     };
     ListElement.prototype.deleteNode = function () {
         return __awaiter(this, void 0, void 0, function () {
+            var headers;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_5___default.a.delete("//localhost:8000/api/tree/" + this.el.id)];
+                    case 0:
+                        headers = _store__WEBPACK_IMPORTED_MODULE_4__["default"].getters.getHeaders;
+                        return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_5___default.a.delete("//localhost:8000/api/tree/" + this.el.id, headers)];
                     case 1:
                         _a.sent();
-                        this.refresh();
+                        return [4 /*yield*/, this.refresh()];
+                    case 2:
+                        _a.sent();
                         return [2 /*return*/];
                 }
             });
@@ -29908,9 +29925,12 @@ var ListElement = /** @class */ (function (_super) {
     };
     ListElement.prototype.deleteOnlyNode = function () {
         return __awaiter(this, void 0, void 0, function () {
+            var headers;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_5___default.a.delete("//localhost:8000/api/tree/node/" + this.el.id)];
+                    case 0:
+                        headers = _store__WEBPACK_IMPORTED_MODULE_4__["default"].getters.getHeaders;
+                        return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_5___default.a.delete("//localhost:8000/api/tree/node/" + this.el.id, headers)];
                     case 1:
                         _a.sent();
                         this.refresh();
@@ -29920,7 +29940,8 @@ var ListElement = /** @class */ (function (_super) {
         });
     };
     ListElement.prototype.refresh = function () {
-        _store__WEBPACK_IMPORTED_MODULE_4__["default"].dispatch('refresh');
+        _store__WEBPACK_IMPORTED_MODULE_4__["default"].dispatch('refreshTree');
+        _store__WEBPACK_IMPORTED_MODULE_4__["default"].commit('setRemoveAction', true);
     };
     __decorate([
         Object(vue_property_decorator__WEBPACK_IMPORTED_MODULE_3__["Prop"])()
@@ -30025,6 +30046,53 @@ var List = /** @class */ (function (_super) {
         _this.loaded = false;
         return _this;
     }
+    Object.defineProperty(List.prototype, "options", {
+        get: function () {
+            var _this = this;
+            return {
+                group: {
+                    name: 'g1',
+                    put: function () {
+                        if (!_this.isAuthenticated) {
+                            return false;
+                        }
+                        return true;
+                    },
+                    pull: function () {
+                        if (!_this.isAuthenticated) {
+                            return false;
+                        }
+                        return true;
+                    },
+                    disabled: this.isAuthenticated
+                }
+            };
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(List.prototype, "isAuthenticated", {
+        get: function () {
+            return _store__WEBPACK_IMPORTED_MODULE_4__["default"].getters.isAuthenticated;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    List.prototype.removed = function (evt) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, _store__WEBPACK_IMPORTED_MODULE_4__["default"].dispatch('moveNode', {
+                            item: evt.item.id,
+                            parent_id: evt.to.id,
+                        })];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
     Object.defineProperty(List.prototype, "tree", {
         get: function () {
             return _store__WEBPACK_IMPORTED_MODULE_4__["default"].getters.getTree;
@@ -30091,7 +30159,6 @@ var List = /** @class */ (function (_super) {
                     case 0: return [4 /*yield*/, _store__WEBPACK_IMPORTED_MODULE_4__["default"].dispatch('downloadTree')];
                     case 1:
                         _a.sent();
-                        console.log(this.tree);
                         return [4 /*yield*/, this.sortTreeAscending(this.tree[0].all_children)];
                     case 2:
                         _a.sent();
@@ -30211,13 +30278,31 @@ var ListElement = /** @class */ (function (_super) {
         _this.deleteNodeConfirm = false;
         return _this;
     }
+    Object.defineProperty(ListElement.prototype, "isAuthenticated", {
+        get: function () {
+            return _store__WEBPACK_IMPORTED_MODULE_4__["default"].getters.isAuthenticated;
+        },
+        enumerable: false,
+        configurable: true
+    });
     Object.defineProperty(ListElement.prototype, "options", {
         get: function () {
+            var _this = this;
             return {
                 group: {
                     name: 'g1',
-                    pull: true,
-                    put: true,
+                    put: function () {
+                        if (!_this.isAuthenticated) {
+                            return false;
+                        }
+                        return true;
+                    },
+                    pull: function () {
+                        if (!_this.isAuthenticated) {
+                            return false;
+                        }
+                        return true;
+                    }
                 }
             };
         },
@@ -30248,8 +30333,19 @@ var ListElement = /** @class */ (function (_super) {
         configurable: true
     });
     ListElement.prototype.removed = function (evt) {
-        var data = { 'parent_id': evt.to.id };
-        axios__WEBPACK_IMPORTED_MODULE_5___default.a.put("//localhost:8000/api/tree/parent/" + evt.item.id, data);
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, _store__WEBPACK_IMPORTED_MODULE_4__["default"].dispatch('moveNode', {
+                            item: evt.item.id,
+                            parent_id: evt.to.id,
+                        })];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
     };
     ListElement.prototype.showTree = function () {
         this.show = !this.show;
@@ -30265,26 +30361,12 @@ var ListElement = /** @class */ (function (_super) {
         if (!this.isEdit)
             return this.isEdit = true;
         var options = { 'name': this.name };
-        axios__WEBPACK_IMPORTED_MODULE_5___default.a.put("//localhost:8000/api/tree/" + this.el.id, options);
+        var headers = _store__WEBPACK_IMPORTED_MODULE_4__["default"].getters.getHeaders;
+        axios__WEBPACK_IMPORTED_MODULE_5___default.a.put("//localhost:8000/api/tree/" + this.el.id, options, headers);
         this.isEdit = false;
     };
     ListElement.prototype.deleteNode = function () {
         return this.deleteNodeConfirm = !this.deleteNodeConfirm;
-    };
-    ListElement.prototype.deleteNodeConfirmed = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_5___default.a.delete("//localhost:8000/api/tree/" + this.el.id)];
-                    case 1:
-                        _a.sent();
-                        return [4 /*yield*/, _store__WEBPACK_IMPORTED_MODULE_4__["default"].dispatch('refresh')];
-                    case 2:
-                        _a.sent();
-                        return [2 /*return*/];
-                }
-            });
-        });
     };
     ListElement.prototype.onExpandChanged = function (val, oldVal) {
         if (oldVal) {
@@ -30411,6 +30493,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../store */ "./resources/js/store.ts");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var vue_property_decorator__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-property-decorator */ "./node_modules/vue-property-decorator/lib/vue-property-decorator.js");
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -30477,6 +30560,7 @@ var __spreadArrays = (undefined && undefined.__spreadArrays) || function () {
 
 
 
+
 var NewNode = /** @class */ (function (_super) {
     __extends(NewNode, _super);
     function NewNode() {
@@ -30491,35 +30575,61 @@ var NewNode = /** @class */ (function (_super) {
         _this.paths = [];
         return _this;
     }
+    Object.defineProperty(NewNode.prototype, "wasRemoved", {
+        get: function () {
+            return _store__WEBPACK_IMPORTED_MODULE_2__["default"].getters.getRemoveAction;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(NewNode.prototype, "isAuthenticated", {
+        get: function () {
+            return _store__WEBPACK_IMPORTED_MODULE_2__["default"].getters.isAuthenticated;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(NewNode.prototype, "label", {
+        get: function () {
+            if (this.node) {
+                return 'Node';
+            }
+            return 'Leaf';
+        },
+        enumerable: false,
+        configurable: true
+    });
     NewNode.prototype.text = function (item) {
         var path = "";
         item.path.forEach(function (i) {
-            path += " / " + i;
+            path += i + "/";
         });
-        path += ' /';
         return path;
     };
     NewNode.prototype.init = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var tree, paths;
-            var _this = this;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, _store__WEBPACK_IMPORTED_MODULE_2__["default"].dispatch('downloadTree').then(function (result) {
-                            _this.tree = result;
-                        })];
+            var _a;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        this.paths = [];
+                        _a = this;
+                        return [4 /*yield*/, _store__WEBPACK_IMPORTED_MODULE_2__["default"].dispatch('refreshTree')];
                     case 1:
-                        _a.sent();
-                        tree = __spreadArrays(this.tree);
-                        paths = [];
-                        tree.forEach(function (item) {
-                            item.path = [];
-                        });
-                        this.createTree(tree, []);
-                        return [2 /*return*/, tree];
+                        _a.tree = _b.sent();
+                        this.prepareTree();
+                        return [2 /*return*/];
                 }
             });
         });
+    };
+    NewNode.prototype.prepareTree = function () {
+        var tree = __spreadArrays(this.tree);
+        tree.forEach(function (item) {
+            item.path = [];
+        });
+        this.createTree(tree, []);
+        return true;
     };
     NewNode.prototype.createTree = function (tree, path) {
         var _this = this;
@@ -30532,63 +30642,40 @@ var NewNode = /** @class */ (function (_super) {
             _this.createTree(item.all_children, item.path);
         });
     };
-    Object.defineProperty(NewNode.prototype, "label", {
-        get: function () {
-            if (this.node) {
-                return 'Node';
-            }
-            return 'Leaf';
-        },
-        enumerable: false,
-        configurable: true
-    });
     NewNode.prototype.addNode = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var token;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, _store__WEBPACK_IMPORTED_MODULE_2__["default"].getters.getToken];
-                    case 1:
-                        token = _a.sent();
-                        if (!this.validateNewNode()) {
-                            return [2 /*return*/, false];
-                        }
-                        return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_3___default.a.post('//localhost:8000/api/tree', {
-                                name: this.name,
-                                is_node: this.node,
-                                parent_id: this.selectValue,
-                                Authorization: "Bearer " + token
-                            }).catch(function (er) {
-                                console.log(er);
-                            })];
-                    case 2:
-                        _a.sent();
-                        return [4 /*yield*/, this.refresh()];
-                    case 3:
-                        _a.sent();
-                        this.name = '';
-                        this.selectValue = null;
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    NewNode.prototype.refresh = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var tree;
+            var headers;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        tree = null;
-                        return [4 /*yield*/, _store__WEBPACK_IMPORTED_MODULE_2__["default"].dispatch('refresh')];
+                        if (!this.isAuthenticated) {
+                            return [2 /*return*/, false];
+                        }
+                        if (!this.validateNewNode()) {
+                            return [2 /*return*/, false];
+                        }
+                        return [4 /*yield*/, _store__WEBPACK_IMPORTED_MODULE_2__["default"].getters.getHeaders];
                     case 1:
-                        tree = _a.sent();
-                        console.log(tree);
-                        tree.forEach(function (item) {
-                            item.path = [];
-                        });
-                        this.createTree(tree, []);
-                        return [2 /*return*/, true];
+                        headers = _a.sent();
+                        return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_3___default.a.post('//localhost:8000/api/tree', {
+                                name: this.name,
+                                parent_id: this.selectValue,
+                            }, headers).catch(function (er) {
+                                console.log(er);
+                            })
+                            //odswiez
+                        ];
+                    case 2:
+                        _a.sent();
+                        //odswiez
+                        return [4 /*yield*/, this.init()];
+                    case 3:
+                        //odswiez
+                        _a.sent();
+                        //wyczysc
+                        this.name = '';
+                        this.selectValue = null;
+                        return [2 /*return*/];
                 }
             });
         });
@@ -30607,9 +30694,28 @@ var NewNode = /** @class */ (function (_super) {
         this.selectError = '';
         return true;
     };
+    NewNode.prototype.onWasRemovedChange = function (newValue, oldValue) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (!newValue) return [3 /*break*/, 2];
+                        return [4 /*yield*/, this.init()];
+                    case 1:
+                        _a.sent();
+                        _store__WEBPACK_IMPORTED_MODULE_2__["default"].commit('setRemoveAction', false);
+                        _a.label = 2;
+                    case 2: return [2 /*return*/];
+                }
+            });
+        });
+    };
     NewNode.prototype.mounted = function () {
         this.init();
     };
+    __decorate([
+        Object(vue_property_decorator__WEBPACK_IMPORTED_MODULE_4__["Watch"])('wasRemoved')
+    ], NewNode.prototype, "onWasRemovedChange", null);
     NewNode = __decorate([
         vue_class_component__WEBPACK_IMPORTED_MODULE_1___default.a
     ], NewNode);
@@ -30630,7 +30736,8 @@ var NewNode = /** @class */ (function (_super) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
-/* harmony import */ var vue_property_decorator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-property-decorator */ "./node_modules/vue-property-decorator/lib/vue-property-decorator.js");
+/* harmony import */ var vue_class_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-class-component */ "./node_modules/vue-class-component/dist/vue-class-component.common.js");
+/* harmony import */ var vue_class_component__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_class_component__WEBPACK_IMPORTED_MODULE_1__);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -30652,25 +30759,20 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 };
 
 
-var Login = /** @class */ (function (_super) {
-    __extends(Login, _super);
-    function Login() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.name = "Login";
-        _this.email = '';
-        _this.password = '';
-        return _this;
+var Error404 = /** @class */ (function (_super) {
+    __extends(Error404, _super);
+    function Error404() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
-    Login.prototype.login = function () {
-        this.email = '';
-        this.password = '';
+    Error404.prototype.mounted = function () {
+        console.log('component error');
     };
-    Login = __decorate([
-        vue_property_decorator__WEBPACK_IMPORTED_MODULE_1__["Component"]
-    ], Login);
-    return Login;
+    Error404 = __decorate([
+        vue_class_component__WEBPACK_IMPORTED_MODULE_1___default.a
+    ], Error404);
+    return Error404;
 }(vue__WEBPACK_IMPORTED_MODULE_0__["default"]));
-/* harmony default export */ __webpack_exports__["default"] = (Login);
+/* harmony default export */ __webpack_exports__["default"] = (Error404);
 
 
 /***/ }),
@@ -30689,6 +30791,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_class_component__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_class_component__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_NewNode_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/NewNode.vue */ "./resources/js/components/components/NewNode.vue");
 /* harmony import */ var _components_List_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/List.vue */ "./resources/js/components/components/List.vue");
+/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../store */ "./resources/js/store.ts");
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -30712,13 +30815,25 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var Home = /** @class */ (function (_super) {
     __extends(Home, _super);
     function Home() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.name = '';
-        return _this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
+    Object.defineProperty(Home.prototype, "isAuthenticated", {
+        get: function () {
+            return _store__WEBPACK_IMPORTED_MODULE_4__["default"].getters.isAuthenticated;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Home.prototype.init = function () {
+        _store__WEBPACK_IMPORTED_MODULE_4__["default"].dispatch('isAuthenticated');
+    };
+    Home.prototype.created = function () {
+        this.init();
+    };
     Home = __decorate([
         vue_class_component__WEBPACK_IMPORTED_MODULE_1___default()({
             components: {
@@ -30827,7 +30942,9 @@ var Login = /** @class */ (function (_super) {
                             return [2 /*return*/, false];
                         }
                         this.loginError = '';
-                        this.$router.push({ name: 'Home' });
+                        return [4 /*yield*/, this.$router.push({ name: 'Home' })];
+                    case 2:
+                        _a.sent();
                         return [2 /*return*/];
                 }
             });
@@ -31480,13 +31597,19 @@ var render = function() {
           [
             _c(
               "draggable",
-              {
-                attrs: {
-                  id: _vm.tree.id,
-                  group: "g1",
-                  list: _vm.tree[0].all_children
-                }
-              },
+              _vm._b(
+                {
+                  attrs: {
+                    disable: !_vm.isAuthenticated,
+                    id: _vm.tree[0].id,
+                    list: _vm.tree[0].all_children
+                  },
+                  on: { remove: _vm.removed }
+                },
+                "draggable",
+                _vm.options,
+                false
+              ),
               _vm._l(_vm.tree[0].all_children, function(el) {
                 return _c(
                   "div",
@@ -31576,21 +31699,23 @@ var render = function() {
               1
             ),
             _vm._v(" "),
-            _c(
-              "div",
-              [
-                _c(
-                  "v-btn",
-                  { staticClass: "mr-5", on: { click: _vm.editNode } },
-                  [_vm._v("edit")]
-                ),
-                _vm._v(" "),
-                _c("v-btn", { on: { click: _vm.deleteNode } }, [
-                  _vm._v("Delete")
-                ])
-              ],
-              1
-            )
+            _vm.isAuthenticated
+              ? _c(
+                  "div",
+                  [
+                    _c(
+                      "v-btn",
+                      { staticClass: "mr-5", on: { click: _vm.editNode } },
+                      [_vm._v("edit")]
+                    ),
+                    _vm._v(" "),
+                    _c("v-btn", { on: { click: _vm.deleteNode } }, [
+                      _vm._v("Delete")
+                    ])
+                  ],
+                  1
+                )
+              : _vm._e()
           ]),
           _vm._v(" "),
           _c(
@@ -31637,12 +31762,10 @@ var render = function() {
                   "draggable",
                   _vm._b(
                     {
-                      staticStyle: { width: "fit-content" },
                       attrs: {
                         id: _vm.el.id,
                         list: _vm.el.all_children,
-                        tag: "div",
-                        group: { name: "g1" }
+                        tag: "div"
                       },
                       on: { remove: _vm.removed }
                     },
@@ -31694,9 +31817,24 @@ var render = function() {
     "div",
     { staticClass: "container d-flex justify-space-between align-center" },
     [
-      _c("div", { staticClass: "logo text-uppercase" }, [
-        _vm._v("\n        Logo\n    ")
-      ]),
+      _c(
+        "div",
+        { staticClass: "row d-flex align-center " },
+        [
+          _c("v-img", {
+            attrs: {
+              "max-height": "64px",
+              "max-width": "64px",
+              src: "https://image.flaticon.com/icons/png/512/93/93701.png"
+            }
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "ml-5 logo text-uppercase" }, [
+            _vm._v("\n        Tree\n    ")
+          ])
+        ],
+        1
+      ),
       _vm._v(" "),
       _c("div", { staticClass: "d-flex justify-end" }, [
         !_vm.isAuthenticated
@@ -31705,7 +31843,18 @@ var render = function() {
               [
                 _c(
                   "router-link",
-                  { attrs: { to: "/login" } },
+                  { attrs: { to: "/", exact: "" } },
+                  [
+                    _c("v-btn", { attrs: { text: "" } }, [
+                      _vm._v("\n                    Home\n                ")
+                    ])
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "router-link",
+                  { attrs: { to: "/login", exact: "" } },
                   [
                     _c("v-btn", { attrs: { text: "" } }, [
                       _vm._v("\n                    Login\n                ")
@@ -31716,7 +31865,7 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "router-link",
-                  { attrs: { to: "/register" } },
+                  { attrs: { to: "/register", exact: "" } },
                   [
                     _c("v-btn", { attrs: { text: "" } }, [
                       _vm._v("\n                    Register\n                ")
@@ -31783,7 +31932,7 @@ var render = function() {
         _c("div", { staticClass: "row align-center" }, [
           _c(
             "div",
-            { staticClass: "col-6 pa-5" },
+            { staticClass: "col-9 pa-5" },
             [
               _c("v-text-field", {
                 attrs: {
@@ -31805,29 +31954,12 @@ var render = function() {
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "col-6 d-flex justify-center" },
-            [
-              _c("v-switch", {
-                attrs: { label: _vm.label },
-                model: {
-                  value: _vm.node,
-                  callback: function($$v) {
-                    _vm.node = $$v
-                  },
-                  expression: "node"
-                }
-              })
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
             { staticClass: "col-9" },
             [
               _c("v-select", {
                 attrs: {
                   "item-value": "id",
+                  label: "Select node",
                   error: _vm.selectError.length > 0,
                   "error-messages": _vm.selectError,
                   "item-text": _vm.text,
@@ -31879,29 +32011,25 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "error404 d-flex justify-center align-center",
-        attrs: { elevation: "0" }
-      },
-      [
-        _c("div", [
-          _c("div", {}, [_c("h1", [_vm._v("Error 404")])]),
-          _vm._v(" "),
-          _c("div", {}, [_c("h5", [_vm._v("Not found")])])
+  return _c(
+    "v-card",
+    {
+      staticClass:
+        "error404 d-flex justify-center align-center mt-10 pa-10 pt-16 pb-16",
+      attrs: { elevation: "0" }
+    },
+    [
+      _c("div", [
+        _c("div", { staticClass: "pa-0" }, [_c("h1", [_vm._v("Error 404")])]),
+        _vm._v(" "),
+        _c("div", { staticClass: "pa-0" }, [
+          _c("h5", { attrs: { cla: "" } }, [_vm._v("Not found")])
         ])
-      ]
-    )
-  }
-]
+      ])
+    ]
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -31926,7 +32054,7 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("NewNode"),
+      _vm.isAuthenticated ? _c("div", [_c("NewNode")], 1) : _vm._e(),
       _vm._v(" "),
       _c(
         "v-card",
@@ -99544,8 +99672,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_views_Login_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/views/Login.vue */ "./resources/js/components/views/Login.vue");
 /* harmony import */ var _components_views_Register_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/views/Register.vue */ "./resources/js/components/views/Register.vue");
 /* harmony import */ var _components_views_Error404_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/views/Error404.vue */ "./resources/js/components/views/Error404.vue");
-/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./store */ "./resources/js/store.ts");
-
 
 
 
@@ -99559,7 +99685,7 @@ var routes = [
         path: '/',
         component: _components_views_Home_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
         meta: {
-            requireAuth: true,
+            requireAuth: false,
         },
     },
     {
@@ -99582,19 +99708,11 @@ var routes = [
         path: '*',
         name: '404',
         component: _components_views_Error404_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
-    }
+    },
 ];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     routes: routes,
     mode: 'history'
-});
-router.beforeEach(function (to, from, next) {
-    if (to.meta.requireAuth === true && !_store__WEBPACK_IMPORTED_MODULE_6__["default"].getters.isAuthenticated)
-        next({ name: 'Login' });
-    else if (to.meta.requireAuth === false && _store__WEBPACK_IMPORTED_MODULE_6__["default"].getters.isAuthenticated)
-        next({ name: 'Home' });
-    else
-        next();
 });
 /* harmony default export */ __webpack_exports__["default"] = (router);
 
@@ -99659,6 +99777,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
         token:  false || localStorage.getItem('token'),
         tree: null,
         expand: false,
+        action: false,
     },
     getters: {
         getToken: function (state) {
@@ -99674,6 +99793,17 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
         },
         getExpand: function (state) {
             return state.expand;
+        },
+        getHeaders: function (state) {
+            return {
+                headers: {
+                    Authorization: "Bearer " + state.token,
+                    APP_KEY: 'A6R9+vE5m2hvXE56fcKvycASwYby62/KEhYEKxi+b1g=',
+                }
+            };
+        },
+        getRemoveAction: function (state) {
+            return state.action;
         }
     },
     mutations: {
@@ -99690,6 +99820,9 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
         },
         setExpand: function (state) {
             state.expand = !state.expand;
+        },
+        setRemoveAction: function (state, action) {
+            state.action = action;
         }
     },
     actions: {
@@ -99703,7 +99836,9 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
                                 name: name,
                                 email: email,
                                 password: password
-                            })];
+                            }, { headers: {
+                                    APP_KEY: 'A6R9+vE5m2hvXE56fcKvycASwYby62/KEhYEKxi+b1g='
+                                } })];
                         case 1:
                             register = _b.sent();
                             if (!register.data.access_token)
@@ -99720,7 +99855,9 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
                 var login;
                 return __generator(this, function (_b) {
                     switch (_b.label) {
-                        case 0: return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('//localhost:8000/api/auth/login', { email: email, password: password })];
+                        case 0: return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('//localhost:8000/api/auth/login', { email: email, password: password }, { headers: {
+                                    APP_KEY: 'A6R9+vE5m2hvXE56fcKvycASwYby62/KEhYEKxi+b1g='
+                                } })];
                         case 1:
                             login = _b.sent();
                             if (!login.data.access_token) {
@@ -99734,20 +99871,15 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
         },
         logout: function (state) {
             return __awaiter(this, void 0, void 0, function () {
-                var token, options, res;
+                var options;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
-                            token = state.getters.getToken;
-                            state.commit('deleteToken');
-                            options = {
-                                headers: {
-                                    Authorization: "Bearer " + token
-                                }
-                            };
+                            options = state.getters.getHeaders;
                             return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('http://localhost:8000/api/auth/logout', {}, options)];
                         case 1:
-                            res = _a.sent();
+                            _a.sent();
+                            state.commit('deleteToken');
                             return [2 /*return*/, true];
                     }
                 });
@@ -99755,14 +99887,15 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
         },
         downloadTree: function (state) {
             return __awaiter(this, void 0, void 0, function () {
-                var tree;
+                var tree, options;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
                             tree = state.getters.getTree;
+                            options = state.getters.getHeaders;
                             if (tree)
                                 return [2 /*return*/, tree];
-                            return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('//localhost:8000/api/trees')];
+                            return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('//localhost:8000/api/trees', options)];
                         case 1:
                             tree = _a.sent();
                             return [4 /*yield*/, state.commit('setTree', tree.data)];
@@ -99773,12 +99906,14 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
                 });
             });
         },
-        refresh: function (state) {
+        refreshTree: function (state) {
             return __awaiter(this, void 0, void 0, function () {
-                var tree;
+                var options, tree;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
-                        case 0: return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('//localhost:8000/api/trees')];
+                        case 0:
+                            options = state.getters.getHeaders;
+                            return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('//localhost:8000/api/trees', options)];
                         case 1:
                             tree = _a.sent();
                             return [4 /*yield*/, state.commit('setTree', tree.data)];
@@ -99789,6 +99924,63 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
                 });
             });
         },
+        isAuthenticated: function (state) {
+            return __awaiter(this, void 0, void 0, function () {
+                var options;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0:
+                            if (!state.getters.getToken)
+                                return [2 /*return*/, false];
+                            options = state.getters.getHeaders;
+                            return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('//localhost:8000/api/auth/me', {}, options).then(function () {
+                                    state.dispatch('refreshToken');
+                                }).catch(function () {
+                                    state.commit('deleteToken');
+                                })];
+                        case 1:
+                            _a.sent();
+                            return [2 /*return*/];
+                    }
+                });
+            });
+        },
+        refreshToken: function (state) {
+            return __awaiter(this, void 0, void 0, function () {
+                var options, token;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0:
+                            options = state.getters.getHeaders;
+                            return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('//localhost:8000/api/auth/refresh', {}, options)];
+                        case 1:
+                            token = _a.sent();
+                            state.commit('setToken', token.data.access_token);
+                            return [2 /*return*/];
+                    }
+                });
+            });
+        },
+        moveNode: function (state, _a) {
+            var item = _a.item, parent_id = _a.parent_id;
+            return __awaiter(this, void 0, void 0, function () {
+                var data, headers;
+                return __generator(this, function (_b) {
+                    switch (_b.label) {
+                        case 0:
+                            data = { 'parent_id': parent_id };
+                            headers = state.getters.getHeaders;
+                            return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_2___default.a.put("//localhost:8000/api/tree/parent/" + item, data, headers)];
+                        case 1:
+                            _b.sent();
+                            return [4 /*yield*/, state.commit('setRemoveAction', true)];
+                        case 2:
+                            _b.sent();
+                            return [2 /*return*/];
+                    }
+                });
+            });
+        }
     },
     modules: {}
 });
