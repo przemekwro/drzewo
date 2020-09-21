@@ -20,6 +20,12 @@ class CreateTreesTable extends Migration
             $table->unsignedBigInteger('parent_id')->nullable();
             $table->foreign('parent_id')->references('id')->on('Trees')->onDelete('cascade');
         });
+
+        DB::table('trees')->insert(
+            array(
+                'name'=>'',
+            )
+        );
     }
 
     /**

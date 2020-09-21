@@ -10,20 +10,21 @@ const store = new Vuex.Store({
         tree:null,
         expand:false,
         action:false,
+        isAdmin:false,
     },
     getters: {
         getToken(state) {
             return state.token;
         },
         isAuthenticated(state) {
-            if (state.token) return true
-            return false
+            if (state.token) return true;
+            return false;
         },
         getTree(state){
-            return state.tree
+            return state.tree;
         },
         getExpand(state){
-            return state.expand
+            return state.expand;
         },
         getHeaders(state){
             return {
@@ -35,61 +36,67 @@ const store = new Vuex.Store({
         },
         getRemoveAction(state){
             return state.action;
+        },
+        isAdmin(state){
+            return state.isAdmin;
         }
     },
     mutations: {
         setToken(state, token) {
-            localStorage.setItem('token', token)
-            state.token = token
+            localStorage.setItem('token', token);
+            state.token = token;
         },
         deleteToken(state){
-            localStorage.removeItem('token')
-            state.token = null
+            localStorage.removeItem('token');
+            state.token = null;
+            state.isAdmin = false;
         },
         setTree(state,tree){
-            state.tree = tree
+            state.tree = tree;
         },
         setExpand(state){
-            state.expand = !state.expand
+            state.expand = !state.expand;
         },
         setRemoveAction(state,action){
             state.action=action;
+        },
+        isAdmin(state,admin){
+            state.isAdmin = admin
         }
     },
 
     actions: {
-        async register(state, {name, email, password}) {
-            const register = await axios.post('//localhost:8000/api/auth/register', {
-                name: name,
-                email: email,
-                password: password
-            },{headers:{
+        async register(state, user) {
+            const token = await axios.post('//localhost:8000/api/auth/register',user,{headers:{
                 APP_KEY:'A6R9+vE5m2hvXE56fcKvycASwYby62/KEhYEKxi+b1g='
-            }})
-
-            if (!register.data.access_token) return false
-
-            state.commit('setToken', register.data.access_token)
-            return true;
+            }}).then((result)=>{
+                state.commit('setToken', result.data.access_token);
+                state.commit('isAdmin',result.data.is_admin)
+                return true
+            }).catch((err)=>{
+                return false
+            })
+            return token;
         },
 
         async login(state, {email, password}) {
-            const login = await axios.post('//localhost:8000/api/auth/login', {email: email, password: password},{headers:{
+            let login = await axios.post('//localhost:8000/api/auth/login', {email: email, password: password},{headers:{
                     APP_KEY:'A6R9+vE5m2hvXE56fcKvycASwYby62/KEhYEKxi+b1g='
-                }})
-
-            if (!login.data.access_token) {
+                }}).then((result)=>{
+                    state.commit('setToken', result.data.access_token);
+                    state.commit('isAdmin',result.data.is_admin)
+                    return true
+            }).catch(()=>{
                 return false
-            }
-            state.commit('setToken', login.data.access_token)
-            return true
+            })
+            return login;
         },
 
         async logout(state) {
-            const options = state.getters.getHeaders
+            const options = state.getters.getHeaders;
             await axios.post('http://localhost:8000/api/auth/logout', {},options);
-            state.commit('deleteToken')
-            return true
+            state.commit('deleteToken');
+            return true;
         },
 
         async downloadTree(state){
@@ -97,16 +104,25 @@ const store = new Vuex.Store({
             const options = state.getters.getHeaders;
             if(tree) return tree
 
-            tree = await axios.get('//localhost:8000/api/trees',options);
-            await state.commit('setTree',tree.data)
-            return tree.data
+            tree = await axios.get('//localhost:8000/api/trees',options).then((tree)=>{
+                state.commit('setTree',tree.data)
+                return tree.data
+            }).catch(()=>{
+                return false
+            })
+
+            return tree
         },
 
         async refreshTree(state){
             const options = state.getters.getHeaders;
-            let tree = await axios.get('//localhost:8000/api/trees',options)
-            await state.commit('setTree',tree.data)
-            return tree.data
+            let tree = await axios.get('//localhost:8000/api/trees',options).then((tree)=>{
+                state.commit('setTree',tree.data)
+                return tree.data
+            }).catch(()=>{
+                return false
+            })
+            return tree
         },
 
         async isAuthenticated(state){
@@ -114,8 +130,9 @@ const store = new Vuex.Store({
 
             const options = state.getters.getHeaders;
 
-            await axios.post('//localhost:8000/api/auth/me',{},options).then(()=>{
+            await axios.post('//localhost:8000/api/auth/me',{},options).then((res)=>{
                 state.dispatch('refreshToken');
+                state.commit('isAdmin',res.data.is_admin);
             }).catch(()=>{
                 state.commit('deleteToken');
             })

@@ -7,10 +7,10 @@
             </v-btn>
             <div class="d-flex align-center">
                 <div class="d-flex mt-6 mr-5">
-                    <v-text-field :error="true" :readonly="!isEdit" :error-messages="nameError" v-model="el.name"
+                    <v-text-field :error="true" :class="{'edit':isEdit}" :readonly="!isEdit" :error-messages="nameError" v-model="el.name"
                                   solo></v-text-field>
                 </div>
-                <div v-if="isAuthenticated">
+                <div v-if="isAdmin">
                     <v-btn class="mr-5" @click="editNode">edit</v-btn>
                     <v-btn @click="deleteNode">Delete</v-btn>
                 </div>
@@ -56,9 +56,8 @@ export default class ListElement extends Vue {
     private isEdit: boolean = false;
     private deleteNodeConfirm: boolean = false;
 
-
-    get isAuthenticated(){
-        return state.getters.isAuthenticated;
+    get isAdmin(){
+        return state.getters.isAdmin;
     }
 
     get options(){
@@ -66,13 +65,13 @@ export default class ListElement extends Vue {
             group:{
                 name:'g1',
                 put:()=>{
-                    if(!this.isAuthenticated){
+                    if(!this.isAdmin){
                         return false
                     }
                     return true;
                 },
                 pull:()=>{
-                    if(!this.isAuthenticated){
+                    if(!this.isAdmin){
                         return false
                     }
                     return true;
@@ -111,11 +110,15 @@ export default class ListElement extends Vue {
             this.nameError = "Only letter, length between 3 and 32"
             return false
         }
+        return true
     }
 
     editNode() {
         if (!this.isEdit)
             return this.isEdit = true
+
+        if(!this.validate())
+            return false
 
         const options = {'name': this.name}
         const headers = state.getters.getHeaders
@@ -145,21 +148,10 @@ export default class ListElement extends Vue {
             this.validate()
         }, 500)
     }
-
-    date(value: any) {
-        const date = new Date(value)
-
-        let day = date.getDate() > 10 ? date.getDate() : `0${date.getDate()}`
-        let month = date.getMonth() + 1 > 10 ? date.getMonth() + 1 : `0${date.getMonth()}`
-        const year = date.getFullYear()
-
-        let hours = date.getHours() > 10 ? date.getHours() : `0${date.getHours()}`
-        let minutes = date.getMinutes() > 10 ? date.getMinutes() : `0${date.getMinutes()}`
-
-        return `${year}-${month}-${day} ${hours}:${minutes}`
-    }
-
 };
 </script>
 <style scoped>
+.edit{
+    border:1px solid green;
+}
 </style>

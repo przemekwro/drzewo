@@ -15,6 +15,7 @@ class UserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => bcrypt($request->password),
+            'is_admin' => $request->is_admin,
         ]);
 
         $token = auth()->login($user);
@@ -27,7 +28,8 @@ class UserController extends Controller
         return response()->json([
             'access_token' => $token,
             'token_type' => 'bearer',
-            'expires_in' => auth()->factory()->getTTL() * 60
+            'expires_in' => auth()->factory()->getTTL() * 60,
+            'isAdmin' => auth()->user()->is_admin,
         ]);
     }
 

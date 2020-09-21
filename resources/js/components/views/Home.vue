@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div v-if="isAuthenticated">
+        <div v-if="isAdmin">
             <NewNode></NewNode>
         </div>
         <v-card class="mt-7 pa-5" elevation="10">
@@ -23,8 +23,8 @@ import state from '../../store'
     }
 })
 export default class Home extends Vue {
-    get isAuthenticated(){
-        return state.getters.isAuthenticated
+    get isAdmin(){
+        return state.getters.iisAdmin
     }
 
     init(){

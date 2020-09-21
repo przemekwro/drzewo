@@ -17,10 +17,6 @@ import Component from "vue-class-component";
 
 @Component
 export default class Error404 extends Vue {
-
-    mounted(){
-        console.log('component error')
-    }
 }
 </script>
 

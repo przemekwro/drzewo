@@ -27,7 +27,7 @@ Route::group(['middleware' => 'api','prefix' => 'auth'], function ($router) {
     Route::post('me', 'AuthController@me');
 });
 
-Route::group(['middleware'=>'auth'],function(){
+Route::group(['middleware'=>'Admin'],function(){
     Route::post('tree','TreeController@store');
     Route::put('tree/parent/{id}', 'TreeController@updateParent');
     Route::put('tree/{id}', 'TreeController@update');

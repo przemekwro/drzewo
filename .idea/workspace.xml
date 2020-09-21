@@ -22,8 +22,10 @@
     <list default="true" id="c858d20f-ede2-4813-8b2f-837786bf5834" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TreeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TreeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/jwt.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/jwt.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_15_075746_create_trees_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_15_075746_create_trees_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/Main.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Main.vue" afterDir="false" />
@@ -34,9 +36,10 @@
       <change beforePath="$PROJECT_DIR$/resources/js/components/components/NewNode.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/components/NewNode.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/views/Error404.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/views/Error404.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/views/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/views/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/views/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/views/Register.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/router.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -189,18 +192,19 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/components/components" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="ts.external.directory.path" value="C:\Users\wronek\Desktop\projekty\drzewo\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wronek\Desktop\projekty\drzewo\resources\js" />
+      <recent name="C:\Users\wronek\Desktop\projekty\drzewo" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\wronek\Desktop\projekty\drzewo\resources\js\components\components" />
       <recent name="C:\Users\wronek\Desktop\projekty\drzewo\resources\js\components\views" />
       <recent name="C:\Users\wronek\Desktop\projekty\drzewo\database\migrations" />
-      <recent name="C:\Users\wronek\Desktop\projekty\drzewo" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\wronek\Desktop\projekty\drzewo\resources\js" />
       <recent name="C:\Users\wronek\Desktop\projekty\drzewo" />
     </key>
   </component>
@@ -223,6 +227,7 @@
       <workItem from="1600325225093" duration="30070000" />
       <workItem from="1600415367240" duration="22538000" />
       <workItem from="1600505894547" duration="17188000" />
+      <workItem from="1600679866324" duration="9729000" />
     </task>
     <servers />
   </component>
@@ -266,6 +271,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600176717503" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1600685862675">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600685862675" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1600418419869">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="tree">
         <div class="row justify-space-between pa-10">
             <h1>Tree</h1>
             <div>
@@ -17,12 +17,18 @@
                 </div>
             </div>
         </div>
+        <div v-if="!loaded && !error">
+            Loading...
+        </div>
         <div v-if="loaded">
-            <draggable v-bind="options" :disable="!isAuthenticated" @remove="removed" :id="tree[0].id" :list="tree[0].all_children">
+            <draggable v-bind="options" :disable="!isAdmin" @remove="removed" :id="tree[0].id" :list="tree[0].all_children">
                 <div v-for="el in tree[0].all_children" :key="el.id" :id="el.id">
                     <ListElement class="pa-5" :el="el"/>
                 </div>
             </draggable>
+        </div>
+        <div v-if="error">
+            Empty tree or issue with downloading data.
         </div>
     </div>
 </template>
@@ -33,7 +39,6 @@ import draggable from "vuedraggable";
 import ListElement from "./ListElement.vue";
 import Component from "vue-class-component";
 import state from "../../store";
-import axios from "axios";
 
 @Component({
     components: {
@@ -44,30 +49,31 @@ import axios from "axios";
 export default class List extends Vue {
     buttons = 0
     loaded = false;
+    error = false
 
     get options(){
         return {
             group:{
                 name:'g1',
                 put:()=>{
-                    if(!this.isAuthenticated){
+                    if(!this.isAdmin){
                         return false
                     }
                     return true;
                 },
                 pull:()=>{
-                      if(!this.isAuthenticated){
+                      if(!this.isAdmin){
                           return false
                       }
                       return true;
                 },
-                disabled:this.isAuthenticated
+                disabled:this.isAdmin
             }
         }
     }
 
-    get isAuthenticated(){
-        return state.getters.isAuthenticated;
+    get isAdmin(){
+        return state.getters.isAdmin;
     }
 
     async removed(evt: any) {
@@ -89,38 +95,29 @@ export default class List extends Vue {
         state.commit('setExpand')
     }
 
-    sortAscending() {
-        this.sortTreeAscending(this.tree[0].all_children)
-    }
-
-    sortDescending() {
-        this.sortTreeDescending(this.tree[0].all_children)
-    }
-
-    sortTreeAscending(tree: Array<Object>) {
-        tree.sort((a: any, b: any) => {
-            if (a.name > b.name) return 1
-            if (b.name > a.name) return -1
-            return 0
-        });
+    sortTree(callback:any,tree: Array<Object>) {
+        tree.sort(callback);
         tree.forEach((node: any) => {
             if (this.nodeHasChildren(node)) {
-                this.sortTreeAscending(node.all_children)
+                this.sortTree(callback,node.all_children)
             }
         })
     }
 
-    sortTreeDescending(tree: Array<Object>) {
-        tree.sort((a: any, b: any) => {
+    sortDescending(){
+        this.sortTree((a:any,b:any)=>{
             if (a.name < b.name) return 1
-            if (b.name < a.name) return -1
+            if (a.name > b.name) return -1
             return 0
-        });
-        tree.forEach((node: any) => {
-            if (this.nodeHasChildren(node)) {
-                this.sortTreeAscending(node.all_children)
-            }
-        })
+        },this.tree[0].all_children)
+    }
+
+    sortAscending() {
+        this.sortTree((a: any, b: any) => {
+            if (a.name > b.name) return 1
+            if (a.name < b.name) return -1
+            return 0
+        },this.tree[0].all_children)
     }
 
     nodeHasChildren(tree: any) {
@@ -131,9 +128,12 @@ export default class List extends Vue {
     }
 
     async init() {
-        await state.dispatch('downloadTree')
-        await this.sortTreeAscending(this.tree[0].all_children)
-        this.loaded = true
+        await state.dispatch('downloadTree').then(()=>{
+            this.sortAscending()
+            this.loaded = true
+        }).catch(()=>{
+            this.error = true
+        })
     }
 
     mounted() {
@@ -143,9 +143,8 @@ export default class List extends Vue {
 };
 </script>
 
-<style>
-ul li {
-    text-decoration: none;
+<style scoped>
+.v-btn{
+    font-family: 'Courier Prime', monospace;
 }
-
 </style>

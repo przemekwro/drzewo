@@ -1,24 +1,27 @@
 <template>
-    <v-card class="mt-7 pa-5" elevation="10">
-        <div class="">
-            <div class="row d-flex align-center justify-center">
-                <h2>New</h2>
+    <div v-if="isAdmin">
+        <v-card class="mt-7 pa-5" elevation="10">
+            <div class="">
+                <div class="row d-flex align-center justify-center">
+                    <h2>New</h2>
+                </div>
+                <div class="row align-center">
+                    <div class="col-9 pa-5">
+                        <v-text-field v-model="name" :error="nameError.length>0" :error-messages="nameError"
+                                      label="Name"></v-text-field>
+                    </div>
+                    <div class="col-9">
+                        <v-select item-value="id" label="Select node" :error="selectError.length>0"
+                                  :error-messages="selectError"
+                                  :item-text="text" v-model="selectValue" type="radio" :items="paths"></v-select>
+                    </div>
+                    <div class="col-3 d-flex justify-end">
+                        <v-btn @click="addNode">Add</v-btn>
+                    </div>
+                </div>
             </div>
-            <div class="row align-center">
-                <div class="col-9 pa-5">
-                    <v-text-field v-model="name" :error="nameError.length>0" :error-messages="nameError"
-                                  label="Name"></v-text-field>
-                </div>
-                <div class="col-9">
-                    <v-select item-value="id" label="Select node" :error="selectError.length>0" :error-messages="selectError"
-                              :item-text="text" v-model="selectValue" type="radio" :items="paths"></v-select>
-                </div>
-                <div class="col-3 d-flex justify-end">
-                    <v-btn @click="addNode">Add</v-btn>
-                </div>
-            </div>
-        </div>
-    </v-card>
+        </v-card>
+    </div>
 </template>
 
 <script lang="ts">
@@ -40,12 +43,12 @@ export default class NewNode extends Vue {
     tree = [];
     paths: Array<Object> = [];
 
-    get wasRemoved() {
-        return state.getters.getRemoveAction;
+    get isAdmin() {
+        return state.getters.isAdmin
     }
 
-    get isAuthenticated() {
-        return state.getters.isAuthenticated
+    get wasRemoved() {
+        return state.getters.getRemoveAction;
     }
 
     get label() {
@@ -65,12 +68,14 @@ export default class NewNode extends Vue {
 
     public async init() {
         this.paths = []
-        this.tree = await state.dispatch('refreshTree');
-        this.prepareTree()
+        await state.dispatch('refreshTree').then((result) => {
+            this.prepareTree(result)
+        });
+
     }
 
-    private prepareTree() {
-        let tree = [...this.tree]
+    private prepareTree(tree: any) {
+        this.tree = tree
 
         tree.forEach((item: any) => {
             item.path = []
@@ -93,7 +98,7 @@ export default class NewNode extends Vue {
     }
 
     private async addNode() {
-        if (!this.isAuthenticated) {
+        if (!this.isAdmin) {
             return false
         }
 
@@ -107,7 +112,7 @@ export default class NewNode extends Vue {
             name: this.name,
             parent_id: this.selectValue,
         }, headers).catch(er => {
-            console.log(er)
+            return false
         })
         //odswiez
         await this.init();

@@ -8,11 +8,6 @@
         </div>
         <div class="d-flex justify-end">
             <div v-if="!isAuthenticated">
-                <router-link to="/" exact>
-                    <v-btn text>
-                        Home
-                    </v-btn>
-                </router-link>
                 <router-link to="/login" exact>
                     <v-btn text>
                         Login
@@ -46,9 +41,9 @@ export default class Menu extends Vue {
         return state.getters.isAuthenticated
     }
 
-    logout(){
-        state.dispatch('logout')
-        this.$router.push({name:'Login'})
+    async logout(){
+        await state.dispatch('logout')
+        await this.$router.push({name:'Login'})
     }
 }
 </script>
@@ -65,6 +60,7 @@ a {
 }
 
 .logo {
+    font-family: 'Courier Prime', monospace;
     font-size: 36px;
     font-weight: bold;
 }

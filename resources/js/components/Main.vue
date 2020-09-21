@@ -23,7 +23,6 @@ import Menu from './components/Menu.vue'
 })
 export default class MainApp extends Vue {
     mounted() {
-        console.log('Component mounted.')
     }
 }
 </script>
